@@ -1,6 +1,6 @@
 # run.pro for uvvm_assertions
 include ../../script/sim_init.pro
-BuildName regression_uvvm_apb
+BuildName regression_external_vip_apb
 
 TestSuite external_vip_apb
 ChangeWorkingDirectory ../tb/maintenance_tb

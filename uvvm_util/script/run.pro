@@ -3,9 +3,10 @@ include ../../script/sim_init.pro
 
 BuildName regression_uvvm_util
 
-library tb_uvvm_util
+TestSuite uvvm_util
 ChangeWorkingDirectory ../tb/maintenance_tb
 
+library tb_uvvm_util
 analyze methods_tb_ent.vhd
 
 # log_arch
@@ -13,8 +14,8 @@ analyze methods_tb_log_arch.vhd
 simulate methods_tb [TestName basic_log_alert]         [generic GC_TESTCASE basic_log_alert]
 simulate methods_tb [TestName enable_disable_log_msg]  [generic GC_TESTCASE enable_disable_log_msg]
 simulate methods_tb [TestName log_text_block]          [generic GC_TESTCASE log_text_block]
-file copy -force primary.txt     ${::osvvm::ResultsDirectory}/tb_uvvm_util/primary.txt
-file copy -force secondary.txt   ${::osvvm::ResultsDirectory}/tb_uvvm_util/secondary.txt
+file copy -force primary.txt     ${::osvvm::ResultsDirectory}/uvvm_util/primary.txt
+file copy -force secondary.txt   ${::osvvm::ResultsDirectory}/uvvm_util/secondary.txt
 simulate methods_tb [TestName log_to_file]             [generic GC_TESTCASE log_to_file]
 simulate methods_tb [TestName log_header_formatting]   [generic GC_TESTCASE log_header_formatting]
 
