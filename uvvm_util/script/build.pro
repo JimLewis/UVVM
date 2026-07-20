@@ -1,0 +1,3 @@
+library uvvm_util
+BuildName build_uvvm_util
+IterateFile analyze compile_order.txt

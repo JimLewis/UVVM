@@ -1,0 +1,2 @@
+library bitvis_vip_avalon_mm
+IterateFile analyze compile_order.txt

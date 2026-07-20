@@ -1,0 +1,2 @@
+library bitvis_vip_ethernet
+IterateFile analyze compile_order.txt

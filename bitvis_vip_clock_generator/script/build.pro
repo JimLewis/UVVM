@@ -1,0 +1,2 @@
+library bitvis_vip_clock_generator
+IterateFile analyze compile_order.txt

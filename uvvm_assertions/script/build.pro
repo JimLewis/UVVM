@@ -1,0 +1,3 @@
+library uvvm_assertions
+BuildName build_uvvm_assertions
+IterateFile compile_order.txt analyze

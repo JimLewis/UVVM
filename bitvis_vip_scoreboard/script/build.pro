@@ -1,0 +1,2 @@
+library bitvis_vip_scoreboard
+IterateFile analyze compile_order.txt

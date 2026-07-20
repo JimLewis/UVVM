@@ -1,0 +1,2 @@
+library bitvis_vip_rgmii
+IterateFile analyze compile_order.txt

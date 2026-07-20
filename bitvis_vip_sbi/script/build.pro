@@ -1,0 +1,2 @@
+library bitvis_vip_sbi
+IterateFile analyze compile_order.txt

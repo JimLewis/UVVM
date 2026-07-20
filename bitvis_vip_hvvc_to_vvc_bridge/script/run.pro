@@ -1,0 +1,7 @@
+puts ""
+puts ""
+puts ""
+puts "No Test cases for bitvis_vip_hvvc_to_vvc_bridge"
+puts ""
+puts ""
+puts ""

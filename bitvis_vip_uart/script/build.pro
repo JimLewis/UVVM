@@ -1,0 +1,2 @@
+library bitvis_vip_uart
+IterateFile analyze compile_order.txt
