@@ -1,9 +1,16 @@
 # UVVM
+## Abstract
 UVVM (Universal VHDL Verification Methodology) is a free and Open Source Methodology and Library for making very structured VHDL-based testbenches.
 
-Overview, Readability, Maintainability, Extensibility and Reuse are all vital for FPGA development efficiency and quality.
-UVVM VVC (VHDL Verification Component) Framework was released in 2016 to handle exactly these aspects.
+## About this Branch
+This branch allows you to run UVVM using OSVVM pro scripts.
 
+This branch is part of a larger effort that intends to be able to run UVVM and OSVVM together.
+
+By providing a way to run pro scripts within a UVVM environment, we are able to compare the testbench output of a pure UVVM environment with the output of the combined environment - just by compiling different branches of UVVM.
+
+
+## Full Documentation
 UVVM consists currently of the following elements:
 
 * [Utility Library](https://uvvm.github.io/utility_library.html)
