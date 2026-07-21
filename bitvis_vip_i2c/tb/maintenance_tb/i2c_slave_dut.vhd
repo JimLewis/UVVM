@@ -13,6 +13,8 @@ use bitvis_vip_i2c.i2c_bfm_pkg.all;
 library bitvis_vip_sbi;
 use bitvis_vip_sbi.sbi_bfm_pkg.all;
 
+library open_cores_i2c ;
+
 entity i2c_slave_dut is
   generic(
     GC_SLAVE_ADDR : unsigned(6 downto 0) := "0101010"
@@ -115,7 +117,7 @@ begin
     end if;
   end process p_i2c_receive_reg;
 
-  i_I2C_slave : entity work.I2C_slave
+  i_I2C_slave : entity open_cores_i2c.I2C_slave
     generic map(
       SLAVE_ADDR => std_logic_vector(GC_SLAVE_ADDR)
     )

@@ -25,6 +25,8 @@ context uvvm_util.uvvm_util_context;
 library bitvis_vip_avalon_mm;
 use bitvis_vip_avalon_mm.avalon_mm_bfm_pkg.all;
 
+library altera_mf ;
+
 entity avalon_mm_vvc_th is
   generic(
     GC_CLK_PERIOD : time
@@ -140,7 +142,7 @@ begin
   -----------------------------
   -- vvc/executors
   -----------------------------
-  i1_avalon_mm_vvc : entity work.avalon_mm_vvc
+  i1_avalon_mm_vvc : entity bitvis_vip_avalon_mm.avalon_mm_vvc
     generic map(
       GC_ADDR_WIDTH   => C_ADDR_WIDTH,
       GC_DATA_WIDTH   => C_DATA_WIDTH,
@@ -151,7 +153,7 @@ begin
       avalon_mm_vvc_master_if => avalon_mm_if_1
     );
 
-  i2_avalon_mm_vvc : entity work.avalon_mm_vvc
+  i2_avalon_mm_vvc : entity bitvis_vip_avalon_mm.avalon_mm_vvc
     generic map(
       GC_ADDR_WIDTH   => C_ADDR_WIDTH,
       GC_DATA_WIDTH   => C_DATA_WIDTH,

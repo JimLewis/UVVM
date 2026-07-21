@@ -184,7 +184,7 @@ begin
   -- vvc/executors
   -----------------------------
   -- master vvc that transmit to FIFO
-  i_axistream_vvc_master_VVC2FIFO : entity work.axistream_vvc
+  i_axistream_vvc_master_VVC2FIFO : entity bitvis_vip_axistream.axistream_vvc
     generic map(
       GC_VVC_IS_MASTER => true,
       GC_DATA_WIDTH    => GC_DATA_WIDTH,
@@ -199,7 +199,7 @@ begin
     );
 
   -- slave vvc that receive from FIFO
-  i_axistream_vvc_slave_FIFO2VVC : entity work.axistream_vvc
+  i_axistream_vvc_slave_FIFO2VVC : entity bitvis_vip_axistream.axistream_vvc
     generic map(
       GC_VVC_IS_MASTER => false,
       GC_DATA_WIDTH    => GC_DATA_WIDTH,
@@ -216,7 +216,7 @@ begin
   --------------------------------------------------------------------
 
   -- master vvc that transmit directly to Slave VVC
-  i_axistream_vvc_master_VVC2VVC : entity work.axistream_vvc
+  i_axistream_vvc_master_VVC2VVC : entity bitvis_vip_axistream.axistream_vvc
     generic map(
       GC_VVC_IS_MASTER => true,
       GC_DATA_WIDTH    => GC_DATA_WIDTH,
@@ -231,7 +231,7 @@ begin
     );
 
   -- slave vvc that receive directly from Master VVC
-  i_axistream_vvc_slave_VVC2VVC : entity work.axistream_vvc
+  i_axistream_vvc_slave_VVC2VVC : entity bitvis_vip_axistream.axistream_vvc
     generic map(
       GC_VVC_IS_MASTER => false,
       GC_DATA_WIDTH    => GC_DATA_WIDTH,
@@ -265,7 +265,7 @@ begin
   begin
     axistream_if_m_local.tready <= '1';
 
-    i_axistream_vvc_master : entity work.axistream_vvc
+    i_axistream_vvc_master : entity bitvis_vip_axistream.axistream_vvc
       generic map(
         GC_VVC_IS_MASTER => true,
         GC_DATA_WIDTH    => GC_DATA_WIDTH,
@@ -328,7 +328,7 @@ begin
   axistream_if_s_FIFO2VVC.tid    <= (others => '0');
   axistream_if_s_FIFO2VVC.tdest  <= (others => '0');
 
-  i_axistream_vvc_master_32b : entity work.axistream_vvc
+  i_axistream_vvc_master_32b : entity bitvis_vip_axistream.axistream_vvc
     generic map(
       GC_VVC_IS_MASTER => true,
       GC_DATA_WIDTH    => C_DATA_WIDTH_1,
@@ -342,7 +342,7 @@ begin
       axistream_vvc_if => axistream_if_32b
     );
 
-  i_axistream_vvc_slave_32b : entity work.axistream_vvc
+  i_axistream_vvc_slave_32b : entity bitvis_vip_axistream.axistream_vvc
     generic map(
       GC_VVC_IS_MASTER => false,
       GC_DATA_WIDTH    => C_DATA_WIDTH_1,
@@ -356,7 +356,7 @@ begin
       axistream_vvc_if => axistream_if_32b
     );
 
-  i_axistream_vvc_master_64b : entity work.axistream_vvc
+  i_axistream_vvc_master_64b : entity bitvis_vip_axistream.axistream_vvc
     generic map(
       GC_VVC_IS_MASTER => true,
       GC_DATA_WIDTH    => C_DATA_WIDTH_2,
@@ -370,7 +370,7 @@ begin
       axistream_vvc_if => axistream_if_64b
     );
 
-  i_axistream_vvc_slave_64b : entity work.axistream_vvc
+  i_axistream_vvc_slave_64b : entity bitvis_vip_axistream.axistream_vvc
     generic map(
       GC_VVC_IS_MASTER => false,
       GC_DATA_WIDTH    => C_DATA_WIDTH_2,

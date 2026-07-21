@@ -79,7 +79,7 @@ begin
       data_in    => data_in
     );
 
-  i3_sbi_vvc : entity work.sbi_vvc
+  i3_sbi_vvc : entity bitvis_vip_sbi.sbi_vvc
     generic map(
       GC_ADDR_WIDTH   => C_ADDR_WIDTH_1,
       GC_DATA_WIDTH   => C_DATA_WIDTH_1,

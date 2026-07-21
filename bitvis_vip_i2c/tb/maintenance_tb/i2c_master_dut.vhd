@@ -13,6 +13,8 @@ use bitvis_vip_i2c.i2c_bfm_pkg.all;
 library bitvis_vip_wishbone;
 use bitvis_vip_wishbone.wishbone_bfm_pkg.all;
 
+library open_cores_i2c ;
+
 entity i2c_master_dut is
   generic(
     GC_WISHBONE_DATA_WIDTH : natural;
@@ -21,7 +23,7 @@ entity i2c_master_dut is
   port(
     clk        : in    std_logic;
     arst       : in    std_logic;
-    -- wishbone_vvc_if : inout t_wishbone_if(adr_o(GC_WISHBONE_ADDR_WIDTH - 1 downto 0), dat_o(GC_WISHBONE_DATA_WIDTH - 1 downto 0), dat_i(GC_WISHBONE_DATA_WIDTH - 1 downto 0));   
+    -- wishbone_vvc_if : inout t_wishbone_if(adr_o(GC_WISHBONE_ADDR_WIDTH - 1 downto 0), dat_o(GC_WISHBONE_DATA_WIDTH - 1 downto 0), dat_i(GC_WISHBONE_DATA_WIDTH - 1 downto 0));
     adr_i      : in    std_logic_vector(GC_WISHBONE_ADDR_WIDTH - 1 downto 0);
     dat_i      : in    std_logic_vector(GC_WISHBONE_DATA_WIDTH - 1 downto 0);
     dat_o      : out   std_logic_vector(GC_WISHBONE_DATA_WIDTH - 1 downto 0);
@@ -48,7 +50,7 @@ begin
   i2c_vvc_if.scl <= scl_pad_o when (scl_padoen_o = '0') else 'Z';
   i2c_vvc_if.sda <= sda_pad_o when (sda_padoen_o = '0') else 'Z';
 
-  i_i2c_master_top : entity work.i2c_master_top
+  i_i2c_master_top : entity open_cores_i2c.i2c_master_top
     generic map(
       ARST_LVL => '1'
     )

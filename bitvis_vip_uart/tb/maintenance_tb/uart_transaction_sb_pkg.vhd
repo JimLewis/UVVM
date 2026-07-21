@@ -21,8 +21,9 @@ use ieee.numeric_std.all;
 library uvvm_util;
 context uvvm_util.uvvm_util_context;
 
-use work.transaction_pkg.all;
-use work.vvc_cmd_pkg.all;
+library bitvis_vip_uart;
+use bitvis_vip_uart.transaction_pkg.all;
+use bitvis_vip_uart.vvc_cmd_pkg.all;
 
 package local_pkg is
   function uart_transaction_to_string(
@@ -63,8 +64,11 @@ library bitvis_vip_scoreboard;
 use bitvis_vip_scoreboard.generic_sb_support_pkg.all;
 use bitvis_vip_scoreboard.generic_sb_pkg;
 
-use work.local_pkg.all;
-use work.transaction_pkg.all;
+library bitvis_vip_uart;
+use bitvis_vip_uart.transaction_pkg.all;
+use bitvis_vip_uart.vvc_cmd_pkg.all;
+
+use work.local_pkg.all ;
 
 ------------------------------------------------------------------------------------------
 -- Package declaration

@@ -88,7 +88,7 @@ begin
   p_main : process
     -- BFM config
     variable v_cmd_idx        : integer;
-    variable v_data           : work.vvc_cmd_pkg.t_vvc_result;
+    variable v_data           : bitvis_vip_sbi.vvc_cmd_pkg.t_vvc_result;
     variable v_is_ok          : boolean := false;
     variable v_timestamp      : time;
     variable v_alert_level    : t_alert_level;

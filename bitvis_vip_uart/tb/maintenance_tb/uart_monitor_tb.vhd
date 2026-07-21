@@ -30,8 +30,10 @@ context bitvis_vip_sbi.vvc_context;
 library bitvis_vip_uart;
 context bitvis_vip_uart.vvc_context;
 
+library bitvis_vip_uart;
+use bitvis_vip_uart.monitor_cmd_pkg.all;
+
 use work.uart_transaction_sb_pkg.all;
-use work.monitor_cmd_pkg.all;
 
 --hdlregression:tb
 -- Test case entity

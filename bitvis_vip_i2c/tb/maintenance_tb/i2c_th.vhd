@@ -99,7 +99,7 @@ begin
   i2c_vvc_if_2.scl <= 'H';
 
   -- component instantiations
-  i_i2c_master_vvc : entity work.i2c_vvc
+  i_i2c_master_vvc : entity bitvis_vip_i2c.i2c_vvc
     generic map(
       GC_INSTANCE_IDX                       => 0,
       GC_MASTER_MODE                        => true,
@@ -110,7 +110,7 @@ begin
     port map(
       i2c_vvc_if => i2c_vvc_if_1);
 
-  i_i2c_slave_vvc_1 : entity work.i2c_vvc
+  i_i2c_slave_vvc_1 : entity bitvis_vip_i2c.i2c_vvc
     generic map(
       GC_INSTANCE_IDX                       => 1,
       GC_MASTER_MODE                        => false,
@@ -156,7 +156,7 @@ begin
       i2c_vvc_if => i2c_vvc_if_2
     );
 
-  i_i2c_slave_vvc_2 : entity work.i2c_vvc
+  i_i2c_slave_vvc_2 : entity bitvis_vip_i2c.i2c_vvc
     generic map(
       GC_INSTANCE_IDX                       => 2,
       GC_MASTER_MODE                        => false,
@@ -168,7 +168,7 @@ begin
       i2c_vvc_if => i2c_vvc_if_2);
 
   -- 10 bit address
-  i_i2c_master_vvc_3 : entity work.i2c_vvc
+  i_i2c_master_vvc_3 : entity bitvis_vip_i2c.i2c_vvc
     generic map(
       GC_INSTANCE_IDX                       => 5,
       GC_MASTER_MODE                        => true,
@@ -179,7 +179,7 @@ begin
     port map(
       i2c_vvc_if => i2c_vvc_if_1);
 
-  i_i2c_slave_vvc_3 : entity work.i2c_vvc
+  i_i2c_slave_vvc_3 : entity bitvis_vip_i2c.i2c_vvc
     generic map(
       GC_INSTANCE_IDX                       => 4,
       GC_MASTER_MODE                        => false,
@@ -190,7 +190,7 @@ begin
     port map(
       i2c_vvc_if => i2c_vvc_if_1);
 
-  i_i2c_slave_vvc_4 : entity work.i2c_vvc
+  i_i2c_slave_vvc_4 : entity bitvis_vip_i2c.i2c_vvc
     generic map(
       GC_INSTANCE_IDX                       => 6,
       GC_MASTER_MODE                        => false,
@@ -269,7 +269,7 @@ begin
       i2c_vvc_if => i2c_vvc_if_2
     );
 
-  i_i2c_master_vvc_2 : entity work.i2c_vvc
+  i_i2c_master_vvc_2 : entity bitvis_vip_i2c.i2c_vvc
     generic map(
       GC_INSTANCE_IDX                       => 3,
       GC_MASTER_MODE                        => true,

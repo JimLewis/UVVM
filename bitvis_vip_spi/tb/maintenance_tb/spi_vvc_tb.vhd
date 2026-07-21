@@ -32,6 +32,8 @@ use bitvis_vip_spi.vvc_sb_support_pkg.all;
 library bitvis_vip_sbi;
 context bitvis_vip_sbi.vvc_context;
 
+library open_cores_spi ; 
+
 --hdlregression:tb
 entity spi_vvc_tb is
   generic(
@@ -172,7 +174,7 @@ begin
   clock_generator(clk, clk_ena, C_CLK_PERIOD, "system_clock");
 
   -- component instantiations
-  i_master_vvc_1 : entity work.spi_vvc
+  i_master_vvc_1 : entity bitvis_vip_spi.spi_vvc
     generic map(
       GC_DATA_WIDTH                         => GC_DATA_WIDTH,
       GC_DATA_ARRAY_WIDTH                   => GC_DATA_ARRAY_WIDTH,
@@ -182,7 +184,7 @@ begin
     port map(
       spi_vvc_if => spi_vvc_if_1);
 
-  i_slave_vvc_1 : entity work.spi_vvc
+  i_slave_vvc_1 : entity bitvis_vip_spi.spi_vvc
     generic map(
       GC_DATA_WIDTH                         => GC_DATA_WIDTH,
       GC_DATA_ARRAY_WIDTH                   => GC_DATA_ARRAY_WIDTH,
@@ -192,7 +194,7 @@ begin
     port map(
       spi_vvc_if => spi_vvc_if_1);
 
-  i_slave_vvc_2 : entity work.spi_vvc
+  i_slave_vvc_2 : entity bitvis_vip_spi.spi_vvc
     generic map(
       GC_DATA_WIDTH                         => GC_DATA_WIDTH,
       GC_DATA_ARRAY_WIDTH                   => GC_DATA_ARRAY_WIDTH,
@@ -202,7 +204,7 @@ begin
     port map(
       spi_vvc_if => spi_vvc_if_2);
 
-  i_master_vvc_2 : entity work.spi_vvc
+  i_master_vvc_2 : entity bitvis_vip_spi.spi_vvc
     generic map(
       GC_DATA_WIDTH                         => GC_DATA_WIDTH,
       GC_DATA_ARRAY_WIDTH                   => GC_DATA_ARRAY_WIDTH,
@@ -213,7 +215,7 @@ begin
       spi_vvc_if => spi_vvc_if_3);
 
   -- SPI master with a 10 MHz SPI SCK
-  i_spi_master : entity work.spi_master
+  i_spi_master : entity open_cores_spi.spi_master
     generic map(
       N    => GC_DATA_WIDTH,
       CPOL => C_SPI_BFM_CONFIG_ARRAY(GC_SPI_MODE).CPOL,
@@ -250,7 +252,7 @@ begin
     );
 
   -- SPI slave with a 10 MHz SPI SCK
-  i_spi_slave : entity work.spi_slave
+  i_spi_slave : entity open_cores_spi.spi_slave
     generic map(
       N    => GC_DATA_WIDTH,
       CPOL => C_SPI_BFM_CONFIG_ARRAY(GC_SPI_MODE).CPOL,

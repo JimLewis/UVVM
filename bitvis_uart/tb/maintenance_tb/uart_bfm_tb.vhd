@@ -27,7 +27,8 @@ use bitvis_vip_sbi.sbi_bfm_pkg.all;
 library bitvis_vip_uart;
 use bitvis_vip_uart.uart_bfm_pkg.all;
 
-use work.uart_pif_pkg.all;
+library bitvis_uart;
+use bitvis_uart.uart_pif_pkg.all;
 
 --hdlregression:tb
 -- Test case entity
@@ -119,7 +120,7 @@ begin
   -----------------------------------------------------------------------------
   -- Instantiate DUT
   -----------------------------------------------------------------------------
-  i_uart : entity work.uart
+  i_uart : entity bitvis_uart.uart
     port map(
       -- DSP interface and general control signals
       clk   => clk,                     --

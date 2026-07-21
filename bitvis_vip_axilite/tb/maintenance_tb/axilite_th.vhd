@@ -23,6 +23,8 @@ library bitvis_vip_axilite;
 use bitvis_vip_axilite.axilite_bfm_pkg.all;
 use bitvis_vip_axilite.axilite_slave_model_pkg.all;
 
+library tb_bitvis_vip_axilite ;
+
 --=================================================================================================
 entity axilite_th is
   generic(
@@ -55,7 +57,7 @@ begin
   -----------------------------
   -- Instantiate DUT
   -----------------------------
-  i_axilite_slave_1 : entity bitvis_vip_axilite.msec_ipcore_axilite
+  i_axilite_slave_1 : entity tb_bitvis_vip_axilite.msec_ipcore_axilite
     generic map(
       C_S_AXI_DATA_WIDTH => C_DATA_WIDTH_1,
       C_S_AXI_ADDR_WIDTH => C_ADDR_WIDTH_1
@@ -144,7 +146,7 @@ begin
   -----------------------------
   -- Instantiate DUT
   -----------------------------
-  i_axilite_slave_1 : entity bitvis_vip_axilite.msec_ipcore_axilite
+  i_axilite_slave_1 : entity tb_bitvis_vip_axilite.msec_ipcore_axilite
     generic map(
       C_S_AXI_DATA_WIDTH => C_DATA_WIDTH_1,
       C_S_AXI_ADDR_WIDTH => C_ADDR_WIDTH_1
@@ -230,7 +232,7 @@ begin
   -----------------------------
   -- vvc/executors
   -----------------------------
-  i1_axilite_vvc : entity work.axilite_vvc
+  i1_axilite_vvc : entity bitvis_vip_axilite.axilite_vvc
     generic map(
       GC_ADDR_WIDTH   => C_ADDR_WIDTH_1,
       GC_DATA_WIDTH   => C_DATA_WIDTH_1,
@@ -241,7 +243,7 @@ begin
       axilite_vvc_master_if => axilite_if_1
     );
 
-  i2_axilite_vvc : entity work.axilite_vvc
+  i2_axilite_vvc : entity bitvis_vip_axilite.axilite_vvc
     generic map(
       GC_ADDR_WIDTH   => C_ADDR_WIDTH_2,
       GC_DATA_WIDTH   => C_DATA_WIDTH_2,

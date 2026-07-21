@@ -62,7 +62,7 @@ begin
   -----------------------------------------------------------------------------
   -- Error injector
   -----------------------------------------------------------------------------
-  error_injector_sl : entity work.error_injection_sl
+  error_injector_sl : entity bitvis_vip_error_injection.error_injection_sl
     generic map(
       GC_INSTANCE_IDX => 1
     )
@@ -71,7 +71,7 @@ begin
       ei_out => output_sl
     );
 
-  error_injector_slv : entity work.error_injection_slv
+  error_injector_slv : entity bitvis_vip_error_injection.error_injection_slv
     generic map(
       GC_INSTANCE_IDX => 2
     )

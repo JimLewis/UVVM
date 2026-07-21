@@ -31,7 +31,7 @@ use bitvis_vip_wishbone.vvc_sb_support_pkg.all;
 --hdlregression:tb
 entity wishbone_vvc_tb is
   generic(
-    GC_DATA_WIDTH : integer;
+    GC_DATA_WIDTH : integer := 16;
     GC_TESTCASE   : string := "UVVM"
   );
 end entity;
@@ -62,7 +62,7 @@ begin
   p_main : process
     variable v_data        : std_logic_vector(GC_DATA_WIDTH - 1 downto 0);
     variable v_cmd_idx     : natural;
-    variable v_result      : work.vvc_cmd_pkg.t_vvc_result;
+    variable v_result      : bitvis_vip_wishbone.vvc_cmd_pkg.t_vvc_result;
     variable v_alert_level : t_alert_level;
 
     -- DUT ports towards VVC interface

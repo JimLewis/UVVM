@@ -69,7 +69,7 @@ begin
 
   i_ti_uvvm_engine : entity uvvm_vvc_framework.ti_uvvm_engine(func);
 
-  i_wishbone_vvc : entity work.wishbone_vvc
+  i_wishbone_vvc : entity bitvis_vip_wishbone.wishbone_vvc
     generic map (
       GC_ADDR_WIDTH   => C_ADDR_WIDTH,
       GC_DATA_WIDTH   => GC_DATA_WIDTH,

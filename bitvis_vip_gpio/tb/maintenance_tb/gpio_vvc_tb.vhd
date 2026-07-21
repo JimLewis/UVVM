@@ -78,7 +78,7 @@ begin
   i_ti_uvvm_engine : entity uvvm_vvc_framework.ti_uvvm_engine;
 
   -- GPIO as input
-  i1_gpio_vvc : entity work.gpio_vvc
+  i1_gpio_vvc : entity bitvis_vip_gpio.gpio_vvc
     generic map(
       GC_DATA_WIDTH         => 1,
       GC_INSTANCE_IDX       => 1,
@@ -89,7 +89,7 @@ begin
     );
     
   -- GPIO as input
-  i2_gpio_vvc : entity work.gpio_vvc
+  i2_gpio_vvc : entity bitvis_vip_gpio.gpio_vvc
     generic map(
       GC_DATA_WIDTH         => 2,
       GC_INSTANCE_IDX       => 2,
@@ -100,7 +100,7 @@ begin
     );
 
   -- GPIO as input
-  i3_gpio_vvc : entity work.gpio_vvc
+  i3_gpio_vvc : entity bitvis_vip_gpio.gpio_vvc
     generic map(
       GC_DATA_WIDTH         => 8,
       GC_INSTANCE_IDX       => 3,
@@ -111,7 +111,7 @@ begin
     );
 
   -- GPIO as input
-  i4_gpio_vvc : entity work.gpio_vvc
+  i4_gpio_vvc : entity bitvis_vip_gpio.gpio_vvc
     generic map(
       GC_DATA_WIDTH         => 1024,
       GC_INSTANCE_IDX       => 4,
@@ -124,7 +124,7 @@ begin
   ---------------------------------------------------------------
 
   -- GPIO as output
-  i5_gpio_vvc : entity work.gpio_vvc
+  i5_gpio_vvc : entity bitvis_vip_gpio.gpio_vvc
     generic map(
       GC_DATA_WIDTH         => 1,
       GC_INSTANCE_IDX       => 5,
@@ -135,7 +135,7 @@ begin
     );
     
   -- GPIO as output
-  i6_gpio_vvc : entity work.gpio_vvc
+  i6_gpio_vvc : entity bitvis_vip_gpio.gpio_vvc
     generic map(
       GC_DATA_WIDTH         => 2,
       GC_INSTANCE_IDX       => 6,
@@ -146,7 +146,7 @@ begin
     );
 
   -- GPIO as output
-  i7_gpio_vvc : entity work.gpio_vvc
+  i7_gpio_vvc : entity bitvis_vip_gpio.gpio_vvc
     generic map(
       GC_DATA_WIDTH         => 8,
       GC_INSTANCE_IDX       => 7,
@@ -157,7 +157,7 @@ begin
     );
 
   -- GPIO as output
-  i8_gpio_vvc : entity work.gpio_vvc
+  i8_gpio_vvc : entity bitvis_vip_gpio.gpio_vvc
     generic map(
       GC_DATA_WIDTH         => 1024,
       GC_INSTANCE_IDX       => 8,
@@ -170,7 +170,7 @@ begin
   ---------------------------------------------------------------   
 
   -- GPIO as input/output
-  i9_gpio_vvc : entity work.gpio_vvc
+  i9_gpio_vvc : entity bitvis_vip_gpio.gpio_vvc
     generic map(
       GC_DATA_WIDTH         => 8,
       GC_INSTANCE_IDX       => 9,

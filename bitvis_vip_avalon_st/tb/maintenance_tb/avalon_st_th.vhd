@@ -173,7 +173,7 @@ begin
   --------------------------------------------------------------------------------
   -- Instantiate VVCs
   --------------------------------------------------------------------------------
-  i_avalon_st_vvc_master : entity work.avalon_st_vvc
+  i_avalon_st_vvc_master : entity  bitvis_vip_avalon_st.avalon_st_vvc
     generic map(
       GC_VVC_IS_MASTER    => true,
       GC_CHANNEL_WIDTH    => GC_CHANNEL_WIDTH,
@@ -187,7 +187,7 @@ begin
       avalon_st_vvc_if => avalon_st_master_if
     );
 
-  i_avalon_st_vvc_slave : entity work.avalon_st_vvc
+  i_avalon_st_vvc_slave : entity bitvis_vip_avalon_st.avalon_st_vvc
     generic map(
       GC_VVC_IS_MASTER    => false,
       GC_CHANNEL_WIDTH    => GC_CHANNEL_WIDTH,
@@ -201,7 +201,7 @@ begin
       avalon_st_vvc_if => avalon_st_slave_if
     );
 
-  i_avalon_st_vvc2vvc_master : entity work.avalon_st_vvc
+  i_avalon_st_vvc2vvc_master : entity bitvis_vip_avalon_st.avalon_st_vvc
     generic map(
       GC_VVC_IS_MASTER    => true,
       GC_CHANNEL_WIDTH    => GC_CHANNEL_WIDTH,
@@ -215,7 +215,7 @@ begin
       avalon_st_vvc_if => avalon_st_vvc2vvc_if
     );
 
-  i_avalon_st_vvc2vcc_slave : entity work.avalon_st_vvc
+  i_avalon_st_vvc2vcc_slave : entity bitvis_vip_avalon_st.avalon_st_vvc
     generic map(
       GC_VVC_IS_MASTER    => false,
       GC_CHANNEL_WIDTH    => GC_CHANNEL_WIDTH,

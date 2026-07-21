@@ -24,7 +24,8 @@ context uvvm_util.uvvm_util_context;
 library bitvis_vip_sbi;
 use bitvis_vip_sbi.sbi_bfm_pkg.all;
 
-use work.irqc_pif_pkg.all;
+library bitvis_irqc ;
+use bitvis_irqc.irqc_pif_pkg.all;
 
 --hdlregression:tb
 -- Test case entity
@@ -81,7 +82,7 @@ begin
   -----------------------------------------------------------------------------
   -- Instantiate DUT
   -----------------------------------------------------------------------------
-  i_irqc : entity work.irqc
+  i_irqc : entity bitvis_irqc.irqc
     port map(
       -- DSP interface and general control signals
       clk         => clk,

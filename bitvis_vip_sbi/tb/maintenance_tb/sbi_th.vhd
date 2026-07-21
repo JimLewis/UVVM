@@ -92,7 +92,7 @@ begin
   -----------------------------
   -- vvc/executors
   -----------------------------
-  i1_sbi_vvc : entity work.sbi_vvc
+  i1_sbi_vvc : entity bitvis_vip_sbi.sbi_vvc
     generic map(
       GC_ADDR_WIDTH                         => GC_ADDR_WIDTH_1,
       GC_DATA_WIDTH                         => GC_DATA_WIDTH_1,
@@ -107,7 +107,7 @@ begin
       sbi_vvc_master_if => sbi_if_1
     );
 
-  i2_sbi_vvc : entity work.sbi_vvc
+  i2_sbi_vvc : entity bitvis_vip_sbi.sbi_vvc
     generic map(
       GC_ADDR_WIDTH   => GC_ADDR_WIDTH_2,
       GC_DATA_WIDTH   => GC_DATA_WIDTH_2,

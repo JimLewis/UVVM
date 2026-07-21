@@ -141,7 +141,7 @@ begin
   -----------------------------
   -- Instantiate DUTs
   -----------------------------
-  i_axi_slave_1 : entity work.axi_slave_model
+  i_axi_slave_1 : entity bitvis_vip_axi.axi_slave_model
     generic map(
       C_MEMORY_SIZE  => 4096,           -- size in bytes
       C_MEMORY_START => x"00000000"     -- address offset to start on
@@ -222,7 +222,7 @@ begin
   axi_if_1.read_data_channel.ruser       <= axi_if_1_ruser;
   axi_if_1.read_data_channel.rvalid      <= axi_if_1_rvalid;
 
-  i_axi_slave_2 : entity work.axi_slave_model
+  i_axi_slave_2 : entity bitvis_vip_axi.axi_slave_model
     generic map(
       C_MEMORY_SIZE  => 4096,           -- size in bytes
       C_MEMORY_START => x"00000000"     -- address offset to start on
@@ -291,7 +291,7 @@ begin
   -----------------------------
   -- Instantiate VVCs
   -----------------------------
-  i_axi_vvc_1 : entity work.axi_vvc
+  i_axi_vvc_1 : entity bitvis_vip_axi.axi_vvc
     generic map(
       GC_ADDR_WIDTH   => GC_ADDR_WIDTH_1,
       GC_DATA_WIDTH   => GC_DATA_WIDTH_1,
@@ -305,7 +305,7 @@ begin
       axi_vvc_master_if => axi_if_1
     );
 
-  i_axi_vvc_2 : entity work.axi_vvc
+  i_axi_vvc_2 : entity bitvis_vip_axi.axi_vvc
     generic map(
       GC_ADDR_WIDTH   => GC_ADDR_WIDTH_2,
       GC_DATA_WIDTH   => GC_DATA_WIDTH_2,

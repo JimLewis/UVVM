@@ -50,7 +50,7 @@ begin
   -----------------------------
   -- vvc/executors
   -----------------------------
-  i1_clock_generator_vvc : entity work.clock_generator_vvc
+  i1_clock_generator_vvc : entity bitvis_vip_clock_generator.clock_generator_vvc
     generic map(
       GC_INSTANCE_IDX    => 1,
       GC_CLOCK_NAME      => "Clock 1",
@@ -61,7 +61,7 @@ begin
       clk => clk_1
     );
 
-  i2_clock_generator_vvc : entity work.clock_generator_vvc
+  i2_clock_generator_vvc : entity bitvis_vip_clock_generator.clock_generator_vvc
     generic map(
       GC_INSTANCE_IDX    => 2,
       GC_CLOCK_NAME      => "Clock 2",
@@ -72,7 +72,7 @@ begin
       clk => clk_2
     );
 
-  i3_clock_generator_vvc : entity work.clock_generator_vvc
+  i3_clock_generator_vvc : entity bitvis_vip_clock_generator.clock_generator_vvc
     generic map(
       GC_INSTANCE_IDX    => 3,
       GC_CLOCK_NAME      => "Clock 3",

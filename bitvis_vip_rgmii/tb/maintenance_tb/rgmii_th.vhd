@@ -60,7 +60,7 @@ architecture struct_vvc of rgmii_th is
 begin
 
   -- Instantiate VVC
-  i_rgmii_vvc : entity work.rgmii_vvc
+  i_rgmii_vvc : entity bitvis_vip_rgmii.rgmii_vvc
     generic map(
       GC_INSTANCE_IDX => 0
     )

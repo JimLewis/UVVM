@@ -27,6 +27,8 @@ use uvvm_vvc_framework.ti_vvc_framework_support_pkg.all;
 library bitvis_vip_avalon_mm;
 context bitvis_vip_avalon_mm.vvc_context;
 
+library altera_mf ;
+
 --hdlregression:tb
 -- Test case entity
 entity avalon_mm_vvc_pipeline_tb is
@@ -127,7 +129,7 @@ begin
   -- Normal case, where the VVC uses the exact same clk as DUT
   --
   g_not_delta_delayed_vvc_clk : if not GC_DELTA_DELAYED_VVC_CLK generate
-    i1_avalon_mm_vvc : entity work.avalon_mm_vvc
+    i1_avalon_mm_vvc : entity bitvis_vip_avalon_mm.avalon_mm_vvc
       generic map(
         GC_ADDR_WIDTH   => C_ADDR_WIDTH,
         GC_DATA_WIDTH   => C_DATA_WIDTH,
@@ -146,7 +148,7 @@ begin
   -- for example it may lead to detecting the as_readdatavalid at the rising edge instead of later in the pulse
   --
   g_delta_delayed_vvc_clk : if GC_DELTA_DELAYED_VVC_CLK generate
-    i1_avalon_mm_vvc : entity work.avalon_mm_vvc
+    i1_avalon_mm_vvc : entity bitvis_vip_avalon_mm.avalon_mm_vvc
       generic map(
         GC_ADDR_WIDTH   => C_ADDR_WIDTH,
         GC_DATA_WIDTH   => C_DATA_WIDTH,

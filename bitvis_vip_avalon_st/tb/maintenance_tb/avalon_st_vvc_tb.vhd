@@ -70,7 +70,7 @@ architecture func of avalon_st_vvc_tb is
                                               data_error(GC_ERROR_WIDTH - 1 downto 0),
                                               empty(C_EMPTY_WIDTH - 1 downto 0));
 
-  alias t_vvc_result is work.vvc_cmd_pkg.t_vvc_result;
+  alias t_vvc_result is bitvis_vip_avalon_st.vvc_cmd_pkg.t_vvc_result;
 
 begin
 
