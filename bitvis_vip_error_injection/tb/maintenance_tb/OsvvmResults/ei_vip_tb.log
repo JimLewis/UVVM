@@ -1,0 +1,435 @@
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF GLOBAL CTRL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                                IGNORE    STOP_LIMIT
+%%                NOTE         :  REGARD    integer'high
+%%                TB_NOTE      :  REGARD    integer'high
+%%                WARNING      :  REGARD    integer'high
+%%                TB_WARNING   :  REGARD    integer'high
+%%                MANUAL_CHECK :  REGARD    integer'high
+%%                ERROR        :  REGARD    integer'high
+%%                TB_ERROR     :  REGARD    integer'high
+%%                FAILURE      :  REGARD         1
+%%                TB_FAILURE   :  REGARD         1
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF MSG ID PANEL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                ID                             Status
+%%                ------------------------       ------
+%%                ID_UTIL_BURIED               : DISABLED
+%%                ID_BITVIS_DEBUG              : DISABLED
+%%                ID_UTIL_SETUP                : ENABLED
+%%                ID_LOG_MSG_CTRL              : ENABLED
+%%                ID_ALERT_CTRL                : ENABLED
+%%                ID_FINISH_OR_STOP            : ENABLED
+%%                ID_CLOCK_GEN                 : ENABLED
+%%                ID_GEN_PULSE                 : ENABLED
+%%                ID_BLOCKING                  : ENABLED
+%%                ID_WATCHDOG                  : ENABLED
+%%                ID_RAND_GEN                  : DISABLED
+%%                ID_RAND_CONF                 : DISABLED
+%%                ID_FUNC_COV_BINS             : DISABLED
+%%                ID_FUNC_COV_BINS_INFO        : DISABLED
+%%                ID_FUNC_COV_RAND             : DISABLED
+%%                ID_FUNC_COV_SAMPLE           : DISABLED
+%%                ID_FUNC_COV_CONFIG           : DISABLED
+%%                ID_POS_ACK                   : ENABLED
+%%                ID_UVVM_ASSERTION            : ENABLED
+%%                ID_LOG_HDR                   : ENABLED
+%%                ID_LOG_HDR_LARGE             : ENABLED
+%%                ID_LOG_HDR_XL                : ENABLED
+%%                ID_SEQUENCER                 : ENABLED
+%%                ID_SEQUENCER_SUB             : ENABLED
+%%                ID_BFM                       : ENABLED
+%%                ID_BFM_WAIT                  : ENABLED
+%%                ID_BFM_POLL                  : ENABLED
+%%                ID_BFM_POLL_SUMMARY          : ENABLED
+%%                ID_CHANNEL_BFM               : ENABLED
+%%                ID_TERMINATE_CMD             : ENABLED
+%%                ID_SEGMENT_INITIATE          : ENABLED
+%%                ID_SEGMENT_COMPLETE          : ENABLED
+%%                ID_SEGMENT_HDR               : ENABLED
+%%                ID_SEGMENT_DATA              : ENABLED
+%%                ID_PACKET_INITIATE           : ENABLED
+%%                ID_PACKET_PREAMBLE           : ENABLED
+%%                ID_PACKET_COMPLETE           : ENABLED
+%%                ID_PACKET_HDR                : ENABLED
+%%                ID_PACKET_DATA               : ENABLED
+%%                ID_PACKET_CHECKSUM           : ENABLED
+%%                ID_PACKET_GAP                : ENABLED
+%%                ID_PACKET_PAYLOAD            : ENABLED
+%%                ID_FRAME_INITIATE            : ENABLED
+%%                ID_FRAME_COMPLETE            : ENABLED
+%%                ID_FRAME_HDR                 : ENABLED
+%%                ID_FRAME_DATA                : ENABLED
+%%                ID_COVERAGE_MAKEBIN          : DISABLED
+%%                ID_COVERAGE_ADDBIN           : DISABLED
+%%                ID_COVERAGE_ICOVER           : DISABLED
+%%                ID_COVERAGE_CONFIG           : ENABLED
+%%                ID_COVERAGE_SUMMARY          : ENABLED
+%%                ID_COVERAGE_HOLES            : ENABLED
+%%                ID_UVVM_SEND_CMD             : ENABLED
+%%                ID_UVVM_CMD_ACK              : ENABLED
+%%                ID_UVVM_CMD_RESULT           : ENABLED
+%%                ID_CMD_INTERPRETER           : ENABLED
+%%                ID_CMD_INTERPRETER_WAIT      : ENABLED
+%%                ID_IMMEDIATE_CMD             : ENABLED
+%%                ID_IMMEDIATE_CMD_WAIT        : ENABLED
+%%                ID_CMD_EXECUTOR              : ENABLED
+%%                ID_CMD_EXECUTOR_WAIT         : ENABLED
+%%                ID_CHANNEL_EXECUTOR          : ENABLED
+%%                ID_CHANNEL_EXECUTOR_WAIT     : ENABLED
+%%                ID_NEW_HVVC_CMD_SEQ          : ENABLED
+%%                ID_INSERTED_DELAY            : ENABLED
+%%                ID_OLD_AWAIT_COMPLETION      : ENABLED
+%%                ID_AWAIT_COMPLETION          : ENABLED
+%%                ID_AWAIT_COMPLETION_LIST     : ENABLED
+%%                ID_AWAIT_COMPLETION_WAIT     : ENABLED
+%%                ID_AWAIT_COMPLETION_END      : ENABLED
+%%                ID_AWAIT_UVVM_COMPLETION     : ENABLED
+%%                ID_UVVM_DATA_QUEUE           : ENABLED
+%%                ID_CONSTRUCTOR               : ENABLED
+%%                ID_CONSTRUCTOR_SUB           : ENABLED
+%%                ID_VVC_ACTIVITY              : ENABLED
+%%                ID_MONITOR                   : ENABLED
+%%                ID_MONITOR_ERROR             : ENABLED
+%%                ID_DATA                      : ENABLED
+%%                ID_CTRL                      : ENABLED
+%%                ID_SPEC_COV_INIT             : ENABLED
+%%                ID_SPEC_COV_REQS             : ENABLED
+%%                ID_SPEC_COV                  : ENABLED
+%%                ID_FILE_OPEN_CLOSE           : ENABLED
+%%                ID_FILE_PARSER               : ENABLED
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ALL_MESSAGES).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_SEQUENCER).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_LOG_HDR).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_LOG_HDR_XL).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_SEQUENCER_SUB).
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          EI_DEMO_TB          Starting simulation of Error Injection VIP TB.
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 
+%% 
+%% 
+%% ############################################################################################################################################################################
+%% 
+%%      0 ns    Log    ID_LOG_HDR_XL       TB seq.             Delay error injection tests
+%% 
+%% ############################################################################################################################################################################
+%% 
+%% 
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          EI_DEMO_TB          Delay test with delay = 7 ns and interval = 1.
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%      7 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify delayed initial edge 1.
+%%     27 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify delayed final edge 1.\n
+%%     40 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%     47 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify delayed initial edge 2.
+%%     67 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify delayed final edge 2.\n
+%% 
+%% 
+%%     80 ns    Log    ID_LOG_HDR          EI_DEMO_TB          Delay test with delay = 7 ns and interval = 2.
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%     80 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%     87 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify delayed initial edge 1.
+%%    107 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify delayed final edge 1.\n
+%%    120 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%    120 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify non delayed initial edge 2.
+%%    140 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify non delayed final edge 2.\n
+%%    160 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%    167 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify delayed initial edge 3.
+%%    187 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify delayed final edge 3.\n
+%%    200 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%    200 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify non delayed initial edge 4.
+%%    220 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify non delayed final edge 4.\n
+%%    240 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%    247 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify delayed initial edge 5.
+%%    267 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify delayed final edge 5.\n
+%%    280 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%    280 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify non delayed initial edge 6.
+%%    300 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify non delayed final edge 6.\n
+%%    320 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Resetting EI VIP inputs
+%% 
+%% 
+%%    420 ns    Log    ID_LOG_HDR          EI_DEMO_TB          Delay test with randomised delay = 1-10 ns and interval = 1.
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    420 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%    427 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify delayed initial edge 1.
+%%    447 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify delayed final edge 1.\n
+%%    467 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%    473 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify delayed initial edge 2.
+%%    493 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify delayed final edge 2.\n
+%%    513 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Resetting EI VIP inputs
+%% 
+%% 
+%% 
+%% ############################################################################################################################################################################
+%% 
+%%    613 ns    Log    ID_LOG_HDR_XL       TB seq.             Jitter error injection tests
+%% 
+%% ############################################################################################################################################################################
+%% 
+%% 
+%% 
+%% 
+%%    613 ns    Log    ID_LOG_HDR          EI_DEMO_TB          Jitter test with jitter = 7 ns - 3 ns and interval = 1.
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    613 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%    620 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify jittered initial edge 1.
+%%    636 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify jittered final edge 1.\n
+%%    656 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%    663 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify jittered initial edge 2.
+%%    679 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify jittered final edge 2.\n
+%% 
+%% 
+%%    699 ns    Log    ID_LOG_HDR          EI_DEMO_TB          Jitter test with delay = 7 ns and interval = 2.
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    699 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%    706 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify jittered initial edge 1.
+%%    722 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify jittered final edge 1.\n
+%%    739 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%    739 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify non jittered initial edge 2.
+%%    759 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify non jittered final edge 2.\n
+%%    779 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%    786 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify jittered initial edge 3.
+%%    802 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify jittered final edge 3.\n
+%%    819 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%    819 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify non jittered initial edge 4.
+%%    839 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify non jittered final edge 4.\n
+%%    859 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%    866 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify jittered initial edge 5.
+%%    882 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify jittered final edge 5.\n
+%%    899 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%    899 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify non jittered initial edge 6.
+%%    919 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify non jittered final edge 6.\n
+%%    939 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Resetting EI VIP inputs
+%% 
+%% 
+%% 
+%% ############################################################################################################################################################################
+%% 
+%%   1039 ns    Log    ID_LOG_HDR_XL       TB seq.             Invert error injection tests
+%% 
+%% ############################################################################################################################################################################
+%% 
+%% 
+%% 
+%% 
+%%   1039 ns    Log    ID_LOG_HDR          EI_DEMO_TB          Invert test with interval = 1.
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   1039 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%   1059 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify inverted signal -1.\n
+%%   1079 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%   1079 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify inverted signal 0.\n
+%% 
+%% 
+%%   1099 ns    Log    ID_LOG_HDR          EI_DEMO_TB          Invert test with interval = 2.
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   1099 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%   1099 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify inverted signal 1.
+%%   1119 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify inverted signal 1.\n
+%%   1139 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%   1139 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify non inverted signal 2.
+%%   1159 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify non inverted signal 2.\n
+%%   1179 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%   1179 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify inverted signal 3.
+%%   1199 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify inverted signal 3.\n
+%%   1219 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%   1219 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify non inverted signal 4.
+%%   1239 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify non inverted signal 4.\n
+%%   1259 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%   1259 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify inverted signal 5.
+%%   1279 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify inverted signal 5.\n
+%%   1299 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%   1299 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify non inverted signal 6.
+%%   1319 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify non inverted signal 6.\n
+%%   1339 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Resetting EI VIP inputs
+%% 
+%% 
+%% 
+%% ############################################################################################################################################################################
+%% 
+%%   1439 ns    Log    ID_LOG_HDR_XL       TB seq.             Pulse error injection tests
+%% 
+%% ############################################################################################################################################################################
+%% 
+%% 
+%% 
+%% 
+%%   1439 ns    Log    ID_LOG_HDR          EI_DEMO_TB          Pulse test with pulse start = 7 ns, pulse width = 6 ns, and interval = 1.
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   1439 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%   1439 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify normal signal start 1.
+%%   1446 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify pulse start 1.
+%%   1452 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify pulse end 1.
+%%   1459 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify signal end 1.\n
+%%   1479 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%   1479 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify normal signal start 2.
+%%   1486 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify pulse start 2.
+%%   1492 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify pulse end 2.
+%%   1499 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify signal end 2.\n
+%% 
+%% 
+%%   1519 ns    Log    ID_LOG_HDR          EI_DEMO_TB          Pulse test with interval = 2.
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   1519 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%   1519 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify normal signal start 1.
+%%   1526 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify pulse start 1.
+%%   1532 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify pulse end 1.
+%%   1539 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify signal end 1.\n
+%%   1559 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%   1559 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify normal signal start 2.
+%%   1559 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify non pulsed signal 2.
+%%   1579 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify signal end 2.\n
+%%   1599 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%   1599 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify normal signal start 3.
+%%   1606 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify pulse start 3.
+%%   1612 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify pulse end 3.
+%%   1619 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify signal end 3.\n
+%%   1639 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%   1639 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify normal signal start 4.
+%%   1639 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify non pulsed signal 4.
+%%   1659 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify signal end 4.\n
+%%   1679 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%   1679 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify normal signal start 5.
+%%   1686 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify pulse start 5.
+%%   1692 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify pulse end 5.
+%%   1699 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify signal end 5.\n
+%%   1719 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%   1719 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify normal signal start 6.
+%%   1719 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify non pulsed signal 6.
+%%   1739 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify signal end 6.\n
+%%   1759 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Resetting EI VIP inputs
+%% 
+%% 
+%% 
+%% ############################################################################################################################################################################
+%% 
+%%   1859 ns    Log    ID_LOG_HDR_XL       EI_DEMO_TB          Stuck at old error injection test.
+%% 
+%% ############################################################################################################################################################################
+%% 
+%% 
+%% 
+%% 
+%%   1859 ns    Log    ID_LOG_HDR          EI_DEMO_TB          Stuck at old test with stuck = 13 ns and interval = 1.
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   1859 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%   1872 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify stuck period 1.\n
+%%   1879 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify signal duration 1.\n
+%%   1899 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%   1912 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify stuck period 2.\n
+%%   1919 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify signal duration 2.\n
+%% 
+%% 
+%%   1939 ns    Log    ID_LOG_HDR          EI_DEMO_TB          Stuck at old test with interval = 2.
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   1939 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%   1952 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify stuck at old period 1.\n
+%%   1979 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%   1979 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify not stuck at old 2.\n
+%%   2019 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%   2032 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify stuck at old period 3.\n
+%%   2059 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%   2059 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify not stuck at old 4.\n
+%%   2099 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%   2112 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify stuck at old period 5.\n
+%%   2139 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%   2139 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify not stuck at old 6.\n
+%%   2179 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Resetting EI VIP inputs
+%% 
+%% 
+%% 
+%% ############################################################################################################################################################################
+%% 
+%%   2279 ns    Log    ID_LOG_HDR_XL       TB seq.             Stuck at new error injection tests
+%% 
+%% ############################################################################################################################################################################
+%% 
+%% 
+%% 
+%% 
+%%   2279 ns    Log    ID_LOG_HDR          EI_DEMO_TB          Stuck at new test with stuck = 35 ns (SL) / 45 ns (SLV) and interval = 1.
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   2279 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%   2279 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify stuck periods, valid interval for SL and SLV 1.\n
+%%   2319 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%   2319 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify stuck periods, valid interval for SL 2.\n
+%% 
+%% 
+%%   2354 ns    Log    ID_LOG_HDR          EI_DEMO_TB          Stuck at new test with interval = 2.
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   2359 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%   2359 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify stuck periods, valid interval for SL and SLV 3.\n
+%%   2399 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%   2399 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify stuck periods, valid interval for SL 4.\n
+%%   2439 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%   2439 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify stuck periods, valid interval for SL 5.\n
+%%   2479 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%   2479 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify stuck periods, valid interval for SLV 6.\n
+%%   2519 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%   2519 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify stuck periods, valid interval for SL 7.\n
+%%   2559 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Resetting EI VIP inputs
+%% 
+%% 
+%% 
+%% ############################################################################################################################################################################
+%% 
+%%   2659 ns    Log    ID_LOG_HDR_XL       TB seq.             Bypass error injection tests
+%% 
+%% ############################################################################################################################################################################
+%% 
+%% 
+%% 
+%% 
+%%   2659 ns    Log    ID_LOG_HDR          EI_DEMO_TB          Bypass test and interval = 1.
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   2659 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%   2659 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify SLV on SL high period 1.\n
+%%   2679 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify SLV on SL low period and width 1.\n
+%%   2699 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%   2699 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify SLV on SL high period 2.\n
+%%   2719 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify SLV on SL low period and width 2.\n
+%%   2739 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%   2739 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify SLV on SL high period 3.\n
+%%   2759 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify SLV on SL low period and width 3.\n
+%%   2779 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%   2779 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify SLV on SL high period 4.\n
+%%   2799 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify SLV on SL low period and width 4.\n
+%%   2819 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%   2819 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify SLV on SL high period 5.\n
+%%   2839 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify SLV on SL low period and width 5.\n
+%%   2859 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%   2859 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify SLV on SL high period 6.\n
+%%   2879 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify SLV on SL low period and width 6.\n
+%%   2899 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%   2899 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify SLV on SL high period 7.\n
+%%   2919 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify SLV on SL low period and width 7.\n
+%%   2939 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Setting EI VIPs input signal
+%%   2939 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify SLV on SL high period 8.\n
+%%   2959 ns    Log    ID_SEQUENCER        EI_DEMO_TB          Verify SLV on SL low period and width 8.\n
+%%   2979 ns    Log    ID_SEQUENCER_SUB    EI_DEMO_TB          Resetting EI VIP inputs
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%   4079 ns    DONE   NOCHECKS   ei_vip_tb  Passed: 0
+%%    Expected      Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%%   4079 ns    Log    ID_LOG_HDR          EI_DEMO_TB          SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

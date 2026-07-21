@@ -1,0 +1,276 @@
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF GLOBAL CTRL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                                IGNORE    STOP_LIMIT
+%%                NOTE         :  REGARD    integer'high
+%%                TB_NOTE      :  REGARD    integer'high
+%%                WARNING      :  REGARD    integer'high
+%%                TB_WARNING   :  REGARD    integer'high
+%%                MANUAL_CHECK :  REGARD    integer'high
+%%                ERROR        :  REGARD    integer'high
+%%                TB_ERROR     :  REGARD    integer'high
+%%                FAILURE      :  REGARD         1
+%%                TB_FAILURE   :  REGARD         1
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF MSG ID PANEL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                ID                             Status
+%%                ------------------------       ------
+%%                ID_UTIL_BURIED               : DISABLED
+%%                ID_BITVIS_DEBUG              : DISABLED
+%%                ID_UTIL_SETUP                : ENABLED
+%%                ID_LOG_MSG_CTRL              : ENABLED
+%%                ID_ALERT_CTRL                : ENABLED
+%%                ID_FINISH_OR_STOP            : ENABLED
+%%                ID_CLOCK_GEN                 : ENABLED
+%%                ID_GEN_PULSE                 : ENABLED
+%%                ID_BLOCKING                  : ENABLED
+%%                ID_WATCHDOG                  : ENABLED
+%%                ID_RAND_GEN                  : DISABLED
+%%                ID_RAND_CONF                 : DISABLED
+%%                ID_FUNC_COV_BINS             : DISABLED
+%%                ID_FUNC_COV_BINS_INFO        : DISABLED
+%%                ID_FUNC_COV_RAND             : DISABLED
+%%                ID_FUNC_COV_SAMPLE           : DISABLED
+%%                ID_FUNC_COV_CONFIG           : DISABLED
+%%                ID_POS_ACK                   : ENABLED
+%%                ID_UVVM_ASSERTION            : ENABLED
+%%                ID_LOG_HDR                   : ENABLED
+%%                ID_LOG_HDR_LARGE             : ENABLED
+%%                ID_LOG_HDR_XL                : ENABLED
+%%                ID_SEQUENCER                 : ENABLED
+%%                ID_SEQUENCER_SUB             : ENABLED
+%%                ID_BFM                       : ENABLED
+%%                ID_BFM_WAIT                  : ENABLED
+%%                ID_BFM_POLL                  : ENABLED
+%%                ID_BFM_POLL_SUMMARY          : ENABLED
+%%                ID_CHANNEL_BFM               : ENABLED
+%%                ID_TERMINATE_CMD             : ENABLED
+%%                ID_SEGMENT_INITIATE          : ENABLED
+%%                ID_SEGMENT_COMPLETE          : ENABLED
+%%                ID_SEGMENT_HDR               : ENABLED
+%%                ID_SEGMENT_DATA              : ENABLED
+%%                ID_PACKET_INITIATE           : ENABLED
+%%                ID_PACKET_PREAMBLE           : ENABLED
+%%                ID_PACKET_COMPLETE           : ENABLED
+%%                ID_PACKET_HDR                : ENABLED
+%%                ID_PACKET_DATA               : ENABLED
+%%                ID_PACKET_CHECKSUM           : ENABLED
+%%                ID_PACKET_GAP                : ENABLED
+%%                ID_PACKET_PAYLOAD            : ENABLED
+%%                ID_FRAME_INITIATE            : ENABLED
+%%                ID_FRAME_COMPLETE            : ENABLED
+%%                ID_FRAME_HDR                 : ENABLED
+%%                ID_FRAME_DATA                : ENABLED
+%%                ID_COVERAGE_MAKEBIN          : DISABLED
+%%                ID_COVERAGE_ADDBIN           : DISABLED
+%%                ID_COVERAGE_ICOVER           : DISABLED
+%%                ID_COVERAGE_CONFIG           : ENABLED
+%%                ID_COVERAGE_SUMMARY          : ENABLED
+%%                ID_COVERAGE_HOLES            : ENABLED
+%%                ID_UVVM_SEND_CMD             : ENABLED
+%%                ID_UVVM_CMD_ACK              : ENABLED
+%%                ID_UVVM_CMD_RESULT           : ENABLED
+%%                ID_CMD_INTERPRETER           : ENABLED
+%%                ID_CMD_INTERPRETER_WAIT      : ENABLED
+%%                ID_IMMEDIATE_CMD             : ENABLED
+%%                ID_IMMEDIATE_CMD_WAIT        : ENABLED
+%%                ID_CMD_EXECUTOR              : ENABLED
+%%                ID_CMD_EXECUTOR_WAIT         : ENABLED
+%%                ID_CHANNEL_EXECUTOR          : ENABLED
+%%                ID_CHANNEL_EXECUTOR_WAIT     : ENABLED
+%%                ID_NEW_HVVC_CMD_SEQ          : ENABLED
+%%                ID_INSERTED_DELAY            : ENABLED
+%%                ID_OLD_AWAIT_COMPLETION      : ENABLED
+%%                ID_AWAIT_COMPLETION          : ENABLED
+%%                ID_AWAIT_COMPLETION_LIST     : ENABLED
+%%                ID_AWAIT_COMPLETION_WAIT     : ENABLED
+%%                ID_AWAIT_COMPLETION_END      : ENABLED
+%%                ID_AWAIT_UVVM_COMPLETION     : ENABLED
+%%                ID_UVVM_DATA_QUEUE           : ENABLED
+%%                ID_CONSTRUCTOR               : ENABLED
+%%                ID_CONSTRUCTOR_SUB           : ENABLED
+%%                ID_VVC_ACTIVITY              : ENABLED
+%%                ID_MONITOR                   : ENABLED
+%%                ID_MONITOR_ERROR             : ENABLED
+%%                ID_DATA                      : ENABLED
+%%                ID_CTRL                      : ENABLED
+%%                ID_SPEC_COV_INIT             : ENABLED
+%%                ID_SPEC_COV_REQS             : ENABLED
+%%                ID_SPEC_COV                  : ENABLED
+%%                ID_FILE_OPEN_CLOSE           : ENABLED
+%%                ID_FILE_PARSER               : ENABLED
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_PACKET_DATA).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_PACKET_PAYLOAD).
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Start Simulation of TB for AXISTREAM 1
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             TC: BFM axistream transmits slv packet: 
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_CLOCK_GEN        TB seq.             Starting clock axistream CLK
+%%      5 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_transmit(1 words[8b])=> 'Directly assign args, transmitting AA'
+%%      5 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_expect(1 words[8b]) while executing axistream_receive=> Receive packet. 'Directly assigned args, expecting AA'
+%%   12.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_transmit(1 words[8b])=> Tx DONE. 'Directly assign args, transmitting AA'
+%%     15 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_transmit(1 words[16b])=> 'Directly assign args, transmitting AABB'
+%%   22.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_transmit(1 words[16b])=> Tx DONE. 'Directly assign args, transmitting AABB'
+%%     25 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_transmit(1 words[24b])=> 'Directly assign args, transmitting AABBCC'
+%%   32.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_expect(1 words[8b])=> OK, received 1 words[8b]). 'Directly assigned args, expecting AA'
+%%   32.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_transmit(1 words[24b])=> Tx DONE. 'Directly assign args, transmitting AABBCC'
+%%     35 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_expect(1 words[16b]) while executing axistream_receive=> Receive packet. 'Directly assigned args, expecting AABB'
+%%     35 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_transmit(1 words[32b])=> 'Directly assign args, transmitting AABBCCDD'
+%%   42.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_expect(1 words[16b])=> OK, received 1 words[16b]). 'Directly assigned args, expecting AABB'
+%%   42.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_transmit(1 words[32b])=> Tx DONE. 'Directly assign args, transmitting AABBCCDD'
+%% 
+%% 
+%%   42.5 ns    Log    ID_LOG_HDR          TB seq.             TC: BFM axistream transmits short packet: 
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%     45 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_expect(1 words[24b]) while executing axistream_receive=> Receive packet. 'Directly assigned args, expecting AABBCC'
+%%     45 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_transmit(4 words[8b])=> 'Directly assign args'
+%%   52.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_expect(1 words[24b])=> OK, received 1 words[24b]). 'Directly assigned args, expecting AABBCC'
+%%   52.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_transmit(4 words[8b])=> Tx DONE. 'Directly assign args'
+%%     55 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_expect(1 words[32b]) while executing axistream_receive=> Receive packet. 'Directly assigned args, expecting AABBCCDD'
+%%     55 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_transmit(4 words[16b])=> 'Directly assign args'
+%%   62.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_expect(1 words[32b])=> OK, received 1 words[32b]). 'Directly assigned args, expecting AABBCCDD'
+%%     65 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_expect(4 words[8b]) while executing axistream_receive=> Receive packet. 'Directly assigned args.'
+%%   72.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_transmit(4 words[16b])=> Tx DONE. 'Directly assign args'
+%%   72.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_expect(4 words[8b])=> OK, received 4 words[8b]). 'Directly assigned args.'
+%%     75 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_transmit(4 words[24b])=> 'Directly assign args'
+%%     75 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_expect(4 words[16b]) while executing axistream_receive=> Receive packet. 'Directly assigned args.'
+%%   92.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_expect(4 words[16b])=> OK, received 4 words[16b]). 'Directly assigned args.'
+%%     95 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_expect(4 words[24b]) while executing axistream_receive=> Receive packet. 'Directly assigned args.'
+%%  102.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_transmit(4 words[24b])=> Tx DONE. 'Directly assign args'
+%%    105 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_transmit(4 words[32b])=> 'Directly assign args'
+%%  122.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_expect(4 words[24b])=> OK, received 4 words[24b]). 'Directly assigned args.'
+%%    125 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_expect(4 words[32b]) while executing axistream_receive=> Receive packet. 'Directly assigned args.'
+%%  142.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_transmit(4 words[32b])=> Tx DONE. 'Directly assign args'
+%%    145 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_transmit(2 words[8b])=> 'Directly assign args including tuser'
+%%  152.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_transmit(2 words[8b])=> Tx DONE. 'Directly assign args including tuser'
+%%    155 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_transmit(2 words[16b])=> 'Directly assign args including tuser'
+%%  162.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_expect(4 words[32b])=> OK, received 4 words[32b]). 'Directly assigned args.'
+%%  162.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_transmit(2 words[16b])=> Tx DONE. 'Directly assign args including tuser'
+%%    165 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_expect(2 words[8b]) while executing axistream_receive=> Receive packet. 'Directly assigned args, including tuser.'
+%%    165 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_transmit(2 words[24b])=> 'Directly assign args including tuser'
+%%  172.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_expect(2 words[8b])=> OK, received 2 words[8b]). 'Directly assigned args, including tuser.'
+%%    175 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_expect(2 words[16b]) while executing axistream_receive=> Receive packet. 'Directly assigned args, including tuser.'
+%%  182.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_transmit(2 words[24b])=> Tx DONE. 'Directly assign args including tuser'
+%%  182.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_expect(2 words[16b])=> OK, received 2 words[16b]). 'Directly assigned args, including tuser.'
+%%    185 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_transmit(2 words[32b])=> 'Directly assign args including tuser'
+%%    185 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_expect(2 words[24b]) while executing axistream_receive=> Receive packet. 'Directly assigned args, including tuser.'
+%%  202.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_transmit(2 words[32b])=> Tx DONE. 'Directly assign args including tuser'
+%%  202.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_expect(2 words[24b])=> OK, received 2 words[24b]). 'Directly assigned args, including tuser.'
+%%    205 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_transmit(8 words[8b])=> 'transmit, default tuser, tstrb etc'
+%%    205 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_expect(2 words[32b]) while executing axistream_receive=> Receive packet. 'Directly assigned args, including tuser.'
+%%  222.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_transmit(8 words[8b])=> Tx DONE. 'transmit, default tuser, tstrb etc'
+%%  222.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_expect(2 words[32b])=> OK, received 2 words[32b]). 'Directly assigned args, including tuser.'
+%%    225 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_expect(8 words[8b]) while executing axistream_receive=> Receive packet. 'ready_low_at_word_num=1, ready_low_duration=3, ready_default_value=0, bytes_in_word=1'
+%%  272.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_expect(8 words[8b])=> OK, received 8 words[8b]). 'ready_low_at_word_num=1, ready_low_duration=3, ready_default_value=0, bytes_in_word=1'
+%%    275 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_expect(8 words[16b]) while executing axistream_receive=> Receive packet. 'ready_low_at_word_num=0, ready_low_duration=0, ready_default_value=1, bytes_in_word=2'
+%%    325 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_transmit(8 words[16b])=> 'transmit, setting tuser. Default tstrb etc'
+%%  362.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_transmit(8 words[16b])=> Tx DONE. 'transmit, setting tuser. Default tstrb etc'
+%%    365 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_transmit(8 words[24b])=> 'transmit, setting tuser. Default tstrb etc'
+%%  382.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_expect(8 words[16b])=> OK, received 8 words[16b]). 'ready_low_at_word_num=0, ready_low_duration=0, ready_default_value=1, bytes_in_word=2'
+%%    385 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_expect(8 words[24b]) while executing axistream_receive=> Receive packet. 'ready_low_at_word_num=1, ready_low_duration=0, ready_default_value=0, bytes_in_word=3'
+%%  422.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_transmit(8 words[24b])=> Tx DONE. 'transmit, setting tuser. Default tstrb etc'
+%%    425 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_transmit(8 words[32b])=> 'transmit, setting tuser. Default tstrb etc'
+%%  442.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_expect(8 words[24b])=> OK, received 8 words[24b]). 'ready_low_at_word_num=1, ready_low_duration=0, ready_default_value=0, bytes_in_word=3'
+%%    445 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_expect(8 words[32b]) while executing axistream_receive=> Receive packet. 'ready_low_at_word_num=7, ready_low_duration=0, ready_default_value=0, bytes_in_word=4'
+%%  502.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_transmit(8 words[32b])=> Tx DONE. 'transmit, setting tuser. Default tstrb etc'
+%% 
+%% 
+%%  502.5 ns    Log    ID_LOG_HDR          TB seq.             TC: BFM transmit verify alert if data_array don't consist of N*bytes: 
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  502.5 ns    Alert  ERROR               TB seq.             axistream_transmit(8 words[0b])(bool, true) => Failed. Value was false. Expected true. 'Sanity check: Check that data_array word is N*byte'
+%%  502.5 ns    Alert  ERROR               TB seq.             axistream_transmit(8 words[8b])(bool, true) => Failed. Value was false. Expected true. 'Sanity check: Check that data_array word is N*byte'
+%%    505 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_transmit(8 words[8b])=> 'Directly assign args, no error transmit'
+%%  522.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_transmit(8 words[8b])=> Tx DONE. 'Directly assign args, no error transmit'
+%%  522.5 ns    Alert  ERROR               TB seq.             axistream_transmit(8 words[8b])(bool, true) => Failed. Value was false. Expected true. 'Sanity check: Check that data_array word is N*byte'
+%%  522.5 ns    Alert  ERROR               TB seq.             axistream_transmit(8 words[16b])(bool, true) => Failed. Value was false. Expected true. 'Sanity check: Check that data_array word is N*byte'
+%%  522.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_expect(8 words[32b])=> OK, received 8 words[32b]). 'ready_low_at_word_num=7, ready_low_duration=0, ready_default_value=0, bytes_in_word=4'
+%%  522.5 ns    Alert  ERROR               TB seq.             axistream_expect(8 words[0b])(bool, true) => Failed. Value was false. Expected true. 'Sanity check: Check that exp_data_array word is N*byte'
+%%  522.5 ns    Alert  ERROR               TB seq.             axistream_expect(8 words[8b])(bool, true) => Failed. Value was false. Expected true. 'Sanity check: Check that exp_data_array word is N*byte'
+%%    525 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_transmit(8 words[16b])=> 'Directly assign args, no error transmit'
+%%    525 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_expect(8 words[8b]) while executing axistream_receive=> Receive packet. 'Directly assigned args, including tuser.'
+%%  542.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_expect(8 words[8b])=> OK, received 8 words[8b]). 'Directly assigned args, including tuser.'
+%%  542.5 ns    Alert  ERROR               TB seq.             axistream_expect(8 words[8b])(bool, true) => Failed. Value was false. Expected true. 'Sanity check: Check that exp_data_array word is N*byte'
+%%  542.5 ns    Alert  ERROR               TB seq.             axistream_expect(8 words[16b])(bool, true) => Failed. Value was false. Expected true. 'Sanity check: Check that exp_data_array word is N*byte'
+%%    545 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_expect(8 words[16b]) while executing axistream_receive=> Receive packet. 'Directly assigned args, including tuser.'
+%%  562.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_transmit(8 words[16b])=> Tx DONE. 'Directly assign args, no error transmit'
+%%  562.5 ns    Alert  ERROR               TB seq.             axistream_transmit(8 words[16b])(bool, true) => Failed. Value was false. Expected true. 'Sanity check: Check that data_array word is N*byte'
+%%  562.5 ns    Alert  ERROR               TB seq.             axistream_transmit(8 words[24b])(bool, true) => Failed. Value was false. Expected true. 'Sanity check: Check that data_array word is N*byte'
+%%    565 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_transmit(8 words[24b])=> 'Directly assign args, no error transmit'
+%%  582.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_expect(8 words[16b])=> OK, received 8 words[16b]). 'Directly assigned args, including tuser.'
+%%  582.5 ns    Alert  ERROR               TB seq.             axistream_expect(8 words[16b])(bool, true) => Failed. Value was false. Expected true. 'Sanity check: Check that exp_data_array word is N*byte'
+%%  582.5 ns    Alert  ERROR               TB seq.             axistream_expect(8 words[24b])(bool, true) => Failed. Value was false. Expected true. 'Sanity check: Check that exp_data_array word is N*byte'
+%%    585 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_expect(8 words[24b]) while executing axistream_receive=> Receive packet. 'Directly assigned args, including tuser.'
+%%  622.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_transmit(8 words[24b])=> Tx DONE. 'Directly assign args, no error transmit'
+%%  622.5 ns    Alert  ERROR               TB seq.             axistream_transmit(8 words[24b])(bool, true) => Failed. Value was false. Expected true. 'Sanity check: Check that data_array word is N*byte'
+%%  622.5 ns    Alert  ERROR               TB seq.             axistream_transmit(8 words[32b])(bool, true) => Failed. Value was false. Expected true. 'Sanity check: Check that data_array word is N*byte'
+%%    625 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_transmit(8 words[32b])=> 'Directly assign args, no error transmit'
+%%  642.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_expect(8 words[24b])=> OK, received 8 words[24b]). 'Directly assigned args, including tuser.'
+%%  642.5 ns    Alert  ERROR               TB seq.             axistream_expect(8 words[24b])(bool, true) => Failed. Value was false. Expected true. 'Sanity check: Check that exp_data_array word is N*byte'
+%%  642.5 ns    Alert  ERROR               TB seq.             axistream_expect(8 words[32b])(bool, true) => Failed. Value was false. Expected true. 'Sanity check: Check that exp_data_array word is N*byte'
+%%    645 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_expect(8 words[32b]) while executing axistream_receive=> Receive packet. 'Directly assigned args, including tuser.'
+%%  702.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_transmit(8 words[32b])=> Tx DONE. 'Directly assign args, no error transmit'
+%% 
+%% 
+%%  702.5 ns    Log    ID_LOG_HDR          TB seq.             TC: Testing BFM receive and expect check the correct number of bytes in the last word: 
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    705 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_transmit(4 words[8b])=> 'transmit 4 bytes'
+%%  712.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_transmit(4 words[8b])=> Tx DONE. 'transmit 4 bytes'
+%%    715 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_transmit(4 words[8b])=> 'transmit 4 bytes'
+%%  722.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_expect(8 words[32b])=> OK, received 8 words[32b]). 'Directly assigned args, including tuser.'
+%%  722.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_transmit(4 words[8b])=> Tx DONE. 'transmit 4 bytes'
+%% 
+%% 
+%%  722.5 ns    Log    ID_LOG_HDR          TB seq.             TC: Testing BFM transmit, receive and expect with non-normalized slv_array: 
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    725 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_receive()=> Receive packet. 'receiving 2 bytes'
+%%    725 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_transmit(4 words[8b])=> 'transmit bytes 1 to 4'
+%%    730 ns    Alert  ERROR               TB seq.             axistream_receive()=> Failed. data_array too small for received bytes. 'receiving 2 bytes'
+%%  732.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_receive()=> Rx DONE (2 words[8b]). 'receiving 2 bytes'
+%%  732.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_transmit(4 words[8b])=> Tx DONE. 'transmit bytes 1 to 4'
+%%    735 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_expect(2 words[8b]) while executing axistream_receive=> Receive packet. 'expecting 2 bytes'
+%%    735 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_transmit(4 words[8b])=> 'transmit bytes 1 to 4'
+%%    740 ns    Alert  ERROR               TB seq.             axistream_expect(2 words[8b]) while executing axistream_receive=> Failed. data_array too small for received bytes. 'expecting 2 bytes'
+%%  742.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_expect(2 words[8b])=> OK, received 2 words[8b]). 'expecting 2 bytes'
+%%  742.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_transmit(4 words[8b])=> Tx DONE. 'transmit bytes 1 to 4'
+%%  742.5 ns    Log    ID_BLOCKING         TB seq.             Waiting for barrier. 'Synchronizing master'
+%%    745 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_receive()=> Receive packet. 'receiving bytes 1 to 4'
+%%  752.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_receive()=> Rx DONE (4 words[8b]). 'receiving bytes 1 to 4'
+%%    755 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_expect(4 words[8b]) while executing axistream_receive=> Receive packet. 'expecting bytes 1 to 4'
+%%  762.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_expect(4 words[8b])=> OK, received 4 words[8b]). 'expecting bytes 1 to 4'
+%%  762.5 ns    Log    ID_BLOCKING         TB seq.             Waiting for barrier. 'Synchronizing slave'
+%%  762.5 ns    Log    ID_BLOCKING         TB seq.             Barrier received. 'Synchronizing master'
+%% 
+%% 
+%%  762.5 ns    Log    ID_LOG_HDR          TB seq.             TC: Testing BFM receive() timeouts at max_wait_cycles: 
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  762.5 ns    Log    ID_BLOCKING         TB seq.             Barrier received. 'Synchronizing slave'
+%%    765 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_receive()=> Receive packet. 'invalid receive'
+%%  10765 ns    Alert  ERROR               TB seq.             axistream_receive()=> Failed. Timeout while waiting for valid data during 1000 clock cycles. 'invalid receive'
+%%  10775 ns    Log    ID_PACKET_INITIATE  TB seq.             axistream_receive()=> Receive packet. 'invalid receive'
+%%  20775 ns    Alert  ERROR               TB seq.             axistream_receive()=> Failed. Timeout while waiting for valid data during 1000 clock cycles. 'invalid receive'
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%% 21762.5 ns    DONE   PASSED   axistream_bfm_slv_array_tb  Passed: 0  Affirmations Checked: 16
+%%    Expected      Failures: 0  Errors: -20  Warnings: 0  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 20  Warnings: 0  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% 21762.5 ns    Log    ID_LOG_HDR          TB seq.             SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

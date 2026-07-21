@@ -1,0 +1,385 @@
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ALL_MESSAGES).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_LOG_HDR_LARGE).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_LOG_HDR).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_SEQUENCER).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_UVVM_ASSERTION).
+%% 
+%% 
+%% ============================================================================================================================================================================
+%%    100 ns    Log    ID_LOG_HDR_LARGE    TB seq.(uvvm)       Testing the assertion: assert_change_to_value_from_start_to_end_trigger
+%% ============================================================================================================================================================================
+%% 
+%% 
+%%    150 ns    Log    ID_LOG_HDR          TB seq.             Testing Normal Operation (std_logic_vector)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    150 ns    Log    ID_SEQUENCER        TB seq.             Testing std_logic_vector transitions to exp_value = "1111" within the window
+%%    150 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "HHHH" to "1111", window (0-cycle to 5-cycles)
+%%    200 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => OK (first). tracked_value had a change to 1111 in window. OK after 50 ns. First change event happened in cycle-5.
+%%    250 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "LLLL" to "1111", window (0-cycle to 5-cycles)
+%%    350 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "WWWW" to "1111", window (0-cycle to 5-cycles)
+%%    450 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "ZZZZ" to "1111", window (0-cycle to 5-cycles)
+%%    550 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "0000" to "1111", window (0-cycle to 5-cycles)
+%%    650 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "XXXX" to "1111", window (0-cycle to 5-cycles)
+%%    750 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "UUUU" to "1111", window (0-cycle to 5-cycles)
+%%    850 ns    Log    ID_SEQUENCER        TB seq.             Testing std_logic_vector transitions to exp_value = "0000" within the window
+%%    850 ns    Log    ID_SEQUENCER        TB seq.             Setting exp_value = "0000"
+%%    900 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "HHHH" to "0000", window (0-cycle to 5-cycles)
+%%    950 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => OK (first). tracked_value had a change to 0000 in window. OK after 50 ns. First change event happened in cycle-5.
+%%   1000 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "LLLL" to "0000", window (0-cycle to 5-cycles)
+%%   1100 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "WWWW" to "0000", window (0-cycle to 5-cycles)
+%%   1200 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "ZZZZ" to "0000", window (0-cycle to 5-cycles)
+%%   1300 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "1111" to "0000", window (0-cycle to 5-cycles)
+%%   1400 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "XXXX" to "0000", window (0-cycle to 5-cycles)
+%%   1500 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "UUUU" to "0000", window (0-cycle to 5-cycles)
+%%   1600 ns    Log    ID_SEQUENCER        TB seq.             Testing std_logic_vector transitions to exp_value = "1111" within the window /w transition at cycle-1
+%%   1600 ns    Log    ID_SEQUENCER        TB seq.             Setting exp_value = "1111"
+%%   1650 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "HHHH" to "1111", window (0-cycle to 1-cycles)
+%%   1660 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => OK (first). tracked_value had a change to 1111 in window. OK after 10 ns. First change event happened in cycle-1.
+%%   1710 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "LLLL" to "1111", window (0-cycle to 1-cycles)
+%%   1770 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "WWWW" to "1111", window (0-cycle to 1-cycles)
+%%   1830 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "ZZZZ" to "1111", window (0-cycle to 1-cycles)
+%%   1890 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "0000" to "1111", window (0-cycle to 1-cycles)
+%%   1950 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "XXXX" to "1111", window (0-cycle to 1-cycles)
+%%   2010 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "UUUU" to "1111", window (0-cycle to 1-cycles)
+%%   2070 ns    Log    ID_SEQUENCER        TB seq.             Testing multiple triggers within the window
+%%   2130 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => OK (first). tracked_value had a change to 1111 in window. OK after 10 ns. First change event happened in cycle-1.
+%% 
+%% 
+%%   2230 ns    Log    ID_LOG_HDR          TB seq.             Testing Triggering Assertion (std_logic_vector)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   2230 ns    Log    ID_SEQUENCER        TB seq.             Testing invalid sequences (change to exp_value /= "1111") within the window
+%%   2230 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "LLLL" to "HHHH", window (0-cycle to 1-cycles)
+%%   2240 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (HHHH) never changed to 1111 in window. pipe: (2).
+%%   2290 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "WWWW" to "HHHH", window (0-cycle to 1-cycles)
+%%   2300 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (HHHH) never changed to 1111 in window. pipe: (3).
+%%   2350 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "ZZZZ" to "HHHH", window (0-cycle to 1-cycles)
+%%   2360 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (HHHH) never changed to 1111 in window. pipe: (4).
+%%   2410 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "0000" to "HHHH", window (0-cycle to 1-cycles)
+%%   2420 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (HHHH) never changed to 1111 in window. pipe: (5).
+%%   2470 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "1111" to "HHHH", window (0-cycle to 1-cycles)
+%%   2480 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (HHHH) never changed to 1111 in window. pipe: (6).
+%%   2530 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "XXXX" to "HHHH", window (0-cycle to 1-cycles)
+%%   2540 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (HHHH) never changed to 1111 in window. pipe: (7).
+%%   2590 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "UUUU" to "HHHH", window (0-cycle to 1-cycles)
+%%   2600 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (HHHH) never changed to 1111 in window. pipe: (8).
+%%   2650 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "HHHH" to "LLLL", window (0-cycle to 1-cycles)
+%%   2660 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (LLLL) never changed to 1111 in window. pipe: (9).
+%%   2710 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "WWWW" to "LLLL", window (0-cycle to 1-cycles)
+%%   2720 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (LLLL) never changed to 1111 in window. pipe: (10).
+%%   2770 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "ZZZZ" to "LLLL", window (0-cycle to 1-cycles)
+%%   2780 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (LLLL) never changed to 1111 in window. pipe: (11).
+%%   2830 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "0000" to "LLLL", window (0-cycle to 1-cycles)
+%%   2840 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (LLLL) never changed to 1111 in window. pipe: (12).
+%%   2890 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "1111" to "LLLL", window (0-cycle to 1-cycles)
+%%   2900 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (LLLL) never changed to 1111 in window. pipe: (13).
+%%   2950 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "XXXX" to "LLLL", window (0-cycle to 1-cycles)
+%%   2960 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (LLLL) never changed to 1111 in window. pipe: (14).
+%%   3010 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "UUUU" to "LLLL", window (0-cycle to 1-cycles)
+%%   3020 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (LLLL) never changed to 1111 in window. pipe: (15).
+%%   3070 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "HHHH" to "WWWW", window (0-cycle to 1-cycles)
+%%   3080 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (WWWW) never changed to 1111 in window. pipe: (16).
+%%   3130 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "LLLL" to "WWWW", window (0-cycle to 1-cycles)
+%%   3140 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (WWWW) never changed to 1111 in window. pipe: (17).
+%%   3190 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "ZZZZ" to "WWWW", window (0-cycle to 1-cycles)
+%%   3200 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (WWWW) never changed to 1111 in window. pipe: (18).
+%%   3250 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "0000" to "WWWW", window (0-cycle to 1-cycles)
+%%   3260 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (WWWW) never changed to 1111 in window. pipe: (19).
+%%   3310 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "1111" to "WWWW", window (0-cycle to 1-cycles)
+%%   3320 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (WWWW) never changed to 1111 in window. pipe: (20).
+%%   3370 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "XXXX" to "WWWW", window (0-cycle to 1-cycles)
+%%   3380 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (WWWW) never changed to 1111 in window. pipe: (21).
+%%   3430 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "UUUU" to "WWWW", window (0-cycle to 1-cycles)
+%%   3440 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (WWWW) never changed to 1111 in window. pipe: (22).
+%%   3490 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "HHHH" to "ZZZZ", window (0-cycle to 1-cycles)
+%%   3500 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (ZZZZ) never changed to 1111 in window. pipe: (23).
+%%   3550 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "LLLL" to "ZZZZ", window (0-cycle to 1-cycles)
+%%   3560 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (ZZZZ) never changed to 1111 in window. pipe: (24).
+%%   3610 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "WWWW" to "ZZZZ", window (0-cycle to 1-cycles)
+%%   3620 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (ZZZZ) never changed to 1111 in window. pipe: (25).
+%%   3670 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "0000" to "ZZZZ", window (0-cycle to 1-cycles)
+%%   3680 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (ZZZZ) never changed to 1111 in window. pipe: (26).
+%%   3730 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "1111" to "ZZZZ", window (0-cycle to 1-cycles)
+%%   3740 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (ZZZZ) never changed to 1111 in window. pipe: (27).
+%%   3790 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "XXXX" to "ZZZZ", window (0-cycle to 1-cycles)
+%%   3800 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (ZZZZ) never changed to 1111 in window. pipe: (28).
+%%   3850 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "UUUU" to "ZZZZ", window (0-cycle to 1-cycles)
+%%   3860 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (ZZZZ) never changed to 1111 in window. pipe: (29).
+%%   3910 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "HHHH" to "0000", window (0-cycle to 1-cycles)
+%%   3920 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (0000) never changed to 1111 in window. pipe: (30).
+%%   3970 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "LLLL" to "0000", window (0-cycle to 1-cycles)
+%%   3980 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (0000) never changed to 1111 in window. pipe: (31).
+%%   4030 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "WWWW" to "0000", window (0-cycle to 1-cycles)
+%%   4040 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (0000) never changed to 1111 in window. pipe: (32).
+%%   4090 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "ZZZZ" to "0000", window (0-cycle to 1-cycles)
+%%   4100 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (0000) never changed to 1111 in window. pipe: (33).
+%%   4150 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "1111" to "0000", window (0-cycle to 1-cycles)
+%%   4160 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (0000) never changed to 1111 in window. pipe: (34).
+%%   4210 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "XXXX" to "0000", window (0-cycle to 1-cycles)
+%%   4220 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (0000) never changed to 1111 in window. pipe: (35).
+%%   4270 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "UUUU" to "0000", window (0-cycle to 1-cycles)
+%%   4280 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (0000) never changed to 1111 in window. pipe: (36).
+%%   4330 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "HHHH" to "XXXX", window (0-cycle to 1-cycles)
+%%   4340 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (XXXX) never changed to 1111 in window. pipe: (37).
+%%   4390 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "LLLL" to "XXXX", window (0-cycle to 1-cycles)
+%%   4400 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (XXXX) never changed to 1111 in window. pipe: (38).
+%%   4450 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "WWWW" to "XXXX", window (0-cycle to 1-cycles)
+%%   4460 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (XXXX) never changed to 1111 in window. pipe: (39).
+%%   4510 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "ZZZZ" to "XXXX", window (0-cycle to 1-cycles)
+%%   4520 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (XXXX) never changed to 1111 in window. pipe: (40).
+%%   4570 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "0000" to "XXXX", window (0-cycle to 1-cycles)
+%%   4580 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (XXXX) never changed to 1111 in window. pipe: (41).
+%%   4630 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "1111" to "XXXX", window (0-cycle to 1-cycles)
+%%   4640 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (XXXX) never changed to 1111 in window. pipe: (42).
+%%   4690 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "UUUU" to "XXXX", window (0-cycle to 1-cycles)
+%%   4700 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (XXXX) never changed to 1111 in window. pipe: (43).
+%%   4750 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "HHHH" to "UUUU", window (0-cycle to 1-cycles)
+%%   4760 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (UUUU) never changed to 1111 in window. pipe: (44).
+%%   4810 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "LLLL" to "UUUU", window (0-cycle to 1-cycles)
+%%   4820 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (UUUU) never changed to 1111 in window. pipe: (45).
+%%   4870 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "WWWW" to "UUUU", window (0-cycle to 1-cycles)
+%%   4880 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (UUUU) never changed to 1111 in window. pipe: (46).
+%%   4930 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "ZZZZ" to "UUUU", window (0-cycle to 1-cycles)
+%%   4940 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (UUUU) never changed to 1111 in window. pipe: (47).
+%%   4990 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "0000" to "UUUU", window (0-cycle to 1-cycles)
+%%   5000 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (UUUU) never changed to 1111 in window. pipe: (48).
+%%   5050 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "1111" to "UUUU", window (0-cycle to 1-cycles)
+%%   5060 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (UUUU) never changed to 1111 in window. pipe: (49).
+%%   5110 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "XXXX" to "UUUU", window (0-cycle to 1-cycles)
+%%   5120 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (UUUU) never changed to 1111 in window. pipe: (50).
+%%   5170 ns    Log    ID_SEQUENCER        TB seq.             Testing invalid sequences (no std_logic_vector transitions) within the window
+%%   5170 ns    Log    ID_SEQUENCER        TB seq.             Hold "HHHH" from 0-cycle to 5-cycles
+%%   5220 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (HHHH) never changed to 1111 in window. pipe: (51).
+%%   5270 ns    Log    ID_SEQUENCER        TB seq.             Hold "LLLL" from 0-cycle to 5-cycles
+%%   5320 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (LLLL) never changed to 1111 in window. pipe: (52).
+%%   5370 ns    Log    ID_SEQUENCER        TB seq.             Hold "WWWW" from 0-cycle to 5-cycles
+%%   5420 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (WWWW) never changed to 1111 in window. pipe: (53).
+%%   5470 ns    Log    ID_SEQUENCER        TB seq.             Hold "ZZZZ" from 0-cycle to 5-cycles
+%%   5520 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (ZZZZ) never changed to 1111 in window. pipe: (54).
+%%   5570 ns    Log    ID_SEQUENCER        TB seq.             Hold "0000" from 0-cycle to 5-cycles
+%%   5620 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (0000) never changed to 1111 in window. pipe: (55).
+%%   5670 ns    Log    ID_SEQUENCER        TB seq.             Hold "1111" from 0-cycle to 5-cycles
+%%   5720 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (1111) never changed to 1111 in window. pipe: (56).
+%%   5770 ns    Log    ID_SEQUENCER        TB seq.             Hold "XXXX" from 0-cycle to 5-cycles
+%%   5820 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (XXXX) never changed to 1111 in window. pipe: (57).
+%%   5870 ns    Log    ID_SEQUENCER        TB seq.             Hold "UUUU" from 0-cycle to 5-cycles
+%%   5920 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (UUUU) never changed to 1111 in window. pipe: (58).
+%%   5970 ns    Log    ID_SEQUENCER        TB seq.             Testing triggering assert /w multiple triggers within the window
+%%   6010 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (0000) never changed to 1111 in window. pipe: (59).
+%%   6010 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (0000) never changed to 1111 in window. pipe: (60).
+%% 
+%% 
+%%   6080 ns    Log    ID_LOG_HDR          TB seq.             Testing pos_ack_kind: EVERY (std_logic_vector)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   6080 ns    Log    ID_SEQUENCER        TB seq.             Expecting a positive acknowledge on each successful window sequence
+%%   6130 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "UUUU" to "1111", window (0-cycle to 1-cycles)
+%%   6140 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => OK. tracked_value had a change to 1111 in window. OK after 10 ns. First change event happened in cycle-1.
+%%   6190 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "UUUU" to "1111", window (0-cycle to 2-cycles)
+%%   6210 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => OK. tracked_value had a change to 1111 in window. OK after 20 ns. First change event happened in cycle-2. pipe: (1).
+%%   6260 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "UUUU" to "1111", window (0-cycle to 3-cycles)
+%%   6290 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => OK. tracked_value had a change to 1111 in window. OK after 30 ns. First change event happened in cycle-3. pipe: (2).
+%%   6340 ns    Log    ID_SEQUENCER        TB seq.             Change the value from "UUUU" to "1111", window (0-cycle to 4-cycles)
+%%   6380 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => OK. tracked_value had a change to 1111 in window. OK after 40 ns. First change event happened in cycle-4. pipe: (3).
+%% 
+%% 
+%%   6520 ns    Log    ID_LOG_HDR          TB seq.             Testing Normal Operation (std_logic)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   6520 ns    Log    ID_SEQUENCER        TB seq.             Testing all std_logic transitions to exp_value = '1' within the window
+%%   6520 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'U' to '1', window (0-cycle to 5-cycles)
+%%   6570 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => OK (first). tracked_value had a change to 1 in window. OK after 50 ns. First change event happened in cycle-5.
+%%   6620 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'X' to '1', window (0-cycle to 5-cycles)
+%%   6720 ns    Log    ID_SEQUENCER        TB seq.             Change the value from '0' to '1', window (0-cycle to 5-cycles)
+%%   6820 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'Z' to '1', window (0-cycle to 5-cycles)
+%%   6920 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'W' to '1', window (0-cycle to 5-cycles)
+%%   7020 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'L' to '1', window (0-cycle to 5-cycles)
+%%   7120 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'H' to '1', window (0-cycle to 5-cycles)
+%%   7220 ns    Log    ID_SEQUENCER        TB seq.             Testing all std_logic transitions to exp_value = '0' within the window
+%%   7220 ns    Log    ID_SEQUENCER        TB seq.             Setting exp_value = '0'
+%%   7270 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'U' to '0', window (0-cycle to 5-cycles)
+%%   7320 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => OK (first). tracked_value had a change to 0 in window. OK after 50 ns. First change event happened in cycle-5.
+%%   7370 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'X' to '0', window (0-cycle to 5-cycles)
+%%   7470 ns    Log    ID_SEQUENCER        TB seq.             Change the value from '1' to '0', window (0-cycle to 5-cycles)
+%%   7570 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'Z' to '0', window (0-cycle to 5-cycles)
+%%   7670 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'W' to '0', window (0-cycle to 5-cycles)
+%%   7770 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'L' to '0', window (0-cycle to 5-cycles)
+%%   7870 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'H' to '0', window (0-cycle to 5-cycles)
+%%   7970 ns    Log    ID_SEQUENCER        TB seq.             Testing all std_logic transitions to exp_value = '1' within the window /w transition at cycle-1
+%%   7970 ns    Log    ID_SEQUENCER        TB seq.             Setting exp_value = '1'
+%%   8020 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'U' to '1', window (0-cycle to 1-cycles)
+%%   8030 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => OK (first). tracked_value had a change to 1 in window. OK after 10 ns. First change event happened in cycle-1.
+%%   8080 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'X' to '1', window (0-cycle to 1-cycles)
+%%   8140 ns    Log    ID_SEQUENCER        TB seq.             Change the value from '0' to '1', window (0-cycle to 1-cycles)
+%%   8200 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'Z' to '1', window (0-cycle to 1-cycles)
+%%   8260 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'W' to '1', window (0-cycle to 1-cycles)
+%%   8320 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'L' to '1', window (0-cycle to 1-cycles)
+%%   8380 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'H' to '1', window (0-cycle to 1-cycles)
+%%   8440 ns    Log    ID_SEQUENCER        TB seq.             Testing multiple triggers within the window
+%%   8500 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => OK (first). tracked_value had a change to 1 in window. OK after 10 ns. First change event happened in cycle-1.
+%% 
+%% 
+%%   8600 ns    Log    ID_LOG_HDR          TB seq.             Testing Triggering Assertion (std_logic)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   8600 ns    Log    ID_SEQUENCER        TB seq.             Testing invalid sequences (change to exp_value /= '1') within the window
+%%   8600 ns    Log    ID_SEQUENCER        TB seq.             Setting exp_value = '1'
+%%   8650 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'X' to 'U', window (0-cycle to 1-cycles)
+%%   8660 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (U) never changed to 1 in window.
+%%   8710 ns    Log    ID_SEQUENCER        TB seq.             Change the value from '1' to 'U', window (0-cycle to 1-cycles)
+%%   8720 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (U) never changed to 1 in window. pipe: (1).
+%%   8770 ns    Log    ID_SEQUENCER        TB seq.             Change the value from '0' to 'U', window (0-cycle to 1-cycles)
+%%   8780 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (U) never changed to 1 in window. pipe: (2).
+%%   8830 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'Z' to 'U', window (0-cycle to 1-cycles)
+%%   8840 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (U) never changed to 1 in window. pipe: (3).
+%%   8890 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'W' to 'U', window (0-cycle to 1-cycles)
+%%   8900 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (U) never changed to 1 in window. pipe: (4).
+%%   8950 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'L' to 'U', window (0-cycle to 1-cycles)
+%%   8960 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (U) never changed to 1 in window. pipe: (5).
+%%   9010 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'H' to 'U', window (0-cycle to 1-cycles)
+%%   9020 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (U) never changed to 1 in window. pipe: (6).
+%%   9070 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'U' to 'X', window (0-cycle to 1-cycles)
+%%   9080 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (X) never changed to 1 in window. pipe: (7).
+%%   9130 ns    Log    ID_SEQUENCER        TB seq.             Change the value from '1' to 'X', window (0-cycle to 1-cycles)
+%%   9140 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (X) never changed to 1 in window. pipe: (8).
+%%   9190 ns    Log    ID_SEQUENCER        TB seq.             Change the value from '0' to 'X', window (0-cycle to 1-cycles)
+%%   9200 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (X) never changed to 1 in window. pipe: (9).
+%%   9250 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'Z' to 'X', window (0-cycle to 1-cycles)
+%%   9260 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (X) never changed to 1 in window. pipe: (10).
+%%   9310 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'W' to 'X', window (0-cycle to 1-cycles)
+%%   9320 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (X) never changed to 1 in window. pipe: (11).
+%%   9370 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'L' to 'X', window (0-cycle to 1-cycles)
+%%   9380 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (X) never changed to 1 in window. pipe: (12).
+%%   9430 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'H' to 'X', window (0-cycle to 1-cycles)
+%%   9440 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (X) never changed to 1 in window. pipe: (13).
+%%   9490 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'U' to '0', window (0-cycle to 1-cycles)
+%%   9500 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (0) never changed to 1 in window. pipe: (14).
+%%   9550 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'X' to '0', window (0-cycle to 1-cycles)
+%%   9560 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (0) never changed to 1 in window. pipe: (15).
+%%   9610 ns    Log    ID_SEQUENCER        TB seq.             Change the value from '1' to '0', window (0-cycle to 1-cycles)
+%%   9620 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (0) never changed to 1 in window. pipe: (16).
+%%   9670 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'Z' to '0', window (0-cycle to 1-cycles)
+%%   9680 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (0) never changed to 1 in window. pipe: (17).
+%%   9730 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'W' to '0', window (0-cycle to 1-cycles)
+%%   9740 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (0) never changed to 1 in window. pipe: (18).
+%%   9790 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'L' to '0', window (0-cycle to 1-cycles)
+%%   9800 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (0) never changed to 1 in window. pipe: (19).
+%%   9850 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'H' to '0', window (0-cycle to 1-cycles)
+%%   9860 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (0) never changed to 1 in window. pipe: (20).
+%%   9910 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'U' to 'Z', window (0-cycle to 1-cycles)
+%%   9920 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (Z) never changed to 1 in window. pipe: (21).
+%%   9970 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'X' to 'Z', window (0-cycle to 1-cycles)
+%%   9980 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (Z) never changed to 1 in window. pipe: (22).
+%%  10030 ns    Log    ID_SEQUENCER        TB seq.             Change the value from '1' to 'Z', window (0-cycle to 1-cycles)
+%%  10040 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (Z) never changed to 1 in window. pipe: (23).
+%%  10090 ns    Log    ID_SEQUENCER        TB seq.             Change the value from '0' to 'Z', window (0-cycle to 1-cycles)
+%%  10100 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (Z) never changed to 1 in window. pipe: (24).
+%%  10150 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'W' to 'Z', window (0-cycle to 1-cycles)
+%%  10160 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (Z) never changed to 1 in window. pipe: (25).
+%%  10210 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'L' to 'Z', window (0-cycle to 1-cycles)
+%%  10220 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (Z) never changed to 1 in window. pipe: (26).
+%%  10270 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'H' to 'Z', window (0-cycle to 1-cycles)
+%%  10280 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (Z) never changed to 1 in window. pipe: (27).
+%%  10330 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'U' to 'W', window (0-cycle to 1-cycles)
+%%  10340 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (W) never changed to 1 in window. pipe: (28).
+%%  10390 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'X' to 'W', window (0-cycle to 1-cycles)
+%%  10400 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (W) never changed to 1 in window. pipe: (29).
+%%  10450 ns    Log    ID_SEQUENCER        TB seq.             Change the value from '1' to 'W', window (0-cycle to 1-cycles)
+%%  10460 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (W) never changed to 1 in window. pipe: (30).
+%%  10510 ns    Log    ID_SEQUENCER        TB seq.             Change the value from '0' to 'W', window (0-cycle to 1-cycles)
+%%  10520 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (W) never changed to 1 in window. pipe: (31).
+%%  10570 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'Z' to 'W', window (0-cycle to 1-cycles)
+%%  10580 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (W) never changed to 1 in window. pipe: (32).
+%%  10630 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'L' to 'W', window (0-cycle to 1-cycles)
+%%  10640 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (W) never changed to 1 in window. pipe: (33).
+%%  10690 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'H' to 'W', window (0-cycle to 1-cycles)
+%%  10700 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (W) never changed to 1 in window. pipe: (34).
+%%  10750 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'U' to 'L', window (0-cycle to 1-cycles)
+%%  10760 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (L) never changed to 1 in window. pipe: (35).
+%%  10810 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'X' to 'L', window (0-cycle to 1-cycles)
+%%  10820 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (L) never changed to 1 in window. pipe: (36).
+%%  10870 ns    Log    ID_SEQUENCER        TB seq.             Change the value from '1' to 'L', window (0-cycle to 1-cycles)
+%%  10880 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (L) never changed to 1 in window. pipe: (37).
+%%  10930 ns    Log    ID_SEQUENCER        TB seq.             Change the value from '0' to 'L', window (0-cycle to 1-cycles)
+%%  10940 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (L) never changed to 1 in window. pipe: (38).
+%%  10990 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'Z' to 'L', window (0-cycle to 1-cycles)
+%%  11000 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (L) never changed to 1 in window. pipe: (39).
+%%  11050 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'W' to 'L', window (0-cycle to 1-cycles)
+%%  11060 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (L) never changed to 1 in window. pipe: (40).
+%%  11110 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'H' to 'L', window (0-cycle to 1-cycles)
+%%  11120 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (L) never changed to 1 in window. pipe: (41).
+%%  11170 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'U' to 'H', window (0-cycle to 1-cycles)
+%%  11180 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (H) never changed to 1 in window. pipe: (42).
+%%  11230 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'X' to 'H', window (0-cycle to 1-cycles)
+%%  11240 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (H) never changed to 1 in window. pipe: (43).
+%%  11290 ns    Log    ID_SEQUENCER        TB seq.             Change the value from '1' to 'H', window (0-cycle to 1-cycles)
+%%  11300 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (H) never changed to 1 in window. pipe: (44).
+%%  11350 ns    Log    ID_SEQUENCER        TB seq.             Change the value from '0' to 'H', window (0-cycle to 1-cycles)
+%%  11360 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (H) never changed to 1 in window. pipe: (45).
+%%  11410 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'Z' to 'H', window (0-cycle to 1-cycles)
+%%  11420 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (H) never changed to 1 in window. pipe: (46).
+%%  11470 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'W' to 'H', window (0-cycle to 1-cycles)
+%%  11480 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (H) never changed to 1 in window. pipe: (47).
+%%  11530 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'L' to 'H', window (0-cycle to 1-cycles)
+%%  11540 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (H) never changed to 1 in window. pipe: (48).
+%%  11590 ns    Log    ID_SEQUENCER        TB seq.             Testing invalid sequences (no std_logic transitions) within the window
+%%  11590 ns    Log    ID_SEQUENCER        TB seq.             Hold 'U' from 0-cycle to 5-cycles
+%%  11640 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (U) never changed to 1 in window. pipe: (49).
+%%  11690 ns    Log    ID_SEQUENCER        TB seq.             Hold 'X' from 0-cycle to 5-cycles
+%%  11740 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (X) never changed to 1 in window. pipe: (50).
+%%  11790 ns    Log    ID_SEQUENCER        TB seq.             Hold '1' from 0-cycle to 5-cycles
+%%  11840 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (1) never changed to 1 in window. pipe: (51).
+%%  11890 ns    Log    ID_SEQUENCER        TB seq.             Hold '0' from 0-cycle to 5-cycles
+%%  11940 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (0) never changed to 1 in window. pipe: (52).
+%%  11990 ns    Log    ID_SEQUENCER        TB seq.             Hold 'Z' from 0-cycle to 5-cycles
+%%  12040 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (Z) never changed to 1 in window. pipe: (53).
+%%  12090 ns    Log    ID_SEQUENCER        TB seq.             Hold 'W' from 0-cycle to 5-cycles
+%%  12140 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (W) never changed to 1 in window. pipe: (54).
+%%  12190 ns    Log    ID_SEQUENCER        TB seq.             Hold 'L' from 0-cycle to 5-cycles
+%%  12240 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (L) never changed to 1 in window. pipe: (55).
+%%  12290 ns    Log    ID_SEQUENCER        TB seq.             Hold 'H' from 0-cycle to 5-cycles
+%%  12340 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (H) never changed to 1 in window. pipe: (56).
+%%  12390 ns    Log    ID_SEQUENCER        TB seq.             Testing triggering assert /w multiple triggers within the window
+%%  12430 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (0) never changed to 1 in window. pipe: (57).
+%%  12430 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (0) never changed to 1 in window. pipe: (58).
+%% 
+%% 
+%%  12500 ns    Log    ID_LOG_HDR          TB seq.             Testing pos_ack_kind: EVERY (std_logic)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  12500 ns    Log    ID_SEQUENCER        TB seq.             Expecting a positive acknowledge on each successful window sequence
+%%  12550 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'U' to '1', window (0-cycle to 1-cycles)
+%%  12560 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => OK. tracked_value had a change to 1 in window. OK after 10 ns. First change event happened in cycle-1.
+%%  12610 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'U' to '1', window (0-cycle to 2-cycles)
+%%  12630 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => OK. tracked_value had a change to 1 in window. OK after 20 ns. First change event happened in cycle-2. pipe: (1).
+%%  12680 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'U' to '1', window (0-cycle to 3-cycles)
+%%  12710 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => OK. tracked_value had a change to 1 in window. OK after 30 ns. First change event happened in cycle-3. pipe: (2).
+%%  12760 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'U' to '1', window (0-cycle to 4-cycles)
+%%  12800 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => OK. tracked_value had a change to 1 in window. OK after 40 ns. First change event happened in cycle-4. pipe: (3).
+%% 
+%% 
+%%  12890 ns    Log    ID_LOG_HDR          TB seq.             Testing Assertion Enable (std_logic)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  12890 ns    Log    ID_SEQUENCER        TB seq.             Assertion enabled as trigger is assigned, expecting alert when triggering assert
+%%  12890 ns    Log    ID_SEQUENCER        TB seq.             Hold '1' from 0-cycle to 5-cycles
+%%  12940 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (1) never changed to 1 in window.
+%%  13030 ns    Log    ID_SEQUENCER        TB seq.             Assertion enabled prior to trigger, expecting alert when triggering assert
+%%  13040 ns    Log    ID_SEQUENCER        TB seq.             Hold '1' from 0-cycle to 5-cycles
+%%  13090 ns    Alert  ERROR               TB seq.(uvvm)       assert_change_to_value_from_start_to_end_trigger() => Failed. tracked_value (1) never changed to 1 in window.
+%% 
+%% 
+%%  13140 ns    Log    ID_LOG_HDR          TB seq.             Testing CLK Disabled
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  13140 ns    Log    ID_SEQUENCER        TB seq.             Clock deactivated
+%%  13180 ns    Log    ID_SEQUENCER        TB seq.             Triggering assertion while clk is disabled, expecting no behavior
+%%  13220 ns    Log    ID_SEQUENCER        TB seq.             Hold '1' from 0-cycle to 5-cycles
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%  13330 ns    DONE   NOCHECKS   assert_change_to_value_from_start_to_end_trigger  Passed: 0
+%%    Expected      Failures: 0  Errors: -120  Warnings: 0  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 120  Warnings: 0  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%%  13330 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

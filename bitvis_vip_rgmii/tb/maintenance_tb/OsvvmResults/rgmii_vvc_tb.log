@@ -1,0 +1,865 @@
+%%      0 ns    Log    ID_CONSTRUCTOR      RGMII_VVC,0,TX      VVC instantiated for channel TX
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  RGMII_VVC,0,TX      Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  RGMII_VVC,0,TX      Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR      RGMII_VVC,0,RX      VVC instantiated for channel RX
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  RGMII_VVC,0,RX      Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  RGMII_VVC,0,RX      Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CMD_INTERPRETER  RGMII_VVC,0,TX      Interpreter: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  RGMII_VVC,0,RX      Interpreter: Waiting for command
+%%      0 ns    Log    ID_CTRL             RGMII_VVC_SB,0      enable() => SB enabled. 'RGMII VVC SB Enabled'
+%%      0 ns    Log    ID_CTRL             RGMII_VVC_SB,0      config() => config applied to SB.
+%%      0 ns    Log    ID_CTRL             RGMII_VVC_SB,0      enable_log_msg() => message id id_data enabled.
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF GLOBAL CTRL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                                IGNORE    STOP_LIMIT
+%%                NOTE         :  REGARD    integer'high
+%%                TB_NOTE      :  REGARD    integer'high
+%%                WARNING      :  REGARD    integer'high
+%%                TB_WARNING   :  REGARD    integer'high
+%%                MANUAL_CHECK :  REGARD    integer'high
+%%                ERROR        :  REGARD    integer'high
+%%                TB_ERROR     :  REGARD    integer'high
+%%                FAILURE      :  REGARD         1
+%%                TB_FAILURE   :  REGARD         1
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF MSG ID PANEL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                ID                             Status
+%%                ------------------------       ------
+%%                ID_UTIL_BURIED               : DISABLED
+%%                ID_BITVIS_DEBUG              : DISABLED
+%%                ID_UTIL_SETUP                : ENABLED
+%%                ID_LOG_MSG_CTRL              : ENABLED
+%%                ID_ALERT_CTRL                : ENABLED
+%%                ID_FINISH_OR_STOP            : ENABLED
+%%                ID_CLOCK_GEN                 : ENABLED
+%%                ID_GEN_PULSE                 : ENABLED
+%%                ID_BLOCKING                  : ENABLED
+%%                ID_WATCHDOG                  : ENABLED
+%%                ID_RAND_GEN                  : DISABLED
+%%                ID_RAND_CONF                 : DISABLED
+%%                ID_FUNC_COV_BINS             : DISABLED
+%%                ID_FUNC_COV_BINS_INFO        : DISABLED
+%%                ID_FUNC_COV_RAND             : DISABLED
+%%                ID_FUNC_COV_SAMPLE           : DISABLED
+%%                ID_FUNC_COV_CONFIG           : DISABLED
+%%                ID_POS_ACK                   : ENABLED
+%%                ID_UVVM_ASSERTION            : ENABLED
+%%                ID_LOG_HDR                   : ENABLED
+%%                ID_LOG_HDR_LARGE             : ENABLED
+%%                ID_LOG_HDR_XL                : ENABLED
+%%                ID_SEQUENCER                 : ENABLED
+%%                ID_SEQUENCER_SUB             : ENABLED
+%%                ID_BFM                       : ENABLED
+%%                ID_BFM_WAIT                  : ENABLED
+%%                ID_BFM_POLL                  : ENABLED
+%%                ID_BFM_POLL_SUMMARY          : ENABLED
+%%                ID_CHANNEL_BFM               : ENABLED
+%%                ID_TERMINATE_CMD             : ENABLED
+%%                ID_SEGMENT_INITIATE          : ENABLED
+%%                ID_SEGMENT_COMPLETE          : ENABLED
+%%                ID_SEGMENT_HDR               : ENABLED
+%%                ID_SEGMENT_DATA              : ENABLED
+%%                ID_PACKET_INITIATE           : ENABLED
+%%                ID_PACKET_PREAMBLE           : ENABLED
+%%                ID_PACKET_COMPLETE           : ENABLED
+%%                ID_PACKET_HDR                : ENABLED
+%%                ID_PACKET_DATA               : ENABLED
+%%                ID_PACKET_CHECKSUM           : ENABLED
+%%                ID_PACKET_GAP                : ENABLED
+%%                ID_PACKET_PAYLOAD            : ENABLED
+%%                ID_FRAME_INITIATE            : ENABLED
+%%                ID_FRAME_COMPLETE            : ENABLED
+%%                ID_FRAME_HDR                 : ENABLED
+%%                ID_FRAME_DATA                : ENABLED
+%%                ID_COVERAGE_MAKEBIN          : DISABLED
+%%                ID_COVERAGE_ADDBIN           : DISABLED
+%%                ID_COVERAGE_ICOVER           : DISABLED
+%%                ID_COVERAGE_CONFIG           : ENABLED
+%%                ID_COVERAGE_SUMMARY          : ENABLED
+%%                ID_COVERAGE_HOLES            : ENABLED
+%%                ID_UVVM_SEND_CMD             : ENABLED
+%%                ID_UVVM_CMD_ACK              : ENABLED
+%%                ID_UVVM_CMD_RESULT           : ENABLED
+%%                ID_CMD_INTERPRETER           : ENABLED
+%%                ID_CMD_INTERPRETER_WAIT      : ENABLED
+%%                ID_IMMEDIATE_CMD             : ENABLED
+%%                ID_IMMEDIATE_CMD_WAIT        : ENABLED
+%%                ID_CMD_EXECUTOR              : ENABLED
+%%                ID_CMD_EXECUTOR_WAIT         : ENABLED
+%%                ID_CHANNEL_EXECUTOR          : ENABLED
+%%                ID_CHANNEL_EXECUTOR_WAIT     : ENABLED
+%%                ID_NEW_HVVC_CMD_SEQ          : ENABLED
+%%                ID_INSERTED_DELAY            : ENABLED
+%%                ID_OLD_AWAIT_COMPLETION      : ENABLED
+%%                ID_AWAIT_COMPLETION          : ENABLED
+%%                ID_AWAIT_COMPLETION_LIST     : ENABLED
+%%                ID_AWAIT_COMPLETION_WAIT     : ENABLED
+%%                ID_AWAIT_COMPLETION_END      : ENABLED
+%%                ID_AWAIT_UVVM_COMPLETION     : ENABLED
+%%                ID_UVVM_DATA_QUEUE           : ENABLED
+%%                ID_CONSTRUCTOR               : ENABLED
+%%                ID_CONSTRUCTOR_SUB           : ENABLED
+%%                ID_VVC_ACTIVITY              : ENABLED
+%%                ID_MONITOR                   : ENABLED
+%%                ID_MONITOR_ERROR             : ENABLED
+%%                ID_DATA                      : ENABLED
+%%                ID_CTRL                      : ENABLED
+%%                ID_SPEC_COV_INIT             : ENABLED
+%%                ID_SPEC_COV_REQS             : ENABLED
+%%                ID_SPEC_COV                  : ENABLED
+%%                ID_FILE_OPEN_CLOSE           : ENABLED
+%%                ID_FILE_PARSER               : ENABLED
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_UVVM_CMD_ACK).
+%%      0 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(RGMII_VVC,0,ALL_CHANNELS, ID_CMD_INTERPRETER):. [1]
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  RGMII_VVC,0,TX      Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  RGMII_VVC,0,RX      Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  RGMII_VVC,0,TX      disable_log_msg(RGMII_VVC,0,ALL_CHANNELS, ID_CMD_INTERPRETER). Command received  [1]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     RGMII_VVC,0,TX      disable_log_msg(ID_CMD_INTERPRETER). ' [1]'
+%%      0 ns    Log    ID_CMD_INTERPRETER  RGMII_VVC,0,RX      disable_log_msg(RGMII_VVC,0,ALL_CHANNELS, ID_CMD_INTERPRETER). Command received  [1]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     RGMII_VVC,0,RX      disable_log_msg(ID_CMD_INTERPRETER). ' [1]'
+%%      0 ns    Log    ID_CMD_INTERPRETER  RGMII_VVC,0,TX      Interpreter: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  RGMII_VVC,0,RX      Interpreter: Waiting for command
+%%      0 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(RGMII_VVC,0,ALL_CHANNELS, ID_CMD_INTERPRETER_WAIT):. [2]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     RGMII_VVC,0,TX      disable_log_msg(ID_CMD_INTERPRETER_WAIT). ' [2]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     RGMII_VVC,0,RX      disable_log_msg(ID_CMD_INTERPRETER_WAIT). ' [2]'
+%%      0 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(RGMII_VVC,0,ALL_CHANNELS, ID_CMD_EXECUTOR):. [3]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     RGMII_VVC,0,TX      disable_log_msg(ID_CMD_EXECUTOR). ' [3]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     RGMII_VVC,0,RX      disable_log_msg(ID_CMD_EXECUTOR). ' [3]'
+%%      0 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(RGMII_VVC,0,ALL_CHANNELS, ID_CMD_EXECUTOR_WAIT):. [4]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     RGMII_VVC,0,TX      disable_log_msg(ID_CMD_EXECUTOR_WAIT). ' [4]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     RGMII_VVC,0,RX      disable_log_msg(ID_CMD_EXECUTOR_WAIT). ' [4]'
+%%      0 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(RGMII_VVC,0,ALL_CHANNELS, ID_IMMEDIATE_CMD_WAIT):. [5]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     RGMII_VVC,0,TX      disable_log_msg(ID_IMMEDIATE_CMD_WAIT). ' [5]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     RGMII_VVC,0,RX      disable_log_msg(ID_IMMEDIATE_CMD_WAIT). ' [5]'
+%% 
+%% 
+%% ============================================================================================================================================================================
+%%      0 ns    Log    ID_LOG_HDR_LARGE    TB seq.             Start Simulation of RGMII
+%% ============================================================================================================================================================================
+%%      0 ns    Log    ID_CLOCK_GEN        TB seq.             Starting clock RGMII CLK
+%% 
+%% 
+%%     80 ns    Log    ID_LOG_HDR          TB seq.             Testing that BFM procedures normalize data arrays
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%     80 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 5 bytes):. [6]
+%%     80 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 5 bytes):. [7]
+%%     80 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(5 bytes)=> '  [6]'
+%%     80 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(RGMII_VVC,0,RX, 10000 ns):. [8]
+%%     80 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(RGMII_VVC,0,RX, 10000 ns) - Pending completion. [8]
+%%     80 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(5 bytes) while executing rgmii_read=> '  [7]'
+%%    128 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(5 bytes) DONE. '  [6]'
+%%    128 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(5 bytes)=> OK, received 5 bytes. '  [7]'
+%%    128 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(RGMII_VVC,0,RX, 10000 ns)=> RGMII_VVC,0,RX finished. [8]
+%% 
+%% 
+%%    128 ns    Log    ID_LOG_HDR          TB seq.             Testing explicit std_logic_vector values
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    128 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 5 bytes):. [9]
+%%    128 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 5 bytes):. [10]
+%%    128 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(5 bytes)=> '  [9]'
+%%    128 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(RGMII_VVC,0,RX, 10000 ns):. [11]
+%%    128 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(RGMII_VVC,0,RX, 10000 ns) - Pending completion. [11]
+%%    128 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(5 bytes) while executing rgmii_read=> '  [10]'
+%%    176 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(5 bytes) DONE. '  [9]'
+%%    176 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(5 bytes)=> OK, received 5 bytes. '  [10]'
+%%    176 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(RGMII_VVC,0,RX, 10000 ns)=> RGMII_VVC,0,RX finished. [11]
+%% 
+%% 
+%%    176 ns    Log    ID_LOG_HDR          TB seq.             Testing data sizes
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 1 bytes):. [12]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 1 bytes):. [13]
+%%    176 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(1 bytes)=> '  [12]'
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 2 bytes):. [14]
+%%    176 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(1 bytes) while executing rgmii_read=> '  [13]'
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 2 bytes):. [15]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 3 bytes):. [16]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 3 bytes):. [17]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 4 bytes):. [18]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 4 bytes):. [19]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 5 bytes):. [20]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 5 bytes):. [21]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 6 bytes):. [22]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 6 bytes):. [23]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 7 bytes):. [24]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 7 bytes):. [25]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 8 bytes):. [26]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 8 bytes):. [27]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 9 bytes):. [28]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 9 bytes):. [29]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 10 bytes):. [30]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 10 bytes):. [31]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 11 bytes):. [32]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 11 bytes):. [33]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 12 bytes):. [34]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 12 bytes):. [35]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 13 bytes):. [36]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 13 bytes):. [37]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 14 bytes):. [38]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 14 bytes):. [39]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 15 bytes):. [40]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 15 bytes):. [41]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 16 bytes):. [42]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 16 bytes):. [43]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 17 bytes):. [44]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 17 bytes):. [45]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 18 bytes):. [46]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 18 bytes):. [47]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 19 bytes):. [48]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 19 bytes):. [49]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 20 bytes):. [50]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 20 bytes):. [51]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 21 bytes):. [52]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 21 bytes):. [53]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 22 bytes):. [54]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 22 bytes):. [55]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 23 bytes):. [56]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 23 bytes):. [57]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 24 bytes):. [58]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 24 bytes):. [59]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 25 bytes):. [60]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 25 bytes):. [61]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 26 bytes):. [62]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 26 bytes):. [63]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 27 bytes):. [64]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 27 bytes):. [65]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 28 bytes):. [66]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 28 bytes):. [67]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 29 bytes):. [68]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 29 bytes):. [69]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 30 bytes):. [70]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 30 bytes):. [71]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 31 bytes):. [72]
+%%    176 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 31 bytes):. [73]
+%%    176 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(RGMII_VVC,0,RX, 10000 ns):. [74]
+%%    176 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(RGMII_VVC,0,RX, 10000 ns) - Pending completion. [74]
+%%    192 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(1 bytes) DONE. '  [12]'
+%%    192 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(1 bytes)=> OK, received 1 bytes. '  [13]'
+%%    192 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(2 bytes) while executing rgmii_read=> '  [15]'
+%%    192 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(2 bytes)=> '  [14]'
+%%    216 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(2 bytes) DONE. '  [14]'
+%%    216 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(2 bytes)=> OK, received 2 bytes. '  [15]'
+%%    216 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(3 bytes) while executing rgmii_read=> '  [17]'
+%%    216 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(3 bytes)=> '  [16]'
+%%    248 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(3 bytes) DONE. '  [16]'
+%%    248 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(3 bytes)=> OK, received 3 bytes. '  [17]'
+%%    248 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(4 bytes) while executing rgmii_read=> '  [19]'
+%%    248 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(4 bytes)=> '  [18]'
+%%    288 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(4 bytes) DONE. '  [18]'
+%%    288 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(4 bytes)=> OK, received 4 bytes. '  [19]'
+%%    288 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(5 bytes) while executing rgmii_read=> '  [21]'
+%%    288 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(5 bytes)=> '  [20]'
+%%    336 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(5 bytes) DONE. '  [20]'
+%%    336 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(5 bytes)=> OK, received 5 bytes. '  [21]'
+%%    336 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(6 bytes) while executing rgmii_read=> '  [23]'
+%%    336 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(6 bytes)=> '  [22]'
+%%    392 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(6 bytes) DONE. '  [22]'
+%%    392 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(6 bytes)=> OK, received 6 bytes. '  [23]'
+%%    392 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(7 bytes) while executing rgmii_read=> '  [25]'
+%%    392 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(7 bytes)=> '  [24]'
+%%    456 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(7 bytes) DONE. '  [24]'
+%%    456 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(7 bytes)=> OK, received 7 bytes. '  [25]'
+%%    456 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(8 bytes) while executing rgmii_read=> '  [27]'
+%%    456 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(8 bytes)=> '  [26]'
+%%    528 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(8 bytes) DONE. '  [26]'
+%%    528 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(8 bytes)=> OK, received 8 bytes. '  [27]'
+%%    528 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(9 bytes) while executing rgmii_read=> '  [29]'
+%%    528 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(9 bytes)=> '  [28]'
+%%    608 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(9 bytes) DONE. '  [28]'
+%%    608 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(9 bytes)=> OK, received 9 bytes. '  [29]'
+%%    608 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(10 bytes) while executing rgmii_read=> '  [31]'
+%%    608 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(10 bytes)=> '  [30]'
+%%    696 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(10 bytes) DONE. '  [30]'
+%%    696 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(10 bytes)=> OK, received 10 bytes. '  [31]'
+%%    696 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(11 bytes) while executing rgmii_read=> '  [33]'
+%%    696 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(11 bytes)=> '  [32]'
+%%    792 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(11 bytes) DONE. '  [32]'
+%%    792 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(11 bytes)=> OK, received 11 bytes. '  [33]'
+%%    792 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(12 bytes) while executing rgmii_read=> '  [35]'
+%%    792 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(12 bytes)=> '  [34]'
+%%    896 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(12 bytes) DONE. '  [34]'
+%%    896 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(12 bytes)=> OK, received 12 bytes. '  [35]'
+%%    896 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(13 bytes) while executing rgmii_read=> '  [37]'
+%%    896 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(13 bytes)=> '  [36]'
+%%   1008 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(13 bytes) DONE. '  [36]'
+%%   1008 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(13 bytes)=> OK, received 13 bytes. '  [37]'
+%%   1008 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(14 bytes) while executing rgmii_read=> '  [39]'
+%%   1008 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(14 bytes)=> '  [38]'
+%%   1128 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(14 bytes) DONE. '  [38]'
+%%   1128 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(14 bytes)=> OK, received 14 bytes. '  [39]'
+%%   1128 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(15 bytes) while executing rgmii_read=> '  [41]'
+%%   1128 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(15 bytes)=> '  [40]'
+%%   1256 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(15 bytes) DONE. '  [40]'
+%%   1256 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(15 bytes)=> OK, received 15 bytes. '  [41]'
+%%   1256 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(16 bytes) while executing rgmii_read=> '  [43]'
+%%   1256 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(16 bytes)=> '  [42]'
+%%   1392 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(16 bytes) DONE. '  [42]'
+%%   1392 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(16 bytes)=> OK, received 16 bytes. '  [43]'
+%%   1392 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(17 bytes) while executing rgmii_read=> '  [45]'
+%%   1392 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(17 bytes)=> '  [44]'
+%%   1536 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(17 bytes) DONE. '  [44]'
+%%   1536 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(17 bytes)=> OK, received 17 bytes. '  [45]'
+%%   1536 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(18 bytes) while executing rgmii_read=> '  [47]'
+%%   1536 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(18 bytes)=> '  [46]'
+%%   1688 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(18 bytes) DONE. '  [46]'
+%%   1688 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(18 bytes)=> OK, received 18 bytes. '  [47]'
+%%   1688 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(19 bytes) while executing rgmii_read=> '  [49]'
+%%   1688 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(19 bytes)=> '  [48]'
+%%   1848 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(19 bytes) DONE. '  [48]'
+%%   1848 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(19 bytes)=> OK, received 19 bytes. '  [49]'
+%%   1848 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(20 bytes) while executing rgmii_read=> '  [51]'
+%%   1848 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(20 bytes)=> '  [50]'
+%%   2016 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(20 bytes) DONE. '  [50]'
+%%   2016 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(20 bytes)=> OK, received 20 bytes. '  [51]'
+%%   2016 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(21 bytes) while executing rgmii_read=> '  [53]'
+%%   2016 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(21 bytes)=> '  [52]'
+%%   2192 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(21 bytes) DONE. '  [52]'
+%%   2192 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(21 bytes)=> OK, received 21 bytes. '  [53]'
+%%   2192 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(22 bytes) while executing rgmii_read=> '  [55]'
+%%   2192 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(22 bytes)=> '  [54]'
+%%   2376 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(22 bytes) DONE. '  [54]'
+%%   2376 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(22 bytes)=> OK, received 22 bytes. '  [55]'
+%%   2376 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(23 bytes) while executing rgmii_read=> '  [57]'
+%%   2376 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(23 bytes)=> '  [56]'
+%%   2568 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(23 bytes) DONE. '  [56]'
+%%   2568 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(23 bytes)=> OK, received 23 bytes. '  [57]'
+%%   2568 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(24 bytes) while executing rgmii_read=> '  [59]'
+%%   2568 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(24 bytes)=> '  [58]'
+%%   2768 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(24 bytes) DONE. '  [58]'
+%%   2768 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(24 bytes)=> OK, received 24 bytes. '  [59]'
+%%   2768 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(25 bytes) while executing rgmii_read=> '  [61]'
+%%   2768 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(25 bytes)=> '  [60]'
+%%   2976 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(25 bytes) DONE. '  [60]'
+%%   2976 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(25 bytes)=> OK, received 25 bytes. '  [61]'
+%%   2976 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(26 bytes) while executing rgmii_read=> '  [63]'
+%%   2976 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(26 bytes)=> '  [62]'
+%%   3192 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(26 bytes) DONE. '  [62]'
+%%   3192 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(26 bytes)=> OK, received 26 bytes. '  [63]'
+%%   3192 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(27 bytes) while executing rgmii_read=> '  [65]'
+%%   3192 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(27 bytes)=> '  [64]'
+%%   3416 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(27 bytes) DONE. '  [64]'
+%%   3416 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(27 bytes)=> OK, received 27 bytes. '  [65]'
+%%   3416 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(28 bytes) while executing rgmii_read=> '  [67]'
+%%   3416 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(28 bytes)=> '  [66]'
+%%   3648 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(28 bytes) DONE. '  [66]'
+%%   3648 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(28 bytes)=> OK, received 28 bytes. '  [67]'
+%%   3648 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(29 bytes) while executing rgmii_read=> '  [69]'
+%%   3648 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(29 bytes)=> '  [68]'
+%%   3888 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(29 bytes) DONE. '  [68]'
+%%   3888 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(29 bytes)=> OK, received 29 bytes. '  [69]'
+%%   3888 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(30 bytes) while executing rgmii_read=> '  [71]'
+%%   3888 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(30 bytes)=> '  [70]'
+%%   4136 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(30 bytes) DONE. '  [70]'
+%%   4136 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(30 bytes)=> OK, received 30 bytes. '  [71]'
+%%   4136 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(31 bytes) while executing rgmii_read=> '  [73]'
+%%   4136 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(31 bytes)=> '  [72]'
+%%   4392 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(31 bytes) DONE. '  [72]'
+%%   4392 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(31 bytes)=> OK, received 31 bytes. '  [73]'
+%%   4392 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(RGMII_VVC,0,RX, 10000 ns)=> RGMII_VVC,0,RX finished. [74]
+%% 
+%% 
+%%   4392 ns    Log    ID_LOG_HDR          TB seq.             Testing a multiple byte transfer in a single transaction
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 1 bytes):. [75]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 2 bytes):. [76]
+%%   4392 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(1 bytes)=> '  [75]'
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 3 bytes):. [77]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 4 bytes):. [78]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 5 bytes):. [79]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 6 bytes):. [80]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 7 bytes):. [81]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 8 bytes):. [82]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 9 bytes):. [83]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 10 bytes):. [84]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 11 bytes):. [85]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 12 bytes):. [86]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 13 bytes):. [87]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 14 bytes):. [88]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 15 bytes):. [89]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 16 bytes):. [90]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 17 bytes):. [91]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 18 bytes):. [92]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 19 bytes):. [93]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 20 bytes):. [94]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 21 bytes):. [95]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 22 bytes):. [96]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 23 bytes):. [97]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 24 bytes):. [98]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 25 bytes):. [99]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 26 bytes):. [100]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 27 bytes):. [101]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 28 bytes):. [102]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 29 bytes):. [103]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 30 bytes):. [104]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 31 bytes):. [105]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 1 bytes):. [106]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 2 bytes):. [107]
+%%   4392 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(1 bytes) while executing rgmii_read=> '  [106]'
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 3 bytes):. [108]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 4 bytes):. [109]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 5 bytes):. [110]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 6 bytes):. [111]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 7 bytes):. [112]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 8 bytes):. [113]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 9 bytes):. [114]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 10 bytes):. [115]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 11 bytes):. [116]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 12 bytes):. [117]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 13 bytes):. [118]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 14 bytes):. [119]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 15 bytes):. [120]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 16 bytes):. [121]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 17 bytes):. [122]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 18 bytes):. [123]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 19 bytes):. [124]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 20 bytes):. [125]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 21 bytes):. [126]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 22 bytes):. [127]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 23 bytes):. [128]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 24 bytes):. [129]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 25 bytes):. [130]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 26 bytes):. [131]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 27 bytes):. [132]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 28 bytes):. [133]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 29 bytes):. [134]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 30 bytes):. [135]
+%%   4392 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 31 bytes):. [136]
+%%   4404 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(1 bytes) DONE. '  [75]'
+%%   4404 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(2 bytes)=> '  [76]'
+%%   4408 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(1 bytes)=> OK, received 1 bytes. '  [106]'
+%%   4408 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(2 bytes) while executing rgmii_read=> '  [107]'
+%%   4420 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(2 bytes) DONE. '  [76]'
+%%   4420 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(3 bytes)=> '  [77]'
+%%   4424 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(2 bytes)=> OK, received 2 bytes. '  [107]'
+%%   4424 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(3 bytes) while executing rgmii_read=> '  [108]'
+%%   4444 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(3 bytes) DONE. '  [77]'
+%%   4444 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(4 bytes)=> '  [78]'
+%%   4448 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(3 bytes)=> OK, received 3 bytes. '  [108]'
+%%   4448 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(4 bytes) while executing rgmii_read=> '  [109]'
+%%   4476 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(4 bytes) DONE. '  [78]'
+%%   4476 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(5 bytes)=> '  [79]'
+%%   4480 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(4 bytes)=> OK, received 4 bytes. '  [109]'
+%%   4480 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(5 bytes) while executing rgmii_read=> '  [110]'
+%%   4516 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(5 bytes) DONE. '  [79]'
+%%   4516 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(6 bytes)=> '  [80]'
+%%   4520 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(5 bytes)=> OK, received 5 bytes. '  [110]'
+%%   4520 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(6 bytes) while executing rgmii_read=> '  [111]'
+%%   4564 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(6 bytes) DONE. '  [80]'
+%%   4564 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(7 bytes)=> '  [81]'
+%%   4568 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(6 bytes)=> OK, received 6 bytes. '  [111]'
+%%   4568 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(7 bytes) while executing rgmii_read=> '  [112]'
+%%   4620 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(7 bytes) DONE. '  [81]'
+%%   4620 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(8 bytes)=> '  [82]'
+%%   4624 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(7 bytes)=> OK, received 7 bytes. '  [112]'
+%%   4624 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(8 bytes) while executing rgmii_read=> '  [113]'
+%%   4684 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(8 bytes) DONE. '  [82]'
+%%   4684 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(9 bytes)=> '  [83]'
+%%   4688 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(8 bytes)=> OK, received 8 bytes. '  [113]'
+%%   4688 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(9 bytes) while executing rgmii_read=> '  [114]'
+%%   4756 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(9 bytes) DONE. '  [83]'
+%%   4756 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(10 bytes)=> '  [84]'
+%%   4760 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(9 bytes)=> OK, received 9 bytes. '  [114]'
+%%   4760 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(10 bytes) while executing rgmii_read=> '  [115]'
+%%   4836 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(10 bytes) DONE. '  [84]'
+%%   4836 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(11 bytes)=> '  [85]'
+%%   4840 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(10 bytes)=> OK, received 10 bytes. '  [115]'
+%%   4840 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(11 bytes) while executing rgmii_read=> '  [116]'
+%%   4924 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(11 bytes) DONE. '  [85]'
+%%   4924 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(12 bytes)=> '  [86]'
+%%   4928 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(11 bytes)=> OK, received 11 bytes. '  [116]'
+%%   4928 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(12 bytes) while executing rgmii_read=> '  [117]'
+%%   5020 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(12 bytes) DONE. '  [86]'
+%%   5020 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(13 bytes)=> '  [87]'
+%%   5024 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(12 bytes)=> OK, received 12 bytes. '  [117]'
+%%   5024 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(13 bytes) while executing rgmii_read=> '  [118]'
+%%   5124 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(13 bytes) DONE. '  [87]'
+%%   5124 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(14 bytes)=> '  [88]'
+%%   5128 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(13 bytes)=> OK, received 13 bytes. '  [118]'
+%%   5128 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(14 bytes) while executing rgmii_read=> '  [119]'
+%%   5236 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(14 bytes) DONE. '  [88]'
+%%   5236 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(15 bytes)=> '  [89]'
+%%   5240 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(14 bytes)=> OK, received 14 bytes. '  [119]'
+%%   5240 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(15 bytes) while executing rgmii_read=> '  [120]'
+%%   5356 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(15 bytes) DONE. '  [89]'
+%%   5356 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(16 bytes)=> '  [90]'
+%%   5360 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(15 bytes)=> OK, received 15 bytes. '  [120]'
+%%   5360 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(16 bytes) while executing rgmii_read=> '  [121]'
+%%   5484 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(16 bytes) DONE. '  [90]'
+%%   5484 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(17 bytes)=> '  [91]'
+%%   5488 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(16 bytes)=> OK, received 16 bytes. '  [121]'
+%%   5488 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(17 bytes) while executing rgmii_read=> '  [122]'
+%%   5620 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(17 bytes) DONE. '  [91]'
+%%   5620 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(18 bytes)=> '  [92]'
+%%   5624 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(17 bytes)=> OK, received 17 bytes. '  [122]'
+%%   5624 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(18 bytes) while executing rgmii_read=> '  [123]'
+%%   5764 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(18 bytes) DONE. '  [92]'
+%%   5764 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(19 bytes)=> '  [93]'
+%%   5768 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(18 bytes)=> OK, received 18 bytes. '  [123]'
+%%   5768 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(19 bytes) while executing rgmii_read=> '  [124]'
+%%   5916 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(19 bytes) DONE. '  [93]'
+%%   5916 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(20 bytes)=> '  [94]'
+%%   5920 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(19 bytes)=> OK, received 19 bytes. '  [124]'
+%%   5920 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(20 bytes) while executing rgmii_read=> '  [125]'
+%%   6076 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(20 bytes) DONE. '  [94]'
+%%   6076 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(21 bytes)=> '  [95]'
+%%   6080 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(20 bytes)=> OK, received 20 bytes. '  [125]'
+%%   6080 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(21 bytes) while executing rgmii_read=> '  [126]'
+%%   6244 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(21 bytes) DONE. '  [95]'
+%%   6244 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(22 bytes)=> '  [96]'
+%%   6248 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(21 bytes)=> OK, received 21 bytes. '  [126]'
+%%   6248 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(22 bytes) while executing rgmii_read=> '  [127]'
+%%   6420 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(22 bytes) DONE. '  [96]'
+%%   6420 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(23 bytes)=> '  [97]'
+%%   6424 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(22 bytes)=> OK, received 22 bytes. '  [127]'
+%%   6424 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(23 bytes) while executing rgmii_read=> '  [128]'
+%%   6604 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(23 bytes) DONE. '  [97]'
+%%   6604 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(24 bytes)=> '  [98]'
+%%   6608 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(23 bytes)=> OK, received 23 bytes. '  [128]'
+%%   6608 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(24 bytes) while executing rgmii_read=> '  [129]'
+%%   6796 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(24 bytes) DONE. '  [98]'
+%%   6796 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(25 bytes)=> '  [99]'
+%%   6800 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(24 bytes)=> OK, received 24 bytes. '  [129]'
+%%   6800 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(25 bytes) while executing rgmii_read=> '  [130]'
+%%   6996 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(25 bytes) DONE. '  [99]'
+%%   6996 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(26 bytes)=> '  [100]'
+%%   7000 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(25 bytes)=> OK, received 25 bytes. '  [130]'
+%%   7000 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(26 bytes) while executing rgmii_read=> '  [131]'
+%%   7204 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(26 bytes) DONE. '  [100]'
+%%   7204 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(27 bytes)=> '  [101]'
+%%   7208 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(26 bytes)=> OK, received 26 bytes. '  [131]'
+%%   7208 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(27 bytes) while executing rgmii_read=> '  [132]'
+%%   7420 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(27 bytes) DONE. '  [101]'
+%%   7420 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(28 bytes)=> '  [102]'
+%%   7424 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(27 bytes)=> OK, received 27 bytes. '  [132]'
+%%   7424 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(28 bytes) while executing rgmii_read=> '  [133]'
+%%   7644 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(28 bytes) DONE. '  [102]'
+%%   7644 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(29 bytes)=> '  [103]'
+%%   7648 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(28 bytes)=> OK, received 28 bytes. '  [133]'
+%%   7648 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(29 bytes) while executing rgmii_read=> '  [134]'
+%%   7876 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(29 bytes) DONE. '  [103]'
+%%   7876 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(30 bytes)=> '  [104]'
+%%   7880 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(29 bytes)=> OK, received 29 bytes. '  [134]'
+%%   7880 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(30 bytes) while executing rgmii_read=> '  [135]'
+%%   8116 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(30 bytes) DONE. '  [104]'
+%%   8116 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(31 bytes)=> '  [105]'
+%%   8120 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(30 bytes)=> OK, received 30 bytes. '  [135]'
+%%   8120 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(31 bytes) while executing rgmii_read=> '  [136]'
+%%   8368 ns    Log    PASSED              TB seq.             check_stable(sl, 3.968 us) => OK. Value 1 was stable for 3.968 us. 'Checking that TX_CTL was held high during the complete transfer'
+%%   8368 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(RGMII_VVC,0,RX, 10000 ns):. [137]
+%%   8368 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(RGMII_VVC,0,RX, 10000 ns) - Pending completion. [137]
+%%   8368 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(31 bytes) DONE. '  [105]'
+%%   8368 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(31 bytes)=> OK, received 31 bytes. '  [136]'
+%%   8368 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(RGMII_VVC,0,RX, 10000 ns)=> RGMII_VVC,0,RX finished. [137]
+%% 
+%% 
+%%   8368 ns    Log    ID_LOG_HDR          TB seq.             Testing read and fetch
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   8368 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 100 bytes):. [138]
+%%   8368 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_read(RGMII_VVC,0,RX):. [139]
+%%   8368 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(100 bytes)=> '  [138]'
+%%   8368 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(RGMII_VVC,0,RX, 139, 10000 ns):. [140]
+%%   8368 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(RGMII_VVC,0,RX, 139, 10000 ns) - Pending completion. [140]
+%%   8368 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_read(2048 bytes)=> '  [139]'
+%%   9176 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(100 bytes) DONE. '  [138]'
+%%   9184 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_read(2048 bytes) DONE. '  [139]'
+%%   9184 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(RGMII_VVC,0,RX, 139, 10000 ns)=> RGMII_VVC,0,RX finished. [140]
+%%   9184 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(RGMII_VVC,0,RX, 139):. [141]
+%%   9184 ns    Log    ID_IMMEDIATE_CMD    RGMII_VVC,0,RX      fetch_result(RGMII_VVC,0,RX, 139) Requested result is found.   [141]
+%%   9184 ns    Log    ID_UVVM_CMD_RESULT  TB seq.(uvvm)       fetch_result(RGMII_VVC,0,RX, 139): Legal=>true, Result=>2048 Bytes [141]
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"47") => OK. Value was x"47". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"14") => OK. Value was x"14". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"3B") => OK. Value was x"3B". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"25") => OK. Value was x"25". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"93") => OK. Value was x"93". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"22") => OK. Value was x"22". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"E3") => OK. Value was x"E3". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"70") => OK. Value was x"70". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"99") => OK. Value was x"99". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"2B") => OK. Value was x"2B". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"11") => OK. Value was x"11". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"2C") => OK. Value was x"2C". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"9C") => OK. Value was x"9C". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"80") => OK. Value was x"80". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"CB") => OK. Value was x"CB". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"64") => OK. Value was x"64". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"4F") => OK. Value was x"4F". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"21") => OK. Value was x"21". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"92") => OK. Value was x"92". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"60") => OK. Value was x"60". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"7B") => OK. Value was x"7B". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"60") => OK. Value was x"60". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"8B") => OK. Value was x"8B". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"C5") => OK. Value was x"C5". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"88") => OK. Value was x"88". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"06") => OK. Value was x"06". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"5D") => OK. Value was x"5D". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"56") => OK. Value was x"56". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"65") => OK. Value was x"65". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"6B") => OK. Value was x"6B". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"1C") => OK. Value was x"1C". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"1F") => OK. Value was x"1F". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"12") => OK. Value was x"12". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"B1") => OK. Value was x"B1". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"B6") => OK. Value was x"B6". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"8B") => OK. Value was x"8B". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"BB") => OK. Value was x"BB". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"8E") => OK. Value was x"8E". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"71") => OK. Value was x"71". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"A2") => OK. Value was x"A2". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"EE") => OK. Value was x"EE". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"50") => OK. Value was x"50". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"FF") => OK. Value was x"FF". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"B7") => OK. Value was x"B7". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"51") => OK. Value was x"51". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"2F") => OK. Value was x"2F". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"AC") => OK. Value was x"AC". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"10") => OK. Value was x"10". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"09") => OK. Value was x"09". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"99") => OK. Value was x"99". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"F7") => OK. Value was x"F7". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"3A") => OK. Value was x"3A". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"00") => OK. Value was x"00". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"ED") => OK. Value was x"ED". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"C1") => OK. Value was x"C1". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"3B") => OK. Value was x"3B". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"40") => OK. Value was x"40". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"D5") => OK. Value was x"D5". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"DC") => OK. Value was x"DC". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"E6") => OK. Value was x"E6". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"A6") => OK. Value was x"A6". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"1F") => OK. Value was x"1F". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"E3") => OK. Value was x"E3". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"D8") => OK. Value was x"D8". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"04") => OK. Value was x"04". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"C4") => OK. Value was x"C4". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"EA") => OK. Value was x"EA". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"63") => OK. Value was x"63". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"2C") => OK. Value was x"2C". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"D0") => OK. Value was x"D0". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"02") => OK. Value was x"02". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"25") => OK. Value was x"25". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"92") => OK. Value was x"92". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"E1") => OK. Value was x"E1". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"29") => OK. Value was x"29". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"A3") => OK. Value was x"A3". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"E0") => OK. Value was x"E0". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"4D") => OK. Value was x"4D". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"D4") => OK. Value was x"D4". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"01") => OK. Value was x"01". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"41") => OK. Value was x"41". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"D2") => OK. Value was x"D2". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"C1") => OK. Value was x"C1". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"78") => OK. Value was x"78". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"8A") => OK. Value was x"8A". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"72") => OK. Value was x"72". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"3F") => OK. Value was x"3F". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"51") => OK. Value was x"51". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"B5") => OK. Value was x"B5". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"63") => OK. Value was x"63". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"65") => OK. Value was x"65". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"C5") => OK. Value was x"C5". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"4A") => OK. Value was x"4A". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"9A") => OK. Value was x"9A". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"C5") => OK. Value was x"C5". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"35") => OK. Value was x"35". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"BD") => OK. Value was x"BD". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"41") => OK. Value was x"41". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"67") => OK. Value was x"67". 'Checking fetch result: v_data_array'
+%%   9184 ns    Log    PASSED              TB seq.             check_value(slv, x"E2") => OK. Value was x"E2". 'Checking fetch result: v_data_array'
+%% 
+%% 
+%%   9184 ns    Log    ID_LOG_HDR          TB seq.             Testing error case: write() txc timeout
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   9184 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 11 bytes):. [142]
+%%   9184 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(11 bytes)=> '  [142]'
+%%   9192 ns    Log    ID_CLOCK_GEN        TB seq.             Stopping clock RGMII CLK
+%%  17184 ns    Alert  ERROR               RGMII_VVC,0,TX      rgmii_write(11 bytes)=> Failed. Timeout while waiting for txc during 1000 clock cycles. '  [142]'
+%% 
+%% 
+%%  17184 ns    Log    ID_LOG_HDR          TB seq.             Testing error case: read() rxc timeout
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  17184 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_read(RGMII_VVC,0,RX):. [143]
+%%  17184 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_read(2048 bytes)=> '  [143]'
+%% 
+%% 
+%%  25184 ns    Log    ID_LOG_HDR          TB seq.             Testing error case: read() rx_ctl timeout
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  25184 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_read(RGMII_VVC,0,RX):. [144]
+%%  25184 ns    Log    ID_CLOCK_GEN        TB seq.             Starting clock RGMII CLK
+%%  25184 ns    Alert  ERROR               RGMII_VVC,0,RX      rgmii_read(2048 bytes)=> Failed. Timeout while waiting for rxc or rx_ctl during 1000 clock cycles. '  [143]'
+%%  25184 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_read(2048 bytes)=> '  [144]'
+%% 
+%% 
+%%  33184 ns    Log    ID_LOG_HDR          TB seq.             Testing error case: expect() wrong data
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  33184 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 11 bytes):. [145]
+%%  33184 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 11 bytes):. [146]
+%%  33184 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(11 bytes)=> '  [145]'
+%%  33184 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(RGMII_VVC,0,RX, 10000 ns):. [147]
+%%  33184 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(RGMII_VVC,0,RX, 10000 ns) - Pending completion. [147]
+%%  33192 ns    Alert  ERROR               RGMII_VVC,0,RX      rgmii_read(2048 bytes)=> Failed. Timeout while waiting for rxc or rx_ctl during 1000 clock cycles. '  [144]'
+%%  33192 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(11 bytes) while executing rgmii_read=> '  [146]'
+%%  33280 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(11 bytes) DONE. '  [145]'
+%%  33280 ns    Alert  ERROR               RGMII_VVC,0,RX      rgmii_expect(11 bytes)=> Failed in 40 data bits. First mismatch in byte# 1. Was x"47". Expected x"11".
+Was:
+(47, 14, 3B, 25, 93, 22, E3, 70, 99, 2B, 11)
+Expected:
+(11, 2C, 9C, 80, CB, 64, 4F, 21, 92, 60, 7B) '  [146]'
+%%  33280 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(RGMII_VVC,0,RX, 10000 ns)=> RGMII_VVC,0,RX finished. [147]
+%% 
+%% 
+%%  33280 ns    Log    ID_LOG_HDR          TB seq.             Testing error case: expect() wrong size of data_array
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  33280 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 11 bytes):. [148]
+%%  33280 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 16 bytes):. [149]
+%%  33280 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(11 bytes)=> '  [148]'
+%%  33280 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(RGMII_VVC,0,RX, 10000 ns):. [150]
+%%  33280 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(RGMII_VVC,0,RX, 10000 ns) - Pending completion. [150]
+%%  33280 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(16 bytes) while executing rgmii_read=> '  [149]'
+%%  33376 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(11 bytes) DONE. '  [148]'
+%%  33384 ns    Alert  ERROR               RGMII_VVC,0,RX      rgmii_expect(16 bytes)=> Failed. Mismatch in received data length. Was 11. Expected 16. '  [149]'
+%%  33384 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(RGMII_VVC,0,RX, 10000 ns)=> RGMII_VVC,0,RX finished. [150]
+%% 
+%% 
+%%  33384 ns    Log    ID_LOG_HDR          TB seq.             Testing scoreboard
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  33384 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 20 bytes):. [151]
+%%  33384 ns    Log    ID_DATA             RGMII_VVC_SB,0      add_expected() => value: 01000111.
+%%  33384 ns    Log    ID_DATA             RGMII_VVC_SB,0      add_expected() => value: 00010100.
+%%  33384 ns    Log    ID_DATA             RGMII_VVC_SB,0      add_expected() => value: 00111011.
+%%  33384 ns    Log    ID_DATA             RGMII_VVC_SB,0      add_expected() => value: 00100101.
+%%  33384 ns    Log    ID_DATA             RGMII_VVC_SB,0      add_expected() => value: 10010011.
+%%  33384 ns    Log    ID_DATA             RGMII_VVC_SB,0      add_expected() => value: 00100010.
+%%  33384 ns    Log    ID_DATA             RGMII_VVC_SB,0      add_expected() => value: 11100011.
+%%  33384 ns    Log    ID_DATA             RGMII_VVC_SB,0      add_expected() => value: 01110000.
+%%  33384 ns    Log    ID_DATA             RGMII_VVC_SB,0      add_expected() => value: 10011001.
+%%  33384 ns    Log    ID_DATA             RGMII_VVC_SB,0      add_expected() => value: 00101011.
+%%  33384 ns    Log    ID_DATA             RGMII_VVC_SB,0      add_expected() => value: 00010001.
+%%  33384 ns    Log    ID_DATA             RGMII_VVC_SB,0      add_expected() => value: 00101100.
+%%  33384 ns    Log    ID_DATA             RGMII_VVC_SB,0      add_expected() => value: 10011100.
+%%  33384 ns    Log    ID_DATA             RGMII_VVC_SB,0      add_expected() => value: 10000000.
+%%  33384 ns    Log    ID_DATA             RGMII_VVC_SB,0      add_expected() => value: 11001011.
+%%  33384 ns    Log    ID_DATA             RGMII_VVC_SB,0      add_expected() => value: 01100100.
+%%  33384 ns    Log    ID_DATA             RGMII_VVC_SB,0      add_expected() => value: 01001111.
+%%  33384 ns    Log    ID_DATA             RGMII_VVC_SB,0      add_expected() => value: 00100001.
+%%  33384 ns    Log    ID_DATA             RGMII_VVC_SB,0      add_expected() => value: 10010010.
+%%  33384 ns    Log    ID_DATA             RGMII_VVC_SB,0      add_expected() => value: 01100000.
+%%  33384 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_read(RGMII_VVC,0,RX, TO_SB): 'Sending received data to SB'. [152]
+%%  33384 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(20 bytes)=> '  [151]'
+%%  33384 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(RGMII_VVC,0,RX, 10000 ns):. [153]
+%%  33384 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(RGMII_VVC,0,RX, 10000 ns) - Pending completion. [153]
+%%  33384 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_read(2048 bytes)=> ' 'Sending received data to SB'  [152]'
+%%  33552 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(20 bytes) DONE. '  [151]'
+%%  33560 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_read(2048 bytes) DONE. ' 'Sending received data to SB'  [152]'
+%%  33560 ns    Log    ID_DATA             RGMII_VVC_SB,0      check_received() => MATCH, for value: 01000111.
+%%  33560 ns    Log    ID_DATA             RGMII_VVC_SB,0      check_received() => MATCH, for value: 00010100.
+%%  33560 ns    Log    ID_DATA             RGMII_VVC_SB,0      check_received() => MATCH, for value: 00111011.
+%%  33560 ns    Log    ID_DATA             RGMII_VVC_SB,0      check_received() => MATCH, for value: 00100101.
+%%  33560 ns    Log    ID_DATA             RGMII_VVC_SB,0      check_received() => MATCH, for value: 10010011.
+%%  33560 ns    Log    ID_DATA             RGMII_VVC_SB,0      check_received() => MATCH, for value: 00100010.
+%%  33560 ns    Log    ID_DATA             RGMII_VVC_SB,0      check_received() => MATCH, for value: 11100011.
+%%  33560 ns    Log    ID_DATA             RGMII_VVC_SB,0      check_received() => MATCH, for value: 01110000.
+%%  33560 ns    Log    ID_DATA             RGMII_VVC_SB,0      check_received() => MATCH, for value: 10011001.
+%%  33560 ns    Log    ID_DATA             RGMII_VVC_SB,0      check_received() => MATCH, for value: 00101011.
+%%  33560 ns    Log    ID_DATA             RGMII_VVC_SB,0      check_received() => MATCH, for value: 00010001.
+%%  33560 ns    Log    ID_DATA             RGMII_VVC_SB,0      check_received() => MATCH, for value: 00101100.
+%%  33560 ns    Log    ID_DATA             RGMII_VVC_SB,0      check_received() => MATCH, for value: 10011100.
+%%  33560 ns    Log    ID_DATA             RGMII_VVC_SB,0      check_received() => MATCH, for value: 10000000.
+%%  33560 ns    Log    ID_DATA             RGMII_VVC_SB,0      check_received() => MATCH, for value: 11001011.
+%%  33560 ns    Log    ID_DATA             RGMII_VVC_SB,0      check_received() => MATCH, for value: 01100100.
+%%  33560 ns    Log    ID_DATA             RGMII_VVC_SB,0      check_received() => MATCH, for value: 01001111.
+%%  33560 ns    Log    ID_DATA             RGMII_VVC_SB,0      check_received() => MATCH, for value: 00100001.
+%%  33560 ns    Log    ID_DATA             RGMII_VVC_SB,0      check_received() => MATCH, for value: 10010010.
+%%  33560 ns    Log    ID_DATA             RGMII_VVC_SB,0      check_received() => MATCH, for value: 01100000.
+%%  33560 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(RGMII_VVC,0,RX, 10000 ns)=> RGMII_VVC,0,RX finished. [153]
+%%      
+%%      =======================================================================================================================================================================
+%%      33560 ns *** SCOREBOARD COUNTERS SUMMARY: RGMII_VVC_SB ***                                                                                                             
+%%      =======================================================================================================================================================================
+%%                       ENTERED         PENDING          MATCH         MISMATCH          DROP          INITIAL_GARBAGE         DELETE         OVERDUE_CHECK                   
+%%      instance:   0      20               0              20               0               0                  0                   0                 0                         
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%% 
+%% 
+%%  33560 ns    Log    ID_LOG_HDR          TB seq.             Testing Unwanted Activity Detection in VVC
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  33560 ns    Log    ID_SEQUENCER        TB seq.             Setting unwanted_activity_severity to ERROR
+%%  33560 ns    Log    ID_SEQUENCER        TB seq.             Testing normal data transmission
+%%  33560 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 5 bytes): 'Write data'. [154]
+%%  33560 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 5 bytes): 'Expect data'. [155]
+%%  33560 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(5 bytes)=> ' 'Write data'  [154]'
+%%  33560 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(RGMII_VVC,0,RX, 10000 ns):. [156]
+%%  33560 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(RGMII_VVC,0,RX, 10000 ns) - Pending completion. [156]
+%%  33560 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(5 bytes) while executing rgmii_read=> ' 'Expect data'  [155]'
+%%  33608 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(5 bytes) DONE. ' 'Write data'  [154]'
+%%  33608 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(5 bytes)=> OK, received 5 bytes. ' 'Expect data'  [155]'
+%%  33608 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(RGMII_VVC,0,RX, 10000 ns)=> RGMII_VVC,0,RX finished. [156]
+%%  33608 ns    Log    ID_SEQUENCER        TB seq.             Wait 100 ns
+%%  33708 ns    Log    ID_SEQUENCER        TB seq.             Testing unexpected data transmission
+%%  33708 ns    Alert  ERROR               RGMII_VVC,0,RX      Unwanted activity detected. rx_ctl changed from 0 to 1
+%%  33708 ns    Alert  ERROR               RGMII_VVC,0,RX      Unwanted activity detected. rxd changed from x"0" to x"F"
+%%  33718 ns    Alert  ERROR               RGMII_VVC,0,RX      Unwanted activity detected. rx_ctl changed from 1 to 0
+%%  33718 ns    Alert  ERROR               RGMII_VVC,0,RX      Unwanted activity detected. rxd changed from x"F" to x"0"
+%%  33718 ns    Alert  ERROR               RGMII_VVC,0,RX      Unwanted activity detected. rxd changed from x"0" to x"F"
+%%  33723 ns    Alert  ERROR               RGMII_VVC,0,RX      Unwanted activity detected. rxd changed from x"F" to x"0"
+%%  33723 ns    Alert  ERROR               RGMII_VVC,0,RX      Unwanted activity detected. rx_ctl changed from 0 to 1
+%%  33724 ns    Alert  ERROR               RGMII_VVC,0,RX      Unwanted activity detected. rx_ctl changed from 1 to 0
+%%  33724 ns    Log    ID_SEQUENCER        TB seq.             Setting unwanted_activity_severity to FAILURE
+%%  33724 ns    Log    ID_SEQUENCER        TB seq.             Testing normal data transmission
+%%  33724 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 5 bytes): 'Write data'. [157]
+%%  33724 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 5 bytes): 'Expect data'. [158]
+%%  33724 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(5 bytes)=> ' 'Write data'  [157]'
+%%  33724 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(RGMII_VVC,0,RX, 10000 ns):. [159]
+%%  33724 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(RGMII_VVC,0,RX, 10000 ns) - Pending completion. [159]
+%%  33724 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(5 bytes) while executing rgmii_read=> ' 'Expect data'  [158]'
+%%  33768 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(5 bytes) DONE. ' 'Write data'  [157]'
+%%  33768 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(5 bytes)=> OK, received 5 bytes. ' 'Expect data'  [158]'
+%%  33768 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(RGMII_VVC,0,RX, 10000 ns)=> RGMII_VVC,0,RX finished. [159]
+%%  33768 ns    Log    ID_SEQUENCER        TB seq.             Testing unexpected data transmission
+%%  33768 ns    Alert  FAILURE             RGMII_VVC,0,RX      Unwanted activity detected. rx_ctl changed from 0 to 1
+%%  33768 ns    Alert  FAILURE             RGMII_VVC,0,RX      Unwanted activity detected. rxd changed from x"0" to x"F"
+%%  33778 ns    Alert  FAILURE             RGMII_VVC,0,RX      Unwanted activity detected. rx_ctl changed from 1 to 0
+%%  33778 ns    Alert  FAILURE             RGMII_VVC,0,RX      Unwanted activity detected. rxd changed from x"F" to x"0"
+%%  33778 ns    Alert  FAILURE             RGMII_VVC,0,RX      Unwanted activity detected. rxd changed from x"0" to x"F"
+%%  33783 ns    Alert  FAILURE             RGMII_VVC,0,RX      Unwanted activity detected. rxd changed from x"F" to x"0"
+%%  33783 ns    Alert  FAILURE             RGMII_VVC,0,RX      Unwanted activity detected. rx_ctl changed from 0 to 1
+%%  33784 ns    Alert  FAILURE             RGMII_VVC,0,RX      Unwanted activity detected. rx_ctl changed from 1 to 0
+%%  33784 ns    Log    ID_SEQUENCER        TB seq.             Setting unwanted_activity_severity to NO_ALERT
+%%  33784 ns    Log    ID_SEQUENCER        TB seq.             Testing normal data transmission
+%%  33784 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_write(RGMII_VVC,0,TX, 5 bytes): 'Write data'. [160]
+%%  33784 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       rgmii_expect(RGMII_VVC,0,RX, 5 bytes): 'Expect data'. [161]
+%%  33784 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(5 bytes)=> ' 'Write data'  [160]'
+%%  33784 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(RGMII_VVC,0,RX, 10000 ns):. [162]
+%%  33784 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(RGMII_VVC,0,RX, 10000 ns) - Pending completion. [162]
+%%  33784 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(5 bytes) while executing rgmii_read=> ' 'Expect data'  [161]'
+%%  33832 ns    Log    ID_BFM              RGMII_VVC,0,TX      rgmii_write(5 bytes) DONE. ' 'Write data'  [160]'
+%%  33832 ns    Log    ID_BFM              RGMII_VVC,0,RX      rgmii_expect(5 bytes)=> OK, received 5 bytes. ' 'Expect data'  [161]'
+%%  33832 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(RGMII_VVC,0,RX, 10000 ns)=> RGMII_VVC,0,RX finished. [162]
+%%  33832 ns    Log    ID_SEQUENCER        TB seq.             Testing unexpected data transmission
+%%  33849 ns    Log    ID_AWAIT_UVVM_COMP  TB seq.             await_uvvm_completion() => OK. All VVCs are inactive. Condition occurred after 1 ns
+%%  33849 ns    Log    ID_AWAIT_UVVM_COMP  TB seq.             await_uvvm_completion()() => OK. All UVVM scoreboards are empty. Condition occurred after 0 ns
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%  33849 ns    DONE   PASSED   rgmii_vvc_tb  Passed: 101  Affirmations Checked: 182
+%%    Expected      Failures: -8  Errors: -13  Warnings: 0  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 8  Errors: 13  Warnings: 0  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%%  33849 ns    Log    ID_LOG_HDR          TB seq.             SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

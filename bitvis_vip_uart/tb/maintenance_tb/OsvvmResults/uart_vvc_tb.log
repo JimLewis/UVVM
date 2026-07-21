@@ -1,0 +1,398 @@
+%%      0 ns    Log    ID_CONSTRUCTOR      SBI_VVC,1           VVC instantiated.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  SBI_VVC,1           Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  SBI_VVC,1           Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR      UART_VVC,1,RX       VVC instantiated for channel RX
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  UART_VVC,1,RX       Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  UART_VVC,1,RX       Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR      UART_VVC,1,TX       VVC instantiated for channel TX
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  UART_VVC,1,TX       Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  UART_VVC,1,TX       Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CMD_INTERPRETER  SBI_VVC,1           Interpreter: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  UART_VVC,1,RX       Interpreter: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  UART_VVC,1,TX       Interpreter: Waiting for command
+%%      0 ns    Log    ID_CTRL             SBI_VVC_SB,1        enable() => SB enabled. 'SBI VVC SB Enabled'
+%%      0 ns    Log    ID_CTRL             SBI_VVC_SB,1        config() => config applied to SB.
+%%      0 ns    Log    ID_CTRL             SBI_VVC_SB,1        enable_log_msg() => message id id_data enabled.
+%%      0 ns    Log    ID_CTRL             UART_VVC_SB,1       enable() => SB enabled. 'UART VVC SB Enabled'
+%%      0 ns    Log    ID_CTRL             UART_VVC_SB,1       enable_log_msg() => message id id_data enabled.
+%%      0 ns    Log    ID_CTRL             UART_VVC_SB,1       config() => config applied to SB.
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF GLOBAL CTRL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                                IGNORE    STOP_LIMIT
+%%                NOTE         :  REGARD    integer'high
+%%                TB_NOTE      :  REGARD    integer'high
+%%                WARNING      :  REGARD    integer'high
+%%                TB_WARNING   :  REGARD    integer'high
+%%                MANUAL_CHECK :  REGARD    integer'high
+%%                ERROR        :  REGARD    integer'high
+%%                TB_ERROR     :  REGARD    integer'high
+%%                FAILURE      :  REGARD         1
+%%                TB_FAILURE   :  REGARD         1
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF MSG ID PANEL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                ID                             Status
+%%                ------------------------       ------
+%%                ID_UTIL_BURIED               : DISABLED
+%%                ID_BITVIS_DEBUG              : DISABLED
+%%                ID_UTIL_SETUP                : ENABLED
+%%                ID_LOG_MSG_CTRL              : ENABLED
+%%                ID_ALERT_CTRL                : ENABLED
+%%                ID_FINISH_OR_STOP            : ENABLED
+%%                ID_CLOCK_GEN                 : ENABLED
+%%                ID_GEN_PULSE                 : ENABLED
+%%                ID_BLOCKING                  : ENABLED
+%%                ID_WATCHDOG                  : ENABLED
+%%                ID_RAND_GEN                  : DISABLED
+%%                ID_RAND_CONF                 : DISABLED
+%%                ID_FUNC_COV_BINS             : DISABLED
+%%                ID_FUNC_COV_BINS_INFO        : DISABLED
+%%                ID_FUNC_COV_RAND             : DISABLED
+%%                ID_FUNC_COV_SAMPLE           : DISABLED
+%%                ID_FUNC_COV_CONFIG           : DISABLED
+%%                ID_POS_ACK                   : ENABLED
+%%                ID_UVVM_ASSERTION            : ENABLED
+%%                ID_LOG_HDR                   : ENABLED
+%%                ID_LOG_HDR_LARGE             : ENABLED
+%%                ID_LOG_HDR_XL                : ENABLED
+%%                ID_SEQUENCER                 : ENABLED
+%%                ID_SEQUENCER_SUB             : ENABLED
+%%                ID_BFM                       : ENABLED
+%%                ID_BFM_WAIT                  : ENABLED
+%%                ID_BFM_POLL                  : ENABLED
+%%                ID_BFM_POLL_SUMMARY          : ENABLED
+%%                ID_CHANNEL_BFM               : ENABLED
+%%                ID_TERMINATE_CMD             : ENABLED
+%%                ID_SEGMENT_INITIATE          : ENABLED
+%%                ID_SEGMENT_COMPLETE          : ENABLED
+%%                ID_SEGMENT_HDR               : ENABLED
+%%                ID_SEGMENT_DATA              : ENABLED
+%%                ID_PACKET_INITIATE           : ENABLED
+%%                ID_PACKET_PREAMBLE           : ENABLED
+%%                ID_PACKET_COMPLETE           : ENABLED
+%%                ID_PACKET_HDR                : ENABLED
+%%                ID_PACKET_DATA               : ENABLED
+%%                ID_PACKET_CHECKSUM           : ENABLED
+%%                ID_PACKET_GAP                : ENABLED
+%%                ID_PACKET_PAYLOAD            : ENABLED
+%%                ID_FRAME_INITIATE            : ENABLED
+%%                ID_FRAME_COMPLETE            : ENABLED
+%%                ID_FRAME_HDR                 : ENABLED
+%%                ID_FRAME_DATA                : ENABLED
+%%                ID_COVERAGE_MAKEBIN          : DISABLED
+%%                ID_COVERAGE_ADDBIN           : DISABLED
+%%                ID_COVERAGE_ICOVER           : DISABLED
+%%                ID_COVERAGE_CONFIG           : ENABLED
+%%                ID_COVERAGE_SUMMARY          : ENABLED
+%%                ID_COVERAGE_HOLES            : ENABLED
+%%                ID_UVVM_SEND_CMD             : ENABLED
+%%                ID_UVVM_CMD_ACK              : ENABLED
+%%                ID_UVVM_CMD_RESULT           : ENABLED
+%%                ID_CMD_INTERPRETER           : ENABLED
+%%                ID_CMD_INTERPRETER_WAIT      : ENABLED
+%%                ID_IMMEDIATE_CMD             : ENABLED
+%%                ID_IMMEDIATE_CMD_WAIT        : ENABLED
+%%                ID_CMD_EXECUTOR              : ENABLED
+%%                ID_CMD_EXECUTOR_WAIT         : ENABLED
+%%                ID_CHANNEL_EXECUTOR          : ENABLED
+%%                ID_CHANNEL_EXECUTOR_WAIT     : ENABLED
+%%                ID_NEW_HVVC_CMD_SEQ          : ENABLED
+%%                ID_INSERTED_DELAY            : ENABLED
+%%                ID_OLD_AWAIT_COMPLETION      : ENABLED
+%%                ID_AWAIT_COMPLETION          : ENABLED
+%%                ID_AWAIT_COMPLETION_LIST     : ENABLED
+%%                ID_AWAIT_COMPLETION_WAIT     : ENABLED
+%%                ID_AWAIT_COMPLETION_END      : ENABLED
+%%                ID_AWAIT_UVVM_COMPLETION     : ENABLED
+%%                ID_UVVM_DATA_QUEUE           : ENABLED
+%%                ID_CONSTRUCTOR               : ENABLED
+%%                ID_CONSTRUCTOR_SUB           : ENABLED
+%%                ID_VVC_ACTIVITY              : ENABLED
+%%                ID_MONITOR                   : ENABLED
+%%                ID_MONITOR_ERROR             : ENABLED
+%%                ID_DATA                      : ENABLED
+%%                ID_CTRL                      : ENABLED
+%%                ID_SPEC_COV_INIT             : ENABLED
+%%                ID_SPEC_COV_REQS             : ENABLED
+%%                ID_SPEC_COV                  : ENABLED
+%%                ID_FILE_OPEN_CLOSE           : ENABLED
+%%                ID_FILE_PARSER               : ENABLED
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ALL_MESSAGES).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_LOG_HDR).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_SEQUENCER).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_UTIL_SETUP).
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  SBI_VVC,1           Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  UART_VVC,1,RX       Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  UART_VVC,1,TX       Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  SBI_VVC,1           disable_log_msg(SBI_VVC,1, ALL_MESSAGES). Command received  [1]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     SBI_VVC,1           disable_log_msg(ALL_MESSAGES). ' [1]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     SBI_VVC,1           enable_log_msg(ID_BFM). ' [2]'
+%%      0 ns    Log    ID_CMD_INTERPRETER  UART_VVC,1,RX       disable_log_msg(UART_VVC,1,RX, ALL_MESSAGES). Command received  [3]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     UART_VVC,1,RX       disable_log_msg(ALL_MESSAGES). ' [3]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     UART_VVC,1,RX       enable_log_msg(ID_BFM). ' [4]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     UART_VVC,1,RX       enable_log_msg(ID_BFM_WAIT). ' [5]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     UART_VVC,1,RX       enable_log_msg(ID_BFM_POLL). ' [6]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     UART_VVC,1,RX       enable_log_msg(ID_BFM_POLL_SUMMARY). ' [7]'
+%%      0 ns    Log    ID_CMD_INTERPRETER  UART_VVC,1,TX       disable_log_msg(UART_VVC,1,TX, ALL_MESSAGES). Command received  [8]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     UART_VVC,1,TX       disable_log_msg(ALL_MESSAGES). ' [8]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     UART_VVC,1,TX       enable_log_msg(ID_BFM). ' [9]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     UART_VVC,1,TX       enable_log_msg(ID_BFM_WAIT). ' [10]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     UART_VVC,1,TX       enable_log_msg(ID_BFM_POLL). ' [11]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     UART_VVC,1,TX       enable_log_msg(ID_BFM_POLL_SUMMARY). ' [12]'
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Configure UART VVC 1
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Start Test of UART VIP
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 
+%% 
+%%    100 ns    Log    ID_LOG_HDR          TB seq.             Check register defaults 
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  115.2 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"00")=> OK, read data = x"00". ' 'RX_DATA default'  [13]'
+%%    125 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"3", x"01")=> OK, read data = x"1". ' 'TX_READY default'  [14]'
+%%  134.8 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"1", x"00")=> OK, read data = x"00". ' 'RX_DATA_VALID default'  [15]'
+%% 
+%% 
+%%  134.8 ns    Log    ID_LOG_HDR          TB seq.             Check of uart_transmit()
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 1894.8 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"AA") completed. ' 'Testing UART TX'  [17]'
+%% 2104.6 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"AA")=> OK, read data = x"AA". ' 'RX_DATA '  [19]'
+%% 
+%% 
+%% 2104.6 ns    Log    ID_LOG_HDR          TB seq.             Check of uart_expect() as simple, instant check
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 2104.6 ns    Log    ID_BFM_WAIT         UART_VVC,1,RX       Expecting data x"55" within 1 occurrences and 16000 ns.  'Expecting TX data'  [22]
+%% 2114.4 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"55") completed. ' 'TX_DATA'  [21]'
+%% 3811.6 ns    Log    ID_BFM              UART_VVC,1,RX       uart_expect(x"55")=> OK, received data = x"55" after 1 occurrences and 1707 ns. ' 'Expecting TX data'  [22]'
+%% 
+%% 
+%% 5411.6 ns    Log    ID_LOG_HDR          TB seq.             Check of uart_receive()
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 5426.8 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"56") completed. ' 'TX_DATA'  [25]'
+%%   7124 ns    Log    ID_BFM              UART_VVC,1,RX       uart_receive()=> x"56". ' 'Receive inside VVC'  [26]'
+%% 
+%% 
+%%   8724 ns    Log    ID_LOG_HDR          TB seq.             Configuring VVC and DUT to 7-bit data
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 8739.2 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"4", x"07") completed. ' 'NUM_DATA_BITS = 7'  [31]'
+%% 
+%% 
+%% 10339.2 ns    Log    ID_LOG_HDR          TB seq.             Check of uart_transmit() for 7-bit data
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 11939.2 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"00") completed. ' 'Testing UART TX'  [33]'
+%% 12149.6 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"00")=> OK, read data = x"00". ' 'RX_DATA '  [35]'
+%% 
+%% 
+%% 12149.6 ns    Log    ID_LOG_HDR          TB seq.             Check of uart_expect() for 7-bit data
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 12149.6 ns    Log    ID_BFM_WAIT         UART_VVC,1,RX       Expecting data x"55" within 1 occurrences and 16000 ns.  'Expecting TX data'  [38]
+%% 12159.4 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"55") completed. ' 'TX_DATA'  [37]'
+%% 13696.6 ns    Log    ID_BFM              UART_VVC,1,RX       uart_expect(x"55")=> OK, received data = x"55" after 1 occurrences and 1547 ns. ' 'Expecting TX data'  [38]'
+%% 
+%% 
+%% 15296.6 ns    Log    ID_LOG_HDR          TB seq.             Configuring VVC and DUT back to 8-bit data
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 15305.2 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"4", x"08") completed. ' 'NUM_DATA_BITS = 8'  [41]'
+%% 
+%% 
+%% 16905.2 ns    Log    ID_LOG_HDR          TB seq.             Check of uart_receive() using Scoreboard
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 16905.2 ns    Log    ID_DATA             UART_VVC_SB,1       add_expected() => value: 00111000.
+%% 16922.2 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"38") completed. ' 'TX_DATA'  [43]'
+%% 18619.4 ns    Log    ID_BFM              UART_VVC,1,RX       uart_receive()=> x"38". ' 'Receive inside VVC's SB'  [44]'
+%% 18619.4 ns    Log    ID_DATA             UART_VVC_SB,1       check_received() => MATCH, for value: 00111000.
+%%      
+%%      =======================================================================================================================================================================
+%%      20219.4 ns *** SCOREBOARD COUNTERS SUMMARY: UART_VVC_SB ***                                                                                                            
+%%      =======================================================================================================================================================================
+%%                       ENTERED         PENDING          MATCH         MISMATCH          DROP          INITIAL_GARBAGE         DELETE         OVERDUE_CHECK                   
+%%      instance:   1       1               0               1               0               0                  0                   0                 0                         
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%% 
+%% 
+%% 20219.4 ns    Log    ID_LOG_HDR          TB seq.             Test of advanced uart_expect()
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 20219.4 ns    Log    ID_BFM_WAIT         UART_VVC,1,RX       Expecting data x"42" within 4 occurrences.  'Expecting TX data'  [46]
+%% 20234.6 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"AB") completed. ' 'TX_DATA'  [47]'
+%% 20244.4 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"EE") completed. ' 'TX_DATA'  [48]'
+%% 20254.2 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"42") completed. ' 'TX_DATA'  [49]'
+%% 25420.6 ns    Log    ID_BFM_POLL_SUMMAR  UART_VVC,1,RX       Last 3 received data bytes while waiting for expected data: x"AB"; x"EE"; x"42"
+%% 25420.6 ns    Log    ID_BFM              UART_VVC,1,RX       uart_expect(x"42")=> OK, received data = x"42" after 3 occurrences and 5201.2 ns. ' 'Expecting TX data'  [46]'
+%% 27020.6 ns    Log    ID_BFM_WAIT         UART_VVC,1,RX       Expecting data x"AF" within 10000 ns.  'Expecting TX data'  [52]
+%% 33033.4 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"AF") completed. ' 'TX_DATA'  [53]'
+%% 34730.6 ns    Log    ID_BFM              UART_VVC,1,RX       uart_expect(x"AF")=> OK, received data = x"AF" after 0 occurrences and 7710 ns. ' 'Expecting TX data'  [52]'
+%% 36330.6 ns    Log    ID_BFM_WAIT         UART_VVC,1,RX       Expecting data x"BB" within 17 occurrences.  'Expecting TX data'  [56]
+%% 36345.8 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"01") completed. ' 'TX_DATA'  [57]'
+%% 36355.6 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"02") completed. ' 'TX_DATA'  [58]'
+%% 36365.4 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"03") completed. ' 'TX_DATA'  [59]'
+%%  56377 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"04") completed. ' 'TX_DATA'  [62]'
+%% 56386.8 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"05") completed. ' 'TX_DATA'  [63]'
+%% 56396.6 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"06") completed. ' 'TX_DATA'  [64]'
+%% 62413.8 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"07") completed. ' 'TX_DATA'  [67]'
+%% 62423.6 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"08") completed. ' 'TX_DATA'  [68]'
+%% 62433.4 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"09") completed. ' 'TX_DATA'  [69]'
+%% 68450.6 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"0A") completed. ' 'TX_DATA'  [72]'
+%% 68460.4 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"0B") completed. ' 'TX_DATA'  [73]'
+%% 68470.2 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"0C") completed. ' 'TX_DATA'  [74]'
+%% 74487.4 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"0D") completed. ' 'TX_DATA'  [77]'
+%% 74497.2 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"0E") completed. ' 'TX_DATA'  [78]'
+%%  74507 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"0F") completed. ' 'TX_DATA'  [79]'
+%% 80524.2 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"BB") completed. ' 'TX_DATA'  [82]'
+%% 82221.4 ns    Log    ID_BFM_POLL_SUMMAR  UART_VVC,1,RX       Last 10 received data bytes while waiting for expected data: x"7"; x"8"; x"9"; x"A"; x"B"; x"C"; x"D"; x"E"; x"F"; x"BB"
+%% 82221.4 ns    Log    ID_BFM              UART_VVC,1,RX       uart_expect(x"BB")=> OK, received data = x"BB" after 16 occurrences and 45890.8 ns. ' 'Expecting TX data'  [56]'
+%% 83821.4 ns    Log    ID_BFM_WAIT         UART_VVC,1,RX       Expecting data x"56" within 1 occurrences and 16000 ns.  'Expecting TX data'  [86]
+%% 83836.6 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"56") completed. ' 'TX_DATA'  [85]'
+%% 85373.8 ns    Alert  ERROR               UART_VVC,1,RX       uart_expect(x"56") while executing uart_receive. => Failed. Incorrect parity received. ' 'Expecting TX data'  [86]'
+%% 85533.8 ns    Log    ID_BFM              UART_VVC,1,RX       uart_expect(x"56")=> OK, received data = x"56" after 1 occurrences and 1712.4 ns. ' 'Expecting TX data'  [86]'
+%% 
+%% 
+%% 87133.8 ns    Log    ID_LOG_HDR          TB seq.             Test of reading executor status
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 
+%% 
+%% 87133.8 ns    Log    ID_LOG_HDR          TB seq.             Test of advanced uart_expect() with expected errors
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 87133.8 ns    Log    ID_BFM_WAIT         UART_VVC,1,RX       Expecting data x"32" within 1 occurrences.  'Provoking failure by expecting wrong data.'  [89]
+%%  87149 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"31") completed. ' 'TX_DATA'  [90]'
+%% 88846.2 ns    Alert  ERROR               UART_VVC,1,RX       uart_expect(x"32")=> Failed. Expected value x"32" did not appear within 1 occurrences, received value x"31".  ' 'Provoking failure by expecting wrong data.'  [89]'
+%% 90446.2 ns    Log    ID_BFM_WAIT         UART_VVC,1,RX       Expecting data x"42" within 2 occurrences.  'Provoking failure due to too many occurrences before expected data'  [93]
+%% 90461.4 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"AB") completed. ' 'TX_DATA'  [94]'
+%% 90471.2 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"EE") completed. ' 'TX_DATA'  [95]'
+%%  90481 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"42") completed. ' 'TX_DATA'  [96]'
+%%  93903 ns    Log    ID_BFM_POLL_SUMMAR  UART_VVC,1,RX       Last 2 received data bytes while waiting for expected data: x"AB"; x"EE"
+%%  93903 ns    Alert  ERROR               UART_VVC,1,RX       uart_expect(x"42")=> Failed. Expected value x"42" did not appear within 2 occurrences. ' 'Provoking failure due to too many occurrences before expected data'  [93]'
+%%  95503 ns    Log    ID_BFM_WAIT         UART_VVC,1,RX       Expecting data x"AF" within 4000 ns.  'Provoking failure due to timeout'  [99]
+%%  99503 ns    Alert  ERROR               UART_VVC,1,RX       uart_expect(x"AF")=> Failed due to timeout. Did not get expected value x"AF" before time 4000 ns. ' 'Provoking failure due to timeout'  [99]'
+%% 101515.8 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"AF") completed. ' 'TX_DATA'  [100]'
+%% 103115.8 ns    Alert  ERROR               UART_VVC,1,RX       uart_expect called with timeout=0 and max_receptions = 0. This combination can result in an infinite loop. ' 'Provoking failure due to timeout'  [103]'
+%% 103115.8 ns    Log    ID_BFM_WAIT         UART_VVC,1,RX       Expecting data x"1" within 0 occurrences.  'Provoking failure due to timeout'  [103]
+%% 103132.8 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"01") completed. ' 'TX_DATA'  [104]'
+%% 104957.4 ns    Log    ID_BFM              UART_VVC,1,RX       uart_expect(x"01")=> OK, received data = x"1" after 0 occurrences and 1841.6 ns. ' 'Provoking failure due to timeout'  [103]'
+%% 
+%% 
+%% 106557.4 ns    Log    ID_LOG_HDR          TB seq.             Testing Terminate function
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 106557.4 ns    Log    ID_BFM_WAIT         UART_VVC,1,RX       Expecting data x"1" within 5 occurrences and 10000 ns.  'Expecting value, and then terminating'  [107]
+%% 106572.6 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"07") completed. ' 'TX_DATA'  [108]'
+%% 106582.4 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"F1") completed. ' 'TX_DATA'  [109]'
+%% 106592.2 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"AA") completed. ' 'TX_DATA'  [110]'
+%% 108269.8 ns    Log    ID_BFM_POLL_SUMMAR  UART_VVC,1,RX       Last 1 received data bytes while waiting for expected data: x"7"
+%% 108269.8 ns    Alert  WARNING             UART_VVC,1,RX       uart_expect(x"01")=> Failed. Terminate loop received. ' 'Expecting value, and then terminating'  [107]'
+%% 124269.8 ns    Log    ID_BFM_WAIT         UART_VVC,1,RX       Expecting data x"55" within 1 occurrences and 16000 ns.  'Expecting TX data'  [115]
+%% 124281.2 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"55") completed. ' 'TX_DATA'  [114]'
+%% 125978.4 ns    Log    ID_BFM              UART_VVC,1,RX       uart_expect(x"55")=> OK, received data = x"55" after 1 occurrences and 1708.6 ns. ' 'Expecting TX data'  [115]'
+%% 
+%% 
+%% 127578.4 ns    Log    ID_LOG_HDR          TB seq.             Check that commands are distributed to the correct VVC channel
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 127578.4 ns    Alert  WARNING             UART_VVC,1,TX       insert_delay(UART_VVC,1, 160000 ps) Channel na not supported on this VVC  [118]
+%% 127578.4 ns    Alert  WARNING             UART_VVC,1,RX       insert_delay(UART_VVC,1, 160000 ps) Channel na not supported on this VVC  [118]
+%% 127578.401 ns    Alert  ERROR               TB seq.(uvvm)       Time out for uvvm cmd  [118]:  'insert_delay(UART_VVC,1, 160000 ps)' while waiting for acknowledge from VVC
+%% 127578.401 ns    Alert  WARNING             UART_VVC,1,TX       insert_delay(UART_VVC,1, 160000 ps) Channel na not supported on this VVC  [119]
+%% 127578.401 ns    Alert  WARNING             UART_VVC,1,RX       insert_delay(UART_VVC,1, 160000 ps) Channel na not supported on this VVC  [119]
+%% 127578.402 ns    Alert  ERROR               TB seq.(uvvm)       Time out for uvvm cmd  [119]:  'insert_delay(UART_VVC,1, 160000 ps)' while waiting for acknowledge from VVC
+%% 127578.403 ns    Alert  ERROR               TB seq.(uvvm)       Time out for uvvm cmd  [120]:  'insert_delay(UART_VVC,5,TX, 160000 ps)' while waiting for acknowledge from VVC
+%% 127578.404 ns    Alert  ERROR               TB seq.(uvvm)       Time out for uvvm cmd  [121]:  'insert_delay(UART_VVC,42,RX, 160000 ps)' while waiting for acknowledge from VVC
+%% 
+%% 
+%% 129178.404 ns    Log    ID_LOG_HDR          TB seq.             Check of sending command to both channels
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 129178.404 ns    Log    ID_BFM_WAIT         UART_VVC,1,RX       Expecting data x"42" within 4 occurrences.  'Expecting TX data'  [125]
+%% 129191 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"AB") completed. ' 'TX_DATA'  [126]'
+%% 129200.8 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"EE") completed. ' 'TX_DATA'  [127]'
+%% 129210.6 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"42") completed. ' 'TX_DATA'  [128]'
+%% 130938.404 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"AA") completed. ' 'Testing UART TX'  [122]'
+%% 132698.404 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"AB") completed. ' 'Testing UART TX'  [123]'
+%% 134377 ns    Log    ID_BFM_POLL_SUMMAR  UART_VVC,1,RX       Last 3 received data bytes while waiting for expected data: x"AB"; x"EE"; x"42"
+%% 134377 ns    Log    ID_BFM              UART_VVC,1,RX       uart_expect(x"42")=> OK, received data = x"42" after 3 occurrences and 5198.596 ns. ' 'Expecting TX data'  [125]'
+%% 134458.404 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"AC") completed. ' 'Testing UART TX'  [124]'
+%% 134458.404 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Checking that UART TX has no pending commands after await_completion'
+%% 134458.404 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Checking that UART RX has no pending commands after await_completion'
+%% 
+%% 
+%% 134458.404 ns    Log    ID_LOG_HDR          TB seq.             Testing inter-bfm delay
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 144378.404 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"AA") completed. ' 'First transmit with UART TX'  [130]'
+%% 152378.404 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"BB") completed. ' 'Second transmit with UART TX'  [131]'
+%% 162298.404 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"CC") completed. ' 'Third transmit with UART TX'  [133]'
+%% 170618.404 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"DD") completed. ' 'Fourth transmit with UART TX'  [136]'
+%% 188538.404 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"EE") completed. ' 'First transmit with UART TX'  [138]'
+%% 206298.404 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"FF") completed. ' 'Second transmit with UART TX'  [139]'
+%% 208158.404 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"EE") completed. ' 'First transmit with UART TX'  [141]'
+%% 208158.404 ns    Alert  WARNING             UART_VVC,1,TX       BFM access exceeded specified start-to-start inter-bfm delay, 320000 ps.
+%% 209918.404 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"FF") completed. ' 'Second transmit with UART TX'  [142]'
+%% 209918.404 ns    Alert  WARNING             UART_VVC,1,TX       BFM access exceeded specified start-to-start inter-bfm delay, 320000 ps.
+%% 
+%% 
+%% 209918.404 ns    Log    ID_LOG_HDR          TB seq.             Provoke TB_ERROR with timeout shorter than or equal length of transfer time.
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 209918.404 ns    Alert  ERROR               UART_VVC,1,RX       check_value(bool, true) => Failed. Value was false. Expected true. 'Length of timeout is shorter than or equal length of transfer time.'
+%% 211678.404 ns    Alert  ERROR               UART_VVC,1,RX       uart_receive()=> Failed. Timeout after 1760 ns. ' 'Receive inside VVC'  [144]'
+%% 
+%% 
+%% 211678.404 ns    Log    ID_LOG_HDR          TB seq.             Testing Unwanted Activity Detection in VVC
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 211678.404 ns    Log    ID_SEQUENCER        TB seq.             Setting unwanted_activity_severity to ERROR
+%% 211678.404 ns    Log    ID_SEQUENCER        TB seq.             Testing normal data transmission
+%% 211678.404 ns    Log    ID_BFM_WAIT         UART_VVC,1,RX       Expecting data x"55" within 1 occurrences.  'Expect data'  [147]
+%% 211687.4 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"55") completed. ' 'Transmit data'  [146]'
+%% 213384.6 ns    Log    ID_BFM              UART_VVC,1,RX       uart_expect(x"55")=> OK, received data = x"55" after 1 occurrences and 1706.196 ns. ' 'Expect data'  [147]'
+%% 213384.6 ns    Log    ID_SEQUENCER        TB seq.             Wait 100 ns
+%% 213484.6 ns    Log    ID_SEQUENCER        TB seq.             Testing unexpected data transmission
+%% 213484.6 ns    Alert  ERROR               UART_VVC,1,RX       Unwanted activity detected. The DUT TX output changed from 1 to 0
+%% 213494.6 ns    Alert  ERROR               UART_VVC,1,RX       Unwanted activity detected. The DUT TX output changed from 0 to 1
+%% 213504.6 ns    Alert  ERROR               UART_VVC,1,RX       Unwanted activity detected. The DUT TX output changed from 1 to U
+%% 213524.6 ns    Alert  ERROR               UART_VVC,1,RX       Unwanted activity detected. The DUT TX output changed from X to U
+%% 213544.6 ns    Alert  ERROR               UART_VVC,1,RX       Unwanted activity detected. The DUT TX output changed from Z to U
+%% 213564.6 ns    Alert  ERROR               UART_VVC,1,RX       Unwanted activity detected. The DUT TX output changed from W to U
+%% 213584.6 ns    Alert  ERROR               UART_VVC,1,RX       Unwanted activity detected. The DUT TX output changed from H to U
+%% 213614.6 ns    Alert  ERROR               UART_VVC,1,RX       Unwanted activity detected. The DUT TX output changed from H to X
+%% 213634.6 ns    Alert  ERROR               UART_VVC,1,RX       Unwanted activity detected. The DUT TX output changed from 0 to X
+%% 213654.6 ns    Log    ID_SEQUENCER        TB seq.             Setting unwanted_activity_severity to FAILURE
+%% 213654.6 ns    Log    ID_SEQUENCER        TB seq.             Testing normal data transmission
+%% 213654.6 ns    Log    ID_BFM_WAIT         UART_VVC,1,RX       Expecting data x"55" within 1 occurrences.  'Expect data'  [150]
+%% 213667 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"55") completed. ' 'Transmit data'  [149]'
+%% 215364.2 ns    Log    ID_BFM              UART_VVC,1,RX       uart_expect(x"55")=> OK, received data = x"55" after 1 occurrences and 1709.6 ns. ' 'Expect data'  [150]'
+%% 215364.2 ns    Log    ID_SEQUENCER        TB seq.             Testing unexpected data transmission
+%% 215364.2 ns    Alert  FAILURE             UART_VVC,1,RX       Unwanted activity detected. The DUT TX output changed from 1 to 0
+%% 215374.2 ns    Alert  FAILURE             UART_VVC,1,RX       Unwanted activity detected. The DUT TX output changed from 0 to 1
+%% 215384.2 ns    Alert  FAILURE             UART_VVC,1,RX       Unwanted activity detected. The DUT TX output changed from 1 to U
+%% 215404.2 ns    Alert  FAILURE             UART_VVC,1,RX       Unwanted activity detected. The DUT TX output changed from X to U
+%% 215424.2 ns    Alert  FAILURE             UART_VVC,1,RX       Unwanted activity detected. The DUT TX output changed from Z to U
+%% 215444.2 ns    Alert  FAILURE             UART_VVC,1,RX       Unwanted activity detected. The DUT TX output changed from W to U
+%% 215464.2 ns    Alert  FAILURE             UART_VVC,1,RX       Unwanted activity detected. The DUT TX output changed from H to U
+%% 215494.2 ns    Alert  FAILURE             UART_VVC,1,RX       Unwanted activity detected. The DUT TX output changed from H to X
+%% 215514.2 ns    Alert  FAILURE             UART_VVC,1,RX       Unwanted activity detected. The DUT TX output changed from 0 to X
+%% 215534.2 ns    Log    ID_SEQUENCER        TB seq.             Setting unwanted_activity_severity to NO_ALERT
+%% 215534.2 ns    Log    ID_SEQUENCER        TB seq.             Testing normal data transmission
+%% 215534.2 ns    Log    ID_BFM_WAIT         UART_VVC,1,RX       Expecting data x"55" within 1 occurrences.  'Expect data'  [153]
+%% 215548.6 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"55") completed. ' 'Transmit data'  [152]'
+%% 217245.8 ns    Log    ID_BFM              UART_VVC,1,RX       uart_expect(x"55")=> OK, received data = x"55" after 1 occurrences and 1711.6 ns. ' 'Expect data'  [153]'
+%% 217245.8 ns    Log    ID_SEQUENCER        TB seq.             Testing unexpected data transmission
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%% 217416.8 ns    DONE   FAILED   uart_vvc_tb  Total Error(s) = 1  Failures: 0  Errors: 0  Warnings: -1  Passed: 2  Affirmations Checked: 29
+%%    Expected      Failures: -9  Errors: -20  Warnings: -8  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 9  Errors: 20  Warnings: 7  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% 217416.8 ns    Log    ID_LOG_HDR          TB seq.             SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

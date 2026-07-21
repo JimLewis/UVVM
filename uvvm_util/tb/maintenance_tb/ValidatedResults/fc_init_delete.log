@@ -1,0 +1,474 @@
+%% 
+%% 
+%% ============================================================================================================================================================================
+%%      0 ns    Log    ID_LOG_HDR_LARGE    TB seq.             Start Simulation of Functional Coverage package - fc_init_delete
+%% ============================================================================================================================================================================
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_FUNC_COV_BINS).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_FUNC_COV_BINS_INFO).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_FUNC_COV_RAND).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_FUNC_COV_SAMPLE).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_FUNC_COV_CONFIG).
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing methods with uninitialized coverpoint
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 100) => OK. Value was 100. 'fc_get_covpts_coverage_goal(VOID)'
+%%      0 ns    Log    PASSED              TB seq.             check_value(real, 0.0000) => OK. Value was 0.0000. 'fc_get_overall_coverage(COVPTS)'
+%%      0 ns    Log    PASSED              TB seq.             check_value(real, 0.0000) => OK. Value was 0.0000. 'fc_get_overall_coverage(BINS)'
+%%      0 ns    Log    PASSED              TB seq.             check_value(real, 0.0000) => OK. Value was 0.0000. 'fc_get_overall_coverage(HITS)'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, false) => OK. Value was false. 'fc_overall_coverage_completed(VOID)'
+%%      
+%%      =======================================================================================================================================================================
+%%      0 ns *** OVERALL COVERAGE REPORT (VERBOSE): TB seq. ***                                                                                                                
+%%      =======================================================================================================================================================================
+%%      Coverage (for goal 100): Covpts: 0.00%,    Bins: 0.00%,    Hits: 0.00%   
+%%      =======================================================================================================================================================================
+%%              COVERPOINT           COVERAGE WEIGHT         COVERED BINS        COVERAGE(BINS|HITS)      GOAL(BINS|HITS)     % OF GOAL(BINS|HITS)                             
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'get_illegal_bin_alert_level(VOID)'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'get_bin_overlap_alert_level(VOID)'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1) => OK. Value was 1. 'get_overall_coverage_weight(VOID)'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 100) => OK. Value was 100. 'get_bins_coverage_goal(VOID)'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 100) => OK. Value was 100. 'get_hits_coverage_goal(VOID)'
+%%      0 ns    Log    PASSED              TB seq.             check_value(string, '') => OK. Value was ''. 'get_name(VOID)'
+%%      0 ns    Log    PASSED              TB seq.             check_value(string, 'TB seq.') => OK. Value was 'TB seq.'. 'get_scope(VOID)'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, false) => OK. Value was false. 'is_defined(VOID)'
+%%      0 ns    Log    PASSED              TB seq.             check_value(real, 0.0000) => OK. Value was 0.0000. 'Checking get_coverage(BINS)'
+%%      0 ns    Log    PASSED              TB seq.             check_value(real, 0.0000) => OK. Value was 0.0000. 'Checking get_coverage(HITS)'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, false) => OK. Value was false. 'coverage_completed(BINS)'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, false) => OK. Value was false. 'coverage_completed(HITS)'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, false) => OK. Value was false. 'coverage_completed(BINS_AND_HITS)'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 10) => OK. Value was 10. 'Checking seed 1'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 100) => OK. Value was 100. 'Checking seed 2'
+%%      
+%%      =======================================================================================================================================================================
+%%      0 ns *** COVERAGE SUMMARY REPORT (NON VERBOSE): TB seq. ***                                                                                                            
+%%      =======================================================================================================================================================================
+%%      Coverpoint:              
+%%      Coverage (for goal 100): Bins: 0.0%,     Hits: 0.0%    
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                            BINS                            HITS             MIN HITS         HIT COVERAGE             NAME             ILLEGAL/IGNORE                       
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%      
+%%      =======================================================================================================================================================================
+%%      ***  COVERPOINT CONFIGURATION REPORT ***
+%%      =======================================================================================================================================================================
+%%                NAME                    :              **uninitialized**
+%%                SCOPE                   :                        TB seq.
+%%                ILLEGAL BIN ALERT LEVEL :                          ERROR
+%%                BIN OVERLAP ALERT LEVEL :                       NO_ALERT
+%%                COVERAGE WEIGHT         :                              1
+%%                BINS COVERAGE GOAL      :                            100
+%%                HITS COVERAGE GOAL      :                            100
+%%                COVERPOINTS GOAL        :                            100
+%%                NUMBER OF BINS          :                              0
+%%                CROSS DIMENSIONS        :                             -1
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%      0 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             [] clear_coverage()
+%%      0 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             [] delete_coverpoint()
+%%      0 ns    Alert  ERROR               TB seq.             rand(NO_SAMPLE_COV)=> Coverpoint does not contain any bins
+%%      0 ns    Alert  ERROR               TB seq.             rand(NO_SAMPLE_COV)=> Coverpoint does not contain any bins
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [] sample_coverage(5)
+%%      0 ns    Alert  ERROR               TB seq.             sample_coverage(5)=> Coverpoint does not contain any bins
+%%      0 ns    Alert  ERROR               TB seq.             sample_coverage((5, 6, 7))=> Coverpoint does not contain any bins
+%%      0 ns    Alert  ERROR               TB seq.             write_coverage_db(db_file.txt)=> Coverpoint has not been initialized
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing deleting a coverpoint
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Set up the coverpoint
+%%      0 ns    Log    ID_FUNC_COV_CONFIG  MY_SCOPE            [MY_COVERPOINT] set_illegal_bin_alert_level(FAILURE)
+%%      0 ns    Log    ID_FUNC_COV_CONFIG  MY_SCOPE            [MY_COVERPOINT] set_bin_overlap_alert_level(TB_ERROR)
+%%      0 ns    Log    ID_FUNC_COV_CONFIG  MY_SCOPE            [MY_COVERPOINT] set_overall_coverage_weight(5)
+%%      0 ns    Log    ID_FUNC_COV_CONFIG  MY_SCOPE            [MY_COVERPOINT] set_bins_coverage_goal(50)
+%%      0 ns    Log    ID_FUNC_COV_CONFIG  MY_SCOPE            [MY_COVERPOINT] set_hits_coverage_goal(200)
+%%      0 ns    Log    ID_FUNC_COV_BINS    MY_SCOPE            [MY_COVERPOINT] add_bins(bin_range(1, 100, num_bins:0), "")
+%%      0 ns    Log    ID_FUNC_COV_BINS_I  MY_SCOPE            [MY_COVERPOINT] Adding bins: (1),(2),(3),(4),(5),(6),(7),(8),(9),(10),(11),(12),(13),(14),(15),(16),(17),(18),(19),(20),(21),(22),(23),(24),(25),(26),(27),(28),(29),(30),(31),(32),(33),(34),(35),(36),(37),(38),(39),(40),(41),(42),(43),(44),(45),(46),(47),(48),(49),(50),(51),(52),(53),(54),(55),(56),(57),(58),(59),(60),(61),(62),(63),(64),(65),(66),(67),(68),(69),(70),(71),(72),(73),(74),(75),(76),(77),(78),(79),(80),(81),(82),(83),(84),(85),(86),(87),(88),(89),(90),(91),(92),(93),(94),(95),(96),(97),(98),(99),(100), min_hits:1, rand_weight:1, ""
+%%      0 ns    Log    ID_FUNC_COV_BINS    MY_SCOPE            [MY_COVERPOINT] add_bins(ignore_bin_range(101,200), "")
+%%      0 ns    Log    ID_FUNC_COV_BINS_I  MY_SCOPE            [MY_COVERPOINT] Adding bins: IGN(101 to 200), min_hits:1, rand_weight:1, ""
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(1)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(2)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(3)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(4)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(5)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(6)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(7)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(8)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(9)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(10)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(11)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(12)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(13)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(14)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(15)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(16)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(17)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(18)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(19)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(20)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(21)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(22)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(23)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(24)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(25)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(26)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(27)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(28)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(29)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(30)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(31)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(32)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(33)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(34)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(35)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(36)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(37)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(38)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(39)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(40)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(41)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(42)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(43)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(44)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(45)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(46)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(47)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(48)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(49)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(50)
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Check the coverpoint has the right configuration
+%%      0 ns    Log    PASSED              TB seq.             check_value(string, 'MY_COVERPOINT') => OK. Value was 'MY_COVERPOINT'. 'Checking name'
+%%      0 ns    Log    PASSED              TB seq.             check_value(string, 'MY_SCOPE') => OK. Value was 'MY_SCOPE'. 'Checking scope'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking illegal bin alert level'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking bin overlap alert level'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 5) => OK. Value was 5. 'Checking coverage weight'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 50) => OK. Value was 50. 'Checking bins coverage goal'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 200) => OK. Value was 200. 'Checking hits coverage goal'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking is_defined(VOID)'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1) => OK. Value was 1. 'Checking num_bins_crossed'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 100) => OK. Value was 100. 'Checking num_valid_bins'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1) => OK. Value was 1. 'Checking num_invalid_bins'
+%%      0 ns    Log    PASSED              TB seq.             check_value(real, 50.0000) => OK. Value was 50.0000. 'Checking bins coverage'
+%%      0 ns    Log    PASSED              TB seq.             check_value(real, 50.0000) => OK. Value was 50.0000. 'Checking hits coverage'
+%%      0 ns    Log    PASSED              TB seq.             check_value(real, 0.0000) => OK. Value was 0.0000. 'Checking covpts overall coverage'
+%%      0 ns    Log    PASSED              TB seq.             check_value(real, 50.0000) => OK. Value was 50.0000. 'Checking bins overall coverage'
+%%      0 ns    Log    PASSED              TB seq.             check_value(real, 50.0000) => OK. Value was 50.0000. 'Checking hits overall coverage'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 12345) => OK. Value was 12345. 'Checking seed 1'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 67890) => OK. Value was 67890. 'Checking seed 2'
+%%      
+%%      =======================================================================================================================================================================
+%%      0 ns *** COVERAGE SUMMARY REPORT (NON VERBOSE): MY_SCOPE ***                                                                                                           
+%%      =======================================================================================================================================================================
+%%      Coverpoint:              MY_COVERPOINT
+%%      Goal:                    Bins: 50%,      Hits: 200%    
+%%      % of Goal:               Bins: 100.00%,  Hits: 25.00%  
+%%      % of Goal (uncapped):    Bins: 100.00%,  Hits: 25.00%  
+%%      Coverage (for goal 100): Bins: 50.00%,   Hits: 50.00%  
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                            BINS                            HITS             MIN HITS         HIT COVERAGE             NAME             ILLEGAL/IGNORE                       
+%%                             (1)                             1                  1               100.00%              bin_1[1]                 -                              
+%%                             (2)                             1                  1               100.00%              bin_1[2]                 -                              
+%%                             (3)                             1                  1               100.00%              bin_1[3]                 -                              
+%%                             (4)                             1                  1               100.00%              bin_1[4]                 -                              
+%%                             (5)                             1                  1               100.00%              bin_1[5]                 -                              
+%%                             (6)                             1                  1               100.00%              bin_1[6]                 -                              
+%%                             (7)                             1                  1               100.00%              bin_1[7]                 -                              
+%%                             (8)                             1                  1               100.00%              bin_1[8]                 -                              
+%%                             (9)                             1                  1               100.00%              bin_1[9]                 -                              
+%%                            (10)                             1                  1               100.00%              bin_1[10]                -                              
+%%                            (11)                             1                  1               100.00%              bin_1[11]                -                              
+%%                            (12)                             1                  1               100.00%              bin_1[12]                -                              
+%%                            (13)                             1                  1               100.00%              bin_1[13]                -                              
+%%                            (14)                             1                  1               100.00%              bin_1[14]                -                              
+%%                            (15)                             1                  1               100.00%              bin_1[15]                -                              
+%%                            (16)                             1                  1               100.00%              bin_1[16]                -                              
+%%                            (17)                             1                  1               100.00%              bin_1[17]                -                              
+%%                            (18)                             1                  1               100.00%              bin_1[18]                -                              
+%%                            (19)                             1                  1               100.00%              bin_1[19]                -                              
+%%                            (20)                             1                  1               100.00%              bin_1[20]                -                              
+%%                            (21)                             1                  1               100.00%              bin_1[21]                -                              
+%%                            (22)                             1                  1               100.00%              bin_1[22]                -                              
+%%                            (23)                             1                  1               100.00%              bin_1[23]                -                              
+%%                            (24)                             1                  1               100.00%              bin_1[24]                -                              
+%%                            (25)                             1                  1               100.00%              bin_1[25]                -                              
+%%                            (26)                             1                  1               100.00%              bin_1[26]                -                              
+%%                            (27)                             1                  1               100.00%              bin_1[27]                -                              
+%%                            (28)                             1                  1               100.00%              bin_1[28]                -                              
+%%                            (29)                             1                  1               100.00%              bin_1[29]                -                              
+%%                            (30)                             1                  1               100.00%              bin_1[30]                -                              
+%%                            (31)                             1                  1               100.00%              bin_1[31]                -                              
+%%                            (32)                             1                  1               100.00%              bin_1[32]                -                              
+%%                            (33)                             1                  1               100.00%              bin_1[33]                -                              
+%%                            (34)                             1                  1               100.00%              bin_1[34]                -                              
+%%                            (35)                             1                  1               100.00%              bin_1[35]                -                              
+%%                            (36)                             1                  1               100.00%              bin_1[36]                -                              
+%%                            (37)                             1                  1               100.00%              bin_1[37]                -                              
+%%                            (38)                             1                  1               100.00%              bin_1[38]                -                              
+%%                            (39)                             1                  1               100.00%              bin_1[39]                -                              
+%%                            (40)                             1                  1               100.00%              bin_1[40]                -                              
+%%                            (41)                             1                  1               100.00%              bin_1[41]                -                              
+%%                            (42)                             1                  1               100.00%              bin_1[42]                -                              
+%%                            (43)                             1                  1               100.00%              bin_1[43]                -                              
+%%                            (44)                             1                  1               100.00%              bin_1[44]                -                              
+%%                            (45)                             1                  1               100.00%              bin_1[45]                -                              
+%%                            (46)                             1                  1               100.00%              bin_1[46]                -                              
+%%                            (47)                             1                  1               100.00%              bin_1[47]                -                              
+%%                            (48)                             1                  1               100.00%              bin_1[48]                -                              
+%%                            (49)                             1                  1               100.00%              bin_1[49]                -                              
+%%                            (50)                             1                  1               100.00%              bin_1[50]                -                              
+%%                            (51)                             0                  1                0.00%               bin_1[51]                -                              
+%%                            (52)                             0                  1                0.00%               bin_1[52]                -                              
+%%                            (53)                             0                  1                0.00%               bin_1[53]                -                              
+%%                            (54)                             0                  1                0.00%               bin_1[54]                -                              
+%%                            (55)                             0                  1                0.00%               bin_1[55]                -                              
+%%                            (56)                             0                  1                0.00%               bin_1[56]                -                              
+%%                            (57)                             0                  1                0.00%               bin_1[57]                -                              
+%%                            (58)                             0                  1                0.00%               bin_1[58]                -                              
+%%                            (59)                             0                  1                0.00%               bin_1[59]                -                              
+%%                            (60)                             0                  1                0.00%               bin_1[60]                -                              
+%%                            (61)                             0                  1                0.00%               bin_1[61]                -                              
+%%                            (62)                             0                  1                0.00%               bin_1[62]                -                              
+%%                            (63)                             0                  1                0.00%               bin_1[63]                -                              
+%%                            (64)                             0                  1                0.00%               bin_1[64]                -                              
+%%                            (65)                             0                  1                0.00%               bin_1[65]                -                              
+%%                            (66)                             0                  1                0.00%               bin_1[66]                -                              
+%%                            (67)                             0                  1                0.00%               bin_1[67]                -                              
+%%                            (68)                             0                  1                0.00%               bin_1[68]                -                              
+%%                            (69)                             0                  1                0.00%               bin_1[69]                -                              
+%%                            (70)                             0                  1                0.00%               bin_1[70]                -                              
+%%                            (71)                             0                  1                0.00%               bin_1[71]                -                              
+%%                            (72)                             0                  1                0.00%               bin_1[72]                -                              
+%%                            (73)                             0                  1                0.00%               bin_1[73]                -                              
+%%                            (74)                             0                  1                0.00%               bin_1[74]                -                              
+%%                            (75)                             0                  1                0.00%               bin_1[75]                -                              
+%%                            (76)                             0                  1                0.00%               bin_1[76]                -                              
+%%                            (77)                             0                  1                0.00%               bin_1[77]                -                              
+%%                            (78)                             0                  1                0.00%               bin_1[78]                -                              
+%%                            (79)                             0                  1                0.00%               bin_1[79]                -                              
+%%                            (80)                             0                  1                0.00%               bin_1[80]                -                              
+%%                            (81)                             0                  1                0.00%               bin_1[81]                -                              
+%%                            (82)                             0                  1                0.00%               bin_1[82]                -                              
+%%                            (83)                             0                  1                0.00%               bin_1[83]                -                              
+%%                            (84)                             0                  1                0.00%               bin_1[84]                -                              
+%%                            (85)                             0                  1                0.00%               bin_1[85]                -                              
+%%                            (86)                             0                  1                0.00%               bin_1[86]                -                              
+%%                            (87)                             0                  1                0.00%               bin_1[87]                -                              
+%%                            (88)                             0                  1                0.00%               bin_1[88]                -                              
+%%                            (89)                             0                  1                0.00%               bin_1[89]                -                              
+%%                            (90)                             0                  1                0.00%               bin_1[90]                -                              
+%%                            (91)                             0                  1                0.00%               bin_1[91]                -                              
+%%                            (92)                             0                  1                0.00%               bin_1[92]                -                              
+%%                            (93)                             0                  1                0.00%               bin_1[93]                -                              
+%%                            (94)                             0                  1                0.00%               bin_1[94]                -                              
+%%                            (95)                             0                  1                0.00%               bin_1[95]                -                              
+%%                            (96)                             0                  1                0.00%               bin_1[96]                -                              
+%%                            (97)                             0                  1                0.00%               bin_1[97]                -                              
+%%                            (98)                             0                  1                0.00%               bin_1[98]                -                              
+%%                            (99)                             0                  1                0.00%               bin_1[99]                -                              
+%%                            (100)                            0                  1                0.00%              bin_1[100]                -                              
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%      
+%%      =======================================================================================================================================================================
+%%      ***  COVERPOINT CONFIGURATION REPORT ***
+%%      =======================================================================================================================================================================
+%%                NAME                    :                  MY_COVERPOINT
+%%                SCOPE                   :                       MY_SCOPE
+%%                ILLEGAL BIN ALERT LEVEL :                        FAILURE
+%%                BIN OVERLAP ALERT LEVEL :                       TB_ERROR
+%%                COVERAGE WEIGHT         :                              5
+%%                BINS COVERAGE GOAL      :                             50
+%%                HITS COVERAGE GOAL      :                            200
+%%                COVERPOINTS GOAL        :                            100
+%%                NUMBER OF BINS          :                            101
+%%                CROSS DIMENSIONS        :                              1
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%      
+%%      =======================================================================================================================================================================
+%%      0 ns *** OVERALL COVERAGE REPORT (VERBOSE): TB seq. ***                                                                                                                
+%%      =======================================================================================================================================================================
+%%      Coverage (for goal 100): Covpts: 0.00%,    Bins: 50.00%,   Hits: 50.00%  
+%%      =======================================================================================================================================================================
+%%              COVERPOINT           COVERAGE WEIGHT         COVERED BINS        COVERAGE(BINS|HITS)      GOAL(BINS|HITS)     % OF GOAL(BINS|HITS)                             
+%%             MY_COVERPOINT                5                  50 / 100            50.00% | 50.00%          50% | 200%          100.00% | 25.00%                               
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Delete and check the coverpoint has default values
+%%      0 ns    Log    ID_FUNC_COV_CONFIG  MY_SCOPE            [MY_COVERPOINT] delete_coverpoint()
+%%      0 ns    Log    PASSED              TB seq.             check_value(string, '') => OK. Value was ''. 'Checking name'
+%%      0 ns    Log    PASSED              TB seq.             check_value(string, 'TB seq.') => OK. Value was 'TB seq.'. 'Checking scope'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking illegal bin alert level'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking bin overlap alert level'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1) => OK. Value was 1. 'Checking coverage weight'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 100) => OK. Value was 100. 'Checking bins coverage goal'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 100) => OK. Value was 100. 'Checking hits coverage goal'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, false) => OK. Value was false. 'Checking is_defined(VOID)'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, -1) => OK. Value was -1. 'Checking num_bins_crossed'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Checking num_valid_bins'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Checking num_invalid_bins'
+%%      0 ns    Log    PASSED              TB seq.             check_value(real, 0.0000) => OK. Value was 0.0000. 'Checking bins coverage'
+%%      0 ns    Log    PASSED              TB seq.             check_value(real, 0.0000) => OK. Value was 0.0000. 'Checking hits coverage'
+%%      0 ns    Log    PASSED              TB seq.             check_value(real, 0.0000) => OK. Value was 0.0000. 'Checking covpts overall coverage'
+%%      0 ns    Log    PASSED              TB seq.             check_value(real, 0.0000) => OK. Value was 0.0000. 'Checking bins overall coverage'
+%%      0 ns    Log    PASSED              TB seq.             check_value(real, 0.0000) => OK. Value was 0.0000. 'Checking hits overall coverage'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 10) => OK. Value was 10. 'Checking seed 1'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 100) => OK. Value was 100. 'Checking seed 2'
+%%      
+%%      =======================================================================================================================================================================
+%%      0 ns *** COVERAGE SUMMARY REPORT (NON VERBOSE): TB seq. ***                                                                                                            
+%%      =======================================================================================================================================================================
+%%      Coverpoint:              
+%%      Coverage (for goal 100): Bins: 0.0%,     Hits: 0.0%    
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                            BINS                            HITS             MIN HITS         HIT COVERAGE             NAME             ILLEGAL/IGNORE                       
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%      
+%%      =======================================================================================================================================================================
+%%      ***  COVERPOINT CONFIGURATION REPORT ***
+%%      =======================================================================================================================================================================
+%%                NAME                    :              **uninitialized**
+%%                SCOPE                   :                        TB seq.
+%%                ILLEGAL BIN ALERT LEVEL :                          ERROR
+%%                BIN OVERLAP ALERT LEVEL :                       NO_ALERT
+%%                COVERAGE WEIGHT         :                              1
+%%                BINS COVERAGE GOAL      :                            100
+%%                HITS COVERAGE GOAL      :                            100
+%%                COVERPOINTS GOAL        :                            100
+%%                NUMBER OF BINS          :                              0
+%%                CROSS DIMENSIONS        :                             -1
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%      
+%%      =======================================================================================================================================================================
+%%      0 ns *** OVERALL COVERAGE REPORT (VERBOSE): TB seq. ***                                                                                                                
+%%      =======================================================================================================================================================================
+%%      Coverage (for goal 100): Covpts: 0.00%,    Bins: 0.00%,    Hits: 0.00%   
+%%      =======================================================================================================================================================================
+%%              COVERPOINT           COVERAGE WEIGHT         COVERED BINS        COVERAGE(BINS|HITS)      GOAL(BINS|HITS)     % OF GOAL(BINS|HITS)                             
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing deleting several coverpoints
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_2] add_bins(bin(1), "")
+%%      0 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_2] Adding bins: (1), min_hits:1, rand_weight:1, ""
+%%      0 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_3] add_bins(bin(2), "")
+%%      0 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_3] Adding bins: (2), min_hits:1, rand_weight:1, ""
+%%      0 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_4] add_bins(bin(3), "")
+%%      0 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_4] Adding bins: (3), min_hits:1, rand_weight:1, ""
+%%      0 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_5] add_bins(bin(4), "")
+%%      0 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_5] Adding bins: (4), min_hits:1, rand_weight:1, ""
+%%      
+%%      =======================================================================================================================================================================
+%%      0 ns *** OVERALL COVERAGE REPORT (VERBOSE): TB seq. ***                                                                                                                
+%%      =======================================================================================================================================================================
+%%      Coverage (for goal 100): Covpts: 0.00%,    Bins: 0.00%,    Hits: 0.00%   
+%%      =======================================================================================================================================================================
+%%              COVERPOINT           COVERAGE WEIGHT         COVERED BINS        COVERAGE(BINS|HITS)      GOAL(BINS|HITS)     % OF GOAL(BINS|HITS)                             
+%%                Covpt_2                   1                    0 / 1              0.00% | 0.00%           100% | 100%           0.00% | 0.00%                                
+%%                Covpt_3                   1                    0 / 1              0.00% | 0.00%           100% | 100%           0.00% | 0.00%                                
+%%                Covpt_4                   1                    0 / 1              0.00% | 0.00%           100% | 100%           0.00% | 0.00%                                
+%%                Covpt_5                   1                    0 / 1              0.00% | 0.00%           100% | 100%           0.00% | 0.00%                                
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%      0 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             [Covpt_2] delete_coverpoint()
+%%      0 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             [Covpt_4] delete_coverpoint()
+%%      0 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             [Covpt_5] delete_coverpoint()
+%%      
+%%      =======================================================================================================================================================================
+%%      0 ns *** OVERALL COVERAGE REPORT (VERBOSE): TB seq. ***                                                                                                                
+%%      =======================================================================================================================================================================
+%%      Coverage (for goal 100): Covpts: 0.00%,    Bins: 0.00%,    Hits: 0.00%   
+%%      =======================================================================================================================================================================
+%%              COVERPOINT           COVERAGE WEIGHT         COVERED BINS        COVERAGE(BINS|HITS)      GOAL(BINS|HITS)     % OF GOAL(BINS|HITS)                             
+%%                Covpt_3                   1                    0 / 1              0.00% | 0.00%           100% | 100%           0.00% | 0.00%                                
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%      0 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_6] add_cross(bin(1000), bin(2000), "")
+%%      0 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_6] Adding cross: (1000) x (2000), min_hits:1, rand_weight:1, ""
+%%      0 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_7] add_cross(bin(1001), bin(2001), "")
+%%      0 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_7] Adding cross: (1001) x (2001), min_hits:1, rand_weight:1, ""
+%%      0 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_8] add_cross(bin(1002), bin(2002), "")
+%%      0 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_8] Adding cross: (1002) x (2002), min_hits:1, rand_weight:1, ""
+%%      
+%%      =======================================================================================================================================================================
+%%      0 ns *** OVERALL COVERAGE REPORT (VERBOSE): TB seq. ***                                                                                                                
+%%      =======================================================================================================================================================================
+%%      Coverage (for goal 100): Covpts: 0.00%,    Bins: 0.00%,    Hits: 0.00%   
+%%      =======================================================================================================================================================================
+%%              COVERPOINT           COVERAGE WEIGHT         COVERED BINS        COVERAGE(BINS|HITS)      GOAL(BINS|HITS)     % OF GOAL(BINS|HITS)                             
+%%                Covpt_6                   1                    0 / 1              0.00% | 0.00%           100% | 100%           0.00% | 0.00%                                
+%%                Covpt_3                   1                    0 / 1              0.00% | 0.00%           100% | 100%           0.00% | 0.00%                                
+%%                Covpt_7                   1                    0 / 1              0.00% | 0.00%           100% | 100%           0.00% | 0.00%                                
+%%                Covpt_8                   1                    0 / 1              0.00% | 0.00%           100% | 100%           0.00% | 0.00%                                
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%      0 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             [Covpt_6] delete_coverpoint()
+%%      0 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             [Covpt_3] delete_coverpoint()
+%%      0 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             [Covpt_7] delete_coverpoint()
+%%      0 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             [Covpt_8] delete_coverpoint()
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing initializing coverpoints with config procedures
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             [Covpt_9] set_illegal_bin_alert_level(FAILURE)
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'get_illegal_bin_alert_level(VOID)'
+%%      0 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             [Covpt_10] set_bin_overlap_alert_level(TB_WARNING)
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'get_bin_overlap_alert_level(VOID)'
+%%      0 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             [Covpt_11] set_overall_coverage_weight(5)
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 5) => OK. Value was 5. 'get_overall_coverage_weight(VOID)'
+%%      0 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             [Covpt_12] set_bins_coverage_goal(75)
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 75) => OK. Value was 75. 'get_bins_coverage_goal(VOID)'
+%%      0 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             [Covpt_13] set_hits_coverage_goal(300)
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 300) => OK. Value was 300. 'get_hits_coverage_goal(VOID)'
+%%      0 ns    Log    PASSED              TB seq.             check_value(string, 'MY_COVERPOINT') => OK. Value was 'MY_COVERPOINT'. 'get_name(VOID)'
+%%      0 ns    Log    PASSED              TB seq.             check_value(string, 'MY_SCOPE') => OK. Value was 'MY_SCOPE'. 'get_scope(VOID)'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 12345) => OK. Value was 12345. 'Checking seed 1'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 67890) => OK. Value was 67890. 'Checking seed 2'
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing methods with initialized coverpoint without bins
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, false) => OK. Value was false. 'is_defined(VOID)'
+%%      0 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             [Covpt_9] write_coverage_db(db_file.txt)
+%%      0 ns    Alert  ERROR               TB seq.             rand(NO_SAMPLE_COV)=> Coverpoint does not contain any bins
+%%      0 ns    Alert  ERROR               TB seq.             rand(NO_SAMPLE_COV)=> Coverpoint does not contain any bins
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_9] sample_coverage(5)
+%%      0 ns    Alert  ERROR               TB seq.             sample_coverage(5)=> Coverpoint does not contain any bins
+%%      0 ns    Alert  ERROR               TB seq.             sample_coverage((5, 6, 7))=> Coverpoint does not contain any bins
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%   1000 ns    DONE   PASSED   fc_init_delete  Passed: 66  Affirmations Checked: 66
+%%    Expected      Failures: 0  Errors: -9  Warnings: 0  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 9  Warnings: 0  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%%   1000 ns    Log    ID_LOG_HDR          TB seq.             SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -1,0 +1,1057 @@
+%%      0 ns    Log    ID_CONSTRUCTOR      SPI_VVC,0           VVC instantiated.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  SPI_VVC,0           Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  SPI_VVC,0           Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR      SPI_VVC,1           VVC instantiated.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  SPI_VVC,1           Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  SPI_VVC,1           Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR      SPI_VVC,2           VVC instantiated.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  SPI_VVC,2           Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  SPI_VVC,2           Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR      SPI_VVC,3           VVC instantiated.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  SPI_VVC,3           Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  SPI_VVC,3           Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR      SBI_VVC,0           VVC instantiated.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  SBI_VVC,0           Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  SBI_VVC,0           Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CMD_INTERPRETER  SPI_VVC,0           Interpreter: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  SPI_VVC,1           Interpreter: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  SPI_VVC,2           Interpreter: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  SPI_VVC,3           Interpreter: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  SBI_VVC,0           Interpreter: Waiting for command
+%%      0 ns    Log    ID_CTRL             SPI_VVC_SB,0        enable() => SB enabled. 'SPI VVC SB Enabled'
+%%      0 ns    Log    ID_CTRL             SPI_VVC_SB,0        config() => config applied to SB.
+%%      0 ns    Log    ID_CTRL             SPI_VVC_SB,0        enable_log_msg() => message id id_data enabled.
+%%      0 ns    Log    ID_CTRL             SPI_VVC_SB,1        enable() => SB enabled. 'SPI VVC SB Enabled'
+%%      0 ns    Log    ID_CTRL             SPI_VVC_SB,1        config() => config applied to SB.
+%%      0 ns    Log    ID_CTRL             SPI_VVC_SB,1        enable_log_msg() => message id id_data enabled.
+%%      0 ns    Log    ID_CTRL             SPI_VVC_SB,2        enable() => SB enabled. 'SPI VVC SB Enabled'
+%%      0 ns    Log    ID_CTRL             SPI_VVC_SB,2        config() => config applied to SB.
+%%      0 ns    Log    ID_CTRL             SPI_VVC_SB,2        enable_log_msg() => message id id_data enabled.
+%%      0 ns    Log    ID_CTRL             SPI_VVC_SB,3        enable() => SB enabled. 'SPI VVC SB Enabled'
+%%      0 ns    Log    ID_CTRL             SPI_VVC_SB,3        config() => config applied to SB.
+%%      0 ns    Log    ID_CTRL             SPI_VVC_SB,3        enable_log_msg() => message id id_data enabled.
+%%      0 ns    Log    ID_CTRL             SBI_VVC_SB,0        enable() => SB enabled. 'SBI VVC SB Enabled'
+%%      0 ns    Log    ID_CTRL             SBI_VVC_SB,0        config() => config applied to SB.
+%%      0 ns    Log    ID_CTRL             SBI_VVC_SB,0        enable_log_msg() => message id id_data enabled.
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ALL_MESSAGES).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_LOG_HDR_LARGE).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_LOG_HDR).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_SEQUENCER).
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  SPI_VVC,0           Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  SPI_VVC,1           Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  SPI_VVC,2           Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  SPI_VVC,3           Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  SBI_VVC,0           Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  SPI_VVC,0           disable_log_msg(VVC_BROADCAST, ALL_MESSAGES). Command received  [1]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     SPI_VVC,0           disable_log_msg(ALL_MESSAGES). ' [1]'
+%%      0 ns    Log    ID_CMD_INTERPRETER  SPI_VVC,1           disable_log_msg(VVC_BROADCAST, ALL_MESSAGES). Command received  [1]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     SPI_VVC,1           disable_log_msg(ALL_MESSAGES). ' [1]'
+%%      0 ns    Log    ID_CMD_INTERPRETER  SPI_VVC,2           disable_log_msg(VVC_BROADCAST, ALL_MESSAGES). Command received  [1]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     SPI_VVC,2           disable_log_msg(ALL_MESSAGES). ' [1]'
+%%      0 ns    Log    ID_CMD_INTERPRETER  SPI_VVC,3           disable_log_msg(VVC_BROADCAST, ALL_MESSAGES). Command received  [1]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     SPI_VVC,3           disable_log_msg(ALL_MESSAGES). ' [1]'
+%%      0 ns    Log    ID_CMD_INTERPRETER  SBI_VVC,0           disable_log_msg(VVC_BROADCAST, ALL_MESSAGES). Command received  [1]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     SBI_VVC,0           disable_log_msg(ALL_MESSAGES). ' [1]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     SPI_VVC,0           enable_log_msg(ID_BFM). ' [2]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     SPI_VVC,1           enable_log_msg(ID_BFM). ' [2]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     SPI_VVC,2           enable_log_msg(ID_BFM). ' [2]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     SPI_VVC,3           enable_log_msg(ID_BFM). ' [2]'
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF GLOBAL CTRL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                                IGNORE    STOP_LIMIT
+%%                NOTE         :  REGARD    integer'high
+%%                TB_NOTE      :  REGARD    integer'high
+%%                WARNING      :  REGARD    integer'high
+%%                TB_WARNING   :  REGARD    integer'high
+%%                MANUAL_CHECK :  REGARD    integer'high
+%%                ERROR        :  REGARD    integer'high
+%%                TB_ERROR     :  REGARD    integer'high
+%%                FAILURE      :  REGARD         1
+%%                TB_FAILURE   :  REGARD         1
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF MSG ID PANEL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                ID                             Status
+%%                ------------------------       ------
+%%                ID_UTIL_BURIED               : DISABLED
+%%                ID_BITVIS_DEBUG              : DISABLED
+%%                ID_UTIL_SETUP                : DISABLED
+%%                ID_LOG_MSG_CTRL              : ENABLED
+%%                ID_ALERT_CTRL                : DISABLED
+%%                ID_FINISH_OR_STOP            : DISABLED
+%%                ID_CLOCK_GEN                 : DISABLED
+%%                ID_GEN_PULSE                 : DISABLED
+%%                ID_BLOCKING                  : DISABLED
+%%                ID_WATCHDOG                  : DISABLED
+%%                ID_RAND_GEN                  : DISABLED
+%%                ID_RAND_CONF                 : DISABLED
+%%                ID_FUNC_COV_BINS             : DISABLED
+%%                ID_FUNC_COV_BINS_INFO        : DISABLED
+%%                ID_FUNC_COV_RAND             : DISABLED
+%%                ID_FUNC_COV_SAMPLE           : DISABLED
+%%                ID_FUNC_COV_CONFIG           : DISABLED
+%%                ID_POS_ACK                   : DISABLED
+%%                ID_UVVM_ASSERTION            : DISABLED
+%%                ID_LOG_HDR                   : ENABLED
+%%                ID_LOG_HDR_LARGE             : ENABLED
+%%                ID_LOG_HDR_XL                : DISABLED
+%%                ID_SEQUENCER                 : ENABLED
+%%                ID_SEQUENCER_SUB             : DISABLED
+%%                ID_BFM                       : DISABLED
+%%                ID_BFM_WAIT                  : DISABLED
+%%                ID_BFM_POLL                  : DISABLED
+%%                ID_BFM_POLL_SUMMARY          : DISABLED
+%%                ID_CHANNEL_BFM               : DISABLED
+%%                ID_TERMINATE_CMD             : DISABLED
+%%                ID_SEGMENT_INITIATE          : DISABLED
+%%                ID_SEGMENT_COMPLETE          : DISABLED
+%%                ID_SEGMENT_HDR               : DISABLED
+%%                ID_SEGMENT_DATA              : DISABLED
+%%                ID_PACKET_INITIATE           : DISABLED
+%%                ID_PACKET_PREAMBLE           : DISABLED
+%%                ID_PACKET_COMPLETE           : DISABLED
+%%                ID_PACKET_HDR                : DISABLED
+%%                ID_PACKET_DATA               : DISABLED
+%%                ID_PACKET_CHECKSUM           : DISABLED
+%%                ID_PACKET_GAP                : DISABLED
+%%                ID_PACKET_PAYLOAD            : DISABLED
+%%                ID_FRAME_INITIATE            : DISABLED
+%%                ID_FRAME_COMPLETE            : DISABLED
+%%                ID_FRAME_HDR                 : DISABLED
+%%                ID_FRAME_DATA                : DISABLED
+%%                ID_COVERAGE_MAKEBIN          : DISABLED
+%%                ID_COVERAGE_ADDBIN           : DISABLED
+%%                ID_COVERAGE_ICOVER           : DISABLED
+%%                ID_COVERAGE_CONFIG           : DISABLED
+%%                ID_COVERAGE_SUMMARY          : DISABLED
+%%                ID_COVERAGE_HOLES            : DISABLED
+%%                ID_UVVM_SEND_CMD             : DISABLED
+%%                ID_UVVM_CMD_ACK              : DISABLED
+%%                ID_UVVM_CMD_RESULT           : DISABLED
+%%                ID_CMD_INTERPRETER           : DISABLED
+%%                ID_CMD_INTERPRETER_WAIT      : DISABLED
+%%                ID_IMMEDIATE_CMD             : DISABLED
+%%                ID_IMMEDIATE_CMD_WAIT        : DISABLED
+%%                ID_CMD_EXECUTOR              : DISABLED
+%%                ID_CMD_EXECUTOR_WAIT         : DISABLED
+%%                ID_CHANNEL_EXECUTOR          : DISABLED
+%%                ID_CHANNEL_EXECUTOR_WAIT     : DISABLED
+%%                ID_NEW_HVVC_CMD_SEQ          : DISABLED
+%%                ID_INSERTED_DELAY            : DISABLED
+%%                ID_OLD_AWAIT_COMPLETION      : DISABLED
+%%                ID_AWAIT_COMPLETION          : DISABLED
+%%                ID_AWAIT_COMPLETION_LIST     : DISABLED
+%%                ID_AWAIT_COMPLETION_WAIT     : DISABLED
+%%                ID_AWAIT_COMPLETION_END      : DISABLED
+%%                ID_AWAIT_UVVM_COMPLETION     : DISABLED
+%%                ID_UVVM_DATA_QUEUE           : DISABLED
+%%                ID_CONSTRUCTOR               : DISABLED
+%%                ID_CONSTRUCTOR_SUB           : DISABLED
+%%                ID_VVC_ACTIVITY              : DISABLED
+%%                ID_MONITOR                   : DISABLED
+%%                ID_MONITOR_ERROR             : DISABLED
+%%                ID_DATA                      : DISABLED
+%%                ID_CTRL                      : DISABLED
+%%                ID_SPEC_COV_INIT             : DISABLED
+%%                ID_SPEC_COV_REQS             : DISABLED
+%%                ID_SPEC_COV                  : DISABLED
+%%                ID_FILE_OPEN_CLOSE           : DISABLED
+%%                ID_FILE_PARSER               : DISABLED
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%% 
+%% 
+%% ============================================================================================================================================================================
+%% 1000440 ns    Log    ID_LOG_HDR_LARGE    SPI_TB              Testing VVC to VVC
+%% ============================================================================================================================================================================
+%% 1000440 ns    Log    ID_SEQUENCER        SPI_TB              Setting inter bfm delay for single-word transfer
+%% 
+%% 
+%% 1000440 ns    Log    ID_LOG_HDR          SPI_TB              Single-word transfer
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 
+%% 
+%% 1000440 ns    Log    ID_LOG_HDR          SPI_TB              Slave start on next SS
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 1006941 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"30BD51EF" completed. ' 'Master to Slave transmit and check '  [4]'
+%% 1007140.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"30BD51EF")=> OK, read data = x"30BD51EF". ' 'Slave to Master transmit and check '  [3]'
+%% 1007342 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"C2AC556D". ' 'Master to Slave transmit and check '  [4]'
+%% 1013941 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"7014F494" completed. ' 'Master to Slave transmit and check '  [6]'
+%% 1014140.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"7014F494")=> OK, read data = x"7014F494". ' 'Slave to Master transmit and check '  [5]'
+%% 1014342 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"7D1F8D15". ' 'Master to Slave transmit and check '  [6]'
+%% 1020941 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"72F4DFFC" completed. ' 'Master to Slave transmit and check '  [8]'
+%% 1021140.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"72F4DFFC")=> OK, read data = x"72F4DFFC". ' 'Slave to Master transmit and check '  [7]'
+%% 1021342 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"395C1469". ' 'Master to Slave transmit and check '  [8]'
+%% 1027941 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"EDB01885" completed. ' 'Master to Slave transmit and check '  [10]'
+%% 1028140.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"EDB01885")=> OK, read data = x"EDB01885". ' 'Slave to Master transmit and check '  [9]'
+%% 1028342 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"70E3CEC". ' 'Master to Slave transmit and check '  [10]'
+%% 1034941 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"62964C17" completed. ' 'Master to Slave transmit and check '  [12]'
+%% 1035140.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"62964C17")=> OK, read data = x"62964C17". ' 'Slave to Master transmit and check '  [11]'
+%% 1035342 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"BB4786EC". ' 'Master to Slave transmit and check '  [12]'
+%% 1041941 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"568A5856" completed. ' 'Master to Slave transmit and check '  [14]'
+%% 1042140.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"568A5856")=> OK, read data = x"568A5856". ' 'Slave to Master transmit and check '  [13]'
+%% 1042342 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"EA727B79". ' 'Master to Slave transmit and check '  [14]'
+%% 1048941 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"F6DAA0AB" completed. ' 'Master to Slave transmit '  [16]'
+%% 1049140.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_check(x"F6DAA0AB")=> OK, read data = x"F6DAA0AB". ' 'Master to Slave check '  [15]'
+%% 1055941 ns    Log    ID_BFM              SPI_VVC,0           spi_master_check while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master check '  [18]'
+%% 1056342 ns    Log    ID_BFM              SPI_VVC,0           spi_master_check=> OK, read data = x"50535CD1". ' 'Slave to Master check '  [18]'
+%% 1062941 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"CD903061" completed. ' 'Master to Slave transmit '  [20]'
+%% 1063140.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_check(x"CD903061")=> OK, read data = x"CD903061". ' 'Master to Slave check '  [19]'
+%% 1069941 ns    Log    ID_BFM              SPI_VVC,0           spi_master_check while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master check '  [22]'
+%% 1070342 ns    Log    ID_BFM              SPI_VVC,0           spi_master_check=> OK, read data = x"6E3768BB". ' 'Slave to Master check '  [22]'
+%% 1076941 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"B87C4DB1" completed. ' 'Master to Slave transmit '  [24]'
+%% 1077140.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_check(x"B87C4DB1")=> OK, read data = x"B87C4DB1". ' 'Master to Slave check '  [23]'
+%% 1083941 ns    Log    ID_BFM              SPI_VVC,0           spi_master_check while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master check '  [26]'
+%% 1084342 ns    Log    ID_BFM              SPI_VVC,0           spi_master_check=> OK, read data = x"C030B66D". ' 'Slave to Master check '  [26]'
+%% 1090941 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"DBBD1172" completed. ' 'Master to Slave transmit '  [28]'
+%% 1091140.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_check(x"DBBD1172")=> OK, read data = x"DBBD1172". ' 'Master to Slave check '  [27]'
+%% 1097941 ns    Log    ID_BFM              SPI_VVC,0           spi_master_check while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master check '  [30]'
+%% 1098342 ns    Log    ID_BFM              SPI_VVC,0           spi_master_check=> OK, read data = x"76CE5964". ' 'Slave to Master check '  [30]'
+%% 1104941 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"7B971B6D" completed. ' 'Master to Slave transmit '  [32]'
+%% 1105140.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_check(x"7B971B6D")=> OK, read data = x"7B971B6D". ' 'Master to Slave check '  [31]'
+%% 1111941 ns    Log    ID_BFM              SPI_VVC,0           spi_master_check while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master check '  [34]'
+%% 1112342 ns    Log    ID_BFM              SPI_VVC,0           spi_master_check=> OK, read data = x"E8C942D1". ' 'Slave to Master check '  [34]'
+%% 1118941 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"A76D694C" completed. ' 'Master to Slave transmit '  [36]'
+%% 1119140.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_check(x"A76D694C")=> OK, read data = x"A76D694C". ' 'Master to Slave check '  [35]'
+%% 1125941 ns    Log    ID_BFM              SPI_VVC,0           spi_master_check while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master check '  [38]'
+%% 1126342 ns    Log    ID_BFM              SPI_VVC,0           spi_master_check=> OK, read data = x"6B6B6F0". ' 'Slave to Master check '  [38]'
+%% 1132941 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"41C2710F" completed. ' 'Master to Slave transmit '  [39]'
+%% 1139941 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"BE3D8EF0" completed. ' 'Master to Slave transmit '  [42]'
+%% 1140140.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_check(x"BE3D8EF0")=> OK, read data = x"BE3D8EF0". ' 'Master to Slave check '  [41]'
+%% 1140140.999 ns    Alert  WARNING             SPI_VVC,1           BFM access exceeded specified start-to-start inter-bfm delay, 7000000 ps.
+%% 1146941 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"CF8EAF3A" completed. ' 'Master to Slave transmit '  [43]'
+%% 1153941 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"307150C5" completed. ' 'Master to Slave transmit '  [46]'
+%% 1154140.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_check(x"307150C5")=> OK, read data = x"307150C5". ' 'Master to Slave check '  [45]'
+%% 1154140.999 ns    Alert  WARNING             SPI_VVC,1           BFM access exceeded specified start-to-start inter-bfm delay, 7000000 ps.
+%% 1160941 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"1118BB22" completed. ' 'Master to Slave transmit '  [47]'
+%% 1167941 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"EEE744DD" completed. ' 'Master to Slave transmit '  [50]'
+%% 1168140.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_check(x"EEE744DD")=> OK, read data = x"EEE744DD". ' 'Master to Slave check '  [49]'
+%% 1168140.999 ns    Alert  WARNING             SPI_VVC,1           BFM access exceeded specified start-to-start inter-bfm delay, 7000000 ps.
+%% 1174941 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"F69F8E06" completed. ' 'Master to Slave transmit '  [51]'
+%% 1181941 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"96071F9" completed. ' 'Master to Slave transmit '  [54]'
+%% 1182140.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_check(x"096071F9")=> OK, read data = x"96071F9". ' 'Master to Slave check '  [53]'
+%% 1182140.999 ns    Alert  WARNING             SPI_VVC,1           BFM access exceeded specified start-to-start inter-bfm delay, 7000000 ps.
+%% 1188941 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"562F2E1A" completed. ' 'Master to Slave transmit '  [55]'
+%% 1195941 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"A9D0D1E5" completed. ' 'Master to Slave transmit '  [58]'
+%% 1196140.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_check(x"A9D0D1E5")=> OK, read data = x"A9D0D1E5". ' 'Master to Slave check '  [57]'
+%% 1196140.999 ns    Alert  WARNING             SPI_VVC,1           BFM access exceeded specified start-to-start inter-bfm delay, 7000000 ps.
+%% 1196342 ns    Log    ID_SEQUENCER        SPI_TB              Setting inter bfm delay for multi-word transfer
+%% 
+%% 
+%% 1196342 ns    Log    ID_LOG_HDR          SPI_TB              Multi-word transfer
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 
+%% 
+%% 1196342 ns    Log    ID_LOG_HDR          SPI_TB              Multi-word transfer with different number of words
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 1317541 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"C6211777" completed. ' 'Master to Slave transmit and check '  [63]'
+%% 1317740.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"C6211777")=> OK, read data = x"C6211777". ' 'Slave to Master transmit and check '  [64]'
+%% 1317942 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"214C47F6". ' 'Master to Slave transmit and check '  [63]'
+%% 1324443 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"48E6B237" completed. ' 'Master to Slave transmit and check '  [63]'
+%% 1324642.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"48E6B237")=> OK, read data = x"48E6B237". ' 'Slave to Master transmit and check '  [64]'
+%% 1324844 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"57324CC9". ' 'Master to Slave transmit and check '  [63]'
+%% 1331345 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"AA7A4244" completed. ' 'Master to Slave transmit and check '  [63]'
+%% 1331544.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"AA7A4244")=> OK, read data = x"AA7A4244". ' 'Slave to Master transmit and check '  [64]'
+%% 1331746 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"B96F64C6". ' 'Master to Slave transmit and check '  [63]'
+%% 1338247 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"CD87675F" completed. ' 'Master to Slave transmit and check '  [63]'
+%% 1338446.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"CD87675F")=> OK, read data = x"CD87675F". ' 'Slave to Master transmit and check '  [64]'
+%% 1338648 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"AAC81F63". ' 'Master to Slave transmit and check '  [63]'
+%% 1345149 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"B5D7D55C" completed. ' 'Master to Slave transmit and check '  [63]'
+%% 1345348.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"B5D7D55C")=> OK, read data = x"B5D7D55C". ' 'Slave to Master transmit and check '  [64]'
+%% 1345550 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"48F39FC9". ' 'Master to Slave transmit and check '  [63]'
+%% 1352051 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"FB32DF1E" completed. ' 'Master to Slave transmit and check '  [63]'
+%% 1352250.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"FB32DF1E")=> OK, read data = x"FB32DF1E". ' 'Slave to Master transmit and check '  [64]'
+%% 1352452 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"2C6E0581". ' 'Master to Slave transmit and check '  [63]'
+%% 1358953 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"B6EDB2E4" completed. ' 'Master to Slave transmit and check '  [63]'
+%% 1359152.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"B6EDB2E4")=> OK, read data = x"B6EDB2E4". ' 'Slave to Master transmit and check '  [64]'
+%% 1359354 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"505C2656". ' 'Master to Slave transmit and check '  [63]'
+%% 1365855 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"A5069F86" completed. ' 'Master to Slave transmit and check '  [63]'
+%% 1366054.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"A5069F86")=> OK, read data = x"A5069F86". ' 'Slave to Master transmit and check '  [64]'
+%% 1366256 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"BF91F04A". ' 'Master to Slave transmit and check '  [63]'
+%% 1439141 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"FA3A3D9A" completed. ' 'Master to Slave transmit and check '  [65]'
+%% 1439340.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"FA3A3D9A")=> OK, read data = x"FA3A3D9A". ' 'Slave to Master transmit and check '  [66]'
+%% 1439542 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"290D7BD0". ' 'Master to Slave transmit and check '  [65]'
+%% 1446043 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"1D2CE968" completed. ' 'Master to Slave transmit and check '  [65]'
+%% 1446242.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"1D2CE968")=> OK, read data = x"1D2CE968". ' 'Slave to Master transmit and check '  [66]'
+%% 1446444 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"D4F7BF40". ' 'Master to Slave transmit and check '  [65]'
+%% 1452945 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"A9659BF9" completed. ' 'Master to Slave transmit and check '  [65]'
+%% 1453144.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"A9659BF9")=> OK, read data = x"A9659BF9". ' 'Slave to Master transmit and check '  [66]'
+%% 1453346 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"A63A3289". ' 'Master to Slave transmit and check '  [65]'
+%% 1459847 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"62FC1C76" completed. ' 'Master to Slave transmit and check '  [65]'
+%% 1460046.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"62FC1C76")=> OK, read data = x"62FC1C76". ' 'Slave to Master transmit and check '  [66]'
+%% 1460248 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"2A9CBE5C". ' 'Master to Slave transmit and check '  [65]'
+%% 1466749 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"5D51BF7C" completed. ' 'Master to Slave transmit and check '  [65]'
+%% 1466948.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"5D51BF7C")=> OK, read data = x"5D51BF7C". ' 'Slave to Master transmit and check '  [66]'
+%% 1467150 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"D8AAAFD5". ' 'Master to Slave transmit and check '  [65]'
+%% 1473651 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"4F85DED0" completed. ' 'Master to Slave transmit and check '  [65]'
+%% 1473850.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"4F85DED0")=> OK, read data = x"4F85DED0". ' 'Slave to Master transmit and check '  [66]'
+%% 1474052 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"AC796178". ' 'Master to Slave transmit and check '  [65]'
+%% 1480553 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"80B2FE23" completed. ' 'Master to Slave transmit and check '  [65]'
+%% 1480752.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"80B2FE23")=> OK, read data = x"80B2FE23". ' 'Slave to Master transmit and check '  [66]'
+%% 1480954 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"75BD84E5". ' 'Master to Slave transmit and check '  [65]'
+%% 1487455 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"53BD2A3C" completed. ' 'Master to Slave transmit and check '  [65]'
+%% 1487654.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"53BD2A3C")=> OK, read data = x"53BD2A3C". ' 'Slave to Master transmit and check '  [66]'
+%% 1487856 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"F542C13B". ' 'Master to Slave transmit and check '  [65]'
+%% 1560741 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"6B75C0FE" completed. ' 'Master to Slave transmit and check '  [67]'
+%% 1560940.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"6B75C0FE")=> OK, read data = x"6B75C0FE". ' 'Slave to Master transmit and check '  [68]'
+%% 1561142 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"1434ECD7". ' 'Master to Slave transmit and check '  [67]'
+%% 1567643 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"748BD812" completed. ' 'Master to Slave transmit and check '  [67]'
+%% 1567842.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"748BD812")=> OK, read data = x"748BD812". ' 'Slave to Master transmit and check '  [68]'
+%% 1568044 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"EEF35F30". ' 'Master to Slave transmit and check '  [67]'
+%% 1574545 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"47558927" completed. ' 'Master to Slave transmit and check '  [67]'
+%% 1574744.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"47558927")=> OK, read data = x"47558927". ' 'Slave to Master transmit and check '  [68]'
+%% 1574946 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"3BBE52C1". ' 'Master to Slave transmit and check '  [67]'
+%% 1581447 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"193DF84E" completed. ' 'Master to Slave transmit and check '  [67]'
+%% 1581646.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"193DF84E")=> OK, read data = x"193DF84E". ' 'Slave to Master transmit and check '  [68]'
+%% 1581848 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"A2A91224". ' 'Master to Slave transmit and check '  [67]'
+%% 1588349 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"D348E5E2" completed. ' 'Master to Slave transmit and check '  [67]'
+%% 1588548.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"D348E5E2")=> OK, read data = x"D348E5E2". ' 'Slave to Master transmit and check '  [68]'
+%% 1588750 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"4F3D9526". ' 'Master to Slave transmit and check '  [67]'
+%% 1595251 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"ED5525B2" completed. ' 'Master to Slave transmit and check '  [67]'
+%% 1595450.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"ED5525B2")=> OK, read data = x"ED5525B2". ' 'Slave to Master transmit and check '  [68]'
+%% 1595652 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"D56C4982". ' 'Master to Slave transmit and check '  [67]'
+%% 1602153 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"86EB1D6F" completed. ' 'Master to Slave transmit and check '  [67]'
+%% 1602352.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"86EB1D6F")=> OK, read data = x"86EB1D6F". ' 'Slave to Master transmit and check '  [68]'
+%% 1602554 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"75DC1B7F". ' 'Master to Slave transmit and check '  [67]'
+%% 1609055 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"6161E9DA" completed. ' 'Master to Slave transmit and check '  [67]'
+%% 1609254.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"6161E9DA")=> OK, read data = x"6161E9DA". ' 'Slave to Master transmit and check '  [68]'
+%% 1609456 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"69642BD5". ' 'Master to Slave transmit and check '  [67]'
+%% 1682341 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"FFFFDF25" completed. ' 'Master to Slave transmit and check '  [69]'
+%% 1682540.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"FFFFDF25")=> OK, read data = x"FFFFDF25". ' 'Slave to Master transmit and check '  [70]'
+%% 1682742 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"B106DB6E". ' 'Master to Slave transmit and check '  [69]'
+%% 1689243 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"5893A2E3" completed. ' 'Master to Slave transmit and check '  [69]'
+%% 1689442.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"5893A2E3")=> OK, read data = x"5893A2E3". ' 'Slave to Master transmit and check '  [70]'
+%% 1689644 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"E2173DC0". ' 'Master to Slave transmit and check '  [69]'
+%% 1696145 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"81EA1006" completed. ' 'Master to Slave transmit and check '  [69]'
+%% 1696344.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"81EA1006")=> OK, read data = x"81EA1006". ' 'Slave to Master transmit and check '  [70]'
+%% 1696546 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"6FE1EB09". ' 'Master to Slave transmit and check '  [69]'
+%% 1703047 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"4B80E2FD" completed. ' 'Master to Slave transmit and check '  [69]'
+%% 1703246.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"4B80E2FD")=> OK, read data = x"4B80E2FD". ' 'Slave to Master transmit and check '  [70]'
+%% 1703448 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"E4DFA027". ' 'Master to Slave transmit and check '  [69]'
+%% 1709949 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"7CF9EF75" completed. ' 'Master to Slave transmit and check '  [69]'
+%% 1710148.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"7CF9EF75")=> OK, read data = x"7CF9EF75". ' 'Slave to Master transmit and check '  [70]'
+%% 1710350 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"78D4DA23". ' 'Master to Slave transmit and check '  [69]'
+%% 1716851 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"3520B23E" completed. ' 'Master to Slave transmit and check '  [69]'
+%% 1717050.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"3520B23E")=> OK, read data = x"3520B23E". ' 'Slave to Master transmit and check '  [70]'
+%% 1717252 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"1E96D332". ' 'Master to Slave transmit and check '  [69]'
+%% 1723753 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"C99E7EC8" completed. ' 'Master to Slave transmit and check '  [69]'
+%% 1723952.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"C99E7EC8")=> OK, read data = x"C99E7EC8". ' 'Slave to Master transmit and check '  [70]'
+%% 1724154 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"D78B9D2F". ' 'Master to Slave transmit and check '  [69]'
+%% 1730655 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"768016A1" completed. ' 'Master to Slave transmit and check '  [69]'
+%% 1730854.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"768016A1")=> OK, read data = x"768016A1". ' 'Slave to Master transmit and check '  [70]'
+%% 1731056 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"A0AC1AF4". ' 'Master to Slave transmit and check '  [69]'
+%% 1803941 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"5E5A4DB0" completed. ' 'Master to Slave transmit and check '  [71]'
+%% 1804140.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"5E5A4DB0")=> OK, read data = x"5E5A4DB0". ' 'Slave to Master transmit and check '  [72]'
+%% 1804342 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"CEB8DE71". ' 'Master to Slave transmit and check '  [71]'
+%% 1810843 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"38B16F68" completed. ' 'Master to Slave transmit and check '  [71]'
+%% 1811042.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"38B16F68")=> OK, read data = x"38B16F68". ' 'Slave to Master transmit and check '  [72]'
+%% 1811244 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"D9F9E149". ' 'Master to Slave transmit and check '  [71]'
+%% 1817745 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"6E5BDCD1" completed. ' 'Master to Slave transmit and check '  [71]'
+%% 1817944.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"6E5BDCD1")=> OK, read data = x"6E5BDCD1". ' 'Slave to Master transmit and check '  [72]'
+%% 1818146 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"C6A33CDE". ' 'Master to Slave transmit and check '  [71]'
+%% 1824647 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"A541465E" completed. ' 'Master to Slave transmit and check '  [71]'
+%% 1824846.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"A541465E")=> OK, read data = x"A541465E". ' 'Slave to Master transmit and check '  [72]'
+%% 1825048 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"7935DDC1". ' 'Master to Slave transmit and check '  [71]'
+%% 1831549 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"190A5C20" completed. ' 'Master to Slave transmit and check '  [71]'
+%% 1831748.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"190A5C20")=> OK, read data = x"190A5C20". ' 'Slave to Master transmit and check '  [72]'
+%% 1831950 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"BD1691CE". ' 'Master to Slave transmit and check '  [71]'
+%% 1838451 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"5DAB209B" completed. ' 'Master to Slave transmit and check '  [71]'
+%% 1838650.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"5DAB209B")=> OK, read data = x"5DAB209B". ' 'Slave to Master transmit and check '  [72]'
+%% 1838852 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"1707082C". ' 'Master to Slave transmit and check '  [71]'
+%% 1845353 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"4C12E139" completed. ' 'Master to Slave transmit and check '  [71]'
+%% 1845552.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"4C12E139")=> OK, read data = x"4C12E139". ' 'Slave to Master transmit and check '  [72]'
+%% 1845754 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"3F4746C6". ' 'Master to Slave transmit and check '  [71]'
+%% 1852255 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"4CB56EDA" completed. ' 'Master to Slave transmit and check '  [71]'
+%% 1852454.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"4CB56EDA")=> OK, read data = x"4CB56EDA". ' 'Slave to Master transmit and check '  [72]'
+%% 1852656 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"29BF297C". ' 'Master to Slave transmit and check '  [71]'
+%% 1925541 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"295AB3E9" completed. ' 'Master to Slave transmit and check '  [73]'
+%% 1925740.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"295AB3E9")=> OK, read data = x"295AB3E9". ' 'Slave to Master transmit and check '  [74]'
+%% 1925942 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"B06D0FA7". ' 'Master to Slave transmit and check '  [73]'
+%% 1932443 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"FB76370D" completed. ' 'Master to Slave transmit and check '  [73]'
+%% 1932642.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"FB76370D")=> OK, read data = x"FB76370D". ' 'Slave to Master transmit and check '  [74]'
+%% 1932844 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"19203174". ' 'Master to Slave transmit and check '  [73]'
+%% 1939345 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"A7EFD522" completed. ' 'Master to Slave transmit and check '  [73]'
+%% 1939544.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"A7EFD522")=> OK, read data = x"A7EFD522". ' 'Slave to Master transmit and check '  [74]'
+%% 1939746 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"D80F3046". ' 'Master to Slave transmit and check '  [73]'
+%% 1946247 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"CA023D5F" completed. ' 'Master to Slave transmit and check '  [73]'
+%% 1946446.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"CA023D5F")=> OK, read data = x"CA023D5F". ' 'Slave to Master transmit and check '  [74]'
+%% 1946648 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"CE497417". ' 'Master to Slave transmit and check '  [73]'
+%% 1953149 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"77EA4A30" completed. ' 'Master to Slave transmit and check '  [73]'
+%% 1953348.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"77EA4A30")=> OK, read data = x"77EA4A30". ' 'Slave to Master transmit and check '  [74]'
+%% 1953550 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"7434D912". ' 'Master to Slave transmit and check '  [73]'
+%% 1960051 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"D2564EB2" completed. ' 'Master to Slave transmit and check '  [73]'
+%% 1960250.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"D2564EB2")=> OK, read data = x"D2564EB2". ' 'Slave to Master transmit and check '  [74]'
+%% 1960452 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"DA35C6BD". ' 'Master to Slave transmit and check '  [73]'
+%% 1966953 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"DCE12F87" completed. ' 'Master to Slave transmit and check '  [73]'
+%% 1967152.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"DCE12F87")=> OK, read data = x"DCE12F87". ' 'Slave to Master transmit and check '  [74]'
+%% 1967354 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"344217CD". ' 'Master to Slave transmit and check '  [73]'
+%% 1973855 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"B90F9B81" completed. ' 'Master to Slave transmit and check '  [73]'
+%% 1974054.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"B90F9B81")=> OK, read data = x"B90F9B81". ' 'Slave to Master transmit and check '  [74]'
+%% 1974256 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"98A19E7". ' 'Master to Slave transmit and check '  [73]'
+%% 2047141 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"6CD5CE2D" completed. ' 'Master to Slave transmit and check '  [75]'
+%% 2047340.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"6CD5CE2D")=> OK, read data = x"6CD5CE2D". ' 'Slave to Master transmit and check '  [76]'
+%% 2047542 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"D332F04F". ' 'Master to Slave transmit and check '  [75]'
+%% 2054043 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"63A9530B" completed. ' 'Master to Slave transmit and check '  [75]'
+%% 2054242.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"63A9530B")=> OK, read data = x"63A9530B". ' 'Slave to Master transmit and check '  [76]'
+%% 2054444 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"79D8E77B". ' 'Master to Slave transmit and check '  [75]'
+%% 2060945 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"7EB159AC" completed. ' 'Master to Slave transmit and check '  [75]'
+%% 2061144.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"7EB159AC")=> OK, read data = x"7EB159AC". ' 'Slave to Master transmit and check '  [76]'
+%% 2061346 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"2158713F". ' 'Master to Slave transmit and check '  [75]'
+%% 2067847 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"E6CDBE6E" completed. ' 'Master to Slave transmit and check '  [75]'
+%% 2068046.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"E6CDBE6E")=> OK, read data = x"E6CDBE6E". ' 'Slave to Master transmit and check '  [76]'
+%% 2068248 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"C684AC25". ' 'Master to Slave transmit and check '  [75]'
+%% 2074749 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"5E8AAA90" completed. ' 'Master to Slave transmit and check '  [75]'
+%% 2074948.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"5E8AAA90")=> OK, read data = x"5E8AAA90". ' 'Slave to Master transmit and check '  [76]'
+%% 2075150 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"A393FE5D". ' 'Master to Slave transmit and check '  [75]'
+%% 2081651 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"2ECA5F2E" completed. ' 'Master to Slave transmit and check '  [75]'
+%% 2081850.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"2ECA5F2E")=> OK, read data = x"2ECA5F2E". ' 'Slave to Master transmit and check '  [76]'
+%% 2082052 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"63312322". ' 'Master to Slave transmit and check '  [75]'
+%% 2168741 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"CF83CA27" completed. ' 'Master to Slave transmit and check '  [77]'
+%% 2168940.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"CF83CA27")=> OK, read data = x"CF83CA27". ' 'Slave to Master transmit and check '  [78]'
+%% 2169142 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"AD368EDF". ' 'Master to Slave transmit and check '  [77]'
+%% 2175643 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"5CCD9866" completed. ' 'Master to Slave transmit and check '  [77]'
+%% 2175842.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"5CCD9866")=> OK, read data = x"5CCD9866". ' 'Slave to Master transmit and check '  [78]'
+%% 2176044 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"70277D18". ' 'Master to Slave transmit and check '  [77]'
+%% 2182545 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"D7C92C61" completed. ' 'Master to Slave transmit and check '  [77]'
+%% 2182744.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"D7C92C61")=> OK, read data = x"D7C92C61". ' 'Slave to Master transmit and check '  [78]'
+%% 2182946 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"3AC64001". ' 'Master to Slave transmit and check '  [77]'
+%% 2189447 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"B22983FC" completed. ' 'Master to Slave transmit and check '  [77]'
+%% 2189646.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"B22983FC")=> OK, read data = x"B22983FC". ' 'Slave to Master transmit and check '  [78]'
+%% 2189848 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"144A3C83". ' 'Master to Slave transmit and check '  [77]'
+%% 2196349 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"E9212D35" completed. ' 'Master to Slave transmit and check '  [77]'
+%% 2196548.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"E9212D35")=> OK, read data = x"E9212D35". ' 'Slave to Master transmit and check '  [78]'
+%% 2196750 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"8979E1EE". ' 'Master to Slave transmit and check '  [77]'
+%% 2203251 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"AA18BA50" completed. ' 'Master to Slave transmit and check '  [77]'
+%% 2203450.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"AA18BA50")=> OK, read data = x"AA18BA50". ' 'Slave to Master transmit and check '  [78]'
+%% 2203652 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"25801E74". ' 'Master to Slave transmit and check '  [77]'
+%% 2210153 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"C13EAC0C" completed. ' 'Master to Slave transmit and check '  [77]'
+%% 2210352.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"C13EAC0C")=> OK, read data = x"C13EAC0C". ' 'Slave to Master transmit and check '  [78]'
+%% 2210554 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"2087A2F6". ' 'Master to Slave transmit and check '  [77]'
+%% 2217055 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"38284CC1" completed. ' 'Master to Slave transmit and check '  [77]'
+%% 2217254.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"38284CC1")=> OK, read data = x"38284CC1". ' 'Slave to Master transmit and check '  [78]'
+%% 2217456 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"33A22921". ' 'Master to Slave transmit and check '  [77]'
+%% 2290341 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"B657DEFC" completed. ' 'Master to Slave transmit and check '  [79]'
+%% 2290540.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"B657DEFC")=> OK, read data = x"B657DEFC". ' 'Slave to Master transmit and check '  [80]'
+%% 2290742 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"AE68E5D7". ' 'Master to Slave transmit and check '  [79]'
+%% 2297243 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"6D09100" completed. ' 'Master to Slave transmit and check '  [79]'
+%% 2297442.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"06D09100")=> OK, read data = x"6D09100". ' 'Slave to Master transmit and check '  [80]'
+%% 2297644 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"1EC9858F". ' 'Master to Slave transmit and check '  [79]'
+%% 2304145 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"BBB5E375" completed. ' 'Master to Slave transmit and check '  [79]'
+%% 2304344.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"BBB5E375")=> OK, read data = x"BBB5E375". ' 'Slave to Master transmit and check '  [80]'
+%% 2304546 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"2142F5A9". ' 'Master to Slave transmit and check '  [79]'
+%% 2311047 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"C2AB1A9E" completed. ' 'Master to Slave transmit and check '  [79]'
+%% 2311246.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"C2AB1A9E")=> OK, read data = x"C2AB1A9E". ' 'Slave to Master transmit and check '  [80]'
+%% 2311448 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"934751B1". ' 'Master to Slave transmit and check '  [79]'
+%% 2317949 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"E29CF109" completed. ' 'Master to Slave transmit and check '  [79]'
+%% 2318148.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"E29CF109")=> OK, read data = x"E29CF109". ' 'Slave to Master transmit and check '  [80]'
+%% 2318350 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"6B1F73A1". ' 'Master to Slave transmit and check '  [79]'
+%% 2324851 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"B34121A3" completed. ' 'Master to Slave transmit and check '  [79]'
+%% 2325050.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"B34121A3")=> OK, read data = x"B34121A3". ' 'Slave to Master transmit and check '  [80]'
+%% 2325252 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"32B97B49". ' 'Master to Slave transmit and check '  [79]'
+%% 2411941 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"D1A379CE" completed. ' 'Master to Slave transmit and check '  [81]'
+%% 2412140.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"D1A379CE")=> OK, read data = x"D1A379CE". ' 'Slave to Master transmit and check '  [82]'
+%% 2412342 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"D43E79E3". ' 'Master to Slave transmit and check '  [81]'
+%% 2418843 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"D5E8F8BE" completed. ' 'Master to Slave transmit and check '  [81]'
+%% 2419042.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"D5E8F8BE")=> OK, read data = x"D5E8F8BE". ' 'Slave to Master transmit and check '  [82]'
+%% 2419244 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"2FA9AA43". ' 'Master to Slave transmit and check '  [81]'
+%% 2425745 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"A0D833E7" completed. ' 'Master to Slave transmit and check '  [81]'
+%% 2425944.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"A0D833E7")=> OK, read data = x"A0D833E7". ' 'Slave to Master transmit and check '  [82]'
+%% 2426146 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"50F87B6D". ' 'Master to Slave transmit and check '  [81]'
+%% 2432647 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"F14E3823" completed. ' 'Master to Slave transmit and check '  [81]'
+%% 2432846.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"F14E3823")=> OK, read data = x"F14E3823". ' 'Slave to Master transmit and check '  [82]'
+%% 2433048 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"BB525F93". ' 'Master to Slave transmit and check '  [81]'
+%% 2439549 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"8747FBBD" completed. ' 'Master to Slave transmit and check '  [81]'
+%% 2439748.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"8747FBBD")=> OK, read data = x"8747FBBD". ' 'Slave to Master transmit and check '  [82]'
+%% 2439950 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"6D4BB744". ' 'Master to Slave transmit and check '  [81]'
+%% 2533541 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"4B2C62D6" completed. ' 'Master to Slave transmit and check '  [83]'
+%% 2533740.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"4B2C62D6")=> OK, read data = x"4B2C62D6". ' 'Slave to Master transmit and check '  [84]'
+%% 2533942 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"71F1B04". ' 'Master to Slave transmit and check '  [83]'
+%% 2540443 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"859E5793" completed. ' 'Master to Slave transmit and check '  [83]'
+%% 2540642.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"859E5793")=> OK, read data = x"859E5793". ' 'Slave to Master transmit and check '  [84]'
+%% 2540844 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"7D200B86". ' 'Master to Slave transmit and check '  [83]'
+%% 2547345 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"B7D7CB97" completed. ' 'Master to Slave transmit and check '  [83]'
+%% 2547544.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"B7D7CB97")=> OK, read data = x"B7D7CB97". ' 'Slave to Master transmit and check '  [84]'
+%% 2547746 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"63AB30F8". ' 'Master to Slave transmit and check '  [83]'
+%% 2554247 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"E9FB3B3F" completed. ' 'Master to Slave transmit and check '  [83]'
+%% 2554446.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"E9FB3B3F")=> OK, read data = x"E9FB3B3F". ' 'Slave to Master transmit and check '  [84]'
+%% 2554648 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"97F43D60". ' 'Master to Slave transmit and check '  [83]'
+%% 2655141 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"B6BD06DF" completed. ' 'Master to Slave transmit and check '  [85]'
+%% 2655340.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"B6BD06DF")=> OK, read data = x"B6BD06DF". ' 'Slave to Master transmit and check '  [86]'
+%% 2655542 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"9675B608". ' 'Master to Slave transmit and check '  [85]'
+%% 2662043 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"AB3D5AAA" completed. ' 'Master to Slave transmit and check '  [85]'
+%% 2662242.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"AB3D5AAA")=> OK, read data = x"AB3D5AAA". ' 'Slave to Master transmit and check '  [86]'
+%% 2662444 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"551127E3". ' 'Master to Slave transmit and check '  [85]'
+%% 2668945 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"41731A0E" completed. ' 'Master to Slave transmit and check '  [85]'
+%% 2669144.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"41731A0E")=> OK, read data = x"41731A0E". ' 'Slave to Master transmit and check '  [86]'
+%% 2669346 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"DB770DE". ' 'Master to Slave transmit and check '  [85]'
+%% 
+%% 
+%% 2669346 ns    Log    ID_LOG_HDR          SPI_TB              Transfer array of words with SS_N deasserted between each word
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 2776741 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"2300A5FB" completed. ' 'Master to Slave transmit and check '  [92]'
+%% 2776940.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"2300A5FB")=> OK, read data = x"2300A5FB". ' 'Slave to Master transmit and check '  [91]'
+%% 2777392 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"F1537A59". ' 'Master to Slave transmit and check '  [92]'
+%% 2783893 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"D658DDE0" completed. ' 'Master to Slave transmit and check '  [92]'
+%% 2784092.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"D658DDE0")=> OK, read data = x"D658DDE0". ' 'Slave to Master transmit and check '  [91]'
+%% 2784544 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"2D7C4C2D". ' 'Master to Slave transmit and check '  [92]'
+%% 2791045 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"3658141F" completed. ' 'Master to Slave transmit and check '  [92]'
+%% 2791244.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"3658141F")=> OK, read data = x"3658141F". ' 'Slave to Master transmit and check '  [91]'
+%% 2791696 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"3E0477D8". ' 'Master to Slave transmit and check '  [92]'
+%% 2798197 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"C9F2AD6B" completed. ' 'Master to Slave transmit and check '  [92]'
+%% 2798396.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"C9F2AD6B")=> OK, read data = x"C9F2AD6B". ' 'Slave to Master transmit and check '  [91]'
+%% 2798848 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"C9F300EE". ' 'Master to Slave transmit and check '  [92]'
+%% 2805349 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"5CBD70BE" completed. ' 'Master to Slave transmit and check '  [92]'
+%% 2805548.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"5CBD70BE")=> OK, read data = x"5CBD70BE". ' 'Slave to Master transmit and check '  [91]'
+%% 2806000 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"8BDD217A". ' 'Master to Slave transmit and check '  [92]'
+%% 2812501 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"C10CFC86" completed. ' 'Master to Slave transmit and check '  [92]'
+%% 2812700.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"C10CFC86")=> OK, read data = x"C10CFC86". ' 'Slave to Master transmit and check '  [91]'
+%% 2813152 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"420A1DC8". ' 'Master to Slave transmit and check '  [92]'
+%% 2819653 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"469C1D3A" completed. ' 'Master to Slave transmit and check '  [92]'
+%% 2819852.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"469C1D3A")=> OK, read data = x"469C1D3A". ' 'Slave to Master transmit and check '  [91]'
+%% 2820304 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"BF528AE". ' 'Master to Slave transmit and check '  [92]'
+%% 2826805 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"D1DC028E" completed. ' 'Master to Slave transmit and check '  [92]'
+%% 2827004.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"D1DC028E")=> OK, read data = x"D1DC028E". ' 'Slave to Master transmit and check '  [91]'
+%% 2827456 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"A9276212". ' 'Master to Slave transmit and check '  [92]'
+%% 2898341 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"85B4A1F" completed. ' 'Master to Slave transmit and check '  [94]'
+%% 2898540.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"085B4A1F")=> OK, read data = x"85B4A1F". ' 'Slave to Master transmit and check '  [93]'
+%% 2898992 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"683FCAD5". ' 'Master to Slave transmit and check '  [94]'
+%% 2905493 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"F6D3D061" completed. ' 'Master to Slave transmit and check '  [94]'
+%% 2905692.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"F6D3D061")=> OK, read data = x"F6D3D061". ' 'Slave to Master transmit and check '  [93]'
+%% 2906144 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"B0C31787". ' 'Master to Slave transmit and check '  [94]'
+%% 2912645 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"71CA39D2" completed. ' 'Master to Slave transmit and check '  [94]'
+%% 2912844.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"71CA39D2")=> OK, read data = x"71CA39D2". ' 'Slave to Master transmit and check '  [93]'
+%% 2913296 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"E0CC8440". ' 'Master to Slave transmit and check '  [94]'
+%% 2919797 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"F34242A0" completed. ' 'Master to Slave transmit and check '  [94]'
+%% 2919996.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"F34242A0")=> OK, read data = x"F34242A0". ' 'Slave to Master transmit and check '  [93]'
+%% 2920448 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"752FD8D6". ' 'Master to Slave transmit and check '  [94]'
+%% 2926949 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"2096B9F5" completed. ' 'Master to Slave transmit and check '  [94]'
+%% 2927148.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"2096B9F5")=> OK, read data = x"2096B9F5". ' 'Slave to Master transmit and check '  [93]'
+%% 2927600 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"A8C638E7". ' 'Master to Slave transmit and check '  [94]'
+%% 2934101 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"815356F6" completed. ' 'Master to Slave transmit and check '  [94]'
+%% 2934300.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"815356F6")=> OK, read data = x"815356F6". ' 'Slave to Master transmit and check '  [93]'
+%% 2934752 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"170E88A7". ' 'Master to Slave transmit and check '  [94]'
+%% 2941253 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"3A5A0326" completed. ' 'Master to Slave transmit and check '  [94]'
+%% 2941452.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"3A5A0326")=> OK, read data = x"3A5A0326". ' 'Slave to Master transmit and check '  [93]'
+%% 2941904 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"62C13962". ' 'Master to Slave transmit and check '  [94]'
+%% 2948405 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"1ECA4061" completed. ' 'Master to Slave transmit and check '  [94]'
+%% 2948604.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"1ECA4061")=> OK, read data = x"1ECA4061". ' 'Slave to Master transmit and check '  [93]'
+%% 2949056 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"4CF152BF". ' 'Master to Slave transmit and check '  [94]'
+%% 3019941 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"A976120D" completed. ' 'Master to Slave transmit and check '  [96]'
+%% 3020140.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"A976120D")=> OK, read data = x"A976120D". ' 'Slave to Master transmit and check '  [95]'
+%% 3020592 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"12F4FCAC". ' 'Master to Slave transmit and check '  [96]'
+%% 3027093 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"2779F323" completed. ' 'Master to Slave transmit and check '  [96]'
+%% 3027292.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"2779F323")=> OK, read data = x"2779F323". ' 'Slave to Master transmit and check '  [95]'
+%% 3027744 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"3D90828C". ' 'Master to Slave transmit and check '  [96]'
+%% 3034245 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"82D0CCEE" completed. ' 'Master to Slave transmit and check '  [96]'
+%% 3034444.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"82D0CCEE")=> OK, read data = x"82D0CCEE". ' 'Slave to Master transmit and check '  [95]'
+%% 3034896 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"A791D400". ' 'Master to Slave transmit and check '  [96]'
+%% 3041397 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"72906799" completed. ' 'Master to Slave transmit and check '  [96]'
+%% 3041596.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"72906799")=> OK, read data = x"72906799". ' 'Slave to Master transmit and check '  [95]'
+%% 3042048 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"9FBED98E". ' 'Master to Slave transmit and check '  [96]'
+%% 3048549 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"E7067F6B" completed. ' 'Master to Slave transmit and check '  [96]'
+%% 3048748.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"E7067F6B")=> OK, read data = x"E7067F6B". ' 'Slave to Master transmit and check '  [95]'
+%% 3049200 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"E59A6153". ' 'Master to Slave transmit and check '  [96]'
+%% 3055701 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"D0C1F617" completed. ' 'Master to Slave transmit and check '  [96]'
+%% 3055900.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"D0C1F617")=> OK, read data = x"D0C1F617". ' 'Slave to Master transmit and check '  [95]'
+%% 3056352 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"CA2DA917". ' 'Master to Slave transmit and check '  [96]'
+%% 3062853 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"20D99AA7" completed. ' 'Master to Slave transmit and check '  [96]'
+%% 3063052.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"20D99AA7")=> OK, read data = x"20D99AA7". ' 'Slave to Master transmit and check '  [95]'
+%% 3063504 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"ED3B97BC". ' 'Master to Slave transmit and check '  [96]'
+%% 3070005 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"C3C2BC85" completed. ' 'Master to Slave transmit and check '  [96]'
+%% 3070204.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"C3C2BC85")=> OK, read data = x"C3C2BC85". ' 'Slave to Master transmit and check '  [95]'
+%% 3070656 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"5285A9A9". ' 'Master to Slave transmit and check '  [96]'
+%% 3141541 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"B5B67018" completed. ' 'Master to Slave transmit and check '  [98]'
+%% 3141740.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"B5B67018")=> OK, read data = x"B5B67018". ' 'Slave to Master transmit and check '  [97]'
+%% 3142192 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"9B6242C3". ' 'Master to Slave transmit and check '  [98]'
+%% 3148693 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"6E96C17C" completed. ' 'Master to Slave transmit and check '  [98]'
+%% 3148892.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"6E96C17C")=> OK, read data = x"6E96C17C". ' 'Slave to Master transmit and check '  [97]'
+%% 3149344 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"830A91D1". ' 'Master to Slave transmit and check '  [98]'
+%% 3155845 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"96314C34" completed. ' 'Master to Slave transmit and check '  [98]'
+%% 3156044.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"96314C34")=> OK, read data = x"96314C34". ' 'Slave to Master transmit and check '  [97]'
+%% 3156496 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"1DFDDB81". ' 'Master to Slave transmit and check '  [98]'
+%% 3162997 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"959CD4A0" completed. ' 'Master to Slave transmit and check '  [98]'
+%% 3163196.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"959CD4A0")=> OK, read data = x"959CD4A0". ' 'Slave to Master transmit and check '  [97]'
+%% 3163648 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"73DEC0A6". ' 'Master to Slave transmit and check '  [98]'
+%% 3170149 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"9D54F508" completed. ' 'Master to Slave transmit and check '  [98]'
+%% 3170348.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"9D54F508")=> OK, read data = x"9D54F508". ' 'Slave to Master transmit and check '  [97]'
+%% 3170800 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"9FC82E54". ' 'Master to Slave transmit and check '  [98]'
+%% 3177301 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"355CE4EE" completed. ' 'Master to Slave transmit and check '  [98]'
+%% 3177500.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"355CE4EE")=> OK, read data = x"355CE4EE". ' 'Slave to Master transmit and check '  [97]'
+%% 3177952 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"D92064FF". ' 'Master to Slave transmit and check '  [98]'
+%% 3184453 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"FC11C34C" completed. ' 'Master to Slave transmit and check '  [98]'
+%% 3184652.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"FC11C34C")=> OK, read data = x"FC11C34C". ' 'Slave to Master transmit and check '  [97]'
+%% 3185104 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"DEB0AE21". ' 'Master to Slave transmit and check '  [98]'
+%% 3191605 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"8F675CDB" completed. ' 'Master to Slave transmit and check '  [98]'
+%% 3191804.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"8F675CDB")=> OK, read data = x"8F675CDB". ' 'Slave to Master transmit and check '  [97]'
+%% 3192256 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"7A90958B". ' 'Master to Slave transmit and check '  [98]'
+%% 3263141 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"22C776E7" completed. ' 'Master to Slave transmit and check '  [100]'
+%% 3263340.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"22C776E7")=> OK, read data = x"22C776E7". ' 'Slave to Master transmit and check '  [99]'
+%% 3263792 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"63A209E8". ' 'Master to Slave transmit and check '  [100]'
+%% 3270293 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"1C9180BA" completed. ' 'Master to Slave transmit and check '  [100]'
+%% 3270492.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"1C9180BA")=> OK, read data = x"1C9180BA". ' 'Slave to Master transmit and check '  [99]'
+%% 3270944 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"793F6BF7". ' 'Master to Slave transmit and check '  [100]'
+%% 3277445 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"20D73D76" completed. ' 'Master to Slave transmit and check '  [100]'
+%% 3277644.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"20D73D76")=> OK, read data = x"20D73D76". ' 'Slave to Master transmit and check '  [99]'
+%% 3278096 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"17EC7206". ' 'Master to Slave transmit and check '  [100]'
+%% 3284597 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"AAD6301D" completed. ' 'Master to Slave transmit and check '  [100]'
+%% 3284796.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"AAD6301D")=> OK, read data = x"AAD6301D". ' 'Slave to Master transmit and check '  [99]'
+%% 3285248 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"29668D14". ' 'Master to Slave transmit and check '  [100]'
+%% 3291749 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"D2C0810D" completed. ' 'Master to Slave transmit and check '  [100]'
+%% 3291948.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"D2C0810D")=> OK, read data = x"D2C0810D". ' 'Slave to Master transmit and check '  [99]'
+%% 3292400 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"8262E390". ' 'Master to Slave transmit and check '  [100]'
+%% 3298901 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"84E9EFD5" completed. ' 'Master to Slave transmit and check '  [100]'
+%% 3299100.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"84E9EFD5")=> OK, read data = x"84E9EFD5". ' 'Slave to Master transmit and check '  [99]'
+%% 3299552 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"837191CF". ' 'Master to Slave transmit and check '  [100]'
+%% 3306053 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"2F4CBFE6" completed. ' 'Master to Slave transmit and check '  [100]'
+%% 3306252.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"2F4CBFE6")=> OK, read data = x"2F4CBFE6". ' 'Slave to Master transmit and check '  [99]'
+%% 3306704 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"9C138C85". ' 'Master to Slave transmit and check '  [100]'
+%% 3313205 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"CA54A4CF" completed. ' 'Master to Slave transmit and check '  [100]'
+%% 3313404.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"CA54A4CF")=> OK, read data = x"CA54A4CF". ' 'Slave to Master transmit and check '  [99]'
+%% 3313856 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"8AB7872D". ' 'Master to Slave transmit and check '  [100]'
+%% 3384741 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"2DDD3175" completed. ' 'Master to Slave transmit and check '  [102]'
+%% 3384940.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"2DDD3175")=> OK, read data = x"2DDD3175". ' 'Slave to Master transmit and check '  [101]'
+%% 3385392 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"B6359890". ' 'Master to Slave transmit and check '  [102]'
+%% 3391893 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"45BF7E45" completed. ' 'Master to Slave transmit and check '  [102]'
+%% 3392092.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"45BF7E45")=> OK, read data = x"45BF7E45". ' 'Slave to Master transmit and check '  [101]'
+%% 3392544 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"E2E60A03". ' 'Master to Slave transmit and check '  [102]'
+%% 3399045 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"D2E1BC84" completed. ' 'Master to Slave transmit and check '  [102]'
+%% 3399244.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"D2E1BC84")=> OK, read data = x"D2E1BC84". ' 'Slave to Master transmit and check '  [101]'
+%% 3399696 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"24618C7B". ' 'Master to Slave transmit and check '  [102]'
+%% 3406197 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"24D56B6A" completed. ' 'Master to Slave transmit and check '  [102]'
+%% 3406396.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"24D56B6A")=> OK, read data = x"24D56B6A". ' 'Slave to Master transmit and check '  [101]'
+%% 3406848 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"729CAE0E". ' 'Master to Slave transmit and check '  [102]'
+%% 3413349 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"8104E523" completed. ' 'Master to Slave transmit and check '  [102]'
+%% 3413548.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"8104E523")=> OK, read data = x"8104E523". ' 'Slave to Master transmit and check '  [101]'
+%% 3414000 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"A84D52C9". ' 'Master to Slave transmit and check '  [102]'
+%% 3420501 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"A3C0EBA8" completed. ' 'Master to Slave transmit and check '  [102]'
+%% 3420700.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"A3C0EBA8")=> OK, read data = x"A3C0EBA8". ' 'Slave to Master transmit and check '  [101]'
+%% 3421152 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"637E422D". ' 'Master to Slave transmit and check '  [102]'
+%% 3427653 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"346D72E3" completed. ' 'Master to Slave transmit and check '  [102]'
+%% 3427852.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"346D72E3")=> OK, read data = x"346D72E3". ' 'Slave to Master transmit and check '  [101]'
+%% 3428304 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"B4854CB1". ' 'Master to Slave transmit and check '  [102]'
+%% 3434805 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"5DDF7483" completed. ' 'Master to Slave transmit and check '  [102]'
+%% 3435004.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"5DDF7483")=> OK, read data = x"5DDF7483". ' 'Slave to Master transmit and check '  [101]'
+%% 3435456 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"77F655B9". ' 'Master to Slave transmit and check '  [102]'
+%% 
+%% 
+%% 3435456 ns    Log    ID_LOG_HDR          SPI_TB              Transfer array with different number of words with SS_N deasserted between each word
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 3506341 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"B4741180" completed. ' 'Master to Slave transmit and check '  [108]'
+%% 3506540.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"B4741180")=> OK, read data = x"B4741180". ' 'Slave to Master transmit and check '  [107]'
+%% 3506892 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"8054BD17". ' 'Master to Slave transmit and check '  [108]'
+%% 3513393 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"920993B0" completed. ' 'Master to Slave transmit and check '  [108]'
+%% 3513592.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"920993B0")=> OK, read data = x"920993B0". ' 'Slave to Master transmit and check '  [107]'
+%% 3513944 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"69203A46". ' 'Master to Slave transmit and check '  [108]'
+%% 3520445 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"D2C4727C" completed. ' 'Master to Slave transmit and check '  [108]'
+%% 3520644.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"D2C4727C")=> OK, read data = x"D2C4727C". ' 'Slave to Master transmit and check '  [107]'
+%% 3520996 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"D6AB9909". ' 'Master to Slave transmit and check '  [108]'
+%% 3627941 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"62EE81EA" completed. ' 'Master to Slave transmit and check '  [110]'
+%% 3628140.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"62EE81EA")=> OK, read data = x"62EE81EA". ' 'Slave to Master transmit and check '  [109]'
+%% 3628492 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"A539D33A". ' 'Master to Slave transmit and check '  [110]'
+%% 3634993 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"18ADEC0A" completed. ' 'Master to Slave transmit and check '  [110]'
+%% 3635192.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"18ADEC0A")=> OK, read data = x"18ADEC0A". ' 'Slave to Master transmit and check '  [109]'
+%% 3635544 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"D67904F". ' 'Master to Slave transmit and check '  [110]'
+%% 3642045 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"6FDAE314" completed. ' 'Master to Slave transmit and check '  [110]'
+%% 3642244.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"6FDAE314")=> OK, read data = x"6FDAE314". ' 'Slave to Master transmit and check '  [109]'
+%% 3642596 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"1A20FE7D". ' 'Master to Slave transmit and check '  [110]'
+%% 3749541 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"BA91FC92" completed. ' 'Master to Slave transmit and check '  [112]'
+%% 3749740.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"BA91FC92")=> OK, read data = x"BA91FC92". ' 'Slave to Master transmit and check '  [111]'
+%% 3750092 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"D75DFE84". ' 'Master to Slave transmit and check '  [112]'
+%% 3756593 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"AC9CC314" completed. ' 'Master to Slave transmit and check '  [112]'
+%% 3756792.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"AC9CC314")=> OK, read data = x"AC9CC314". ' 'Slave to Master transmit and check '  [111]'
+%% 3757144 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"3CC6467D". ' 'Master to Slave transmit and check '  [112]'
+%% 3763645 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"9EE81323" completed. ' 'Master to Slave transmit and check '  [112]'
+%% 3763844.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"9EE81323")=> OK, read data = x"9EE81323". ' 'Slave to Master transmit and check '  [111]'
+%% 3764196 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"8BB023FC". ' 'Master to Slave transmit and check '  [112]'
+%% 3770697 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"D53373B1" completed. ' 'Master to Slave transmit and check '  [112]'
+%% 3770896.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"D53373B1")=> OK, read data = x"D53373B1". ' 'Slave to Master transmit and check '  [111]'
+%% 3771248 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"CCB159A4". ' 'Master to Slave transmit and check '  [112]'
+%% 3871141 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"41792936" completed. ' 'Master to Slave transmit and check '  [114]'
+%% 3871340.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"41792936")=> OK, read data = x"41792936". ' 'Slave to Master transmit and check '  [113]'
+%% 3871692 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"2E556E8E". ' 'Master to Slave transmit and check '  [114]'
+%% 3878193 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"1F7A313C" completed. ' 'Master to Slave transmit and check '  [114]'
+%% 3878392.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"1F7A313C")=> OK, read data = x"1F7A313C". ' 'Slave to Master transmit and check '  [113]'
+%% 3878744 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"6741F02E". ' 'Master to Slave transmit and check '  [114]'
+%% 3992741 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"5027A2A9" completed. ' 'Master to Slave transmit and check '  [116]'
+%% 3992940.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"5027A2A9")=> OK, read data = x"5027A2A9". ' 'Slave to Master transmit and check '  [115]'
+%% 3993292 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"7769A109". ' 'Master to Slave transmit and check '  [116]'
+%% 3999793 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"112DBBE9" completed. ' 'Master to Slave transmit and check '  [116]'
+%% 3999992.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"112DBBE9")=> OK, read data = x"112DBBE9". ' 'Slave to Master transmit and check '  [115]'
+%% 4000344 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"5D958E54". ' 'Master to Slave transmit and check '  [116]'
+%% 4006845 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"C7BF4140" completed. ' 'Master to Slave transmit and check '  [116]'
+%% 4007044.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"C7BF4140")=> OK, read data = x"C7BF4140". ' 'Slave to Master transmit and check '  [115]'
+%% 4007396 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"5F0896A2". ' 'Master to Slave transmit and check '  [116]'
+%% 4013897 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"4F969F" completed. ' 'Master to Slave transmit and check '  [116]'
+%% 4014096.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"004F969F")=> OK, read data = x"4F969F". ' 'Slave to Master transmit and check '  [115]'
+%% 4014448 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"5B97B515". ' 'Master to Slave transmit and check '  [116]'
+%% 4020949 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"703CFC2B" completed. ' 'Master to Slave transmit and check '  [116]'
+%% 4021148.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"703CFC2B")=> OK, read data = x"703CFC2B". ' 'Slave to Master transmit and check '  [115]'
+%% 4021500 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"D213B729". ' 'Master to Slave transmit and check '  [116]'
+%% 4028001 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"57F5FE02" completed. ' 'Master to Slave transmit and check '  [116]'
+%% 4028200.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"57F5FE02")=> OK, read data = x"57F5FE02". ' 'Slave to Master transmit and check '  [115]'
+%% 4028552 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"FE62F6FE". ' 'Master to Slave transmit and check '  [116]'
+%% 4114341 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"2F4ACDCE" completed. ' 'Master to Slave transmit and check '  [118]'
+%% 4114540.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"2F4ACDCE")=> OK, read data = x"2F4ACDCE". ' 'Slave to Master transmit and check '  [117]'
+%% 4114892 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"E3388488". ' 'Master to Slave transmit and check '  [118]'
+%% 4121393 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"26E4F371" completed. ' 'Master to Slave transmit and check '  [118]'
+%% 4121592.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"26E4F371")=> OK, read data = x"26E4F371". ' 'Slave to Master transmit and check '  [117]'
+%% 4121944 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"FD3BD9B1". ' 'Master to Slave transmit and check '  [118]'
+%% 4128445 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"E032776E" completed. ' 'Master to Slave transmit and check '  [118]'
+%% 4128644.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"E032776E")=> OK, read data = x"E032776E". ' 'Slave to Master transmit and check '  [117]'
+%% 4128996 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"4BC82A8F". ' 'Master to Slave transmit and check '  [118]'
+%% 
+%% 
+%% 4128996 ns    Log    ID_LOG_HDR          SPI_TB              Receive only, one word
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 4235941 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"50296DFD" completed. ' 'Master to Slave transmit '  [124]'
+%% 4357541 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [128]'
+%% 
+%% 
+%% 4358092 ns    Log    ID_LOG_HDR          SPI_TB              Receive only, multi-word
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 4479141 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"A07257D6" completed. ' 'Master to Slave transmit '  [134]'
+%% 4486193 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"C8150799" completed. ' 'Master to Slave transmit '  [134]'
+%% 4600741 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"BCD103A6" completed. ' 'Master to Slave transmit '  [140]'
+%% 4607793 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"37A40DF9" completed. ' 'Master to Slave transmit '  [140]'
+%% 4614845 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"AF6E7765" completed. ' 'Master to Slave transmit '  [140]'
+%% 4722341 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"605CF90F" completed. ' 'Master to Slave transmit '  [147]'
+%% 4729393 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"B678587A" completed. ' 'Master to Slave transmit '  [147]'
+%% 4736445 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"4B31CC49" completed. ' 'Master to Slave transmit '  [147]'
+%% 4743497 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"409EF6" completed. ' 'Master to Slave transmit '  [147]'
+%% 4843941 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"54B2B113" completed. ' 'Master to Slave transmit '  [155]'
+%% 4850993 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"35D2A7BF" completed. ' 'Master to Slave transmit '  [155]'
+%% 4858045 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"1ACB4A46" completed. ' 'Master to Slave transmit '  [155]'
+%% 4865097 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"698CA583" completed. ' 'Master to Slave transmit '  [155]'
+%% 4872149 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"576F1139" completed. ' 'Master to Slave transmit '  [155]'
+%% 4965541 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"DC376011" completed. ' 'Master to Slave transmit '  [164]'
+%% 4972593 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"A53375C7" completed. ' 'Master to Slave transmit '  [164]'
+%% 4979645 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"A49E519F" completed. ' 'Master to Slave transmit '  [164]'
+%% 4986697 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"606B8774" completed. ' 'Master to Slave transmit '  [164]'
+%% 4993749 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"4CDBE3ED" completed. ' 'Master to Slave transmit '  [164]'
+%% 5000801 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"FD41C958" completed. ' 'Master to Slave transmit '  [164]'
+%% 5087141 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"B0890409" completed. ' 'Master to Slave transmit '  [174]'
+%% 5094193 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"30983172" completed. ' 'Master to Slave transmit '  [174]'
+%% 5101245 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"8D2D3567" completed. ' 'Master to Slave transmit '  [174]'
+%% 5108297 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"D8B371D2" completed. ' 'Master to Slave transmit '  [174]'
+%% 5115349 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"5AF12432" completed. ' 'Master to Slave transmit '  [174]'
+%% 5122401 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"406B8ADF" completed. ' 'Master to Slave transmit '  [174]'
+%% 5129453 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"3BEAEE7F" completed. ' 'Master to Slave transmit '  [174]'
+%% 5208741 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"57855AB8" completed. ' 'Master to Slave transmit '  [185]'
+%% 5215793 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"B50BAA76" completed. ' 'Master to Slave transmit '  [185]'
+%% 5222845 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"9A7E6943" completed. ' 'Master to Slave transmit '  [185]'
+%% 5229897 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"C027A092" completed. ' 'Master to Slave transmit '  [185]'
+%% 5236949 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"9D9D00FC" completed. ' 'Master to Slave transmit '  [185]'
+%% 5244001 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"DCE324EF" completed. ' 'Master to Slave transmit '  [185]'
+%% 5251053 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"62742D9E" completed. ' 'Master to Slave transmit '  [185]'
+%% 5258105 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit while executing spi_master_transmit_and_receive=> x"D7204BAA" completed. ' 'Master to Slave transmit '  [185]'
+%% 5330341 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [196]'
+%% 5337393 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [196]'
+%% 5451941 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [202]'
+%% 5458993 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [202]'
+%% 5466045 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [202]'
+%% 5573541 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [209]'
+%% 5580593 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [209]'
+%% 5587645 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [209]'
+%% 5594697 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [209]'
+%% 5695141 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [217]'
+%% 5702193 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [217]'
+%% 5709245 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [217]'
+%% 5716297 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [217]'
+%% 5723349 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [217]'
+%% 5816741 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [226]'
+%% 5823793 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [226]'
+%% 5830845 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [226]'
+%% 5837897 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [226]'
+%% 5844949 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [226]'
+%% 5852001 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [226]'
+%% 5938341 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [236]'
+%% 5945393 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [236]'
+%% 5952445 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [236]'
+%% 5959497 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [236]'
+%% 5966549 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [236]'
+%% 5973601 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [236]'
+%% 5980653 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [236]'
+%% 6059941 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [247]'
+%% 6066993 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [247]'
+%% 6074045 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [247]'
+%% 6081097 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [247]'
+%% 6088149 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [247]'
+%% 6095201 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [247]'
+%% 6102253 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [247]'
+%% 6109305 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [247]'
+%% 
+%% 
+%% 6109856 ns    Log    ID_LOG_HDR          SPI_TB              Testing functionality of terminate_access for slave side, one word
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 6181541 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"FFFFFFFE" completed. ' 'Master to Slave transmit and check '  [259]'
+%% 6181740.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"FFFFFFFE")=> OK, read data = x"FFFFFFFE". ' 'Slave to Master transmit and check '  [260]'
+%% 6182092 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"1". ' 'Master to Slave transmit and check '  [259]'
+%% 6303141 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"FFFFFFFD" completed. ' 'Master to Slave transmit and check '  [263]'
+%% 6303340.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"FFFFFFFD")=> OK, read data = x"FFFFFFFD". ' 'Slave to Master transmit and check '  [264]'
+%% 6303692 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"2". ' 'Master to Slave transmit and check '  [263]'
+%% 6424741 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"FFFFFFFC" completed. ' 'Master to Slave transmit and check '  [267]'
+%% 6424940.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"FFFFFFFC")=> OK, read data = x"FFFFFFFC". ' 'Slave to Master transmit and check '  [268]'
+%% 6425292 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"3". ' 'Master to Slave transmit and check '  [267]'
+%% 6539840 ns    Alert  WARNING             SPI_VVC,1           spi_slave_transmit_and_check(x"FFFFFFFB")=> Failed. Terminate access received. ' 'Slave to Master transmit and check '  [272]'
+%% 6546341 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"FFFFFFFB" completed. ' 'Master to Slave transmit and check '  [271]'
+%% 6546892 ns    Alert  ERROR               SPI_VVC,0           spi_master_transmit_and_check=> Failed. Was x"ZZZZZZZZ". Expected x"00000004". ' 'Master to Slave transmit and check '  [271]'
+%% 6661440 ns    Alert  WARNING             SPI_VVC,1           spi_slave_transmit_and_check(x"FFFFFFFA")=> Failed. Terminate access received. ' 'Slave to Master transmit and check '  [277]'
+%% 6667941 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"FFFFFFFA" completed. ' 'Master to Slave transmit and check '  [276]'
+%% 6668492 ns    Alert  ERROR               SPI_VVC,0           spi_master_transmit_and_check=> Failed. Was x"ZZZZZZZZ". Expected x"00000005". ' 'Master to Slave transmit and check '  [276]'
+%% 6783040 ns    Alert  WARNING             SPI_VVC,1           spi_slave_transmit_and_check(x"FFFFFFF9")=> Failed. Terminate access received. ' 'Slave to Master transmit and check '  [282]'
+%% 6789541 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"FFFFFFF9" completed. ' 'Master to Slave transmit and check '  [281]'
+%% 6790092 ns    Alert  ERROR               SPI_VVC,0           spi_master_transmit_and_check=> Failed. Was x"ZZZZZZZZ". Expected x"00000006". ' 'Master to Slave transmit and check '  [281]'
+%% 6911141 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"FFFFFFF8" completed. ' 'Master to Slave transmit and check '  [286]'
+%% 6911340.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"FFFFFFF8")=> OK, read data = x"FFFFFFF8". ' 'Slave to Master transmit and check '  [287]'
+%% 6911692 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"7". ' 'Master to Slave transmit and check '  [286]'
+%% 7032741 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"FFFFFFF7" completed. ' 'Master to Slave transmit and check '  [290]'
+%% 7032940.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"FFFFFFF7")=> OK, read data = x"FFFFFFF7". ' 'Slave to Master transmit and check '  [291]'
+%% 7033292 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"8". ' 'Master to Slave transmit and check '  [290]'
+%% 7154341 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"FFFFFFF6" completed. ' 'Master to Slave transmit and check '  [294]'
+%% 7154540.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"FFFFFFF6")=> OK, read data = x"FFFFFFF6". ' 'Slave to Master transmit and check '  [295]'
+%% 7154892 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"9". ' 'Master to Slave transmit and check '  [294]'
+%% 7275941 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"FFFFFFF5" completed. ' 'Master to Slave transmit and check '  [298]'
+%% 7276140.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"FFFFFFF5")=> OK, read data = x"FFFFFFF5". ' 'Slave to Master transmit and check '  [299]'
+%% 7276492 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"A". ' 'Master to Slave transmit and check '  [298]'
+%% 
+%% 
+%% 7276492 ns    Log    ID_LOG_HDR          SPI_TB              Testing functionality of terminate_access for slave side, multi-word
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 7397541 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [302]'
+%% 7404593 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [302]'
+%% 7405144 ns    Alert  ERROR               TB seq.             check_value(slv, x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ")) => Failed. Value was x"72AA2EC2". Expected x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"). 'check received data'
+%% 7405144 ns    Alert  ERROR               TB seq.             check_value(slv, x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ")) => Failed. Value was x"DAA87B31". Expected x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"). 'check received data'
+%% 7519141 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [309]'
+%% 7526193 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [309]'
+%% 7533245 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [309]'
+%% 7533796 ns    Alert  ERROR               TB seq.             check_value(slv, x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ")) => Failed. Value was x"0DCCC94B". Expected x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"). 'check received data'
+%% 7533796 ns    Alert  ERROR               TB seq.             check_value(slv, x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ")) => Failed. Value was x"0FA33271". Expected x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"). 'check received data'
+%% 7533796 ns    Alert  ERROR               TB seq.             check_value(slv, x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ")) => Failed. Value was x"B1162444". Expected x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"). 'check received data'
+%% 7640741 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [317]'
+%% 7647793 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [317]'
+%% 7654845 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [317]'
+%% 7661897 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [317]'
+%% 7662448 ns    Alert  ERROR               TB seq.             check_value(slv, x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ")) => Failed. Value was x"5668A292". Expected x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"). 'check received data'
+%% 7662448 ns    Alert  ERROR               TB seq.             check_value(slv, x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ")) => Failed. Value was x"98715BB2". Expected x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"). 'check received data'
+%% 7662448 ns    Alert  ERROR               TB seq.             check_value(slv, x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ")) => Failed. Value was x"15B84308". Expected x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"). 'check received data'
+%% 7662448 ns    Alert  ERROR               TB seq.             check_value(slv, x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ")) => Failed. Value was x"468AF4FE". Expected x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"). 'check received data'
+%% 7762341 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [326]'
+%% 7769393 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [326]'
+%% 7776445 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [326]'
+%% 7783497 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [326]'
+%% 7790549 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [326]'
+%% 7791100 ns    Alert  ERROR               TB seq.             check_value(slv, x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ")) => Failed. Value was x"D6BD7F0F". Expected x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"). 'check received data'
+%% 7791100 ns    Alert  ERROR               TB seq.             check_value(slv, x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ")) => Failed. Value was x"0FBAEF6E". Expected x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"). 'check received data'
+%% 7791100 ns    Alert  ERROR               TB seq.             check_value(slv, x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ")) => Failed. Value was x"809053E2". Expected x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"). 'check received data'
+%% 7791100 ns    Alert  ERROR               TB seq.             check_value(slv, x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ")) => Failed. Value was x"A7505057". Expected x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"). 'check received data'
+%% 7791100 ns    Alert  ERROR               TB seq.             check_value(slv, x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ")) => Failed. Value was x"2FB2C43F". Expected x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"). 'check received data'
+%% 7883941 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [336]'
+%% 7890993 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [336]'
+%% 7898045 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [336]'
+%% 7905097 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [336]'
+%% 7912149 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [336]'
+%% 7919201 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [336]'
+%% 7919752 ns    Alert  ERROR               TB seq.             check_value(slv, x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ")) => Failed. Value was x"6CEFBA3A". Expected x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"). 'check received data'
+%% 7919752 ns    Alert  ERROR               TB seq.             check_value(slv, x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ")) => Failed. Value was x"13773852". Expected x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"). 'check received data'
+%% 7919752 ns    Alert  ERROR               TB seq.             check_value(slv, x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ")) => Failed. Value was x"E4ADF241". Expected x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"). 'check received data'
+%% 7919752 ns    Alert  ERROR               TB seq.             check_value(slv, x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ")) => Failed. Value was x"759D968C". Expected x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"). 'check received data'
+%% 7919752 ns    Alert  ERROR               TB seq.             check_value(slv, x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ")) => Failed. Value was x"DA32D871". Expected x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"). 'check received data'
+%% 7919752 ns    Alert  ERROR               TB seq.             check_value(slv, x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ")) => Failed. Value was x"03171477". Expected x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"). 'check received data'
+%% 8005541 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [347]'
+%% 8012593 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [347]'
+%% 8019645 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [347]'
+%% 8026697 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [347]'
+%% 8033749 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [347]'
+%% 8040801 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [347]'
+%% 8047853 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [347]'
+%% 8048404 ns    Alert  ERROR               TB seq.             check_value(slv, x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ")) => Failed. Value was x"B6990018". Expected x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"). 'check received data'
+%% 8048404 ns    Alert  ERROR               TB seq.             check_value(slv, x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ")) => Failed. Value was x"C7BF8AAA". Expected x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"). 'check received data'
+%% 8048404 ns    Alert  ERROR               TB seq.             check_value(slv, x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ")) => Failed. Value was x"C87CA59E". Expected x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"). 'check received data'
+%% 8048404 ns    Alert  ERROR               TB seq.             check_value(slv, x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ")) => Failed. Value was x"D1F7341C". Expected x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"). 'check received data'
+%% 8048404 ns    Alert  ERROR               TB seq.             check_value(slv, x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ")) => Failed. Value was x"EE19A5C5". Expected x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"). 'check received data'
+%% 8048404 ns    Alert  ERROR               TB seq.             check_value(slv, x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ")) => Failed. Value was x"32C949A2". Expected x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"). 'check received data'
+%% 8048404 ns    Alert  ERROR               TB seq.             check_value(slv, x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ")) => Failed. Value was x"8196A1A8". Expected x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"). 'check received data'
+%% 8127141 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [359]'
+%% 8134193 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [359]'
+%% 8141245 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [359]'
+%% 8148297 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [359]'
+%% 8155349 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [359]'
+%% 8162401 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [359]'
+%% 8169453 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [359]'
+%% 8176505 ns    Log    ID_BFM              SPI_VVC,0           spi_master_receive while executing spi_master_transmit_and_receive=> x"00000000" completed. ' 'Slave to Master receive '  [359]'
+%% 8177056 ns    Alert  ERROR               TB seq.             check_value(slv, x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ")) => Failed. Value was x"753EC556". Expected x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"). 'check received data'
+%% 8177056 ns    Alert  ERROR               TB seq.             check_value(slv, x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ")) => Failed. Value was x"6077FA1B". Expected x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"). 'check received data'
+%% 8177056 ns    Alert  ERROR               TB seq.             check_value(slv, x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ")) => Failed. Value was x"833574AB". Expected x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"). 'check received data'
+%% 8177056 ns    Alert  ERROR               TB seq.             check_value(slv, x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ")) => Failed. Value was x"449A89E6". Expected x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"). 'check received data'
+%% 8177056 ns    Alert  ERROR               TB seq.             check_value(slv, x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ")) => Failed. Value was x"EB0BB72B". Expected x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"). 'check received data'
+%% 8177056 ns    Alert  ERROR               TB seq.             check_value(slv, x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ")) => Failed. Value was x"50886153". Expected x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"). 'check received data'
+%% 8177056 ns    Alert  ERROR               TB seq.             check_value(slv, x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ")) => Failed. Value was x"C6C49ADE". Expected x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"). 'check received data'
+%% 8177056 ns    Alert  ERROR               TB seq.             check_value(slv, x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ")) => Failed. Value was x"098058BE". Expected x"ZZZZZZZZ" (b"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ"). 'check received data'
+%% 
+%% 
+%% 8177056 ns    Log    ID_LOG_HDR          SPI_TB              Verifying correct function of multi-word transaction from slave after previous terminated access
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 8248741 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"438B2B2C" completed. ' 'Master to Slave transmit and check '  [372]'
+%% 8248940.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"438B2B2C")=> OK, read data = x"438B2B2C". ' 'Slave to Master transmit and check '  [373]'
+%% 8249292 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"471F9CDA". ' 'Master to Slave transmit and check '  [372]'
+%% 8255793 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"75411815" completed. ' 'Master to Slave transmit and check '  [372]'
+%% 8255992.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"75411815")=> OK, read data = x"75411815". ' 'Slave to Master transmit and check '  [373]'
+%% 8256344 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"F819FD33". ' 'Master to Slave transmit and check '  [372]'
+%% 8262845 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"A7AF6816" completed. ' 'Master to Slave transmit and check '  [372]'
+%% 8263044.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"A7AF6816")=> OK, read data = x"A7AF6816". ' 'Slave to Master transmit and check '  [373]'
+%% 8263396 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"BC05BA50". ' 'Master to Slave transmit and check '  [372]'
+%% 8269897 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"298A3CEC" completed. ' 'Master to Slave transmit and check '  [372]'
+%% 8270096.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"298A3CEC")=> OK, read data = x"298A3CEC". ' 'Slave to Master transmit and check '  [373]'
+%% 8270448 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"355D1B1A". ' 'Master to Slave transmit and check '  [372]'
+%% 8276949 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"B7172FF8" completed. ' 'Master to Slave transmit and check '  [372]'
+%% 8277148.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"B7172FF8")=> OK, read data = x"B7172FF8". ' 'Slave to Master transmit and check '  [373]'
+%% 8277500 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"DD4C66DC". ' 'Master to Slave transmit and check '  [372]'
+%% 8284001 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"D9CA318" completed. ' 'Master to Slave transmit and check '  [372]'
+%% 8284200.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"0D9CA318")=> OK, read data = x"D9CA318". ' 'Slave to Master transmit and check '  [373]'
+%% 8284552 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"984D8C94". ' 'Master to Slave transmit and check '  [372]'
+%% 8291053 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"4FF07FF8" completed. ' 'Master to Slave transmit and check '  [372]'
+%% 8291252.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"4FF07FF8")=> OK, read data = x"4FF07FF8". ' 'Slave to Master transmit and check '  [373]'
+%% 8291604 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"CFB65140". ' 'Master to Slave transmit and check '  [372]'
+%% 8298105 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"5EB3FA34" completed. ' 'Master to Slave transmit and check '  [372]'
+%% 8298304.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"5EB3FA34")=> OK, read data = x"5EB3FA34". ' 'Slave to Master transmit and check '  [373]'
+%% 8298656 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"F63887C7". ' 'Master to Slave transmit and check '  [372]'
+%% 8370341 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"DAE406B1" completed. ' 'Master to Slave transmit and check '  [374]'
+%% 8370540.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"DAE406B1")=> OK, read data = x"DAE406B1". ' 'Slave to Master transmit and check '  [375]'
+%% 8370892 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"D0A2F032". ' 'Master to Slave transmit and check '  [374]'
+%% 8377393 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"70572112" completed. ' 'Master to Slave transmit and check '  [374]'
+%% 8377592.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"70572112")=> OK, read data = x"70572112". ' 'Slave to Master transmit and check '  [375]'
+%% 8377944 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"3A99F335". ' 'Master to Slave transmit and check '  [374]'
+%% 8384445 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"7218508C" completed. ' 'Master to Slave transmit and check '  [374]'
+%% 8384644.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"7218508C")=> OK, read data = x"7218508C". ' 'Slave to Master transmit and check '  [375]'
+%% 8384996 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"C05C18FF". ' 'Master to Slave transmit and check '  [374]'
+%% 8391497 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"7C08CCA6" completed. ' 'Master to Slave transmit and check '  [374]'
+%% 8391696.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"7C08CCA6")=> OK, read data = x"7C08CCA6". ' 'Slave to Master transmit and check '  [375]'
+%% 8392048 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"FC214405". ' 'Master to Slave transmit and check '  [374]'
+%% 8398549 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"451B89A1" completed. ' 'Master to Slave transmit and check '  [374]'
+%% 8398748.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"451B89A1")=> OK, read data = x"451B89A1". ' 'Slave to Master transmit and check '  [375]'
+%% 8399100 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"15ACD2DA". ' 'Master to Slave transmit and check '  [374]'
+%% 8405601 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"8F76E7BB" completed. ' 'Master to Slave transmit and check '  [374]'
+%% 8405800.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"8F76E7BB")=> OK, read data = x"8F76E7BB". ' 'Slave to Master transmit and check '  [375]'
+%% 8406152 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"E4108200". ' 'Master to Slave transmit and check '  [374]'
+%% 8412653 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"95FC3F28" completed. ' 'Master to Slave transmit and check '  [374]'
+%% 8412852.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"95FC3F28")=> OK, read data = x"95FC3F28". ' 'Slave to Master transmit and check '  [375]'
+%% 8413204 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"D7BC8167". ' 'Master to Slave transmit and check '  [374]'
+%% 8419705 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"BE69CC93" completed. ' 'Master to Slave transmit and check '  [374]'
+%% 8419904.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"BE69CC93")=> OK, read data = x"BE69CC93". ' 'Slave to Master transmit and check '  [375]'
+%% 8420256 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"AB68E8B5". ' 'Master to Slave transmit and check '  [374]'
+%% 8491941 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"E119BD3E" completed. ' 'Master to Slave transmit and check '  [376]'
+%% 8492140.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"E119BD3E")=> OK, read data = x"E119BD3E". ' 'Slave to Master transmit and check '  [377]'
+%% 8492492 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"C0C814B6". ' 'Master to Slave transmit and check '  [376]'
+%% 8498993 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"8C7C3AE1" completed. ' 'Master to Slave transmit and check '  [376]'
+%% 8499192.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"8C7C3AE1")=> OK, read data = x"8C7C3AE1". ' 'Slave to Master transmit and check '  [377]'
+%% 8499544 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"8476DD5". ' 'Master to Slave transmit and check '  [376]'
+%% 8506045 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"6A28F5E8" completed. ' 'Master to Slave transmit and check '  [376]'
+%% 8506244.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"6A28F5E8")=> OK, read data = x"6A28F5E8". ' 'Slave to Master transmit and check '  [377]'
+%% 8506596 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"3C075C55". ' 'Master to Slave transmit and check '  [376]'
+%% 8513097 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"BF07494F" completed. ' 'Master to Slave transmit and check '  [376]'
+%% 8513296.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"BF07494F")=> OK, read data = x"BF07494F". ' 'Slave to Master transmit and check '  [377]'
+%% 8513648 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"52C4ADC2". ' 'Master to Slave transmit and check '  [376]'
+%% 8520149 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"1B9F3C43" completed. ' 'Master to Slave transmit and check '  [376]'
+%% 8520348.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"1B9F3C43")=> OK, read data = x"1B9F3C43". ' 'Slave to Master transmit and check '  [377]'
+%% 8520700 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"F8587ADF". ' 'Master to Slave transmit and check '  [376]'
+%% 8527201 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"7DF1AE9D" completed. ' 'Master to Slave transmit and check '  [376]'
+%% 8527400.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"7DF1AE9D")=> OK, read data = x"7DF1AE9D". ' 'Slave to Master transmit and check '  [377]'
+%% 8527752 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"6D5BDE07". ' 'Master to Slave transmit and check '  [376]'
+%% 8534253 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"6ED96E25" completed. ' 'Master to Slave transmit and check '  [376]'
+%% 8534452.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"6ED96E25")=> OK, read data = x"6ED96E25". ' 'Slave to Master transmit and check '  [377]'
+%% 8534804 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"84E42E04". ' 'Master to Slave transmit and check '  [376]'
+%% 8541305 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"9C2C425F" completed. ' 'Master to Slave transmit and check '  [376]'
+%% 8541504.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"9C2C425F")=> OK, read data = x"9C2C425F". ' 'Slave to Master transmit and check '  [377]'
+%% 8541856 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"1B6CDDF9". ' 'Master to Slave transmit and check '  [376]'
+%% 8613541 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"8B4F59F2" completed. ' 'Master to Slave transmit and check '  [378]'
+%% 8613740.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"8B4F59F2")=> OK, read data = x"8B4F59F2". ' 'Slave to Master transmit and check '  [379]'
+%% 8614092 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"A7FBDF15". ' 'Master to Slave transmit and check '  [378]'
+%% 8620593 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"34E454D4" completed. ' 'Master to Slave transmit and check '  [378]'
+%% 8620792.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"34E454D4")=> OK, read data = x"34E454D4". ' 'Slave to Master transmit and check '  [379]'
+%% 8621144 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"6AC0A5". ' 'Master to Slave transmit and check '  [378]'
+%% 8627645 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"90E42B7E" completed. ' 'Master to Slave transmit and check '  [378]'
+%% 8627844.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"90E42B7E")=> OK, read data = x"90E42B7E". ' 'Slave to Master transmit and check '  [379]'
+%% 8628196 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"603E8D9D". ' 'Master to Slave transmit and check '  [378]'
+%% 8634697 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"595BAB45" completed. ' 'Master to Slave transmit and check '  [378]'
+%% 8634896.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"595BAB45")=> OK, read data = x"595BAB45". ' 'Slave to Master transmit and check '  [379]'
+%% 8635248 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"C9A2CE71". ' 'Master to Slave transmit and check '  [378]'
+%% 8641749 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"EE816C1C" completed. ' 'Master to Slave transmit and check '  [378]'
+%% 8641948.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"EE816C1C")=> OK, read data = x"EE816C1C". ' 'Slave to Master transmit and check '  [379]'
+%% 8642300 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"4DC740DB". ' 'Master to Slave transmit and check '  [378]'
+%% 8648801 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"FDBB8E17" completed. ' 'Master to Slave transmit and check '  [378]'
+%% 8649000.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"FDBB8E17")=> OK, read data = x"FDBB8E17". ' 'Slave to Master transmit and check '  [379]'
+%% 8649352 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"EED85080". ' 'Master to Slave transmit and check '  [378]'
+%% 8655853 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"8193B211" completed. ' 'Master to Slave transmit and check '  [378]'
+%% 8656052.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"8193B211")=> OK, read data = x"8193B211". ' 'Slave to Master transmit and check '  [379]'
+%% 8656404 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"F23C449F". ' 'Master to Slave transmit and check '  [378]'
+%% 8662905 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"4BFDC33C" completed. ' 'Master to Slave transmit and check '  [378]'
+%% 8663104.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"4BFDC33C")=> OK, read data = x"4BFDC33C". ' 'Slave to Master transmit and check '  [379]'
+%% 8663456 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"EF9876AB". ' 'Master to Slave transmit and check '  [378]'
+%% 8735141 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"AB007922" completed. ' 'Master to Slave transmit and check '  [380]'
+%% 8735340.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"AB007922")=> OK, read data = x"AB007922". ' 'Slave to Master transmit and check '  [381]'
+%% 8735692 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"3FDAAEA0". ' 'Master to Slave transmit and check '  [380]'
+%% 8742193 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"60A89246" completed. ' 'Master to Slave transmit and check '  [380]'
+%% 8742392.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"60A89246")=> OK, read data = x"60A89246". ' 'Slave to Master transmit and check '  [381]'
+%% 8742744 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"1160EB90". ' 'Master to Slave transmit and check '  [380]'
+%% 8749245 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"5483140" completed. ' 'Master to Slave transmit and check '  [380]'
+%% 8749444.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"05483140")=> OK, read data = x"5483140". ' 'Slave to Master transmit and check '  [381]'
+%% 8749796 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"CEDAB86A". ' 'Master to Slave transmit and check '  [380]'
+%% 8756297 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"43861270" completed. ' 'Master to Slave transmit and check '  [380]'
+%% 8756496.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"43861270")=> OK, read data = x"43861270". ' 'Slave to Master transmit and check '  [381]'
+%% 8756848 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"CF3B843D". ' 'Master to Slave transmit and check '  [380]'
+%% 8763349 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"AD34CD5D" completed. ' 'Master to Slave transmit and check '  [380]'
+%% 8763548.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"AD34CD5D")=> OK, read data = x"AD34CD5D". ' 'Slave to Master transmit and check '  [381]'
+%% 8763900 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"6D8ED034". ' 'Master to Slave transmit and check '  [380]'
+%% 8770401 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"18A8FB10" completed. ' 'Master to Slave transmit and check '  [380]'
+%% 8770600.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"18A8FB10")=> OK, read data = x"18A8FB10". ' 'Slave to Master transmit and check '  [381]'
+%% 8770952 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"5B284107". ' 'Master to Slave transmit and check '  [380]'
+%% 8777453 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"21D18020" completed. ' 'Master to Slave transmit and check '  [380]'
+%% 8777652.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"21D18020")=> OK, read data = x"21D18020". ' 'Slave to Master transmit and check '  [381]'
+%% 8778004 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"9B13213C". ' 'Master to Slave transmit and check '  [380]'
+%% 8784505 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"AE5CB5E1" completed. ' 'Master to Slave transmit and check '  [380]'
+%% 8784704.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"AE5CB5E1")=> OK, read data = x"AE5CB5E1". ' 'Slave to Master transmit and check '  [381]'
+%% 8785056 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"297F522". ' 'Master to Slave transmit and check '  [380]'
+%% 8856741 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"C79A3D21" completed. ' 'Master to Slave transmit and check '  [382]'
+%% 8856940.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"C79A3D21")=> OK, read data = x"C79A3D21". ' 'Slave to Master transmit and check '  [383]'
+%% 8857292 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"DF979A4B". ' 'Master to Slave transmit and check '  [382]'
+%% 8863793 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"72A4D2B" completed. ' 'Master to Slave transmit and check '  [382]'
+%% 8863992.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"072A4D2B")=> OK, read data = x"72A4D2B". ' 'Slave to Master transmit and check '  [383]'
+%% 8864344 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"84042FCA". ' 'Master to Slave transmit and check '  [382]'
+%% 8870845 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"33EAA24F" completed. ' 'Master to Slave transmit and check '  [382]'
+%% 8871044.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"33EAA24F")=> OK, read data = x"33EAA24F". ' 'Slave to Master transmit and check '  [383]'
+%% 8871396 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"C12D8E83". ' 'Master to Slave transmit and check '  [382]'
+%% 8877897 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"AB08D67A" completed. ' 'Master to Slave transmit and check '  [382]'
+%% 8878096.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"AB08D67A")=> OK, read data = x"AB08D67A". ' 'Slave to Master transmit and check '  [383]'
+%% 8878448 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"631537CA". ' 'Master to Slave transmit and check '  [382]'
+%% 8884949 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"BB0861F6" completed. ' 'Master to Slave transmit and check '  [382]'
+%% 8885148.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"BB0861F6")=> OK, read data = x"BB0861F6". ' 'Slave to Master transmit and check '  [383]'
+%% 8885500 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"A181D6B". ' 'Master to Slave transmit and check '  [382]'
+%% 8892001 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"314AB6C2" completed. ' 'Master to Slave transmit and check '  [382]'
+%% 8892200.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"314AB6C2")=> OK, read data = x"314AB6C2". ' 'Slave to Master transmit and check '  [383]'
+%% 8892552 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"A06D4317". ' 'Master to Slave transmit and check '  [382]'
+%% 8899053 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"10163620" completed. ' 'Master to Slave transmit and check '  [382]'
+%% 8899252.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"10163620")=> OK, read data = x"10163620". ' 'Slave to Master transmit and check '  [383]'
+%% 8899604 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"499147E5". ' 'Master to Slave transmit and check '  [382]'
+%% 8906105 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check while executing spi_master_transmit_and_receive=> x"1A209BA1" completed. ' 'Master to Slave transmit and check '  [382]'
+%% 8906304.999 ns    Log    ID_BFM              SPI_VVC,1           spi_slave_transmit_and_check(x"1A209BA1")=> OK, read data = x"1A209BA1". ' 'Slave to Master transmit and check '  [383]'
+%% 8906656 ns    Log    ID_BFM              SPI_VVC,0           spi_master_transmit_and_check=> OK, read data = x"3003BD14". ' 'Master to Slave transmit and check '  [382]'
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%% 8906657 ns    DONE   FAILED   VVC-to-VVC  Total Error(s) = 1  Failures: 0  Errors: 0  Warnings: -1  Passed: 0  Affirmations Checked: 41
+%%    Expected      Failures: 0  Errors: -38  Warnings: -9  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 38  Warnings: 8  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% 8906657 ns    Log    ID_LOG_HDR          SPI_TB              SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -1,0 +1,140 @@
+%% 
+%% 
+%% ============================================================================================================================================================================
+%%      0 ns    Log    ID_LOG_HDR_LARGE    TB seq.             Start Simulation of APB BFM
+%% ============================================================================================================================================================================
+%%    100 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to 0 for 100000 ps. 'Pulsing reset for 10 clock periods'
+%% 
+%% 
+%%    200 ns    Log    ID_LOG_HDR          TB seq.             Testing APB write/read/check with zero waitstates
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    255 ns    Log    ID_BFM              APB BFM             apb_write(A:x"00000008", x"253B1447") completed.  'Writing data'
+%%    295 ns    Log    ID_BFM              APB BFM             apb_read(A:x"00000008")=> x"253B1447".  'Reading data back'
+%%    295 ns    Log    PASSED              TB seq.             check_value(slv, x"253B1447") => OK. Value was x"253B1447". 'Checking read data'
+%%    335 ns    Log    ID_BFM              APB BFM             apb_check(A:x"00000008", x"253B1447")=> OK, read data = x"253B1447".  'Checking written data'
+%% 
+%% 
+%%    335 ns    Log    ID_LOG_HDR          TB seq.             Testing APB write/read/check with 1 waitstate
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    370 ns    Log    ID_BFM_WAIT         APB BFM             apb_write(A:x"00000008", x"70E32293") waiting for response (apb ready=0)  'Writing data'
+%%    415 ns    Log    ID_BFM              APB BFM             apb_write(A:x"00000008", x"70E32293") completed.  'Writing data'
+%%    450 ns    Log    ID_BFM_WAIT         APB BFM             apb_read(A:x"00000008") waiting for response (apb ready=0)  'Reading data back'
+%%    495 ns    Log    ID_BFM              APB BFM             apb_read(A:x"00000008")=> x"70E32293".  'Reading data back'
+%%    495 ns    Log    PASSED              TB seq.             check_value(slv, x"70E32293") => OK. Value was x"70E32293". 'Checking read data'
+%%    530 ns    Log    ID_BFM_WAIT         APB BFM             apb_check(A:x"00000008", x"70E32293") while executing apb_read waiting for response (apb ready=0)  'Checking written data'
+%%    575 ns    Log    ID_BFM              APB BFM             apb_check(A:x"00000008", x"70E32293")=> OK, read data = x"70E32293".  'Checking written data'
+%% 
+%% 
+%%    575 ns    Log    ID_LOG_HDR          TB seq.             Testing APB write/read/check with 10 waitstates
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    610 ns    Log    ID_BFM_WAIT         APB BFM             apb_write(A:x"00000008", x"2C112B99") waiting for response (apb ready=0)  'Writing data'
+%%    795 ns    Log    ID_BFM              APB BFM             apb_write(A:x"00000008", x"2C112B99") completed.  'Writing data'
+%%    830 ns    Log    ID_BFM_WAIT         APB BFM             apb_read(A:x"00000008") waiting for response (apb ready=0)  'Reading data back'
+%%   1015 ns    Log    ID_BFM              APB BFM             apb_read(A:x"00000008")=> x"2C112B99".  'Reading data back'
+%%   1015 ns    Log    PASSED              TB seq.             check_value(slv, x"2C112B99") => OK. Value was x"2C112B99". 'Checking read data'
+%%   1050 ns    Log    ID_BFM_WAIT         APB BFM             apb_check(A:x"00000008", x"2C112B99") while executing apb_read waiting for response (apb ready=0)  'Checking written data'
+%%   1235 ns    Log    ID_BFM              APB BFM             apb_check(A:x"00000008", x"2C112B99")=> OK, read data = x"2C112B99".  'Checking written data'
+%% 
+%% 
+%%   1235 ns    Log    ID_LOG_HDR          TB seq.             Testing APB pstrobe
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   1270 ns    Log    ID_BFM_WAIT         APB BFM             apb_write(A:x"00000008", x"B265C04E") waiting for response (apb ready=0)  'Writing data'
+%%   1455 ns    Log    ID_BFM              APB BFM             apb_write(A:x"00000008", x"B265C04E") completed.  'Writing data'
+%%   1490 ns    Log    ID_BFM_WAIT         APB BFM             apb_read(A:x"00000008") waiting for response (apb ready=0)  'Reading data back'
+%%   1675 ns    Log    ID_BFM              APB BFM             apb_read(A:x"00000008")=> x"2C112B99".  'Reading data back'
+%%   1675 ns    Log    PASSED              TB seq.             check_value(slv, x"2C112B99") => OK. Value was x"2C112B99". 'Checking read data'
+%%   1710 ns    Log    ID_BFM_WAIT         APB BFM             apb_check(A:x"00000008", x"2C112B99") while executing apb_read waiting for response (apb ready=0)  'Checking written data'
+%%   1895 ns    Log    ID_BFM              APB BFM             apb_check(A:x"00000008", x"2C112B99")=> OK, read data = x"2C112B99".  'Checking written data'
+%% 
+%% 
+%%   1895 ns    Log    ID_LOG_HDR          TB seq.             Testing APB protection levels
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   1930 ns    Log    ID_BFM_WAIT         APB BFM             apb_write(A:x"00000008", x"D8248853") waiting for response (apb ready=0)  'Writing data with protection: 001'
+%%   2215 ns    Log    ID_BFM              APB BFM             apb_write(A:x"00000008", x"D8248853") completed.  'Writing data with protection: 001'
+%%   2250 ns    Log    ID_BFM_WAIT         APB BFM             apb_check(A:x"00000008", x"D8248853") while executing apb_read waiting for response (apb ready=0)  'Checking written data'
+%%   2535 ns    Log    ID_BFM              APB BFM             apb_check(A:x"00000008", x"D8248853")=> OK, read data = x"D8248853".  'Checking written data'
+%%   2570 ns    Log    ID_BFM_WAIT         APB BFM             apb_write(A:x"00000008", x"18B16C0F") waiting for response (apb ready=0)  'Writing data with protection: 010'
+%%   2770 ns    Alert  ERROR               APB BFM             apb_write(A:x"00000008", x"18B16C0F")(sl, 0) => Failed. Value was 1. Expected 0. 'PSLVERR detected'
+%%   2775 ns    Log    ID_BFM              APB BFM             apb_write(A:x"00000008", x"18B16C0F") completed.  'Writing data with protection: 010'
+%%   2810 ns    Log    ID_BFM_WAIT         APB BFM             apb_check(A:x"00000008", x"18B16C0F") while executing apb_read waiting for response (apb ready=0)  'Checking written data'
+%%   3010 ns    Alert  ERROR               APB BFM             apb_check(A:x"00000008", x"18B16C0F") while executing apb_read(sl, 0) => Failed. Value was 1. Expected 0. 'PSLVERR detected'
+%%   3015 ns    Alert  ERROR               APB BFM             apb_check(A:x"00000008", x"18B16C0F")=> Failed. Was x"D8248853". Expected x"18B16C0F".
+ 'Checking written data'
+%%   3050 ns    Log    ID_BFM_WAIT         APB BFM             apb_write(A:x"00000008", x"5565D068") waiting for response (apb ready=0)  'Writing data with protection: 100'
+%%   3435 ns    Log    ID_BFM              APB BFM             apb_write(A:x"00000008", x"5565D068") completed.  'Writing data with protection: 100'
+%%   3470 ns    Log    ID_BFM_WAIT         APB BFM             apb_check(A:x"00000008", x"5565D068") while executing apb_read waiting for response (apb ready=0)  'Checking written data'
+%%   3855 ns    Log    ID_BFM              APB BFM             apb_check(A:x"00000008", x"5565D068")=> OK, read data = x"5565D068".  'Checking written data'
+%% 
+%% 
+%%   3855 ns    Log    ID_LOG_HDR          TB seq.             Testing APB check with don't care values
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   3890 ns    Log    ID_BFM_WAIT         APB BFM             apb_write(A:x"00000008", x"90F8E35B") waiting for response (apb ready=0)  'Writing data'
+%%   4075 ns    Log    ID_BFM              APB BFM             apb_write(A:x"00000008", x"90F8E35B") completed.  'Writing data'
+%%   4110 ns    Log    ID_BFM_WAIT         APB BFM             apb_check(A:x"00000008", x"90F8E35X") while executing apb_read waiting for response (apb ready=0)  'Checking written data'
+%%   4295 ns    Log    ID_BFM              APB BFM             apb_check(A:x"00000008", x"90F8E35X")=> OK, read data = x"90F8E35B".  'Checking written data'
+%% 
+%% 
+%%   4295 ns    Log    ID_LOG_HDR          TB seq.             Testing APB poll until
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   4330 ns    Log    ID_BFM_WAIT         APB BFM             apb_read(A:x"00000008") waiting for response (apb ready=0)  'As a part of apb_poll_until(A:x"00000008", x"90F8E35X", 1, 1000000 ns).  'Testing apb_poll_until''
+%%   4475 ns    Log    ID_BFM_POLL         APB BFM             apb_read(A:x"00000008")=> x"90F8E35B".  'As a part of apb_poll_until(A:x"00000008", x"90F8E35X", 1, 1000000 ns).  'Testing apb_poll_until''
+%%   4475 ns    Log    ID_BFM              APB BFM             apb_poll_until(A:x"00000008", x"90F8E35X", 1, 1000000 ns)=> OK, read data = x"90F8E35B" after 1 occurrences and 180 ns.  'Testing apb_poll_until'
+%% 
+%% 
+%%   4475 ns    Log    ID_LOG_HDR          TB seq.             Testing APB setup and hold times
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   4510 ns    Log    ID_BFM_WAIT         APB BFM             apb_write(A:x"00000008", x"77176D62") waiting for response (apb ready=0)  'Writing data'
+%% 4672.5 ns    Log    ID_BFM              APB BFM             apb_write(A:x"00000008", x"77176D62") completed.  'Writing data'
+%%   4710 ns    Log    ID_BFM_WAIT         APB BFM             apb_check(A:x"00000008", x"77176D62") while executing apb_read waiting for response (apb ready=0)  'Checking written data'
+%% 4872.5 ns    Log    ID_BFM              APB BFM             apb_check(A:x"00000008", x"77176D62")=> OK, read data = x"77176D62".  'Checking written data'
+%%   4910 ns    Log    ID_BFM_WAIT         APB BFM             apb_write(A:x"00000008", x"EEA2718E") waiting for response (apb ready=0)  'Writing data'
+%% 5272.5 ns    Log    ID_BFM              APB BFM             apb_write(A:x"00000008", x"EEA2718E") completed.  'Writing data'
+%%   5310 ns    Log    ID_BFM_WAIT         APB BFM             apb_check(A:x"00000008", x"EEA2718E") while executing apb_read waiting for response (apb ready=0)  'Checking written data'
+%% 5672.5 ns    Log    ID_BFM              APB BFM             apb_check(A:x"00000008", x"EEA2718E")=> OK, read data = x"EEA2718E".  'Checking written data'
+%%   5710 ns    Log    ID_BFM_WAIT         APB BFM             apb_write(A:x"00000008", x"A8DBFFA8") waiting for response (apb ready=0)  'Writing data'
+%% 5772.5 ns    Log    ID_BFM              APB BFM             apb_write(A:x"00000008", x"A8DBFFA8") completed.  'Writing data'
+%%   5810 ns    Log    ID_BFM_WAIT         APB BFM             apb_check(A:x"00000008", x"A8DBFFA8") while executing apb_read waiting for response (apb ready=0)  'Checking written data'
+%% 5872.5 ns    Log    ID_BFM              APB BFM             apb_check(A:x"00000008", x"A8DBFFA8")=> OK, read data = x"A8DBFFA8".  'Checking written data'
+%%   5910 ns    Log    ID_BFM_WAIT         APB BFM             apb_write(A:x"00000008", x"42442B0B") waiting for response (apb ready=0)  'Writing data'
+%% 6152.5 ns    Log    ID_BFM              APB BFM             apb_write(A:x"00000008", x"42442B0B") completed.  'Writing data'
+%%   6190 ns    Log    ID_BFM_WAIT         APB BFM             apb_check(A:x"00000008", x"42442B0B") while executing apb_read waiting for response (apb ready=0)  'Checking written data'
+%% 6432.5 ns    Log    ID_BFM              APB BFM             apb_check(A:x"00000008", x"42442B0B")=> OK, read data = x"42442B0B".  'Checking written data'
+%%   6470 ns    Log    ID_BFM_WAIT         APB BFM             apb_write(A:x"00000008", x"A0075EF3") waiting for response (apb ready=0)  'Writing data'
+%% 6552.5 ns    Log    ID_BFM              APB BFM             apb_write(A:x"00000008", x"A0075EF3") completed.  'Writing data'
+%%   6590 ns    Log    ID_BFM_WAIT         APB BFM             apb_check(A:x"00000008", x"A0075EF3") while executing apb_read waiting for response (apb ready=0)  'Checking written data'
+%% 6672.5 ns    Log    ID_BFM              APB BFM             apb_check(A:x"00000008", x"A0075EF3")=> OK, read data = x"A0075EF3".  'Checking written data'
+%%   6710 ns    Log    ID_BFM_WAIT         APB BFM             apb_write(A:x"00000008", x"5403BC1E") waiting for response (apb ready=0)  'Writing data'
+%% 7032.5 ns    Log    ID_BFM              APB BFM             apb_write(A:x"00000008", x"5403BC1E") completed.  'Writing data'
+%%   7070 ns    Log    ID_BFM_WAIT         APB BFM             apb_check(A:x"00000008", x"5403BC1E") while executing apb_read waiting for response (apb ready=0)  'Checking written data'
+%% 7392.5 ns    Log    ID_BFM              APB BFM             apb_check(A:x"00000008", x"5403BC1E")=> OK, read data = x"5403BC1E".  'Checking written data'
+%%   7430 ns    Log    ID_BFM_WAIT         APB BFM             apb_write(A:x"00000008", x"FD3736E6") waiting for response (apb ready=0)  'Writing data'
+%% 7752.5 ns    Log    ID_BFM              APB BFM             apb_write(A:x"00000008", x"FD3736E6") completed.  'Writing data'
+%%   7790 ns    Log    ID_BFM_WAIT         APB BFM             apb_check(A:x"00000008", x"FD3736E6") while executing apb_read waiting for response (apb ready=0)  'Checking written data'
+%% 8112.5 ns    Log    ID_BFM              APB BFM             apb_check(A:x"00000008", x"FD3736E6")=> OK, read data = x"FD3736E6".  'Checking written data'
+%%   8150 ns    Log    ID_BFM_WAIT         APB BFM             apb_write(A:x"00000008", x"1013638C") waiting for response (apb ready=0)  'Writing data'
+%% 8212.5 ns    Log    ID_BFM              APB BFM             apb_write(A:x"00000008", x"1013638C") completed.  'Writing data'
+%%   8250 ns    Log    ID_BFM_WAIT         APB BFM             apb_check(A:x"00000008", x"1013638C") while executing apb_read waiting for response (apb ready=0)  'Checking written data'
+%% 8312.5 ns    Log    ID_BFM              APB BFM             apb_check(A:x"00000008", x"1013638C")=> OK, read data = x"1013638C".  'Checking written data'
+%%   8350 ns    Log    ID_BFM_WAIT         APB BFM             apb_write(A:x"00000008", x"A058C7D5") waiting for response (apb ready=0)  'Writing data'
+%% 8692.5 ns    Log    ID_BFM              APB BFM             apb_write(A:x"00000008", x"A058C7D5") completed.  'Writing data'
+%%   8730 ns    Log    ID_BFM_WAIT         APB BFM             apb_check(A:x"00000008", x"A058C7D5") while executing apb_read waiting for response (apb ready=0)  'Checking written data'
+%% 9072.5 ns    Log    ID_BFM              APB BFM             apb_check(A:x"00000008", x"A058C7D5")=> OK, read data = x"A058C7D5".  'Checking written data'
+%%   9110 ns    Log    ID_BFM_WAIT         APB BFM             apb_write(A:x"00000008", x"E1922502") waiting for response (apb ready=0)  'Writing data'
+%% 9392.5 ns    Log    ID_BFM              APB BFM             apb_write(A:x"00000008", x"E1922502") completed.  'Writing data'
+%%   9430 ns    Log    ID_BFM_WAIT         APB BFM             apb_check(A:x"00000008", x"E1922502") while executing apb_read waiting for response (apb ready=0)  'Checking written data'
+%% 9712.5 ns    Log    ID_BFM              APB BFM             apb_check(A:x"00000008", x"E1922502")=> OK, read data = x"E1922502".  'Checking written data'
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%% 10712.5 ns    DONE   PASSED   apb_bfm_tb  Passed: 4  Affirmations Checked: 8
+%%    Expected      Failures: 0  Errors: -3  Warnings: 0  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 3  Warnings: 0  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% 10712.5 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

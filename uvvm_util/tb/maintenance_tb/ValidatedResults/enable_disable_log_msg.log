@@ -1,0 +1,45 @@
+%% 
+%% 
+%%      1 ns    Log    ID_LOG_HDR                              Verifying disable_log_msg and enable_log_msg
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      1 ns    Log    ID_BFM              My scope            ID_BFM enabled
+%%      1 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'check ID_BFM enabled'
+%%      1 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_BFM).
+%%      1 ns    Log    PASSED              TB seq.             check_value(bool, false) => OK. Value was false. 'check ID_BFM disabled'
+%%      1 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'check ID_LOG_HDR enabled'
+%%      1 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_BFM).
+%%      1 ns    Log    ID_BFM              My scope            ID_BFM re-enabled. Should be written
+%%      1 ns    Log    ID_SEQUENCER        TB seq.             Verifying disable_log_msg() with QUIET. Next line should be empty.
+%%      1 ns    Log    ID_SEQUENCER        TB seq.             This shall be visible
+%%      1 ns    Log    ID_SEQUENCER        TB seq.             This log message shall be visible
+%%      1 ns    Log    ID_SEQUENCER        TB seq.             Verifying that attempting to enable ID_NEVER triggers an alert.
+%%      1 ns    Alert  WARNING             TB seq.             enable_log_msg() ignored for ID_NEVER (not allowed). 'This shall trigger a TB_WARNING.'
+%%      1 ns    Log    ID_SEQUENCER        TB seq.             Testing ID_LOG_MSG_CTRL and ALL_MESSAGES
+%%      1 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ALL_MESSAGES).
+%%      1 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_SEQUENCER).
+%%      1 ns    Log    ID_SEQUENCER        TB seq.             This should be visible (and enabling of ID_SEQUENCER should be visible)
+%%      1 ns    Log    ID_SEQUENCER        TB seq.             Testing ID_LOG_MSG_CTRL and ALL_MESSAGES with QUIET
+%%      1 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ALL_MESSAGES).
+%%      1 ns    Log    ID_SEQUENCER        TB seq.             This should be visible (and enabling of ID_SEQUENCER should NOT be visible)
+%% 
+%% ============================================================================================================================================================================
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%   1001 ns    DONE   PASSED   enable_disable_log_msg  Passed: 3  Affirmations Checked: 3
+%%    Expected      Failures: 0  Errors: 0  Warnings: -1  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 0  Warnings: 1  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%   1001 ns    DONE   PASSED   enable_disable_log_msg  Passed: 3  Affirmations Checked: 3
+%%    Expected      Failures: 0  Errors: 0  Warnings: -1  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 0  Warnings: 1  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 

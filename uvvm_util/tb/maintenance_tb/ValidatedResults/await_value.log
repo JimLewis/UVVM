@@ -1,0 +1,88 @@
+%% 
+%% 
+%% ============================================================================================================================================================================
+%%      0 ns    Log    ID_LOG_HDR_LARGE    TB seq.(uvvm)       Starting testcase: await_value
+%% ============================================================================================================================================================================
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       Verifying await_value
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      2 ns    Alert  ERROR               TB seq.(uvvm)       await_value(slv, x"1", 3 ns, 5 ns) => Failed. Condition occurred too early, after 2 ns. 'Change too soon, Fail'
+%%     15 ns    Log    PASSED              TB seq.(uvvm)       await_value(slv, x"2", 3 ns, 5 ns) => OK. Condition occurred after 3 ns. 'Change within time window 1, OK'
+%%     19 ns    Log    PASSED              TB seq.(uvvm)       await_value(slv, x"3", 3 ns, 5 ns) => OK. Condition occurred after 4 ns. 'Change within time window 2, leading zero, OK'
+%%     24 ns    Log    PASSED              TB seq.(uvvm)       await_value(slv, x"4", 3 ns, 5 ns) => OK. Condition occurred after 5 ns. 'Change within time window 3, leading zero, OK'
+%%     29 ns    Alert  ERROR               TB seq.(uvvm)       await_value(slv, x"5", 3 ns, 5 ns) => Failed. Timed out after 5 ns. 'Change too late, Fail'
+%%     33 ns    Log    PASSED              TB seq.(uvvm)       await_value(slv, x"8", 3 ns, 5 ns) => OK. Condition occurred after 4 ns. 'Change within time window, OK'
+%%     33 ns    Alert  ERROR               TB seq.(uvvm)       await_value(slv, x"113", 3 ns, 5 ns) => Failed. Widths did not match. 'Different width, Fail'
+%%     33 ns    Log    PASSED              TB seq.(uvvm)       await_value(slv, x"9", 0 ns, 1 ns) => OK. Condition occurred after 0 ns. 'Changed immediately, OK'
+%%     43 ns    Log    PASSED              TB seq.(uvvm)       await_value(slv, b"1111", 0 ns, 0 ns) => OK. Condition occurred after 0 ns. 'Changed immediately, OK. Log in BIN'
+%%     43 ns    Log    PASSED              TB seq.(uvvm)       await_value(slv, x"F", 0 ns, 1 ns) => OK. Condition occurred after 0 ns. 'Val=exp already, No signal'event. OK. Log in HEX'
+%%     43 ns    Log    PASSED              TB seq.(uvvm)       await_value(slv, d"15", 0 ns, 2 ns) => OK. Condition occurred after 0 ns. 'Val=exp already, No signal'event. OK. Log in DECimal'
+%%     44 ns    Log    PASSED              TB seq.(uvvm)       await_value(slv, x"80", 0 ns, 0 ns) => OK. Condition occurred after 0 ns. 'Val=exp already, No signal'event. OK. '
+%%     44 ns    Alert  ERROR               TB seq.(uvvm)       await_value(slv, x"80", 1 ns, 2 ns) => Failed. Condition occurred too early, after 0 ns. 'Val=exp already, min_time>0ns, Fail. '
+%%     48 ns    Log    PASSED              TB seq.(uvvm)       await_value(slv, x"3", 3 ns, 5 ns) => OK. Condition occurred after 4 ns. 'Change within time window 2, exact match, OK'
+%%     62 ns    Log    PASSED              TB seq.(uvvm)       await_value(slv, x"X1" (b"10--0001"), 3 ns, 5 ns) => OK. Condition occurred after 4 ns. 'Change within time window 2, STD match, OK'
+%%     76 ns    Log    PASSED              TB seq.(uvvm)       await_value(slv, x"BX" (b"1011000Z"), 3 ns, 5 ns) => OK. Condition occurred after 4 ns. 'Change within time window 3, STD match including Z, OK'
+%%     86 ns    Alert  ERROR               TB seq.(uvvm)       await_value(slv, x"BX" (b"1011000Z"), 3 ns, 5 ns) => Failed. Condition occurred too early, after 0 ns. 'Different values, STD match including Z, Fail'
+%%    100 ns    Log    PASSED              TB seq.(uvvm)       await_value(slv, x"XX" (b"1W1U0X0Z"), 3 ns, 5 ns) => OK. Condition occurred after 4 ns. 'Change within time window 3, STD match including ZXUW, OK'
+%%    115 ns    Alert  ERROR               TB seq.(uvvm)       await_value(slv, x"XX" (b"1W1U1X0Z"), 3 ns, 5 ns) => Failed. Timed out after 5 ns. 'Different values, STD match including ZXUW, Fail 1'
+%%    117 ns    Alert  ERROR               TB seq.(uvvm)       await_value(u, x"1", 3 ns, 5 ns) => Failed. Condition occurred too early, after 2 ns. 'Change too soon, Fail'
+%%    120 ns    Log    PASSED              TB seq.(uvvm)       await_value(u, x"2", 3 ns, 5 ns) => OK. Condition occurred after 3 ns. 'Change within time window, OK'
+%%    125 ns    Alert  ERROR               TB seq.(uvvm)       await_value(u, x"5", 3 ns, 5 ns) => Failed. Timed out after 5 ns. 'Change too late, Fail'
+%%    135 ns    Log    PASSED              TB seq.(uvvm)       await_value(u, b"1111", 0 ns, 0 ns) => OK. Condition occurred after 0 ns. 'Changed immediately, OK. Log in BIN'
+%%    135 ns    Log    PASSED              TB seq.(uvvm)       await_value(u, x"F", 0 ns, 0 ns) => OK. Condition occurred after 0 ns. 'Changed immediately, OK. Log in HEX'
+%%    135 ns    Log    PASSED              TB seq.(uvvm)       await_value(u, d"15", 0 ns, 2 ns) => OK. Condition occurred after 0 ns. 'Changed immediately, OK. Log in DECimal'
+%%    137 ns    Alert  ERROR               TB seq.(uvvm)       await_value(s, x"1", 3 ns, 5 ns) => Failed. Condition occurred too early, after 2 ns. 'Change too soon, Fail'
+%%    140 ns    Log    PASSED              TB seq.(uvvm)       await_value(s, x"2", 3 ns, 5 ns) => OK. Condition occurred after 3 ns. 'Change within time window, OK'
+%%    145 ns    Alert  ERROR               TB seq.(uvvm)       await_value(s, x"5", 3 ns, 5 ns) => Failed. Timed out after 5 ns. 'Change too late, Fail'
+%%    155 ns    Log    PASSED              TB seq.(uvvm)       await_value(s, d"15", 0 ns, 1 ns) => OK. Condition occurred after 0 ns. 'Changed immediately, OK. Log in DECimal'
+%%    157 ns    Alert  ERROR               TB seq.(uvvm)       await_value(bool, true, 3 ns, 5 ns) => Failed. Condition occurred too early, after 2 ns. 'Change too soon, Fail'
+%%    170 ns    Log    PASSED              TB seq.(uvvm)       await_value(bool, false, 3 ns, 5 ns) => OK. Condition occurred after 3 ns. 'Change within time window, OK'
+%%    175 ns    Alert  ERROR               TB seq.(uvvm)       await_value(bool, true, 3 ns, 5 ns) => Failed. Timed out after 5 ns. 'Change too late, Fail'
+%%    185 ns    Log    PASSED              TB seq.(uvvm)       await_value(bool, false, 0 ns, 1 ns) => OK. Condition occurred after 0 ns. 'Changed immediately, OK. '
+%%    185 ns    Log    PASSED              TB seq.(uvvm)       await_value(bool, true, 0 ns, 2 ns) => OK. Condition occurred after 0 ns. 'Val=exp already, No signal'event. OK. '
+%%    185 ns    Alert  ERROR               TB seq.(uvvm)       await_value(bool, true, 1 ns, 2 ns) => Failed. Condition occurred too early, after 0 ns. 'Val=exp already, min_time>0ns, Fail. '
+%%    187 ns    Alert  ERROR               TB seq.(uvvm)       await_value(sl, 1, 3 ns, 5 ns) => Failed. Condition occurred too early, after 2 ns. 'Change too soon, Fail'
+%%    200 ns    Log    PASSED              TB seq.(uvvm)       await_value(sl, 0, 3 ns, 5 ns) => OK. Condition occurred after 3 ns. 'Change within time window, OK'
+%%    205 ns    Alert  ERROR               TB seq.(uvvm)       await_value(sl, 1, 3 ns, 5 ns) => Failed. Timed out after 5 ns. 'Change too late, Fail'
+%%    215 ns    Log    PASSED              TB seq.(uvvm)       await_value(sl, 0, 0 ns, 2 ns) => OK. Condition occurred after 0 ns. 'Changed immediately, OK. '
+%%    225 ns    Alert  ERROR               TB seq.(uvvm)       await_value(sl, 1, 1 ns, 2 ns) => Failed. Condition occurred too early, after 0 ns. 'Val=exp already, min_time>0ns, Fail. '
+%%    238 ns    Log    PASSED              TB seq.(uvvm)       await_value(sl, 0, 3 ns, 5 ns) => OK. Condition occurred after 3 ns. 'Change within time window to weak, expecting forced, OK'
+%%    251 ns    Log    PASSED              TB seq.(uvvm)       await_value(sl, H, 3 ns, 5 ns) => OK. Condition occurred after 3 ns. 'Change within time window to forced, expecting weak, OK'
+%%    266 ns    Alert  ERROR               TB seq.(uvvm)       await_value(sl, L, 3 ns, 5 ns) => Failed. Timed out after 5 ns. 'Change within time window to forced, expecting weak, Fail'
+%%    281 ns    Alert  ERROR               TB seq.(uvvm)       await_value(sl, 1, 3 ns, 5 ns) => Failed. Timed out after 5 ns. 'Change within time window to weak, expecting forced, Fail'
+%%    295 ns    Log    PASSED              TB seq.(uvvm)       await_value(sl, Z, 3 ns, 5 ns) => OK. Condition occurred after 3 ns. 'Change within time window, STD match including Z, OK'
+%%    305 ns    Alert  ERROR               TB seq.(uvvm)       await_value(sl, Z, 3 ns, 5 ns) => Failed. Condition occurred too early, after 0 ns. 'Different values, STD match including Z, Fail'
+%%    310 ns    Log    PASSED              TB seq.(uvvm)       await_value(sl, Z, 3 ns, 5 ns) => OK. Condition occurred after 3 ns. 'Change within time window, STD match including ZXUW, OK'
+%%    320 ns    Alert  ERROR               TB seq.(uvvm)       await_value(sl, Z, 3 ns, 5 ns) => Failed. Condition occurred too early, after 0 ns. 'Different values, STD match including ZXUW, Fail 2'
+%%    325 ns    Log    PASSED              TB seq.(uvvm)       await_value(sl, X, 3 ns, 5 ns) => OK. Condition occurred after 3 ns. 'Change within time window, STD match including ZXUW, OK'
+%%    335 ns    Alert  ERROR               TB seq.(uvvm)       await_value(sl, X, 3 ns, 5 ns) => Failed. Condition occurred too early, after 0 ns. 'Different values, STD match including ZXUW, Fail 3'
+%%    340 ns    Log    PASSED              TB seq.(uvvm)       await_value(sl, U, 3 ns, 5 ns) => OK. Condition occurred after 3 ns. 'Change within time window, STD match including ZXUW, OK'
+%%    350 ns    Alert  ERROR               TB seq.(uvvm)       await_value(sl, U, 3 ns, 5 ns) => Failed. Condition occurred too early, after 0 ns. 'Different values, STD match including ZXUW, Fail 4'
+%%    355 ns    Log    PASSED              TB seq.(uvvm)       await_value(sl, W, 3 ns, 5 ns) => OK. Condition occurred after 3 ns. 'Change within time window, STD match including ZXUW, OK'
+%%    365 ns    Alert  ERROR               TB seq.(uvvm)       await_value(sl, W, 3 ns, 5 ns) => Failed. Condition occurred too early, after 0 ns. 'Different values, STD match including ZXUW, Fail 5'
+%%    367 ns    Alert  ERROR               TB seq.(uvvm)       await_value(int, 1, 3 ns, 5 ns) => Failed. Condition occurred too early, after 2 ns. 'Change too soon, Fail'
+%%    370 ns    Log    PASSED              TB seq.(uvvm)       await_value(int, 2, 3 ns, 5 ns) => OK. Condition occurred after 3 ns. 'Change within time window, OK'
+%%    375 ns    Alert  ERROR               TB seq.(uvvm)       await_value(int, 3, 3 ns, 5 ns) => Failed. Timed out after 5 ns. 'Change too late, Fail'
+%%    385 ns    Log    PASSED              TB seq.(uvvm)       await_value(int, 15, 0 ns, 2 ns) => OK. Condition occurred after 0 ns. 'Val=exp already, no signal'event, OK. '
+%%    395 ns    Alert  ERROR               TB seq.(uvvm)       await_value(int, 17, 1 ns, 2 ns) => Failed. Condition occurred too early, after 0 ns. 'Val=exp already, Min_time>0ns, Fail. '
+%%    397 ns    Alert  ERROR               TB seq.(uvvm)       await_value(real, 1.0000, 3 ns, 5 ns) => Failed. Condition occurred too early, after 2 ns. 'Change too soon, Fail'
+%%    400 ns    Log    PASSED              TB seq.(uvvm)       await_value(real, 2.0000, 3 ns, 5 ns) => OK. Condition occurred after 3 ns. 'Change within time window, OK'
+%%    405 ns    Alert  ERROR               TB seq.(uvvm)       await_value(real, 3.0000, 3 ns, 5 ns) => Failed. Timed out after 5 ns. 'Change too late, Fail'
+%%    415 ns    Log    PASSED              TB seq.(uvvm)       await_value(real, 15.0000, 0 ns, 2 ns) => OK. Condition occurred after 0 ns. 'Val=exp already, no signal'event, OK. '
+%%    425 ns    Alert  ERROR               TB seq.(uvvm)       await_value(real, 17.0000, 1 ns, 2 ns) => Failed. Condition occurred too early, after 0 ns. 'Val=exp already, Min_time>0ns, Fail. '
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%   1425 ns    DONE   PASSED   await_value  Passed: 35  Affirmations Checked: 63
+%%    Expected      Failures: 0  Errors: -29  Warnings: 0  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 29  Warnings: 0  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%%   1425 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

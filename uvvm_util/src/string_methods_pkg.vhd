@@ -26,6 +26,8 @@ use ieee.math_real.all;
 use work.types_pkg.all;
 use work.adaptations_pkg.all;
 
+library osvvm ;
+
 package string_methods_pkg is
 
   shared variable shared_default_log_destination : t_log_destination := C_DEFAULT_LOG_DESTINATION;
@@ -119,9 +121,11 @@ package string_methods_pkg is
     return_val : boolean
   ) return string;
 
-  function to_upper(
-    val : string
-  ) return string;
+  --O removes ambiguity
+  alias to_upper is osvvm.TextUtilPkg.to_upper[string return string] ;
+--O  function to_upper(
+--O    val : string
+--O  ) return string;
 
   function fill_string(
     val   : character;
@@ -291,6 +295,10 @@ package string_methods_pkg is
     val : real_vector
   ) return string;
 
+  function format_time(
+    val : time
+  ) return string ;
+
   function to_string(
     val : time_vector
   ) return string;
@@ -362,6 +370,17 @@ package string_methods_pkg is
     constant log_file_name   : in string            := C_LOG_FILE_NAME;
     constant open_mode       : in file_open_kind    := append_mode);
 
+  --O  Needed for to_string for type time and time_vector
+  function get_time_unit(
+    constant value : time
+  ) return time;
+
+  function get_range_time_unit (
+    constant min_value : time;
+    constant max_value : time
+  ) return time;
+
+
 end package string_methods_pkg;
 
 package body string_methods_pkg is
@@ -379,19 +398,19 @@ package body string_methods_pkg is
     severity severeness;
   end procedure;
 
-  function to_upper(
-    val : string
-  ) return string is
-    variable v_result : string(val'range) := val;
-  begin
-    for i in val'range loop
-      -- NOTE: Illegal characters are allowed and will pass through (check Mentor's std_developers_kit)
-      if (v_result(i) >= 'a' and v_result(i) <= 'z') then
-        v_result(i) := character'val(character'pos(v_result(i)) - character'pos('a') + character'pos('A'));
-      end if;
-    end loop;
-    return v_result;
-  end function to_upper;
+--O  function to_upper(
+--O    val : string
+--O  ) return string is
+--O    variable v_result : string(val'range) := val;
+--O  begin
+--O    for i in val'range loop
+--O      -- NOTE: Illegal characters are allowed and will pass through (check Mentor's std_developers_kit)
+--O      if (v_result(i) >= 'a' and v_result(i) <= 'z') then
+--O        v_result(i) := character'val(character'pos(v_result(i)) - character'pos('a') + character'pos('A'));
+--O      end if;
+--O    end loop;
+--O    return v_result;
+--O  end function to_upper;
 
   function fill_string(
     val   : character;
@@ -1516,6 +1535,23 @@ package body string_methods_pkg is
     return to_string(integer_vector(val), radix, format, prefix);
   end function;
 
+  function format_real(
+    constant value : real)
+  return string is
+    variable v_significant_value : integer ;
+  begin
+    if value = real'left then
+      return "real'low" ;
+    else
+      v_significant_value := integer (abs (value * (10.0 ** C_REAL_NUM_FRACTION_DIGITS)));
+      if value = 0.0 or v_significant_value > 0 then
+        return to_string(value, C_REAL_NUM_FRACTION_DIGITS);
+      else
+        return to_string(value, "%0.4e");
+      end if;
+    end if;
+  end function;
+
   function to_string(
     val : real_vector
   ) return string is
@@ -1532,7 +1568,7 @@ package body string_methods_pkg is
       write(v_line, string'("("));
 
       for idx in val'range loop
-        write(v_line, to_string(val(idx)));
+        write(v_line, format_real(val(idx)));
 
         if (idx < val'right) and (val'ascending) then
           write(v_line, string'(", "));
@@ -1550,6 +1586,18 @@ package body string_methods_pkg is
     end if;
   end function;
 
+  function format_time(
+    val : time
+  ) return string is
+    constant C_RES : time := std.env.resolution_limit ;
+  begin
+    if val = time'low then
+      return "time'low" ;
+    else
+      return to_string(val, get_time_unit(val)) ;
+    end if ;
+  end function format_time ;
+
   function to_string(
     val : time_vector
   ) return string is
@@ -1566,7 +1614,8 @@ package body string_methods_pkg is
       write(v_line, string'("("));
 
       for idx in val'range loop
-        write(v_line, to_string(val(idx)));
+--        write(v_line, to_string(val(idx), get_time_unit(val(idx))));
+        write(v_line, format_time(val(idx)));
 
         if (idx < val'right) and (val'ascending) then
           write(v_line, string'(", "));
@@ -1696,9 +1745,9 @@ package body string_methods_pkg is
     if msg'length /= 0 then
       if valid_length(msg) /= 1 then
         if msg(1) = C_MSG_DELIMITER then
-          return " " & msg;
+          return " " & to_string(msg);
         else
-          return " " & C_MSG_DELIMITER & msg & C_MSG_DELIMITER;
+          return " " & C_MSG_DELIMITER & to_string(msg) & C_MSG_DELIMITER;
         end if;
       end if;
     end if;
@@ -1793,7 +1842,7 @@ package body string_methods_pkg is
   begin
     write(v_line, my_line.all);
     writeline(file_handle, v_line);
-    deallocate(v_line);
+    deallocate(v_line);  --?? Not necessary.  WriteLine already does this.
   end procedure;
 
   -- Writes a line to the specified log destination and clears the content of the line
@@ -1804,43 +1853,99 @@ package body string_methods_pkg is
     constant open_mode       : in file_open_kind    := append_mode) is
     file v_file_handle : text;
   begin
-    if log_file_name'length = 0 and (log_destination = LOG_ONLY or log_destination = CONSOLE_AND_LOG) then
-      -- Output file specified, but file name was invalid.
-      bitvis_assert(false, ERROR, "log called with log_destination " & to_upper(to_string(log_destination)) & ", but log file name was empty.", "write_line_to_log_destination()");
-    elsif log_line = null then
-      -- Line specified is null
-      bitvis_assert(false, WARNING, "log called with NULL line", "write_line_to_log_destination()");
-    else
-      case log_destination is
-        when CONSOLE_AND_LOG =>
-          -- Write to console while keeping the line contents
-          tee_and_keep_line(OUTPUT, log_line);
-          -- Write to log and empty the line contents
-          if log_file_name = C_LOG_FILE_NAME then
-            -- If the log file is the default file, it is not necessary to open and close it again
-            writeline(LOG_FILE, log_line);
-          else
-            -- If the log file is a custom file name, the file will have to be opened
-            file_open(v_file_handle, log_file_name, open_mode);
-            writeline(v_file_handle, log_line);
-            file_close(v_file_handle);
-          end if;
-        when CONSOLE_ONLY =>
-          -- Write to console and empty the line contents
-          writeline(OUTPUT, log_line);
-        when LOG_ONLY =>
-          -- Write to log and empty the line contents
-          if log_file_name = C_LOG_FILE_NAME then
-            -- If the log file is the default file, it is not necessary to open and close it again
-            writeline(LOG_FILE, log_line);
-          else
-            -- If the log file is a custom file name, the file will have to be opened
-            file_open(v_file_handle, log_file_name, open_mode);
-            writeline(v_file_handle, log_line);
-            file_close(v_file_handle);
-          end if;
-      end case;
+    if log_line = null then
+      -- if null, print blank line to log destination
+      write(log_line, string'("")) ;
     end if;
+    case log_destination is
+      when CONSOLE_AND_LOG =>
+        -- Write to log and empty the line contents
+        if log_file_name'length = 0 or log_file_name = C_LOG_FILE_NAME then
+          if osvvm.TranscriptPkg.IsTranscriptOpen and not osvvm.TranscriptPkg.IsTranscriptMirrored then
+            -- Write to console if OSVVM is not already doing it
+            tee_and_keep_line(OUTPUT, log_line);
+          end if;
+          osvvm.TranscriptPkg.WriteLine(log_line) ;
+        else
+          tee_and_keep_line(OUTPUT, log_line);
+          -- If the log file is a custom file name, the file will have to be opened
+          file_open(v_file_handle, log_file_name, open_mode);
+          writeline(v_file_handle, log_line);
+          file_close(v_file_handle);
+        end if;
+      when CONSOLE_ONLY =>
+        -- Write to console and empty the line contents
+        writeline(OUTPUT, log_line);
+      when LOG_ONLY =>
+        -- Write to log and empty the line contents
+        if log_file_name'length = 0 or log_file_name = C_LOG_FILE_NAME then
+          -- If the log file is the default file, it is not necessary to open and close it again
+          -- writeline(LOG_FILE, log_line);
+          osvvm.TranscriptPkg.WriteLine(log_line) ;
+        else
+          -- If the log file is a custom file name, the file will have to be opened
+          file_open(v_file_handle, log_file_name, open_mode);
+          writeline(v_file_handle, log_line);
+          file_close(v_file_handle);
+        end if;
+    end case;
   end procedure;
+
+  -- Function for getting time unit
+  function get_time_unit(
+    constant value : time
+  ) return time is
+    variable v_time_unit : time;
+  begin
+    if (value = 0 sec) then
+      v_time_unit := C_LOG_TIME_BASE ;
+    elsif (value >= 1 hr) then
+      v_time_unit := hr;
+    elsif (value >= 1 min) then
+      v_time_unit := min;
+    elsif (value >= 1 sec) then
+      v_time_unit := sec;
+    elsif (value >= 1 ms) then
+      v_time_unit := ms;
+    elsif (value >= 1 us) then
+      v_time_unit := us;
+    elsif (value >= 1 ns) then
+      v_time_unit := ns;
+    elsif (value >= 1 ps) then
+      v_time_unit := ps;
+    elsif (value > -1 ps) then
+      v_time_unit := fs;
+    elsif (value > -1 ns) then
+      v_time_unit := ps;
+    elsif (value > -1 us) then
+      v_time_unit := ns;
+    elsif (value > -1 ms) then
+      v_time_unit := us;
+    elsif (value > -1 sec) then
+      v_time_unit := ms;
+    elsif (value > -1 min) then
+      v_time_unit := sec;
+    elsif (value > -1 hr) then
+      v_time_unit := min;
+    else
+      v_time_unit := hr;
+    end if;
+    return v_time_unit;
+  end function;
+
+  -- Return the time unit of the lowest value in the range
+  function get_range_time_unit (
+    constant min_value : time;
+    constant max_value : time
+  ) return time is
+    constant C_MIN_VALUE_UNIT : time := get_time_unit(min_value);
+    constant C_MAX_VALUE_UNIT : time := get_time_unit(max_value);
+  begin
+    if (C_MIN_VALUE_UNIT < C_MAX_VALUE_UNIT and min_value /= 0 ns) or max_value = 0 ns then
+      return C_MIN_VALUE_UNIT;
+    else
+      return C_MAX_VALUE_UNIT;
+    end if;
+  end function;
 
 end package body string_methods_pkg;

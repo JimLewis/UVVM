@@ -1,0 +1,245 @@
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       Testing completion detection [without SB]
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_POS_ACK          TB seq.(uvvm)       check_sb_completion() => OK. There are no UVVM scoreboards enabled.
+%%      
+%%      =======================================================================================================================================================================
+%%      0 ns *** SUMMARY OF SCOREBOARDS***                                                                                                                                     
+%%      =======================================================================================================================================================================
+%%           No UVVM scoreboards to report.
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%      0 ns    Log    PASSED              TB seq.(uvvm)       check_value(bool, true) => OK. Value was true. 'check_sb_completion with return value shall return true when no SB (and no expected)'
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       Testing completion detection with SB [enabling/disabling]
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_CTRL             DEMO SB 1,1         config() => config applied to SB. 
+%%      0 ns    Log    ID_CTRL             DEMO SB 1,1         enable() => SB enabled. 
+%%      0 ns    Log    ID_CTRL             DEMO SB 1,1         enable_log_msg() => message id id_data enabled. 
+%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Testing completion detection with SB (enabled, no expected)
+%%      0 ns    Log    ID_POS_ACK          TB seq.(uvvm)       check_sb_completion() => OK. All UVVM scoreboards are empty.
+%%      
+%%      =======================================================================================================================================================================
+%%      0 ns *** SUMMARY OF SCOREBOARDS***                                                                                                                                     
+%%      =======================================================================================================================================================================
+%%           DEMO SB 1,1,ENABLED
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%      0 ns    Log    PASSED              TB seq.(uvvm)       check_value(bool, true) => OK. Value was true. 'check_sb_completion with return value shall return true when no SB has expected'
+%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Testing completion detection with SB (disabled, no expected)
+%%      0 ns    Log    ID_CTRL             DEMO SB 1,1         disable() => SB disabled. 
+%%      0 ns    Log    ID_POS_ACK          TB seq.(uvvm)       check_sb_completion() => OK. There are no UVVM scoreboards enabled.
+%%      
+%%      =======================================================================================================================================================================
+%%      0 ns *** SUMMARY OF SCOREBOARDS***                                                                                                                                     
+%%      =======================================================================================================================================================================
+%%           DEMO SB 1,1,DISABLED
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%      0 ns    Log    PASSED              TB seq.(uvvm)       check_value(bool, true) => OK. Value was true. 'check_sb_completion with return value shall return true when no SB has expected'
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       Testing completion detection with SB [without received, then with received]
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_CTRL             DEMO SB 2,1         config() => config applied to SB. 
+%%      0 ns    Log    ID_CTRL             DEMO SB 2,1         enable() => SB enabled. 
+%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Testing completion detection with SB (without received)
+%%      0 ns    Log    ID_DATA             DEMO SB 2,1         add_expected() => expected: x"55".  'adding expected'
+%%      0 ns    Alert  WARNING             TB seq.(uvvm)       check_sb_completion() => Failed. The following UVVM scoreboard(s) still have pending data:\n  DEMO SB 1,1
+
+%%      0 ns    Log    PASSED              TB seq.(uvvm)       check_value(bool, true) => OK. Value was true. 'check_sb_completion with return value shall return false when SB has expected'
+%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Testing completion detection with SB (with received)
+%%      0 ns    Log    ID_DATA             DEMO SB 2,1         check_received() => MATCH, for received: x"55". 'checking received'
+%%      0 ns    Log    ID_POS_ACK          TB seq.(uvvm)       check_sb_completion() => OK. All UVVM scoreboards are empty.
+%%      0 ns    Log    PASSED              TB seq.(uvvm)       check_value(bool, true) => OK. Value was true. 'check_sb_completion with return value shall return true when SB has no expected left'
+%%      0 ns    Log    ID_CTRL             DEMO SB 2,1         disable() => SB disabled. 
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       Testing completion detection with SB [delayed received check]
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_CTRL             DEMO SB 3,1         config() => config applied to SB. 
+%%      0 ns    Log    ID_CTRL             DEMO SB 3,1         enable() => SB enabled. 
+%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Testing completion detection with SB (delayed received check)
+%%      0 ns    Log    ID_DATA             DEMO SB 3,1         add_expected() => expected: x"55".  'adding expected'
+%%      0 ns    Alert  WARNING             TB seq.(uvvm)       check_sb_completion() => Failed. The following UVVM scoreboard(s) still have pending data:\n  DEMO SB 1,1
+
+%%      0 ns    Log    PASSED              TB seq.(uvvm)       check_value(bool, true) => OK. Value was true. 'check_sb_completion with return value shall return false when SB has expected'
+%%      0 ns    Log    ID_CTRL             DEMO SB 3,1         disable() => SB disabled. 
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       Testing completion detection with SB [reset/flush]
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_CTRL             DEMO SB 4,1         config() => config applied to SB. 
+%%      0 ns    Log    ID_CTRL             DEMO SB 4,1         enable() => SB enabled. 
+%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Resetting Scoreboard
+%%      0 ns    Log    ID_DATA             DEMO SB 4,1         add_expected() => expected: x"AA".  'adding expected 1'
+%%      0 ns    Log    ID_CTRL             DEMO SB 4,1         reset() => reseting SB. 
+%%      0 ns    Log    ID_POS_ACK          TB seq.(uvvm)       check_sb_completion() => OK. All UVVM scoreboards are empty.
+%%      
+%%      =======================================================================================================================================================================
+%%      0 ns *** SUMMARY OF SCOREBOARDS***                                                                                                                                     
+%%      =======================================================================================================================================================================
+%%           DEMO SB 1,1,ENABLED
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%      0 ns    Log    PASSED              TB seq.(uvvm)       check_value(bool, true) => OK. Value was true. 'check_sb_completion with return value shall return true when SB has no expected left'
+%%      0 ns    Log    ID_DATA             DEMO SB 4,1         add_expected() => expected: x"55".  'adding expected 2'
+%%      0 ns    Alert  WARNING             DEMO SB 4,1         check_received() => MISMATCH, expected: x"55"; received: x"AA". 'checking received'
+%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Flushing Scoreboard
+%%      0 ns    Log    ID_DATA             DEMO SB 4,1         add_expected() => expected: x"55".  'adding expected 3'
+%%      0 ns    Log    ID_DATA             DEMO SB 4,1         flush() => flushing SB. 
+%%      0 ns    Log    ID_POS_ACK          TB seq.(uvvm)       check_sb_completion() => OK. All UVVM scoreboards are empty.
+%%      
+%%      =======================================================================================================================================================================
+%%      0 ns *** SUMMARY OF SCOREBOARDS***                                                                                                                                     
+%%      =======================================================================================================================================================================
+%%           DEMO SB 1,1,ENABLED
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%      0 ns    Log    PASSED              TB seq.(uvvm)       check_value(bool, true) => OK. Value was true. 'check_sb_completion with return value shall return true when SB has no expected left'
+%%      0 ns    Log    ID_CTRL             DEMO SB 4,1         disable() => SB disabled. 
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       Testing completion detection with SB [pending entries (alert), disabled]
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_CTRL             DEMO SB 5,1         config() => config applied to SB. 
+%%      0 ns    Log    ID_CTRL             DEMO SB 5,1         enable() => SB enabled. 
+%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Testing completion detection with SB (pending entries, disabled)
+%%      0 ns    Log    ID_DATA             DEMO SB 5,1         add_expected() => expected: x"55".  'adding expected'
+%%      0 ns    Alert  ERROR               TB seq.(uvvm)       check_sb_completion() => Failed. The following UVVM scoreboard(s) still have pending data:\n  DEMO SB 1,1
+
+%%      0 ns    Log    PASSED              TB seq.(uvvm)       check_value(bool, true) => OK. Value was true. 'check_sb_completion with return value shall return false when SB has expected'
+%%      0 ns    Log    ID_CTRL             DEMO SB 5,1         disable() => SB disabled. 
+%%      0 ns    Log    ID_POS_ACK          TB seq.(uvvm)       check_sb_completion() => OK. There are no UVVM scoreboards enabled.
+%%      
+%%      =======================================================================================================================================================================
+%%      0 ns *** SUMMARY OF SCOREBOARDS***                                                                                                                                     
+%%      =======================================================================================================================================================================
+%%           DEMO SB 1,1,DISABLED
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%      0 ns    Log    ID_CTRL             DEMO SB 5,1         enable() => SB enabled. 
+%%      0 ns    Alert  ERROR               TB seq.(uvvm)       check_sb_completion() => Failed. The following UVVM scoreboard(s) still have pending data:\n  DEMO SB 1,1
+
+%%      0 ns    Log    PASSED              TB seq.(uvvm)       check_value(bool, true) => OK. Value was true. 'check_sb_completion with return value shall return false when SB has expected'
+%%      0 ns    Log    ID_DATA             DEMO SB 5,1         flush() => flushing SB. 
+%%      0 ns    Log    ID_POS_ACK          TB seq.(uvvm)       check_sb_completion() => OK. All UVVM scoreboards are empty.
+%%      
+%%      =======================================================================================================================================================================
+%%      0 ns *** SUMMARY OF SCOREBOARDS***                                                                                                                                     
+%%      =======================================================================================================================================================================
+%%           DEMO SB 1,1,ENABLED
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%      0 ns    Log    ID_CTRL             DEMO SB 5,1         disable() => SB disabled. 
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       Testing completion detection with SB [different SB methods (insert_expected, delete_expected, fetch_expected)]
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_CTRL             DEMO SB 6,1         config() => config applied to SB. 
+%%      0 ns    Log    ID_CTRL             DEMO SB 6,1         enable() => SB enabled. 
+%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Inserting expected to SB
+%%      0 ns    Log    ID_DATA             DEMO SB 6,1         add_expected() => expected: x"55".  'adding expected 1'
+%%      0 ns    Log    ID_DATA             DEMO SB 6,1         add_expected() => expected: x"AA".  'adding expected 2'
+%%      0 ns    Log    ID_DATA             DEMO SB 6,1         insert_expected() => inserted expected without TAG in position 4.  Expected: x"FF". 'inserting expected 3 after 1, but before 2'
+%%      0 ns    Log    ID_DATA             DEMO SB 6,1         insert_expected() => inserted expected without TAG in position 4.  Expected: x"01". 'inserting expected 4 after 1, but before 3 and 2'
+%%      0 ns    Alert  WARNING             TB seq.(uvvm)       check_sb_completion() => Failed. The following UVVM scoreboard(s) still have pending data:\n  DEMO SB 1,1
+
+%%      0 ns    Log    PASSED              TB seq.(uvvm)       check_value(bool, true) => OK. Value was true. 'check_sb_completion with return value shall return false when SB has expected'
+%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Deleting expected from SB
+%%      0 ns    Log    ID_DATA             DEMO SB 6,1         fetch_expected() => fetching expected by position 2. 'fetching expected 4'
+%%      0 ns    Log    ID_DATA             DEMO SB 6,1         delete_expected() => entry with identifier position 2.
+%%      0 ns    Log    PASSED              TB seq.             check_value(slv, x"01") => OK. Value was x"01". 'checking fetched value 4'
+%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Remove both 1 and 2 by use of check_received
+%%      0 ns    Log    ID_DATA             DEMO SB 6,1         check_received() => MATCH, for received: x"55". 'checking received 1'
+%%      0 ns    Log    ID_DATA             DEMO SB 6,1         check_received() => MATCH, for received: x"AA". 'checking received 2'
+%%      0 ns    Log    ID_POS_ACK          TB seq.(uvvm)       check_sb_completion() => OK. All UVVM scoreboards are empty.
+%%      0 ns    Log    ID_CTRL             DEMO SB 6,1         disable() => SB disabled. 
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       Testing completion detection with SB [multiple instances, multiple SBs]
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_CTRL             DEMO SB 7,1         config() => config applied to SB. 
+%%      0 ns    Log    ID_CTRL             DEMO SB 7,1         enable() => SB enabled. 
+%%      0 ns    Log    ID_CTRL             DEMO SB 8,1         config() => config applied to SB. 
+%%      0 ns    Log    ID_CTRL             DEMO SB 8,1         enable() => SB enabled. 
+%%      0 ns    Log    ID_CTRL             DEMO SB 8,1         enable_log_msg() => message id id_data enabled. 
+%%      0 ns    Log    ID_CTRL             DEMO SB 7,2         enable() => SB enabled.
+%%      0 ns    Log    ID_CTRL             DEMO SB 7,3         enable() => SB enabled.
+%%      0 ns    Log    ID_CTRL             DEMO SB 7           enable_log_msg() => message id id_data enabled for all instances.
+%%      0 ns    Log    ID_POS_ACK          TB seq.(uvvm)       check_sb_completion() => OK. All UVVM scoreboards are empty.
+%%      
+%%      =======================================================================================================================================================================
+%%      0 ns *** SUMMARY OF SCOREBOARDS***                                                                                                                                     
+%%      =======================================================================================================================================================================
+%%           DEMO SB 1,1,ENABLED
+%%           DEMO SB 8,1,ENABLED
+%%           DEMO SB 7,2,ENABLED
+%%           DEMO SB 7,3,ENABLED
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%      0 ns    Log    ID_DATA             DEMO SB 7,2         add_expected() => value: x"55". 'adding expected 1'
+%%      0 ns    Log    ID_DATA             DEMO SB 7,3         add_expected() => value: x"55". 'adding expected 2'
+%%      0 ns    Log    ID_DATA             DEMO SB 8,1         add_expected() => expected: x"55".  'adding expected 3'
+%%      0 ns    Alert  ERROR               TB seq.(uvvm)       check_sb_completion() => Failed. The following UVVM scoreboard(s) still have pending data:\n  DEMO SB 8,1
+  DEMO SB 7,2
+  DEMO SB 7,3
+
+%%      0 ns    Log    PASSED              TB seq.(uvvm)       check_value(bool, true) => OK. Value was true. 'check_sb_completion with return value shall return false when SB has expected'
+%%      0 ns    Log    ID_CTRL             DEMO SB 7,1         disable() => SB disabled.
+%%      0 ns    Log    ID_CTRL             DEMO SB 7,2         disable() => SB disabled.
+%%      0 ns    Log    ID_CTRL             DEMO SB 7,3         disable() => SB disabled.
+%%      0 ns    Log    ID_CTRL             DEMO SB 8,1         disable() => SB disabled. 
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       Testing completion detection alert counter reports
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_POS_ACK          TB seq.(uvvm)       check_sb_completion() => OK. There are no UVVM scoreboards enabled.
+%% 
+%% ============================================================================================================================================================================
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%      0 ns    DONE   PASSED   check_sb_completion  Passed: 13  Affirmations Checked: 13
+%%    Expected      Failures: 0  Errors: -3  Warnings: -4  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 3  Warnings: 4  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%%      0 ns    Log    ID_POS_ACK          TB seq.(uvvm)       check_sb_completion() => OK. There are no UVVM scoreboards enabled.
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%      0 ns    DONE   PASSED   check_sb_completion  Passed: 13  Affirmations Checked: 13
+%%    Expected      Failures: 0  Errors: -3  Warnings: -4  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 3  Warnings: 4  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%   1000 ns    DONE   PASSED   check_sb_completion  Passed: 13  Affirmations Checked: 13
+%%    Expected      Failures: 0  Errors: -3  Warnings: -4  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 3  Warnings: 4  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%%   1000 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -1,0 +1,927 @@
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq              Verifying hierarchy_linked_list_pkg
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that local hierarchy tree is empty before first init!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that local hierarchy tree is not empty!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1) => OK. Value was 1. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that local hierarchy tree is empty after iteration!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that local hierarchy tree is not empty!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1) => OK. Value was 1. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 2) => OK. Value was 2. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that local hierarchy tree is empty after iteration!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that local hierarchy tree is not empty!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1) => OK. Value was 1. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 2) => OK. Value was 2. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 3) => OK. Value was 3. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that local hierarchy tree is empty after iteration!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that local hierarchy tree is not empty!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1) => OK. Value was 1. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 2) => OK. Value was 2. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 3) => OK. Value was 3. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 4) => OK. Value was 4. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that local hierarchy tree is empty after iteration!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that local hierarchy tree is not empty!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1) => OK. Value was 1. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 2) => OK. Value was 2. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 3) => OK. Value was 3. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 4) => OK. Value was 4. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 5) => OK. Value was 5. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that local hierarchy tree is empty after iteration!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that local hierarchy tree is not empty!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1) => OK. Value was 1. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 2) => OK. Value was 2. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 3) => OK. Value was 3. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 4) => OK. Value was 4. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 5) => OK. Value was 5. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 6) => OK. Value was 6. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that local hierarchy tree is empty after iteration!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that local hierarchy tree is not empty!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1) => OK. Value was 1. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 2) => OK. Value was 2. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 3) => OK. Value was 3. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 4) => OK. Value was 4. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 5) => OK. Value was 5. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 6) => OK. Value was 6. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 7) => OK. Value was 7. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that local hierarchy tree is empty after iteration!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that local hierarchy tree is not empty!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1) => OK. Value was 1. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 2) => OK. Value was 2. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 3) => OK. Value was 3. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 4) => OK. Value was 4. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 5) => OK. Value was 5. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 6) => OK. Value was 6. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 7) => OK. Value was 7. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 8) => OK. Value was 8. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that local hierarchy tree is empty after iteration!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that local hierarchy tree is not empty!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1) => OK. Value was 1. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 2) => OK. Value was 2. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 3) => OK. Value was 3. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 4) => OK. Value was 4. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 5) => OK. Value was 5. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 6) => OK. Value was 6. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 7) => OK. Value was 7. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 8) => OK. Value was 8. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 9) => OK. Value was 9. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that local hierarchy tree is empty after iteration!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that local hierarchy tree is not empty!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1) => OK. Value was 1. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 2) => OK. Value was 2. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 3) => OK. Value was 3. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 4) => OK. Value was 4. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 5) => OK. Value was 5. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 6) => OK. Value was 6. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 7) => OK. Value was 7. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 8) => OK. Value was 8. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 9) => OK. Value was 9. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 10) => OK. Value was 10. 'Verifying size!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying scope is in tree'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that scope was found'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that node is identical with what was inserted'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying that local hierarchy tree is empty after iteration!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying parent scope!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying parent scope!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying parent scope!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying parent scope!'
+%%      
+%%      =======================================================================================================================================================================
+%%      *** FINAL SUMMARY OF ALL ALERTS  ***     Format: REGARDED/EXPECTED/IGNORED      
+%%      =======================================================================================================================================================================
+%%                                                  NOTE      TB_NOTE     WARNING   TB_WARNING  MANUAL_CHECK   ERROR     TB_ERROR     FAILURE   TB_FAILURE
+%%      TB seq                              :      0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0 
+%%      |- first_node                       :      0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0 
+%%      |  `- second_node                   :      0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0 
+%%      `- third_node                       :      0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0 
+%%         `- fourth_node                   :      0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0 
+%%      =======================================================================================================================================================================
+%%      >> Simulation SUCCESS: No mismatch between counted and expected serious alerts
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying parent scope!'
+%%      
+%%      =======================================================================================================================================================================
+%%      *** FINAL SUMMARY OF ALL ALERTS  ***     Format: REGARDED/EXPECTED/IGNORED      
+%%      =======================================================================================================================================================================
+%%                                                     NOTE      TB_NOTE     WARNING   TB_WARNING  MANUAL_CHECK   ERROR     TB_ERROR     FAILURE   TB_FAILURE
+%%      TB seq                                 :      0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0 
+%%      `- first_node                          :      0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0 
+%%         |- second_node                      :      0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0 
+%%         `- third_node                       :      0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0 
+%%            `- fourth_node                   :      0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0 
+%%      =======================================================================================================================================================================
+%%      >> Simulation SUCCESS: No mismatch between counted and expected serious alerts
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Verifying that expected alerts propagate correctly.
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying expected alerts!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying expected alerts!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying expected alerts!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying expected alerts!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying expected alerts!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 14) => OK. Value was 14. 'Verifying expected alerts!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 14) => OK. Value was 14. 'Verifying expected alerts!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 14) => OK. Value was 14. 'Verifying expected alerts!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying expected alerts!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verifying expected alerts!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 15) => OK. Value was 15. 'Verifying expected alerts!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 15) => OK. Value was 15. 'Verifying expected alerts!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 15) => OK. Value was 15. 'Verifying expected alerts!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying expected alerts!'
+%%      
+%%      =======================================================================================================================================================================
+%%      *** FINAL SUMMARY OF ALL ALERTS  ***     Format: REGARDED/EXPECTED/IGNORED      
+%%      =======================================================================================================================================================================
+%%                                                     NOTE      TB_NOTE     WARNING   TB_WARNING  MANUAL_CHECK   ERROR     TB_ERROR     FAILURE   TB_FAILURE
+%%      TB seq                                 :     0/15/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0 
+%%      `- first_node                          :     0/15/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0 
+%%         |- second_node                      :      0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0 
+%%         `- third_node                       :     0/15/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0 
+%%            `- fourth_node                   :     0/15/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0       0/0/0 
+%%      =======================================================================================================================================================================
+%%      >> Simulation SUCCESS: No mismatch between counted and expected serious alerts, but mismatch in minor alerts
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Verifying that alerts propagate correctly for all alert levels
+%% 
+%% ***  NOTE #1  ***
+%%      0 ns   fourth_node -> third_node -> first_node -> TB seq
+%%             testing with alert_level NOTE
+%% 
+%% 
+%% ***  NOTE #2  ***
+%%      0 ns   third_node -> first_node -> TB seq
+%%             testing with alert_level NOTE
+%% 
+%% 
+%% ***  NOTE #1  ***
+%%      0 ns   second_node -> first_node -> TB seq
+%%             testing with alert_level NOTE
+%% 
+%% 
+%% ***  NOTE #4  ***
+%%      0 ns   first_node -> TB seq
+%%             testing with alert_level NOTE
+%% 
+%% 
+%% ***  NOTE #5  ***
+%%      0 ns   TB seq
+%%             testing with alert_level NOTE
+%% 
+%% 
+%% ***  TB_NOTE #1  ***
+%%      0 ns   fourth_node -> third_node -> first_node -> TB seq
+%%             testing with alert_level TB_NOTE
+%% 
+%% 
+%% ***  TB_NOTE #2  ***
+%%      0 ns   third_node -> first_node -> TB seq
+%%             testing with alert_level TB_NOTE
+%% 
+%% 
+%% ***  TB_NOTE #1  ***
+%%      0 ns   second_node -> first_node -> TB seq
+%%             testing with alert_level TB_NOTE
+%% 
+%% 
+%% ***  TB_NOTE #4  ***
+%%      0 ns   first_node -> TB seq
+%%             testing with alert_level TB_NOTE
+%% 
+%% 
+%% ***  TB_NOTE #5  ***
+%%      0 ns   TB seq
+%%             testing with alert_level TB_NOTE
+%% 
+%% 
+%% ***  WARNING #1  ***
+%%      0 ns   fourth_node -> third_node -> first_node -> TB seq
+%%             testing with alert_level WARNING
+%% 
+%% 
+%% ***  WARNING #2  ***
+%%      0 ns   third_node -> first_node -> TB seq
+%%             testing with alert_level WARNING
+%% 
+%% 
+%% ***  WARNING #1  ***
+%%      0 ns   second_node -> first_node -> TB seq
+%%             testing with alert_level WARNING
+%% 
+%% 
+%% ***  WARNING #4  ***
+%%      0 ns   first_node -> TB seq
+%%             testing with alert_level WARNING
+%% 
+%% 
+%% ***  WARNING #5  ***
+%%      0 ns   TB seq
+%%             testing with alert_level WARNING
+%% 
+%% 
+%% ***  TB_WARNING #1  ***
+%%      0 ns   fourth_node -> third_node -> first_node -> TB seq
+%%             testing with alert_level TB_WARNING
+%% 
+%% 
+%% ***  TB_WARNING #2  ***
+%%      0 ns   third_node -> first_node -> TB seq
+%%             testing with alert_level TB_WARNING
+%% 
+%% 
+%% ***  TB_WARNING #1  ***
+%%      0 ns   second_node -> first_node -> TB seq
+%%             testing with alert_level TB_WARNING
+%% 
+%% 
+%% ***  TB_WARNING #4  ***
+%%      0 ns   first_node -> TB seq
+%%             testing with alert_level TB_WARNING
+%% 
+%% 
+%% ***  TB_WARNING #5  ***
+%%      0 ns   TB seq
+%%             testing with alert_level TB_WARNING
+%% 
+%% 
+%% ***  MANUAL_CHECK #1  ***
+%%      0 ns   fourth_node -> third_node -> first_node -> TB seq
+%%             testing with alert_level MANUAL_CHECK
+%% 
+%% 
+%% ***  MANUAL_CHECK #2  ***
+%%      0 ns   third_node -> first_node -> TB seq
+%%             testing with alert_level MANUAL_CHECK
+%% 
+%% 
+%% ***  MANUAL_CHECK #1  ***
+%%      0 ns   second_node -> first_node -> TB seq
+%%             testing with alert_level MANUAL_CHECK
+%% 
+%% 
+%% ***  MANUAL_CHECK #4  ***
+%%      0 ns   first_node -> TB seq
+%%             testing with alert_level MANUAL_CHECK
+%% 
+%% 
+%% ***  MANUAL_CHECK #5  ***
+%%      0 ns   TB seq
+%%             testing with alert_level MANUAL_CHECK
+%% 
+%% 
+%% ============================================================================================================================================================================
+%% ***  ERROR #1  ***
+%%      0 ns   fourth_node -> third_node -> first_node -> TB seq
+%%             testing with alert_level ERROR
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% ============================================================================================================================================================================
+%% ***  ERROR #2  ***
+%%      0 ns   third_node -> first_node -> TB seq
+%%             testing with alert_level ERROR
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% ============================================================================================================================================================================
+%% ***  ERROR #1  ***
+%%      0 ns   second_node -> first_node -> TB seq
+%%             testing with alert_level ERROR
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% ============================================================================================================================================================================
+%% ***  ERROR #4  ***
+%%      0 ns   first_node -> TB seq
+%%             testing with alert_level ERROR
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% ============================================================================================================================================================================
+%% ***  ERROR #5  ***
+%%      0 ns   TB seq
+%%             testing with alert_level ERROR
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% ============================================================================================================================================================================
+%% ***  TB_ERROR #1  ***
+%%      0 ns   fourth_node -> third_node -> first_node -> TB seq
+%%             testing with alert_level TB_ERROR
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% ============================================================================================================================================================================
+%% ***  TB_ERROR #2  ***
+%%      0 ns   third_node -> first_node -> TB seq
+%%             testing with alert_level TB_ERROR
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% ============================================================================================================================================================================
+%% ***  TB_ERROR #1  ***
+%%      0 ns   second_node -> first_node -> TB seq
+%%             testing with alert_level TB_ERROR
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% ============================================================================================================================================================================
+%% ***  TB_ERROR #4  ***
+%%      0 ns   first_node -> TB seq
+%%             testing with alert_level TB_ERROR
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% ============================================================================================================================================================================
+%% ***  TB_ERROR #5  ***
+%%      0 ns   TB seq
+%%             testing with alert_level TB_ERROR
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% ============================================================================================================================================================================
+%% ***  FAILURE #1  ***
+%%      0 ns   fourth_node -> third_node -> first_node -> TB seq
+%%             testing with alert_level FAILURE
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% ============================================================================================================================================================================
+%% ***  FAILURE #2  ***
+%%      0 ns   third_node -> first_node -> TB seq
+%%             testing with alert_level FAILURE
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% ============================================================================================================================================================================
+%% ***  FAILURE #1  ***
+%%      0 ns   second_node -> first_node -> TB seq
+%%             testing with alert_level FAILURE
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% ============================================================================================================================================================================
+%% ***  FAILURE #4  ***
+%%      0 ns   first_node -> TB seq
+%%             testing with alert_level FAILURE
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% ============================================================================================================================================================================
+%% ***  FAILURE #5  ***
+%%      0 ns   TB seq
+%%             testing with alert_level FAILURE
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% ============================================================================================================================================================================
+%% ***  TB_FAILURE #1  ***
+%%      0 ns   fourth_node -> third_node -> first_node -> TB seq
+%%             testing with alert_level TB_FAILURE
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% ============================================================================================================================================================================
+%% ***  TB_FAILURE #2  ***
+%%      0 ns   third_node -> first_node -> TB seq
+%%             testing with alert_level TB_FAILURE
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% ============================================================================================================================================================================
+%% ***  TB_FAILURE #1  ***
+%%      0 ns   second_node -> first_node -> TB seq
+%%             testing with alert_level TB_FAILURE
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% ============================================================================================================================================================================
+%% ***  TB_FAILURE #4  ***
+%%      0 ns   first_node -> TB seq
+%%             testing with alert_level TB_FAILURE
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% ============================================================================================================================================================================
+%% ***  TB_FAILURE #5  ***
+%%      0 ns   TB seq
+%%             testing with alert_level TB_FAILURE
+%% ============================================================================================================================================================================
+%% 
+%% 
+%%      
+%%      =======================================================================================================================================================================
+%%      *** FINAL SUMMARY OF ALL ALERTS  ***     Format: REGARDED/EXPECTED/IGNORED      
+%%      =======================================================================================================================================================================
+%%                                                     NOTE      TB_NOTE     WARNING   TB_WARNING  MANUAL_CHECK   ERROR     TB_ERROR     FAILURE   TB_FAILURE
+%%      TB seq                                 :      5/5/5       5/5/5       5/5/5       5/5/5       5/5/5       5/5/5       5/5/5       5/5/5       5/5/5 
+%%      `- first_node                          :      4/4/4       4/4/4       4/4/4       4/4/4       4/4/4       4/4/4       4/4/4       4/4/4       4/4/4 
+%%         |- second_node                      :      1/1/1       1/1/1       1/1/1       1/1/1       1/1/1       1/1/1       1/1/1       1/1/1       1/1/1 
+%%         `- third_node                       :      2/2/2       2/2/2       2/2/2       2/2/2       2/2/2       2/2/2       2/2/2       2/2/2       2/2/2 
+%%            `- fourth_node                   :      1/1/1       1/1/1       1/1/1       1/1/1       1/1/1       1/1/1       1/1/1       1/1/1       1/1/1 
+%%      =======================================================================================================================================================================
+%%      >> Simulation SUCCESS: No mismatch between counted and expected serious alerts
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Verifying hierarchical stop limits
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying top level stop limit default implicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying top level stop limit default explicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 400) => OK. Value was 400. 'Verifying top level stop limit change implicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 400) => OK. Value was 400. 'Verifying top level stop limit change explicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying top level stop limit back to default implicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying top level stop limit back to default explicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying that second node has 0 as stop limit before starting test'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying that other branches did not receive new stop limit'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 14) => OK. Value was 14. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1338) => OK. Value was 1338. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1338) => OK. Value was 1338. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1338) => OK. Value was 1338. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 14) => OK. Value was 14. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying top level stop limit default implicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying top level stop limit default explicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 400) => OK. Value was 400. 'Verifying top level stop limit change implicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 400) => OK. Value was 400. 'Verifying top level stop limit change explicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying top level stop limit back to default implicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying top level stop limit back to default explicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying that second node has 0 as stop limit before starting test'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying that other branches did not receive new stop limit'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 14) => OK. Value was 14. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1338) => OK. Value was 1338. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1338) => OK. Value was 1338. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1338) => OK. Value was 1338. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 14) => OK. Value was 14. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying top level stop limit default implicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying top level stop limit default explicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 400) => OK. Value was 400. 'Verifying top level stop limit change implicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 400) => OK. Value was 400. 'Verifying top level stop limit change explicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying top level stop limit back to default implicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying top level stop limit back to default explicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying that second node has 0 as stop limit before starting test'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying that other branches did not receive new stop limit'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 14) => OK. Value was 14. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1338) => OK. Value was 1338. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1338) => OK. Value was 1338. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1338) => OK. Value was 1338. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 14) => OK. Value was 14. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying top level stop limit default implicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying top level stop limit default explicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 400) => OK. Value was 400. 'Verifying top level stop limit change implicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 400) => OK. Value was 400. 'Verifying top level stop limit change explicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying top level stop limit back to default implicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying top level stop limit back to default explicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying that second node has 0 as stop limit before starting test'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying that other branches did not receive new stop limit'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 14) => OK. Value was 14. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1338) => OK. Value was 1338. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1338) => OK. Value was 1338. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1338) => OK. Value was 1338. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 14) => OK. Value was 14. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying top level stop limit default implicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying top level stop limit default explicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 400) => OK. Value was 400. 'Verifying top level stop limit change implicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 400) => OK. Value was 400. 'Verifying top level stop limit change explicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying top level stop limit back to default implicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying top level stop limit back to default explicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying that second node has 0 as stop limit before starting test'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying that other branches did not receive new stop limit'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 14) => OK. Value was 14. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1338) => OK. Value was 1338. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1338) => OK. Value was 1338. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1338) => OK. Value was 1338. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 14) => OK. Value was 14. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying top level stop limit default implicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying top level stop limit default explicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 400) => OK. Value was 400. 'Verifying top level stop limit change implicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 400) => OK. Value was 400. 'Verifying top level stop limit change explicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying top level stop limit back to default implicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying top level stop limit back to default explicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying that second node has 0 as stop limit before starting test'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying that other branches did not receive new stop limit'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 14) => OK. Value was 14. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1338) => OK. Value was 1338. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1338) => OK. Value was 1338. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1338) => OK. Value was 1338. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 14) => OK. Value was 14. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying top level stop limit default implicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying top level stop limit default explicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 400) => OK. Value was 400. 'Verifying top level stop limit change implicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 400) => OK. Value was 400. 'Verifying top level stop limit change explicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying top level stop limit back to default implicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying top level stop limit back to default explicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying that second node has 0 as stop limit before starting test'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying that other branches did not receive new stop limit'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 14) => OK. Value was 14. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1338) => OK. Value was 1338. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1338) => OK. Value was 1338. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1338) => OK. Value was 1338. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 14) => OK. Value was 14. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying top level stop limit default implicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying top level stop limit default explicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 400) => OK. Value was 400. 'Verifying top level stop limit change implicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 400) => OK. Value was 400. 'Verifying top level stop limit change explicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying top level stop limit back to default implicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying top level stop limit back to default explicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying that second node has 0 as stop limit before starting test'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying that other branches did not receive new stop limit'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 14) => OK. Value was 14. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1338) => OK. Value was 1338. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1338) => OK. Value was 1338. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1338) => OK. Value was 1338. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 14) => OK. Value was 14. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying top level stop limit default implicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying top level stop limit default explicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 400) => OK. Value was 400. 'Verifying top level stop limit change implicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 400) => OK. Value was 400. 'Verifying top level stop limit change explicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying top level stop limit back to default implicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying top level stop limit back to default explicitly!'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying that second node has 0 as stop limit before starting test'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying that other branches did not receive new stop limit'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 14) => OK. Value was 14. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1338) => OK. Value was 1338. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1338) => OK. Value was 1338. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1338) => OK. Value was 1338. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1337) => OK. Value was 1337. 'Verifying stop limit propagation'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 14) => OK. Value was 14. 'Verifying stop limit propagation'
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Verifying alert level printing for several nodes
+%%      0 ns    Log    MANUAL_CHECK        TB seq.             VERIFY THIS
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Disabling all alert levels in entire hierarchy. No alerts between this log message and the next.
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Are there any alert messages between this message and the previous one? If so it is an ERROR.
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Enabling all alert levels in entire hierarchy. Some alerts between this log message and the next.
+%% 
+%% ============================================================================================================================================================================
+%% ***  TB_ERROR #3  ***
+%%      0 ns   fourth_node -> third_node -> first_node -> TB seq
+%%             
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% ============================================================================================================================================================================
+%% ***  TB_ERROR #6  ***
+%%      0 ns   third_node -> first_node -> TB seq
+%%             
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% ============================================================================================================================================================================
+%% ***  TB_ERROR #3  ***
+%%      0 ns   second_node -> first_node -> TB seq
+%%             
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% ============================================================================================================================================================================
+%% ***  TB_ERROR #12  ***
+%%      0 ns   first_node -> TB seq
+%%             
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% ============================================================================================================================================================================
+%% ***  TB_ERROR #15  ***
+%%      0 ns   TB seq
+%%             
+%% ============================================================================================================================================================================
+%% 
+%% 
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Are there any alert messages between this message and the previous one? If so it is CORRECT.
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Disabling TB_ERROR alert level for third_node and downwards (fourth_node). No alerts for these nodes at this alert level between this log message and the next. All others shall have alerts printed.
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Are there any alert messages between this message and the previous one? If so it is an ERROR.
+%% 
+%% ============================================================================================================================================================================
+%% ***  TB_ERROR #4  ***
+%%      0 ns   second_node -> first_node -> TB seq
+%%             
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% ============================================================================================================================================================================
+%% ***  TB_ERROR #16  ***
+%%      0 ns   first_node -> TB seq
+%%             
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% ============================================================================================================================================================================
+%% ***  TB_ERROR #20  ***
+%%      0 ns   TB seq
+%%             
+%% ============================================================================================================================================================================
+%% 
+%% 
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Are there any alert messages between this message and the previous one? If so it is CORRECT.
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Enabling TB_ERROR for third_node and fourth_node again
+%% 
+%% ============================================================================================================================================================================
+%% ***  TB_ERROR #5  ***
+%%      0 ns   fourth_node -> third_node -> first_node -> TB seq
+%%             
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% ============================================================================================================================================================================
+%% ***  TB_ERROR #10  ***
+%%      0 ns   third_node -> first_node -> TB seq
+%%             
+%% ============================================================================================================================================================================
+%% 
+%% 
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Are there any alert messages between this message and the previous one? If so it is CORRECT.
+%% 
+%% ============================================================================================================================================================================
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%   1000 ns    DONE   MANUALCHECKS   hierarchical_alerts  Passed: 458  Affirmations Checked: 458
+%%    Expected      Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%   1000 ns    DONE   MANUALCHECKS   hierarchical_alerts  Passed: 458  Affirmations Checked: 458
+%%    Expected      Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%%   1000 ns    Log    ID_LOG_HDR          TB seq              SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

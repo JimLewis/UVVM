@@ -1,0 +1,85 @@
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF GLOBAL CTRL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                                IGNORE    STOP_LIMIT
+%%                NOTE         :  REGARD    integer'high
+%%                TB_NOTE      :  REGARD    integer'high
+%%                WARNING      :  REGARD    integer'high
+%%                TB_WARNING   :  REGARD    integer'high
+%%                MANUAL_CHECK :  REGARD    integer'high
+%%                ERROR        :  REGARD    integer'high
+%%                TB_ERROR     :  REGARD    integer'high
+%%                FAILURE      :  REGARD         1
+%%                TB_FAILURE   :  REGARD         1
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ALL_MESSAGES).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_POS_ACK).
+%% 
+%% 
+%% ============================================================================================================================================================================
+%%      0 ns    Log    ID_LOG_HDR_LARGE    TB seq.             Start Simulation of Association List Package - association_list
+%% ============================================================================================================================================================================
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          test_bench          Verify initial length of the list.
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          test_bench          Verify the append() function.
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_SEQUENCER_SUB    test_bench          Append a random number (50 <= num_nodes <= 100) of nodes to the list and verify the list length.
+%%      0 ns    Log    ID_SEQUENCER_SUB    test_bench          Lookup all keys and verify their value.
+%%      0 ns    Log    ID_SEQUENCER_SUB    test_bench          Verify the return value when append() is called with the same key twice.
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          test_bench          Verify the length().
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_SEQUENCER_SUB    test_bench          Append nodes to the list and check the list length.
+%%      0 ns    Log    ID_SEQUENCER_SUB    test_bench          Delete from list and check length
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          test_bench          Verify the delete() function.
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_SEQUENCER_SUB    test_bench          Append 10 nodes to the list.
+%%      0 ns    Log    ID_SEQUENCER_SUB    test_bench          Delete all nodes starting from the head of the list
+%%      0 ns    Log    ID_SEQUENCER_SUB    test_bench          Append 10 nodes to the list.
+%%      0 ns    Log    ID_SEQUENCER_SUB    test_bench          Delete all nodes starting from the tail of the list
+%%      0 ns    Log    ID_SEQUENCER_SUB    test_bench          Append 10 nodes to the list.
+%%      0 ns    Log    ID_SEQUENCER_SUB    test_bench          Delete a node from the middle of the list
+%%      0 ns    Log    ID_SEQUENCER_SUB    test_bench          Verifying that the list is not broken after deleting a node from the middle of the list.
+%%      0 ns    Log    ID_SEQUENCER_SUB    test_bench          Try to delete a node that is not in the list.
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          test_bench          Delete randomly from the list and check key and length.
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_SEQUENCER_SUB    test_bench          Append a random number (10 <= num_nodes <= 100) of nodes to the list.
+%%      0 ns    Log    ID_SEQUENCER_SUB    test_bench          Delete 10 nodes at random from the 68 appended.
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          test_bench          Verify the clear() function.
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_SEQUENCER_SUB    test_bench          Append a random number of nodes to the list.
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          test_bench          Verify the get() and the set() functions.
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_SEQUENCER_SUB    test_bench          Append 10 nodes to the list.
+%%      0 ns    Log    ID_SEQUENCER_SUB    test_bench          Set new values to all key-value pairs.
+%%      0 ns    Log    ID_SEQUENCER_SUB    test_bench          Verify the new values set.
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%   1000 ns    DONE   NOCHECKS   association_list  Passed: 0
+%%    Expected      Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%%   1000 ns    Log    ID_LOG_HDR          test_bench          SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -1,0 +1,79 @@
+%% 
+%% 
+%% ============================================================================================================================================================================
+%%      0 ns    Log    ID_LOG_HDR_LARGE    TB seq.             Start Simulation of Randomization package - rand_cyclic_performance
+%% ============================================================================================================================================================================
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_RAND_GEN).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_RAND_CONF).
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing random cyclic large ranges
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand(RANGE:[0:536870912], CYCLIC)=> 535953641
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand(RANGE:[0:536870912], CYCLIC)=> 187788090
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand(RANGE:[0:536870912], CYCLIC)=> 172830814
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand(RANGE:[0:536870912], CYCLIC)=> 468816073
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand(RANGE:[0:536870912], CYCLIC)=> 3336040
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand(RANGE:[0:536870912], CYCLIC)=> 3131295
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand(RANGE:[0:536870912], CYCLIC)=> 112769411
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand(RANGE:[0:536870912], CYCLIC)=> 443031410
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand(RANGE:[0:536870912], CYCLIC)=> 225703619
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand(RANGE:[0:536870912], CYCLIC)=> 354505167
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand(RANGE:[0:1073741824], CYCLIC)=> 713363461
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand(RANGE:[0:1073741824], CYCLIC)=> 689063330
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand(RANGE:[0:1073741824], CYCLIC)=> 1025869036
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand(RANGE:[0:1073741824], CYCLIC)=> 470976321
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand(RANGE:[0:1073741824], CYCLIC)=> 232060954
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand(RANGE:[0:1073741824], CYCLIC)=> 524964350
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand(RANGE:[0:1073741824], CYCLIC)=> 965050929
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand(RANGE:[0:1073741824], CYCLIC)=> 999968871
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand(RANGE:[0:1073741824], CYCLIC)=> 243172638
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand(RANGE:[0:1073741824], CYCLIC)=> 25344555
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand(RANGE:[0:2147483647], CYCLIC)=> 639123269
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand(RANGE:[0:2147483647], CYCLIC)=> 2132977364
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand(RANGE:[0:2147483647], CYCLIC)=> 1720874352
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand(RANGE:[0:2147483647], CYCLIC)=> 998932382
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand(RANGE:[0:2147483647], CYCLIC)=> 934296070
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand(RANGE:[0:2147483647], CYCLIC)=> 617637264
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand(RANGE:[0:2147483647], CYCLIC)=> 1924308068
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand(RANGE:[0:2147483647], CYCLIC)=> 24585223
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand(RANGE:[0:2147483647], CYCLIC)=> 481194389
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand(RANGE:[0:2147483647], CYCLIC)=> 1032016361
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand(RANGE:[-2147483648:2147483647], CYCLIC)=> -666096906
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand(RANGE:[-2147483648:2147483647], CYCLIC)=> 471970153
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand(RANGE:[-2147483648:2147483647], CYCLIC)=> -1981506502
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand(RANGE:[-2147483648:2147483647], CYCLIC)=> 1767025684
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand(RANGE:[-2147483648:2147483647], CYCLIC)=> -531564480
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand(RANGE:[-2147483648:2147483647], CYCLIC)=> -1356323145
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand(RANGE:[-2147483648:2147483647], CYCLIC)=> -1774521486
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand(RANGE:[-2147483648:2147483647], CYCLIC)=> 1496442265
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand(RANGE:[-2147483648:2147483647], CYCLIC)=> 965487688
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand(RANGE:[-2147483648:2147483647], CYCLIC)=> 1719606677
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing random cyclic list and queue performance
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_RAND_GEN).
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Testing cyclic list with 100 values
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Testing cyclic list with 1000 values
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Testing cyclic list with 11000 values
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Testing cyclic queue with 11000 values
+%%      0 ns    Alert  WARNING             TB seq.             rand(RANGE:[1:2147483647], CYCLIC)=> Simulation might slow down due to the cyclic queue and the large number of cyclic iterations.\nTo disable this alert set C_RAND_CYCLIC_QUEUE_MAX_ALERT_DISABLE to true in adaptations_pkg.
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Testing cyclic list with 100000 values
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_RAND_GEN).
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_rand_cyclic()=> Deallocating cyclic list/queue
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%   1000 ns    DONE   NOCHECKS   rand_cyclic_performance  Passed: 0
+%%    Expected      Failures: 0  Errors: 0  Warnings: -1  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 0  Warnings: 1  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%%   1000 ns    Log    ID_LOG_HDR          TB seq.             SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

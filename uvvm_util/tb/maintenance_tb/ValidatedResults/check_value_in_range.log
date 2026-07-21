@@ -1,0 +1,51 @@
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       Verifying check_value_in_range
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 3, 4) => OK. Value was 3. 'Check_value_in_range, OK'
+%%      0 ns    Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 2, 3) => OK. Value was 3. 'Check_value_in_range, OK'
+%%      0 ns    Log    PASSED              TB seq.(uvvm)       check_value(bool, true) => OK. Value was true. 'check_value with return value shall return true when OK'
+%%      0 ns    Alert  ERROR               TB seq.(uvvm)       check_value_in_range(int, 4, 5) => Failed. Value was 3. Expected between 4 and 5. 'Check_value_in_range, Fail'
+%%      0 ns    Log    PASSED              TB seq.(uvvm)       check_value(bool, true) => OK. Value was true. 'check_value with return value shall return false when Fail'
+%%      0 ns    Log    PASSED              TB seq.(uvvm)       check_value_in_range(u, x"00000001", x"80000001") => OK. Value was x"80000000". 'Check 2147483648 between 1 and 2147483649, OK'
+%%      0 ns    Alert  ERROR               TB seq.(uvvm)       check_value_in_range(u, x"00000001", x"7FFFFFFF") => Failed. Value was x"80000000". Expected between x"00000001" and x"7FFFFFFF". 'Check 2147483648 between 1 and 2147483647, Fail'
+%%      0 ns    Alert  ERROR               TB seq.(uvvm)       check_value_in_range(u, x"00000001", x"7FFFFFFF") => Failed. Value was x"80000000". Expected between x"00000001" and x"7FFFFFFF". 'Check 2147483648 between 1 and 2147483647, Fail'
+%%      0 ns    Log    PASSED              TB seq.(uvvm)       check_value(bool, true) => OK. Value was true. 'check_value with return value shall return false when Fail'
+%%      0 ns    Log    PASSED              TB seq.(uvvm)       check_value_in_range(s, x"80000000", x"00000001") => OK. Value was x"80000001". 'Check -2147483647 between -2147483648 and 1, OK'
+%%      0 ns    Alert  ERROR               TB seq.(uvvm)       check_value_in_range(s, x"80000002", x"00000001") => Failed. Value was x"80000001". Expected between x"80000002" and x"00000001". 'Check -2147483647 between -2147483646 and 1, Fail'
+%%      0 ns    Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 2 ns, 5 ns) => OK. Value was 3 ns. 'Check time in range, OK'
+%%      0 ns    Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 3 ns, 5 ns) => OK. Value was 3 ns. 'Check time in range, OK'
+%%      0 ns    Log    PASSED              TB seq.(uvvm)       check_value(bool, true) => OK. Value was true. 'check_value with return value shall return true when OK'
+%%      0 ns    Alert  ERROR               TB seq.(uvvm)       check_value_in_range(time, 4 ns, 5 ns) => Failed. Value was 3 ns. Expected between 4 ns and 5 ns. 'Check time in range, Fail'
+%%      0 ns    Log    PASSED              TB seq.(uvvm)       check_value(bool, true) => OK. Value was true. 'check_value with return value shall return false when Fail'
+%%      0 ns    Log    PASSED              TB seq.(uvvm)       check_value_in_range(real, 1.5000, 3.1000) => OK. Value was 3.0000. 'Check real in range, OK'
+%%      0 ns    Log    PASSED              TB seq.(uvvm)       check_value_in_range(real, 3.0000, 5.1000) => OK. Value was 3.0000. 'Check real in range, OK'
+%%      0 ns    Log    PASSED              TB seq.(uvvm)       check_value(bool, true) => OK. Value was true. 'check_value with return value shall return true when OK'
+%%      0 ns    Alert  ERROR               TB seq.(uvvm)       check_value_in_range(real, 3.1000, 4.9000) => Failed. Value was 3.0000. Expected between 3.1000 and 4.9000. 'Check real in range, Fail'
+%%      0 ns    Log    PASSED              TB seq.(uvvm)       check_value(bool, true) => OK. Value was true. 'check_value with return value shall return false when Fail'
+%%      
+%%      =======================================================================================================================================================================
+%%      *** FINAL SUMMARY OF ALL CHECK COUNTERS ***
+%%      =======================================================================================================================================================================
+%%                CHECK_VALUE           :          0    
+%%                CHECK_VALUE_IN_RANGE  :          0    
+%%                CHECK_STABLE          :          0    
+%%                CHECK_TIME_WINDOW     :          0    
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%   1000 ns    DONE   PASSED   check_value_in_range  Passed: 15  Affirmations Checked: 21
+%%    Expected      Failures: 0  Errors: -6  Warnings: 0  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 6  Warnings: 0  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%%   1000 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

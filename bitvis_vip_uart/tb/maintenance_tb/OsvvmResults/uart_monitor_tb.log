@@ -1,0 +1,635 @@
+%%      0 ns    Log    ID_CONSTRUCTOR      UART_VVC,1,TX       VVC instantiated for channel TX
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  UART_VVC,1,TX       Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  UART_VVC,1,TX       Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR      UART_VVC,1,RX       VVC instantiated for channel RX
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  UART_VVC,1,RX       Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  UART_VVC,1,RX       Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR      SBI_VVC,1           VVC instantiated.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  SBI_VVC,1           Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  SBI_VVC,1           Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CMD_INTERPRETER  UART_VVC,1,TX       Interpreter: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  UART_VVC,1,RX       Interpreter: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  SBI_VVC,1           Interpreter: Waiting for command
+%%      0 ns    Log    ID_CTRL             UART_VVC_SB,1       enable() => SB enabled. 'UART VVC SB Enabled'
+%%      0 ns    Log    ID_CTRL             UART_VVC_SB,1       enable_log_msg() => message id id_data enabled.
+%%      0 ns    Log    ID_CTRL             UART_VVC_SB,1       config() => config applied to SB.
+%%      0 ns    Log    ID_CTRL             SBI_VVC_SB,1        enable() => SB enabled. 'SBI VVC SB Enabled'
+%%      0 ns    Log    ID_CTRL             SBI_VVC_SB,1        config() => config applied to SB.
+%%      0 ns    Log    ID_CTRL             SBI_VVC_SB,1        enable_log_msg() => message id id_data enabled.
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF GLOBAL CTRL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                                IGNORE    STOP_LIMIT
+%%                NOTE         :  REGARD    integer'high
+%%                TB_NOTE      :  REGARD    integer'high
+%%                WARNING      :  REGARD    integer'high
+%%                TB_WARNING   :  REGARD    integer'high
+%%                MANUAL_CHECK :  REGARD    integer'high
+%%                ERROR        :  REGARD    integer'high
+%%                TB_ERROR     :  REGARD    integer'high
+%%                FAILURE      :  REGARD         1
+%%                TB_FAILURE   :  REGARD         1
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF MSG ID PANEL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                ID                             Status
+%%                ------------------------       ------
+%%                ID_UTIL_BURIED               : DISABLED
+%%                ID_BITVIS_DEBUG              : DISABLED
+%%                ID_UTIL_SETUP                : ENABLED
+%%                ID_LOG_MSG_CTRL              : ENABLED
+%%                ID_ALERT_CTRL                : ENABLED
+%%                ID_FINISH_OR_STOP            : ENABLED
+%%                ID_CLOCK_GEN                 : ENABLED
+%%                ID_GEN_PULSE                 : ENABLED
+%%                ID_BLOCKING                  : ENABLED
+%%                ID_WATCHDOG                  : ENABLED
+%%                ID_RAND_GEN                  : DISABLED
+%%                ID_RAND_CONF                 : DISABLED
+%%                ID_FUNC_COV_BINS             : DISABLED
+%%                ID_FUNC_COV_BINS_INFO        : DISABLED
+%%                ID_FUNC_COV_RAND             : DISABLED
+%%                ID_FUNC_COV_SAMPLE           : DISABLED
+%%                ID_FUNC_COV_CONFIG           : DISABLED
+%%                ID_POS_ACK                   : ENABLED
+%%                ID_UVVM_ASSERTION            : ENABLED
+%%                ID_LOG_HDR                   : ENABLED
+%%                ID_LOG_HDR_LARGE             : ENABLED
+%%                ID_LOG_HDR_XL                : ENABLED
+%%                ID_SEQUENCER                 : ENABLED
+%%                ID_SEQUENCER_SUB             : ENABLED
+%%                ID_BFM                       : ENABLED
+%%                ID_BFM_WAIT                  : ENABLED
+%%                ID_BFM_POLL                  : ENABLED
+%%                ID_BFM_POLL_SUMMARY          : ENABLED
+%%                ID_CHANNEL_BFM               : ENABLED
+%%                ID_TERMINATE_CMD             : ENABLED
+%%                ID_SEGMENT_INITIATE          : ENABLED
+%%                ID_SEGMENT_COMPLETE          : ENABLED
+%%                ID_SEGMENT_HDR               : ENABLED
+%%                ID_SEGMENT_DATA              : ENABLED
+%%                ID_PACKET_INITIATE           : ENABLED
+%%                ID_PACKET_PREAMBLE           : ENABLED
+%%                ID_PACKET_COMPLETE           : ENABLED
+%%                ID_PACKET_HDR                : ENABLED
+%%                ID_PACKET_DATA               : ENABLED
+%%                ID_PACKET_CHECKSUM           : ENABLED
+%%                ID_PACKET_GAP                : ENABLED
+%%                ID_PACKET_PAYLOAD            : ENABLED
+%%                ID_FRAME_INITIATE            : ENABLED
+%%                ID_FRAME_COMPLETE            : ENABLED
+%%                ID_FRAME_HDR                 : ENABLED
+%%                ID_FRAME_DATA                : ENABLED
+%%                ID_COVERAGE_MAKEBIN          : DISABLED
+%%                ID_COVERAGE_ADDBIN           : DISABLED
+%%                ID_COVERAGE_ICOVER           : DISABLED
+%%                ID_COVERAGE_CONFIG           : ENABLED
+%%                ID_COVERAGE_SUMMARY          : ENABLED
+%%                ID_COVERAGE_HOLES            : ENABLED
+%%                ID_UVVM_SEND_CMD             : ENABLED
+%%                ID_UVVM_CMD_ACK              : ENABLED
+%%                ID_UVVM_CMD_RESULT           : ENABLED
+%%                ID_CMD_INTERPRETER           : ENABLED
+%%                ID_CMD_INTERPRETER_WAIT      : ENABLED
+%%                ID_IMMEDIATE_CMD             : ENABLED
+%%                ID_IMMEDIATE_CMD_WAIT        : ENABLED
+%%                ID_CMD_EXECUTOR              : ENABLED
+%%                ID_CMD_EXECUTOR_WAIT         : ENABLED
+%%                ID_CHANNEL_EXECUTOR          : ENABLED
+%%                ID_CHANNEL_EXECUTOR_WAIT     : ENABLED
+%%                ID_NEW_HVVC_CMD_SEQ          : ENABLED
+%%                ID_INSERTED_DELAY            : ENABLED
+%%                ID_OLD_AWAIT_COMPLETION      : ENABLED
+%%                ID_AWAIT_COMPLETION          : ENABLED
+%%                ID_AWAIT_COMPLETION_LIST     : ENABLED
+%%                ID_AWAIT_COMPLETION_WAIT     : ENABLED
+%%                ID_AWAIT_COMPLETION_END      : ENABLED
+%%                ID_AWAIT_UVVM_COMPLETION     : ENABLED
+%%                ID_UVVM_DATA_QUEUE           : ENABLED
+%%                ID_CONSTRUCTOR               : ENABLED
+%%                ID_CONSTRUCTOR_SUB           : ENABLED
+%%                ID_VVC_ACTIVITY              : ENABLED
+%%                ID_MONITOR                   : ENABLED
+%%                ID_MONITOR_ERROR             : ENABLED
+%%                ID_DATA                      : ENABLED
+%%                ID_CTRL                      : ENABLED
+%%                ID_SPEC_COV_INIT             : ENABLED
+%%                ID_SPEC_COV_REQS             : ENABLED
+%%                ID_SPEC_COV                  : ENABLED
+%%                ID_FILE_OPEN_CLOSE           : ENABLED
+%%                ID_FILE_PARSER               : ENABLED
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ALL_MESSAGES).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_LOG_HDR).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_SEQUENCER).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_SEQUENCER_SUB).
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  UART_VVC,1,TX       Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  UART_VVC,1,RX       Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  SBI_VVC,1           Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  SBI_VVC,1           disable_log_msg(SBI_VVC,1, ALL_MESSAGES). Command received  [1]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     SBI_VVC,1           disable_log_msg(ALL_MESSAGES). ' [1]'
+%%      0 ns    Log    ID_CMD_INTERPRETER  UART_VVC,1,RX       disable_log_msg(UART_VVC,1,RX, ALL_MESSAGES). Command received  [2]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     UART_VVC,1,RX       disable_log_msg(ALL_MESSAGES). ' [2]'
+%%      0 ns    Log    ID_CMD_INTERPRETER  UART_VVC,1,TX       disable_log_msg(UART_VVC,1,TX, ALL_MESSAGES). Command received  [3]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     UART_VVC,1,TX       disable_log_msg(ALL_MESSAGES). ' [3]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     UART_VVC,1,TX       enable_log_msg(ID_BFM). ' [4]'
+%%      0 ns    Log    ID_CTRL             ?_SB,1              enable() => SB enabled. 
+%%      0 ns    Log    ID_CTRL             ?_SB,1              enable() => SB enabled. 
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Configure UART VVC 1
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Start Test of UART VIP
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 
+%% 
+%%    100 ns    Log    ID_LOG_HDR          TB seq.             Check register defaults 
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 
+%% 
+%%  137.5 ns    Log    ID_LOG_HDR          TB seq.             Sending on TX
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 1817.5 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%% 1897.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"00") completed. ' 'Sending x"00"'  [9]'
+%% 3787.5 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%% 3867.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"11") completed. ' 'Sending x"11"'  [13]'
+%% 5757.5 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%% 5837.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"22") completed. ' 'Sending x"22"'  [17]'
+%% 7727.5 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%% 7807.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"33") completed. ' 'Sending x"33"'  [21]'
+%% 9697.5 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%% 9777.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"44") completed. ' 'Sending x"44"'  [25]'
+%% 11667.5 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%% 11747.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"55") completed. ' 'Sending x"55"'  [29]'
+%% 13637.5 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%% 13717.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"66") completed. ' 'Sending x"66"'  [33]'
+%% 15607.5 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%% 15687.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"77") completed. ' 'Sending x"77"'  [37]'
+%% 17577.5 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%% 17657.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"88") completed. ' 'Sending x"88"'  [41]'
+%% 19547.5 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%% 19627.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"99") completed. ' 'Sending x"99"'  [45]'
+%% 21517.5 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%% 21597.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"AA") completed. ' 'Sending x"AA"'  [49]'
+%% 23487.5 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%% 23567.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"BB") completed. ' 'Sending x"BB"'  [53]'
+%% 25457.5 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%% 25537.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"CC") completed. ' 'Sending x"CC"'  [57]'
+%% 27427.5 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%% 27507.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"DD") completed. ' 'Sending x"DD"'  [61]'
+%% 29397.5 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%% 29477.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"EE") completed. ' 'Sending x"EE"'  [65]'
+%% 31367.5 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%% 31447.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"FF") completed. ' 'Sending x"FF"'  [69]'
+%% 
+%% 
+%% 31657.5 ns    Log    ID_LOG_HDR          TB seq.             Sending on RX
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  33365 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%%  35145 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%%  36925 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%%  38705 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%%  40485 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%%  42265 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%%  44045 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%%  45825 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%%  47605 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%%  49385 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%%  51165 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%%  52945 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%%  54725 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%%  56505 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%%  58285 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%%  60065 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%% 
+%% 
+%%  60265 ns    Log    ID_LOG_HDR          TB seq.             Disable all IDs in monitors msg_id_panel
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 
+%% 
+%%  60265 ns    Log    ID_LOG_HDR          TB seq.             Sending on both TX and RX simultaneously
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  62025 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"0F") completed. ' 'Sending x"0F"'  [123]'
+%% 63997.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"1E") completed. ' 'Sending x"1E"'  [130]'
+%% 65967.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"2D") completed. ' 'Sending x"2D"'  [137]'
+%% 67937.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"3C") completed. ' 'Sending x"3C"'  [144]'
+%% 69907.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"4B") completed. ' 'Sending x"4B"'  [151]'
+%% 71877.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"5A") completed. ' 'Sending x"5A"'  [158]'
+%% 73847.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"69") completed. ' 'Sending x"69"'  [165]'
+%% 75817.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"78") completed. ' 'Sending x"78"'  [172]'
+%% 77787.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"87") completed. ' 'Sending x"87"'  [179]'
+%% 79757.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"96") completed. ' 'Sending x"96"'  [186]'
+%% 81727.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"A5") completed. ' 'Sending x"A5"'  [193]'
+%% 83697.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"B4") completed. ' 'Sending x"B4"'  [200]'
+%% 85667.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"C3") completed. ' 'Sending x"C3"'  [207]'
+%% 87637.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"D2") completed. ' 'Sending x"D2"'  [214]'
+%% 89607.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"E1") completed. ' 'Sending x"E1"'  [221]'
+%% 91577.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"F0") completed. ' 'Sending x"F0"'  [228]'
+%% 
+%% 
+%% 91987.5 ns    Log    ID_LOG_HDR          TB seq.             Enable ID_MONITOR and ID_FRAME_INITIATE in monitors
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 
+%% 
+%% 91987.5 ns    Log    ID_LOG_HDR          TB seq.             Change parity for monitors, now expecting active parity error flag in monitors
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 
+%% 
+%% 91987.5 ns    Log    ID_LOG_HDR          TB seq.             Sending on both TX and RX simultaneously
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 91987.5 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Start bit detected
+%%  92015 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Start bit detected
+%% 93667.5 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: true; stop_bit_error: false.
+%%  93695 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: true; stop_bit_error: false.
+%% 93747.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"0F") completed. ' 'Sending x"0F"'  [235]'
+%% 93957.5 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Start bit detected
+%%  93985 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Start bit detected
+%% 95637.5 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: true; stop_bit_error: false.
+%%  95665 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: true; stop_bit_error: false.
+%% 95717.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"1E") completed. ' 'Sending x"1E"'  [242]'
+%% 95927.5 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Start bit detected
+%%  95955 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Start bit detected
+%% 97607.5 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: true; stop_bit_error: false.
+%%  97635 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: true; stop_bit_error: false.
+%% 97687.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"2D") completed. ' 'Sending x"2D"'  [249]'
+%% 97897.5 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Start bit detected
+%%  97925 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Start bit detected
+%% 99577.5 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: true; stop_bit_error: false.
+%%  99605 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: true; stop_bit_error: false.
+%% 99657.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"3C") completed. ' 'Sending x"3C"'  [256]'
+%% 99867.5 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Start bit detected
+%%  99895 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Start bit detected
+%% 101547.5 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: true; stop_bit_error: false.
+%% 101575 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: true; stop_bit_error: false.
+%% 101627.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"4B") completed. ' 'Sending x"4B"'  [263]'
+%% 101837.5 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Start bit detected
+%% 101865 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Start bit detected
+%% 103517.5 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: true; stop_bit_error: false.
+%% 103545 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: true; stop_bit_error: false.
+%% 103597.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"5A") completed. ' 'Sending x"5A"'  [270]'
+%% 103807.5 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Start bit detected
+%% 103835 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Start bit detected
+%% 105487.5 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: true; stop_bit_error: false.
+%% 105515 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: true; stop_bit_error: false.
+%% 105567.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"69") completed. ' 'Sending x"69"'  [277]'
+%% 105777.5 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Start bit detected
+%% 105805 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Start bit detected
+%% 107457.5 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: true; stop_bit_error: false.
+%% 107485 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: true; stop_bit_error: false.
+%% 107537.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"78") completed. ' 'Sending x"78"'  [284]'
+%% 107747.5 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Start bit detected
+%% 107775 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Start bit detected
+%% 109427.5 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: true; stop_bit_error: false.
+%% 109455 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: true; stop_bit_error: false.
+%% 109507.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"87") completed. ' 'Sending x"87"'  [291]'
+%% 109717.5 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Start bit detected
+%% 109745 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Start bit detected
+%% 111397.5 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: true; stop_bit_error: false.
+%% 111425 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: true; stop_bit_error: false.
+%% 111477.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"96") completed. ' 'Sending x"96"'  [298]'
+%% 111687.5 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Start bit detected
+%% 111715 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Start bit detected
+%% 113367.5 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: true; stop_bit_error: false.
+%% 113395 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: true; stop_bit_error: false.
+%% 113447.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"A5") completed. ' 'Sending x"A5"'  [305]'
+%% 113657.5 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Start bit detected
+%% 113685 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Start bit detected
+%% 115337.5 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: true; stop_bit_error: false.
+%% 115365 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: true; stop_bit_error: false.
+%% 115417.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"B4") completed. ' 'Sending x"B4"'  [312]'
+%% 115627.5 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Start bit detected
+%% 115655 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Start bit detected
+%% 117307.5 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: true; stop_bit_error: false.
+%% 117335 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: true; stop_bit_error: false.
+%% 117387.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"C3") completed. ' 'Sending x"C3"'  [319]'
+%% 117597.5 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Start bit detected
+%% 117625 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Start bit detected
+%% 119277.5 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: true; stop_bit_error: false.
+%% 119305 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: true; stop_bit_error: false.
+%% 119357.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"D2") completed. ' 'Sending x"D2"'  [326]'
+%% 119567.5 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Start bit detected
+%% 119595 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Start bit detected
+%% 121247.5 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: true; stop_bit_error: false.
+%% 121275 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: true; stop_bit_error: false.
+%% 121327.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"E1") completed. ' 'Sending x"E1"'  [333]'
+%% 121537.5 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Start bit detected
+%% 121565 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Start bit detected
+%% 123217.5 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: true; stop_bit_error: false.
+%% 123245 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: true; stop_bit_error: false.
+%% 123297.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"F0") completed. ' 'Sending x"F0"'  [340]'
+%% 
+%% 
+%% 123707.5 ns    Log    ID_LOG_HDR          TB seq.             Change parity back to correct and stop bit to two for monitors, now expecting active stop bit error flag in monitors
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 
+%% 
+%% 123707.5 ns    Log    ID_LOG_HDR          TB seq.             Sending on TX
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 123707.5 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Start bit detected
+%% 125467.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"47") completed. ' 'Sending x"47"'  [345]'
+%% 125547.5 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 125547.5 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Second stop bit interpreted as start bit.
+%% 127227.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"14") completed. ' 'Sending x"14"'  [349]'
+%% 127307.5 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 127307.5 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Second stop bit interpreted as start bit.
+%% 128987.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"3B") completed. ' 'Sending x"3B"'  [353]'
+%% 129067.5 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 129067.5 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Second stop bit interpreted as start bit.
+%% 130747.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"25") completed. ' 'Sending x"25"'  [357]'
+%% 130827.5 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 130827.5 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Second stop bit interpreted as start bit.
+%% 132507.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"93") completed. ' 'Sending x"93"'  [361]'
+%% 132587.5 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 132587.5 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Second stop bit interpreted as start bit.
+%% 134267.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"22") completed. ' 'Sending x"22"'  [365]'
+%% 134347.5 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 134347.5 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Second stop bit interpreted as start bit.
+%% 136027.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"E3") completed. ' 'Sending x"E3"'  [369]'
+%% 136107.5 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 136107.5 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Second stop bit interpreted as start bit.
+%% 137787.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"70") completed. ' 'Sending x"70"'  [373]'
+%% 137867.5 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 137867.5 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Second stop bit interpreted as start bit.
+%% 139547.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"99") completed. ' 'Sending x"99"'  [377]'
+%% 139627.5 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 139627.5 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Second stop bit interpreted as start bit.
+%% 141307.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"2B") completed. ' 'Sending x"2B"'  [381]'
+%% 141387.5 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 141387.5 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Second stop bit interpreted as start bit.
+%% 143067.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"11") completed. ' 'Sending x"11"'  [385]'
+%% 143147.5 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 143147.5 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Second stop bit interpreted as start bit.
+%% 144827.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"2C") completed. ' 'Sending x"2C"'  [389]'
+%% 144907.5 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 144907.5 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Second stop bit interpreted as start bit.
+%% 146587.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"9C") completed. ' 'Sending x"9C"'  [393]'
+%% 146667.5 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 146667.5 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Second stop bit interpreted as start bit.
+%% 148347.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"80") completed. ' 'Sending x"80"'  [397]'
+%% 148427.5 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 148427.5 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Second stop bit interpreted as start bit.
+%% 150107.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"CB") completed. ' 'Sending x"CB"'  [401]'
+%% 150187.5 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 150187.5 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Second stop bit interpreted as start bit.
+%% 151867.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"64") completed. ' 'Sending x"64"'  [405]'
+%% 151947.5 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%% 
+%% 
+%% 152367.5 ns    Log    ID_LOG_HDR          TB seq.             Sending on RX
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 152395 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Start bit detected
+%% 154235 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 154235 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Second stop bit interpreted as start bit.
+%% 156015 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 156015 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Second stop bit interpreted as start bit.
+%% 157795 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 157795 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Second stop bit interpreted as start bit.
+%% 159575 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 159575 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Second stop bit interpreted as start bit.
+%% 161355 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 161355 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Second stop bit interpreted as start bit.
+%% 163135 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 163135 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Second stop bit interpreted as start bit.
+%% 164915 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 164915 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Second stop bit interpreted as start bit.
+%% 166695 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 166695 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Second stop bit interpreted as start bit.
+%% 168475 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 168475 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Second stop bit interpreted as start bit.
+%% 170255 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 170255 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Second stop bit interpreted as start bit.
+%% 172035 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 172035 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Second stop bit interpreted as start bit.
+%% 173815 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 173815 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Second stop bit interpreted as start bit.
+%% 175595 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 175595 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Second stop bit interpreted as start bit.
+%% 177375 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 177375 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Second stop bit interpreted as start bit.
+%% 179155 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 179155 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Second stop bit interpreted as start bit.
+%% 180935 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%% 
+%% 
+%% 181775 ns    Log    ID_LOG_HDR          TB seq.             Change stop bit to one and a half for monitors, expecting active stop bit error flag in monitors
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 
+%% 
+%% 181775 ns    Log    ID_LOG_HDR          TB seq.             Sending on TX
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 181775 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Start bit detected
+%% 183535 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"12") completed. ' 'Sending x"12"'  [457]'
+%% 183575 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 183575 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Second stop bit interpreted as start bit.
+%% 185295 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"B1") completed. ' 'Sending x"B1"'  [461]'
+%% 185335 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 185335 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Second stop bit interpreted as start bit.
+%% 187055 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"B6") completed. ' 'Sending x"B6"'  [465]'
+%% 187095 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 187095 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Second stop bit interpreted as start bit.
+%% 188815 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"8B") completed. ' 'Sending x"8B"'  [469]'
+%% 188855 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 188855 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Second stop bit interpreted as start bit.
+%% 190575 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"BB") completed. ' 'Sending x"BB"'  [473]'
+%% 190615 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 190615 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Second stop bit interpreted as start bit.
+%% 192335 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"8E") completed. ' 'Sending x"8E"'  [477]'
+%% 192375 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 192375 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Second stop bit interpreted as start bit.
+%% 194095 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"71") completed. ' 'Sending x"71"'  [481]'
+%% 194135 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 194135 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Second stop bit interpreted as start bit.
+%% 195855 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"A2") completed. ' 'Sending x"A2"'  [485]'
+%% 195895 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 195895 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Second stop bit interpreted as start bit.
+%% 197615 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"EE") completed. ' 'Sending x"EE"'  [489]'
+%% 197655 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 197655 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Second stop bit interpreted as start bit.
+%% 199375 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"50") completed. ' 'Sending x"50"'  [493]'
+%% 199415 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 199415 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Second stop bit interpreted as start bit.
+%% 201135 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"FF") completed. ' 'Sending x"FF"'  [497]'
+%% 201175 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 201175 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Second stop bit interpreted as start bit.
+%% 202895 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"B7") completed. ' 'Sending x"B7"'  [501]'
+%% 202935 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 202935 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Second stop bit interpreted as start bit.
+%% 204655 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"51") completed. ' 'Sending x"51"'  [505]'
+%% 204695 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 204695 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Second stop bit interpreted as start bit.
+%% 206415 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"2F") completed. ' 'Sending x"2F"'  [509]'
+%% 206455 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 206455 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Second stop bit interpreted as start bit.
+%% 208175 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"AC") completed. ' 'Sending x"AC"'  [513]'
+%% 208215 ns    Log    ID_MONITOR          UART Monitor        TX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 208215 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Second stop bit interpreted as start bit.
+%% 209935 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"10") completed. ' 'Sending x"10"'  [517]'
+%% 209975 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%% 
+%% 
+%% 210435 ns    Log    ID_LOG_HDR          TB seq.             Sending on RX
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 210465 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Start bit detected
+%% 212265 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 212265 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Second stop bit interpreted as start bit.
+%% 214045 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 214045 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Second stop bit interpreted as start bit.
+%% 215825 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 215825 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Second stop bit interpreted as start bit.
+%% 217605 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 217605 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Second stop bit interpreted as start bit.
+%% 219385 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 219385 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Second stop bit interpreted as start bit.
+%% 221165 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 221165 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Second stop bit interpreted as start bit.
+%% 222945 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 222945 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Second stop bit interpreted as start bit.
+%% 224725 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 224725 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Second stop bit interpreted as start bit.
+%% 226505 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 226505 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Second stop bit interpreted as start bit.
+%% 228285 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 228285 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Second stop bit interpreted as start bit.
+%% 230065 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 230065 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Second stop bit interpreted as start bit.
+%% 231845 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 231845 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Second stop bit interpreted as start bit.
+%% 233625 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 233625 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Second stop bit interpreted as start bit.
+%% 235405 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 235405 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Second stop bit interpreted as start bit.
+%% 237185 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%% 237185 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Second stop bit interpreted as start bit.
+%% 238965 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%% 
+%% 
+%% 239045 ns    Log    ID_LOG_HDR          TB seq.             Change stop bit to one for monitors, expecting no error flags in monitors
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 
+%% 
+%% 239045 ns    Log    ID_LOG_HDR          TB seq.             Sending on TX
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 239045 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Start bit detected
+%% 240725 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%% 240805 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"04") completed. ' 'Sending x"04"'  [569]'
+%% 240805 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Start bit detected
+%% 242485 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%% 242565 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"C4") completed. ' 'Sending x"C4"'  [573]'
+%% 242565 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Start bit detected
+%% 244245 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%% 244325 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"EA") completed. ' 'Sending x"EA"'  [577]'
+%% 244325 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Start bit detected
+%% 246005 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%% 246085 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"63") completed. ' 'Sending x"63"'  [581]'
+%% 246085 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Start bit detected
+%% 247765 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%% 247845 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"2C") completed. ' 'Sending x"2C"'  [585]'
+%% 247845 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Start bit detected
+%% 249525 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%% 249605 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"D0") completed. ' 'Sending x"D0"'  [589]'
+%% 249605 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Start bit detected
+%% 251285 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%% 251365 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"02") completed. ' 'Sending x"02"'  [593]'
+%% 251365 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Start bit detected
+%% 253045 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%% 253125 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"25") completed. ' 'Sending x"25"'  [597]'
+%% 253125 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Start bit detected
+%% 254805 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%% 254885 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"92") completed. ' 'Sending x"92"'  [601]'
+%% 254885 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Start bit detected
+%% 256565 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%% 256645 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"E1") completed. ' 'Sending x"E1"'  [605]'
+%% 256645 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Start bit detected
+%% 258325 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%% 258405 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"29") completed. ' 'Sending x"29"'  [609]'
+%% 258405 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Start bit detected
+%% 260085 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%% 260165 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"A3") completed. ' 'Sending x"A3"'  [613]'
+%% 260165 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Start bit detected
+%% 261845 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%% 261925 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"E0") completed. ' 'Sending x"E0"'  [617]'
+%% 261925 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Start bit detected
+%% 263605 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%% 263685 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"4D") completed. ' 'Sending x"4D"'  [621]'
+%% 263685 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Start bit detected
+%% 265365 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%% 265445 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"D4") completed. ' 'Sending x"D4"'  [625]'
+%% 265445 ns    Log    ID_FRAME_INITIATE   UART Monitor        TX: Start bit detected
+%% 267125 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%% 267205 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"01") completed. ' 'Sending x"01"'  [629]'
+%% 
+%% 
+%% 267705 ns    Log    ID_LOG_HDR          TB seq.             Sending on RX
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 267735 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Start bit detected
+%% 269415 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%% 269515 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Start bit detected
+%% 271195 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%% 271295 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Start bit detected
+%% 272975 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%% 273075 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Start bit detected
+%% 274755 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%% 274855 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Start bit detected
+%% 276535 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%% 276635 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Start bit detected
+%% 278315 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%% 278415 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Start bit detected
+%% 280095 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%% 280195 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Start bit detected
+%% 281875 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%% 281975 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Start bit detected
+%% 283655 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%% 283755 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Start bit detected
+%% 285435 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%% 285535 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Start bit detected
+%% 287215 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%% 287315 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Start bit detected
+%% 288995 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%% 289095 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Start bit detected
+%% 290775 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%% 290875 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Start bit detected
+%% 292555 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%% 292655 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Start bit detected
+%% 294335 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%% 294435 ns    Log    ID_FRAME_INITIATE   UART Monitor        RX: Start bit detected
+%% 296115 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%%      
+%%      =======================================================================================================================================================================
+%%      296315 ns *** SCOREBOARD COUNTERS SUMMARY: UART TX SB ***                                                                                                              
+%%      =======================================================================================================================================================================
+%%                       ENTERED         PENDING          MATCH         MISMATCH          DROP          INITIAL_GARBAGE         DELETE         OVERDUE_CHECK                   
+%%      instance:   1      96               0              96               0               0                  0                   0                 0                         
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%      
+%%      =======================================================================================================================================================================
+%%      296315 ns *** SCOREBOARD COUNTERS SUMMARY: UART RX SB ***                                                                                                              
+%%      =======================================================================================================================================================================
+%%                       ENTERED         PENDING          MATCH         MISMATCH          DROP          INITIAL_GARBAGE         DELETE         OVERDUE_CHECK                   
+%%      instance:   1      96               0              96               0               0                  0                   0                 0                         
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%% 296316 ns    DONE   NOCHECKS   uart_monitor_tb  Passed: 0
+%%    Expected      Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% 296316 ns    Log    ID_LOG_HDR          TB seq.             SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

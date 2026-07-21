@@ -1,0 +1,1365 @@
+%% 
+%% 
+%% ============================================================================================================================================================================
+%%      0 ns    Log    ID_LOG_HDR_LARGE    TB seq.             Start Simulation of Functional Coverage package - fc_database_2
+%% ============================================================================================================================================================================
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_FUNC_COV_BINS).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_FUNC_COV_BINS_INFO).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_FUNC_COV_RAND).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_FUNC_COV_SAMPLE).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_FUNC_COV_CONFIG).
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing load and write database from a file - coverpoint
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      =======================================================================================================================================================================
+%%      0 ns *** COVERAGE SUMMARY REPORT (NON VERBOSE): MY_SCOPE ***                                                                                                           
+%%      =======================================================================================================================================================================
+%%      Coverpoint:              MY_COVERPOINT    (accumulated over this and 3 previous testcases)
+%%      Goal:                    Bins: 50%,      Hits: 200%    
+%%      % of Goal:               Bins: 0.00%,    Hits: 15.09%  
+%%      % of Goal (uncapped):    Bins: 0.00%,    Hits: 15.09%  
+%%      Coverage (for goal 100): Bins: 0.00%,    Hits: 30.19%  
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                            BINS                            HITS             MIN HITS         HIT COVERAGE             NAME             ILLEGAL/IGNORE                       
+%%                            (210)                            1                 N/A                N/A             illegal_single           ILLEGAL                           
+%%                        (226 to 229)                         4                 N/A                N/A              illegal_range           ILLEGAL                           
+%%               (231->237->237->238->235->231)                1                 N/A                N/A           illegal_transition         ILLEGAL                           
+%%                            (10)                             0                  1                0.00%                 bin_1                  -                              
+%%                            (20)                             2                  8                25.00%               single                  -                              
+%%                        (30, 35, 39)                         3                  9                33.33%              multiple                 -                              
+%%                         (40 to 44)                          5                  15               33.33%              range[1]                 -                              
+%%                         (45 to 49)                          5                  15               33.33%              range[2]                 -                              
+%%          (50->51->52->53->54->55->56->57->58->59)           1                  5                20.00%             transition                -                              
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_1
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for single
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for multiple
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for range[1]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for range[2]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for transition
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_2
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for ignore_single
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for ignore_range
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for ignore_transition
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_3
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for illegal_single
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for illegal_range
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for illegal_transition
+%%      0 ns    Log    PASSED              TB seq.             check_num_bins(int, 6) => OK. Value was 6. 'Checking number of valid bins'
+%%      0 ns    Log    PASSED              TB seq.             check_num_bins(int, 8) => OK. Value was 8. 'Checking number of invalid bins'
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 0.00%
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage(% of goal) => OK, for 0.00%
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 30.19%
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage(% of goal) => OK, for 15.09%
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1) => OK. Value was 1. 'Checking num_bins_crossed'
+%%      0 ns    Log    PASSED              TB seq.             check_value(string, 'MY_COVERPOINT') => OK. Value was 'MY_COVERPOINT'. 'Checking name'
+%%      0 ns    Log    PASSED              TB seq.             check_value(string, 'MY_SCOPE') => OK. Value was 'MY_SCOPE'. 'Checking scope'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking illegal bin alert level'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking bin overlap alert level'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 5) => OK. Value was 5. 'Checking coverage weight'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 50) => OK. Value was 50. 'Checking bins coverage goal'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 200) => OK. Value was 200. 'Checking hits coverage goal'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 80) => OK. Value was 80. 'Checking coverpoints coverage goal'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking seed 1'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking seed 2'
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(20)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(20)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(30)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(35)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(39)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(40)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(41)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(42)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(43)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(44)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(45)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(46)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(47)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(48)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(49)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(50)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(51)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(52)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(53)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(54)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(55)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(56)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(57)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(58)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(59)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(110)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(121)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(122)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(123)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(124)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(125)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(132)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(134)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(136)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(138)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(132)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(134)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(136)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(138)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(210)
+%%      0 ns    Alert  WARNING             MY_SCOPE            [MY_COVERPOINT] sample_coverage(210)=> Sampled illegal_bin(210)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(226)
+%%      0 ns    Alert  WARNING             MY_SCOPE            [MY_COVERPOINT] sample_coverage(226)=> Sampled illegal_bin_range(226 to 229)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(227)
+%%      0 ns    Alert  WARNING             MY_SCOPE            [MY_COVERPOINT] sample_coverage(227)=> Sampled illegal_bin_range(226 to 229)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(228)
+%%      0 ns    Alert  WARNING             MY_SCOPE            [MY_COVERPOINT] sample_coverage(228)=> Sampled illegal_bin_range(226 to 229)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(229)
+%%      0 ns    Alert  WARNING             MY_SCOPE            [MY_COVERPOINT] sample_coverage(229)=> Sampled illegal_bin_range(226 to 229)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(231)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(237)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(237)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(238)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(235)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(231)
+%%      0 ns    Alert  WARNING             MY_SCOPE            [MY_COVERPOINT] sample_coverage(231)=> Sampled illegal_bin_transition(231->237->237->238->235->231)
+%%      
+%%      =======================================================================================================================================================================
+%%      0 ns *** COVERAGE SUMMARY REPORT (VERBOSE): MY_SCOPE ***                                                                                                               
+%%      =======================================================================================================================================================================
+%%      Coverpoint:              MY_COVERPOINT    (accumulated over this and 3 previous testcases)
+%%      Goal:                    Bins: 50%,      Hits: 200%    
+%%      % of Goal:               Bins: 0.00%,    Hits: 30.19%  
+%%      % of Goal (uncapped):    Bins: 0.00%,    Hits: 30.19%  
+%%      Coverage (for goal 100): Bins: 0.00%,    Hits: 60.38%  
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                            BINS                            HITS             MIN HITS         HIT COVERAGE             NAME             ILLEGAL/IGNORE                       
+%%                            (200)                            0                 N/A                N/A                  bin_3               ILLEGAL                           
+%%                            (210)                            2                 N/A                N/A             illegal_single           ILLEGAL                           
+%%                        (226 to 229)                         8                 N/A                N/A              illegal_range           ILLEGAL                           
+%%               (231->237->237->238->235->231)                2                 N/A                N/A           illegal_transition         ILLEGAL                           
+%%                            (100)                            0                 N/A                N/A                  bin_2                IGNORE                           
+%%                            (110)                            2                 N/A                N/A              ignore_single            IGNORE                           
+%%                        (121 to 125)                         10                N/A                N/A              ignore_range             IGNORE                           
+%%                    (132->134->136->138)                     4                 N/A                N/A            ignore_transition          IGNORE                           
+%%                            (10)                             0                  1                0.00%                 bin_1                  -                              
+%%                            (20)                             4                  8                50.00%               single                  -                              
+%%                        (30, 35, 39)                         6                  9                66.67%              multiple                 -                              
+%%                         (40 to 44)                          10                 15               66.67%              range[1]                 -                              
+%%                         (45 to 49)                          10                 15               66.67%              range[2]                 -                              
+%%          (50->51->52->53->54->55->56->57->58->59)           2                  5                40.00%             transition                -                              
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing load and write database from a file - cross
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      =======================================================================================================================================================================
+%%      0 ns *** COVERAGE SUMMARY REPORT (NON VERBOSE): NEW_SCOPE ***                                                                                                          
+%%      =======================================================================================================================================================================
+%%      Coverpoint:              MY_CROSS    (accumulated over this and 1 previous testcases)
+%%      Goal:                    Bins: 50%,      Hits: 75%     
+%%      % of Goal:               Bins: 0.00%,    Hits: 40.25%  
+%%      % of Goal (uncapped):    Bins: 0.00%,    Hits: 40.25%  
+%%      Coverage (for goal 100): Bins: 0.00%,    Hits: 30.19%  
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                            BINS                            HITS             MIN HITS         HIT COVERAGE             NAME             ILLEGAL/IGNORE                       
+%%                        (210)x(1210)                         1                 N/A                N/A             illegal_single           ILLEGAL                           
+%%                 (226 to 229)x(1226 to 1229)                 4                 N/A                N/A              illegal_range           ILLEGAL                           
+%%             (231->237->237)x(1231->1237->1237)              1                 N/A                N/A           illegal_transition         ILLEGAL                           
+%%                         (10)x(1010)                         0                  1                0.00%                 bin_1                  -                              
+%%                         (20)x(1020)                         2                  8                25.00%               single                  -                              
+%%               (30, 35, 39)x(1030, 1035, 1039)               3                  9                33.33%              multiple                 -                              
+%%                  (40 to 44)x(1040 to 1049)                  5                  15               33.33%              range[1]                 -                              
+%%                  (45 to 49)x(1040 to 1049)                  5                  15               33.33%              range[2]                 -                              
+%%                         transition                          1                  5                20.00%             transition                -                              
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      transition: (50->51->52->53->54->55)x(1050->1051->1052->1053->1054->1055)
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for single
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for multiple
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for range[1]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for range[2]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for transition
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_invalid_cross_bin => OK, for bin_2
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_invalid_cross_bin => OK, for ignore_single
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_invalid_cross_bin => OK, for ignore_range
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_invalid_cross_bin => OK, for ignore_transition
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_invalid_cross_bin => OK, for bin_3
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_invalid_cross_bin => OK, for illegal_single
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_invalid_cross_bin => OK, for illegal_range
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_invalid_cross_bin => OK, for illegal_transition
+%%      0 ns    Log    PASSED              TB seq.             check_num_bins(int, 6) => OK. Value was 6. 'Checking number of valid bins'
+%%      0 ns    Log    PASSED              TB seq.             check_num_bins(int, 8) => OK. Value was 8. 'Checking number of invalid bins'
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 0.00%
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage(% of goal) => OK, for 0.00%
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 30.19%
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage(% of goal) => OK, for 40.25%
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 2) => OK. Value was 2. 'Checking num_bins_crossed'
+%%      0 ns    Log    PASSED              TB seq.             check_value(string, 'MY_CROSS') => OK. Value was 'MY_CROSS'. 'Checking name'
+%%      0 ns    Log    PASSED              TB seq.             check_value(string, 'NEW_SCOPE') => OK. Value was 'NEW_SCOPE'. 'Checking scope'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking illegal bin alert level'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking bin overlap alert level'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 8) => OK. Value was 8. 'Checking coverage weight'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 50) => OK. Value was 50. 'Checking bins coverage goal'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 75) => OK. Value was 75. 'Checking hits coverage goal'
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 90) => OK. Value was 90. 'Checking coverpoints coverage goal'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking seed 1'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking seed 2'
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((20, 1020))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((20, 1020))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((30, 1030))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((35, 1035))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((39, 1039))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((40, 1040))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((41, 1041))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((42, 1042))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((43, 1043))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((44, 1044))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((45, 1045))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((46, 1046))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((47, 1047))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((48, 1048))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((49, 1049))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((50, 1050))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((51, 1051))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((52, 1052))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((53, 1053))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((54, 1054))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((55, 1055))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((110, 1110))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((121, 1121))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((122, 1122))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((123, 1123))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((124, 1124))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((125, 1125))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((132, 1132))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((134, 1134))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((136, 1136))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((138, 1138))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((132, 1132))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((134, 1134))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((136, 1136))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((138, 1138))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((210, 1210))
+%%      0 ns    Alert  WARNING             NEW_SCOPE           [MY_CROSS] sample_coverage((210, 1210))=> Sampled illegal_bin(1210)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((226, 1226))
+%%      0 ns    Alert  WARNING             NEW_SCOPE           [MY_CROSS] sample_coverage((226, 1226))=> Sampled illegal_bin_range(1226 to 1229)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((227, 1227))
+%%      0 ns    Alert  WARNING             NEW_SCOPE           [MY_CROSS] sample_coverage((227, 1227))=> Sampled illegal_bin_range(1226 to 1229)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((228, 1228))
+%%      0 ns    Alert  WARNING             NEW_SCOPE           [MY_CROSS] sample_coverage((228, 1228))=> Sampled illegal_bin_range(1226 to 1229)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((229, 1229))
+%%      0 ns    Alert  WARNING             NEW_SCOPE           [MY_CROSS] sample_coverage((229, 1229))=> Sampled illegal_bin_range(1226 to 1229)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((231, 1231))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((237, 1237))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((237, 1237))
+%%      0 ns    Alert  WARNING             NEW_SCOPE           [MY_CROSS] sample_coverage((237, 1237))=> Sampled illegal_bin_transition(1231->1237->1237)
+%%      
+%%      =======================================================================================================================================================================
+%%      0 ns *** COVERAGE SUMMARY REPORT (VERBOSE): NEW_SCOPE ***                                                                                                              
+%%      =======================================================================================================================================================================
+%%      Coverpoint:              MY_CROSS    (accumulated over this and 1 previous testcases)
+%%      Goal:                    Bins: 50%,      Hits: 75%     
+%%      % of Goal:               Bins: 0.00%,    Hits: 80.50%  
+%%      % of Goal (uncapped):    Bins: 0.00%,    Hits: 80.50%  
+%%      Coverage (for goal 100): Bins: 0.00%,    Hits: 60.38%  
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                            BINS                            HITS             MIN HITS         HIT COVERAGE             NAME             ILLEGAL/IGNORE                       
+%%                        (200)x(1200)                         0                 N/A                N/A                  bin_3               ILLEGAL                           
+%%                        (210)x(1210)                         2                 N/A                N/A             illegal_single           ILLEGAL                           
+%%                 (226 to 229)x(1226 to 1229)                 8                 N/A                N/A              illegal_range           ILLEGAL                           
+%%             (231->237->237)x(1231->1237->1237)              2                 N/A                N/A           illegal_transition         ILLEGAL                           
+%%                        (100)x(1100)                         0                 N/A                N/A                  bin_2                IGNORE                           
+%%                        (110)x(1110)                         2                 N/A                N/A              ignore_single            IGNORE                           
+%%                 (121 to 125)x(1121 to 1125)                 10                N/A                N/A              ignore_range             IGNORE                           
+%%                      ignore_transition                      4                 N/A                N/A            ignore_transition          IGNORE                           
+%%                         (10)x(1010)                         0                  1                0.00%                 bin_1                  -                              
+%%                         (20)x(1020)                         4                  8                50.00%               single                  -                              
+%%               (30, 35, 39)x(1030, 1035, 1039)               6                  9                66.67%              multiple                 -                              
+%%                  (40 to 44)x(1040 to 1049)                  10                 15               66.67%              range[1]                 -                              
+%%                  (45 to 49)x(1040 to 1049)                  10                 15               66.67%              range[2]                 -                              
+%%                         transition                          2                  5                40.00%             transition                -                              
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ignore_transition: (132->134->136->138)x(1132->1134->1136->1138)
+%%      transition: (50->51->52->53->54->55)x(1050->1051->1052->1053->1054->1055)
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing load and write database from a file - max data
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      =======================================================================================================================================================================
+%%      0 ns *** COVERAGE HOLES REPORT: TB seq. ***                                                                                                                            
+%%      =======================================================================================================================================================================
+%%      Coverpoint:              Covpt_4    (accumulated over this and 1 previous testcases)
+%%      Coverage (for goal 100): Bins: 25.00%,   Hits: 25.00%  
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                            BINS                            HITS             MIN HITS         HIT COVERAGE             NAME             ILLEGAL/IGNORE                       
+%%                      (26)x(200)x(300)                       0                  1                0.00%               bin_1[26]                -                              
+%%                      (27)x(200)x(300)                       0                  1                0.00%               bin_1[27]                -                              
+%%                      (28)x(200)x(300)                       0                  1                0.00%               bin_1[28]                -                              
+%%                      (29)x(200)x(300)                       0                  1                0.00%               bin_1[29]                -                              
+%%                      (30)x(200)x(300)                       0                  1                0.00%               bin_1[30]                -                              
+%%                      (31)x(200)x(300)                       0                  1                0.00%               bin_1[31]                -                              
+%%                      (32)x(200)x(300)                       0                  1                0.00%               bin_1[32]                -                              
+%%                      (33)x(200)x(300)                       0                  1                0.00%               bin_1[33]                -                              
+%%                      (34)x(200)x(300)                       0                  1                0.00%               bin_1[34]                -                              
+%%                      (35)x(200)x(300)                       0                  1                0.00%               bin_1[35]                -                              
+%%                      (36)x(200)x(300)                       0                  1                0.00%               bin_1[36]                -                              
+%%                      (37)x(200)x(300)                       0                  1                0.00%               bin_1[37]                -                              
+%%                      (38)x(200)x(300)                       0                  1                0.00%               bin_1[38]                -                              
+%%                      (39)x(200)x(300)                       0                  1                0.00%               bin_1[39]                -                              
+%%                      (40)x(200)x(300)                       0                  1                0.00%               bin_1[40]                -                              
+%%                      (41)x(200)x(300)                       0                  1                0.00%               bin_1[41]                -                              
+%%                      (42)x(200)x(300)                       0                  1                0.00%               bin_1[42]                -                              
+%%                      (43)x(200)x(300)                       0                  1                0.00%               bin_1[43]                -                              
+%%                      (44)x(200)x(300)                       0                  1                0.00%               bin_1[44]                -                              
+%%                      (45)x(200)x(300)                       0                  1                0.00%               bin_1[45]                -                              
+%%                      (46)x(200)x(300)                       0                  1                0.00%               bin_1[46]                -                              
+%%                      (47)x(200)x(300)                       0                  1                0.00%               bin_1[47]                -                              
+%%                      (48)x(200)x(300)                       0                  1                0.00%               bin_1[48]                -                              
+%%                      (49)x(200)x(300)                       0                  1                0.00%               bin_1[49]                -                              
+%%                      (50)x(200)x(300)                       0                  1                0.00%               bin_1[50]                -                              
+%%                      (51)x(200)x(300)                       0                  1                0.00%               bin_1[51]                -                              
+%%                      (52)x(200)x(300)                       0                  1                0.00%               bin_1[52]                -                              
+%%                      (53)x(200)x(300)                       0                  1                0.00%               bin_1[53]                -                              
+%%                      (54)x(200)x(300)                       0                  1                0.00%               bin_1[54]                -                              
+%%                      (55)x(200)x(300)                       0                  1                0.00%               bin_1[55]                -                              
+%%                      (56)x(200)x(300)                       0                  1                0.00%               bin_1[56]                -                              
+%%                      (57)x(200)x(300)                       0                  1                0.00%               bin_1[57]                -                              
+%%                      (58)x(200)x(300)                       0                  1                0.00%               bin_1[58]                -                              
+%%                      (59)x(200)x(300)                       0                  1                0.00%               bin_1[59]                -                              
+%%                      (60)x(200)x(300)                       0                  1                0.00%               bin_1[60]                -                              
+%%                      (61)x(200)x(300)                       0                  1                0.00%               bin_1[61]                -                              
+%%                      (62)x(200)x(300)                       0                  1                0.00%               bin_1[62]                -                              
+%%                      (63)x(200)x(300)                       0                  1                0.00%               bin_1[63]                -                              
+%%                      (64)x(200)x(300)                       0                  1                0.00%               bin_1[64]                -                              
+%%                      (65)x(200)x(300)                       0                  1                0.00%               bin_1[65]                -                              
+%%                      (66)x(200)x(300)                       0                  1                0.00%               bin_1[66]                -                              
+%%                      (67)x(200)x(300)                       0                  1                0.00%               bin_1[67]                -                              
+%%                      (68)x(200)x(300)                       0                  1                0.00%               bin_1[68]                -                              
+%%                      (69)x(200)x(300)                       0                  1                0.00%               bin_1[69]                -                              
+%%                      (70)x(200)x(300)                       0                  1                0.00%               bin_1[70]                -                              
+%%                      (71)x(200)x(300)                       0                  1                0.00%               bin_1[71]                -                              
+%%                      (72)x(200)x(300)                       0                  1                0.00%               bin_1[72]                -                              
+%%                      (73)x(200)x(300)                       0                  1                0.00%               bin_1[73]                -                              
+%%                      (74)x(200)x(300)                       0                  1                0.00%               bin_1[74]                -                              
+%%                      (75)x(200)x(300)                       0                  1                0.00%               bin_1[75]                -                              
+%%                      (76)x(200)x(300)                       0                  1                0.00%               bin_1[76]                -                              
+%%                      (77)x(200)x(300)                       0                  1                0.00%               bin_1[77]                -                              
+%%                      (78)x(200)x(300)                       0                  1                0.00%               bin_1[78]                -                              
+%%                      (79)x(200)x(300)                       0                  1                0.00%               bin_1[79]                -                              
+%%                      (80)x(200)x(300)                       0                  1                0.00%               bin_1[80]                -                              
+%%                      (81)x(200)x(300)                       0                  1                0.00%               bin_1[81]                -                              
+%%                      (82)x(200)x(300)                       0                  1                0.00%               bin_1[82]                -                              
+%%                      (83)x(200)x(300)                       0                  1                0.00%               bin_1[83]                -                              
+%%                      (84)x(200)x(300)                       0                  1                0.00%               bin_1[84]                -                              
+%%                      (85)x(200)x(300)                       0                  1                0.00%               bin_1[85]                -                              
+%%                      (86)x(200)x(300)                       0                  1                0.00%               bin_1[86]                -                              
+%%                      (87)x(200)x(300)                       0                  1                0.00%               bin_1[87]                -                              
+%%                      (88)x(200)x(300)                       0                  1                0.00%               bin_1[88]                -                              
+%%                      (89)x(200)x(300)                       0                  1                0.00%               bin_1[89]                -                              
+%%                      (90)x(200)x(300)                       0                  1                0.00%               bin_1[90]                -                              
+%%                      (91)x(200)x(300)                       0                  1                0.00%               bin_1[91]                -                              
+%%                      (92)x(200)x(300)                       0                  1                0.00%               bin_1[92]                -                              
+%%                      (93)x(200)x(300)                       0                  1                0.00%               bin_1[93]                -                              
+%%                      (94)x(200)x(300)                       0                  1                0.00%               bin_1[94]                -                              
+%%                      (95)x(200)x(300)                       0                  1                0.00%               bin_1[95]                -                              
+%%                      (96)x(200)x(300)                       0                  1                0.00%               bin_1[96]                -                              
+%%                      (97)x(200)x(300)                       0                  1                0.00%               bin_1[97]                -                              
+%%                      (98)x(200)x(300)                       0                  1                0.00%               bin_1[98]                -                              
+%%                      (99)x(200)x(300)                       0                  1                0.00%               bin_1[99]                -                              
+%%                      (100)x(200)x(300)                      0                  1                0.00%              bin_1[100]                -                              
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[1]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[2]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[3]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[4]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[5]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[6]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[7]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[8]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[9]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[10]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[11]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[12]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[13]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[14]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[15]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[16]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[17]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[18]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[19]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[20]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[21]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[22]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[23]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[24]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[25]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[26]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[27]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[28]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[29]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[30]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[31]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[32]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[33]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[34]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[35]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[36]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[37]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[38]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[39]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[40]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[41]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[42]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[43]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[44]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[45]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[46]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[47]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[48]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[49]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[50]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[51]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[52]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[53]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[54]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[55]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[56]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[57]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[58]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[59]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[60]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[61]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[62]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[63]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[64]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[65]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[66]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[67]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[68]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[69]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[70]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[71]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[72]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[73]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[74]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[75]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[76]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[77]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[78]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[79]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[80]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[81]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[82]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[83]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[84]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[85]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[86]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[87]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[88]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[89]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[90]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[91]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[92]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[93]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[94]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[95]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[96]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[97]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[98]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[99]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[100]
+%%      0 ns    Log    PASSED              TB seq.             check_num_bins(int, 100) => OK. Value was 100. 'Checking number of valid bins'
+%%      0 ns    Log    PASSED              TB seq.             check_num_bins(int, 0) => OK. Value was 0. 'Checking number of invalid bins'
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 25.00%
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage(% of goal) => OK, for 25.00%
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 25.00%
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage(% of goal) => OK, for 25.00%
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 3) => OK. Value was 3. 'Checking num_bins_crossed'
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((26, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((27, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((28, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((29, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((30, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((31, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((32, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((33, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((34, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((35, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((36, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((37, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((38, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((39, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((40, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((41, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((42, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((43, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((44, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((45, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((46, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((47, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((48, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((49, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((50, 200, 300))
+%%      
+%%      =======================================================================================================================================================================
+%%      0 ns *** COVERAGE SUMMARY REPORT (VERBOSE): TB seq. ***                                                                                                                
+%%      =======================================================================================================================================================================
+%%      Coverpoint:              Covpt_4    (accumulated over this and 1 previous testcases)
+%%      Coverage (for goal 100): Bins: 50.00%,   Hits: 50.00%  
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                            BINS                            HITS             MIN HITS         HIT COVERAGE             NAME             ILLEGAL/IGNORE                       
+%%                       (1)x(200)x(300)                       1                  1               100.00%              bin_1[1]                 -                              
+%%                       (2)x(200)x(300)                       1                  1               100.00%              bin_1[2]                 -                              
+%%                       (3)x(200)x(300)                       1                  1               100.00%              bin_1[3]                 -                              
+%%                       (4)x(200)x(300)                       1                  1               100.00%              bin_1[4]                 -                              
+%%                       (5)x(200)x(300)                       1                  1               100.00%              bin_1[5]                 -                              
+%%                       (6)x(200)x(300)                       1                  1               100.00%              bin_1[6]                 -                              
+%%                       (7)x(200)x(300)                       1                  1               100.00%              bin_1[7]                 -                              
+%%                       (8)x(200)x(300)                       1                  1               100.00%              bin_1[8]                 -                              
+%%                       (9)x(200)x(300)                       1                  1               100.00%              bin_1[9]                 -                              
+%%                      (10)x(200)x(300)                       1                  1               100.00%              bin_1[10]                -                              
+%%                      (11)x(200)x(300)                       1                  1               100.00%              bin_1[11]                -                              
+%%                      (12)x(200)x(300)                       1                  1               100.00%              bin_1[12]                -                              
+%%                      (13)x(200)x(300)                       1                  1               100.00%              bin_1[13]                -                              
+%%                      (14)x(200)x(300)                       1                  1               100.00%              bin_1[14]                -                              
+%%                      (15)x(200)x(300)                       1                  1               100.00%              bin_1[15]                -                              
+%%                      (16)x(200)x(300)                       1                  1               100.00%              bin_1[16]                -                              
+%%                      (17)x(200)x(300)                       1                  1               100.00%              bin_1[17]                -                              
+%%                      (18)x(200)x(300)                       1                  1               100.00%              bin_1[18]                -                              
+%%                      (19)x(200)x(300)                       1                  1               100.00%              bin_1[19]                -                              
+%%                      (20)x(200)x(300)                       1                  1               100.00%              bin_1[20]                -                              
+%%                      (21)x(200)x(300)                       1                  1               100.00%              bin_1[21]                -                              
+%%                      (22)x(200)x(300)                       1                  1               100.00%              bin_1[22]                -                              
+%%                      (23)x(200)x(300)                       1                  1               100.00%              bin_1[23]                -                              
+%%                      (24)x(200)x(300)                       1                  1               100.00%              bin_1[24]                -                              
+%%                      (25)x(200)x(300)                       1                  1               100.00%              bin_1[25]                -                              
+%%                      (26)x(200)x(300)                       1                  1               100.00%              bin_1[26]                -                              
+%%                      (27)x(200)x(300)                       1                  1               100.00%              bin_1[27]                -                              
+%%                      (28)x(200)x(300)                       1                  1               100.00%              bin_1[28]                -                              
+%%                      (29)x(200)x(300)                       1                  1               100.00%              bin_1[29]                -                              
+%%                      (30)x(200)x(300)                       1                  1               100.00%              bin_1[30]                -                              
+%%                      (31)x(200)x(300)                       1                  1               100.00%              bin_1[31]                -                              
+%%                      (32)x(200)x(300)                       1                  1               100.00%              bin_1[32]                -                              
+%%                      (33)x(200)x(300)                       1                  1               100.00%              bin_1[33]                -                              
+%%                      (34)x(200)x(300)                       1                  1               100.00%              bin_1[34]                -                              
+%%                      (35)x(200)x(300)                       1                  1               100.00%              bin_1[35]                -                              
+%%                      (36)x(200)x(300)                       1                  1               100.00%              bin_1[36]                -                              
+%%                      (37)x(200)x(300)                       1                  1               100.00%              bin_1[37]                -                              
+%%                      (38)x(200)x(300)                       1                  1               100.00%              bin_1[38]                -                              
+%%                      (39)x(200)x(300)                       1                  1               100.00%              bin_1[39]                -                              
+%%                      (40)x(200)x(300)                       1                  1               100.00%              bin_1[40]                -                              
+%%                      (41)x(200)x(300)                       1                  1               100.00%              bin_1[41]                -                              
+%%                      (42)x(200)x(300)                       1                  1               100.00%              bin_1[42]                -                              
+%%                      (43)x(200)x(300)                       1                  1               100.00%              bin_1[43]                -                              
+%%                      (44)x(200)x(300)                       1                  1               100.00%              bin_1[44]                -                              
+%%                      (45)x(200)x(300)                       1                  1               100.00%              bin_1[45]                -                              
+%%                      (46)x(200)x(300)                       1                  1               100.00%              bin_1[46]                -                              
+%%                      (47)x(200)x(300)                       1                  1               100.00%              bin_1[47]                -                              
+%%                      (48)x(200)x(300)                       1                  1               100.00%              bin_1[48]                -                              
+%%                      (49)x(200)x(300)                       1                  1               100.00%              bin_1[49]                -                              
+%%                      (50)x(200)x(300)                       1                  1               100.00%              bin_1[50]                -                              
+%%                      (51)x(200)x(300)                       0                  1                0.00%               bin_1[51]                -                              
+%%                      (52)x(200)x(300)                       0                  1                0.00%               bin_1[52]                -                              
+%%                      (53)x(200)x(300)                       0                  1                0.00%               bin_1[53]                -                              
+%%                      (54)x(200)x(300)                       0                  1                0.00%               bin_1[54]                -                              
+%%                      (55)x(200)x(300)                       0                  1                0.00%               bin_1[55]                -                              
+%%                      (56)x(200)x(300)                       0                  1                0.00%               bin_1[56]                -                              
+%%                      (57)x(200)x(300)                       0                  1                0.00%               bin_1[57]                -                              
+%%                      (58)x(200)x(300)                       0                  1                0.00%               bin_1[58]                -                              
+%%                      (59)x(200)x(300)                       0                  1                0.00%               bin_1[59]                -                              
+%%                      (60)x(200)x(300)                       0                  1                0.00%               bin_1[60]                -                              
+%%                      (61)x(200)x(300)                       0                  1                0.00%               bin_1[61]                -                              
+%%                      (62)x(200)x(300)                       0                  1                0.00%               bin_1[62]                -                              
+%%                      (63)x(200)x(300)                       0                  1                0.00%               bin_1[63]                -                              
+%%                      (64)x(200)x(300)                       0                  1                0.00%               bin_1[64]                -                              
+%%                      (65)x(200)x(300)                       0                  1                0.00%               bin_1[65]                -                              
+%%                      (66)x(200)x(300)                       0                  1                0.00%               bin_1[66]                -                              
+%%                      (67)x(200)x(300)                       0                  1                0.00%               bin_1[67]                -                              
+%%                      (68)x(200)x(300)                       0                  1                0.00%               bin_1[68]                -                              
+%%                      (69)x(200)x(300)                       0                  1                0.00%               bin_1[69]                -                              
+%%                      (70)x(200)x(300)                       0                  1                0.00%               bin_1[70]                -                              
+%%                      (71)x(200)x(300)                       0                  1                0.00%               bin_1[71]                -                              
+%%                      (72)x(200)x(300)                       0                  1                0.00%               bin_1[72]                -                              
+%%                      (73)x(200)x(300)                       0                  1                0.00%               bin_1[73]                -                              
+%%                      (74)x(200)x(300)                       0                  1                0.00%               bin_1[74]                -                              
+%%                      (75)x(200)x(300)                       0                  1                0.00%               bin_1[75]                -                              
+%%                      (76)x(200)x(300)                       0                  1                0.00%               bin_1[76]                -                              
+%%                      (77)x(200)x(300)                       0                  1                0.00%               bin_1[77]                -                              
+%%                      (78)x(200)x(300)                       0                  1                0.00%               bin_1[78]                -                              
+%%                      (79)x(200)x(300)                       0                  1                0.00%               bin_1[79]                -                              
+%%                      (80)x(200)x(300)                       0                  1                0.00%               bin_1[80]                -                              
+%%                      (81)x(200)x(300)                       0                  1                0.00%               bin_1[81]                -                              
+%%                      (82)x(200)x(300)                       0                  1                0.00%               bin_1[82]                -                              
+%%                      (83)x(200)x(300)                       0                  1                0.00%               bin_1[83]                -                              
+%%                      (84)x(200)x(300)                       0                  1                0.00%               bin_1[84]                -                              
+%%                      (85)x(200)x(300)                       0                  1                0.00%               bin_1[85]                -                              
+%%                      (86)x(200)x(300)                       0                  1                0.00%               bin_1[86]                -                              
+%%                      (87)x(200)x(300)                       0                  1                0.00%               bin_1[87]                -                              
+%%                      (88)x(200)x(300)                       0                  1                0.00%               bin_1[88]                -                              
+%%                      (89)x(200)x(300)                       0                  1                0.00%               bin_1[89]                -                              
+%%                      (90)x(200)x(300)                       0                  1                0.00%               bin_1[90]                -                              
+%%                      (91)x(200)x(300)                       0                  1                0.00%               bin_1[91]                -                              
+%%                      (92)x(200)x(300)                       0                  1                0.00%               bin_1[92]                -                              
+%%                      (93)x(200)x(300)                       0                  1                0.00%               bin_1[93]                -                              
+%%                      (94)x(200)x(300)                       0                  1                0.00%               bin_1[94]                -                              
+%%                      (95)x(200)x(300)                       0                  1                0.00%               bin_1[95]                -                              
+%%                      (96)x(200)x(300)                       0                  1                0.00%               bin_1[96]                -                              
+%%                      (97)x(200)x(300)                       0                  1                0.00%               bin_1[97]                -                              
+%%                      (98)x(200)x(300)                       0                  1                0.00%               bin_1[98]                -                              
+%%                      (99)x(200)x(300)                       0                  1                0.00%               bin_1[99]                -                              
+%%                      (100)x(200)x(300)                      0                  1                0.00%              bin_1[100]                -                              
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%      
+%%      =======================================================================================================================================================================
+%%      0 ns *** OVERALL COVERAGE REPORT (VERBOSE): TB seq. ***                                                                                                                
+%%      =======================================================================================================================================================================
+%%      Goal:                    Covpts: 90%
+%%      % of Goal:               Covpts: 0.00%
+%%      % of Goal (uncapped):    Covpts: 0.00%
+%%      Coverage (for goal 100): Covpts: 0.00%,    Bins: 28.09%,   Hits: 59.06%  
+%%      =======================================================================================================================================================================
+%%              COVERPOINT           COVERAGE WEIGHT         COVERED BINS        COVERAGE(BINS|HITS)      GOAL(BINS|HITS)     % OF GOAL(BINS|HITS)       NUM TESTCASES         
+%%             MY_COVERPOINT                5                    0 / 6             0.00% | 60.38%           50% | 200%           0.00% | 30.19%                4               
+%%               MY_CROSS                   8                    0 / 6             0.00% | 60.38%            50% | 75%           0.00% | 80.50%                2               
+%%                Covpt_4                   1                  50 / 100            50.00% | 50.00%          100% | 100%          50.00% | 50.00%               2               
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing load database from a file - coverpoint
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      =======================================================================================================================================================================
+%%      0 ns *** COVERAGE HOLES REPORT: MY_SCOPE ***                                                                                                                           
+%%      =======================================================================================================================================================================
+%%      Coverpoint:              MY_COVERPOINT    (accumulated over this and 4 previous testcases)
+%%      Goal:                    Bins: 50%,      Hits: 200%    
+%%      % of Goal:               Bins: 0.00%,    Hits: 30.19%  
+%%      % of Goal (uncapped):    Bins: 0.00%,    Hits: 30.19%  
+%%      Coverage (for goal 100): Bins: 0.00%,    Hits: 60.38%  
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                            BINS                            HITS             MIN HITS         HIT COVERAGE             NAME             ILLEGAL/IGNORE                       
+%%                            (10)                             0                  1                0.00%                 bin_1                  -                              
+%%                            (20)                             4                  8                50.00%               single                  -                              
+%%                        (30, 35, 39)                         6                  9                66.67%              multiple                 -                              
+%%                         (40 to 44)                          10                 15               66.67%              range[1]                 -                              
+%%                         (45 to 49)                          10                 15               66.67%              range[2]                 -                              
+%%          (50->51->52->53->54->55->56->57->58->59)           2                  5                40.00%             transition                -                              
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_1
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for single
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for multiple
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for range[1]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for range[2]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for transition
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_2
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for ignore_single
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for ignore_range
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for ignore_transition
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_3
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for illegal_single
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for illegal_range
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for illegal_transition
+%%      0 ns    Log    PASSED              TB seq.             check_num_bins(int, 6) => OK. Value was 6. 'Checking number of valid bins'
+%%      0 ns    Log    PASSED              TB seq.             check_num_bins(int, 8) => OK. Value was 8. 'Checking number of invalid bins'
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 0.00%
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage(% of goal) => OK, for 0.00%
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 60.38%
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage(% of goal) => OK, for 30.19%
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 1) => OK. Value was 1. 'Checking num_bins_crossed'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking seed 1'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking seed 2'
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(10)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(10)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(20)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(20)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(20)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(20)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(20)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(20)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(20)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(20)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(20)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(20)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(20)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(20)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(30)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(35)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(39)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(30)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(35)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(39)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(30)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(35)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(39)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(30)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(35)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(39)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(40)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(41)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(42)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(43)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(44)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(40)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(41)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(42)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(43)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(44)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(40)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(41)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(42)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(43)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(44)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(40)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(41)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(42)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(43)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(44)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(45)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(46)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(47)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(48)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(49)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(45)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(46)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(47)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(48)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(49)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(45)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(46)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(47)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(48)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(49)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(45)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(46)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(47)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(48)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(49)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(50)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(51)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(52)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(53)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(54)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(55)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(56)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(57)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(58)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(59)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(50)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(51)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(52)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(53)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(54)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(55)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(56)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(57)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(58)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(59)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(50)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(51)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(52)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(53)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(54)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(55)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(56)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(57)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(58)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(59)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(50)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(51)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(52)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(53)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(54)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(55)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(56)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(57)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(58)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(59)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(50)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(51)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(52)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(53)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(54)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(55)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(56)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(57)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(58)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(59)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(50)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(51)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(52)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(53)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(54)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(55)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(56)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(57)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(58)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(59)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(50)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(51)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(52)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(53)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(54)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(55)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(56)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(57)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(58)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(59)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(50)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(51)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(52)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(53)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(54)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(55)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(56)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(57)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(58)
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(59)
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 100.00% - Coverage completed
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 100.00% - Coverage completed
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage(% of goal) => OK, for 100.00% - Coverage completed
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage(% of goal) => OK, for 100.00% - Coverage completed
+%%      
+%%      =======================================================================================================================================================================
+%%      0 ns *** COVERAGE SUMMARY REPORT (VERBOSE): MY_SCOPE ***                                                                                                               
+%%      =======================================================================================================================================================================
+%%      Coverpoint:              MY_COVERPOINT    (accumulated over this and 4 previous testcases)
+%%      Goal:                    Bins: 50%,      Hits: 200%    
+%%      % of Goal:               Bins: 100.00%,  Hits: 100.00% 
+%%      % of Goal (uncapped):    Bins: 200.00%,  Hits: 100.00% 
+%%      Coverage (for goal 100): Bins: 100.00%,  Hits: 100.00% 
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                            BINS                            HITS             MIN HITS         HIT COVERAGE             NAME             ILLEGAL/IGNORE                       
+%%                            (200)                            0                 N/A                N/A                  bin_3               ILLEGAL                           
+%%                            (210)                            2                 N/A                N/A             illegal_single           ILLEGAL                           
+%%                        (226 to 229)                         8                 N/A                N/A              illegal_range           ILLEGAL                           
+%%               (231->237->237->238->235->231)                2                 N/A                N/A           illegal_transition         ILLEGAL                           
+%%                            (100)                            0                 N/A                N/A                  bin_2                IGNORE                           
+%%                            (110)                            2                 N/A                N/A              ignore_single            IGNORE                           
+%%                        (121 to 125)                         10                N/A                N/A              ignore_range             IGNORE                           
+%%                    (132->134->136->138)                     4                 N/A                N/A            ignore_transition          IGNORE                           
+%%                            (10)                             2                  1               100.00%                bin_1                  -                              
+%%                            (20)                             16                 8               100.00%               single                  -                              
+%%                        (30, 35, 39)                         18                 9               100.00%              multiple                 -                              
+%%                         (40 to 44)                          30                 15              100.00%              range[1]                 -                              
+%%                         (45 to 49)                          30                 15              100.00%              range[2]                 -                              
+%%          (50->51->52->53->54->55->56->57->58->59)           10                 5               100.00%             transition                -                              
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing load database from a file - cross
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      =======================================================================================================================================================================
+%%      0 ns *** COVERAGE HOLES REPORT: NEW_SCOPE ***                                                                                                                          
+%%      =======================================================================================================================================================================
+%%      Coverpoint:              MY_CROSS    (accumulated over this and 2 previous testcases)
+%%      Goal:                    Bins: 50%,      Hits: 75%     
+%%      % of Goal:               Bins: 0.00%,    Hits: 80.50%  
+%%      % of Goal (uncapped):    Bins: 0.00%,    Hits: 80.50%  
+%%      Coverage (for goal 100): Bins: 0.00%,    Hits: 60.38%  
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                            BINS                            HITS             MIN HITS         HIT COVERAGE             NAME             ILLEGAL/IGNORE                       
+%%                         (10)x(1010)                         0                  1                0.00%                 bin_1                  -                              
+%%                         (20)x(1020)                         4                  8                50.00%               single                  -                              
+%%               (30, 35, 39)x(1030, 1035, 1039)               6                  9                66.67%              multiple                 -                              
+%%                  (40 to 44)x(1040 to 1049)                  10                 15               66.67%              range[1]                 -                              
+%%                  (45 to 49)x(1040 to 1049)                  10                 15               66.67%              range[2]                 -                              
+%%                         transition                          2                  5                40.00%             transition                -                              
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      transition: (50->51->52->53->54->55)x(1050->1051->1052->1053->1054->1055)
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for single
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for multiple
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for range[1]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for range[2]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for transition
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_invalid_cross_bin => OK, for bin_2
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_invalid_cross_bin => OK, for ignore_single
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_invalid_cross_bin => OK, for ignore_range
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_invalid_cross_bin => OK, for ignore_transition
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_invalid_cross_bin => OK, for bin_3
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_invalid_cross_bin => OK, for illegal_single
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_invalid_cross_bin => OK, for illegal_range
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_invalid_cross_bin => OK, for illegal_transition
+%%      0 ns    Log    PASSED              TB seq.             check_num_bins(int, 6) => OK. Value was 6. 'Checking number of valid bins'
+%%      0 ns    Log    PASSED              TB seq.             check_num_bins(int, 8) => OK. Value was 8. 'Checking number of invalid bins'
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 0.00%
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage(% of goal) => OK, for 0.00%
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 60.38%
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage(% of goal) => OK, for 80.50%
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 2) => OK. Value was 2. 'Checking num_bins_crossed'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking seed 1'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking seed 2'
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((10, 1010))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((20, 1020))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((20, 1020))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((20, 1020))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((20, 1020))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((30, 1030))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((35, 1035))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((39, 1039))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((40, 1040))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((41, 1041))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((42, 1042))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((43, 1043))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((44, 1044))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((45, 1045))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((46, 1046))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((47, 1047))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((48, 1048))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((49, 1049))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((50, 1050))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((51, 1051))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((52, 1052))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((53, 1053))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((54, 1054))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((55, 1055))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((50, 1050))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((51, 1051))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((52, 1052))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((53, 1053))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((54, 1054))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((55, 1055))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((50, 1050))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((51, 1051))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((52, 1052))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((53, 1053))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((54, 1054))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  NEW_SCOPE           [MY_CROSS] sample_coverage((55, 1055))
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 100.00% - Coverage completed
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 100.00% - Coverage completed
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage(% of goal) => OK, for 100.00% - Coverage completed
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage(% of goal) => OK, for 100.00% - Coverage completed
+%%      
+%%      =======================================================================================================================================================================
+%%      0 ns *** COVERAGE SUMMARY REPORT (VERBOSE): NEW_SCOPE ***                                                                                                              
+%%      =======================================================================================================================================================================
+%%      Coverpoint:              MY_CROSS    (accumulated over this and 2 previous testcases)
+%%      Goal:                    Bins: 50%,      Hits: 75%     
+%%      % of Goal:               Bins: 100.00%,  Hits: 100.00% 
+%%      % of Goal (uncapped):    Bins: 200.00%,  Hits: 133.33% 
+%%      Coverage (for goal 100): Bins: 100.00%,  Hits: 100.00% 
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                            BINS                            HITS             MIN HITS         HIT COVERAGE             NAME             ILLEGAL/IGNORE                       
+%%                        (200)x(1200)                         0                 N/A                N/A                  bin_3               ILLEGAL                           
+%%                        (210)x(1210)                         2                 N/A                N/A             illegal_single           ILLEGAL                           
+%%                 (226 to 229)x(1226 to 1229)                 8                 N/A                N/A              illegal_range           ILLEGAL                           
+%%             (231->237->237)x(1231->1237->1237)              2                 N/A                N/A           illegal_transition         ILLEGAL                           
+%%                        (100)x(1100)                         0                 N/A                N/A                  bin_2                IGNORE                           
+%%                        (110)x(1110)                         2                 N/A                N/A              ignore_single            IGNORE                           
+%%                 (121 to 125)x(1121 to 1125)                 10                N/A                N/A              ignore_range             IGNORE                           
+%%                      ignore_transition                      4                 N/A                N/A            ignore_transition          IGNORE                           
+%%                         (10)x(1010)                         1                  1               100.00%                bin_1                  -                              
+%%                         (20)x(1020)                         8                  8               100.00%               single                  -                              
+%%               (30, 35, 39)x(1030, 1035, 1039)               9                  9               100.00%              multiple                 -                              
+%%                  (40 to 44)x(1040 to 1049)                  15                 15              100.00%              range[1]                 -                              
+%%                  (45 to 49)x(1040 to 1049)                  15                 15              100.00%              range[2]                 -                              
+%%                         transition                          5                  5               100.00%             transition                -                              
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ignore_transition: (132->134->136->138)x(1132->1134->1136->1138)
+%%      transition: (50->51->52->53->54->55)x(1050->1051->1052->1053->1054->1055)
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing load database from a file - max data
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      =======================================================================================================================================================================
+%%      0 ns *** COVERAGE HOLES REPORT: TB seq. ***                                                                                                                            
+%%      =======================================================================================================================================================================
+%%      Coverpoint:              Covpt_4    (accumulated over this and 2 previous testcases)
+%%      Coverage (for goal 100): Bins: 50.00%,   Hits: 50.00%  
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                            BINS                            HITS             MIN HITS         HIT COVERAGE             NAME             ILLEGAL/IGNORE                       
+%%                      (51)x(200)x(300)                       0                  1                0.00%               bin_1[51]                -                              
+%%                      (52)x(200)x(300)                       0                  1                0.00%               bin_1[52]                -                              
+%%                      (53)x(200)x(300)                       0                  1                0.00%               bin_1[53]                -                              
+%%                      (54)x(200)x(300)                       0                  1                0.00%               bin_1[54]                -                              
+%%                      (55)x(200)x(300)                       0                  1                0.00%               bin_1[55]                -                              
+%%                      (56)x(200)x(300)                       0                  1                0.00%               bin_1[56]                -                              
+%%                      (57)x(200)x(300)                       0                  1                0.00%               bin_1[57]                -                              
+%%                      (58)x(200)x(300)                       0                  1                0.00%               bin_1[58]                -                              
+%%                      (59)x(200)x(300)                       0                  1                0.00%               bin_1[59]                -                              
+%%                      (60)x(200)x(300)                       0                  1                0.00%               bin_1[60]                -                              
+%%                      (61)x(200)x(300)                       0                  1                0.00%               bin_1[61]                -                              
+%%                      (62)x(200)x(300)                       0                  1                0.00%               bin_1[62]                -                              
+%%                      (63)x(200)x(300)                       0                  1                0.00%               bin_1[63]                -                              
+%%                      (64)x(200)x(300)                       0                  1                0.00%               bin_1[64]                -                              
+%%                      (65)x(200)x(300)                       0                  1                0.00%               bin_1[65]                -                              
+%%                      (66)x(200)x(300)                       0                  1                0.00%               bin_1[66]                -                              
+%%                      (67)x(200)x(300)                       0                  1                0.00%               bin_1[67]                -                              
+%%                      (68)x(200)x(300)                       0                  1                0.00%               bin_1[68]                -                              
+%%                      (69)x(200)x(300)                       0                  1                0.00%               bin_1[69]                -                              
+%%                      (70)x(200)x(300)                       0                  1                0.00%               bin_1[70]                -                              
+%%                      (71)x(200)x(300)                       0                  1                0.00%               bin_1[71]                -                              
+%%                      (72)x(200)x(300)                       0                  1                0.00%               bin_1[72]                -                              
+%%                      (73)x(200)x(300)                       0                  1                0.00%               bin_1[73]                -                              
+%%                      (74)x(200)x(300)                       0                  1                0.00%               bin_1[74]                -                              
+%%                      (75)x(200)x(300)                       0                  1                0.00%               bin_1[75]                -                              
+%%                      (76)x(200)x(300)                       0                  1                0.00%               bin_1[76]                -                              
+%%                      (77)x(200)x(300)                       0                  1                0.00%               bin_1[77]                -                              
+%%                      (78)x(200)x(300)                       0                  1                0.00%               bin_1[78]                -                              
+%%                      (79)x(200)x(300)                       0                  1                0.00%               bin_1[79]                -                              
+%%                      (80)x(200)x(300)                       0                  1                0.00%               bin_1[80]                -                              
+%%                      (81)x(200)x(300)                       0                  1                0.00%               bin_1[81]                -                              
+%%                      (82)x(200)x(300)                       0                  1                0.00%               bin_1[82]                -                              
+%%                      (83)x(200)x(300)                       0                  1                0.00%               bin_1[83]                -                              
+%%                      (84)x(200)x(300)                       0                  1                0.00%               bin_1[84]                -                              
+%%                      (85)x(200)x(300)                       0                  1                0.00%               bin_1[85]                -                              
+%%                      (86)x(200)x(300)                       0                  1                0.00%               bin_1[86]                -                              
+%%                      (87)x(200)x(300)                       0                  1                0.00%               bin_1[87]                -                              
+%%                      (88)x(200)x(300)                       0                  1                0.00%               bin_1[88]                -                              
+%%                      (89)x(200)x(300)                       0                  1                0.00%               bin_1[89]                -                              
+%%                      (90)x(200)x(300)                       0                  1                0.00%               bin_1[90]                -                              
+%%                      (91)x(200)x(300)                       0                  1                0.00%               bin_1[91]                -                              
+%%                      (92)x(200)x(300)                       0                  1                0.00%               bin_1[92]                -                              
+%%                      (93)x(200)x(300)                       0                  1                0.00%               bin_1[93]                -                              
+%%                      (94)x(200)x(300)                       0                  1                0.00%               bin_1[94]                -                              
+%%                      (95)x(200)x(300)                       0                  1                0.00%               bin_1[95]                -                              
+%%                      (96)x(200)x(300)                       0                  1                0.00%               bin_1[96]                -                              
+%%                      (97)x(200)x(300)                       0                  1                0.00%               bin_1[97]                -                              
+%%                      (98)x(200)x(300)                       0                  1                0.00%               bin_1[98]                -                              
+%%                      (99)x(200)x(300)                       0                  1                0.00%               bin_1[99]                -                              
+%%                      (100)x(200)x(300)                      0                  1                0.00%              bin_1[100]                -                              
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[1]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[2]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[3]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[4]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[5]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[6]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[7]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[8]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[9]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[10]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[11]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[12]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[13]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[14]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[15]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[16]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[17]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[18]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[19]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[20]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[21]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[22]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[23]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[24]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[25]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[26]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[27]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[28]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[29]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[30]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[31]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[32]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[33]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[34]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[35]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[36]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[37]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[38]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[39]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[40]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[41]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[42]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[43]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[44]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[45]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[46]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[47]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[48]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[49]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[50]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[51]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[52]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[53]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[54]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[55]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[56]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[57]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[58]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[59]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[60]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[61]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[62]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[63]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[64]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[65]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[66]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[67]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[68]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[69]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[70]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[71]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[72]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[73]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[74]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[75]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[76]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[77]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[78]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[79]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[80]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[81]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[82]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[83]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[84]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[85]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[86]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[87]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[88]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[89]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[90]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[91]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[92]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[93]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[94]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[95]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[96]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[97]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[98]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[99]
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_cross_bin => OK, for bin_1[100]
+%%      0 ns    Log    PASSED              TB seq.             check_num_bins(int, 100) => OK. Value was 100. 'Checking number of valid bins'
+%%      0 ns    Log    PASSED              TB seq.             check_num_bins(int, 0) => OK. Value was 0. 'Checking number of invalid bins'
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 50.00%
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage(% of goal) => OK, for 50.00%
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 50.00%
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage(% of goal) => OK, for 50.00%
+%%      0 ns    Log    PASSED              TB seq.             check_value(int, 3) => OK. Value was 3. 'Checking num_bins_crossed'
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((51, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((52, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((53, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((54, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((55, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((56, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((57, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((58, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((59, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((60, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((61, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((62, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((63, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((64, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((65, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((66, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((67, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((68, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((69, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((70, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((71, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((72, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((73, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((74, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((75, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((76, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((77, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((78, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((79, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((80, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((81, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((82, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((83, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((84, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((85, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((86, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((87, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((88, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((89, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((90, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((91, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((92, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((93, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((94, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((95, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((96, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((97, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((98, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((99, 200, 300))
+%%      0 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage((100, 200, 300))
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 100.00% - Coverage completed
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 100.00% - Coverage completed
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage(% of goal) => OK, for 100.00% - Coverage completed
+%%      0 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage(% of goal) => OK, for 100.00% - Coverage completed
+%%      
+%%      =======================================================================================================================================================================
+%%      0 ns *** COVERAGE SUMMARY REPORT (VERBOSE): TB seq. ***                                                                                                                
+%%      =======================================================================================================================================================================
+%%      Coverpoint:              Covpt_4    (accumulated over this and 2 previous testcases)
+%%      Coverage (for goal 100): Bins: 100.00%,  Hits: 100.00% 
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                            BINS                            HITS             MIN HITS         HIT COVERAGE             NAME             ILLEGAL/IGNORE                       
+%%                       (1)x(200)x(300)                       1                  1               100.00%              bin_1[1]                 -                              
+%%                       (2)x(200)x(300)                       1                  1               100.00%              bin_1[2]                 -                              
+%%                       (3)x(200)x(300)                       1                  1               100.00%              bin_1[3]                 -                              
+%%                       (4)x(200)x(300)                       1                  1               100.00%              bin_1[4]                 -                              
+%%                       (5)x(200)x(300)                       1                  1               100.00%              bin_1[5]                 -                              
+%%                       (6)x(200)x(300)                       1                  1               100.00%              bin_1[6]                 -                              
+%%                       (7)x(200)x(300)                       1                  1               100.00%              bin_1[7]                 -                              
+%%                       (8)x(200)x(300)                       1                  1               100.00%              bin_1[8]                 -                              
+%%                       (9)x(200)x(300)                       1                  1               100.00%              bin_1[9]                 -                              
+%%                      (10)x(200)x(300)                       1                  1               100.00%              bin_1[10]                -                              
+%%                      (11)x(200)x(300)                       1                  1               100.00%              bin_1[11]                -                              
+%%                      (12)x(200)x(300)                       1                  1               100.00%              bin_1[12]                -                              
+%%                      (13)x(200)x(300)                       1                  1               100.00%              bin_1[13]                -                              
+%%                      (14)x(200)x(300)                       1                  1               100.00%              bin_1[14]                -                              
+%%                      (15)x(200)x(300)                       1                  1               100.00%              bin_1[15]                -                              
+%%                      (16)x(200)x(300)                       1                  1               100.00%              bin_1[16]                -                              
+%%                      (17)x(200)x(300)                       1                  1               100.00%              bin_1[17]                -                              
+%%                      (18)x(200)x(300)                       1                  1               100.00%              bin_1[18]                -                              
+%%                      (19)x(200)x(300)                       1                  1               100.00%              bin_1[19]                -                              
+%%                      (20)x(200)x(300)                       1                  1               100.00%              bin_1[20]                -                              
+%%                      (21)x(200)x(300)                       1                  1               100.00%              bin_1[21]                -                              
+%%                      (22)x(200)x(300)                       1                  1               100.00%              bin_1[22]                -                              
+%%                      (23)x(200)x(300)                       1                  1               100.00%              bin_1[23]                -                              
+%%                      (24)x(200)x(300)                       1                  1               100.00%              bin_1[24]                -                              
+%%                      (25)x(200)x(300)                       1                  1               100.00%              bin_1[25]                -                              
+%%                      (26)x(200)x(300)                       1                  1               100.00%              bin_1[26]                -                              
+%%                      (27)x(200)x(300)                       1                  1               100.00%              bin_1[27]                -                              
+%%                      (28)x(200)x(300)                       1                  1               100.00%              bin_1[28]                -                              
+%%                      (29)x(200)x(300)                       1                  1               100.00%              bin_1[29]                -                              
+%%                      (30)x(200)x(300)                       1                  1               100.00%              bin_1[30]                -                              
+%%                      (31)x(200)x(300)                       1                  1               100.00%              bin_1[31]                -                              
+%%                      (32)x(200)x(300)                       1                  1               100.00%              bin_1[32]                -                              
+%%                      (33)x(200)x(300)                       1                  1               100.00%              bin_1[33]                -                              
+%%                      (34)x(200)x(300)                       1                  1               100.00%              bin_1[34]                -                              
+%%                      (35)x(200)x(300)                       1                  1               100.00%              bin_1[35]                -                              
+%%                      (36)x(200)x(300)                       1                  1               100.00%              bin_1[36]                -                              
+%%                      (37)x(200)x(300)                       1                  1               100.00%              bin_1[37]                -                              
+%%                      (38)x(200)x(300)                       1                  1               100.00%              bin_1[38]                -                              
+%%                      (39)x(200)x(300)                       1                  1               100.00%              bin_1[39]                -                              
+%%                      (40)x(200)x(300)                       1                  1               100.00%              bin_1[40]                -                              
+%%                      (41)x(200)x(300)                       1                  1               100.00%              bin_1[41]                -                              
+%%                      (42)x(200)x(300)                       1                  1               100.00%              bin_1[42]                -                              
+%%                      (43)x(200)x(300)                       1                  1               100.00%              bin_1[43]                -                              
+%%                      (44)x(200)x(300)                       1                  1               100.00%              bin_1[44]                -                              
+%%                      (45)x(200)x(300)                       1                  1               100.00%              bin_1[45]                -                              
+%%                      (46)x(200)x(300)                       1                  1               100.00%              bin_1[46]                -                              
+%%                      (47)x(200)x(300)                       1                  1               100.00%              bin_1[47]                -                              
+%%                      (48)x(200)x(300)                       1                  1               100.00%              bin_1[48]                -                              
+%%                      (49)x(200)x(300)                       1                  1               100.00%              bin_1[49]                -                              
+%%                      (50)x(200)x(300)                       1                  1               100.00%              bin_1[50]                -                              
+%%                      (51)x(200)x(300)                       1                  1               100.00%              bin_1[51]                -                              
+%%                      (52)x(200)x(300)                       1                  1               100.00%              bin_1[52]                -                              
+%%                      (53)x(200)x(300)                       1                  1               100.00%              bin_1[53]                -                              
+%%                      (54)x(200)x(300)                       1                  1               100.00%              bin_1[54]                -                              
+%%                      (55)x(200)x(300)                       1                  1               100.00%              bin_1[55]                -                              
+%%                      (56)x(200)x(300)                       1                  1               100.00%              bin_1[56]                -                              
+%%                      (57)x(200)x(300)                       1                  1               100.00%              bin_1[57]                -                              
+%%                      (58)x(200)x(300)                       1                  1               100.00%              bin_1[58]                -                              
+%%                      (59)x(200)x(300)                       1                  1               100.00%              bin_1[59]                -                              
+%%                      (60)x(200)x(300)                       1                  1               100.00%              bin_1[60]                -                              
+%%                      (61)x(200)x(300)                       1                  1               100.00%              bin_1[61]                -                              
+%%                      (62)x(200)x(300)                       1                  1               100.00%              bin_1[62]                -                              
+%%                      (63)x(200)x(300)                       1                  1               100.00%              bin_1[63]                -                              
+%%                      (64)x(200)x(300)                       1                  1               100.00%              bin_1[64]                -                              
+%%                      (65)x(200)x(300)                       1                  1               100.00%              bin_1[65]                -                              
+%%                      (66)x(200)x(300)                       1                  1               100.00%              bin_1[66]                -                              
+%%                      (67)x(200)x(300)                       1                  1               100.00%              bin_1[67]                -                              
+%%                      (68)x(200)x(300)                       1                  1               100.00%              bin_1[68]                -                              
+%%                      (69)x(200)x(300)                       1                  1               100.00%              bin_1[69]                -                              
+%%                      (70)x(200)x(300)                       1                  1               100.00%              bin_1[70]                -                              
+%%                      (71)x(200)x(300)                       1                  1               100.00%              bin_1[71]                -                              
+%%                      (72)x(200)x(300)                       1                  1               100.00%              bin_1[72]                -                              
+%%                      (73)x(200)x(300)                       1                  1               100.00%              bin_1[73]                -                              
+%%                      (74)x(200)x(300)                       1                  1               100.00%              bin_1[74]                -                              
+%%                      (75)x(200)x(300)                       1                  1               100.00%              bin_1[75]                -                              
+%%                      (76)x(200)x(300)                       1                  1               100.00%              bin_1[76]                -                              
+%%                      (77)x(200)x(300)                       1                  1               100.00%              bin_1[77]                -                              
+%%                      (78)x(200)x(300)                       1                  1               100.00%              bin_1[78]                -                              
+%%                      (79)x(200)x(300)                       1                  1               100.00%              bin_1[79]                -                              
+%%                      (80)x(200)x(300)                       1                  1               100.00%              bin_1[80]                -                              
+%%                      (81)x(200)x(300)                       1                  1               100.00%              bin_1[81]                -                              
+%%                      (82)x(200)x(300)                       1                  1               100.00%              bin_1[82]                -                              
+%%                      (83)x(200)x(300)                       1                  1               100.00%              bin_1[83]                -                              
+%%                      (84)x(200)x(300)                       1                  1               100.00%              bin_1[84]                -                              
+%%                      (85)x(200)x(300)                       1                  1               100.00%              bin_1[85]                -                              
+%%                      (86)x(200)x(300)                       1                  1               100.00%              bin_1[86]                -                              
+%%                      (87)x(200)x(300)                       1                  1               100.00%              bin_1[87]                -                              
+%%                      (88)x(200)x(300)                       1                  1               100.00%              bin_1[88]                -                              
+%%                      (89)x(200)x(300)                       1                  1               100.00%              bin_1[89]                -                              
+%%                      (90)x(200)x(300)                       1                  1               100.00%              bin_1[90]                -                              
+%%                      (91)x(200)x(300)                       1                  1               100.00%              bin_1[91]                -                              
+%%                      (92)x(200)x(300)                       1                  1               100.00%              bin_1[92]                -                              
+%%                      (93)x(200)x(300)                       1                  1               100.00%              bin_1[93]                -                              
+%%                      (94)x(200)x(300)                       1                  1               100.00%              bin_1[94]                -                              
+%%                      (95)x(200)x(300)                       1                  1               100.00%              bin_1[95]                -                              
+%%                      (96)x(200)x(300)                       1                  1               100.00%              bin_1[96]                -                              
+%%                      (97)x(200)x(300)                       1                  1               100.00%              bin_1[97]                -                              
+%%                      (98)x(200)x(300)                       1                  1               100.00%              bin_1[98]                -                              
+%%                      (99)x(200)x(300)                       1                  1               100.00%              bin_1[99]                -                              
+%%                      (100)x(200)x(300)                      1                  1               100.00%             bin_1[100]                -                              
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%      
+%%      =======================================================================================================================================================================
+%%      0 ns *** OVERALL COVERAGE REPORT (VERBOSE): TB seq. ***                                                                                                                
+%%      =======================================================================================================================================================================
+%%      Goal:                    Covpts: 90%
+%%      % of Goal:               Covpts: 55.56%
+%%      % of Goal (uncapped):    Covpts: 55.56%
+%%      Coverage (for goal 100): Covpts: 50.00%,   Bins: 64.04%,   Hits: 79.53%  
+%%      =======================================================================================================================================================================
+%%              COVERPOINT           COVERAGE WEIGHT         COVERED BINS        COVERAGE(BINS|HITS)      GOAL(BINS|HITS)     % OF GOAL(BINS|HITS)       NUM TESTCASES         
+%%             MY_COVERPOINT                5                    0 / 6             0.00% | 60.38%           50% | 200%           0.00% | 30.19%                4               
+%%               MY_CROSS                   8                    0 / 6             0.00% | 60.38%            50% | 75%           0.00% | 80.50%                2               
+%%                Covpt_4                   1                  50 / 100            50.00% | 50.00%          100% | 100%          50.00% | 50.00%               2               
+%%             MY_COVERPOINT                5                    6 / 6            100.00% | 100.00%         50% | 200%          100.00% | 100.00%              5               
+%%               MY_CROSS                   8                    6 / 6            100.00% | 100.00%          50% | 75%          100.00% | 100.00%              3               
+%%                Covpt_4                   1                  100 / 100          100.00% | 100.00%         100% | 100%         100.00% | 100.00%              3               
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%   1000 ns    DONE   PASSED   fc_database_2  Passed: 42  Affirmations Checked: 42
+%%    Expected      Failures: 0  Errors: 0  Warnings: -12  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 0  Warnings: 12  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%%   1000 ns    Log    ID_LOG_HDR          TB seq.             SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

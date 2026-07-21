@@ -1,0 +1,46 @@
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       Verifying check_stable
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%     10 ns    Log    PASSED              TB seq.(uvvm)       check_stable(bool, 9 ns) => OK. Value true was stable for 10 ns. 'Stable boolean OK'
+%%     10 ns    Log    PASSED              TB seq.(uvvm)       check_stable(slv, 9 ns) => OK. Value x"FF" was stable for 10 ns. 'Stable slv OK'
+%%     10 ns    Log    PASSED              TB seq.(uvvm)       check_stable(u, 9 ns) => OK. Value x"FF" was stable for 10 ns. 'Stable unsigned OK'
+%%     10 ns    Log    PASSED              TB seq.(uvvm)       check_stable(s, 9 ns) => OK. Value x"FF" was stable for 10 ns. 'Stable signed OK'
+%%     10 ns    Log    PASSED              TB seq.(uvvm)       check_stable(int, 9 ns) => OK. Value 14 was stable for 10 ns. 'Stable integer OK'
+%%     10 ns    Log    PASSED              TB seq.(uvvm)       check_stable(real, 9 ns) => OK. Value 1337.1400 was stable for 10 ns. 'Stable real OK'
+%%     10 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 9 ns) => OK. Value 1 was stable for 10 ns. 'Stable std_logic OK'
+%%     10 ns    Alert  ERROR               TB seq.(uvvm)       check_stable(bool, 11 ns) => Failed. Value switched from false to true 10 ns ago. Expected stable for 11 ns. 'Stable boolean Fail'
+%%     10 ns    Alert  ERROR               TB seq.(uvvm)       check_stable(slv, 11 ns) => Failed. Value switched from x"00" to x"FF" 10 ns ago. Expected stable for 11 ns. 'Stable slv Fail'
+%%     10 ns    Alert  ERROR               TB seq.(uvvm)       check_stable(u, 11 ns) => Failed. Value switched from x"00" to x"FF" 10 ns ago. Expected stable for 11 ns. 'Stable unsigned Fail'
+%%     10 ns    Alert  ERROR               TB seq.(uvvm)       check_stable(s, 11 ns) => Failed. Value switched from x"00" to x"FF" 10 ns ago. Expected stable for 11 ns. 'Stable signed Fail'
+%%     10 ns    Alert  ERROR               TB seq.(uvvm)       check_stable(int, 11 ns) => Failed. Value switched from 0 to 14 10 ns ago. Expected stable for 11 ns. 'Stable integer Fail'
+%%     10 ns    Alert  ERROR               TB seq.(uvvm)       check_stable(real, 11 ns) => Failed. Value switched from 0.0000 to 1337.1400 10 ns ago. Expected stable for 11 ns. 'Stable real Fail'
+%%     10 ns    Alert  ERROR               TB seq.(uvvm)       check_stable(sl, 11 ns) => Failed. Value switched from 0 to 1 10 ns ago. Expected stable for 11 ns. 'Stable std_logic Fail'
+%%     30 ns    Log    PASSED              TB seq.(uvvm)       check_stable(slv, 20 ns) => OK. Value x"CC" was stable for 20 ns. 'Stable slv OK'
+%%     50 ns    Log    PASSED              TB seq.(uvvm)       check_stable(slv, 30 ns) => OK. Value x"CC" was stable for 40 ns. 'Stable slv OK'
+%%      
+%%      =======================================================================================================================================================================
+%%      *** FINAL SUMMARY OF ALL CHECK COUNTERS ***
+%%      =======================================================================================================================================================================
+%%                CHECK_VALUE           :          0    
+%%                CHECK_VALUE_IN_RANGE  :          0    
+%%                CHECK_STABLE          :          0    
+%%                CHECK_TIME_WINDOW     :          0    
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%   1050 ns    DONE   PASSED   check_stable  Passed: 9  Affirmations Checked: 16
+%%    Expected      Failures: 0  Errors: -7  Warnings: 0  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 7  Warnings: 0  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%%   1050 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

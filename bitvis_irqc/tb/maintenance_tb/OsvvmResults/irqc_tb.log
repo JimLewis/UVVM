@@ -1,0 +1,491 @@
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF GLOBAL CTRL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                                IGNORE    STOP_LIMIT
+%%                NOTE         :  REGARD    integer'high
+%%                TB_NOTE      :  REGARD    integer'high
+%%                WARNING      :  REGARD    integer'high
+%%                TB_WARNING   :  REGARD    integer'high
+%%                MANUAL_CHECK :  REGARD    integer'high
+%%                ERROR        :  REGARD    integer'high
+%%                TB_ERROR     :  REGARD    integer'high
+%%                FAILURE      :  REGARD         1
+%%                TB_FAILURE   :  REGARD         1
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF MSG ID PANEL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                ID                             Status
+%%                ------------------------       ------
+%%                ID_UTIL_BURIED               : DISABLED
+%%                ID_BITVIS_DEBUG              : DISABLED
+%%                ID_UTIL_SETUP                : ENABLED
+%%                ID_LOG_MSG_CTRL              : ENABLED
+%%                ID_ALERT_CTRL                : ENABLED
+%%                ID_FINISH_OR_STOP            : ENABLED
+%%                ID_CLOCK_GEN                 : ENABLED
+%%                ID_GEN_PULSE                 : ENABLED
+%%                ID_BLOCKING                  : ENABLED
+%%                ID_WATCHDOG                  : ENABLED
+%%                ID_RAND_GEN                  : DISABLED
+%%                ID_RAND_CONF                 : DISABLED
+%%                ID_FUNC_COV_BINS             : DISABLED
+%%                ID_FUNC_COV_BINS_INFO        : DISABLED
+%%                ID_FUNC_COV_RAND             : DISABLED
+%%                ID_FUNC_COV_SAMPLE           : DISABLED
+%%                ID_FUNC_COV_CONFIG           : DISABLED
+%%                ID_POS_ACK                   : ENABLED
+%%                ID_UVVM_ASSERTION            : ENABLED
+%%                ID_LOG_HDR                   : ENABLED
+%%                ID_LOG_HDR_LARGE             : ENABLED
+%%                ID_LOG_HDR_XL                : ENABLED
+%%                ID_SEQUENCER                 : ENABLED
+%%                ID_SEQUENCER_SUB             : ENABLED
+%%                ID_BFM                       : ENABLED
+%%                ID_BFM_WAIT                  : ENABLED
+%%                ID_BFM_POLL                  : ENABLED
+%%                ID_BFM_POLL_SUMMARY          : ENABLED
+%%                ID_CHANNEL_BFM               : ENABLED
+%%                ID_TERMINATE_CMD             : ENABLED
+%%                ID_SEGMENT_INITIATE          : ENABLED
+%%                ID_SEGMENT_COMPLETE          : ENABLED
+%%                ID_SEGMENT_HDR               : ENABLED
+%%                ID_SEGMENT_DATA              : ENABLED
+%%                ID_PACKET_INITIATE           : ENABLED
+%%                ID_PACKET_PREAMBLE           : ENABLED
+%%                ID_PACKET_COMPLETE           : ENABLED
+%%                ID_PACKET_HDR                : ENABLED
+%%                ID_PACKET_DATA               : ENABLED
+%%                ID_PACKET_CHECKSUM           : ENABLED
+%%                ID_PACKET_GAP                : ENABLED
+%%                ID_PACKET_PAYLOAD            : ENABLED
+%%                ID_FRAME_INITIATE            : ENABLED
+%%                ID_FRAME_COMPLETE            : ENABLED
+%%                ID_FRAME_HDR                 : ENABLED
+%%                ID_FRAME_DATA                : ENABLED
+%%                ID_COVERAGE_MAKEBIN          : DISABLED
+%%                ID_COVERAGE_ADDBIN           : DISABLED
+%%                ID_COVERAGE_ICOVER           : DISABLED
+%%                ID_COVERAGE_CONFIG           : ENABLED
+%%                ID_COVERAGE_SUMMARY          : ENABLED
+%%                ID_COVERAGE_HOLES            : ENABLED
+%%                ID_UVVM_SEND_CMD             : ENABLED
+%%                ID_UVVM_CMD_ACK              : ENABLED
+%%                ID_UVVM_CMD_RESULT           : ENABLED
+%%                ID_CMD_INTERPRETER           : ENABLED
+%%                ID_CMD_INTERPRETER_WAIT      : ENABLED
+%%                ID_IMMEDIATE_CMD             : ENABLED
+%%                ID_IMMEDIATE_CMD_WAIT        : ENABLED
+%%                ID_CMD_EXECUTOR              : ENABLED
+%%                ID_CMD_EXECUTOR_WAIT         : ENABLED
+%%                ID_CHANNEL_EXECUTOR          : ENABLED
+%%                ID_CHANNEL_EXECUTOR_WAIT     : ENABLED
+%%                ID_NEW_HVVC_CMD_SEQ          : ENABLED
+%%                ID_INSERTED_DELAY            : ENABLED
+%%                ID_OLD_AWAIT_COMPLETION      : ENABLED
+%%                ID_AWAIT_COMPLETION          : ENABLED
+%%                ID_AWAIT_COMPLETION_LIST     : ENABLED
+%%                ID_AWAIT_COMPLETION_WAIT     : ENABLED
+%%                ID_AWAIT_COMPLETION_END      : ENABLED
+%%                ID_AWAIT_UVVM_COMPLETION     : ENABLED
+%%                ID_UVVM_DATA_QUEUE           : ENABLED
+%%                ID_CONSTRUCTOR               : ENABLED
+%%                ID_CONSTRUCTOR_SUB           : ENABLED
+%%                ID_VVC_ACTIVITY              : ENABLED
+%%                ID_MONITOR                   : ENABLED
+%%                ID_MONITOR_ERROR             : ENABLED
+%%                ID_DATA                      : ENABLED
+%%                ID_CTRL                      : ENABLED
+%%                ID_SPEC_COV_INIT             : ENABLED
+%%                ID_SPEC_COV_REQS             : ENABLED
+%%                ID_SPEC_COV                  : ENABLED
+%%                ID_FILE_OPEN_CLOSE           : ENABLED
+%%                ID_FILE_PARSER               : ENABLED
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ALL_MESSAGES).
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Start Simulation of TB for IRQC
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_SEQUENCER_SUB    TB seq.             All inputs set passive
+%%      0 ns    Log    ID_CLOCK_GEN        TB seq.             Starting clock IRQC TB clock
+%%    100 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to 1 for 100000 ps. 'Pulsed reset-signal - active for 10T'
+%%    100 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Must be at least 1 interrupt source'
+%%    100 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'This TB is only checking IRQC with up to 8 interrupt sources'
+%% 
+%% 
+%%    100 ns    Log    ID_LOG_HDR          TB seq.             Check defaults on output ports
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    100 ns    Log    PASSED              TB seq.             check_value(sl, 0) => OK. Value was 0. 'Interrupt to CPU must be default inactive'
+%%    100 ns    Log    PASSED              TB seq.             check_value(slv, x"00") => OK. Value was x"00". 'Register data bus output must be default passive'
+%% 
+%% 
+%%    100 ns    Log    ID_LOG_HDR          TB seq.             Check register defaults and access (write + read)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    100 ns    Log    NO_ID               TB seq.             
+Checking Register defaults
+%%  112.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"00")=> OK, read data = x"00". 'IRR default'
+%%  122.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"1", x"00")=> OK, read data = x"00". 'IER default'
+%%  132.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"4", x"00")=> OK, read data = x"00". 'IPR default'
+%%  142.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"7", x"00")=> OK, read data = x"00". 'IRQ2CPU_ALLOWED default'
+%%  142.5 ns    Log    NO_ID               TB seq.             
+Checking Register Write/Read
+%%  152.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"15") completed. 'IER'
+%%  162.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"1", x"15")=> OK, read data = x"15". 'IER pure readback'
+%%  172.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"2A") completed. 'IER'
+%%  182.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"1", x"2A")=> OK, read data = x"2A". 'IER pure readback'
+%%  192.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"00") completed. 'IER'
+%%  202.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"1", x"00")=> OK, read data = x"00". 'IER pure readback'
+%% 
+%% 
+%%  202.5 ns    Log    ID_LOG_HDR          TB seq.             Check register trigger/clear mechanism
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  212.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"2A") completed. 'ITR : Set interrupts'
+%%  222.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"2A")=> OK, read data = x"2A". 'IRR'
+%%  232.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"15") completed. 'ITR : Set more interrupts'
+%%  242.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"3F")=> OK, read data = x"3F". 'IRR'
+%%  252.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"3", x"31") completed. 'ICR : Clear interrupts'
+%%  262.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"0E")=> OK, read data = x"E". 'IRR'
+%%  272.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"3", x"05") completed. 'ICR : Clear interrupts'
+%%  282.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"0A")=> OK, read data = x"A". 'IRR'
+%%  292.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"15") completed. 'ITR : Set more interrupts'
+%%  302.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"1F")=> OK, read data = x"1F". 'IRR'
+%%  312.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"3", x"1F") completed. 'ICR : Clear interrupts'
+%%  322.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"00")=> OK, read data = x"00". 'IRR'
+%% 
+%% 
+%%  322.5 ns    Log    ID_LOG_HDR          TB seq.             Check interrupt sources, IER, IPR and irq2cpu
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  322.5 ns    Log    NO_ID               TB seq.             
+Checking interrupts and IRR
+%%  332.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"3", x"3F") completed. 'ICR : Clear all interrupts'
+%%    345 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to x"2A" for 1 clk cycles. 'Pulse irq_source 1T'
+%%  362.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"2A")=> OK, read data = x"2A". 'IRR after irq pulses'
+%%    375 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to x"01" for 1 clk cycles. 'Add more interrupts'
+%%  392.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"2B")=> OK, read data = x"2B". 'IRR after irq pulses'
+%%    405 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to x"21" for 1 clk cycles. 'Repeat same interrupts'
+%%  422.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"2B")=> OK, read data = x"2B". 'IRR after irq pulses'
+%%    435 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to x"14" for 1 clk cycles. 'Add remaining interrupts'
+%%  452.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"3F")=> OK, read data = x"3F". 'IRR after irq pulses'
+%%  462.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"3", x"2A") completed. 'ICR : Clear half the interrupts'
+%%    475 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to x"20" for 1 clk cycles. 'Add more interrupts'
+%%  492.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"35")=> OK, read data = x"35". 'IRR after irq pulses'
+%%  502.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"3", x"3F") completed. 'ICR : Clear all interrupts'
+%%  512.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"00")=> OK, read data = x"00". 'IRR after clearing all'
+%%  512.5 ns    Log    NO_ID               TB seq.             
+Checking IER, IPR and irq2cpu
+%%  522.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"3", x"3F") completed. 'ICR : Clear all interrupts'
+%%  532.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"15") completed. 'IER : Enable some interrupts'
+%%  542.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"2A") completed. 'ITR : Trigger non-enable interrupts'
+%%  552.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"4", x"00")=> OK, read data = x"00". 'IPR should not be active'
+%%  562.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"7", x"00")=> OK, read data = x"00". 'IRQ2CPU_ALLOWED should not be active'
+%%  572.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"5", x"01") completed. 'IRQ2CPU_ENA : Enable main interrupt to CPU'
+%%  582.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"7", x"01")=> OK, read data = x"1". 'IRQ2CPU_ALLOWED should now be active'
+%%  582.5 ns    Log    PASSED              TB seq.             check_value(sl, 0) => OK. Value was 0. 'Interrupt to CPU must still be inactive'
+%%  582.5 ns    Log    PASSED              TB seq.             check_stable(sl, 482.5 ns) => OK. Value 0 was stable for 582.5 ns. 'No spikes allowed on irq2cpu'
+%%    595 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to x"01" for 1 clk cycles. 'Add a single enabled interrupt'
+%%    595 ns    Log    PASSED              TB seq.             await_value(sl, 1, 0 ns, 10 ns) => OK. Condition occurred after 0 ns. 'Interrupt expected immediately'
+%%  612.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"2B")=> OK, read data = x"2B". 'IRR should now be active'
+%%  622.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"4", x"01")=> OK, read data = x"1". 'IPR should now be active'
+%%  622.5 ns    Log    NO_ID               TB seq.             
+More details checked in the autonomy section below
+%%  622.5 ns    Log    PASSED              TB seq.             check_value(sl, 1) => OK. Value was 1. 'Interrupt to CPU must still be active'
+%%  622.5 ns    Log    PASSED              TB seq.             check_stable(sl, 27.5 ns) => OK. Value 1 was stable for 32.5 ns. 'No spikes allowed on irq2cpu'
+%% 
+%% 
+%%  622.5 ns    Log    ID_LOG_HDR          TB seq.             Check autonomy for all interrupts
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  632.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"3", x"3F") completed. 'ICR : Clear all interrupts'
+%%  642.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"3F") completed. 'IER : Disable all interrupts'
+%%  652.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"5", x"01") completed. 'IRQ2CPU_ENA : Allow interrupt to CPU'
+%%  652.5 ns    Log    NO_ID               TB seq.              
+%%  652.5 ns    Log    NO_ID               TB seq.             - Checking irq_source(0) and all corresponding functionality
+%%  652.5 ns    Log    NO_ID               TB seq.             - - Check interrupt activation not affected by non related interrupts or registers
+%%  662.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"01") completed. 'IER : Enable selected interrupt'
+%%    675 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to x"3E" for 1 clk cycles. 'Pulse all non-enabled interrupts'
+%%  692.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"FE") completed. 'ITR : Trigger all non-enabled interrupts'
+%%  702.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"3E")=> OK, read data = x"3E". 'IRR not yet triggered'
+%%  712.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"4", x"00")=> OK, read data = x"00". 'IPR not yet triggered'
+%%  712.5 ns    Log    PASSED              TB seq.             check_value(sl, 0) => OK. Value was 0. 'Interrupt to CPU must still be inactive'
+%%  712.5 ns    Log    PASSED              TB seq.             check_stable(sl, 60 ns) => OK. Value 0 was stable for 82.5 ns. 'No spikes allowed on irq2cpu'
+%%    725 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to x"01" for 1 clk cycles. 'Pulse the enabled interrupt'
+%%    725 ns    Log    PASSED              TB seq.             await_value(sl, 1, 0 ns, 10 ns) => OK. Condition occurred after 0 ns. 'Interrupt expected immediately'
+%%  742.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"3F")=> OK, read data = x"3F". 'All IRR triggered'
+%%  752.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"4", x"01")=> OK, read data = x"1". 'IPR triggered for selected'
+%%  752.5 ns    Log    NO_ID               TB seq.             
+- - Check interrupt deactivation not affected by non related interrupts or registers
+%%  762.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"3", x"FE") completed. 'ICR : Clear all non-enabled interrupts'
+%%  772.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"3F") completed. 'IER : Enable all interrupts'
+%%  782.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"01") completed. 'IER : Disable non-selected interrupts'
+%%    795 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to x"3F" for 1 clk cycles. 'Pulse all interrupts'
+%%  812.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"FF") completed. 'ITR : Trigger all interrupts'
+%%  812.5 ns    Log    PASSED              TB seq.             check_stable(sl, 60 ns) => OK. Value 1 was stable for 92.5 ns. 'No spikes allowed on irq2cpu (='1')'
+%%  822.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"FE") completed. 'IER : Enable all interrupts but disable selected'
+%%  822.5 ns    Log    PASSED              TB seq.             check_value(sl, 1) => OK. Value was 1. 'Interrupt to CPU still active'
+%%  832.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"3F")=> OK, read data = x"3F". 'IRR still active for all'
+%%  842.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"3", x"FE") completed. 'ICR : Clear all non-enabled interrupts'
+%%  842.5 ns    Log    PASSED              TB seq.             await_value(sl, 0, 0 ns, 10 ns) => OK. Condition occurred after 0 ns. 'Interrupt deactivation expected immediately'
+%%  852.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"01") completed. 'IER : Re-enable selected interrupt'
+%%  852.5 ns    Log    PASSED              TB seq.             await_value(sl, 1, 0 ns, 10 ns) => OK. Condition occurred after 0 ns. 'Interrupt reactivation expected immediately'
+%%  862.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"4", x"01")=> OK, read data = x"1". 'IPR still active for selected'
+%%  872.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"3", x"01") completed. 'ICR : Clear selected interrupt'
+%%  872.5 ns    Log    PASSED              TB seq.             check_value(sl, 0) => OK. Value was 0. 'Interrupt to CPU must go inactive'
+%%  882.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"00")=> OK, read data = x"00". 'IRR all inactive'
+%%  892.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"4", x"00")=> OK, read data = x"00". 'IPR all inactive'
+%%  902.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"00") completed. 'IER : Disable all interrupts'
+%%  902.5 ns    Log    NO_ID               TB seq.              
+%%  902.5 ns    Log    NO_ID               TB seq.             - Checking irq_source(1) and all corresponding functionality
+%%  902.5 ns    Log    NO_ID               TB seq.             - - Check interrupt activation not affected by non related interrupts or registers
+%%  912.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"02") completed. 'IER : Enable selected interrupt'
+%%    925 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to x"3D" for 1 clk cycles. 'Pulse all non-enabled interrupts'
+%%  942.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"FD") completed. 'ITR : Trigger all non-enabled interrupts'
+%%  952.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"3D")=> OK, read data = x"3D". 'IRR not yet triggered'
+%%  962.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"4", x"00")=> OK, read data = x"00". 'IPR not yet triggered'
+%%  962.5 ns    Log    PASSED              TB seq.             check_value(sl, 0) => OK. Value was 0. 'Interrupt to CPU must still be inactive'
+%%  962.5 ns    Log    PASSED              TB seq.             check_stable(sl, 60 ns) => OK. Value 0 was stable for 92.5 ns. 'No spikes allowed on irq2cpu'
+%%    975 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to x"02" for 1 clk cycles. 'Pulse the enabled interrupt'
+%%    975 ns    Log    PASSED              TB seq.             await_value(sl, 1, 0 ns, 10 ns) => OK. Condition occurred after 0 ns. 'Interrupt expected immediately'
+%%  992.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"3F")=> OK, read data = x"3F". 'All IRR triggered'
+%% 1002.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"4", x"02")=> OK, read data = x"2". 'IPR triggered for selected'
+%% 1002.5 ns    Log    NO_ID               TB seq.             
+- - Check interrupt deactivation not affected by non related interrupts or registers
+%% 1012.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"3", x"FD") completed. 'ICR : Clear all non-enabled interrupts'
+%% 1022.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"3F") completed. 'IER : Enable all interrupts'
+%% 1032.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"02") completed. 'IER : Disable non-selected interrupts'
+%%   1045 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to x"3F" for 1 clk cycles. 'Pulse all interrupts'
+%% 1062.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"FF") completed. 'ITR : Trigger all interrupts'
+%% 1062.5 ns    Log    PASSED              TB seq.             check_stable(sl, 60 ns) => OK. Value 1 was stable for 92.5 ns. 'No spikes allowed on irq2cpu (='1')'
+%% 1072.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"FD") completed. 'IER : Enable all interrupts but disable selected'
+%% 1072.5 ns    Log    PASSED              TB seq.             check_value(sl, 1) => OK. Value was 1. 'Interrupt to CPU still active'
+%% 1082.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"3F")=> OK, read data = x"3F". 'IRR still active for all'
+%% 1092.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"3", x"FD") completed. 'ICR : Clear all non-enabled interrupts'
+%% 1092.5 ns    Log    PASSED              TB seq.             await_value(sl, 0, 0 ns, 10 ns) => OK. Condition occurred after 0 ns. 'Interrupt deactivation expected immediately'
+%% 1102.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"02") completed. 'IER : Re-enable selected interrupt'
+%% 1102.5 ns    Log    PASSED              TB seq.             await_value(sl, 1, 0 ns, 10 ns) => OK. Condition occurred after 0 ns. 'Interrupt reactivation expected immediately'
+%% 1112.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"4", x"02")=> OK, read data = x"2". 'IPR still active for selected'
+%% 1122.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"3", x"02") completed. 'ICR : Clear selected interrupt'
+%% 1122.5 ns    Log    PASSED              TB seq.             check_value(sl, 0) => OK. Value was 0. 'Interrupt to CPU must go inactive'
+%% 1132.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"00")=> OK, read data = x"00". 'IRR all inactive'
+%% 1142.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"4", x"00")=> OK, read data = x"00". 'IPR all inactive'
+%% 1152.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"00") completed. 'IER : Disable all interrupts'
+%% 1152.5 ns    Log    NO_ID               TB seq.              
+%% 1152.5 ns    Log    NO_ID               TB seq.             - Checking irq_source(2) and all corresponding functionality
+%% 1152.5 ns    Log    NO_ID               TB seq.             - - Check interrupt activation not affected by non related interrupts or registers
+%% 1162.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"04") completed. 'IER : Enable selected interrupt'
+%%   1175 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to x"3B" for 1 clk cycles. 'Pulse all non-enabled interrupts'
+%% 1192.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"FB") completed. 'ITR : Trigger all non-enabled interrupts'
+%% 1202.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"3B")=> OK, read data = x"3B". 'IRR not yet triggered'
+%% 1212.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"4", x"00")=> OK, read data = x"00". 'IPR not yet triggered'
+%% 1212.5 ns    Log    PASSED              TB seq.             check_value(sl, 0) => OK. Value was 0. 'Interrupt to CPU must still be inactive'
+%% 1212.5 ns    Log    PASSED              TB seq.             check_stable(sl, 60 ns) => OK. Value 0 was stable for 92.5 ns. 'No spikes allowed on irq2cpu'
+%%   1225 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to x"04" for 1 clk cycles. 'Pulse the enabled interrupt'
+%%   1225 ns    Log    PASSED              TB seq.             await_value(sl, 1, 0 ns, 10 ns) => OK. Condition occurred after 0 ns. 'Interrupt expected immediately'
+%% 1242.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"3F")=> OK, read data = x"3F". 'All IRR triggered'
+%% 1252.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"4", x"04")=> OK, read data = x"4". 'IPR triggered for selected'
+%% 1252.5 ns    Log    NO_ID               TB seq.             
+- - Check interrupt deactivation not affected by non related interrupts or registers
+%% 1262.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"3", x"FB") completed. 'ICR : Clear all non-enabled interrupts'
+%% 1272.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"3F") completed. 'IER : Enable all interrupts'
+%% 1282.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"04") completed. 'IER : Disable non-selected interrupts'
+%%   1295 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to x"3F" for 1 clk cycles. 'Pulse all interrupts'
+%% 1312.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"FF") completed. 'ITR : Trigger all interrupts'
+%% 1312.5 ns    Log    PASSED              TB seq.             check_stable(sl, 60 ns) => OK. Value 1 was stable for 92.5 ns. 'No spikes allowed on irq2cpu (='1')'
+%% 1322.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"FB") completed. 'IER : Enable all interrupts but disable selected'
+%% 1322.5 ns    Log    PASSED              TB seq.             check_value(sl, 1) => OK. Value was 1. 'Interrupt to CPU still active'
+%% 1332.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"3F")=> OK, read data = x"3F". 'IRR still active for all'
+%% 1342.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"3", x"FB") completed. 'ICR : Clear all non-enabled interrupts'
+%% 1342.5 ns    Log    PASSED              TB seq.             await_value(sl, 0, 0 ns, 10 ns) => OK. Condition occurred after 0 ns. 'Interrupt deactivation expected immediately'
+%% 1352.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"04") completed. 'IER : Re-enable selected interrupt'
+%% 1352.5 ns    Log    PASSED              TB seq.             await_value(sl, 1, 0 ns, 10 ns) => OK. Condition occurred after 0 ns. 'Interrupt reactivation expected immediately'
+%% 1362.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"4", x"04")=> OK, read data = x"4". 'IPR still active for selected'
+%% 1372.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"3", x"04") completed. 'ICR : Clear selected interrupt'
+%% 1372.5 ns    Log    PASSED              TB seq.             check_value(sl, 0) => OK. Value was 0. 'Interrupt to CPU must go inactive'
+%% 1382.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"00")=> OK, read data = x"00". 'IRR all inactive'
+%% 1392.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"4", x"00")=> OK, read data = x"00". 'IPR all inactive'
+%% 1402.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"00") completed. 'IER : Disable all interrupts'
+%% 1402.5 ns    Log    NO_ID               TB seq.              
+%% 1402.5 ns    Log    NO_ID               TB seq.             - Checking irq_source(3) and all corresponding functionality
+%% 1402.5 ns    Log    NO_ID               TB seq.             - - Check interrupt activation not affected by non related interrupts or registers
+%% 1412.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"08") completed. 'IER : Enable selected interrupt'
+%%   1425 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to x"37" for 1 clk cycles. 'Pulse all non-enabled interrupts'
+%% 1442.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"F7") completed. 'ITR : Trigger all non-enabled interrupts'
+%% 1452.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"37")=> OK, read data = x"37". 'IRR not yet triggered'
+%% 1462.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"4", x"00")=> OK, read data = x"00". 'IPR not yet triggered'
+%% 1462.5 ns    Log    PASSED              TB seq.             check_value(sl, 0) => OK. Value was 0. 'Interrupt to CPU must still be inactive'
+%% 1462.5 ns    Log    PASSED              TB seq.             check_stable(sl, 60 ns) => OK. Value 0 was stable for 92.5 ns. 'No spikes allowed on irq2cpu'
+%%   1475 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to x"08" for 1 clk cycles. 'Pulse the enabled interrupt'
+%%   1475 ns    Log    PASSED              TB seq.             await_value(sl, 1, 0 ns, 10 ns) => OK. Condition occurred after 0 ns. 'Interrupt expected immediately'
+%% 1492.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"3F")=> OK, read data = x"3F". 'All IRR triggered'
+%% 1502.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"4", x"08")=> OK, read data = x"8". 'IPR triggered for selected'
+%% 1502.5 ns    Log    NO_ID               TB seq.             
+- - Check interrupt deactivation not affected by non related interrupts or registers
+%% 1512.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"3", x"F7") completed. 'ICR : Clear all non-enabled interrupts'
+%% 1522.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"3F") completed. 'IER : Enable all interrupts'
+%% 1532.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"08") completed. 'IER : Disable non-selected interrupts'
+%%   1545 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to x"3F" for 1 clk cycles. 'Pulse all interrupts'
+%% 1562.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"FF") completed. 'ITR : Trigger all interrupts'
+%% 1562.5 ns    Log    PASSED              TB seq.             check_stable(sl, 60 ns) => OK. Value 1 was stable for 92.5 ns. 'No spikes allowed on irq2cpu (='1')'
+%% 1572.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"F7") completed. 'IER : Enable all interrupts but disable selected'
+%% 1572.5 ns    Log    PASSED              TB seq.             check_value(sl, 1) => OK. Value was 1. 'Interrupt to CPU still active'
+%% 1582.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"3F")=> OK, read data = x"3F". 'IRR still active for all'
+%% 1592.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"3", x"F7") completed. 'ICR : Clear all non-enabled interrupts'
+%% 1592.5 ns    Log    PASSED              TB seq.             await_value(sl, 0, 0 ns, 10 ns) => OK. Condition occurred after 0 ns. 'Interrupt deactivation expected immediately'
+%% 1602.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"08") completed. 'IER : Re-enable selected interrupt'
+%% 1602.5 ns    Log    PASSED              TB seq.             await_value(sl, 1, 0 ns, 10 ns) => OK. Condition occurred after 0 ns. 'Interrupt reactivation expected immediately'
+%% 1612.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"4", x"08")=> OK, read data = x"8". 'IPR still active for selected'
+%% 1622.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"3", x"08") completed. 'ICR : Clear selected interrupt'
+%% 1622.5 ns    Log    PASSED              TB seq.             check_value(sl, 0) => OK. Value was 0. 'Interrupt to CPU must go inactive'
+%% 1632.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"00")=> OK, read data = x"00". 'IRR all inactive'
+%% 1642.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"4", x"00")=> OK, read data = x"00". 'IPR all inactive'
+%% 1652.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"00") completed. 'IER : Disable all interrupts'
+%% 1652.5 ns    Log    NO_ID               TB seq.              
+%% 1652.5 ns    Log    NO_ID               TB seq.             - Checking irq_source(4) and all corresponding functionality
+%% 1652.5 ns    Log    NO_ID               TB seq.             - - Check interrupt activation not affected by non related interrupts or registers
+%% 1662.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"10") completed. 'IER : Enable selected interrupt'
+%%   1675 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to x"2F" for 1 clk cycles. 'Pulse all non-enabled interrupts'
+%% 1692.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"EF") completed. 'ITR : Trigger all non-enabled interrupts'
+%% 1702.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"2F")=> OK, read data = x"2F". 'IRR not yet triggered'
+%% 1712.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"4", x"00")=> OK, read data = x"00". 'IPR not yet triggered'
+%% 1712.5 ns    Log    PASSED              TB seq.             check_value(sl, 0) => OK. Value was 0. 'Interrupt to CPU must still be inactive'
+%% 1712.5 ns    Log    PASSED              TB seq.             check_stable(sl, 60 ns) => OK. Value 0 was stable for 92.5 ns. 'No spikes allowed on irq2cpu'
+%%   1725 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to x"10" for 1 clk cycles. 'Pulse the enabled interrupt'
+%%   1725 ns    Log    PASSED              TB seq.             await_value(sl, 1, 0 ns, 10 ns) => OK. Condition occurred after 0 ns. 'Interrupt expected immediately'
+%% 1742.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"3F")=> OK, read data = x"3F". 'All IRR triggered'
+%% 1752.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"4", x"10")=> OK, read data = x"10". 'IPR triggered for selected'
+%% 1752.5 ns    Log    NO_ID               TB seq.             
+- - Check interrupt deactivation not affected by non related interrupts or registers
+%% 1762.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"3", x"EF") completed. 'ICR : Clear all non-enabled interrupts'
+%% 1772.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"3F") completed. 'IER : Enable all interrupts'
+%% 1782.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"10") completed. 'IER : Disable non-selected interrupts'
+%%   1795 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to x"3F" for 1 clk cycles. 'Pulse all interrupts'
+%% 1812.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"FF") completed. 'ITR : Trigger all interrupts'
+%% 1812.5 ns    Log    PASSED              TB seq.             check_stable(sl, 60 ns) => OK. Value 1 was stable for 92.5 ns. 'No spikes allowed on irq2cpu (='1')'
+%% 1822.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"EF") completed. 'IER : Enable all interrupts but disable selected'
+%% 1822.5 ns    Log    PASSED              TB seq.             check_value(sl, 1) => OK. Value was 1. 'Interrupt to CPU still active'
+%% 1832.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"3F")=> OK, read data = x"3F". 'IRR still active for all'
+%% 1842.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"3", x"EF") completed. 'ICR : Clear all non-enabled interrupts'
+%% 1842.5 ns    Log    PASSED              TB seq.             await_value(sl, 0, 0 ns, 10 ns) => OK. Condition occurred after 0 ns. 'Interrupt deactivation expected immediately'
+%% 1852.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"10") completed. 'IER : Re-enable selected interrupt'
+%% 1852.5 ns    Log    PASSED              TB seq.             await_value(sl, 1, 0 ns, 10 ns) => OK. Condition occurred after 0 ns. 'Interrupt reactivation expected immediately'
+%% 1862.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"4", x"10")=> OK, read data = x"10". 'IPR still active for selected'
+%% 1872.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"3", x"10") completed. 'ICR : Clear selected interrupt'
+%% 1872.5 ns    Log    PASSED              TB seq.             check_value(sl, 0) => OK. Value was 0. 'Interrupt to CPU must go inactive'
+%% 1882.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"00")=> OK, read data = x"00". 'IRR all inactive'
+%% 1892.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"4", x"00")=> OK, read data = x"00". 'IPR all inactive'
+%% 1902.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"00") completed. 'IER : Disable all interrupts'
+%% 1902.5 ns    Log    NO_ID               TB seq.              
+%% 1902.5 ns    Log    NO_ID               TB seq.             - Checking irq_source(5) and all corresponding functionality
+%% 1902.5 ns    Log    NO_ID               TB seq.             - - Check interrupt activation not affected by non related interrupts or registers
+%% 1912.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"20") completed. 'IER : Enable selected interrupt'
+%%   1925 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to x"1F" for 1 clk cycles. 'Pulse all non-enabled interrupts'
+%% 1942.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"DF") completed. 'ITR : Trigger all non-enabled interrupts'
+%% 1952.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"1F")=> OK, read data = x"1F". 'IRR not yet triggered'
+%% 1962.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"4", x"00")=> OK, read data = x"00". 'IPR not yet triggered'
+%% 1962.5 ns    Log    PASSED              TB seq.             check_value(sl, 0) => OK. Value was 0. 'Interrupt to CPU must still be inactive'
+%% 1962.5 ns    Log    PASSED              TB seq.             check_stable(sl, 60 ns) => OK. Value 0 was stable for 92.5 ns. 'No spikes allowed on irq2cpu'
+%%   1975 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to x"20" for 1 clk cycles. 'Pulse the enabled interrupt'
+%%   1975 ns    Log    PASSED              TB seq.             await_value(sl, 1, 0 ns, 10 ns) => OK. Condition occurred after 0 ns. 'Interrupt expected immediately'
+%% 1992.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"3F")=> OK, read data = x"3F". 'All IRR triggered'
+%% 2002.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"4", x"20")=> OK, read data = x"20". 'IPR triggered for selected'
+%% 2002.5 ns    Log    NO_ID               TB seq.             
+- - Check interrupt deactivation not affected by non related interrupts or registers
+%% 2012.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"3", x"DF") completed. 'ICR : Clear all non-enabled interrupts'
+%% 2022.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"3F") completed. 'IER : Enable all interrupts'
+%% 2032.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"20") completed. 'IER : Disable non-selected interrupts'
+%%   2045 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to x"3F" for 1 clk cycles. 'Pulse all interrupts'
+%% 2062.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"FF") completed. 'ITR : Trigger all interrupts'
+%% 2062.5 ns    Log    PASSED              TB seq.             check_stable(sl, 60 ns) => OK. Value 1 was stable for 92.5 ns. 'No spikes allowed on irq2cpu (='1')'
+%% 2072.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"DF") completed. 'IER : Enable all interrupts but disable selected'
+%% 2072.5 ns    Log    PASSED              TB seq.             check_value(sl, 1) => OK. Value was 1. 'Interrupt to CPU still active'
+%% 2082.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"3F")=> OK, read data = x"3F". 'IRR still active for all'
+%% 2092.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"3", x"DF") completed. 'ICR : Clear all non-enabled interrupts'
+%% 2092.5 ns    Log    PASSED              TB seq.             await_value(sl, 0, 0 ns, 10 ns) => OK. Condition occurred after 0 ns. 'Interrupt deactivation expected immediately'
+%% 2102.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"20") completed. 'IER : Re-enable selected interrupt'
+%% 2102.5 ns    Log    PASSED              TB seq.             await_value(sl, 1, 0 ns, 10 ns) => OK. Condition occurred after 0 ns. 'Interrupt reactivation expected immediately'
+%% 2112.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"4", x"20")=> OK, read data = x"20". 'IPR still active for selected'
+%% 2122.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"3", x"20") completed. 'ICR : Clear selected interrupt'
+%% 2122.5 ns    Log    PASSED              TB seq.             check_value(sl, 0) => OK. Value was 0. 'Interrupt to CPU must go inactive'
+%% 2132.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"00")=> OK, read data = x"00". 'IRR all inactive'
+%% 2142.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"4", x"00")=> OK, read data = x"00". 'IPR all inactive'
+%% 2152.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"00") completed. 'IER : Disable all interrupts'
+%% 
+%% ============================================================================================================================================================================
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%% 2152.5 ns    DONE   PASSED   irqc_tb  Passed: 57  Affirmations Checked: 57
+%%    Expected      Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% 2152.5 ns    Log    ID_LOG_HDR          TB seq.             Check irq acknowledge and re-enable
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 2152.5 ns    Log    NO_ID               TB seq.             - Activate interrupt
+%% 2162.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"20") completed. 'ICR : Set single upper interrupt'
+%% 2172.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"20") completed. 'IER : Enable single upper interrupts'
+%% 2182.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"5", x"01") completed. 'IRQ2CPU_ENA : Allow interrupt to CPU'
+%% 2182.5 ns    Log    PASSED              TB seq.             await_value(sl, 1, 0 ns, 10 ns) => OK. Condition occurred after 0 ns. 'Interrupt activation expected'
+%% 2182.5 ns    Log    NO_ID               TB seq.             
+- Try potential malfunction
+%% 2192.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"5", x"01") completed. 'IRQ2CPU_ENA : Allow interrupt to CPU again - should not affect anything'
+%% 2202.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"5", x"00") completed. 'IRQ2CPU_ENA : Set to 0 - should not affect anything'
+%% 2212.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"6", x"00") completed. 'IRQ2CPU_DISABLE : Set to 0 - should not affect anything'
+%% 2212.5 ns    Log    PASSED              TB seq.             check_stable(sl, 30 ns) => OK. Value 1 was stable for 42.5 ns. 'No spikes allowed on irq2cpu (='1')'
+%% 2212.5 ns    Log    NO_ID               TB seq.             
+- Acknowledge and deactivate interrupt
+%%   2225 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to 1 for 1 clk cycles. 'Pulse irq2cpu_ack'
+%%   2225 ns    Log    PASSED              TB seq.             await_value(sl, 0, 0 ns, 10 ns) => OK. Condition occurred after 0 ns. 'Interrupt deactivation expected'
+%%   2225 ns    Log    NO_ID               TB seq.             
+- Test for potential malfunction
+%% 2242.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"6", x"01") completed. 'IRQ2CPU_DISABLE : Disable interrupt to CPU again - should not affect anything'
+%% 2252.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"6", x"00") completed. 'IRQ2CPU_DISABLE : Set to 0 - should not affect anything'
+%% 2262.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"5", x"00") completed. 'IRQ2CPU_ENA : Set to 0 - should not affect anything'
+%% 2272.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"FF") completed. 'ICR : Trigger all interrupts'
+%% 2282.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"FF") completed. 'IER : Enable all interrupts'
+%%   2295 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to x"3F" for 1 clk cycles. 'Pulse all interrupts'
+%%   2315 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to 1 for 1 clk cycles. 'Pulse irq2cpu_ack'
+%%   2315 ns    Log    PASSED              TB seq.             check_stable(sl, 90 ns) => OK. Value 0 was stable for 95 ns. 'No spikes allowed on irq2cpu (='0')'
+%%   2315 ns    Log    NO_ID               TB seq.             
+- Re-/de-activation
+%% 2332.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"5", x"01") completed. 'IRQ2CPU_ENA : Reactivate interrupt to CPU'
+%% 2332.5 ns    Log    PASSED              TB seq.             await_value(sl, 1, 0 ns, 10 ns) => OK. Condition occurred after 0 ns. 'Interrupt reactivation expected'
+%% 2342.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"6", x"01") completed. 'IRQ2CPU_DISABLE : Deactivate interrupt to CPU'
+%% 2342.5 ns    Log    PASSED              TB seq.             await_value(sl, 0, 0 ns, 10 ns) => OK. Condition occurred after 0 ns. 'Interrupt deactivation expected'
+%% 2352.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"5", x"01") completed. 'IRQ2CPU_ENA : Reactivate interrupt to CPU'
+%% 2352.5 ns    Log    PASSED              TB seq.             await_value(sl, 1, 0 ns, 10 ns) => OK. Condition occurred after 0 ns. 'Interrupt reactivation expected'
+%% 
+%% 
+%% 2352.5 ns    Log    ID_LOG_HDR          TB seq.             Check Reset
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 2352.5 ns    Log    NO_ID               TB seq.             - Activate all interrupts
+%% 2362.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"FF") completed. 'ICR : Set all interrupts'
+%% 2372.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"1", x"FF") completed. 'IER : Enable all interrupts'
+%% 2382.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"5", x"01") completed. 'IRQ2CPU_ENA : Allow interrupt to CPU'
+%% 2382.5 ns    Log    PASSED              TB seq.             await_value(sl, 1, 0 ns, 10 ns) => OK. Condition occurred after 0 ns. 'Interrupt activation expected'
+%%   2395 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to 1 for 1 clk cycles. 'Pulse reset'
+%%   2395 ns    Log    PASSED              TB seq.             await_value(sl, 0, 0 ns, 10 ns) => OK. Condition occurred after 0 ns. 'Interrupt deactivation'
+%% 2412.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"1", x"00")=> OK, read data = x"00". 'IER all inactive'
+%% 2422.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"00")=> OK, read data = x"00". 'IRR all inactive'
+%% 2432.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"4", x"00")=> OK, read data = x"00". 'IPR all inactive'
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%% 3432.5 ns    DONE   PASSED   irqc_tb  Passed: 66  Affirmations Checked: 66
+%%    Expected      Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% 3432.5 ns    Log    ID_LOG_HDR          TB seq.             SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

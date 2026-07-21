@@ -1,0 +1,66 @@
+%%      0 ns    Log    ID_WATCHDOG         TB seq.             Starting general watchdog: 8.1 us.
+Watchdog A
+%%      0 ns    Log    ID_WATCHDOG         TB seq.             Starting general watchdog: 8.2 us.
+Watchdog B
+%%      0 ns    Log    ID_WATCHDOG         TB seq.             Starting general watchdog: 8.3 us.
+Watchdog C
+%%      0 ns    Log    ID_WATCHDOG         TB seq.             Starting general watchdog: 100 us.
+Watchdog D
+%% 
+%% 
+%%   8000 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       Testing watchdog timer A (8100 ns) - terminate command
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 
+%% 
+%%   8000 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       Testing watchdog timer B (8200 ns) - initial timeout
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   8000 ns    Log    ID_WATCHDOG         TB seq.             Terminating general watchdog. Watchdog A
+%%   8199 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Watchdog B still running
+%%   8200 ns    Alert  ERROR               TB seq.             General watchdog timer ended! Watchdog B
+%% 
+%% 
+%%   8200 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       Testing watchdog timer C (8300 ns) - extend command
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   8200 ns    Log    ID_WATCHDOG         TB seq.             Extending general watchdog by 100 ns.
+Watchdog C
+%%   8399 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Watchdog C still running
+%%   8399 ns    Log    ID_WATCHDOG         TB seq.             Extending general watchdog by default value: 8.3 us.
+Watchdog C
+%%  13699 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Watchdog C still running
+%%  13699 ns    Log    ID_WATCHDOG         TB seq.             Extending general watchdog by 300 ns.
+Watchdog C
+%%  13999 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Watchdog C still running
+%%  13999 ns    Log    ID_WATCHDOG         TB seq.             Extending general watchdog by 300 ns.
+Watchdog C
+%%  14299 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Watchdog C still running
+%%  14299 ns    Log    ID_WATCHDOG         TB seq.             Extending general watchdog by default value: 8.3 us.
+Watchdog C
+%%  19599 ns    Log    ID_WATCHDOG         TB seq.             Reinitializing general watchdog: 101 ns.
+Watchdog C
+%%  19699 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Watchdog C still running
+%%  19699 ns    Log    ID_WATCHDOG         TB seq.             Extending general watchdog by 300 ns.
+Watchdog C
+%%  20000 ns    Alert  ERROR               TB seq.             General watchdog timer ended! Watchdog C
+%% 
+%% 
+%%  20000 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       Testing watchdog timer D (100 us) - reinitialize command
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  20000 ns    Log    ID_WATCHDOG         TB seq.             Reinitializing general watchdog: 100 ns.
+Watchdog D
+%%  20099 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Watchdog D still running
+%%  20100 ns    Alert  ERROR               TB seq.             General watchdog timer ended! Watchdog D
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%  21100 ns    DONE   NOCHECKS   watchdog_timer  Passed: 0
+%%    Expected      Failures: 0  Errors: -3  Warnings: 0  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 3  Warnings: 0  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%%  21100 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

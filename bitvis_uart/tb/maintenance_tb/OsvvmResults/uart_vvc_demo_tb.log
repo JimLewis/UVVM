@@ -1,0 +1,1265 @@
+%%      0 ns    Log    ID_CONSTRUCTOR      SBI_VVC,1           VVC instantiated.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  SBI_VVC,1           Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  SBI_VVC,1           Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR      UART_VVC,1,RX       VVC instantiated for channel RX
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  UART_VVC,1,RX       Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  UART_VVC,1,RX       Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR      UART_VVC,1,TX       VVC instantiated for channel TX
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  UART_VVC,1,TX       Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  UART_VVC,1,TX       Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR      CLOCK_GENERATOR_VVC,1  VVC instantiated.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  CLOCK_GENERATOR_VVC,1  Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  CLOCK_GENERATOR_VVC,1  Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CMD_INTERPRETER  SBI_VVC,1           Interpreter: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  UART_VVC,1,RX       Interpreter: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  UART_VVC,1,TX       Interpreter: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  CLOCK_GENERATOR_VVC,1  Interpreter: Waiting for command
+%%      0 ns    Log    ID_CTRL             SBI_VVC_SB,1        enable() => SB enabled. 'SBI VVC SB Enabled'
+%%      0 ns    Log    ID_CTRL             SBI_VVC_SB,1        config() => config applied to SB.
+%%      0 ns    Log    ID_CTRL             SBI_VVC_SB,1        enable_log_msg() => message id id_data enabled.
+%%      0 ns    Log    ID_CTRL             UART_VVC_SB,1       enable() => SB enabled. 'UART VVC SB Enabled'
+%%      0 ns    Log    ID_CTRL             UART_VVC_SB,1       enable_log_msg() => message id id_data enabled.
+%%      0 ns    Log    ID_CTRL             UART_VVC_SB,1       config() => config applied to SB.
+%%      0 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       start_clock(CLOCK_GENERATOR_VVC,1): 'Start clock generator'. [1]
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  SBI_VVC,1           Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  UART_VVC,1,RX       Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  UART_VVC,1,TX       Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  CLOCK_GENERATOR_VVC,1  Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  CLOCK_GENERATOR_VVC,1  start_clock(CLOCK_GENERATOR_VVC,1). Command received  [1]
+%%      0 ns    Log    ID_CMD_EXECUTOR     CLOCK_GENERATOR_VVC,1  start_clock(CLOCK_GENERATOR_VVC,1) - Will be executed  [1]
+%%      0 ns    Log    ID_UVVM_CMD_ACK     TB seq.(uvvm)       ACK received.   [1]
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF GLOBAL CTRL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                                IGNORE    STOP_LIMIT
+%%                NOTE         :  REGARD    integer'high
+%%                TB_NOTE      :  REGARD    integer'high
+%%                WARNING      :  REGARD    integer'high
+%%                TB_WARNING   :  REGARD    integer'high
+%%                MANUAL_CHECK :  REGARD    integer'high
+%%                ERROR        :  REGARD    integer'high
+%%                TB_ERROR     :  REGARD    integer'high
+%%                FAILURE      :  REGARD         1
+%%                TB_FAILURE   :  REGARD         1
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF MSG ID PANEL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                ID                             Status
+%%                ------------------------       ------
+%%                ID_UTIL_BURIED               : DISABLED
+%%                ID_BITVIS_DEBUG              : DISABLED
+%%                ID_UTIL_SETUP                : ENABLED
+%%                ID_LOG_MSG_CTRL              : ENABLED
+%%                ID_ALERT_CTRL                : ENABLED
+%%                ID_FINISH_OR_STOP            : ENABLED
+%%                ID_CLOCK_GEN                 : ENABLED
+%%                ID_GEN_PULSE                 : ENABLED
+%%                ID_BLOCKING                  : ENABLED
+%%                ID_WATCHDOG                  : ENABLED
+%%                ID_RAND_GEN                  : DISABLED
+%%                ID_RAND_CONF                 : DISABLED
+%%                ID_FUNC_COV_BINS             : DISABLED
+%%                ID_FUNC_COV_BINS_INFO        : DISABLED
+%%                ID_FUNC_COV_RAND             : DISABLED
+%%                ID_FUNC_COV_SAMPLE           : DISABLED
+%%                ID_FUNC_COV_CONFIG           : DISABLED
+%%                ID_POS_ACK                   : ENABLED
+%%                ID_UVVM_ASSERTION            : ENABLED
+%%                ID_LOG_HDR                   : ENABLED
+%%                ID_LOG_HDR_LARGE             : ENABLED
+%%                ID_LOG_HDR_XL                : ENABLED
+%%                ID_SEQUENCER                 : ENABLED
+%%                ID_SEQUENCER_SUB             : ENABLED
+%%                ID_BFM                       : ENABLED
+%%                ID_BFM_WAIT                  : ENABLED
+%%                ID_BFM_POLL                  : ENABLED
+%%                ID_BFM_POLL_SUMMARY          : ENABLED
+%%                ID_CHANNEL_BFM               : ENABLED
+%%                ID_TERMINATE_CMD             : ENABLED
+%%                ID_SEGMENT_INITIATE          : ENABLED
+%%                ID_SEGMENT_COMPLETE          : ENABLED
+%%                ID_SEGMENT_HDR               : ENABLED
+%%                ID_SEGMENT_DATA              : ENABLED
+%%                ID_PACKET_INITIATE           : ENABLED
+%%                ID_PACKET_PREAMBLE           : ENABLED
+%%                ID_PACKET_COMPLETE           : ENABLED
+%%                ID_PACKET_HDR                : ENABLED
+%%                ID_PACKET_DATA               : ENABLED
+%%                ID_PACKET_CHECKSUM           : ENABLED
+%%                ID_PACKET_GAP                : ENABLED
+%%                ID_PACKET_PAYLOAD            : ENABLED
+%%                ID_FRAME_INITIATE            : ENABLED
+%%                ID_FRAME_COMPLETE            : ENABLED
+%%                ID_FRAME_HDR                 : ENABLED
+%%                ID_FRAME_DATA                : ENABLED
+%%                ID_COVERAGE_MAKEBIN          : DISABLED
+%%                ID_COVERAGE_ADDBIN           : DISABLED
+%%                ID_COVERAGE_ICOVER           : DISABLED
+%%                ID_COVERAGE_CONFIG           : ENABLED
+%%                ID_COVERAGE_SUMMARY          : ENABLED
+%%                ID_COVERAGE_HOLES            : ENABLED
+%%                ID_UVVM_SEND_CMD             : ENABLED
+%%                ID_UVVM_CMD_ACK              : ENABLED
+%%                ID_UVVM_CMD_RESULT           : ENABLED
+%%                ID_CMD_INTERPRETER           : ENABLED
+%%                ID_CMD_INTERPRETER_WAIT      : ENABLED
+%%                ID_IMMEDIATE_CMD             : ENABLED
+%%                ID_IMMEDIATE_CMD_WAIT        : ENABLED
+%%                ID_CMD_EXECUTOR              : ENABLED
+%%                ID_CMD_EXECUTOR_WAIT         : ENABLED
+%%                ID_CHANNEL_EXECUTOR          : ENABLED
+%%                ID_CHANNEL_EXECUTOR_WAIT     : ENABLED
+%%                ID_NEW_HVVC_CMD_SEQ          : ENABLED
+%%                ID_INSERTED_DELAY            : ENABLED
+%%                ID_OLD_AWAIT_COMPLETION      : ENABLED
+%%                ID_AWAIT_COMPLETION          : ENABLED
+%%                ID_AWAIT_COMPLETION_LIST     : ENABLED
+%%                ID_AWAIT_COMPLETION_WAIT     : ENABLED
+%%                ID_AWAIT_COMPLETION_END      : ENABLED
+%%                ID_AWAIT_UVVM_COMPLETION     : ENABLED
+%%                ID_UVVM_DATA_QUEUE           : ENABLED
+%%                ID_CONSTRUCTOR               : ENABLED
+%%                ID_CONSTRUCTOR_SUB           : ENABLED
+%%                ID_VVC_ACTIVITY              : ENABLED
+%%                ID_MONITOR                   : ENABLED
+%%                ID_MONITOR_ERROR             : ENABLED
+%%                ID_DATA                      : ENABLED
+%%                ID_CTRL                      : ENABLED
+%%                ID_SPEC_COV_INIT             : ENABLED
+%%                ID_SPEC_COV_REQS             : ENABLED
+%%                ID_SPEC_COV                  : ENABLED
+%%                ID_FILE_OPEN_CLOSE           : ENABLED
+%%                ID_FILE_PARSER               : ENABLED
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ALL_MESSAGES).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_LOG_HDR).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_SEQUENCER).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_UVVM_SEND_CMD).
+%%      0 ns    Log    ID_CMD_INTERPRETER  CLOCK_GENERATOR_VVC,1  Interpreter: Waiting for command
+%%      0 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(SBI_VVC,1, ALL_MESSAGES):. [2]
+%%      0 ns    Log    ID_CMD_INTERPRETER  SBI_VVC,1           disable_log_msg(SBI_VVC,1, ALL_MESSAGES). Command received  [2]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     SBI_VVC,1           disable_log_msg(ALL_MESSAGES). ' [2]'
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  CLOCK_GENERATOR_VVC,1  Executor: Waiting for command
+%%      0 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       enable_log_msg(SBI_VVC,1, ID_BFM):. [3]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     SBI_VVC,1           enable_log_msg(ID_BFM). ' [3]'
+%%      0 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       enable_log_msg(SBI_VVC,1, ID_FINISH_OR_STOP):. [4]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     SBI_VVC,1           enable_log_msg(ID_FINISH_OR_STOP). ' [4]'
+%%      0 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(UART_VVC,1,RX, ALL_MESSAGES):. [5]
+%%      0 ns    Log    ID_CMD_INTERPRETER  UART_VVC,1,RX       disable_log_msg(UART_VVC,1,RX, ALL_MESSAGES). Command received  [5]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     UART_VVC,1,RX       disable_log_msg(ALL_MESSAGES). ' [5]'
+%%      0 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       enable_log_msg(UART_VVC,1,RX, ID_BFM):. [6]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     UART_VVC,1,RX       enable_log_msg(ID_BFM). ' [6]'
+%%      0 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(UART_VVC,1,TX, ALL_MESSAGES):. [7]
+%%      0 ns    Log    ID_CMD_INTERPRETER  UART_VVC,1,TX       disable_log_msg(UART_VVC,1,TX, ALL_MESSAGES). Command received  [7]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     UART_VVC,1,TX       disable_log_msg(ALL_MESSAGES). ' [7]'
+%%      0 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       enable_log_msg(UART_VVC,1,TX, ID_BFM):. [8]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     UART_VVC,1,TX       enable_log_msg(ID_BFM). ' [8]'
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Starting simulation of TB for UART using VVCs
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 
+%% 
+%%    100 ns    Log    ID_LOG_HDR          TB seq.             Configure UART VVC 1
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 
+%% 
+%%    100 ns    Log    ID_LOG_HDR          TB seq.             Check register defaults 
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    100 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"00"): 'RX_DATA default'. [9]
+%%    100 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"3", x"01"): 'TX_READY default'. [10]
+%%    100 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"1", x"00"): 'RX_DATA_VALID default'. [11]
+%%  112.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"00")=> OK, read data = x"00". ' 'RX_DATA default'  [9]'
+%%  122.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"3", x"01")=> OK, read data = x"1". ' 'TX_READY default'  [10]'
+%%  132.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"1", x"00")=> OK, read data = x"00". ' 'RX_DATA_VALID default'  [11]'
+%% 
+%% 
+%%  132.5 ns    Log    ID_LOG_HDR          TB seq.             Check simple transmit
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  132.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_write(SBI_VVC,1, x"2", x"55"): 'TX_DATA'. [13]
+%%  132.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_expect(UART_VVC,1,RX, x"55"): 'Expecting data on UART RX'. [14]
+%%  142.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"55") completed. ' 'TX_DATA'  [13]'
+%%   1840 ns    Log    ID_BFM              UART_VVC,1,RX       uart_expect(x"55")=> OK, received data = x"55" after 1 occurrences and 1707.5 ns. ' 'Expecting data on UART RX'  [14]'
+%% 
+%% 
+%%   2040 ns    Log    ID_LOG_HDR          TB seq.             Check simple receive
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   2040 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"AA"): 'UART TX'. [16]
+%%   3800 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"AA") completed. ' 'UART TX'  [16]'
+%%   4000 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"AA"): 'RX_DATA'. [18]
+%% 4012.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"AA")=> OK, read data = x"AA". ' 'RX_DATA'  [18]'
+%% 
+%% 
+%% 4012.5 ns    Log    ID_LOG_HDR          TB seq.             Check single simultaneous transmit and receive
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 4012.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_write(SBI_VVC,1, x"2", x"B4"): 'TX_DATA'. [20]
+%% 4012.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"87"): 'UART TX'. [21]
+%% 4012.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_expect(UART_VVC,1,RX, x"B4"): 'Expecting data on UART RX'. [22]
+%% 4022.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"2", x"B4") completed. ' 'TX_DATA'  [20]'
+%%   5720 ns    Log    ID_BFM              UART_VVC,1,RX       uart_expect(x"B4")=> OK, received data = x"B4" after 1 occurrences and 1707.5 ns. ' 'Expecting data on UART RX'  [22]'
+%% 5772.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"87") completed. ' 'UART TX'  [21]'
+%% 5972.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"87"): 'RX_DATA'. [24]
+%% 5982.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"87")=> OK, read data = x"87". ' 'RX_DATA'  [24]'
+%% 
+%% 
+%% 5982.5 ns    Log    ID_LOG_HDR          TB seq.             Check multiple simultaneous receive and read
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 5982.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"A1"): 'UART TX'. [26]
+%% 5982.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"A2"): 'UART TX'. [27]
+%% 5982.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"A3"): 'UART TX'. [28]
+%% 7742.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"A1") completed. ' 'UART TX'  [26]'
+%% 9502.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"A2") completed. ' 'UART TX'  [27]'
+%% 11262.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"A3") completed. ' 'UART TX'  [28]'
+%% 11462.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"A1"): 'RX_DATA'. [30]
+%% 11462.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"A2"): 'RX_DATA'. [31]
+%% 11462.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"A3"): 'RX_DATA'. [32]
+%% 11472.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"A1")=> OK, read data = x"A1". ' 'RX_DATA'  [30]'
+%% 11482.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"A2")=> OK, read data = x"A2". ' 'RX_DATA'  [31]'
+%% 11492.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"A3")=> OK, read data = x"A3". ' 'RX_DATA'  [32]'
+%% 
+%% 
+%% 11492.5 ns    Log    ID_LOG_HDR          TB seq.             Skew SBI read over UART receive 
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"81"): 'Set up new data. Now byte # 1'. [34]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"82"): 'Set up new data. Now byte # 2'. [35]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"83"): 'Set up new data. Now byte # 3'. [36]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"84"): 'Set up new data. Now byte # 4'. [37]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"85"): 'Set up new data. Now byte # 5'. [38]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"86"): 'Set up new data. Now byte # 6'. [39]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"87"): 'Set up new data. Now byte # 7'. [40]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"88"): 'Set up new data. Now byte # 8'. [41]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"89"): 'Set up new data. Now byte # 9'. [42]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"8A"): 'Set up new data. Now byte # 10'. [43]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"8B"): 'Set up new data. Now byte # 11'. [44]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"8C"): 'Set up new data. Now byte # 12'. [45]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"8D"): 'Set up new data. Now byte # 13'. [46]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"8E"): 'Set up new data. Now byte # 14'. [47]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"8F"): 'Set up new data. Now byte # 15'. [48]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"90"): 'Set up new data. Now byte # 16'. [49]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"91"): 'Set up new data. Now byte # 17'. [50]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"92"): 'Set up new data. Now byte # 18'. [51]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"93"): 'Set up new data. Now byte # 19'. [52]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"94"): 'Set up new data. Now byte # 20'. [53]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"95"): 'Set up new data. Now byte # 21'. [54]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"96"): 'Set up new data. Now byte # 22'. [55]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"97"): 'Set up new data. Now byte # 23'. [56]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"98"): 'Set up new data. Now byte # 24'. [57]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"99"): 'Set up new data. Now byte # 25'. [58]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"9A"): 'Set up new data. Now byte # 26'. [59]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"9B"): 'Set up new data. Now byte # 27'. [60]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"9C"): 'Set up new data. Now byte # 28'. [61]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"9D"): 'Set up new data. Now byte # 29'. [62]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"9E"): 'Set up new data. Now byte # 30'. [63]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"9F"): 'Set up new data. Now byte # 31'. [64]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"A0"): 'Set up new data. Now byte # 32'. [65]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"A1"): 'Set up new data. Now byte # 33'. [66]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"A2"): 'Set up new data. Now byte # 34'. [67]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"A3"): 'Set up new data. Now byte # 35'. [68]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"A4"): 'Set up new data. Now byte # 36'. [69]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"A5"): 'Set up new data. Now byte # 37'. [70]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"A6"): 'Set up new data. Now byte # 38'. [71]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"A7"): 'Set up new data. Now byte # 39'. [72]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"A8"): 'Set up new data. Now byte # 40'. [73]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"A9"): 'Set up new data. Now byte # 41'. [74]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"AA"): 'Set up new data. Now byte # 42'. [75]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"AB"): 'Set up new data. Now byte # 43'. [76]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"AC"): 'Set up new data. Now byte # 44'. [77]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"AD"): 'Set up new data. Now byte # 45'. [78]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"AE"): 'Set up new data. Now byte # 46'. [79]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"AF"): 'Set up new data. Now byte # 47'. [80]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"B0"): 'Set up new data. Now byte # 48'. [81]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"B1"): 'Set up new data. Now byte # 49'. [82]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"B2"): 'Set up new data. Now byte # 50'. [83]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"B3"): 'Set up new data. Now byte # 51'. [84]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"B4"): 'Set up new data. Now byte # 52'. [85]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"B5"): 'Set up new data. Now byte # 53'. [86]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"B6"): 'Set up new data. Now byte # 54'. [87]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"B7"): 'Set up new data. Now byte # 55'. [88]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"B8"): 'Set up new data. Now byte # 56'. [89]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"B9"): 'Set up new data. Now byte # 57'. [90]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"BA"): 'Set up new data. Now byte # 58'. [91]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"BB"): 'Set up new data. Now byte # 59'. [92]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"BC"): 'Set up new data. Now byte # 60'. [93]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"BD"): 'Set up new data. Now byte # 61'. [94]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"BE"): 'Set up new data. Now byte # 62'. [95]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"BF"): 'Set up new data. Now byte # 63'. [96]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"C0"): 'Set up new data. Now byte # 64'. [97]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"C1"): 'Set up new data. Now byte # 65'. [98]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"C2"): 'Set up new data. Now byte # 66'. [99]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"C3"): 'Set up new data. Now byte # 67'. [100]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"C4"): 'Set up new data. Now byte # 68'. [101]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"C5"): 'Set up new data. Now byte # 69'. [102]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"C6"): 'Set up new data. Now byte # 70'. [103]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"C7"): 'Set up new data. Now byte # 71'. [104]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"C8"): 'Set up new data. Now byte # 72'. [105]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"C9"): 'Set up new data. Now byte # 73'. [106]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"CA"): 'Set up new data. Now byte # 74'. [107]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"CB"): 'Set up new data. Now byte # 75'. [108]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"CC"): 'Set up new data. Now byte # 76'. [109]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"CD"): 'Set up new data. Now byte # 77'. [110]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"CE"): 'Set up new data. Now byte # 78'. [111]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"CF"): 'Set up new data. Now byte # 79'. [112]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"D0"): 'Set up new data. Now byte # 80'. [113]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"D1"): 'Set up new data. Now byte # 81'. [114]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"D2"): 'Set up new data. Now byte # 82'. [115]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"D3"): 'Set up new data. Now byte # 83'. [116]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"D4"): 'Set up new data. Now byte # 84'. [117]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"D5"): 'Set up new data. Now byte # 85'. [118]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"D6"): 'Set up new data. Now byte # 86'. [119]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"D7"): 'Set up new data. Now byte # 87'. [120]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"D8"): 'Set up new data. Now byte # 88'. [121]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"D9"): 'Set up new data. Now byte # 89'. [122]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"DA"): 'Set up new data. Now byte # 90'. [123]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"DB"): 'Set up new data. Now byte # 91'. [124]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"DC"): 'Set up new data. Now byte # 92'. [125]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"DD"): 'Set up new data. Now byte # 93'. [126]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"DE"): 'Set up new data. Now byte # 94'. [127]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"DF"): 'Set up new data. Now byte # 95'. [128]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"E0"): 'Set up new data. Now byte # 96'. [129]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"E1"): 'Set up new data. Now byte # 97'. [130]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"E2"): 'Set up new data. Now byte # 98'. [131]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"E3"): 'Set up new data. Now byte # 99'. [132]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"E4"): 'Set up new data. Now byte # 100'. [133]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"E5"): 'Set up new data. Now byte # 101'. [134]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"E6"): 'Set up new data. Now byte # 102'. [135]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1260000 ps): 'Inserting delay in SBI VVC to wait for first byte to complete'. [136]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [137]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [138]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"81"): 'Reading data number 1'. [139]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [140]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [141]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"82"): 'Reading data number 2'. [142]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [143]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [144]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"83"): 'Reading data number 3'. [145]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [146]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [147]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"84"): 'Reading data number 4'. [148]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [149]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [150]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"85"): 'Reading data number 5'. [151]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [152]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [153]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"86"): 'Reading data number 6'. [154]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [155]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [156]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"87"): 'Reading data number 7'. [157]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [158]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [159]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"88"): 'Reading data number 8'. [160]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [161]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [162]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"89"): 'Reading data number 9'. [163]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [164]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [165]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"8A"): 'Reading data number 10'. [166]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [167]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [168]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"8B"): 'Reading data number 11'. [169]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [170]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [171]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"8C"): 'Reading data number 12'. [172]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [173]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [174]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"8D"): 'Reading data number 13'. [175]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [176]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [177]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"8E"): 'Reading data number 14'. [178]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [179]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [180]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"8F"): 'Reading data number 15'. [181]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [182]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [183]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"90"): 'Reading data number 16'. [184]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [185]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [186]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"91"): 'Reading data number 17'. [187]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [188]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [189]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"92"): 'Reading data number 18'. [190]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [191]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [192]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"93"): 'Reading data number 19'. [193]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [194]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [195]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"94"): 'Reading data number 20'. [196]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [197]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [198]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"95"): 'Reading data number 21'. [199]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [200]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [201]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"96"): 'Reading data number 22'. [202]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [203]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [204]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"97"): 'Reading data number 23'. [205]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [206]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [207]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"98"): 'Reading data number 24'. [208]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [209]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [210]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"99"): 'Reading data number 25'. [211]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [212]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [213]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"9A"): 'Reading data number 26'. [214]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [215]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [216]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"9B"): 'Reading data number 27'. [217]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [218]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [219]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"9C"): 'Reading data number 28'. [220]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [221]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [222]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"9D"): 'Reading data number 29'. [223]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [224]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [225]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"9E"): 'Reading data number 30'. [226]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [227]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [228]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"9F"): 'Reading data number 31'. [229]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [230]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [231]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"A0"): 'Reading data number 32'. [232]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [233]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [234]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"A1"): 'Reading data number 33'. [235]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [236]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [237]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"A2"): 'Reading data number 34'. [238]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [239]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [240]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"A3"): 'Reading data number 35'. [241]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [242]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [243]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"A4"): 'Reading data number 36'. [244]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [245]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [246]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"A5"): 'Reading data number 37'. [247]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [248]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [249]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"A6"): 'Reading data number 38'. [250]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [251]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [252]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"A7"): 'Reading data number 39'. [253]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [254]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [255]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"A8"): 'Reading data number 40'. [256]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [257]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [258]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"A9"): 'Reading data number 41'. [259]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [260]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [261]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"AA"): 'Reading data number 42'. [262]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [263]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [264]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"AB"): 'Reading data number 43'. [265]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [266]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [267]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"AC"): 'Reading data number 44'. [268]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [269]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [270]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"AD"): 'Reading data number 45'. [271]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [272]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [273]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"AE"): 'Reading data number 46'. [274]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [275]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [276]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"AF"): 'Reading data number 47'. [277]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [278]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [279]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"B0"): 'Reading data number 48'. [280]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [281]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [282]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"B1"): 'Reading data number 49'. [283]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [284]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [285]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"B2"): 'Reading data number 50'. [286]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [287]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [288]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"B3"): 'Reading data number 51'. [289]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [290]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [291]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"B4"): 'Reading data number 52'. [292]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [293]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [294]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"B5"): 'Reading data number 53'. [295]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [296]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [297]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"B6"): 'Reading data number 54'. [298]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [299]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [300]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"B7"): 'Reading data number 55'. [301]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [302]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [303]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"B8"): 'Reading data number 56'. [304]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [305]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [306]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"B9"): 'Reading data number 57'. [307]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [308]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [309]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"BA"): 'Reading data number 58'. [310]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [311]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [312]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"BB"): 'Reading data number 59'. [313]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [314]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [315]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"BC"): 'Reading data number 60'. [316]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [317]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [318]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"BD"): 'Reading data number 61'. [319]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [320]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [321]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"BE"): 'Reading data number 62'. [322]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [323]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [324]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"BF"): 'Reading data number 63'. [325]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [326]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [327]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"C0"): 'Reading data number 64'. [328]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [329]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [330]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"C1"): 'Reading data number 65'. [331]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [332]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [333]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"C2"): 'Reading data number 66'. [334]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [335]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [336]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"C3"): 'Reading data number 67'. [337]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [338]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [339]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"C4"): 'Reading data number 68'. [340]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [341]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [342]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"C5"): 'Reading data number 69'. [343]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [344]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [345]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"C6"): 'Reading data number 70'. [346]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [347]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [348]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"C7"): 'Reading data number 71'. [349]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [350]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [351]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"C8"): 'Reading data number 72'. [352]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [353]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [354]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"C9"): 'Reading data number 73'. [355]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [356]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [357]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"CA"): 'Reading data number 74'. [358]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [359]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [360]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"CB"): 'Reading data number 75'. [361]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [362]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [363]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"CC"): 'Reading data number 76'. [364]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [365]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [366]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"CD"): 'Reading data number 77'. [367]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [368]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [369]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"CE"): 'Reading data number 78'. [370]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [371]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [372]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"CF"): 'Reading data number 79'. [373]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [374]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [375]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"D0"): 'Reading data number 80'. [376]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [377]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [378]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"D1"): 'Reading data number 81'. [379]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [380]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [381]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"D2"): 'Reading data number 82'. [382]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [383]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [384]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"D3"): 'Reading data number 83'. [385]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [386]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [387]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"D4"): 'Reading data number 84'. [388]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [389]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [390]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"D5"): 'Reading data number 85'. [391]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [392]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [393]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"D6"): 'Reading data number 86'. [394]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [395]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [396]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"D7"): 'Reading data number 87'. [397]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [398]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [399]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"D8"): 'Reading data number 88'. [400]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [401]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [402]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"D9"): 'Reading data number 89'. [403]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [404]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [405]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"DA"): 'Reading data number 90'. [406]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [407]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [408]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"DB"): 'Reading data number 91'. [409]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [410]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [411]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"DC"): 'Reading data number 92'. [412]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [413]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [414]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"DD"): 'Reading data number 93'. [415]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [416]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [417]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"DE"): 'Reading data number 94'. [418]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [419]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [420]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"DF"): 'Reading data number 95'. [421]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [422]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [423]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"E0"): 'Reading data number 96'. [424]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [425]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [426]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"E1"): 'Reading data number 97'. [427]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [428]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [429]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"E2"): 'Reading data number 98'. [430]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [431]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [432]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"E3"): 'Reading data number 99'. [433]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Delaying for the time of one uart transmission'. [434]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 10000 ps): 'Skewing the SBI read one clock cycle'. [435]
+%% 11492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"E4"): 'Reading data number 100'. [436]
+%% 13252.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"81") completed. ' 'Set up new data. Now byte # 1'  [34]'
+%% 14532.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"81")=> OK, read data = x"81". ' 'Reading data number 1'  [139]'
+%% 15012.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"82") completed. ' 'Set up new data. Now byte # 2'  [35]'
+%% 16312.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"82")=> OK, read data = x"82". ' 'Reading data number 2'  [142]'
+%% 16772.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"83") completed. ' 'Set up new data. Now byte # 3'  [36]'
+%% 18092.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"83")=> OK, read data = x"83". ' 'Reading data number 3'  [145]'
+%% 18532.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"84") completed. ' 'Set up new data. Now byte # 4'  [37]'
+%% 19872.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"84")=> OK, read data = x"84". ' 'Reading data number 4'  [148]'
+%% 20292.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"85") completed. ' 'Set up new data. Now byte # 5'  [38]'
+%% 21652.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"85")=> OK, read data = x"85". ' 'Reading data number 5'  [151]'
+%% 22052.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"86") completed. ' 'Set up new data. Now byte # 6'  [39]'
+%% 23432.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"86")=> OK, read data = x"86". ' 'Reading data number 6'  [154]'
+%% 23812.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"87") completed. ' 'Set up new data. Now byte # 7'  [40]'
+%% 25212.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"87")=> OK, read data = x"87". ' 'Reading data number 7'  [157]'
+%% 25572.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"88") completed. ' 'Set up new data. Now byte # 8'  [41]'
+%% 26992.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"88")=> OK, read data = x"88". ' 'Reading data number 8'  [160]'
+%% 27332.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"89") completed. ' 'Set up new data. Now byte # 9'  [42]'
+%% 28772.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"89")=> OK, read data = x"89". ' 'Reading data number 9'  [163]'
+%% 29092.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"8A") completed. ' 'Set up new data. Now byte # 10'  [43]'
+%% 30552.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"8A")=> OK, read data = x"8A". ' 'Reading data number 10'  [166]'
+%% 30852.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"8B") completed. ' 'Set up new data. Now byte # 11'  [44]'
+%% 32332.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"8B")=> OK, read data = x"8B". ' 'Reading data number 11'  [169]'
+%% 32612.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"8C") completed. ' 'Set up new data. Now byte # 12'  [45]'
+%% 34112.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"8C")=> OK, read data = x"8C". ' 'Reading data number 12'  [172]'
+%% 34372.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"8D") completed. ' 'Set up new data. Now byte # 13'  [46]'
+%% 35892.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"8D")=> OK, read data = x"8D". ' 'Reading data number 13'  [175]'
+%% 36132.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"8E") completed. ' 'Set up new data. Now byte # 14'  [47]'
+%% 37672.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"8E")=> OK, read data = x"8E". ' 'Reading data number 14'  [178]'
+%% 37892.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"8F") completed. ' 'Set up new data. Now byte # 15'  [48]'
+%% 39452.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"8F")=> OK, read data = x"8F". ' 'Reading data number 15'  [181]'
+%% 39652.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"90") completed. ' 'Set up new data. Now byte # 16'  [49]'
+%% 41232.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"90")=> OK, read data = x"90". ' 'Reading data number 16'  [184]'
+%% 41412.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"91") completed. ' 'Set up new data. Now byte # 17'  [50]'
+%% 43012.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"91")=> OK, read data = x"91". ' 'Reading data number 17'  [187]'
+%% 43172.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"92") completed. ' 'Set up new data. Now byte # 18'  [51]'
+%% 44792.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"92")=> OK, read data = x"92". ' 'Reading data number 18'  [190]'
+%% 44932.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"93") completed. ' 'Set up new data. Now byte # 19'  [52]'
+%% 46572.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"93")=> OK, read data = x"93". ' 'Reading data number 19'  [193]'
+%% 46692.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"94") completed. ' 'Set up new data. Now byte # 20'  [53]'
+%% 48352.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"94")=> OK, read data = x"94". ' 'Reading data number 20'  [196]'
+%% 48452.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"95") completed. ' 'Set up new data. Now byte # 21'  [54]'
+%% 50132.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"95")=> OK, read data = x"95". ' 'Reading data number 21'  [199]'
+%% 50212.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"96") completed. ' 'Set up new data. Now byte # 22'  [55]'
+%% 51912.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"96")=> OK, read data = x"96". ' 'Reading data number 22'  [202]'
+%% 51972.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"97") completed. ' 'Set up new data. Now byte # 23'  [56]'
+%% 53692.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"97")=> OK, read data = x"97". ' 'Reading data number 23'  [205]'
+%% 53732.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"98") completed. ' 'Set up new data. Now byte # 24'  [57]'
+%% 55472.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"98")=> OK, read data = x"98". ' 'Reading data number 24'  [208]'
+%% 55492.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"99") completed. ' 'Set up new data. Now byte # 25'  [58]'
+%% 57252.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"9A") completed. ' 'Set up new data. Now byte # 26'  [59]'
+%% 57252.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"99")=> OK, read data = x"99". ' 'Reading data number 25'  [211]'
+%% 59012.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"9B") completed. ' 'Set up new data. Now byte # 27'  [60]'
+%% 59032.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"9A")=> OK, read data = x"9A". ' 'Reading data number 26'  [214]'
+%% 60772.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"9C") completed. ' 'Set up new data. Now byte # 28'  [61]'
+%% 60812.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"9B")=> OK, read data = x"9B". ' 'Reading data number 27'  [217]'
+%% 62532.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"9D") completed. ' 'Set up new data. Now byte # 29'  [62]'
+%% 62592.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"9C")=> OK, read data = x"9C". ' 'Reading data number 28'  [220]'
+%% 64292.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"9E") completed. ' 'Set up new data. Now byte # 30'  [63]'
+%% 64372.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"9D")=> OK, read data = x"9D". ' 'Reading data number 29'  [223]'
+%% 66052.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"9F") completed. ' 'Set up new data. Now byte # 31'  [64]'
+%% 66152.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"9E")=> OK, read data = x"9E". ' 'Reading data number 30'  [226]'
+%% 67812.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"A0") completed. ' 'Set up new data. Now byte # 32'  [65]'
+%% 67932.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"9F")=> OK, read data = x"9F". ' 'Reading data number 31'  [229]'
+%% 69572.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"A1") completed. ' 'Set up new data. Now byte # 33'  [66]'
+%% 69712.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"A0")=> OK, read data = x"A0". ' 'Reading data number 32'  [232]'
+%% 71332.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"A2") completed. ' 'Set up new data. Now byte # 34'  [67]'
+%% 71492.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"A1")=> OK, read data = x"A1". ' 'Reading data number 33'  [235]'
+%% 73092.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"A3") completed. ' 'Set up new data. Now byte # 35'  [68]'
+%% 73272.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"A2")=> OK, read data = x"A2". ' 'Reading data number 34'  [238]'
+%% 74852.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"A4") completed. ' 'Set up new data. Now byte # 36'  [69]'
+%% 75052.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"A3")=> OK, read data = x"A3". ' 'Reading data number 35'  [241]'
+%% 76612.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"A5") completed. ' 'Set up new data. Now byte # 37'  [70]'
+%% 76832.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"A4")=> OK, read data = x"A4". ' 'Reading data number 36'  [244]'
+%% 78372.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"A6") completed. ' 'Set up new data. Now byte # 38'  [71]'
+%% 78612.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"A5")=> OK, read data = x"A5". ' 'Reading data number 37'  [247]'
+%% 80132.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"A7") completed. ' 'Set up new data. Now byte # 39'  [72]'
+%% 80392.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"A6")=> OK, read data = x"A6". ' 'Reading data number 38'  [250]'
+%% 81892.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"A8") completed. ' 'Set up new data. Now byte # 40'  [73]'
+%% 82172.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"A7")=> OK, read data = x"A7". ' 'Reading data number 39'  [253]'
+%% 83652.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"A9") completed. ' 'Set up new data. Now byte # 41'  [74]'
+%% 83952.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"A8")=> OK, read data = x"A8". ' 'Reading data number 40'  [256]'
+%% 85412.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"AA") completed. ' 'Set up new data. Now byte # 42'  [75]'
+%% 85732.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"A9")=> OK, read data = x"A9". ' 'Reading data number 41'  [259]'
+%% 87172.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"AB") completed. ' 'Set up new data. Now byte # 43'  [76]'
+%% 87512.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"AA")=> OK, read data = x"AA". ' 'Reading data number 42'  [262]'
+%% 88932.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"AC") completed. ' 'Set up new data. Now byte # 44'  [77]'
+%% 89292.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"AB")=> OK, read data = x"AB". ' 'Reading data number 43'  [265]'
+%% 90692.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"AD") completed. ' 'Set up new data. Now byte # 45'  [78]'
+%% 91072.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"AC")=> OK, read data = x"AC". ' 'Reading data number 44'  [268]'
+%% 92452.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"AE") completed. ' 'Set up new data. Now byte # 46'  [79]'
+%% 92852.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"AD")=> OK, read data = x"AD". ' 'Reading data number 45'  [271]'
+%% 94212.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"AF") completed. ' 'Set up new data. Now byte # 47'  [80]'
+%% 94632.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"AE")=> OK, read data = x"AE". ' 'Reading data number 46'  [274]'
+%% 95972.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"B0") completed. ' 'Set up new data. Now byte # 48'  [81]'
+%% 96412.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"AF")=> OK, read data = x"AF". ' 'Reading data number 47'  [277]'
+%% 97732.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"B1") completed. ' 'Set up new data. Now byte # 49'  [82]'
+%% 98192.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"B0")=> OK, read data = x"B0". ' 'Reading data number 48'  [280]'
+%% 99492.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"B2") completed. ' 'Set up new data. Now byte # 50'  [83]'
+%% 99972.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"B1")=> OK, read data = x"B1". ' 'Reading data number 49'  [283]'
+%% 101252.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"B3") completed. ' 'Set up new data. Now byte # 51'  [84]'
+%% 101752.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"B2")=> OK, read data = x"B2". ' 'Reading data number 50'  [286]'
+%% 103012.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"B4") completed. ' 'Set up new data. Now byte # 52'  [85]'
+%% 103532.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"B3")=> OK, read data = x"B3". ' 'Reading data number 51'  [289]'
+%% 104772.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"B5") completed. ' 'Set up new data. Now byte # 53'  [86]'
+%% 105312.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"B4")=> OK, read data = x"B4". ' 'Reading data number 52'  [292]'
+%% 106532.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"B6") completed. ' 'Set up new data. Now byte # 54'  [87]'
+%% 107092.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"B5")=> OK, read data = x"B5". ' 'Reading data number 53'  [295]'
+%% 108292.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"B7") completed. ' 'Set up new data. Now byte # 55'  [88]'
+%% 108872.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"B6")=> OK, read data = x"B6". ' 'Reading data number 54'  [298]'
+%% 110052.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"B8") completed. ' 'Set up new data. Now byte # 56'  [89]'
+%% 110652.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"B7")=> OK, read data = x"B7". ' 'Reading data number 55'  [301]'
+%% 111812.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"B9") completed. ' 'Set up new data. Now byte # 57'  [90]'
+%% 112432.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"B8")=> OK, read data = x"B8". ' 'Reading data number 56'  [304]'
+%% 113572.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"BA") completed. ' 'Set up new data. Now byte # 58'  [91]'
+%% 114212.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"B9")=> OK, read data = x"B9". ' 'Reading data number 57'  [307]'
+%% 115332.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"BB") completed. ' 'Set up new data. Now byte # 59'  [92]'
+%% 115992.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"BA")=> OK, read data = x"BA". ' 'Reading data number 58'  [310]'
+%% 117092.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"BC") completed. ' 'Set up new data. Now byte # 60'  [93]'
+%% 117772.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"BB")=> OK, read data = x"BB". ' 'Reading data number 59'  [313]'
+%% 118852.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"BD") completed. ' 'Set up new data. Now byte # 61'  [94]'
+%% 119552.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"BC")=> OK, read data = x"BC". ' 'Reading data number 60'  [316]'
+%% 120612.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"BE") completed. ' 'Set up new data. Now byte # 62'  [95]'
+%% 121332.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"BD")=> OK, read data = x"BD". ' 'Reading data number 61'  [319]'
+%% 122372.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"BF") completed. ' 'Set up new data. Now byte # 63'  [96]'
+%% 123112.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"BE")=> OK, read data = x"BE". ' 'Reading data number 62'  [322]'
+%% 124132.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"C0") completed. ' 'Set up new data. Now byte # 64'  [97]'
+%% 124892.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"BF")=> OK, read data = x"BF". ' 'Reading data number 63'  [325]'
+%% 125892.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"C1") completed. ' 'Set up new data. Now byte # 65'  [98]'
+%% 126672.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"C0")=> OK, read data = x"C0". ' 'Reading data number 64'  [328]'
+%% 127652.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"C2") completed. ' 'Set up new data. Now byte # 66'  [99]'
+%% 128452.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"C1")=> OK, read data = x"C1". ' 'Reading data number 65'  [331]'
+%% 129412.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"C3") completed. ' 'Set up new data. Now byte # 67'  [100]'
+%% 130232.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"C2")=> OK, read data = x"C2". ' 'Reading data number 66'  [334]'
+%% 131172.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"C4") completed. ' 'Set up new data. Now byte # 68'  [101]'
+%% 132012.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"C3")=> OK, read data = x"C3". ' 'Reading data number 67'  [337]'
+%% 132932.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"C5") completed. ' 'Set up new data. Now byte # 69'  [102]'
+%% 133792.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"C4")=> OK, read data = x"C4". ' 'Reading data number 68'  [340]'
+%% 134692.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"C6") completed. ' 'Set up new data. Now byte # 70'  [103]'
+%% 135572.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"C5")=> OK, read data = x"C5". ' 'Reading data number 69'  [343]'
+%% 136452.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"C7") completed. ' 'Set up new data. Now byte # 71'  [104]'
+%% 137352.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"C6")=> OK, read data = x"C6". ' 'Reading data number 70'  [346]'
+%% 138212.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"C8") completed. ' 'Set up new data. Now byte # 72'  [105]'
+%% 139132.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"C7")=> OK, read data = x"C7". ' 'Reading data number 71'  [349]'
+%% 139972.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"C9") completed. ' 'Set up new data. Now byte # 73'  [106]'
+%% 140912.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"C8")=> OK, read data = x"C8". ' 'Reading data number 72'  [352]'
+%% 141732.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"CA") completed. ' 'Set up new data. Now byte # 74'  [107]'
+%% 142692.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"C9")=> OK, read data = x"C9". ' 'Reading data number 73'  [355]'
+%% 143492.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"CB") completed. ' 'Set up new data. Now byte # 75'  [108]'
+%% 144472.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"CA")=> OK, read data = x"CA". ' 'Reading data number 74'  [358]'
+%% 145252.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"CC") completed. ' 'Set up new data. Now byte # 76'  [109]'
+%% 146252.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"CB")=> OK, read data = x"CB". ' 'Reading data number 75'  [361]'
+%% 147012.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"CD") completed. ' 'Set up new data. Now byte # 77'  [110]'
+%% 148032.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"CC")=> OK, read data = x"CC". ' 'Reading data number 76'  [364]'
+%% 148772.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"CE") completed. ' 'Set up new data. Now byte # 78'  [111]'
+%% 149812.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"CD")=> OK, read data = x"CD". ' 'Reading data number 77'  [367]'
+%% 150532.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"CF") completed. ' 'Set up new data. Now byte # 79'  [112]'
+%% 151592.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"CE")=> OK, read data = x"CE". ' 'Reading data number 78'  [370]'
+%% 152292.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"D0") completed. ' 'Set up new data. Now byte # 80'  [113]'
+%% 153372.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"CF")=> OK, read data = x"CF". ' 'Reading data number 79'  [373]'
+%% 154052.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"D1") completed. ' 'Set up new data. Now byte # 81'  [114]'
+%% 155152.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"D0")=> OK, read data = x"D0". ' 'Reading data number 80'  [376]'
+%% 155812.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"D2") completed. ' 'Set up new data. Now byte # 82'  [115]'
+%% 156932.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"D1")=> OK, read data = x"D1". ' 'Reading data number 81'  [379]'
+%% 157572.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"D3") completed. ' 'Set up new data. Now byte # 83'  [116]'
+%% 158712.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"D2")=> OK, read data = x"D2". ' 'Reading data number 82'  [382]'
+%% 159332.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"D4") completed. ' 'Set up new data. Now byte # 84'  [117]'
+%% 160492.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"D3")=> OK, read data = x"D3". ' 'Reading data number 83'  [385]'
+%% 161092.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"D5") completed. ' 'Set up new data. Now byte # 85'  [118]'
+%% 162272.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"D4")=> OK, read data = x"D4". ' 'Reading data number 84'  [388]'
+%% 162852.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"D6") completed. ' 'Set up new data. Now byte # 86'  [119]'
+%% 164052.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"D5")=> OK, read data = x"D5". ' 'Reading data number 85'  [391]'
+%% 164612.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"D7") completed. ' 'Set up new data. Now byte # 87'  [120]'
+%% 165832.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"D6")=> OK, read data = x"D6". ' 'Reading data number 86'  [394]'
+%% 166372.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"D8") completed. ' 'Set up new data. Now byte # 88'  [121]'
+%% 167612.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"D7")=> OK, read data = x"D7". ' 'Reading data number 87'  [397]'
+%% 168132.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"D9") completed. ' 'Set up new data. Now byte # 89'  [122]'
+%% 169392.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"D8")=> OK, read data = x"D8". ' 'Reading data number 88'  [400]'
+%% 169892.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"DA") completed. ' 'Set up new data. Now byte # 90'  [123]'
+%% 171172.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"D9")=> OK, read data = x"D9". ' 'Reading data number 89'  [403]'
+%% 171652.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"DB") completed. ' 'Set up new data. Now byte # 91'  [124]'
+%% 172952.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"DA")=> OK, read data = x"DA". ' 'Reading data number 90'  [406]'
+%% 173412.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"DC") completed. ' 'Set up new data. Now byte # 92'  [125]'
+%% 174732.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"DB")=> OK, read data = x"DB". ' 'Reading data number 91'  [409]'
+%% 175172.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"DD") completed. ' 'Set up new data. Now byte # 93'  [126]'
+%% 176512.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"DC")=> OK, read data = x"DC". ' 'Reading data number 92'  [412]'
+%% 176932.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"DE") completed. ' 'Set up new data. Now byte # 94'  [127]'
+%% 178292.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"DD")=> OK, read data = x"DD". ' 'Reading data number 93'  [415]'
+%% 178692.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"DF") completed. ' 'Set up new data. Now byte # 95'  [128]'
+%% 180072.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"DE")=> OK, read data = x"DE". ' 'Reading data number 94'  [418]'
+%% 180452.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"E0") completed. ' 'Set up new data. Now byte # 96'  [129]'
+%% 181852.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"DF")=> OK, read data = x"DF". ' 'Reading data number 95'  [421]'
+%% 182212.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"E1") completed. ' 'Set up new data. Now byte # 97'  [130]'
+%% 183632.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"E0")=> OK, read data = x"E0". ' 'Reading data number 96'  [424]'
+%% 183972.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"E2") completed. ' 'Set up new data. Now byte # 98'  [131]'
+%% 185412.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"E1")=> OK, read data = x"E1". ' 'Reading data number 97'  [427]'
+%% 185732.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"E3") completed. ' 'Set up new data. Now byte # 99'  [132]'
+%% 187192.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"E2")=> OK, read data = x"E2". ' 'Reading data number 98'  [430]'
+%% 187492.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"E4") completed. ' 'Set up new data. Now byte # 100'  [133]'
+%% 188972.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"E3")=> OK, read data = x"E3". ' 'Reading data number 99'  [433]'
+%% 189252.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"E5") completed. ' 'Set up new data. Now byte # 101'  [134]'
+%% 190752.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"E4")=> OK, read data = x"E4". ' 'Reading data number 100'  [436]'
+%% 191012.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"E6") completed. ' 'Set up new data. Now byte # 102'  [135]'
+%% 191062.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"E5"): 'Reading data number 101'. [438]
+%% 191062.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"E6"): 'Reading data number 102'. [439]
+%% 191072.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"E5")=> OK, read data = x"E5". ' 'Reading data number 101'  [438]'
+%% 191082.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"E6")=> OK, read data = x"E6". ' 'Reading data number 102'  [439]'
+%% 
+%% 
+%% 191082.5 ns    Log    ID_LOG_HDR          TB seq.             Skew SBI read over UART receive with inter-BFM delay functionality
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"81"): 'Set up new data. Now byte # 1'. [441]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"82"): 'Set up new data. Now byte # 2'. [442]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"83"): 'Set up new data. Now byte # 3'. [443]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"84"): 'Set up new data. Now byte # 4'. [444]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"85"): 'Set up new data. Now byte # 5'. [445]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"86"): 'Set up new data. Now byte # 6'. [446]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"87"): 'Set up new data. Now byte # 7'. [447]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"88"): 'Set up new data. Now byte # 8'. [448]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"89"): 'Set up new data. Now byte # 9'. [449]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"8A"): 'Set up new data. Now byte # 10'. [450]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"8B"): 'Set up new data. Now byte # 11'. [451]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"8C"): 'Set up new data. Now byte # 12'. [452]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"8D"): 'Set up new data. Now byte # 13'. [453]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"8E"): 'Set up new data. Now byte # 14'. [454]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"8F"): 'Set up new data. Now byte # 15'. [455]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"90"): 'Set up new data. Now byte # 16'. [456]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"91"): 'Set up new data. Now byte # 17'. [457]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"92"): 'Set up new data. Now byte # 18'. [458]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"93"): 'Set up new data. Now byte # 19'. [459]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"94"): 'Set up new data. Now byte # 20'. [460]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"95"): 'Set up new data. Now byte # 21'. [461]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"96"): 'Set up new data. Now byte # 22'. [462]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"97"): 'Set up new data. Now byte # 23'. [463]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"98"): 'Set up new data. Now byte # 24'. [464]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"99"): 'Set up new data. Now byte # 25'. [465]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"9A"): 'Set up new data. Now byte # 26'. [466]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"9B"): 'Set up new data. Now byte # 27'. [467]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"9C"): 'Set up new data. Now byte # 28'. [468]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"9D"): 'Set up new data. Now byte # 29'. [469]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"9E"): 'Set up new data. Now byte # 30'. [470]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"9F"): 'Set up new data. Now byte # 31'. [471]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"A0"): 'Set up new data. Now byte # 32'. [472]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"A1"): 'Set up new data. Now byte # 33'. [473]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"A2"): 'Set up new data. Now byte # 34'. [474]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"A3"): 'Set up new data. Now byte # 35'. [475]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"A4"): 'Set up new data. Now byte # 36'. [476]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"A5"): 'Set up new data. Now byte # 37'. [477]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"A6"): 'Set up new data. Now byte # 38'. [478]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"A7"): 'Set up new data. Now byte # 39'. [479]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"A8"): 'Set up new data. Now byte # 40'. [480]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"A9"): 'Set up new data. Now byte # 41'. [481]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"AA"): 'Set up new data. Now byte # 42'. [482]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"AB"): 'Set up new data. Now byte # 43'. [483]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"AC"): 'Set up new data. Now byte # 44'. [484]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"AD"): 'Set up new data. Now byte # 45'. [485]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"AE"): 'Set up new data. Now byte # 46'. [486]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"AF"): 'Set up new data. Now byte # 47'. [487]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"B0"): 'Set up new data. Now byte # 48'. [488]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"B1"): 'Set up new data. Now byte # 49'. [489]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"B2"): 'Set up new data. Now byte # 50'. [490]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"B3"): 'Set up new data. Now byte # 51'. [491]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"B4"): 'Set up new data. Now byte # 52'. [492]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"B5"): 'Set up new data. Now byte # 53'. [493]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"B6"): 'Set up new data. Now byte # 54'. [494]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"B7"): 'Set up new data. Now byte # 55'. [495]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"B8"): 'Set up new data. Now byte # 56'. [496]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"B9"): 'Set up new data. Now byte # 57'. [497]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"BA"): 'Set up new data. Now byte # 58'. [498]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"BB"): 'Set up new data. Now byte # 59'. [499]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"BC"): 'Set up new data. Now byte # 60'. [500]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"BD"): 'Set up new data. Now byte # 61'. [501]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"BE"): 'Set up new data. Now byte # 62'. [502]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"BF"): 'Set up new data. Now byte # 63'. [503]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"C0"): 'Set up new data. Now byte # 64'. [504]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"C1"): 'Set up new data. Now byte # 65'. [505]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"C2"): 'Set up new data. Now byte # 66'. [506]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"C3"): 'Set up new data. Now byte # 67'. [507]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"C4"): 'Set up new data. Now byte # 68'. [508]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"C5"): 'Set up new data. Now byte # 69'. [509]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"C6"): 'Set up new data. Now byte # 70'. [510]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"C7"): 'Set up new data. Now byte # 71'. [511]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"C8"): 'Set up new data. Now byte # 72'. [512]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"C9"): 'Set up new data. Now byte # 73'. [513]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"CA"): 'Set up new data. Now byte # 74'. [514]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"CB"): 'Set up new data. Now byte # 75'. [515]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"CC"): 'Set up new data. Now byte # 76'. [516]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"CD"): 'Set up new data. Now byte # 77'. [517]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"CE"): 'Set up new data. Now byte # 78'. [518]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"CF"): 'Set up new data. Now byte # 79'. [519]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"D0"): 'Set up new data. Now byte # 80'. [520]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"D1"): 'Set up new data. Now byte # 81'. [521]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"D2"): 'Set up new data. Now byte # 82'. [522]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"D3"): 'Set up new data. Now byte # 83'. [523]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"D4"): 'Set up new data. Now byte # 84'. [524]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"D5"): 'Set up new data. Now byte # 85'. [525]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"D6"): 'Set up new data. Now byte # 86'. [526]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"D7"): 'Set up new data. Now byte # 87'. [527]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"D8"): 'Set up new data. Now byte # 88'. [528]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"D9"): 'Set up new data. Now byte # 89'. [529]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"DA"): 'Set up new data. Now byte # 90'. [530]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"DB"): 'Set up new data. Now byte # 91'. [531]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"DC"): 'Set up new data. Now byte # 92'. [532]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"DD"): 'Set up new data. Now byte # 93'. [533]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"DE"): 'Set up new data. Now byte # 94'. [534]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"DF"): 'Set up new data. Now byte # 95'. [535]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"E0"): 'Set up new data. Now byte # 96'. [536]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"E1"): 'Set up new data. Now byte # 97'. [537]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"E2"): 'Set up new data. Now byte # 98'. [538]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"E3"): 'Set up new data. Now byte # 99'. [539]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"E4"): 'Set up new data. Now byte # 100'. [540]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"E5"): 'Set up new data. Now byte # 101'. [541]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"E6"): 'Set up new data. Now byte # 102'. [542]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1760000 ps): 'Insert delay in SBI VVC until the first UART transmission has completed'. [543]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1260000 ps): 'Inserting delay in SBI VVC until second UART transmission has almost completed'. [544]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"81"): 'Reading data number 1'. [545]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"82"): 'Reading data number 2'. [546]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"83"): 'Reading data number 3'. [547]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"84"): 'Reading data number 4'. [548]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"85"): 'Reading data number 5'. [549]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"86"): 'Reading data number 6'. [550]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"87"): 'Reading data number 7'. [551]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"88"): 'Reading data number 8'. [552]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"89"): 'Reading data number 9'. [553]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"8A"): 'Reading data number 10'. [554]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"8B"): 'Reading data number 11'. [555]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"8C"): 'Reading data number 12'. [556]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"8D"): 'Reading data number 13'. [557]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"8E"): 'Reading data number 14'. [558]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"8F"): 'Reading data number 15'. [559]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"90"): 'Reading data number 16'. [560]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"91"): 'Reading data number 17'. [561]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"92"): 'Reading data number 18'. [562]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"93"): 'Reading data number 19'. [563]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"94"): 'Reading data number 20'. [564]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"95"): 'Reading data number 21'. [565]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"96"): 'Reading data number 22'. [566]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"97"): 'Reading data number 23'. [567]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"98"): 'Reading data number 24'. [568]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"99"): 'Reading data number 25'. [569]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"9A"): 'Reading data number 26'. [570]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"9B"): 'Reading data number 27'. [571]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"9C"): 'Reading data number 28'. [572]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"9D"): 'Reading data number 29'. [573]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"9E"): 'Reading data number 30'. [574]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"9F"): 'Reading data number 31'. [575]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"A0"): 'Reading data number 32'. [576]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"A1"): 'Reading data number 33'. [577]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"A2"): 'Reading data number 34'. [578]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"A3"): 'Reading data number 35'. [579]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"A4"): 'Reading data number 36'. [580]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"A5"): 'Reading data number 37'. [581]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"A6"): 'Reading data number 38'. [582]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"A7"): 'Reading data number 39'. [583]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"A8"): 'Reading data number 40'. [584]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"A9"): 'Reading data number 41'. [585]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"AA"): 'Reading data number 42'. [586]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"AB"): 'Reading data number 43'. [587]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"AC"): 'Reading data number 44'. [588]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"AD"): 'Reading data number 45'. [589]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"AE"): 'Reading data number 46'. [590]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"AF"): 'Reading data number 47'. [591]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"B0"): 'Reading data number 48'. [592]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"B1"): 'Reading data number 49'. [593]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"B2"): 'Reading data number 50'. [594]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"B3"): 'Reading data number 51'. [595]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"B4"): 'Reading data number 52'. [596]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"B5"): 'Reading data number 53'. [597]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"B6"): 'Reading data number 54'. [598]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"B7"): 'Reading data number 55'. [599]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"B8"): 'Reading data number 56'. [600]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"B9"): 'Reading data number 57'. [601]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"BA"): 'Reading data number 58'. [602]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"BB"): 'Reading data number 59'. [603]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"BC"): 'Reading data number 60'. [604]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"BD"): 'Reading data number 61'. [605]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"BE"): 'Reading data number 62'. [606]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"BF"): 'Reading data number 63'. [607]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"C0"): 'Reading data number 64'. [608]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"C1"): 'Reading data number 65'. [609]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"C2"): 'Reading data number 66'. [610]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"C3"): 'Reading data number 67'. [611]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"C4"): 'Reading data number 68'. [612]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"C5"): 'Reading data number 69'. [613]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"C6"): 'Reading data number 70'. [614]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"C7"): 'Reading data number 71'. [615]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"C8"): 'Reading data number 72'. [616]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"C9"): 'Reading data number 73'. [617]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"CA"): 'Reading data number 74'. [618]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"CB"): 'Reading data number 75'. [619]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"CC"): 'Reading data number 76'. [620]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"CD"): 'Reading data number 77'. [621]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"CE"): 'Reading data number 78'. [622]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"CF"): 'Reading data number 79'. [623]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"D0"): 'Reading data number 80'. [624]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"D1"): 'Reading data number 81'. [625]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"D2"): 'Reading data number 82'. [626]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"D3"): 'Reading data number 83'. [627]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"D4"): 'Reading data number 84'. [628]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"D5"): 'Reading data number 85'. [629]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"D6"): 'Reading data number 86'. [630]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"D7"): 'Reading data number 87'. [631]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"D8"): 'Reading data number 88'. [632]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"D9"): 'Reading data number 89'. [633]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"DA"): 'Reading data number 90'. [634]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"DB"): 'Reading data number 91'. [635]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"DC"): 'Reading data number 92'. [636]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"DD"): 'Reading data number 93'. [637]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"DE"): 'Reading data number 94'. [638]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"DF"): 'Reading data number 95'. [639]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"E0"): 'Reading data number 96'. [640]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"E1"): 'Reading data number 97'. [641]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"E2"): 'Reading data number 98'. [642]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"E3"): 'Reading data number 99'. [643]
+%% 191082.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"E4"): 'Reading data number 100'. [644]
+%% 192842.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"81") completed. ' 'Set up new data. Now byte # 1'  [441]'
+%% 194112.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"81")=> OK, read data = x"81". ' 'Reading data number 1'  [545]'
+%% 194602.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"82") completed. ' 'Set up new data. Now byte # 2'  [442]'
+%% 195882.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"82")=> OK, read data = x"82". ' 'Reading data number 2'  [546]'
+%% 196362.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"83") completed. ' 'Set up new data. Now byte # 3'  [443]'
+%% 197652.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"83")=> OK, read data = x"83". ' 'Reading data number 3'  [547]'
+%% 198122.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"84") completed. ' 'Set up new data. Now byte # 4'  [444]'
+%% 199422.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"84")=> OK, read data = x"84". ' 'Reading data number 4'  [548]'
+%% 199882.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"85") completed. ' 'Set up new data. Now byte # 5'  [445]'
+%% 201192.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"85")=> OK, read data = x"85". ' 'Reading data number 5'  [549]'
+%% 201642.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"86") completed. ' 'Set up new data. Now byte # 6'  [446]'
+%% 202962.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"86")=> OK, read data = x"86". ' 'Reading data number 6'  [550]'
+%% 203402.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"87") completed. ' 'Set up new data. Now byte # 7'  [447]'
+%% 204732.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"87")=> OK, read data = x"87". ' 'Reading data number 7'  [551]'
+%% 205162.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"88") completed. ' 'Set up new data. Now byte # 8'  [448]'
+%% 206502.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"88")=> OK, read data = x"88". ' 'Reading data number 8'  [552]'
+%% 206922.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"89") completed. ' 'Set up new data. Now byte # 9'  [449]'
+%% 208272.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"89")=> OK, read data = x"89". ' 'Reading data number 9'  [553]'
+%% 208682.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"8A") completed. ' 'Set up new data. Now byte # 10'  [450]'
+%% 210042.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"8A")=> OK, read data = x"8A". ' 'Reading data number 10'  [554]'
+%% 210442.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"8B") completed. ' 'Set up new data. Now byte # 11'  [451]'
+%% 211812.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"8B")=> OK, read data = x"8B". ' 'Reading data number 11'  [555]'
+%% 212202.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"8C") completed. ' 'Set up new data. Now byte # 12'  [452]'
+%% 213582.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"8C")=> OK, read data = x"8C". ' 'Reading data number 12'  [556]'
+%% 213962.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"8D") completed. ' 'Set up new data. Now byte # 13'  [453]'
+%% 215352.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"8D")=> OK, read data = x"8D". ' 'Reading data number 13'  [557]'
+%% 215722.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"8E") completed. ' 'Set up new data. Now byte # 14'  [454]'
+%% 217122.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"8E")=> OK, read data = x"8E". ' 'Reading data number 14'  [558]'
+%% 217482.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"8F") completed. ' 'Set up new data. Now byte # 15'  [455]'
+%% 218892.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"8F")=> OK, read data = x"8F". ' 'Reading data number 15'  [559]'
+%% 219242.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"90") completed. ' 'Set up new data. Now byte # 16'  [456]'
+%% 220662.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"90")=> OK, read data = x"90". ' 'Reading data number 16'  [560]'
+%% 221002.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"91") completed. ' 'Set up new data. Now byte # 17'  [457]'
+%% 222432.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"91")=> OK, read data = x"91". ' 'Reading data number 17'  [561]'
+%% 222762.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"92") completed. ' 'Set up new data. Now byte # 18'  [458]'
+%% 224202.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"92")=> OK, read data = x"92". ' 'Reading data number 18'  [562]'
+%% 224522.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"93") completed. ' 'Set up new data. Now byte # 19'  [459]'
+%% 225972.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"93")=> OK, read data = x"93". ' 'Reading data number 19'  [563]'
+%% 226282.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"94") completed. ' 'Set up new data. Now byte # 20'  [460]'
+%% 227742.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"94")=> OK, read data = x"94". ' 'Reading data number 20'  [564]'
+%% 228042.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"95") completed. ' 'Set up new data. Now byte # 21'  [461]'
+%% 229512.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"95")=> OK, read data = x"95". ' 'Reading data number 21'  [565]'
+%% 229802.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"96") completed. ' 'Set up new data. Now byte # 22'  [462]'
+%% 231282.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"96")=> OK, read data = x"96". ' 'Reading data number 22'  [566]'
+%% 231562.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"97") completed. ' 'Set up new data. Now byte # 23'  [463]'
+%% 233052.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"97")=> OK, read data = x"97". ' 'Reading data number 23'  [567]'
+%% 233322.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"98") completed. ' 'Set up new data. Now byte # 24'  [464]'
+%% 234822.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"98")=> OK, read data = x"98". ' 'Reading data number 24'  [568]'
+%% 235082.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"99") completed. ' 'Set up new data. Now byte # 25'  [465]'
+%% 236592.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"99")=> OK, read data = x"99". ' 'Reading data number 25'  [569]'
+%% 236842.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"9A") completed. ' 'Set up new data. Now byte # 26'  [466]'
+%% 238362.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"9A")=> OK, read data = x"9A". ' 'Reading data number 26'  [570]'
+%% 238602.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"9B") completed. ' 'Set up new data. Now byte # 27'  [467]'
+%% 240132.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"9B")=> OK, read data = x"9B". ' 'Reading data number 27'  [571]'
+%% 240362.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"9C") completed. ' 'Set up new data. Now byte # 28'  [468]'
+%% 241902.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"9C")=> OK, read data = x"9C". ' 'Reading data number 28'  [572]'
+%% 242122.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"9D") completed. ' 'Set up new data. Now byte # 29'  [469]'
+%% 243672.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"9D")=> OK, read data = x"9D". ' 'Reading data number 29'  [573]'
+%% 243882.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"9E") completed. ' 'Set up new data. Now byte # 30'  [470]'
+%% 245442.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"9E")=> OK, read data = x"9E". ' 'Reading data number 30'  [574]'
+%% 245642.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"9F") completed. ' 'Set up new data. Now byte # 31'  [471]'
+%% 247212.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"9F")=> OK, read data = x"9F". ' 'Reading data number 31'  [575]'
+%% 247402.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"A0") completed. ' 'Set up new data. Now byte # 32'  [472]'
+%% 248982.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"A0")=> OK, read data = x"A0". ' 'Reading data number 32'  [576]'
+%% 249162.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"A1") completed. ' 'Set up new data. Now byte # 33'  [473]'
+%% 250752.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"A1")=> OK, read data = x"A1". ' 'Reading data number 33'  [577]'
+%% 250922.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"A2") completed. ' 'Set up new data. Now byte # 34'  [474]'
+%% 252522.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"A2")=> OK, read data = x"A2". ' 'Reading data number 34'  [578]'
+%% 252682.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"A3") completed. ' 'Set up new data. Now byte # 35'  [475]'
+%% 254292.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"A3")=> OK, read data = x"A3". ' 'Reading data number 35'  [579]'
+%% 254442.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"A4") completed. ' 'Set up new data. Now byte # 36'  [476]'
+%% 256062.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"A4")=> OK, read data = x"A4". ' 'Reading data number 36'  [580]'
+%% 256202.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"A5") completed. ' 'Set up new data. Now byte # 37'  [477]'
+%% 257832.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"A5")=> OK, read data = x"A5". ' 'Reading data number 37'  [581]'
+%% 257962.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"A6") completed. ' 'Set up new data. Now byte # 38'  [478]'
+%% 259602.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"A6")=> OK, read data = x"A6". ' 'Reading data number 38'  [582]'
+%% 259722.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"A7") completed. ' 'Set up new data. Now byte # 39'  [479]'
+%% 261372.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"A7")=> OK, read data = x"A7". ' 'Reading data number 39'  [583]'
+%% 261482.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"A8") completed. ' 'Set up new data. Now byte # 40'  [480]'
+%% 263142.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"A8")=> OK, read data = x"A8". ' 'Reading data number 40'  [584]'
+%% 263242.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"A9") completed. ' 'Set up new data. Now byte # 41'  [481]'
+%% 264912.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"A9")=> OK, read data = x"A9". ' 'Reading data number 41'  [585]'
+%% 265002.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"AA") completed. ' 'Set up new data. Now byte # 42'  [482]'
+%% 266682.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"AA")=> OK, read data = x"AA". ' 'Reading data number 42'  [586]'
+%% 266762.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"AB") completed. ' 'Set up new data. Now byte # 43'  [483]'
+%% 268452.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"AB")=> OK, read data = x"AB". ' 'Reading data number 43'  [587]'
+%% 268522.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"AC") completed. ' 'Set up new data. Now byte # 44'  [484]'
+%% 270222.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"AC")=> OK, read data = x"AC". ' 'Reading data number 44'  [588]'
+%% 270282.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"AD") completed. ' 'Set up new data. Now byte # 45'  [485]'
+%% 271992.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"AD")=> OK, read data = x"AD". ' 'Reading data number 45'  [589]'
+%% 272042.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"AE") completed. ' 'Set up new data. Now byte # 46'  [486]'
+%% 273762.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"AE")=> OK, read data = x"AE". ' 'Reading data number 46'  [590]'
+%% 273802.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"AF") completed. ' 'Set up new data. Now byte # 47'  [487]'
+%% 275532.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"AF")=> OK, read data = x"AF". ' 'Reading data number 47'  [591]'
+%% 275562.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"B0") completed. ' 'Set up new data. Now byte # 48'  [488]'
+%% 277302.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"B0")=> OK, read data = x"B0". ' 'Reading data number 48'  [592]'
+%% 277322.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"B1") completed. ' 'Set up new data. Now byte # 49'  [489]'
+%% 279072.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"B1")=> OK, read data = x"B1". ' 'Reading data number 49'  [593]'
+%% 279082.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"B2") completed. ' 'Set up new data. Now byte # 50'  [490]'
+%% 280842.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"B3") completed. ' 'Set up new data. Now byte # 51'  [491]'
+%% 280842.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"B2")=> OK, read data = x"B2". ' 'Reading data number 50'  [594]'
+%% 282602.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"B4") completed. ' 'Set up new data. Now byte # 52'  [492]'
+%% 282612.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"B3")=> OK, read data = x"B3". ' 'Reading data number 51'  [595]'
+%% 284362.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"B5") completed. ' 'Set up new data. Now byte # 53'  [493]'
+%% 284382.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"B4")=> OK, read data = x"B4". ' 'Reading data number 52'  [596]'
+%% 286122.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"B6") completed. ' 'Set up new data. Now byte # 54'  [494]'
+%% 286152.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"B5")=> OK, read data = x"B5". ' 'Reading data number 53'  [597]'
+%% 287882.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"B7") completed. ' 'Set up new data. Now byte # 55'  [495]'
+%% 287922.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"B6")=> OK, read data = x"B6". ' 'Reading data number 54'  [598]'
+%% 289642.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"B8") completed. ' 'Set up new data. Now byte # 56'  [496]'
+%% 289692.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"B7")=> OK, read data = x"B7". ' 'Reading data number 55'  [599]'
+%% 291402.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"B9") completed. ' 'Set up new data. Now byte # 57'  [497]'
+%% 291462.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"B8")=> OK, read data = x"B8". ' 'Reading data number 56'  [600]'
+%% 293162.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"BA") completed. ' 'Set up new data. Now byte # 58'  [498]'
+%% 293232.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"B9")=> OK, read data = x"B9". ' 'Reading data number 57'  [601]'
+%% 294922.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"BB") completed. ' 'Set up new data. Now byte # 59'  [499]'
+%% 295002.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"BA")=> OK, read data = x"BA". ' 'Reading data number 58'  [602]'
+%% 296682.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"BC") completed. ' 'Set up new data. Now byte # 60'  [500]'
+%% 296772.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"BB")=> OK, read data = x"BB". ' 'Reading data number 59'  [603]'
+%% 298442.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"BD") completed. ' 'Set up new data. Now byte # 61'  [501]'
+%% 298542.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"BC")=> OK, read data = x"BC". ' 'Reading data number 60'  [604]'
+%% 300202.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"BE") completed. ' 'Set up new data. Now byte # 62'  [502]'
+%% 300312.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"BD")=> OK, read data = x"BD". ' 'Reading data number 61'  [605]'
+%% 301962.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"BF") completed. ' 'Set up new data. Now byte # 63'  [503]'
+%% 302082.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"BE")=> OK, read data = x"BE". ' 'Reading data number 62'  [606]'
+%% 303722.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"C0") completed. ' 'Set up new data. Now byte # 64'  [504]'
+%% 303852.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"BF")=> OK, read data = x"BF". ' 'Reading data number 63'  [607]'
+%% 305482.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"C1") completed. ' 'Set up new data. Now byte # 65'  [505]'
+%% 305622.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"C0")=> OK, read data = x"C0". ' 'Reading data number 64'  [608]'
+%% 307242.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"C2") completed. ' 'Set up new data. Now byte # 66'  [506]'
+%% 307392.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"C1")=> OK, read data = x"C1". ' 'Reading data number 65'  [609]'
+%% 309002.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"C3") completed. ' 'Set up new data. Now byte # 67'  [507]'
+%% 309162.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"C2")=> OK, read data = x"C2". ' 'Reading data number 66'  [610]'
+%% 310762.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"C4") completed. ' 'Set up new data. Now byte # 68'  [508]'
+%% 310932.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"C3")=> OK, read data = x"C3". ' 'Reading data number 67'  [611]'
+%% 312522.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"C5") completed. ' 'Set up new data. Now byte # 69'  [509]'
+%% 312702.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"C4")=> OK, read data = x"C4". ' 'Reading data number 68'  [612]'
+%% 314282.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"C6") completed. ' 'Set up new data. Now byte # 70'  [510]'
+%% 314472.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"C5")=> OK, read data = x"C5". ' 'Reading data number 69'  [613]'
+%% 316042.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"C7") completed. ' 'Set up new data. Now byte # 71'  [511]'
+%% 316242.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"C6")=> OK, read data = x"C6". ' 'Reading data number 70'  [614]'
+%% 317802.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"C8") completed. ' 'Set up new data. Now byte # 72'  [512]'
+%% 318012.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"C7")=> OK, read data = x"C7". ' 'Reading data number 71'  [615]'
+%% 319562.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"C9") completed. ' 'Set up new data. Now byte # 73'  [513]'
+%% 319782.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"C8")=> OK, read data = x"C8". ' 'Reading data number 72'  [616]'
+%% 321322.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"CA") completed. ' 'Set up new data. Now byte # 74'  [514]'
+%% 321552.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"C9")=> OK, read data = x"C9". ' 'Reading data number 73'  [617]'
+%% 323082.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"CB") completed. ' 'Set up new data. Now byte # 75'  [515]'
+%% 323322.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"CA")=> OK, read data = x"CA". ' 'Reading data number 74'  [618]'
+%% 324842.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"CC") completed. ' 'Set up new data. Now byte # 76'  [516]'
+%% 325092.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"CB")=> OK, read data = x"CB". ' 'Reading data number 75'  [619]'
+%% 326602.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"CD") completed. ' 'Set up new data. Now byte # 77'  [517]'
+%% 326862.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"CC")=> OK, read data = x"CC". ' 'Reading data number 76'  [620]'
+%% 328362.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"CE") completed. ' 'Set up new data. Now byte # 78'  [518]'
+%% 328632.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"CD")=> OK, read data = x"CD". ' 'Reading data number 77'  [621]'
+%% 330122.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"CF") completed. ' 'Set up new data. Now byte # 79'  [519]'
+%% 330402.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"CE")=> OK, read data = x"CE". ' 'Reading data number 78'  [622]'
+%% 331882.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"D0") completed. ' 'Set up new data. Now byte # 80'  [520]'
+%% 332172.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"CF")=> OK, read data = x"CF". ' 'Reading data number 79'  [623]'
+%% 333642.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"D1") completed. ' 'Set up new data. Now byte # 81'  [521]'
+%% 333942.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"D0")=> OK, read data = x"D0". ' 'Reading data number 80'  [624]'
+%% 335402.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"D2") completed. ' 'Set up new data. Now byte # 82'  [522]'
+%% 335712.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"D1")=> OK, read data = x"D1". ' 'Reading data number 81'  [625]'
+%% 337162.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"D3") completed. ' 'Set up new data. Now byte # 83'  [523]'
+%% 337482.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"D2")=> OK, read data = x"D2". ' 'Reading data number 82'  [626]'
+%% 338922.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"D4") completed. ' 'Set up new data. Now byte # 84'  [524]'
+%% 339252.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"D3")=> OK, read data = x"D3". ' 'Reading data number 83'  [627]'
+%% 340682.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"D5") completed. ' 'Set up new data. Now byte # 85'  [525]'
+%% 341022.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"D4")=> OK, read data = x"D4". ' 'Reading data number 84'  [628]'
+%% 342442.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"D6") completed. ' 'Set up new data. Now byte # 86'  [526]'
+%% 342792.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"D5")=> OK, read data = x"D5". ' 'Reading data number 85'  [629]'
+%% 344202.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"D7") completed. ' 'Set up new data. Now byte # 87'  [527]'
+%% 344562.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"D6")=> OK, read data = x"D6". ' 'Reading data number 86'  [630]'
+%% 345962.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"D8") completed. ' 'Set up new data. Now byte # 88'  [528]'
+%% 346332.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"D7")=> OK, read data = x"D7". ' 'Reading data number 87'  [631]'
+%% 347722.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"D9") completed. ' 'Set up new data. Now byte # 89'  [529]'
+%% 348102.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"D8")=> OK, read data = x"D8". ' 'Reading data number 88'  [632]'
+%% 349482.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"DA") completed. ' 'Set up new data. Now byte # 90'  [530]'
+%% 349872.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"D9")=> OK, read data = x"D9". ' 'Reading data number 89'  [633]'
+%% 351242.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"DB") completed. ' 'Set up new data. Now byte # 91'  [531]'
+%% 351642.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"DA")=> OK, read data = x"DA". ' 'Reading data number 90'  [634]'
+%% 353002.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"DC") completed. ' 'Set up new data. Now byte # 92'  [532]'
+%% 353412.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"DB")=> OK, read data = x"DB". ' 'Reading data number 91'  [635]'
+%% 354762.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"DD") completed. ' 'Set up new data. Now byte # 93'  [533]'
+%% 355182.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"DC")=> OK, read data = x"DC". ' 'Reading data number 92'  [636]'
+%% 356522.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"DE") completed. ' 'Set up new data. Now byte # 94'  [534]'
+%% 356952.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"DD")=> OK, read data = x"DD". ' 'Reading data number 93'  [637]'
+%% 358282.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"DF") completed. ' 'Set up new data. Now byte # 95'  [535]'
+%% 358722.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"DE")=> OK, read data = x"DE". ' 'Reading data number 94'  [638]'
+%% 360042.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"E0") completed. ' 'Set up new data. Now byte # 96'  [536]'
+%% 360492.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"DF")=> OK, read data = x"DF". ' 'Reading data number 95'  [639]'
+%% 361802.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"E1") completed. ' 'Set up new data. Now byte # 97'  [537]'
+%% 362262.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"E0")=> OK, read data = x"E0". ' 'Reading data number 96'  [640]'
+%% 363562.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"E2") completed. ' 'Set up new data. Now byte # 98'  [538]'
+%% 364032.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"E1")=> OK, read data = x"E1". ' 'Reading data number 97'  [641]'
+%% 365322.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"E3") completed. ' 'Set up new data. Now byte # 99'  [539]'
+%% 365802.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"E2")=> OK, read data = x"E2". ' 'Reading data number 98'  [642]'
+%% 367082.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"E4") completed. ' 'Set up new data. Now byte # 100'  [540]'
+%% 367572.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"E3")=> OK, read data = x"E3". ' 'Reading data number 99'  [643]'
+%% 368842.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"E5") completed. ' 'Set up new data. Now byte # 101'  [541]'
+%% 369342.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"E4")=> OK, read data = x"E4". ' 'Reading data number 100'  [644]'
+%% 370602.5 ns    Log    ID_BFM              UART_VVC,1,TX       uart_transmit(x"E6") completed. ' 'Set up new data. Now byte # 102'  [542]'
+%% 370652.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"E5"): 'Reading data number 101'. [647]
+%% 370652.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_check(SBI_VVC,1, x"0", x"E6"): 'Reading data number 102'. [648]
+%% 370662.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"E5")=> OK, read data = x"E5". ' 'Reading data number 101'  [647]'
+%% 370672.5 ns    Log    ID_BFM              SBI_VVC,1           sbi_check(A:x"0", x"E6")=> OK, read data = x"E6". ' 'Reading data number 102'  [648]'
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%% 370673.5 ns    DONE   NOCHECKS   uart_vvc_demo_tb  Passed: 0
+%%    Expected      Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% 370673.5 ns    Log    ID_LOG_HDR          TB seq.             SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

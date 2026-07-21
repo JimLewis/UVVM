@@ -1,0 +1,302 @@
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF GLOBAL CTRL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                                IGNORE    STOP_LIMIT
+%%                NOTE         :  REGARD    integer'high
+%%                TB_NOTE      :  REGARD    integer'high
+%%                WARNING      :  REGARD    integer'high
+%%                TB_WARNING   :  REGARD    integer'high
+%%                MANUAL_CHECK :  REGARD    integer'high
+%%                ERROR        :  REGARD    integer'high
+%%                TB_ERROR     :  REGARD    integer'high
+%%                FAILURE      :  REGARD         1
+%%                TB_FAILURE   :  REGARD         1
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF MSG ID PANEL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                ID                             Status
+%%                ------------------------       ------
+%%                ID_UTIL_BURIED               : DISABLED
+%%                ID_BITVIS_DEBUG              : DISABLED
+%%                ID_UTIL_SETUP                : ENABLED
+%%                ID_LOG_MSG_CTRL              : ENABLED
+%%                ID_ALERT_CTRL                : ENABLED
+%%                ID_FINISH_OR_STOP            : ENABLED
+%%                ID_CLOCK_GEN                 : ENABLED
+%%                ID_GEN_PULSE                 : ENABLED
+%%                ID_BLOCKING                  : ENABLED
+%%                ID_WATCHDOG                  : ENABLED
+%%                ID_RAND_GEN                  : DISABLED
+%%                ID_RAND_CONF                 : DISABLED
+%%                ID_FUNC_COV_BINS             : DISABLED
+%%                ID_FUNC_COV_BINS_INFO        : DISABLED
+%%                ID_FUNC_COV_RAND             : DISABLED
+%%                ID_FUNC_COV_SAMPLE           : DISABLED
+%%                ID_FUNC_COV_CONFIG           : DISABLED
+%%                ID_POS_ACK                   : ENABLED
+%%                ID_UVVM_ASSERTION            : ENABLED
+%%                ID_LOG_HDR                   : ENABLED
+%%                ID_LOG_HDR_LARGE             : ENABLED
+%%                ID_LOG_HDR_XL                : ENABLED
+%%                ID_SEQUENCER                 : ENABLED
+%%                ID_SEQUENCER_SUB             : ENABLED
+%%                ID_BFM                       : ENABLED
+%%                ID_BFM_WAIT                  : ENABLED
+%%                ID_BFM_POLL                  : ENABLED
+%%                ID_BFM_POLL_SUMMARY          : ENABLED
+%%                ID_CHANNEL_BFM               : ENABLED
+%%                ID_TERMINATE_CMD             : ENABLED
+%%                ID_SEGMENT_INITIATE          : ENABLED
+%%                ID_SEGMENT_COMPLETE          : ENABLED
+%%                ID_SEGMENT_HDR               : ENABLED
+%%                ID_SEGMENT_DATA              : ENABLED
+%%                ID_PACKET_INITIATE           : ENABLED
+%%                ID_PACKET_PREAMBLE           : ENABLED
+%%                ID_PACKET_COMPLETE           : ENABLED
+%%                ID_PACKET_HDR                : ENABLED
+%%                ID_PACKET_DATA               : ENABLED
+%%                ID_PACKET_CHECKSUM           : ENABLED
+%%                ID_PACKET_GAP                : ENABLED
+%%                ID_PACKET_PAYLOAD            : ENABLED
+%%                ID_FRAME_INITIATE            : ENABLED
+%%                ID_FRAME_COMPLETE            : ENABLED
+%%                ID_FRAME_HDR                 : ENABLED
+%%                ID_FRAME_DATA                : ENABLED
+%%                ID_COVERAGE_MAKEBIN          : DISABLED
+%%                ID_COVERAGE_ADDBIN           : DISABLED
+%%                ID_COVERAGE_ICOVER           : DISABLED
+%%                ID_COVERAGE_CONFIG           : ENABLED
+%%                ID_COVERAGE_SUMMARY          : ENABLED
+%%                ID_COVERAGE_HOLES            : ENABLED
+%%                ID_UVVM_SEND_CMD             : ENABLED
+%%                ID_UVVM_CMD_ACK              : ENABLED
+%%                ID_UVVM_CMD_RESULT           : ENABLED
+%%                ID_CMD_INTERPRETER           : ENABLED
+%%                ID_CMD_INTERPRETER_WAIT      : ENABLED
+%%                ID_IMMEDIATE_CMD             : ENABLED
+%%                ID_IMMEDIATE_CMD_WAIT        : ENABLED
+%%                ID_CMD_EXECUTOR              : ENABLED
+%%                ID_CMD_EXECUTOR_WAIT         : ENABLED
+%%                ID_CHANNEL_EXECUTOR          : ENABLED
+%%                ID_CHANNEL_EXECUTOR_WAIT     : ENABLED
+%%                ID_NEW_HVVC_CMD_SEQ          : ENABLED
+%%                ID_INSERTED_DELAY            : ENABLED
+%%                ID_OLD_AWAIT_COMPLETION      : ENABLED
+%%                ID_AWAIT_COMPLETION          : ENABLED
+%%                ID_AWAIT_COMPLETION_LIST     : ENABLED
+%%                ID_AWAIT_COMPLETION_WAIT     : ENABLED
+%%                ID_AWAIT_COMPLETION_END      : ENABLED
+%%                ID_AWAIT_UVVM_COMPLETION     : ENABLED
+%%                ID_UVVM_DATA_QUEUE           : ENABLED
+%%                ID_CONSTRUCTOR               : ENABLED
+%%                ID_CONSTRUCTOR_SUB           : ENABLED
+%%                ID_VVC_ACTIVITY              : ENABLED
+%%                ID_MONITOR                   : ENABLED
+%%                ID_MONITOR_ERROR             : ENABLED
+%%                ID_DATA                      : ENABLED
+%%                ID_CTRL                      : ENABLED
+%%                ID_SPEC_COV_INIT             : ENABLED
+%%                ID_SPEC_COV_REQS             : ENABLED
+%%                ID_SPEC_COV                  : ENABLED
+%%                ID_FILE_OPEN_CLOSE           : ENABLED
+%%                ID_FILE_PARSER               : ENABLED
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ALL_MESSAGES).
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Start Simulation of TB for UART
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_SEQUENCER_SUB    TB seq.             All inputs set passive
+%%    110 ns    Log    ID_SEQUENCER_SUB    TB seq.             Pulsed reset-signal - active for 10T
+%% 
+%% 
+%%    110 ns    Log    ID_LOG_HDR          TB seq.             Check defaults on output ports
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    110 ns    Log    PASSED              TB seq.             check_value(sl, 1) => OK. Value was 1. 'UART TX port must be default '1''
+%%    110 ns    Log    PASSED              TB seq.             check_value(slv, x"00") => OK. Value was x"00". 'Register data bus output must be default passive'
+%% 
+%% 
+%%    110 ns    Log    ID_LOG_HDR          TB seq.             Check register defaults and access (transmit + receive)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    110 ns    Log    NO_ID               TB seq.             
+Checking Register defaults
+%%  127.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"00")=> OK, read data = x"00". 'RX_DATA default'
+%%  137.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"3", x"01")=> OK, read data = x"1". 'TX_READY default'
+%%  147.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"1", x"00")=> OK, read data = x"00". 'RX_DATA_VALID default'
+%%  147.5 ns    Log    NO_ID               TB seq.             
+Checking Register UART DUT transmission (BFM uart_expect)
+%%  157.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"3", x"01")=> OK, read data = x"1". 'TX_READY active'
+%%  167.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"55") completed. 'TX_DATA'
+%%  167.5 ns    Log    ID_BFM_WAIT         TB seq.             Expecting data x"55" within 1 occurrences. 
+%%   1865 ns    Log    ID_BFM              TB seq.             uart_expect(x"55")=> OK, received data = x"55" after 1 occurrences and 1697.5 ns.
+%% 1877.5 ns    Log    ID_BFM              TB seq.             sbi_await_value(A:x"3", x"01")=> OK, read data = x"1". 'TX_READY active'
+%% 1887.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"AA") completed. 'TX_DATA'
+%% 1887.5 ns    Log    ID_BFM_WAIT         TB seq.             Expecting data x"AA" within 1 occurrences. 
+%%   3645 ns    Log    ID_BFM              TB seq.             uart_expect(x"AA")=> OK, received data = x"AA" after 1 occurrences and 1757.5 ns.
+%% 3657.5 ns    Log    ID_BFM              TB seq.             sbi_await_value(A:x"3", x"01")=> OK, read data = x"1". 'TX_READY active'
+%% 3667.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"00") completed. 'TX_DATA'
+%% 3667.5 ns    Log    ID_BFM_WAIT         TB seq.             Expecting data x"00" within 1 occurrences. 
+%%   5425 ns    Log    ID_BFM              TB seq.             uart_expect(x"00")=> OK, received data = x"00" after 1 occurrences and 1757.5 ns.
+%% 5437.5 ns    Log    ID_BFM              TB seq.             sbi_await_value(A:x"3", x"01")=> OK, read data = x"1". 'TX_READY active'
+%% 5437.5 ns    Log    NO_ID               TB seq.             
+Checking Register UART DUT transmission (BFM uart_receive)
+%% 5447.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"3", x"01")=> OK, read data = x"1". 'TX_READY active'
+%% 5457.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"55") completed. 'TX_DATA'
+%%   7205 ns    Log    ID_BFM              TB seq.             uart_receive()=> x"55".
+%% 7217.5 ns    Log    ID_BFM              TB seq.             sbi_await_value(A:x"3", x"01")=> OK, read data = x"1". 'TX_READY active'
+%% 7227.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"AA") completed. 'TX_DATA'
+%%   8985 ns    Log    ID_BFM              TB seq.             uart_receive()=> x"AA".
+%% 8997.5 ns    Log    ID_BFM              TB seq.             sbi_await_value(A:x"3", x"01")=> OK, read data = x"1". 'TX_READY active'
+%% 9007.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"00") completed. 'TX_DATA'
+%%  10765 ns    Log    ID_BFM              TB seq.             uart_receive()=> x"00".
+%% 10777.5 ns    Log    ID_BFM              TB seq.             sbi_await_value(A:x"3", x"01")=> OK, read data = x"1". 'TX_READY active'
+%% 10777.5 ns    Log    NO_ID               TB seq.             
+Checking two consecutive UART DUT transmissions (BFM uart_expect)
+%% 10787.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"55") completed. 'TX_DATA'
+%% 10797.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"AA") completed. 'TX_DATA'
+%% 10797.5 ns    Log    ID_BFM_WAIT         TB seq.             Expecting data x"55" within 1 occurrences. 
+%%  12545 ns    Log    ID_BFM              TB seq.             uart_expect(x"55")=> OK, received data = x"55" after 1 occurrences and 1747.5 ns.
+%%  12545 ns    Log    ID_BFM_WAIT         TB seq.             Expecting data x"AA" within 1 occurrences. 
+%%  14325 ns    Log    ID_BFM              TB seq.             uart_expect(x"AA")=> OK, received data = x"AA" after 1 occurrences and 1780 ns.
+%% 14337.5 ns    Log    ID_BFM              TB seq.             sbi_await_value(A:x"3", x"01")=> OK, read data = x"1". 'TX_READY active'
+%% 14337.5 ns    Log    NO_ID               TB seq.             
+Checking six consecutive UART DUT transmissions (BFM uart_expect)
+%% 14347.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"55") completed. 'TX_DATA'
+%% 14357.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"AA") completed. 'TX_DATA'
+%% 14357.5 ns    Log    ID_BFM_WAIT         TB seq.             Expecting data x"55" within 1 occurrences. 
+%%  16105 ns    Log    ID_BFM              TB seq.             uart_expect(x"55")=> OK, received data = x"55" after 1 occurrences and 1747.5 ns.
+%%  16105 ns    Log    ID_BFM_WAIT         TB seq.             Expecting data x"AA" within 1 occurrences. 
+%%  17885 ns    Log    ID_BFM              TB seq.             uart_expect(x"AA")=> OK, received data = x"AA" after 1 occurrences and 1780 ns.
+%% 17897.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"BB") completed. 'TX_DATA'
+%% 17907.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"FF") completed. 'TX_DATA'
+%% 17907.5 ns    Log    ID_BFM_WAIT         TB seq.             Expecting data x"BB" within 1 occurrences. 
+%%  19665 ns    Log    ID_BFM              TB seq.             uart_expect(x"BB")=> OK, received data = x"BB" after 1 occurrences and 1757.5 ns.
+%%  19665 ns    Log    ID_BFM_WAIT         TB seq.             Expecting data x"FF" within 1 occurrences. 
+%%  21445 ns    Log    ID_BFM              TB seq.             uart_expect(x"FF")=> OK, received data = x"FF" after 1 occurrences and 1780 ns.
+%% 21457.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"DD") completed. 'TX_DATA'
+%% 21467.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"EE") completed. 'TX_DATA'
+%% 21467.5 ns    Log    ID_BFM_WAIT         TB seq.             Expecting data x"DD" within 1 occurrences. 
+%%  23225 ns    Log    ID_BFM              TB seq.             uart_expect(x"DD")=> OK, received data = x"DD" after 1 occurrences and 1757.5 ns.
+%%  23225 ns    Log    ID_BFM_WAIT         TB seq.             Expecting data x"EE" within 1 occurrences. 
+%%  25005 ns    Log    ID_BFM              TB seq.             uart_expect(x"EE")=> OK, received data = x"EE" after 1 occurrences and 1780 ns.
+%% 25017.5 ns    Log    ID_BFM              TB seq.             sbi_await_value(A:x"3", x"01")=> OK, read data = x"1". 'TX_READY active'
+%% 25017.5 ns    Log    NO_ID               TB seq.             
+Checking UART DUT reception (BFM uart_transmit)
+%% 26777.5 ns    Log    ID_BFM              TB seq.             uart_transmit(x"55") completed.
+%% 26817.5 ns    Log    ID_BFM              TB seq.             sbi_await_value(A:x"1", x"01")=> OK, read data = x"1". 'RX_DATA_VALID enable'
+%% 26827.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"55")=> OK, read data = x"55". 'RX_DATA pure readback'
+%% 28587.5 ns    Log    ID_BFM              TB seq.             uart_transmit(x"AA") completed.
+%% 28627.5 ns    Log    ID_BFM              TB seq.             sbi_await_value(A:x"1", x"01")=> OK, read data = x"1". 'RX_DATA_VALID enable'
+%% 28637.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"AA")=> OK, read data = x"AA". 'RX_DATA pure readback'
+%% 30397.5 ns    Log    ID_BFM              TB seq.             uart_transmit(x"00") completed.
+%% 30437.5 ns    Log    ID_BFM              TB seq.             sbi_await_value(A:x"1", x"01")=> OK, read data = x"1". 'RX_DATA_VALID enable'
+%% 30447.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"00")=> OK, read data = x"00". 'RX_DATA pure readback'
+%% 30457.5 ns    Log    ID_BFM              TB seq.             sbi_await_value(A:x"1", x"00")=> OK, read data = x"00".
+%% 30457.5 ns    Log    NO_ID               TB seq.             
+Checking five consecutive UART DUT receptions (BFM uart_transmit)
+%% 32217.5 ns    Log    ID_BFM              TB seq.             uart_transmit(x"55") completed.
+%% 33977.5 ns    Log    ID_BFM              TB seq.             uart_transmit(x"AA") completed.
+%% 35737.5 ns    Log    ID_BFM              TB seq.             uart_transmit(x"BB") completed.
+%% 37497.5 ns    Log    ID_BFM              TB seq.             uart_transmit(x"FF") completed.
+%% 37507.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"1", x"01")=> OK, read data = x"1".
+%% 37517.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"55")=> OK, read data = x"55".
+%% 37527.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"1", x"01")=> OK, read data = x"1".
+%% 37537.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"AA")=> OK, read data = x"AA".
+%% 37547.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"1", x"01")=> OK, read data = x"1".
+%% 37557.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"BB")=> OK, read data = x"BB".
+%% 37567.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"1", x"01")=> OK, read data = x"1".
+%% 37577.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"FF")=> OK, read data = x"FF".
+%% 37587.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"1", x"00")=> OK, read data = x"00".
+%% 39347.5 ns    Log    ID_BFM              TB seq.             uart_transmit(x"55") completed.
+%% 41107.5 ns    Log    ID_BFM              TB seq.             uart_transmit(x"AA") completed.
+%% 42867.5 ns    Log    ID_BFM              TB seq.             uart_transmit(x"BB") completed.
+%% 44627.5 ns    Log    ID_BFM              TB seq.             uart_transmit(x"FF") completed.
+%% 46387.5 ns    Log    ID_BFM              TB seq.             uart_transmit(x"DD") completed.
+%% 46397.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"1", x"01")=> OK, read data = x"1".
+%% 46407.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"55")=> OK, read data = x"55".
+%% 46417.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"1", x"01")=> OK, read data = x"1".
+%% 46427.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"AA")=> OK, read data = x"AA".
+%% 46437.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"1", x"01")=> OK, read data = x"1".
+%% 46447.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"BB")=> OK, read data = x"BB".
+%% 46457.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"1", x"01")=> OK, read data = x"1".
+%% 46467.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"DD")=> OK, read data = x"DD".
+%% 46477.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"1", x"00")=> OK, read data = x"00".
+%% 
+%% 
+%% 46477.5 ns    Log    ID_LOG_HDR          TB seq.             Check Reset
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 46477.5 ns    Log    NO_ID               TB seq.             
+Checking tx output
+%% 46487.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"FF") completed. 'TX_DATA : Set to 0xFF'
+%%  46500 ns    Log    ID_SEQUENCER_SUB    TB seq.             Pulse reset
+%%  46500 ns    Log    PASSED              TB seq.             check_value(sl, 1) => OK. Value was 1. 'UART TX port must be default '1''
+%%  46500 ns    Log    NO_ID               TB seq.             
+Checking Register UART TX_READY
+%% 46517.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"3", x"01")=> OK, read data = x"1". 'TX_READY default'
+%% 46527.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"FF") completed.
+%% 46537.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"AA") completed.
+%% 46547.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"55") completed.
+%% 46557.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"BB") completed.
+%% 46567.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"EE") completed.
+%% 46577.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"3", x"00")=> OK, read data = x"00". 'TX_READY inactive'
+%%  46590 ns    Log    ID_SEQUENCER_SUB    TB seq.             Pulse reset
+%% 46607.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"3", x"01")=> OK, read data = x"1". 'TX_READY default'
+%% 46607.5 ns    Log    PASSED              TB seq.             check_value(sl, 1) => OK. Value was 1. 'UART TX port must be default '1''
+%% 
+%% 
+%% 46607.5 ns    Log    ID_LOG_HDR          TB seq.             Check 7-bit functionality
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 46617.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"4", x"08")=> OK, read data = x"8". 'Checking NUM_DATA_BITS default = 8'
+%% 46627.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"4", x"07") completed. 'Writing NUM_DATA_BITS = 7'
+%% 46637.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"4", x"07")=> OK, read data = x"7". 'Checking NUM_DATA_BITS = 7'
+%% 46637.5 ns    Log    NO_ID               TB seq.             
+Checking Register UART DUT transmission (BFM uart_expect) for 7-bit data
+%% 46647.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"3", x"01")=> OK, read data = x"1". 'TX_READY active'
+%% 46657.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"55") completed. 'TX_DATA'
+%% 46657.5 ns    Log    ID_BFM_WAIT         TB seq.             Expecting data x"55" within 1 occurrences. 
+%%  48195 ns    Log    ID_BFM              TB seq.             uart_expect(x"55")=> OK, received data = x"55" after 1 occurrences and 1537.5 ns.
+%% 48207.5 ns    Log    ID_BFM              TB seq.             sbi_await_value(A:x"3", x"01")=> OK, read data = x"1". 'TX_READY active'
+%% 48217.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"7A") completed. 'TX_DATA'
+%% 48217.5 ns    Log    ID_BFM_WAIT         TB seq.             Expecting data x"7A" within 1 occurrences. 
+%%  49815 ns    Log    ID_BFM              TB seq.             uart_expect(x"7A")=> OK, received data = x"7A" after 1 occurrences and 1597.5 ns.
+%% 49827.5 ns    Log    ID_BFM              TB seq.             sbi_await_value(A:x"3", x"01")=> OK, read data = x"1". 'TX_READY active'
+%% 49837.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"2", x"00") completed. 'TX_DATA'
+%% 49837.5 ns    Log    ID_BFM_WAIT         TB seq.             Expecting data x"00" within 1 occurrences. 
+%%  51435 ns    Log    ID_BFM              TB seq.             uart_expect(x"00")=> OK, received data = x"00" after 1 occurrences and 1597.5 ns.
+%% 51447.5 ns    Log    ID_BFM              TB seq.             sbi_await_value(A:x"3", x"01")=> OK, read data = x"1". 'TX_READY active'
+%%  51460 ns    Log    ID_SEQUENCER_SUB    TB seq.             Pulse reset
+%% 51477.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"3", x"01")=> OK, read data = x"1". 'TX_READY active'
+%% 51487.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"4", x"08")=> OK, read data = x"8". 'Checking NUM_DATA_BITS default = 8 after reset'
+%% 51497.5 ns    Log    ID_BFM              TB seq.             sbi_write(A:x"4", x"07") completed. 'Writing NUM_DATA_BITS = 7'
+%% 51507.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"4", x"07")=> OK, read data = x"7". 'Checking NUM_DATA_BITS = 7'
+%% 51507.5 ns    Log    NO_ID               TB seq.             
+Checking UART DUT reception (BFM uart_transmit)
+%% 53107.5 ns    Log    ID_BFM              TB seq.             uart_transmit(x"55") completed.
+%% 53147.5 ns    Log    ID_BFM              TB seq.             sbi_await_value(A:x"1", x"01")=> OK, read data = x"1". 'RX_DATA_VALID enable'
+%% 53157.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"55")=> OK, read data = x"55". 'RX_DATA pure readback'
+%% 54757.5 ns    Log    ID_BFM              TB seq.             uart_transmit(x"7A") completed.
+%% 54797.5 ns    Log    ID_BFM              TB seq.             sbi_await_value(A:x"1", x"01")=> OK, read data = x"1". 'RX_DATA_VALID enable'
+%% 54807.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"7A")=> OK, read data = x"7A". 'RX_DATA pure readback'
+%% 56407.5 ns    Log    ID_BFM              TB seq.             uart_transmit(x"00") completed.
+%% 56447.5 ns    Log    ID_BFM              TB seq.             sbi_await_value(A:x"1", x"01")=> OK, read data = x"1". 'RX_DATA_VALID enable'
+%% 56457.5 ns    Log    ID_BFM              TB seq.             sbi_check(A:x"0", x"00")=> OK, read data = x"00". 'RX_DATA pure readback'
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%% 57457.5 ns    DONE   PASSED   uart_bfm_tb  Passed: 4  Affirmations Checked: 4
+%%    Expected      Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% 57457.5 ns    Log    ID_LOG_HDR          TB seq.             SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

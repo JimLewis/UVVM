@@ -1,0 +1,321 @@
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Verify CLK100M
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%     10 ns    Log    ID_CLOCK_GEN        TB seq.             Stopping clock Clk100M_10p_duty
+%%     10 ns    Log    ID_CLOCK_GEN        TB seq.             Stopping clock Clk100M_1t_duty
+%%     10 ns    Log    ID_CLOCK_GEN        TB seq.             Stopping clock Clk100M_4t_duty
+%%     10 ns    Log    ID_CLOCK_GEN        TB seq.             Stopping clock Clk100M
+%%     10 ns    Log    ID_CLOCK_GEN        TB seq.             Stopping clock Clk100M_60p_duty
+%%     10 ns    Log    ID_CLOCK_GEN        TB seq.             Stopping clock Clk100M_90p_duty
+%%     10 ns    Log    ID_CLOCK_GEN        TB seq.             Stopping clock Clk100M_9t_duty
+%%    100 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 90 ns) => OK. Value 0 was stable for 95 ns. 'Check that clock is quiet when disabled'
+%%    100 ns    Log    ID_CLOCK_GEN        TB seq.             Starting clock Clk100M_10p_duty
+%%    100 ns    Log    ID_CLOCK_GEN        TB seq.             Starting clock Clk100M_1t_duty
+%%    100 ns    Log    ID_CLOCK_GEN        TB seq.             Starting clock Clk100M_4t_duty
+%%    100 ns    Log    ID_CLOCK_GEN        TB seq.             Starting clock Clk100M
+%%    100 ns    Log    ID_CLOCK_GEN        TB seq.             Starting clock Clk100M_60p_duty
+%%    100 ns    Log    ID_CLOCK_GEN        TB seq.             Starting clock Clk100M_90p_duty
+%%    100 ns    Log    ID_CLOCK_GEN        TB seq.             Starting clock Clk100M_9t_duty
+%%    100 ns    Log    PASSED              TB seq.(uvvm)       await_value(sl, 1, 0 ns, 10 ns) => OK. Condition occurred after 0 ns. 'Clock generator, check that clock started'
+%%    105 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 5 ns) => OK. Value 1 was stable for 5 ns. 'Clock generator, check clock high duration'
+%%    105 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 0) => OK. Value was 0. 'Clock generator. Check high to low transition'
+%%    110 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 5 ns) => OK. Value 0 was stable for 5 ns. 'Clock generator, check clock low duration'
+%%    110 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 1) => OK. Value was 1. 'Clock generator. Check low to high transition'
+%%    120 ns    Log    ID_CLOCK_GEN        TB seq.             Stopping clock Clk100M_10p_duty
+%%    120 ns    Log    ID_CLOCK_GEN        TB seq.             Stopping clock Clk100M_1t_duty
+%%    120 ns    Log    ID_CLOCK_GEN        TB seq.             Stopping clock Clk100M_4t_duty
+%%    120 ns    Log    ID_CLOCK_GEN        TB seq.             Stopping clock Clk100M
+%%    120 ns    Log    ID_CLOCK_GEN        TB seq.             Stopping clock Clk100M_60p_duty
+%%    120 ns    Log    ID_CLOCK_GEN        TB seq.             Stopping clock Clk100M_90p_duty
+%%    120 ns    Log    ID_CLOCK_GEN        TB seq.             Stopping clock Clk100M_9t_duty
+%%    220 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 100 ns) => OK. Value 0 was stable for 105 ns. 'Check that clock actually stopped'
+%% 
+%% 
+%%    220 ns    Log    ID_LOG_HDR          TB seq.             Verify CLK200M
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    225 ns    Log    ID_CLOCK_GEN        TB seq.             Stopping clock Clk200M
+%%    270 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 45 ns) => OK. Value 0 was stable for 47.5 ns. 'Check that clock is quiet when disabled'
+%%    270 ns    Log    ID_CLOCK_GEN        TB seq.             Starting clock Clk200M
+%%    270 ns    Log    PASSED              TB seq.(uvvm)       await_value(sl, 1, 0 ns, 5 ns) => OK. Condition occurred after 0 ns. 'Clock generator, check that clock started'
+%%  272.5 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 2.5 ns) => OK. Value 1 was stable for 2.5 ns. 'Clock generator, check clock high duration'
+%%  272.5 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 0) => OK. Value was 0. 'Clock generator. Check high to low transition'
+%%    275 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 2.5 ns) => OK. Value 0 was stable for 2.5 ns. 'Clock generator, check clock low duration'
+%%    275 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 1) => OK. Value was 1. 'Clock generator. Check low to high transition'
+%%    280 ns    Log    ID_CLOCK_GEN        TB seq.             Stopping clock Clk200M
+%%    380 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 100 ns) => OK. Value 0 was stable for 102.5 ns. 'Check that clock actually stopped'
+%% 
+%% 
+%%    380 ns    Log    ID_LOG_HDR          TB seq.             Verify CLK50M
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    380 ns    Log    PASSED              TB seq.(uvvm)       await_value(sl, 1, 0 ns, 11 ns) => OK. Condition occurred after 0 ns. 'Wait until Clk50M goes high'
+%%    390 ns    Log    PASSED              TB seq.(uvvm)       await_value(sl, 0, 0 ns, 11 ns) => OK. Condition occurred after 10 ns. 'Wait until Clk50M goes low'
+%%    400 ns    Log    PASSED              TB seq.(uvvm)       await_value(sl, 1, 0 ns, 20 ns) => OK. Condition occurred after 0 ns. 'Clock generator, check that clock started'
+%%    410 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 10 ns) => OK. Value 1 was stable for 10 ns. 'Clock generator, check clock high duration'
+%%    410 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 0) => OK. Value was 0. 'Clock generator. Check high to low transition'
+%%    420 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 10 ns) => OK. Value 0 was stable for 10 ns. 'Clock generator, check clock low duration'
+%%    420 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 1) => OK. Value was 1. 'Clock generator. Check low to high transition'
+%% 
+%% 
+%%    420 ns    Log    ID_LOG_HDR          TB seq.             Verify Duty Cycles
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    420 ns    Log    ID_CLOCK_GEN        TB seq.             Starting clock Clk100M_10p_duty
+%%    420 ns    Log    ID_CLOCK_GEN        TB seq.             Starting clock Clk100M_1t_duty
+%%    420 ns    Log    ID_CLOCK_GEN        TB seq.             Starting clock Clk100M_4t_duty
+%%    420 ns    Log    ID_CLOCK_GEN        TB seq.             Starting clock Clk100M
+%%    420 ns    Log    ID_CLOCK_GEN        TB seq.             Starting clock Clk100M_60p_duty
+%%    420 ns    Log    ID_CLOCK_GEN        TB seq.             Starting clock Clk100M_90p_duty
+%%    420 ns    Log    ID_CLOCK_GEN        TB seq.             Starting clock Clk100M_9t_duty
+%%    420 ns    Log    PASSED              TB seq.(uvvm)       await_value(sl, 1, 0 ns, 10 ns) => OK. Condition occurred after 0 ns. 'Clock generator, check that clock started'
+%%    426 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 6 ns) => OK. Value 1 was stable for 6 ns. 'Clock generator, check clock high duration'
+%%    426 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 0) => OK. Value was 0. 'Clock generator. Check high to low transition'
+%%    430 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 4 ns) => OK. Value 0 was stable for 4 ns. 'Clock generator, check clock low duration'
+%%    430 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 1) => OK. Value was 1. 'Clock generator. Check low to high transition'
+%%    430 ns    Log    PASSED              TB seq.(uvvm)       await_value(sl, 1, 0 ns, 10 ns) => OK. Condition occurred after 0 ns. 'Clock generator, check that clock started'
+%%    431 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 1 ns) => OK. Value 1 was stable for 1 ns. 'Clock generator, check clock high duration'
+%%    431 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 0) => OK. Value was 0. 'Clock generator. Check high to low transition'
+%%    440 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 9 ns) => OK. Value 0 was stable for 9 ns. 'Clock generator, check clock low duration'
+%%    440 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 1) => OK. Value was 1. 'Clock generator. Check low to high transition'
+%%    440 ns    Log    PASSED              TB seq.(uvvm)       await_value(sl, 1, 0 ns, 10 ns) => OK. Condition occurred after 0 ns. 'Clock generator, check that clock started'
+%%    449 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 9 ns) => OK. Value 1 was stable for 9 ns. 'Clock generator, check clock high duration'
+%%    449 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 0) => OK. Value was 0. 'Clock generator. Check high to low transition'
+%%    450 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 1 ns) => OK. Value 0 was stable for 1 ns. 'Clock generator, check clock low duration'
+%%    450 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 1) => OK. Value was 1. 'Clock generator. Check low to high transition'
+%%    450 ns    Log    PASSED              TB seq.(uvvm)       await_value(sl, 1, 0 ns, 10 ns) => OK. Condition occurred after 0 ns. 'Clock generator, check that clock started'
+%%    456 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 6 ns) => OK. Value 1 was stable for 6 ns. 'Clock generator, check clock high duration'
+%%    456 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 0) => OK. Value was 0. 'Clock generator. Check high to low transition'
+%%    460 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 4 ns) => OK. Value 0 was stable for 4 ns. 'Clock generator, check clock low duration'
+%%    460 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 1) => OK. Value was 1. 'Clock generator. Check low to high transition'
+%%    460 ns    Log    PASSED              TB seq.(uvvm)       await_value(sl, 1, 0 ns, 10 ns) => OK. Condition occurred after 0 ns. 'Clock generator, check that clock started'
+%%    461 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 1 ns) => OK. Value 1 was stable for 1 ns. 'Clock generator, check clock high duration'
+%%    461 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 0) => OK. Value was 0. 'Clock generator. Check high to low transition'
+%%    470 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 9 ns) => OK. Value 0 was stable for 9 ns. 'Clock generator, check clock low duration'
+%%    470 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 1) => OK. Value was 1. 'Clock generator. Check low to high transition'
+%%    470 ns    Log    PASSED              TB seq.(uvvm)       await_value(sl, 1, 0 ns, 10 ns) => OK. Condition occurred after 0 ns. 'Clock generator, check that clock started'
+%%    479 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 9 ns) => OK. Value 1 was stable for 9 ns. 'Clock generator, check clock high duration'
+%%    479 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 0) => OK. Value was 0. 'Clock generator. Check high to low transition'
+%%    480 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 1 ns) => OK. Value 0 was stable for 1 ns. 'Clock generator, check clock low duration'
+%%    480 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 1) => OK. Value was 1. 'Clock generator. Check low to high transition'
+%%    480 ns    Log    PASSED              TB seq.(uvvm)       await_value(sl, 1, 0 ns, 10 ns) => OK. Condition occurred after 0 ns. 'Clock generator, check that clock started'
+%%    484 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 4 ns) => OK. Value 1 was stable for 4 ns. 'Clock generator, check clock high duration'
+%%    484 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 0) => OK. Value was 0. 'Clock generator. Check high to low transition'
+%%    490 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 6 ns) => OK. Value 0 was stable for 6 ns. 'Clock generator, check clock low duration'
+%%    490 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 1) => OK. Value was 1. 'Clock generator. Check low to high transition'
+%%    490 ns    Log    PASSED              TB seq.(uvvm)       await_value(sl, 1, 0 ns, 10 ns) => OK. Condition occurred after 0 ns. 'Clock generator, check that clock started'
+%%    491 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 1 ns) => OK. Value 1 was stable for 1 ns. 'Clock generator, check clock high duration'
+%%    491 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 0) => OK. Value was 0. 'Clock generator. Check high to low transition'
+%%    500 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 9 ns) => OK. Value 0 was stable for 9 ns. 'Clock generator, check clock low duration'
+%%    500 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 1) => OK. Value was 1. 'Clock generator. Check low to high transition'
+%%    500 ns    Log    PASSED              TB seq.(uvvm)       await_value(sl, 1, 0 ns, 10 ns) => OK. Condition occurred after 0 ns. 'Clock generator, check that clock started'
+%%    509 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 9 ns) => OK. Value 1 was stable for 9 ns. 'Clock generator, check clock high duration'
+%%    509 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 0) => OK. Value was 0. 'Clock generator. Check high to low transition'
+%%    510 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 1 ns) => OK. Value 0 was stable for 1 ns. 'Clock generator, check clock low duration'
+%%    510 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 1) => OK. Value was 1. 'Clock generator. Check low to high transition'
+%%    510 ns    Log    PASSED              TB seq.(uvvm)       await_value(sl, 1, 0 ns, 10 ns) => OK. Condition occurred after 0 ns. 'Clock generator, check that clock started'
+%%    514 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 4 ns) => OK. Value 1 was stable for 4 ns. 'Clock generator, check clock high duration'
+%%    514 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 0) => OK. Value was 0. 'Clock generator. Check high to low transition'
+%%    520 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 6 ns) => OK. Value 0 was stable for 6 ns. 'Clock generator, check clock low duration'
+%%    520 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 1) => OK. Value was 1. 'Clock generator. Check low to high transition'
+%%    520 ns    Log    PASSED              TB seq.(uvvm)       await_value(sl, 1, 0 ns, 10 ns) => OK. Condition occurred after 0 ns. 'Clock generator, check that clock started'
+%%    521 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 1 ns) => OK. Value 1 was stable for 1 ns. 'Clock generator, check clock high duration'
+%%    521 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 0) => OK. Value was 0. 'Clock generator. Check high to low transition'
+%%    530 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 9 ns) => OK. Value 0 was stable for 9 ns. 'Clock generator, check clock low duration'
+%%    530 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 1) => OK. Value was 1. 'Clock generator. Check low to high transition'
+%%    530 ns    Log    PASSED              TB seq.(uvvm)       await_value(sl, 1, 0 ns, 10 ns) => OK. Condition occurred after 0 ns. 'Clock generator, check that clock started'
+%%    539 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 9 ns) => OK. Value 1 was stable for 9 ns. 'Clock generator, check clock high duration'
+%%    539 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 0) => OK. Value was 0. 'Clock generator. Check high to low transition'
+%%    540 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 1 ns) => OK. Value 0 was stable for 1 ns. 'Clock generator, check clock low duration'
+%%    540 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 1) => OK. Value was 1. 'Clock generator. Check low to high transition'
+%% 
+%% 
+%%    540 ns    Log    ID_LOG_HDR          TB seq.             Verify Adjustable_CLK100M
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    640 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 90 ns) => OK. Value 0 was stable for 640 ns. 'Check that adjustable clock is quiet when disabled'
+%%    640 ns    Log    ID_CLOCK_GEN        TB seq.             Starting clock: adj_clk100M
+%%    645 ns    Log    PASSED              TB seq.(uvvm)       check_value(time, 5 ns) => OK. Value was 5 ns. 'Checking rising edge.'
+%%    645 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 1) => OK. Value was 1. 'Check that adjustable clock is set to high during the period.'
+%%    645 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 5 ns) => OK. Value 1 was stable for 5 ns. 'Check adjustable clock is stable during high period.'
+%%    650 ns    Log    PASSED              TB seq.(uvvm)       check_value(time, 5 ns) => OK. Value was 5 ns. 'Checking falling edge.'
+%%    650 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 0) => OK. Value was 0. 'Check that adjustable clock is set to low during the period.'
+%%    650 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 5 ns) => OK. Value 0 was stable for 5 ns. 'Check adjustable clock is stable during low period.'
+%%    660 ns    Log    ID_CLOCK_GEN        TB seq.             Stopping clock: adj_clk100M
+%%    670 ns    Log    ID_CLOCK_GEN        TB seq.             Starting clock: adj_clk100M
+%%  672.5 ns    Log    PASSED              TB seq.(uvvm)       check_value(time, 2.5 ns) => OK. Value was 2.5 ns. 'Checking rising edge.'
+%%  672.5 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 1) => OK. Value was 1. 'Check that adjustable clock is set to high during the period.'
+%%  672.5 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 2.5 ns) => OK. Value 1 was stable for 2.5 ns. 'Check adjustable clock is stable during high period.'
+%%    680 ns    Log    PASSED              TB seq.(uvvm)       check_value(time, 7.5 ns) => OK. Value was 7.5 ns. 'Checking falling edge.'
+%%    680 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 0) => OK. Value was 0. 'Check that adjustable clock is set to low during the period.'
+%%    680 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 7.5 ns) => OK. Value 0 was stable for 7.5 ns. 'Check adjustable clock is stable during low period.'
+%%    690 ns    Log    ID_CLOCK_GEN        TB seq.             Stopping clock: adj_clk100M
+%%    700 ns    Log    ID_CLOCK_GEN        TB seq.             Starting clock: adj_clk100M
+%%  709.9 ns    Log    PASSED              TB seq.(uvvm)       check_value(time, 9.9 ns) => OK. Value was 9.9 ns. 'Checking rising edge.'
+%%  709.9 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 1) => OK. Value was 1. 'Check that adjustable clock is set to high during the period, high: 9900 ps, low: 100 ps'
+%%  709.9 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 9.9 ns) => OK. Value 1 was stable for 9.9 ns. 'Check adjustable clock is stable during high period, high: 9900 ps, low: 100 ps'
+%%    710 ns    Log    PASSED              TB seq.(uvvm)       check_value(time, 100 ps) => OK. Value was 100 ps. 'Checking falling edge.'
+%%    710 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 0) => OK. Value was 0. 'Check that adjustable clock is set to low during the period, high: 9900 ps, low: 100 ps'
+%%    710 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 100 ps) => OK. Value 0 was stable for 100 ps. 'Check adjustable clock is stable during low period, high: 9900 ps, low: 100 ps'
+%%    720 ns    Log    ID_CLOCK_GEN        TB seq.             Stopping clock: adj_clk100M
+%% 
+%% 
+%%    810 ns    Log    ID_LOG_HDR          TB seq.             Verify Adjustable_CLK100M alert handling
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    810 ns    Log    ID_CLOCK_GEN        TB seq.             Starting clock: adj_clk100M
+%%    810 ns    Alert  ERROR               TB seq.             check_value_in_range(int, 1, 99) => Failed. Value was 0. Expected between 1 and 99. 'adjustable_clock_generator: parameter clock_high_percentage must be in range 1 to 99!'
+%%    820 ns    Log    ID_CLOCK_GEN        TB seq.             Stopping clock: adj_clk100M
+%%    820 ns    Log    ID_CLOCK_GEN        TB seq.             Starting clock: adj_clk100M
+%%    820 ns    Alert  ERROR               TB seq.             check_value_in_range(int, 1, 99) => Failed. Value was 100. Expected between 1 and 99. 'adjustable_clock_generator: parameter clock_high_percentage must be in range 1 to 99!'
+%%    830 ns    Log    ID_CLOCK_GEN        TB seq.             Stopping clock: adj_clk100M
+%%    830 ns    Log    ID_CLOCK_GEN        TB seq.             Starting clock: adj_clk100M
+%%    850 ns    Log    ID_CLOCK_GEN        TB seq.             Stopping clock: adj_clk100M
+%%    900 ns    Log    ID_CLOCK_GEN        TB seq.             Stopping clock Clk10M_1p_duty
+%%    900 ns    Log    ID_CLOCK_GEN        TB seq.             Stopping clock Clk10M_1p_duty
+%%    900 ns    Log    ID_CLOCK_GEN        TB seq.             Stopping clock Clk10M_1t_duty
+%%    900 ns    Log    ID_CLOCK_GEN        TB seq.             Stopping clock Clk10M_99p_duty
+%%    900 ns    Log    ID_CLOCK_GEN        TB seq.             Stopping clock Clk10M_99t_duty
+%%   1840 ns    Log    ID_CLOCK_GEN        TB seq.             Starting clock Clk10M_1p_duty
+%%   1840 ns    Log    ID_CLOCK_GEN        TB seq.             Starting clock Clk10M_1p_duty
+%%   1840 ns    Log    ID_CLOCK_GEN        TB seq.             Starting clock Clk10M_1t_duty
+%%   1840 ns    Log    ID_CLOCK_GEN        TB seq.             Starting clock Clk10M_99p_duty
+%%   1840 ns    Log    ID_CLOCK_GEN        TB seq.             Starting clock Clk10M_99t_duty
+%%   1840 ns    Log    PASSED              TB seq.(uvvm)       await_value(sl, 1, 0 ns, 100 ns) => OK. Condition occurred after 0 ns. 'Clock generator, check that clock started'
+%%   1939 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 99 ns) => OK. Value 1 was stable for 99 ns. 'Clock generator, check clock high duration'
+%%   1939 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 0) => OK. Value was 0. 'Clock generator. Check high to low transition'
+%%   1940 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 1 ns) => OK. Value 0 was stable for 1 ns. 'Clock generator, check clock low duration'
+%%   1940 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 1) => OK. Value was 1. 'Clock generator. Check low to high transition'
+%%   1940 ns    Log    PASSED              TB seq.(uvvm)       await_value(sl, 1, 0 ns, 100 ns) => OK. Condition occurred after 0 ns. 'Clock generator, check that clock started'
+%%   1941 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 1 ns) => OK. Value 1 was stable for 1 ns. 'Clock generator, check clock high duration'
+%%   1941 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 0) => OK. Value was 0. 'Clock generator. Check high to low transition'
+%%   2040 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 99 ns) => OK. Value 0 was stable for 99 ns. 'Clock generator, check clock low duration'
+%%   2040 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 1) => OK. Value was 1. 'Clock generator. Check low to high transition'
+%%   2040 ns    Log    PASSED              TB seq.(uvvm)       await_value(sl, 1, 0 ns, 100 ns) => OK. Condition occurred after 0 ns. 'Clock generator, check that clock started'
+%%   2139 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 99 ns) => OK. Value 1 was stable for 99 ns. 'Clock generator, check clock high duration'
+%%   2139 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 0) => OK. Value was 0. 'Clock generator. Check high to low transition'
+%%   2140 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 1 ns) => OK. Value 0 was stable for 1 ns. 'Clock generator, check clock low duration'
+%%   2140 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 1) => OK. Value was 1. 'Clock generator. Check low to high transition'
+%%   2140 ns    Log    PASSED              TB seq.(uvvm)       await_value(sl, 1, 0 ns, 100 ns) => OK. Condition occurred after 0 ns. 'Clock generator, check that clock started'
+%%   2141 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 1 ns) => OK. Value 1 was stable for 1 ns. 'Clock generator, check clock high duration'
+%%   2141 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 0) => OK. Value was 0. 'Clock generator. Check high to low transition'
+%%   2240 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 99 ns) => OK. Value 0 was stable for 99 ns. 'Clock generator, check clock low duration'
+%%   2240 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 1) => OK. Value was 1. 'Clock generator. Check low to high transition'
+%%   2240 ns    Log    PASSED              TB seq.(uvvm)       await_value(sl, 1, 0 ns, 100 ns) => OK. Condition occurred after 0 ns. 'Clock generator, check that clock started'
+%%   2339 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 99 ns) => OK. Value 1 was stable for 99 ns. 'Clock generator, check clock high duration'
+%%   2339 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 0) => OK. Value was 0. 'Clock generator. Check high to low transition'
+%%   2340 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 1 ns) => OK. Value 0 was stable for 1 ns. 'Clock generator, check clock low duration'
+%%   2340 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 1) => OK. Value was 1. 'Clock generator. Check low to high transition'
+%%   2340 ns    Log    PASSED              TB seq.(uvvm)       await_value(sl, 1, 0 ns, 100 ns) => OK. Condition occurred after 0 ns. 'Clock generator, check that clock started'
+%%   2341 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 1 ns) => OK. Value 1 was stable for 1 ns. 'Clock generator, check clock high duration'
+%%   2341 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 0) => OK. Value was 0. 'Clock generator. Check high to low transition'
+%%   2440 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 99 ns) => OK. Value 0 was stable for 99 ns. 'Clock generator, check clock low duration'
+%%   2440 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 1) => OK. Value was 1. 'Clock generator. Check low to high transition'
+%%   2440 ns    Log    PASSED              TB seq.(uvvm)       await_value(sl, 1, 0 ns, 100 ns) => OK. Condition occurred after 0 ns. 'Clock generator, check that clock started'
+%%   2539 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 99 ns) => OK. Value 1 was stable for 99 ns. 'Clock generator, check clock high duration'
+%%   2539 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 0) => OK. Value was 0. 'Clock generator. Check high to low transition'
+%%   2540 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 1 ns) => OK. Value 0 was stable for 1 ns. 'Clock generator, check clock low duration'
+%%   2540 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 1) => OK. Value was 1. 'Clock generator. Check low to high transition'
+%%   2540 ns    Log    PASSED              TB seq.(uvvm)       await_value(sl, 1, 0 ns, 100 ns) => OK. Condition occurred after 0 ns. 'Clock generator, check that clock started'
+%%   2541 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 1 ns) => OK. Value 1 was stable for 1 ns. 'Clock generator, check clock high duration'
+%%   2541 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 0) => OK. Value was 0. 'Clock generator. Check high to low transition'
+%%   2640 ns    Log    PASSED              TB seq.(uvvm)       check_stable(sl, 99 ns) => OK. Value 0 was stable for 99 ns. 'Clock generator, check clock low duration'
+%%   2640 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 1) => OK. Value was 1. 'Clock generator. Check low to high transition'
+%%   2700 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to 1 for 50000 ps. 'test pulse 50 ns, blocking'
+%%   2700 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 0) => OK. Value was 0. 'pulse generator, blocking mode, pulse done'
+%%   2851 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to 1 for 51000 ps. 'test pulse 50 ns, blocking by default'
+%%   2851 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 0) => OK. Value was 0. 'pulse generator, blocking mode by default, pulse done'
+%%   2951 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to 1 for 0 ps. 'Pulse for a delta cycle'
+%%   2951 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 0) => OK. Value was 0. 'pulse for 0 ns, blocking mode, pulse done'
+%%   2951 ns    Log    PASSED              TB seq.(uvvm)       check_value(time, 0 ns) => OK. Value was 0 ns. 'pulse for 0 ns. Check that it actually pulsed for a delta cycle'
+%%   2951 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 1) => OK. Value was 1. 'pulse for 0 ns, check that it actually pulsed for a delta cycle'
+%%   3051 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to 1 for 50000 ps. 'Pulse non_blocking'
+%%   3051 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 1) => OK. Value was 1. 'pulse generator, start of high period'
+%%   3101 ns    Log    PASSED              TB seq.(uvvm)       await_value(sl, 0, 50 ns, 50 ns) => OK. Condition occurred after 50 ns. 'Pulse generator, end of high period'
+%%   3205 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to 1 for 10 clk cycles. 'Test pulse 10 clk periods'
+%%   3205 ns    Log    PASSED              TB seq.             check_value(time, 100 ns) => OK. Value was 100 ns. 'Check start of pulse'
+%%   3205 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 0) => OK. Value was 0. 'pulse for 10 clk periods, pulse done'
+%%   3205 ns    Log    PASSED              TB seq.(uvvm)       check_value(time, 0 ns) => OK. Value was 0 ns. 'pulse for 10 clk periods. Check that it actually pulsed for a delta cycle'
+%%   3205 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 1) => OK. Value was 1. 'pulse for 10 clk periods, check that it actually pulsed for a delta cycle'
+%%   3305 ns    Alert  ERROR               TB seq.             check_value(bool, true) => Failed. Value was false. Expected true. 'gen_pulse: target was already 0. 'Test pulse sl with same value as it was before''
+%%   3355 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to 0 for 50000 ps. 'Test pulse sl with same value as it was before'
+%%   3355 ns    Log    PASSED              TB seq.             check_value(sl, 0) => OK. Value was 0. 'Check the value after the pulse'
+%%   3405 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to 1 for 50000 ps. 'Test pulse sl '
+%%   3405 ns    Log    PASSED              TB seq.             check_value(sl, L) => OK. Value was L. 'Check the value after the pulse'
+%%   3435 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to x"AB" for 2 clk cycles. 'Test pulse slv defined as 'to' for 2 clks'
+%%   3435 ns    Log    PASSED              TB seq.             check_value(time, 20 ns) => OK. Value was 20 ns. 'Check start of pulse'
+%%   3435 ns    Log    PASSED              TB seq.             check_value(time, 0 ns) => OK. Value was 0 ns. 'Check pulse is just done'
+%%   3435 ns    Log    PASSED              TB seq.             check_value(slv, x"AB") => OK. Value was x"AB". 'Check what the value was during the pulse'
+%%   3435 ns    Log    PASSED              TB seq.             check_value(slv, x"00") => OK. Value was x"00". 'Check the value after the pulse'
+%%   3465 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to x"AB" for 2 clk cycles. 'Test pulse slv defined as 'downto' for 2 clks'
+%%   3465 ns    Log    PASSED              TB seq.             check_value(time, 20 ns) => OK. Value was 20 ns. 'Check start of pulse'
+%%   3465 ns    Log    PASSED              TB seq.             check_value(time, 0 ns) => OK. Value was 0 ns. 'Check pulse is just done'
+%%   3465 ns    Log    PASSED              TB seq.             check_value(slv, x"AB") => OK. Value was x"AB". 'Check what the value was during the pulse'
+%%   3465 ns    Log    PASSED              TB seq.             check_value(slv, x"00") => OK. Value was x"00". 'Check the value after the pulse'
+%%   3495 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to x"X6" for 2 clk cycles. 'Test pulse slv defined as 'to' with don't care for 2 clks'
+%%   3495 ns    Log    PASSED              TB seq.             check_value(time, 20 ns) => OK. Value was 20 ns. 'Check start of pulse'
+%%   3495 ns    Log    PASSED              TB seq.             check_value(time, 0 ns) => OK. Value was 0 ns. 'Check pulse is just done'
+%%   3495 ns    Log    PASSED              TB seq.             check_value(slv, x"F6") => OK. Value was x"F6". 'Check what the value was during the pulse'
+%%   3495 ns    Log    PASSED              TB seq.             check_value(slv, x"FF") => OK. Value was x"FF". 'Check the value after the pulse'
+%%   3525 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to x"XX" for 2 clk cycles. 'Test pulse slv defined as 'downto' with don't care for 2 clks'
+%%   3525 ns    Log    PASSED              TB seq.             check_value(time, 20 ns) => OK. Value was 20 ns. 'Check start of pulse'
+%%   3525 ns    Log    PASSED              TB seq.             check_value(time, 0 ns) => OK. Value was 0 ns. 'Check pulse is just done'
+%%   3525 ns    Log    PASSED              TB seq.             check_value(slv, x"99") => OK. Value was x"99". 'Check what the value was during the pulse'
+%%   3525 ns    Log    PASSED              TB seq.             check_value(slv, x"CC") => OK. Value was x"CC". 'Check the value after the pulse'
+%%   3555 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to x"XX" for 2 clk cycles. 'Test pulse slv defined as 'to' for 2 clks'
+%%   3555 ns    Log    PASSED              TB seq.             check_value(time, 20 ns) => OK. Value was 20 ns. 'Check start of pulse'
+%%   3555 ns    Log    PASSED              TB seq.             check_value(time, 0 ns) => OK. Value was 0 ns. 'Check pulse is just done'
+%%   3555 ns    Log    PASSED              TB seq.             check_value(slv, x"55") => OK. Value was x"55". 'Check what the value was during the pulse'
+%%   3555 ns    Log    PASSED              TB seq.             check_value(slv, x"FF") => OK. Value was x"FF". 'Check the value after the pulse'
+%%   3585 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to x"FF" for 2 clk cycles. 'Test pulse slv defined as 'to' for 2 clks'
+%%   3585 ns    Log    PASSED              TB seq.             check_value(time, 20 ns) => OK. Value was 20 ns. 'Check start of pulse'
+%%   3585 ns    Log    PASSED              TB seq.             check_value(time, 0 ns) => OK. Value was 0 ns. 'Check pulse is just done'
+%%   3585 ns    Log    PASSED              TB seq.             check_value(slv, x"FF") => OK. Value was x"FF". 'Check what the value was during the pulse'
+%%   3585 ns    Log    PASSED              TB seq.             check_value(slv, x"23") => OK. Value was x"23". 'Check the value after the pulse'
+%%   3615 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to x"FF" for 2 clk cycles. 'Test pulse slv for 2 clks'
+%%   3615 ns    Log    PASSED              TB seq.             check_value(time, 20 ns) => OK. Value was 20 ns. 'Check start of pulse'
+%%   3615 ns    Log    PASSED              TB seq.             check_value(time, 0 ns) => OK. Value was 0 ns. 'Check pulse is just done'
+%%   3615 ns    Log    PASSED              TB seq.             check_value(slv, x"FF") => OK. Value was x"FF". 'Check what the value was during the pulse'
+%%   3615 ns    Log    PASSED              TB seq.             check_value(slv, x"23") => OK. Value was x"23". 'Check the value after the pulse'
+%%   3715 ns    Alert  ERROR               TB seq.             check_value(bool, true) => Failed. Value was false. Expected true. 'gen_pulse: target was already 1. 'Test pulse sl to a value it was already.''
+%%   3725 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to 1 for 10000 ps. 'Test pulse sl to a value it was already.'
+%%   3725 ns    Log    PASSED              TB seq.             check_value(sl, 1) => OK. Value was 1. 'Check what the value was during the pulse.'
+%%   3725 ns    Log    PASSED              TB seq.             check_value(sl, 1) => OK. Value was 1. 'Check what the value was after the pulse'
+%%   3825 ns    Log    ID_SEQUENCER                            Check that gen_pulse() outputs TB_ERROR for combination NON_BLOCKING + 0 ns duration
+%%   3825 ns    Alert  ERROR               TB seq.             check_value(bool, true) => Failed. Value was false. Expected true. 'gen_pulse: The combination of NON_BLOCKING mode and 0 ns pulse duration results in the pulse being ignored.'
+%%   3825 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to 1 for 0 ps. 'NON_BLOCKING pulse for a delta cycle (0 ns)'
+%%   3825 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 0) => OK. Value was 0. 'pulse for 0 ns, blocking mode, pulse done'
+%%   3825 ns    Log    PASSED              TB seq.(uvvm)       check_value(time, 0 ns) => OK. Value was 0 ns. 'pulse for 0 ns. Check that it actually pulsed for a delta cycle'
+%%   3825 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 1) => OK. Value was 1. 'pulse for 0 ns, check that it actually pulsed for a delta cycle'
+%%   3925 ns    Log    ID_SEQUENCER                            Check that multiple subsequent calls to blocking gen_pulse() do not result in TB_ERROR
+%%   3935 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to 1 for 10000 ps. 'First call to gen_pulse with std_logic'
+%%   3945 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to 1 for 10000 ps. 'Second call to gen_pulse with std_logic'
+%%   3955 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to 1 for 10000 ps. 'Third call to gen_pulse with std_logic'
+%%   3965 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to x"FF" for 10000 ps. 'First call to gen_pulse with std_logic_vector'
+%%   3975 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to x"FF" for 10000 ps. 'Second call to gen_pulse with std_logic_vector'
+%%   3985 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to x"FF" for 10000 ps. 'Third call to gen_pulse with std_logic_vector'
+%%   4010 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to 1 for 1 clk cycles. 'First call to clocked gen_pulse with std_logic'
+%%   4050 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to 1 for 1 clk cycles. 'Second call to clocked gen_pulse with std_logic'
+%%   4090 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to 1 for 1 clk cycles. 'Third call to clocked gen_pulse with std_logic'
+%%   4130 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to x"FF" for 1 clk cycles. 'First call to clocked gen_pulse with std_logic_vector'
+%%   4170 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to x"FF" for 1 clk cycles. 'Second call to clocked gen_pulse with std_logic_vector'
+%%   4210 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to x"FF" for 1 clk cycles. 'Third call to clocked gen_pulse with std_logic_vector'
+%%   4220 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to true for 10000 ps. 'First call to gen_pulse with boolean'
+%%   4230 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to true for 10000 ps. 'Second call to gen_pulse with boolean'
+%%   4240 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to true for 10000 ps. 'Third call to gen_pulse with boolean'
+%%   4270 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to true for 1 clk cycles. 'First call to clocked gen_pulse with boolean'
+%%   4310 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to true for 1 clk cycles. 'Second call to clocked gen_pulse with boolean'
+%%   4350 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to true for 1 clk cycles. 'Third call to clocked gen_pulse with boolean'
+%%   4370 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'Verifying cnt wrap'
+%%   4373 ns    Log    PASSED              TB seq.             check_value(int, 1) => OK. Value was 1. 'Verifying increment after wrap'
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%   5373 ns    DONE   PASSED   clock_generators  Passed: 188  Affirmations Checked: 193
+%%    Expected      Failures: 0  Errors: -5  Warnings: 0  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 5  Warnings: 0  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%%   5373 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -1,0 +1,741 @@
+%% 
+%% 
+%% ============================================================================================================================================================================
+%%      0 ns    Log    ID_LOG_HDR_LARGE    TB seq.             Start Simulation of Randomization package - rand_weighted
+%% ============================================================================================================================================================================
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_RAND_GEN).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_RAND_CONF).
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Reducing log messages from rand_pkg
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing weighted integer (single values) - Generate 1000 random values for each test
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(-5,1)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(10,3)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm((-5,1),(10,3))=> 10
+%%                                                                    =========================================================================================================
+%%                                                                    value:      -5     10
+%%                                                                    weight:    25%    75%
+%%                                                                    count:     264    736
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(-5,1)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(10,0)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm((-5,1),(10,0))=> -5
+%%                                                                    =========================================================================================================
+%%                                                                    value:      -5     10
+%%                                                                    weight:   100%     0%
+%%                                                                    count:    1000      0
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(-5,10)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(0,30)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(10,60)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm((-5,10),(0,30),(10,60))=> 10
+%%                                                                    =========================================================================================================
+%%                                                                    value:      -5      0     10
+%%                                                                    weight:    10%    30%    60%
+%%                                                                    count:      89    317    594
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing weighted integer (ranges w/default mode) - Generate 1000 random values for each test
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             set_range_weight_default_mode(COMBINED_WEIGHT)
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking range_weight_default_mode'
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([-5:-3],30)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(0,20)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([9:10],50)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([-5:-3],30,COMBINED),(0,20),([9:10],50,COMBINED))=> 9
+%%                                                                    =========================================================================================================
+%%                                                                    value:      -5     -4     -3      0      9     10
+%%                                                                    weight:    10%    10%    10%    20%    25%    25%
+%%                                                                    count:      98    101    108    202    249    242
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             set_range_weight_default_mode(INDIVIDUAL_WEIGHT)
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking range_weight_default_mode'
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([-5:-3],30)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(0,20)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([9:10],50)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([-5:-3],30,INDIVIDUAL),(0,20),([9:10],50,INDIVIDUAL))=> 0
+%%                                                                    =========================================================================================================
+%%                                                                    value:      -5     -4     -3      0      9     10
+%%                                                                    weight:    14%    14%    14%     9%    23%    23%
+%%                                                                    count:     158    127    151     91    237    236
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing weighted integer (ranges w/explicit mode) - Generate 1000 random values for each test
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([-5:-3],30,INDIVIDUAL_WEIGHT)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(0,20)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([9:10],50,COMBINED_WEIGHT)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([-5:-3],30,INDIVIDUAL),(0,20),([9:10],50,COMBINED))=> -5
+%%                                                                    =========================================================================================================
+%%                                                                    value:      -5     -4     -3      0      9     10
+%%                                                                    weight:    18%    18%    18%    12%    15%    15%
+%%                                                                    count:     206    176    201    122    142    153
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing weighted integer (mixed with non-weighted constraint) - Generate 1000 random values for each test
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val(20, 30)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([-5:-3],4,INDIVIDUAL_WEIGHT)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(0,2)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([9:10],4,COMBINED_WEIGHT)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm((20,1),(30,1),([-5:-3],4,INDIVIDUAL),(0,2),([9:10],4,COMBINED))=> 0
+%%                                                                    =========================================================================================================
+%%                                                                    value:      -5     -4     -3      0      9     10     20     30
+%%                                                                    weight:    20%    20%    20%    10%    10%    10%     5%     5%
+%%                                                                    count:     201    227    198     91     98     96     39     50
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_config()
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing weighted integer (invalid parameters)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Alert  ERROR               TB seq.             add_range_weight([1:1],30)=> min_value must be less than max_value
+%%      0 ns    Alert  ERROR               TB seq.             add_range_weight([10:5],30)=> min_value must be less than max_value
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(1,0)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(2,0)
+%%      0 ns    Alert  ERROR               TB seq.             randm((1,0),(2,0))=> The total weight of the values must be greater than 0
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm((1,0),(2,0))=> -2147483648
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([-5:3],30)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             excl_val(-4)
+%%      0 ns    Alert  WARNING             TB seq.             randm(([-5:3],30,COMBINED))(bool, true) => Failed. Value was false. Expected true. 'Exclude constraint and weighted randomization cannot be combined. Ignoring exclude constraint.'
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([-5:3],30,COMBINED))=> 2
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([-5:3],30)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             set_cyclic_mode(CYCLIC)
+%%      0 ns    Alert  WARNING             TB seq.             randm(([-5:3],30,COMBINED))(bool, true) => Failed. Value was false. Expected true. 'Cyclic mode and weighted randomization cannot be combined. Ignoring cyclic configuration.'
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([-5:3],30,COMBINED))=> 3
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             set_cyclic_mode(NON_CYCLIC)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([-5:3],30)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             set_uniqueness(UNIQUE)
+%%      0 ns    Alert  WARNING             TB seq.             randm(([-5:3],30,COMBINED))(bool, true) => Failed. Value was false. Expected true. 'Uniqueness and weighted randomization cannot be combined. Ignoring uniqueness configuration.'
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([-5:3],30,COMBINED))=> -5
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             set_uniqueness(NON_UNIQUE)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_config()
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing weighted integer vector (not supported)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([-5:-3],30)
+%%      0 ns    Alert  ERROR               TB seq.             randm(([-5:-3],30,COMBINED))=> Weighted randomization not supported for integer_vector type.
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_config()
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing weighted real (single values) - Generate 1000 random values for each test
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight_real(-5.00,1)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight_real(10.10,3)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm((-5.00,1),(10.10,3))=> 10.10
+%%                                                                    =========================================================================================================
+%%                                                                    value:      -5     10
+%%                                                                    weight:    25%    75%
+%%                                                                    count:     256    744
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight_real(-5.00,1)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight_real(10.10,0)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm((-5.00,1),(10.10,0))=> -5.00
+%%                                                                    =========================================================================================================
+%%                                                                    value:      -5     10
+%%                                                                    weight:   100%     0%
+%%                                                                    count:    1000      0
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight_real(-5.00,10)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight_real(0.00,30)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight_real(10.10,60)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm((-5.00,10),(0.00,30),(10.10,60))=> 10.10
+%%                                                                    =========================================================================================================
+%%                                                                    value:      -5      0     10
+%%                                                                    weight:    10%    30%    60%
+%%                                                                    count:     103    299    598
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing weighted real (ranges w/default mode=COMBINED_WEIGHT) - Generate 1000 random values for each test
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight_real([-5.00:-3.00],30)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight_real(0.00,20)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight_real([9.30:10.10],50)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([-5.00:-3.00],30,COMBINED),(0.00,20),([9.30:10.10],50,COMBINED))=> -3.94
+%%                                                                    =========================================================================================================
+%%                                                                    value:   -5:-3      0   9:10
+%%                                                                    weight:    30%    20%    50%
+%%                                                                    count:     303    205    492
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             set_range_weight_default_mode(INDIVIDUAL_WEIGHT)
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking range_weight_default_mode'
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight_real([-5.00:-3.00],30)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight_real(0.00,20)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight_real([9.30:10.10],50)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([-5.00:-3.00],30,COMBINED),(0.00,20),([9.30:10.10],50,COMBINED))=> 0.00
+%%                                                                    =========================================================================================================
+%%                                                                    value:   -5:-3      0   9:10
+%%                                                                    weight:    30%    20%    50%
+%%                                                                    count:     305    232    463
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing weighted real (mixed with non-weighted constraint) - Generate 1000 random values for each test
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_real(20.00, 30.00)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight_real([-5.00:-3.00],4)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight_real(0.00,2)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight_real([9.00:10.00],4)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm((20.00,1),(30.00,1),([-5.00:-3.00],4,COMBINED),(0.00,2),([9.00:10.00],4,COMBINED))=> 9.13
+%%                                                                    =========================================================================================================
+%%                                                                    value:   -5:-3      0   9:10     20     30
+%%                                                                    weight:    33%    16%    33%     8%     8%
+%%                                                                    count:     359    148    307     92     94
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_config()
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing weighted real (invalid parameters)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Alert  ERROR               TB seq.             add_range_weight_real([1.00:1.00],30)=> min_value must be less than max_value
+%%      0 ns    Alert  ERROR               TB seq.             add_range_weight_real([10.00:5.00],30)=> min_value must be less than max_value
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight_real(1.00,0)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight_real(2.00,0)
+%%      0 ns    Alert  ERROR               TB seq.             randm((1.00,0),(2.00,0))=> The total weight of the values must be greater than 0
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm((1.00,0),(2.00,0))=> real'low
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight_real([-5.00:-3.00],30)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             excl_val_real(-4.00)
+%%      0 ns    Alert  WARNING             TB seq.             randm(([-5.00:-3.00],30,COMBINED))(bool, true) => Failed. Value was false. Expected true. 'Exclude constraint and weighted randomization cannot be combined. Ignoring exclude constraint.'
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([-5.00:-3.00],30,COMBINED))=> -4.58
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight_real([-5.00:-3.00],30)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             set_cyclic_mode(CYCLIC)
+%%      0 ns    Alert  WARNING             TB seq.             randm(UNCONSTRAINED)=> Cyclic mode not supported for real type. Ignoring cyclic configuration.
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([-5.00:-3.00],30,COMBINED))=> -4.17
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             set_cyclic_mode(NON_CYCLIC)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight_real([-5.00:-3.00],30)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             set_uniqueness(UNIQUE)
+%%      0 ns    Alert  WARNING             TB seq.             randm(([-5.00:-3.00],30,COMBINED))(bool, true) => Failed. Value was false. Expected true. 'Uniqueness and weighted randomization cannot be combined. Ignoring uniqueness configuration.'
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([-5.00:-3.00],30,COMBINED))=> -3.31
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             set_uniqueness(NON_UNIQUE)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_config()
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing weighted real vector (not supported)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight_real([1.00:3.00],30)
+%%      0 ns    Alert  ERROR               TB seq.             randm(([1.00:3.00],30,COMBINED))=> Weighted randomization not supported for real_vector type.
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_config()
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing weighted time (single values) - Generate 1000 random values for each test
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight_time(-5 ps,1)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight_time(10 ps,3)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm((-5 ps,1),(10 ps,3))=> 10 ps
+%%                                                                    =========================================================================================================
+%%                                                                    value:      -5     10
+%%                                                                    weight:    25%    75%
+%%                                                                    count:     228    772
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight_time(-5 ps,1)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight_time(10 ps,0)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm((-5 ps,1),(10 ps,0))=> -5 ps
+%%                                                                    =========================================================================================================
+%%                                                                    value:      -5     10
+%%                                                                    weight:   100%     0%
+%%                                                                    count:    1000      0
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight_time(-5 ps,10)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight_time(0 ns,30)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight_time(10 ps,60)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm((-5 ps,10),(0 ns,30),(10 ps,60))=> 10 ps
+%%                                                                    =========================================================================================================
+%%                                                                    value:      -5      0     10
+%%                                                                    weight:    10%    30%    60%
+%%                                                                    count:      98    292    610
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing weighted time (ranges w/default mode=COMBINED_WEIGHT) - Generate 1000 random values for each test
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight_time([-5 ps:-3 ps],30)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight_time(0 ns,20)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight_time([9 ps:10 ps],50)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([-5 ps:-3 ps],30,COMBINED),(0 ns,20),([9 ps:10 ps],50,COMBINED))=> 0 ns
+%%                                                                    =========================================================================================================
+%%                                                                    value:   -5:-3      0   9:10
+%%                                                                    weight:    30%    20%    50%
+%%                                                                    count:     287    214    499
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             set_range_weight_default_mode(INDIVIDUAL_WEIGHT)
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking range_weight_default_mode'
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight_time([-5 ps:-3 ps],30)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight_time(0 ns,20)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight_time([9 ps:10 ps],50)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([-5 ps:-3 ps],30,COMBINED),(0 ns,20),([9 ps:10 ps],50,COMBINED))=> 0 ns
+%%                                                                    =========================================================================================================
+%%                                                                    value:   -5:-3      0   9:10
+%%                                                                    weight:    30%    20%    50%
+%%                                                                    count:     270    221    509
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing weighted time (mixed with non-weighted constraint) - Generate 1000 random values for each test
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_time(20 ps, 30 ps)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight_time([-5 ps:-3 ps],4)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight_time(0 ns,2)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight_time([9 ps:10 ps],4)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm((20 ps,1),(30 ps,1),([-5 ps:-3 ps],4,COMBINED),(0 ns,2),([9 ps:10 ps],4,COMBINED))=> 9 ps
+%%                                                                    =========================================================================================================
+%%                                                                    value:   -5:-3      0   9:10     20     30
+%%                                                                    weight:    33%    16%    33%     8%     8%
+%%                                                                    count:     345    146    348     75     86
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing weighted time with time resolution - Generate 1000 random values for each test
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             set_range_weight_time_resolution(10 us)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight_time([-5 ms:-3 ms],30)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight_time(0 ns,20)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight_time([9 ms:10 ms],50)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([-5 ms:-3 ms],30,COMBINED),(0 ns,20),([9 ms:10 ms],50,COMBINED))=> 9.13 ms
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([-5 ms:-3 ms],30,COMBINED),(0 ns,20),([9 ms:10 ms],50,COMBINED))=> 9.75 ms
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([-5 ms:-3 ms],30,COMBINED),(0 ns,20),([9 ms:10 ms],50,COMBINED))=> 9.67 ms
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([-5 ms:-3 ms],30,COMBINED),(0 ns,20),([9 ms:10 ms],50,COMBINED))=> 9.88 ms
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([-5 ms:-3 ms],30,COMBINED),(0 ns,20),([9 ms:10 ms],50,COMBINED))=> 9.17 ms
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([-5 ms:-3 ms],30,COMBINED),(0 ns,20),([9 ms:10 ms],50,COMBINED))=> -4.13 ms
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([-5 ms:-3 ms],30,COMBINED),(0 ns,20),([9 ms:10 ms],50,COMBINED))=> 9.16 ms
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([-5 ms:-3 ms],30,COMBINED),(0 ns,20),([9 ms:10 ms],50,COMBINED))=> -3.01 ms
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([-5 ms:-3 ms],30,COMBINED),(0 ns,20),([9 ms:10 ms],50,COMBINED))=> 9.13 ms
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([-5 ms:-3 ms],30,COMBINED),(0 ns,20),([9 ms:10 ms],50,COMBINED))=> 0 ns
+%%                                                                    =========================================================================================================
+%%                                                                    value:   -5:-3      0   9:10
+%%                                                                    weight:    30%    20%    50%
+%%                                                                    count:     297    184    519
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_config()
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing weighted time (invalid parameters)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Alert  ERROR               TB seq.             add_range_weight_time([1 ps:1 ps],30)=> min_value must be less than max_value
+%%      0 ns    Alert  ERROR               TB seq.             add_range_weight_time([10 ps:5 ps],30)=> min_value must be less than max_value
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight_time(1 ps,0)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight_time(2 ps,0)
+%%      0 ns    Alert  ERROR               TB seq.             randm((1 ps,0),(2 ps,0))=> The total weight of the values must be greater than 0
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm((1 ps,0),(2 ps,0))=> time'low
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight_time([-5 ps:3 ps],30)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             excl_val_time(-4 ps)
+%%      0 ns    Alert  WARNING             TB seq.             randm(([-5 ps:3 ps],30,COMBINED))(bool, true) => Failed. Value was false. Expected true. 'Exclude constraint and weighted randomization cannot be combined. Ignoring exclude constraint.'
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([-5 ps:3 ps],30,COMBINED))=> -4 ps
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight_time([-5 ps:3 ps],30)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             set_cyclic_mode(CYCLIC)
+%%      0 ns    Alert  WARNING             TB seq.             randm(UNCONSTRAINED)=> Cyclic mode not supported for time type. Ignoring cyclic configuration.
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([-5 ps:3 ps],30,COMBINED))=> 0 ns
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             set_cyclic_mode(NON_CYCLIC)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight_time([-5 ps:3 ps],30)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             set_uniqueness(UNIQUE)
+%%      0 ns    Alert  WARNING             TB seq.             randm(([-5 ps:3 ps],30,COMBINED))(bool, true) => Failed. Value was false. Expected true. 'Uniqueness and weighted randomization cannot be combined. Ignoring uniqueness configuration.'
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([-5 ps:3 ps],30,COMBINED))=> -2 ps
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             set_uniqueness(NON_UNIQUE)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_config()
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing weighted time vector (not supported)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight_time([1 ps:3 ps],30)
+%%      0 ns    Alert  ERROR               TB seq.             randm(([1 ps:3 ps],30,COMBINED))=> Weighted randomization not supported for time_vector type.
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_config()
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing weighted unsigned (single values) - Generate 1000 random values for each test
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(5,1)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(10,3)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm((5,1),(10,3))=> x"A"
+%%                                                                    =========================================================================================================
+%%                                                                    value:       5     10
+%%                                                                    weight:    25%    75%
+%%                                                                    count:     215    785
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(5,1)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(10,0)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm((5,1),(10,0))=> x"5"
+%%                                                                    =========================================================================================================
+%%                                                                    value:       5     10
+%%                                                                    weight:   100%     0%
+%%                                                                    count:    1000      0
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(0,10)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(5,30)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(10,60)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm((0,10),(5,30),(10,60))=> x"A"
+%%                                                                    =========================================================================================================
+%%                                                                    value:       0      5     10
+%%                                                                    weight:    10%    30%    60%
+%%                                                                    count:     108    290    602
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing weighted unsigned (ranges w/default mode) - Generate 1000 random values for each test
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             set_range_weight_default_mode(COMBINED_WEIGHT)
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking range_weight_default_mode'
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([0:2],30)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(5,20)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([9:10],50)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([0:2],30,COMBINED),(5,20),([9:10],50,COMBINED))=> x"9"
+%%                                                                    =========================================================================================================
+%%                                                                    value:       0      1      2      5      9     10
+%%                                                                    weight:    10%    10%    10%    20%    25%    25%
+%%                                                                    count:     114     93     86    204    249    254
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             set_range_weight_default_mode(INDIVIDUAL_WEIGHT)
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking range_weight_default_mode'
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([0:2],30)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(5,20)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([9:10],50)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([0:2],30,INDIVIDUAL),(5,20),([9:10],50,INDIVIDUAL))=> x"9"
+%%                                                                    =========================================================================================================
+%%                                                                    value:       0      1      2      5      9     10
+%%                                                                    weight:    14%    14%    14%     9%    23%    23%
+%%                                                                    count:     158    135    144     93    234    236
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing weighted unsigned (ranges w/explicit mode) - Generate 1000 random values for each test
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([0:2],30,INDIVIDUAL_WEIGHT)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(5,20)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([9:10],50,COMBINED_WEIGHT)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([0:2],30,INDIVIDUAL),(5,20),([9:10],50,COMBINED))=> x"9"
+%%                                                                    =========================================================================================================
+%%                                                                    value:       0      1      2      5      9     10
+%%                                                                    weight:    18%    18%    18%    12%    15%    15%
+%%                                                                    count:     193    181    176    134    160    156
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing weighted unsigned (mixed with non-weighted constraint) - Generate 1000 random values for each test
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val(14, 15)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([0:2],4,INDIVIDUAL_WEIGHT)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(5,2)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([9:10],4,COMBINED_WEIGHT)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm((14,1),(15,1),([0:2],4,INDIVIDUAL),(5,2),([9:10],4,COMBINED))=> x"9"
+%%                                                                    =========================================================================================================
+%%                                                                    value:       0      1      2      5      9     10     14     15
+%%                                                                    weight:    20%    20%    20%    10%    10%    10%     5%     5%
+%%                                                                    count:     217    215    184     96     99     92     44     53
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_config()
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing weighted unsigned (invalid parameters)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([0:65536],30)
+%%      0 ns    Alert  ERROR               TB seq.             randm(([0:65536],30,COMBINED))=> constraints must be within range [0:15] due to length parameter
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(131072,30)
+%%      0 ns    Alert  ERROR               TB seq.             randm((131072,30))=> constraints must be within range [0:15] due to length parameter
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([-4:-2],30)
+%%      0 ns    Alert  ERROR               TB seq.             randm(([-4:-2],30,COMBINED))=> constraints must be within range [0:15] due to length parameter
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([0:3],30)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             excl_val(4)
+%%      0 ns    Alert  WARNING             TB seq.             randm(([0:3],30,COMBINED))(bool, true) => Failed. Value was false. Expected true. 'Exclude constraint and weighted randomization cannot be combined. Ignoring exclude constraint.'
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([0:3],30,COMBINED))=> x"0"
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([0:3],30)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             set_cyclic_mode(CYCLIC)
+%%      0 ns    Alert  WARNING             TB seq.             randm(([0:3],30,COMBINED))(bool, true) => Failed. Value was false. Expected true. 'Cyclic mode and weighted randomization cannot be combined. Ignoring cyclic configuration.'
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([0:3],30,COMBINED))=> x"2"
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             set_cyclic_mode(NON_CYCLIC)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([0:3],30)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             set_uniqueness(UNIQUE)
+%%      0 ns    Alert  WARNING             TB seq.             randm(([0:3],30,COMBINED))(bool, true) => Failed. Value was false. Expected true. 'Uniqueness and weighted randomization cannot be combined. Ignoring uniqueness configuration.'
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([0:3],30,COMBINED))=> x"3"
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             set_uniqueness(NON_UNIQUE)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_config()
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing weighted signed (single values) - Generate 1000 random values for each test
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(-5,1)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(7,3)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm((-5,1),(7,3))=> x"7"
+%%                                                                    =========================================================================================================
+%%                                                                    value:      -5      7
+%%                                                                    weight:    25%    75%
+%%                                                                    count:     248    752
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(-5,1)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(7,0)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm((-5,1),(7,0))=> x"B"
+%%                                                                    =========================================================================================================
+%%                                                                    value:      -5      7
+%%                                                                    weight:   100%     0%
+%%                                                                    count:    1000      0
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(-5,10)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(0,30)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(7,60)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm((-5,10),(0,30),(7,60))=> x"7"
+%%                                                                    =========================================================================================================
+%%                                                                    value:      -5      0      7
+%%                                                                    weight:    10%    30%    60%
+%%                                                                    count:      99    287    614
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing weighted signed (ranges w/default mode) - Generate 1000 random values for each test
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             set_range_weight_default_mode(COMBINED_WEIGHT)
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking range_weight_default_mode'
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([-5:-3],30)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(0,20)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([6:7],50)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([-5:-3],30,COMBINED),(0,20),([6:7],50,COMBINED))=> x"7"
+%%                                                                    =========================================================================================================
+%%                                                                    value:      -5     -4     -3      0      6      7
+%%                                                                    weight:    10%    10%    10%    20%    25%    25%
+%%                                                                    count:      94     95    102    186    266    257
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             set_range_weight_default_mode(INDIVIDUAL_WEIGHT)
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking range_weight_default_mode'
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([-5:-3],30)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(0,20)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([6:7],50)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([-5:-3],30,INDIVIDUAL),(0,20),([6:7],50,INDIVIDUAL))=> x"B"
+%%                                                                    =========================================================================================================
+%%                                                                    value:      -5     -4     -3      0      6      7
+%%                                                                    weight:    14%    14%    14%     9%    23%    23%
+%%                                                                    count:     122    143    129    107    240    259
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing weighted signed (ranges w/explicit mode) - Generate 1000 random values for each test
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([-5:-3],30,INDIVIDUAL_WEIGHT)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(0,20)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([6:7],50,COMBINED_WEIGHT)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([-5:-3],30,INDIVIDUAL),(0,20),([6:7],50,COMBINED))=> x"D"
+%%                                                                    =========================================================================================================
+%%                                                                    value:      -5     -4     -3      0      6      7
+%%                                                                    weight:    18%    18%    18%    12%    15%    15%
+%%                                                                    count:     185    175    193    127    158    162
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing weighted signed (mixed with non-weighted constraint) - Generate 1000 random values for each test
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val(-1, 1)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([-5:-3],4,INDIVIDUAL_WEIGHT)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(3,2)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([6:7],4,COMBINED_WEIGHT)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm((-1,1),(1,1),([-5:-3],4,INDIVIDUAL),(3,2),([6:7],4,COMBINED))=> x"7"
+%%                                                                    =========================================================================================================
+%%                                                                    value:      -5     -4     -3      3      6      7     -1      1
+%%                                                                    weight:    20%    20%    20%    10%    10%    10%     5%     5%
+%%                                                                    count:     194    197    230     87     89    109     45     49
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_config()
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing weighted signed (invalid parameters)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([0:65536],30)
+%%      0 ns    Alert  ERROR               TB seq.             randm(([0:65536],30,COMBINED))=> constraints must be within range [-8:7] due to length parameter
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(131072,30)
+%%      0 ns    Alert  ERROR               TB seq.             randm((131072,30))=> constraints must be within range [-8:7] due to length parameter
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([0:3],30)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             excl_val(4)
+%%      0 ns    Alert  WARNING             TB seq.             randm(([0:3],30,COMBINED))(bool, true) => Failed. Value was false. Expected true. 'Exclude constraint and weighted randomization cannot be combined. Ignoring exclude constraint.'
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([0:3],30,COMBINED))=> x"3"
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([0:3],30)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             set_cyclic_mode(CYCLIC)
+%%      0 ns    Alert  WARNING             TB seq.             randm(([0:3],30,COMBINED))(bool, true) => Failed. Value was false. Expected true. 'Cyclic mode and weighted randomization cannot be combined. Ignoring cyclic configuration.'
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([0:3],30,COMBINED))=> x"3"
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             set_cyclic_mode(NON_CYCLIC)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([0:3],30)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             set_uniqueness(UNIQUE)
+%%      0 ns    Alert  WARNING             TB seq.             randm(([0:3],30,COMBINED))(bool, true) => Failed. Value was false. Expected true. 'Uniqueness and weighted randomization cannot be combined. Ignoring uniqueness configuration.'
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([0:3],30,COMBINED))=> x"1"
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             set_uniqueness(NON_UNIQUE)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_config()
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing weighted std_logic_vector (single values) - Generate 1000 random values for each test
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(5,1)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(10,3)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm((5,1),(10,3))=> x"5"
+%%                                                                    =========================================================================================================
+%%                                                                    value:       5     10
+%%                                                                    weight:    25%    75%
+%%                                                                    count:     242    758
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(5,1)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(10,0)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm((5,1),(10,0))=> x"5"
+%%                                                                    =========================================================================================================
+%%                                                                    value:       5     10
+%%                                                                    weight:   100%     0%
+%%                                                                    count:    1000      0
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(0,10)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(5,30)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(10,60)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm((0,10),(5,30),(10,60))=> x"A"
+%%                                                                    =========================================================================================================
+%%                                                                    value:       0      5     10
+%%                                                                    weight:    10%    30%    60%
+%%                                                                    count:     110    299    591
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing weighted std_logic_vector (ranges w/default mode) - Generate 1000 random values for each test
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             set_range_weight_default_mode(COMBINED_WEIGHT)
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking range_weight_default_mode'
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([0:2],30)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(5,20)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([9:10],50)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([0:2],30,COMBINED),(5,20),([9:10],50,COMBINED))=> x"5"
+%%                                                                    =========================================================================================================
+%%                                                                    value:       0      1      2      5      9     10
+%%                                                                    weight:    10%    10%    10%    20%    25%    25%
+%%                                                                    count:     117     86    103    193    243    258
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             set_range_weight_default_mode(INDIVIDUAL_WEIGHT)
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking range_weight_default_mode'
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([0:2],30)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(5,20)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([9:10],50)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([0:2],30,INDIVIDUAL),(5,20),([9:10],50,INDIVIDUAL))=> x"A"
+%%                                                                    =========================================================================================================
+%%                                                                    value:       0      1      2      5      9     10
+%%                                                                    weight:    14%    14%    14%     9%    23%    23%
+%%                                                                    count:     154    135    159     83    237    232
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing weighted std_logic_vector (ranges w/explicit mode) - Generate 1000 random values for each test
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([0:2],30,INDIVIDUAL_WEIGHT)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(5,20)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([9:10],50,COMBINED_WEIGHT)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([0:2],30,INDIVIDUAL),(5,20),([9:10],50,COMBINED))=> x"0"
+%%                                                                    =========================================================================================================
+%%                                                                    value:       0      1      2      5      9     10
+%%                                                                    weight:    18%    18%    18%    12%    15%    15%
+%%                                                                    count:     187    185    187    122    166    153
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing weighted std_logic_vector (mixed with non-weighted constraint) - Generate 1000 random values for each test
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val(14, 15)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([0:2],4,INDIVIDUAL_WEIGHT)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(5,2)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([9:10],4,COMBINED_WEIGHT)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm((14,1),(15,1),([0:2],4,INDIVIDUAL),(5,2),([9:10],4,COMBINED))=> x"A"
+%%                                                                    =========================================================================================================
+%%                                                                    value:       0      1      2      5      9     10     14     15
+%%                                                                    weight:    20%    20%    20%    10%    10%    10%     5%     5%
+%%                                                                    count:     211    200    198    101     82    105     55     48
+%%                                                                    =========================================================================================================
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_config()
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing weighted std_logic_vector (invalid parameters)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([0:65536],30)
+%%      0 ns    Alert  ERROR               TB seq.             randm(([0:65536],30,COMBINED))=> constraints must be within range [0:15] due to length parameter
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(131072,30)
+%%      0 ns    Alert  ERROR               TB seq.             randm((131072,30))=> constraints must be within range [0:15] due to length parameter
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([-4:-2],30)
+%%      0 ns    Alert  ERROR               TB seq.             randm(([-4:-2],30,COMBINED))=> constraints must be within range [0:15] due to length parameter
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([0:3],30)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             excl_val(4)
+%%      0 ns    Alert  WARNING             TB seq.             randm(([0:3],30,COMBINED))(bool, true) => Failed. Value was false. Expected true. 'Exclude constraint and weighted randomization cannot be combined. Ignoring exclude constraint.'
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([0:3],30,COMBINED))=> x"0"
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([0:3],30)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             set_cyclic_mode(CYCLIC)
+%%      0 ns    Alert  WARNING             TB seq.             randm(([0:3],30,COMBINED))(bool, true) => Failed. Value was false. Expected true. 'Cyclic mode and weighted randomization cannot be combined. Ignoring cyclic configuration.'
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([0:3],30,COMBINED))=> x"3"
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             set_cyclic_mode(NON_CYCLIC)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([0:3],30)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             set_uniqueness(UNIQUE)
+%%      0 ns    Alert  WARNING             TB seq.             randm(([0:3],30,COMBINED))(bool, true) => Failed. Value was false. Expected true. 'Uniqueness and weighted randomization cannot be combined. Ignoring uniqueness configuration.'
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([0:3],30,COMBINED))=> x"1"
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             set_uniqueness(NON_UNIQUE)
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_config()
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%   1000 ns    DONE   PASSED   rand_weighted_multi  Passed: 10  Affirmations Checked: 26
+%%    Expected      Failures: 0  Errors: -20  Warnings: -18  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 20  Warnings: 18  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%%   1000 ns    Log    ID_LOG_HDR          TB seq.             SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

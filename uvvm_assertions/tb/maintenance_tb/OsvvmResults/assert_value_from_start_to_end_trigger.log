@@ -1,0 +1,247 @@
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ALL_MESSAGES).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_LOG_HDR_LARGE).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_LOG_HDR).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_SEQUENCER).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_UVVM_ASSERTION).
+%% 
+%% 
+%% ============================================================================================================================================================================
+%%    100 ns    Log    ID_LOG_HDR_LARGE    TB seq.(uvvm)       Testing the assertion: assert_value_from_start_to_end_trigger
+%% ============================================================================================================================================================================
+%% 
+%% 
+%%    150 ns    Log    ID_LOG_HDR          TB seq.             Testing Normal Operation (std_logic_vector)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    150 ns    Log    ID_SEQUENCER        TB seq.             Testing tracked_value equal to exp_value = "1111" within the window
+%%    150 ns    Log    ID_SEQUENCER        TB seq.             Hold "1111" from 0-cycle to 10-cycles
+%%    250 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => OK (first). tracked_value was equal to expected value in entire window. OK after 100 ns.
+%%    300 ns    Log    ID_SEQUENCER        TB seq.             Testing tracked_value equal to exp_value = "0000" within the window
+%%    300 ns    Log    ID_SEQUENCER        TB seq.             Setting exp_value = "0000"
+%%    350 ns    Log    ID_SEQUENCER        TB seq.             Hold "0000" from 0-cycle to 10-cycles
+%%    450 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => OK (first). tracked_value was equal to expected value in entire window. OK after 100 ns.
+%%    500 ns    Log    ID_SEQUENCER        TB seq.             Testing tracked_value equal to exp_value = "1111" within the window /w start_trigger = end_trigger
+%%    500 ns    Log    ID_SEQUENCER        TB seq.             Setting exp_value = "1111"
+%%    550 ns    Log    ID_SEQUENCER        TB seq.             Hold "1111" from 0-cycle to 0-cycles
+%%    550 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => OK (first). tracked_value was equal to expected value in entire window. OK after 0 ns.
+%%    600 ns    Log    ID_SEQUENCER        TB seq.             Testing multiple triggers within the window
+%%    690 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => OK (first). tracked_value was equal to expected value in entire window. OK after 40 ns.
+%% 
+%% 
+%%    760 ns    Log    ID_LOG_HDR          TB seq.             Testing Triggering Assertion (std_logic_vector)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    760 ns    Log    ID_SEQUENCER        TB seq.             Testing triggering assert in each cycle within the window
+%%    760 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (1110) was not equal to 1111 after 0 ns(0-cycles). pipe: (2).
+%%    850 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (1110) was not equal to 1111 after 10 ns(1-cycles). pipe: (3).
+%%    940 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (1110) was not equal to 1111 after 20 ns(2-cycles). pipe: (4).
+%%   1030 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (1110) was not equal to 1111 after 30 ns(3-cycles). pipe: (5).
+%%   1080 ns    Log    ID_SEQUENCER        TB seq.             Testing invalid values within the window
+%%   1080 ns    Log    ID_SEQUENCER        TB seq.             Hold "HHHH" from 0-cycle to 5-cycles
+%%   1080 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (HHHH) was not equal to 1111 after 0 ns(0-cycles). pipe: (6).
+%%   1180 ns    Log    ID_SEQUENCER        TB seq.             Hold "LLLL" from 0-cycle to 5-cycles
+%%   1180 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (LLLL) was not equal to 1111 after 0 ns(0-cycles). pipe: (7).
+%%   1280 ns    Log    ID_SEQUENCER        TB seq.             Hold "WWWW" from 0-cycle to 5-cycles
+%%   1280 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (WWWW) was not equal to 1111 after 0 ns(0-cycles). pipe: (8).
+%%   1380 ns    Log    ID_SEQUENCER        TB seq.             Hold "ZZZZ" from 0-cycle to 5-cycles
+%%   1380 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (ZZZZ) was not equal to 1111 after 0 ns(0-cycles). pipe: (9).
+%%   1480 ns    Log    ID_SEQUENCER        TB seq.             Hold "0000" from 0-cycle to 5-cycles
+%%   1480 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0000) was not equal to 1111 after 0 ns(0-cycles). pipe: (10).
+%%   1580 ns    Log    ID_SEQUENCER        TB seq.             Hold "1111" from 0-cycle to 5-cycles
+%%   1680 ns    Log    ID_SEQUENCER        TB seq.             Hold "XXXX" from 0-cycle to 5-cycles
+%%   1680 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (XXXX) was not equal to 1111 after 0 ns(0-cycles). pipe: (12).
+%%   1780 ns    Log    ID_SEQUENCER        TB seq.             Hold "UUUU" from 0-cycle to 5-cycles
+%%   1780 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (UUUU) was not equal to 1111 after 0 ns(0-cycles). pipe: (13).
+%%   1880 ns    Log    ID_SEQUENCER        TB seq.             Testing triggering assert /w multiple triggers within the window
+%%   1890 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0000) was not equal to 1111 after 10 ns(1-cycles). pipe: (14).
+%%   1910 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0000) was not equal to 1111 after 10 ns(1-cycles). pipe: (15).
+%% 
+%% 
+%%   1980 ns    Log    ID_LOG_HDR          TB seq.             Testing pos_ack_kind: EVERY (std_logic_vector)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   1980 ns    Log    ID_SEQUENCER        TB seq.             Expecting a positive acknowledge on each successful window sequence
+%%   2030 ns    Log    ID_SEQUENCER        TB seq.             Hold "1111" from 0-cycle to 5-cycles
+%%   2080 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => OK. tracked_value was equal to expected value in entire window. OK after 50 ns.
+%%   2130 ns    Log    ID_SEQUENCER        TB seq.             Hold "1111" from 0-cycle to 10-cycles
+%%   2230 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => OK. tracked_value was equal to expected value in entire window. OK after 100 ns. pipe: (1).
+%%   2280 ns    Log    ID_SEQUENCER        TB seq.             Hold "1111" from 0-cycle to 15-cycles
+%%   2430 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => OK. tracked_value was equal to expected value in entire window. OK after 150 ns. pipe: (2).
+%%   2480 ns    Log    ID_SEQUENCER        TB seq.             Hold "1111" from 0-cycle to 20-cycles
+%%   2680 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => OK. tracked_value was equal to expected value in entire window. OK after 200 ns. pipe: (3).
+%% 
+%% 
+%%   2820 ns    Log    ID_LOG_HDR          TB seq.             Testing Normal Operation (std_logic)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   2820 ns    Log    ID_SEQUENCER        TB seq.             Testing tracked_value equal to exp_value = '1' within the window
+%%   2820 ns    Log    ID_SEQUENCER        TB seq.             Hold '1' from 0-cycle to 10-cycles
+%%   2920 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => OK (first). tracked_value was equal to expected value in entire window. OK after 100 ns.
+%%   2970 ns    Log    ID_SEQUENCER        TB seq.             Testing tracked_value equal to exp_value = '0' within the window
+%%   2970 ns    Log    ID_SEQUENCER        TB seq.             Setting exp_value = '0'
+%%   3020 ns    Log    ID_SEQUENCER        TB seq.             Hold '0' from 0-cycle to 10-cycles
+%%   3120 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => OK (first). tracked_value was equal to expected value in entire window. OK after 100 ns.
+%%   3170 ns    Log    ID_SEQUENCER        TB seq.             Testing tracked_value equal to exp_value = '1' within the window /w start_trigger = end_trigger
+%%   3170 ns    Log    ID_SEQUENCER        TB seq.             Setting exp_value = '1'
+%%   3220 ns    Log    ID_SEQUENCER        TB seq.             Hold '1' from 0-cycle to 0-cycles
+%%   3220 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => OK (first). tracked_value was equal to expected value in entire window. OK after 0 ns.
+%%   3270 ns    Log    ID_SEQUENCER        TB seq.             Testing multiple triggers within the window
+%%   3360 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => OK (first). tracked_value was equal to expected value in entire window. OK after 40 ns.
+%% 
+%% 
+%%   3430 ns    Log    ID_LOG_HDR          TB seq.             Testing Triggering Assertion (std_logic)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   3430 ns    Log    ID_SEQUENCER        TB seq.             Testing all invalid bit patterns (containing at least one '0') within the window
+%%   3430 ns    Log    ID_SEQUENCER        TB seq.             Testing the window, 0-cycle to 2-cycles
+%%   3430 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 000
+%%   3430 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 0 ns(0-cycles). pipe: (2).
+%%   3500 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 001
+%%   3500 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 0 ns(0-cycles). pipe: (3).
+%%   3570 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 010
+%%   3570 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 0 ns(0-cycles). pipe: (4).
+%%   3640 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 011
+%%   3640 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 0 ns(0-cycles). pipe: (5).
+%%   3710 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 100
+%%   3720 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 10 ns(1-cycles). pipe: (6).
+%%   3780 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 101
+%%   3790 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 10 ns(1-cycles). pipe: (7).
+%%   3850 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 110
+%%   3870 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 20 ns(2-cycles). pipe: (8).
+%%   3920 ns    Log    ID_SEQUENCER        TB seq.             Testing the window, 0-cycle to 3-cycles
+%%   3920 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 0000
+%%   3920 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 0 ns(0-cycles). pipe: (9).
+%%   4000 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 0001
+%%   4000 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 0 ns(0-cycles). pipe: (10).
+%%   4080 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 0010
+%%   4080 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 0 ns(0-cycles). pipe: (11).
+%%   4160 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 0011
+%%   4160 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 0 ns(0-cycles). pipe: (12).
+%%   4240 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 0100
+%%   4240 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 0 ns(0-cycles). pipe: (13).
+%%   4320 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 0101
+%%   4320 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 0 ns(0-cycles). pipe: (14).
+%%   4400 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 0110
+%%   4400 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 0 ns(0-cycles). pipe: (15).
+%%   4480 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 0111
+%%   4480 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 0 ns(0-cycles). pipe: (16).
+%%   4560 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 1000
+%%   4570 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 10 ns(1-cycles). pipe: (17).
+%%   4640 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 1001
+%%   4650 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 10 ns(1-cycles). pipe: (18).
+%%   4720 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 1010
+%%   4730 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 10 ns(1-cycles). pipe: (19).
+%%   4800 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 1011
+%%   4810 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 10 ns(1-cycles). pipe: (20).
+%%   4880 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 1100
+%%   4900 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 20 ns(2-cycles). pipe: (21).
+%%   4960 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 1101
+%%   4980 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 20 ns(2-cycles). pipe: (22).
+%%   5040 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 1110
+%%   5070 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 30 ns(3-cycles). pipe: (23).
+%%   5120 ns    Log    ID_SEQUENCER        TB seq.             Testing the window, 0-cycle to 4-cycles
+%%   5120 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 00000
+%%   5120 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 0 ns(0-cycles). pipe: (24).
+%%   5210 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 00001
+%%   5210 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 0 ns(0-cycles). pipe: (25).
+%%   5300 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 00010
+%%   5300 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 0 ns(0-cycles). pipe: (26).
+%%   5390 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 00011
+%%   5390 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 0 ns(0-cycles). pipe: (27).
+%%   5480 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 00100
+%%   5480 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 0 ns(0-cycles). pipe: (28).
+%%   5570 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 00101
+%%   5570 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 0 ns(0-cycles). pipe: (29).
+%%   5660 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 00110
+%%   5660 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 0 ns(0-cycles). pipe: (30).
+%%   5750 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 00111
+%%   5750 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 0 ns(0-cycles). pipe: (31).
+%%   5840 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 01000
+%%   5840 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 0 ns(0-cycles). pipe: (32).
+%%   5930 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 01001
+%%   5930 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 0 ns(0-cycles). pipe: (33).
+%%   6020 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 01010
+%%   6020 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 0 ns(0-cycles). pipe: (34).
+%%   6110 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 01011
+%%   6110 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 0 ns(0-cycles). pipe: (35).
+%%   6200 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 01100
+%%   6200 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 0 ns(0-cycles). pipe: (36).
+%%   6290 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 01101
+%%   6290 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 0 ns(0-cycles). pipe: (37).
+%%   6380 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 01110
+%%   6380 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 0 ns(0-cycles). pipe: (38).
+%%   6470 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 01111
+%%   6470 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 0 ns(0-cycles). pipe: (39).
+%%   6560 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 10000
+%%   6570 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 10 ns(1-cycles). pipe: (40).
+%%   6650 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 10001
+%%   6660 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 10 ns(1-cycles). pipe: (41).
+%%   6740 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 10010
+%%   6750 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 10 ns(1-cycles). pipe: (42).
+%%   6830 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 10011
+%%   6840 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 10 ns(1-cycles). pipe: (43).
+%%   6920 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 10100
+%%   6930 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 10 ns(1-cycles). pipe: (44).
+%%   7010 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 10101
+%%   7020 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 10 ns(1-cycles). pipe: (45).
+%%   7100 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 10110
+%%   7110 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 10 ns(1-cycles). pipe: (46).
+%%   7190 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 10111
+%%   7200 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 10 ns(1-cycles). pipe: (47).
+%%   7280 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 11000
+%%   7300 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 20 ns(2-cycles). pipe: (48).
+%%   7370 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 11001
+%%   7390 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 20 ns(2-cycles). pipe: (49).
+%%   7460 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 11010
+%%   7480 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 20 ns(2-cycles). pipe: (50).
+%%   7550 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 11011
+%%   7570 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 20 ns(2-cycles). pipe: (51).
+%%   7640 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 11100
+%%   7670 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 30 ns(3-cycles). pipe: (52).
+%%   7730 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 11101
+%%   7760 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 30 ns(3-cycles). pipe: (53).
+%%   7820 ns    Log    ID_SEQUENCER        TB seq.             Bit pattern: 11110
+%%   7860 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 40 ns(4-cycles). pipe: (54).
+%%   7910 ns    Log    ID_SEQUENCER        TB seq.             Testing triggering assert /w multiple triggers within the window
+%%   7920 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 10 ns(1-cycles). pipe: (55).
+%%   7940 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 10 ns(1-cycles). pipe: (56).
+%% 
+%% 
+%%   8010 ns    Log    ID_LOG_HDR          TB seq.             Testing pos_ack_kind: EVERY (std_logic)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   8010 ns    Log    ID_SEQUENCER        TB seq.             Expecting a positive acknowledge on each successful window sequence
+%%   8060 ns    Log    ID_SEQUENCER        TB seq.             Hold '1' from 0-cycle to 5-cycles
+%%   8110 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => OK. tracked_value was equal to expected value in entire window. OK after 50 ns.
+%%   8160 ns    Log    ID_SEQUENCER        TB seq.             Hold '1' from 0-cycle to 10-cycles
+%%   8260 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => OK. tracked_value was equal to expected value in entire window. OK after 100 ns. pipe: (1).
+%%   8310 ns    Log    ID_SEQUENCER        TB seq.             Hold '1' from 0-cycle to 15-cycles
+%%   8460 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => OK. tracked_value was equal to expected value in entire window. OK after 150 ns. pipe: (2).
+%%   8510 ns    Log    ID_SEQUENCER        TB seq.             Hold '1' from 0-cycle to 20-cycles
+%%   8710 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => OK. tracked_value was equal to expected value in entire window. OK after 200 ns. pipe: (3).
+%% 
+%% 
+%%   8800 ns    Log    ID_LOG_HDR          TB seq.             Testing Assertion Enable (std_logic)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   8800 ns    Log    ID_SEQUENCER        TB seq.             Assertion enabled as trigger is assigned, expecting alert when triggering assert
+%%   8800 ns    Log    ID_SEQUENCER        TB seq.             Hold '0' from 0-cycle to 5-cycles
+%%   8800 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 0 ns(0-cycles).
+%%   8940 ns    Log    ID_SEQUENCER        TB seq.             Assertion enabled prior to trigger, expecting alert when triggering assert
+%%   8950 ns    Log    ID_SEQUENCER        TB seq.             Hold '0' from 0-cycle to 5-cycles
+%%   8950 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_from_start_to_end_trigger() => Failed. tracked_value (0) was not equal to 1 after 0 ns(0-cycles).
+%% 
+%% 
+%%   9050 ns    Log    ID_LOG_HDR          TB seq.             Testing CLK Disabled
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   9050 ns    Log    ID_SEQUENCER        TB seq.             Clock deactivated
+%%   9090 ns    Log    ID_SEQUENCER        TB seq.             Triggering assertion while clk is disabled, expecting no behavior
+%%   9130 ns    Log    ID_SEQUENCER        TB seq.             Hold '0' from 0-cycle to 5-cycles
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%   9240 ns    DONE   NOCHECKS   assert_value_from_start_to_end_trigger  Passed: 0
+%%    Expected      Failures: 0  Errors: -70  Warnings: 0  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 70  Warnings: 0  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%%   9240 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

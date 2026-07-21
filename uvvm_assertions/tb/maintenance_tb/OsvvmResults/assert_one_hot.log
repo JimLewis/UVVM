@@ -1,0 +1,243 @@
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ALL_MESSAGES).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_LOG_HDR_LARGE).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_LOG_HDR).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_SEQUENCER).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_UVVM_ASSERTION).
+%% 
+%% 
+%% ============================================================================================================================================================================
+%%    100 ns    Log    ID_LOG_HDR_LARGE    TB seq.(uvvm)       Testing the assertion: assert_one_hot
+%% ============================================================================================================================================================================
+%% 
+%% 
+%%    140 ns    Log    ID_LOG_HDR          TB seq.             Testing ALL_ZERO_NOT_ALLOWED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 
+%% 
+%%    140 ns    Log    ID_LOG_HDR          TB seq.             Testing Normal Operation with accept_all_zeros: ALL_ZERO_NOT_ALLOWED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    140 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 1000
+%%    140 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_one_hot() => OK (first), tracked_value (1000) was one-hot. Condition occurred after 0 ns.
+%%    150 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0100
+%%    160 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0010
+%%    170 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0001
+%% 
+%% 
+%%    230 ns    Log    ID_LOG_HDR          TB seq.             Testing Triggering Assertion with accept_all_zeros: ALL_ZERO_NOT_ALLOWED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    230 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0000
+%%    230 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (0000) was not one-hot. Occurred after 90 ns.
+%%    240 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0001
+%%    250 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0010
+%%    260 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0011
+%%    260 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (0011) was not one-hot. Occurred after 120 ns.
+%%    270 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0100
+%%    280 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0101
+%%    280 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (0101) was not one-hot. Occurred after 140 ns.
+%%    290 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0110
+%%    290 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (0110) was not one-hot. Occurred after 150 ns.
+%%    300 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0111
+%%    300 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (0111) was not one-hot. Occurred after 160 ns.
+%%    310 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 1000
+%%    320 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 1001
+%%    320 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (1001) was not one-hot. Occurred after 180 ns.
+%%    330 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 1010
+%%    330 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (1010) was not one-hot. Occurred after 190 ns.
+%%    340 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 1011
+%%    340 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (1011) was not one-hot. Occurred after 200 ns.
+%%    350 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 1100
+%%    350 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (1100) was not one-hot. Occurred after 210 ns.
+%%    360 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 1101
+%%    360 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (1101) was not one-hot. Occurred after 220 ns.
+%%    370 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 1110
+%%    370 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (1110) was not one-hot. Occurred after 230 ns.
+%%    380 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 1111
+%%    380 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (1111) was not one-hot. Occurred after 240 ns.
+%% 
+%% 
+%%    430 ns    Log    ID_LOG_HDR          TB seq.             Testing ALL_ZERO_ALLOWED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 
+%% 
+%%    470 ns    Log    ID_LOG_HDR          TB seq.             Testing Normal Operation with accept_all_zeros: ALL_ZERO_ALLOWED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    470 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 1000
+%%    470 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_one_hot() => OK (first), tracked_value (1000) was one-hot. Condition occurred after 0 ns.
+%%    480 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0100
+%%    490 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0010
+%%    500 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0001
+%%    510 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0000
+%% 
+%% 
+%%    560 ns    Log    ID_LOG_HDR          TB seq.             Testing Triggering Assertion with accept_all_zeros: ALL_ZERO_ALLOWED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    560 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0000
+%%    570 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0001
+%%    580 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0010
+%%    590 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0011
+%%    590 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (0011) was not one-hot. Occurred after 120 ns.
+%%    600 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0100
+%%    610 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0101
+%%    610 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (0101) was not one-hot. Occurred after 140 ns.
+%%    620 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0110
+%%    620 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (0110) was not one-hot. Occurred after 150 ns.
+%%    630 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0111
+%%    630 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (0111) was not one-hot. Occurred after 160 ns.
+%%    640 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 1000
+%%    650 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 1001
+%%    650 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (1001) was not one-hot. Occurred after 180 ns.
+%%    660 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 1010
+%%    660 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (1010) was not one-hot. Occurred after 190 ns.
+%%    670 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 1011
+%%    670 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (1011) was not one-hot. Occurred after 200 ns.
+%%    680 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 1100
+%%    680 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (1100) was not one-hot. Occurred after 210 ns.
+%%    690 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 1101
+%%    690 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (1101) was not one-hot. Occurred after 220 ns.
+%%    700 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 1110
+%%    700 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (1110) was not one-hot. Occurred after 230 ns.
+%%    710 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 1111
+%%    710 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (1111) was not one-hot. Occurred after 240 ns.
+%% 
+%% 
+%%    760 ns    Log    ID_LOG_HDR          TB seq.             Testing pos_ack_kind: EVERY
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    760 ns    Log    ID_SEQUENCER        TB seq.             Expecting a positive acknowledge on each rising clock edge
+%%    770 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_one_hot() => OK, tracked_value (1000) was one-hot. Condition occurred after 0 ns.
+%%    780 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_one_hot() => OK, tracked_value (1000) was one-hot. Condition occurred after 10 ns.
+%%    790 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_one_hot() => OK, tracked_value (1000) was one-hot. Condition occurred after 20 ns.
+%%    800 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_one_hot() => OK, tracked_value (1000) was one-hot. Condition occurred after 30 ns.
+%% 
+%% 
+%%    850 ns    Log    ID_LOG_HDR          TB seq.             Testing Assertion Enable
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    850 ns    Log    ID_SEQUENCER        TB seq.             Assertion enabled as tracked_value is assigned, expecting alert
+%%    850 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (1111) was not one-hot. Occurred after 0 ns.
+%%    900 ns    Log    ID_SEQUENCER        TB seq.             Assertion enabled prior to tracked_value, expecting alert
+%%    910 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (1111) was not one-hot. Occurred after 0 ns.
+%% 
+%% 
+%%    960 ns    Log    ID_LOG_HDR          TB seq.             Testing CLK Disabled
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    960 ns    Log    ID_SEQUENCER        TB seq.             Clock deactivated
+%%   1000 ns    Log    ID_SEQUENCER        TB seq.             Triggering assertion while clk is disabled, expecting no behavior
+%% 
+%% 
+%%   1118 ns    Log    ID_LOG_HDR          TB seq.             Testing ALL_ZERO_NOT_ALLOWED (non-clocked)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 
+%% 
+%%   1118 ns    Log    ID_LOG_HDR          TB seq.             Testing Normal Operation with accept_all_zeros: ALL_ZERO_NOT_ALLOWED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   1118 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 1000
+%%   1118 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_one_hot() => OK (first), tracked_value (1000) was one-hot. Condition occurred after 0 ns.
+%%   1125 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0100
+%%   1134 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0010
+%%   1140 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0001
+%% 
+%% 
+%%   1188 ns    Log    ID_LOG_HDR          TB seq.             Testing Triggering Assertion with accept_all_zeros: ALL_ZERO_NOT_ALLOWED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   1188 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0000
+%%   1188 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (0000) was not one-hot. Occurred after 70 ns.
+%%   1195 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0001
+%%   1203 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0010
+%%   1211 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0011
+%%   1211 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (0011) was not one-hot. Occurred after 93 ns.
+%%   1219 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0100
+%%   1228 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0101
+%%   1228 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (0101) was not one-hot. Occurred after 110 ns.
+%%   1235 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0110
+%%   1235 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (0110) was not one-hot. Occurred after 117 ns.
+%%   1241 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0111
+%%   1241 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (0111) was not one-hot. Occurred after 123 ns.
+%%   1248 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 1000
+%%   1257 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 1001
+%%   1257 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (1001) was not one-hot. Occurred after 139 ns.
+%%   1266 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 1010
+%%   1266 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (1010) was not one-hot. Occurred after 148 ns.
+%%   1272 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 1011
+%%   1272 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (1011) was not one-hot. Occurred after 154 ns.
+%%   1278 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 1100
+%%   1278 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (1100) was not one-hot. Occurred after 160 ns.
+%%   1285 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 1101
+%%   1285 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (1101) was not one-hot. Occurred after 167 ns.
+%%   1294 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 1110
+%%   1294 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (1110) was not one-hot. Occurred after 176 ns.
+%%   1303 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 1111
+%%   1303 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (1111) was not one-hot. Occurred after 185 ns.
+%% 
+%% 
+%%   1338 ns    Log    ID_LOG_HDR          TB seq.             Testing ALL_ZERO_ALLOWED (non-clocked)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 
+%% 
+%%   1366 ns    Log    ID_LOG_HDR          TB seq.             Testing Normal Operation with accept_all_zeros: ALL_ZERO_ALLOWED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   1366 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 1000
+%%   1366 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_one_hot() => OK (first), tracked_value (1000) was one-hot. Condition occurred after 0 ns.
+%%   1375 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0100
+%%   1381 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0010
+%%   1387 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0001
+%%   1394 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0000
+%% 
+%% 
+%%   1433 ns    Log    ID_LOG_HDR          TB seq.             Testing Triggering Assertion with accept_all_zeros: ALL_ZERO_ALLOWED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   1433 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0000
+%%   1439 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0001
+%%   1448 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0010
+%%   1455 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0011
+%%   1455 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (0011) was not one-hot. Occurred after 89 ns.
+%%   1461 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0100
+%%   1467 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0101
+%%   1467 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (0101) was not one-hot. Occurred after 101 ns.
+%%   1476 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0110
+%%   1476 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (0110) was not one-hot. Occurred after 110 ns.
+%%   1484 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 0111
+%%   1484 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (0111) was not one-hot. Occurred after 118 ns.
+%%   1493 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 1000
+%%   1499 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 1001
+%%   1499 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (1001) was not one-hot. Occurred after 133 ns.
+%%   1505 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 1010
+%%   1505 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (1010) was not one-hot. Occurred after 139 ns.
+%%   1512 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 1011
+%%   1512 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (1011) was not one-hot. Occurred after 146 ns.
+%%   1518 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 1100
+%%   1518 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (1100) was not one-hot. Occurred after 152 ns.
+%%   1527 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 1101
+%%   1527 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (1101) was not one-hot. Occurred after 161 ns.
+%%   1534 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 1110
+%%   1534 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (1110) was not one-hot. Occurred after 168 ns.
+%%   1540 ns    Log    ID_SEQUENCER        TB seq.             Testing the expression: 1111
+%%   1540 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (1111) was not one-hot. Occurred after 174 ns.
+%% 
+%% 
+%%   1576 ns    Log    ID_LOG_HDR          TB seq.             Testing pos_ack_kind: EVERY (non-clocked)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   1576 ns    Log    ID_SEQUENCER        TB seq.             A positive acknowledge is expected each time tracked_value changes to a one-hot signal
+%%   1582 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_one_hot() => OK, tracked_value (0100) was one-hot. Condition occurred after 0 ns.
+%%   1589 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_one_hot() => OK, tracked_value (0010) was one-hot. Condition occurred after 7 ns.
+%%   1596 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_one_hot() => OK, tracked_value (0001) was one-hot. Condition occurred after 14 ns.
+%%   1602 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_one_hot() => OK, tracked_value (1000) was one-hot. Condition occurred after 20 ns.
+%% 
+%% 
+%%   1642 ns    Log    ID_LOG_HDR          TB seq.             Testing Assertion Enable (non-clocked)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   1642 ns    Log    ID_SEQUENCER        TB seq.             Assertion enabled as tracked_value is assigned, expecting alert
+%%   1642 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (1111) was not one-hot. Occurred after 0 ns.
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%   1690 ns    DONE   NOCHECKS   assert_one_hot  Passed: 0
+%%    Expected      Failures: 0  Errors: -49  Warnings: 0  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 49  Warnings: 0  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%%   1690 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

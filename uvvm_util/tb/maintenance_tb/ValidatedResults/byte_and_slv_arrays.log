@@ -1,0 +1,173 @@
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing and verifying convert_byte_array_to_slv_array
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Byte-to-byte, default byte position
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv_array() result, byte #0'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv_array() result, byte #1'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv_array() result, byte #2'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv_array() result, byte #3'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv_array() result, byte #4'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv_array() result, byte #5'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv_array() result, byte #6'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv_array() result, byte #7'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv_array() result, byte #8'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv_array() result, byte #9'
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Byte-to-3xbyte testing, LOWER_BYTE_LEFT
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv_array(), byte #0'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv_array(), byte #1'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv_array(), byte #2'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv_array(), byte #3'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv_array(), byte #4'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv_array(), byte #5'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv_array(), byte #6'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv_array(), byte #7'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv_array(), byte #8'
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Byte-to-3xbyte testing, LOWER_BYTE_RIGHT
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv_array(), byte #0'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv_array(), byte #1'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv_array(), byte #2'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv_array(), byte #3'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv_array(), byte #4'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv_array(), byte #5'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv_array(), byte #6'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv_array(), byte #7'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv_array(), byte #8'
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing and verifying convert_slv_array_to_byte_array
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Byte to byte testing, default byte position, ascending t_byte_array
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_array_to_byte_array(), byte #0'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_array_to_byte_array(), byte #1'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_array_to_byte_array(), byte #2'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_array_to_byte_array(), byte #3'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_array_to_byte_array(), byte #4'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_array_to_byte_array(), byte #5'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_array_to_byte_array(), byte #6'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_array_to_byte_array(), byte #7'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_array_to_byte_array(), byte #8'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_array_to_byte_array(), byte #9'
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Byte to byte testing, default byte position, descending t_byte_array
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_array_to_byte_array(), byte #0'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_array_to_byte_array(), byte #1'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_array_to_byte_array(), byte #2'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_array_to_byte_array(), byte #3'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_array_to_byte_array(), byte #4'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_array_to_byte_array(), byte #5'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_array_to_byte_array(), byte #6'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_array_to_byte_array(), byte #7'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_array_to_byte_array(), byte #8'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_array_to_byte_array(), byte #9'
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Byte to byte testing, ascending byte vector, ascending t_byte_array
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_array_to_byte_array(), byte #0'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_array_to_byte_array(), byte #1'
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             3xbyte to byte testing, LOWER_BYTE_LEFT, ascending t_byte_array
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_array_to_byte_array(), byte #0'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_array_to_byte_array(), byte #1'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_array_to_byte_array(), byte #2'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_array_to_byte_array(), byte #3'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_array_to_byte_array(), byte #4'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_array_to_byte_array(), byte #5'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_array_to_byte_array(), byte #6'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_array_to_byte_array(), byte #7'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_array_to_byte_array(), byte #8'
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             3xbyte to byte testing, LOWER_BYTE_RIGHT, ascending t_byte_array
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_array_to_byte_array(), byte #0'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_array_to_byte_array(), byte #1'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_array_to_byte_array(), byte #2'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_array_to_byte_array(), byte #3'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_array_to_byte_array(), byte #4'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_array_to_byte_array(), byte #5'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_array_to_byte_array(), byte #6'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_array_to_byte_array(), byte #7'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_array_to_byte_array(), byte #8'
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing and verifying convert_byte_array_to_slv
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Byte endianness: LOWER_BYTE_LEFT
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv() result, byte #0'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv() result, byte #1'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv() result, byte #2'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv() result, byte #3'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv() result, byte #4'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv() result, byte #5'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv() result, byte #6'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv() result, byte #7'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv() result, byte #8'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv() result, byte #9'
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Byte endianness: LOWER_BYTE_RIGHT
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv() result, byte #0'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv() result, byte #1'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv() result, byte #2'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv() result, byte #3'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv() result, byte #4'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv() result, byte #5'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv() result, byte #6'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv() result, byte #7'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv() result, byte #8'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_byte_array_to_slv() result, byte #9'
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing and verifying convert_slv_to_byte_array
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Byte endianness: LOWER_BYTE_LEFT
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #0'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #1'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #2'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #3'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #4'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #5'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #6'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #7'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #8'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #9'
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Byte endianness: LOWER_BYTE_LEFT - Check padding when std_logic_vector not multiple of byte
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #0'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #1'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #2'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #3'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #4'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #5'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #6'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #7'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #8'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #9'
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Byte endianness: LOWER_BYTE_RIGHT
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #0'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #1'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #2'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #3'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #4'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #5'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #6'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #7'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #8'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #9'
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Byte endianness: LOWER_BYTE_RIGHT - Check padding when std_logic_vector not multiple of byte
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #0'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #1'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #2'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #3'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #4'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #5'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #6'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #7'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #8'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #9'
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%   1000 ns    DONE   PASSED   byte_and_slv_arrays  Passed: 128  Affirmations Checked: 128
+%%    Expected      Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%%   1000 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

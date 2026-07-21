@@ -1,0 +1,405 @@
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ALL_MESSAGES).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_LOG_HDR_LARGE).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_LOG_HDR).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_SEQUENCER).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_UVVM_ASSERTION).
+%% 
+%% 
+%% ============================================================================================================================================================================
+%%    100 ns    Log    ID_LOG_HDR_LARGE    TB seq.(uvvm)       Testing the assertion: assert_value_in_range
+%% ============================================================================================================================================================================
+%% 
+%% 
+%%    140 ns    Log    ID_LOG_HDR          TB seq.             Testing Normal Operation (unsigned)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    140 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK (first), tracked_value (5) was in range [5..10]. Condition occurred after 0 ns.
+%% 
+%% 
+%%    250 ns    Log    ID_LOG_HDR          TB seq.             Testing Triggering Assertion (unsigned)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    250 ns    Log    ID_SEQUENCER        TB seq.             Testing above the range
+%%    250 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (11) was not in range [5..10]. Occurred after 110 ns.
+%%    260 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (12) was not in range [5..10]. Occurred after 120 ns.
+%%    270 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (13) was not in range [5..10]. Occurred after 130 ns.
+%%    280 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (14) was not in range [5..10]. Occurred after 140 ns.
+%%    290 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (15) was not in range [5..10]. Occurred after 150 ns.
+%%    340 ns    Log    ID_SEQUENCER        TB seq.             Testing below the range
+%%    340 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (4) was not in range [5..10]. Occurred after 200 ns.
+%%    350 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (3) was not in range [5..10]. Occurred after 210 ns.
+%%    360 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (2) was not in range [5..10]. Occurred after 220 ns.
+%%    370 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (1) was not in range [5..10]. Occurred after 230 ns.
+%%    380 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (0) was not in range [5..10]. Occurred after 240 ns.
+%% 
+%% 
+%%    430 ns    Log    ID_LOG_HDR          TB seq.             Testing pos_ack_kind: EVERY (unsigned)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    430 ns    Log    ID_SEQUENCER        TB seq.             Expecting a positive acknowledge on each rising clock edge
+%%    440 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK, tracked_value (5) was in range [5..10]. Condition occurred after 0 ns.
+%%    450 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK, tracked_value (5) was in range [5..10]. Condition occurred after 10 ns.
+%%    460 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK, tracked_value (5) was in range [5..10]. Condition occurred after 20 ns.
+%%    470 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK, tracked_value (5) was in range [5..10]. Condition occurred after 30 ns.
+%% 
+%% 
+%%    560 ns    Log    ID_LOG_HDR          TB seq.             Testing Normal Operation (signed)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    560 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK (first), tracked_value (0) was in range [0..5]. Condition occurred after 0 ns.
+%% 
+%% 
+%%    670 ns    Log    ID_LOG_HDR          TB seq.             Testing Triggering Assertion (signed)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    670 ns    Log    ID_SEQUENCER        TB seq.             Testing above the range
+%%    670 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (6) was not in range [0..5]. Occurred after 110 ns.
+%%    680 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (7) was not in range [0..5]. Occurred after 120 ns.
+%%    690 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-8) was not in range [0..5]. Occurred after 130 ns.
+%%    700 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-7) was not in range [0..5]. Occurred after 140 ns.
+%%    710 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-6) was not in range [0..5]. Occurred after 150 ns.
+%%    760 ns    Log    ID_SEQUENCER        TB seq.             Testing below the range
+%%    760 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-1) was not in range [0..5]. Occurred after 200 ns.
+%%    770 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-2) was not in range [0..5]. Occurred after 210 ns.
+%%    780 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-3) was not in range [0..5]. Occurred after 220 ns.
+%%    790 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-4) was not in range [0..5]. Occurred after 230 ns.
+%%    800 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-5) was not in range [0..5]. Occurred after 240 ns.
+%% 
+%% 
+%%    850 ns    Log    ID_LOG_HDR          TB seq.             Testing pos_ack_kind: EVERY (signed)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    850 ns    Log    ID_SEQUENCER        TB seq.             Expecting a positive acknowledge on each rising clock edge
+%%    860 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK, tracked_value (0) was in range [0..5]. Condition occurred after 0 ns.
+%%    870 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK, tracked_value (0) was in range [0..5]. Condition occurred after 10 ns.
+%%    880 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK, tracked_value (0) was in range [0..5]. Condition occurred after 20 ns.
+%%    890 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK, tracked_value (0) was in range [0..5]. Condition occurred after 30 ns.
+%% 
+%% 
+%%    980 ns    Log    ID_LOG_HDR          TB seq.             Testing Normal Operation (real)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    980 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK (first), tracked_value (0) was in range [0..10]. Condition occurred after 0 ns.
+%% 
+%% 
+%%   1140 ns    Log    ID_LOG_HDR          TB seq.             Testing Triggering Assertion (real)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   1140 ns    Log    ID_SEQUENCER        TB seq.             Testing above the range
+%%   1140 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (11) was not in range [0..10]. Occurred after 160 ns.
+%%   1150 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (12) was not in range [0..10]. Occurred after 170 ns.
+%%   1160 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (13) was not in range [0..10]. Occurred after 180 ns.
+%%   1170 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (14) was not in range [0..10]. Occurred after 190 ns.
+%%   1180 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (15) was not in range [0..10]. Occurred after 200 ns.
+%%   1190 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (16) was not in range [0..10]. Occurred after 210 ns.
+%%   1200 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (17) was not in range [0..10]. Occurred after 220 ns.
+%%   1210 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (18) was not in range [0..10]. Occurred after 230 ns.
+%%   1220 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (19) was not in range [0..10]. Occurred after 240 ns.
+%%   1230 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (20) was not in range [0..10]. Occurred after 250 ns.
+%%   1280 ns    Log    ID_SEQUENCER        TB seq.             Testing below the range
+%%   1280 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-1) was not in range [0..10]. Occurred after 300 ns.
+%%   1290 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-2) was not in range [0..10]. Occurred after 310 ns.
+%%   1300 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-3) was not in range [0..10]. Occurred after 320 ns.
+%%   1310 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-4) was not in range [0..10]. Occurred after 330 ns.
+%%   1320 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-5) was not in range [0..10]. Occurred after 340 ns.
+%%   1330 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-6) was not in range [0..10]. Occurred after 350 ns.
+%%   1340 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-7) was not in range [0..10]. Occurred after 360 ns.
+%%   1350 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-8) was not in range [0..10]. Occurred after 370 ns.
+%%   1360 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-9) was not in range [0..10]. Occurred after 380 ns.
+%%   1370 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-10) was not in range [0..10]. Occurred after 390 ns.
+%% 
+%% 
+%%   1420 ns    Log    ID_LOG_HDR          TB seq.             Testing pos_ack_kind: EVERY (real)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   1420 ns    Log    ID_SEQUENCER        TB seq.             Expecting a positive acknowledge on each rising clock edge
+%%   1430 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK, tracked_value (0) was in range [0..10]. Condition occurred after 0 ns.
+%%   1440 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK, tracked_value (0) was in range [0..10]. Condition occurred after 10 ns.
+%%   1450 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK, tracked_value (0) was in range [0..10]. Condition occurred after 20 ns.
+%%   1460 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK, tracked_value (0) was in range [0..10]. Condition occurred after 30 ns.
+%% 
+%% 
+%%   1550 ns    Log    ID_LOG_HDR          TB seq.             Testing Normal Operation (time)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   1550 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK (first), tracked_value (0 ps) was in range [0 ps..10000 ps]. Condition occurred after 0 ns.
+%% 
+%% 
+%%   1710 ns    Log    ID_LOG_HDR          TB seq.             Testing Triggering Assertion (time)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   1710 ns    Log    ID_SEQUENCER        TB seq.             Testing above the range
+%%   1710 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (11000 ps) was not in range [0 ps..10000 ps]. Occurred after 160 ns.
+%%   1720 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (12000 ps) was not in range [0 ps..10000 ps]. Occurred after 170 ns.
+%%   1730 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (13000 ps) was not in range [0 ps..10000 ps]. Occurred after 180 ns.
+%%   1740 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (14000 ps) was not in range [0 ps..10000 ps]. Occurred after 190 ns.
+%%   1750 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (15000 ps) was not in range [0 ps..10000 ps]. Occurred after 200 ns.
+%%   1760 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (16000 ps) was not in range [0 ps..10000 ps]. Occurred after 210 ns.
+%%   1770 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (17000 ps) was not in range [0 ps..10000 ps]. Occurred after 220 ns.
+%%   1780 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (18000 ps) was not in range [0 ps..10000 ps]. Occurred after 230 ns.
+%%   1790 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (19000 ps) was not in range [0 ps..10000 ps]. Occurred after 240 ns.
+%%   1800 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (20000 ps) was not in range [0 ps..10000 ps]. Occurred after 250 ns.
+%%   1850 ns    Log    ID_SEQUENCER        TB seq.             Testing below the range
+%%   1850 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-1000 ps) was not in range [0 ps..10000 ps]. Occurred after 300 ns.
+%%   1860 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-2000 ps) was not in range [0 ps..10000 ps]. Occurred after 310 ns.
+%%   1870 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-3000 ps) was not in range [0 ps..10000 ps]. Occurred after 320 ns.
+%%   1880 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-4000 ps) was not in range [0 ps..10000 ps]. Occurred after 330 ns.
+%%   1890 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-5000 ps) was not in range [0 ps..10000 ps]. Occurred after 340 ns.
+%%   1900 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-6000 ps) was not in range [0 ps..10000 ps]. Occurred after 350 ns.
+%%   1910 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-7000 ps) was not in range [0 ps..10000 ps]. Occurred after 360 ns.
+%%   1920 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-8000 ps) was not in range [0 ps..10000 ps]. Occurred after 370 ns.
+%%   1930 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-9000 ps) was not in range [0 ps..10000 ps]. Occurred after 380 ns.
+%%   1940 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-10000 ps) was not in range [0 ps..10000 ps]. Occurred after 390 ns.
+%% 
+%% 
+%%   1990 ns    Log    ID_LOG_HDR          TB seq.             Testing pos_ack_kind: EVERY (time)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   1990 ns    Log    ID_SEQUENCER        TB seq.             Expecting a positive acknowledge on each rising clock edge
+%%   2000 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK, tracked_value (0 ps) was in range [0 ps..10000 ps]. Condition occurred after 0 ns.
+%%   2010 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK, tracked_value (0 ps) was in range [0 ps..10000 ps]. Condition occurred after 10 ns.
+%%   2020 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK, tracked_value (0 ps) was in range [0 ps..10000 ps]. Condition occurred after 20 ns.
+%%   2030 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK, tracked_value (0 ps) was in range [0 ps..10000 ps]. Condition occurred after 30 ns.
+%% 
+%% 
+%%   2120 ns    Log    ID_LOG_HDR          TB seq.             Testing Normal Operation (integer)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   2120 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK (first), tracked_value (0) was in range [0..10]. Condition occurred after 0 ns.
+%% 
+%% 
+%%   2280 ns    Log    ID_LOG_HDR          TB seq.             Testing Triggering Assertion (integer)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   2280 ns    Log    ID_SEQUENCER        TB seq.             Testing above the range
+%%   2280 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (11) was not in range [0..10]. Occurred after 160 ns.
+%%   2290 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (12) was not in range [0..10]. Occurred after 170 ns.
+%%   2300 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (13) was not in range [0..10]. Occurred after 180 ns.
+%%   2310 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (14) was not in range [0..10]. Occurred after 190 ns.
+%%   2320 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (15) was not in range [0..10]. Occurred after 200 ns.
+%%   2330 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (16) was not in range [0..10]. Occurred after 210 ns.
+%%   2340 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (17) was not in range [0..10]. Occurred after 220 ns.
+%%   2350 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (18) was not in range [0..10]. Occurred after 230 ns.
+%%   2360 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (19) was not in range [0..10]. Occurred after 240 ns.
+%%   2370 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (20) was not in range [0..10]. Occurred after 250 ns.
+%%   2420 ns    Log    ID_SEQUENCER        TB seq.             Testing below the range
+%%   2420 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-1) was not in range [0..10]. Occurred after 300 ns.
+%%   2430 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-2) was not in range [0..10]. Occurred after 310 ns.
+%%   2440 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-3) was not in range [0..10]. Occurred after 320 ns.
+%%   2450 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-4) was not in range [0..10]. Occurred after 330 ns.
+%%   2460 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-5) was not in range [0..10]. Occurred after 340 ns.
+%%   2470 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-6) was not in range [0..10]. Occurred after 350 ns.
+%%   2480 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-7) was not in range [0..10]. Occurred after 360 ns.
+%%   2490 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-8) was not in range [0..10]. Occurred after 370 ns.
+%%   2500 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-9) was not in range [0..10]. Occurred after 380 ns.
+%%   2510 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-10) was not in range [0..10]. Occurred after 390 ns.
+%% 
+%% 
+%%   2560 ns    Log    ID_LOG_HDR          TB seq.             Testing pos_ack_kind: EVERY (integer)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   2560 ns    Log    ID_SEQUENCER        TB seq.             Expecting a positive acknowledge on each rising clock edge
+%%   2570 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK, tracked_value (0) was in range [0..10]. Condition occurred after 0 ns.
+%%   2580 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK, tracked_value (0) was in range [0..10]. Condition occurred after 10 ns.
+%%   2590 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK, tracked_value (0) was in range [0..10]. Condition occurred after 20 ns.
+%%   2600 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK, tracked_value (0) was in range [0..10]. Condition occurred after 30 ns.
+%% 
+%% 
+%%   2650 ns    Log    ID_LOG_HDR          TB seq.             Testing Assertion Enable (integer)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   2650 ns    Log    ID_SEQUENCER        TB seq.             Assertion enabled as tracked_value is assigned, expecting alert
+%%   2650 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-1) was not in range [0..10]. Occurred after 0 ns.
+%%   2700 ns    Log    ID_SEQUENCER        TB seq.             Assertion enabled prior to tracked_value, expecting alert
+%%   2710 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-1) was not in range [0..10]. Occurred after 0 ns.
+%% 
+%% 
+%%   2760 ns    Log    ID_LOG_HDR          TB seq.             Testing CLK Disabled
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   2760 ns    Log    ID_SEQUENCER        TB seq.             Clock deactivated
+%%   2800 ns    Log    ID_SEQUENCER        TB seq.             Triggering assertion while clk is disabled, expecting no behavior
+%% 
+%% 
+%%   2918 ns    Log    ID_LOG_HDR          TB seq.             Testing Normal Operation (unsigned non-clocked)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   2918 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK (first), tracked_value (5) was in range [5..10]. Condition occurred after 0 ns.
+%% 
+%% 
+%%   3000 ns    Log    ID_LOG_HDR          TB seq.             Testing Triggering Assertion (unsigned non-clocked)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   3000 ns    Log    ID_SEQUENCER        TB seq.             Testing above the range
+%%   3000 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (11) was not in range [5..10]. Occurred after 82 ns.
+%%   3008 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (12) was not in range [5..10]. Occurred after 90 ns.
+%%   3016 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (13) was not in range [5..10]. Occurred after 98 ns.
+%%   3025 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (14) was not in range [5..10]. Occurred after 107 ns.
+%%   3032 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (15) was not in range [5..10]. Occurred after 114 ns.
+%%   3066 ns    Log    ID_SEQUENCER        TB seq.             Testing below the range
+%%   3066 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (4) was not in range [5..10]. Occurred after 148 ns.
+%%   3075 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (3) was not in range [5..10]. Occurred after 157 ns.
+%%   3084 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (2) was not in range [5..10]. Occurred after 166 ns.
+%%   3090 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (1) was not in range [5..10]. Occurred after 172 ns.
+%%   3096 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (0) was not in range [5..10]. Occurred after 178 ns.
+%% 
+%% 
+%%   3139 ns    Log    ID_LOG_HDR          TB seq.             Testing pos_ack_kind: EVERY (unsigned non-clocked)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   3139 ns    Log    ID_SEQUENCER        TB seq.             A positive acknowledgment is expected each time tracked_value changes to a value within the range
+%%   3148 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK, tracked_value (6) was in range [5..10]. Condition occurred after 0 ns.
+%%   3155 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK, tracked_value (7) was in range [5..10]. Condition occurred after 7 ns.
+%%   3162 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK, tracked_value (8) was in range [5..10]. Condition occurred after 14 ns.
+%%   3169 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK, tracked_value (9) was in range [5..10]. Condition occurred after 21 ns.
+%% 
+%% 
+%%   3226 ns    Log    ID_LOG_HDR          TB seq.             Testing Normal Operation (signed non-clocked)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   3226 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK (first), tracked_value (0) was in range [0..5]. Condition occurred after 0 ns.
+%% 
+%% 
+%%   3300 ns    Log    ID_LOG_HDR          TB seq.             Testing Triggering Assertion (signed non-clocked)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   3300 ns    Log    ID_SEQUENCER        TB seq.             Testing above the range
+%%   3300 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (6) was not in range [0..5]. Occurred after 74 ns.
+%%   3309 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (7) was not in range [0..5]. Occurred after 83 ns.
+%%   3317 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-8) was not in range [0..5]. Occurred after 91 ns.
+%%   3326 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-7) was not in range [0..5]. Occurred after 100 ns.
+%%   3332 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-6) was not in range [0..5]. Occurred after 106 ns.
+%%   3366 ns    Log    ID_SEQUENCER        TB seq.             Testing below the range
+%%   3366 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-1) was not in range [0..5]. Occurred after 140 ns.
+%%   3372 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-2) was not in range [0..5]. Occurred after 146 ns.
+%%   3381 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-3) was not in range [0..5]. Occurred after 155 ns.
+%%   3388 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-4) was not in range [0..5]. Occurred after 162 ns.
+%%   3394 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-5) was not in range [0..5]. Occurred after 168 ns.
+%% 
+%% 
+%%   3430 ns    Log    ID_LOG_HDR          TB seq.             Testing pos_ack_kind: EVERY (signed non-clocked)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   3430 ns    Log    ID_SEQUENCER        TB seq.             A positive acknowledgment is expected each time tracked_value changes to a value within the range
+%%   3436 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK, tracked_value (1) was in range [0..5]. Condition occurred after 0 ns.
+%%   3443 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK, tracked_value (2) was in range [0..5]. Condition occurred after 7 ns.
+%%   3450 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK, tracked_value (3) was in range [0..5]. Condition occurred after 14 ns.
+%%   3456 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK, tracked_value (4) was in range [0..5]. Condition occurred after 20 ns.
+%% 
+%% 
+%%   3520 ns    Log    ID_LOG_HDR          TB seq.             Testing Normal Operation (real non-clocked)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   3520 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK (first), tracked_value (0) was in range [0..10]. Condition occurred after 0 ns.
+%% 
+%% 
+%%   3654 ns    Log    ID_LOG_HDR          TB seq.             Testing Triggering Assertion (real non-clocked)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   3654 ns    Log    ID_SEQUENCER        TB seq.             Testing above the range
+%%   3654 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (11) was not in range [0..10]. Occurred after 134 ns.
+%%   3661 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (12) was not in range [0..10]. Occurred after 141 ns.
+%%   3667 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (13) was not in range [0..10]. Occurred after 147 ns.
+%%   3673 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (14) was not in range [0..10]. Occurred after 153 ns.
+%%   3681 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (15) was not in range [0..10]. Occurred after 161 ns.
+%%   3689 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (16) was not in range [0..10]. Occurred after 169 ns.
+%%   3695 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (17) was not in range [0..10]. Occurred after 175 ns.
+%%   3703 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (18) was not in range [0..10]. Occurred after 183 ns.
+%%   3712 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (19) was not in range [0..10]. Occurred after 192 ns.
+%%   3721 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (20) was not in range [0..10]. Occurred after 201 ns.
+%%   3759 ns    Log    ID_SEQUENCER        TB seq.             Testing below the range
+%%   3759 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-1) was not in range [0..10]. Occurred after 239 ns.
+%%   3768 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-2) was not in range [0..10]. Occurred after 248 ns.
+%%   3775 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-3) was not in range [0..10]. Occurred after 255 ns.
+%%   3782 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-4) was not in range [0..10]. Occurred after 262 ns.
+%%   3791 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-5) was not in range [0..10]. Occurred after 271 ns.
+%%   3797 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-6) was not in range [0..10]. Occurred after 277 ns.
+%%   3803 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-7) was not in range [0..10]. Occurred after 283 ns.
+%%   3810 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-8) was not in range [0..10]. Occurred after 290 ns.
+%%   3816 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-9) was not in range [0..10]. Occurred after 296 ns.
+%%   3825 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-10) was not in range [0..10]. Occurred after 305 ns.
+%% 
+%% 
+%%   3864 ns    Log    ID_LOG_HDR          TB seq.             Testing pos_ack_kind: EVERY (real non-clocked)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   3864 ns    Log    ID_SEQUENCER        TB seq.             A positive acknowledgment is expected each time tracked_value changes to a value within the range
+%%   3870 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK, tracked_value (1) was in range [0..10]. Condition occurred after 0 ns.
+%%   3878 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK, tracked_value (2) was in range [0..10]. Condition occurred after 8 ns.
+%%   3884 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK, tracked_value (3) was in range [0..10]. Condition occurred after 14 ns.
+%%   3892 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK, tracked_value (4) was in range [0..10]. Condition occurred after 22 ns.
+%% 
+%% 
+%%   3951 ns    Log    ID_LOG_HDR          TB seq.             Testing Normal Operation (time non-clocked)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   3951 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK (first), tracked_value (0 ps) was in range [0 ps..10000 ps]. Condition occurred after 0 ns.
+%% 
+%% 
+%%   4078 ns    Log    ID_LOG_HDR          TB seq.             Testing Triggering Assertion (time non-clocked)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   4078 ns    Log    ID_SEQUENCER        TB seq.             Testing above the range
+%%   4078 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (11000 ps) was not in range [0 ps..10000 ps]. Occurred after 127 ns.
+%%   4085 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (12000 ps) was not in range [0 ps..10000 ps]. Occurred after 134 ns.
+%%   4092 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (13000 ps) was not in range [0 ps..10000 ps]. Occurred after 141 ns.
+%%   4101 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (14000 ps) was not in range [0 ps..10000 ps]. Occurred after 150 ns.
+%%   4109 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (15000 ps) was not in range [0 ps..10000 ps]. Occurred after 158 ns.
+%%   4117 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (16000 ps) was not in range [0 ps..10000 ps]. Occurred after 166 ns.
+%%   4125 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (17000 ps) was not in range [0 ps..10000 ps]. Occurred after 174 ns.
+%%   4133 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (18000 ps) was not in range [0 ps..10000 ps]. Occurred after 182 ns.
+%%   4140 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (19000 ps) was not in range [0 ps..10000 ps]. Occurred after 189 ns.
+%%   4146 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (20000 ps) was not in range [0 ps..10000 ps]. Occurred after 195 ns.
+%%   4190 ns    Log    ID_SEQUENCER        TB seq.             Testing below the range
+%%   4190 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-1000 ps) was not in range [0 ps..10000 ps]. Occurred after 239 ns.
+%%   4198 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-2000 ps) was not in range [0 ps..10000 ps]. Occurred after 247 ns.
+%%   4205 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-3000 ps) was not in range [0 ps..10000 ps]. Occurred after 254 ns.
+%%   4212 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-4000 ps) was not in range [0 ps..10000 ps]. Occurred after 261 ns.
+%%   4220 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-5000 ps) was not in range [0 ps..10000 ps]. Occurred after 269 ns.
+%%   4226 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-6000 ps) was not in range [0 ps..10000 ps]. Occurred after 275 ns.
+%%   4232 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-7000 ps) was not in range [0 ps..10000 ps]. Occurred after 281 ns.
+%%   4239 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-8000 ps) was not in range [0 ps..10000 ps]. Occurred after 288 ns.
+%%   4245 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-9000 ps) was not in range [0 ps..10000 ps]. Occurred after 294 ns.
+%%   4252 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-10000 ps) was not in range [0 ps..10000 ps]. Occurred after 301 ns.
+%% 
+%% 
+%%   4288 ns    Log    ID_LOG_HDR          TB seq.             Testing pos_ack_kind: EVERY (time non-clocked)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   4288 ns    Log    ID_SEQUENCER        TB seq.             A positive acknowledgment is expected each time tracked_value changes to a value within the range
+%%   4294 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK, tracked_value (1000 ps) was in range [0 ps..10000 ps]. Condition occurred after 0 ns.
+%%   4300 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK, tracked_value (2000 ps) was in range [0 ps..10000 ps]. Condition occurred after 6 ns.
+%%   4309 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK, tracked_value (3000 ps) was in range [0 ps..10000 ps]. Condition occurred after 15 ns.
+%%   4316 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK, tracked_value (4000 ps) was in range [0 ps..10000 ps]. Condition occurred after 22 ns.
+%% 
+%% 
+%%   4382 ns    Log    ID_LOG_HDR          TB seq.             Testing Normal Operation (integer non-clocked)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   4382 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK (first), tracked_value (0) was in range [0..10]. Condition occurred after 0 ns.
+%% 
+%% 
+%%   4510 ns    Log    ID_LOG_HDR          TB seq.             Testing Triggering Assertion (integer non-clocked)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   4510 ns    Log    ID_SEQUENCER        TB seq.             Testing above the range
+%%   4510 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (11) was not in range [0..10]. Occurred after 128 ns.
+%%   4519 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (12) was not in range [0..10]. Occurred after 137 ns.
+%%   4525 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (13) was not in range [0..10]. Occurred after 143 ns.
+%%   4531 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (14) was not in range [0..10]. Occurred after 149 ns.
+%%   4537 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (15) was not in range [0..10]. Occurred after 155 ns.
+%%   4543 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (16) was not in range [0..10]. Occurred after 161 ns.
+%%   4551 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (17) was not in range [0..10]. Occurred after 169 ns.
+%%   4559 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (18) was not in range [0..10]. Occurred after 177 ns.
+%%   4568 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (19) was not in range [0..10]. Occurred after 186 ns.
+%%   4577 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (20) was not in range [0..10]. Occurred after 195 ns.
+%%   4585 ns    Log    ID_SEQUENCER        TB seq.             Testing below the range
+%%   4585 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-1) was not in range [0..10]. Occurred after 203 ns.
+%%   4594 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-2) was not in range [0..10]. Occurred after 212 ns.
+%%   4603 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-3) was not in range [0..10]. Occurred after 221 ns.
+%%   4611 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-4) was not in range [0..10]. Occurred after 229 ns.
+%%   4617 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-5) was not in range [0..10]. Occurred after 235 ns.
+%%   4624 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-6) was not in range [0..10]. Occurred after 242 ns.
+%%   4632 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-7) was not in range [0..10]. Occurred after 250 ns.
+%%   4638 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-8) was not in range [0..10]. Occurred after 256 ns.
+%%   4646 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-9) was not in range [0..10]. Occurred after 264 ns.
+%%   4652 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-10) was not in range [0..10]. Occurred after 270 ns.
+%% 
+%% 
+%%   4661 ns    Log    ID_LOG_HDR          TB seq.             Testing pos_ack_kind: EVERY (integer non-clocked)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   4661 ns    Log    ID_SEQUENCER        TB seq.             A positive acknowledgment is expected each time tracked_value changes to a value within the range
+%%   4668 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK, tracked_value (1) was in range [0..10]. Condition occurred after 0 ns.
+%%   4674 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK, tracked_value (2) was in range [0..10]. Condition occurred after 6 ns.
+%%   4683 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK, tracked_value (3) was in range [0..10]. Condition occurred after 15 ns.
+%%   4691 ns    Log    ID_UVVM_ASSERTION   TB seq.(uvvm)       assert_value_in_range() => OK, tracked_value (4) was in range [0..10]. Condition occurred after 23 ns.
+%% 
+%% 
+%%   4727 ns    Log    ID_LOG_HDR          TB seq.             Testing Assertion Enable (integer non-clocked)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   4727 ns    Log    ID_SEQUENCER        TB seq.             Assertion enabled as tracked_value is assigned, expecting alert
+%%   4727 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-1) was not in range [0..10]. Occurred after 0 ns.
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%   4779 ns    DONE   NOCHECKS   assert_value_in_range  Passed: 0
+%%    Expected      Failures: 0  Errors: -163  Warnings: 0  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 163  Warnings: 0  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%%   4779 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

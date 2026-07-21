@@ -1,0 +1,192 @@
+%%      0 ns    Log    ID_CONSTRUCTOR      SPI_VVC,0           VVC instantiated.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  SPI_VVC,0           Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  SPI_VVC,0           Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR      SPI_VVC,1           VVC instantiated.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  SPI_VVC,1           Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  SPI_VVC,1           Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR      SPI_VVC,2           VVC instantiated.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  SPI_VVC,2           Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  SPI_VVC,2           Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR      SPI_VVC,3           VVC instantiated.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  SPI_VVC,3           Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  SPI_VVC,3           Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR      SBI_VVC,0           VVC instantiated.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  SBI_VVC,0           Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  SBI_VVC,0           Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CMD_INTERPRETER  SPI_VVC,0           Interpreter: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  SPI_VVC,1           Interpreter: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  SPI_VVC,2           Interpreter: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  SPI_VVC,3           Interpreter: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  SBI_VVC,0           Interpreter: Waiting for command
+%%      0 ns    Log    ID_CTRL             SPI_VVC_SB,0        enable() => SB enabled. 'SPI VVC SB Enabled'
+%%      0 ns    Log    ID_CTRL             SPI_VVC_SB,0        config() => config applied to SB.
+%%      0 ns    Log    ID_CTRL             SPI_VVC_SB,0        enable_log_msg() => message id id_data enabled.
+%%      0 ns    Log    ID_CTRL             SPI_VVC_SB,1        enable() => SB enabled. 'SPI VVC SB Enabled'
+%%      0 ns    Log    ID_CTRL             SPI_VVC_SB,1        config() => config applied to SB.
+%%      0 ns    Log    ID_CTRL             SPI_VVC_SB,1        enable_log_msg() => message id id_data enabled.
+%%      0 ns    Log    ID_CTRL             SPI_VVC_SB,2        enable() => SB enabled. 'SPI VVC SB Enabled'
+%%      0 ns    Log    ID_CTRL             SPI_VVC_SB,2        config() => config applied to SB.
+%%      0 ns    Log    ID_CTRL             SPI_VVC_SB,2        enable_log_msg() => message id id_data enabled.
+%%      0 ns    Log    ID_CTRL             SPI_VVC_SB,3        enable() => SB enabled. 'SPI VVC SB Enabled'
+%%      0 ns    Log    ID_CTRL             SPI_VVC_SB,3        config() => config applied to SB.
+%%      0 ns    Log    ID_CTRL             SPI_VVC_SB,3        enable_log_msg() => message id id_data enabled.
+%%      0 ns    Log    ID_CTRL             SBI_VVC_SB,0        enable() => SB enabled. 'SBI VVC SB Enabled'
+%%      0 ns    Log    ID_CTRL             SBI_VVC_SB,0        config() => config applied to SB.
+%%      0 ns    Log    ID_CTRL             SBI_VVC_SB,0        enable_log_msg() => message id id_data enabled.
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ALL_MESSAGES).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_LOG_HDR_LARGE).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_LOG_HDR).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_SEQUENCER).
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  SPI_VVC,0           Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  SPI_VVC,1           Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  SPI_VVC,2           Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  SPI_VVC,3           Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  SBI_VVC,0           Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  SPI_VVC,0           disable_log_msg(VVC_BROADCAST, ALL_MESSAGES). Command received  [1]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     SPI_VVC,0           disable_log_msg(ALL_MESSAGES). ' [1]'
+%%      0 ns    Log    ID_CMD_INTERPRETER  SPI_VVC,1           disable_log_msg(VVC_BROADCAST, ALL_MESSAGES). Command received  [1]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     SPI_VVC,1           disable_log_msg(ALL_MESSAGES). ' [1]'
+%%      0 ns    Log    ID_CMD_INTERPRETER  SPI_VVC,2           disable_log_msg(VVC_BROADCAST, ALL_MESSAGES). Command received  [1]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     SPI_VVC,2           disable_log_msg(ALL_MESSAGES). ' [1]'
+%%      0 ns    Log    ID_CMD_INTERPRETER  SPI_VVC,3           disable_log_msg(VVC_BROADCAST, ALL_MESSAGES). Command received  [1]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     SPI_VVC,3           disable_log_msg(ALL_MESSAGES). ' [1]'
+%%      0 ns    Log    ID_CMD_INTERPRETER  SBI_VVC,0           disable_log_msg(VVC_BROADCAST, ALL_MESSAGES). Command received  [1]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     SBI_VVC,0           disable_log_msg(ALL_MESSAGES). ' [1]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     SPI_VVC,0           enable_log_msg(ID_BFM). ' [2]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     SPI_VVC,1           enable_log_msg(ID_BFM). ' [2]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     SPI_VVC,2           enable_log_msg(ID_BFM). ' [2]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     SPI_VVC,3           enable_log_msg(ID_BFM). ' [2]'
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF GLOBAL CTRL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                                IGNORE    STOP_LIMIT
+%%                NOTE         :  REGARD    integer'high
+%%                TB_NOTE      :  REGARD    integer'high
+%%                WARNING      :  REGARD    integer'high
+%%                TB_WARNING   :  REGARD    integer'high
+%%                MANUAL_CHECK :  REGARD    integer'high
+%%                ERROR        :  REGARD    integer'high
+%%                TB_ERROR     :  REGARD    integer'high
+%%                FAILURE      :  REGARD         1
+%%                TB_FAILURE   :  REGARD         1
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF MSG ID PANEL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                ID                             Status
+%%                ------------------------       ------
+%%                ID_UTIL_BURIED               : DISABLED
+%%                ID_BITVIS_DEBUG              : DISABLED
+%%                ID_UTIL_SETUP                : DISABLED
+%%                ID_LOG_MSG_CTRL              : ENABLED
+%%                ID_ALERT_CTRL                : DISABLED
+%%                ID_FINISH_OR_STOP            : DISABLED
+%%                ID_CLOCK_GEN                 : DISABLED
+%%                ID_GEN_PULSE                 : DISABLED
+%%                ID_BLOCKING                  : DISABLED
+%%                ID_WATCHDOG                  : DISABLED
+%%                ID_RAND_GEN                  : DISABLED
+%%                ID_RAND_CONF                 : DISABLED
+%%                ID_FUNC_COV_BINS             : DISABLED
+%%                ID_FUNC_COV_BINS_INFO        : DISABLED
+%%                ID_FUNC_COV_RAND             : DISABLED
+%%                ID_FUNC_COV_SAMPLE           : DISABLED
+%%                ID_FUNC_COV_CONFIG           : DISABLED
+%%                ID_POS_ACK                   : DISABLED
+%%                ID_UVVM_ASSERTION            : DISABLED
+%%                ID_LOG_HDR                   : ENABLED
+%%                ID_LOG_HDR_LARGE             : ENABLED
+%%                ID_LOG_HDR_XL                : DISABLED
+%%                ID_SEQUENCER                 : ENABLED
+%%                ID_SEQUENCER_SUB             : DISABLED
+%%                ID_BFM                       : DISABLED
+%%                ID_BFM_WAIT                  : DISABLED
+%%                ID_BFM_POLL                  : DISABLED
+%%                ID_BFM_POLL_SUMMARY          : DISABLED
+%%                ID_CHANNEL_BFM               : DISABLED
+%%                ID_TERMINATE_CMD             : DISABLED
+%%                ID_SEGMENT_INITIATE          : DISABLED
+%%                ID_SEGMENT_COMPLETE          : DISABLED
+%%                ID_SEGMENT_HDR               : DISABLED
+%%                ID_SEGMENT_DATA              : DISABLED
+%%                ID_PACKET_INITIATE           : DISABLED
+%%                ID_PACKET_PREAMBLE           : DISABLED
+%%                ID_PACKET_COMPLETE           : DISABLED
+%%                ID_PACKET_HDR                : DISABLED
+%%                ID_PACKET_DATA               : DISABLED
+%%                ID_PACKET_CHECKSUM           : DISABLED
+%%                ID_PACKET_GAP                : DISABLED
+%%                ID_PACKET_PAYLOAD            : DISABLED
+%%                ID_FRAME_INITIATE            : DISABLED
+%%                ID_FRAME_COMPLETE            : DISABLED
+%%                ID_FRAME_HDR                 : DISABLED
+%%                ID_FRAME_DATA                : DISABLED
+%%                ID_COVERAGE_MAKEBIN          : DISABLED
+%%                ID_COVERAGE_ADDBIN           : DISABLED
+%%                ID_COVERAGE_ICOVER           : DISABLED
+%%                ID_COVERAGE_CONFIG           : DISABLED
+%%                ID_COVERAGE_SUMMARY          : DISABLED
+%%                ID_COVERAGE_HOLES            : DISABLED
+%%                ID_UVVM_SEND_CMD             : DISABLED
+%%                ID_UVVM_CMD_ACK              : DISABLED
+%%                ID_UVVM_CMD_RESULT           : DISABLED
+%%                ID_CMD_INTERPRETER           : DISABLED
+%%                ID_CMD_INTERPRETER_WAIT      : DISABLED
+%%                ID_IMMEDIATE_CMD             : DISABLED
+%%                ID_IMMEDIATE_CMD_WAIT        : DISABLED
+%%                ID_CMD_EXECUTOR              : DISABLED
+%%                ID_CMD_EXECUTOR_WAIT         : DISABLED
+%%                ID_CHANNEL_EXECUTOR          : DISABLED
+%%                ID_CHANNEL_EXECUTOR_WAIT     : DISABLED
+%%                ID_NEW_HVVC_CMD_SEQ          : DISABLED
+%%                ID_INSERTED_DELAY            : DISABLED
+%%                ID_OLD_AWAIT_COMPLETION      : DISABLED
+%%                ID_AWAIT_COMPLETION          : DISABLED
+%%                ID_AWAIT_COMPLETION_LIST     : DISABLED
+%%                ID_AWAIT_COMPLETION_WAIT     : DISABLED
+%%                ID_AWAIT_COMPLETION_END      : DISABLED
+%%                ID_AWAIT_UVVM_COMPLETION     : DISABLED
+%%                ID_UVVM_DATA_QUEUE           : DISABLED
+%%                ID_CONSTRUCTOR               : DISABLED
+%%                ID_CONSTRUCTOR_SUB           : DISABLED
+%%                ID_VVC_ACTIVITY              : DISABLED
+%%                ID_MONITOR                   : DISABLED
+%%                ID_MONITOR_ERROR             : DISABLED
+%%                ID_DATA                      : DISABLED
+%%                ID_CTRL                      : DISABLED
+%%                ID_SPEC_COV_INIT             : DISABLED
+%%                ID_SPEC_COV_REQS             : DISABLED
+%%                ID_SPEC_COV                  : DISABLED
+%%                ID_FILE_OPEN_CLOSE           : DISABLED
+%%                ID_FILE_PARSER               : DISABLED
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%% 
+%% 
+%% ============================================================================================================================================================================
+%% 1000440 ns    Log    ID_LOG_HDR_LARGE    SPI_TB              Testing slave VVC to master DUT
+%% ============================================================================================================================================================================
+%% 1000440 ns    Log    ID_SEQUENCER        SPI_TB              Setting inter bfm delay for single-word transfer
+%% 
+%% 
+%% ============================================================================================================================================================================
+%% 1077365 ns    Log    ID_LOG_HDR_LARGE    SPI_TB              Verify corner cases
+%% ============================================================================================================================================================================
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%% 1105366 ns    DONE   NOCHECKS   spi_slave_vvc_to_master_dut  Passed: 0
+%%    Expected      Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% 1105366 ns    Log    ID_LOG_HDR          SPI_TB              SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

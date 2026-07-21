@@ -1,0 +1,213 @@
+%%      0 ns    Log    ID_CONSTRUCTOR      AXISTREAM_VVC,7     VVC instantiated.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,7     Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,7     Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR      AXISTREAM_VVC,6     VVC instantiated.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,6     Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,6     Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR      AXISTREAM_VVC,5     VVC instantiated.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,5     Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,5     Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR      AXISTREAM_VVC,4     VVC instantiated.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,4     Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,4     Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR      AXISTREAM_VVC,3     VVC instantiated.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,3     Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,3     Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR      AXISTREAM_VVC,2     VVC instantiated.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,2     Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,2     Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR      AXISTREAM_VVC,1     VVC instantiated.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,1     Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,1     Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR      AXISTREAM_VVC,0     VVC instantiated.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,0     Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,0     Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,7     Interpreter: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,6     Interpreter: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,5     Interpreter: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,4     Interpreter: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,3     Interpreter: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,2     Interpreter: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,1     Interpreter: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,0     Interpreter: Waiting for command
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF GLOBAL CTRL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                                IGNORE    STOP_LIMIT
+%%                NOTE         :  REGARD    integer'high
+%%                TB_NOTE      :  REGARD    integer'high
+%%                WARNING      :  REGARD    integer'high
+%%                TB_WARNING   :  REGARD    integer'high
+%%                MANUAL_CHECK :  REGARD    integer'high
+%%                ERROR        :  REGARD         3
+%%                TB_ERROR     :  REGARD         3
+%%                FAILURE      :  REGARD         1
+%%                TB_FAILURE   :  REGARD         1
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF MSG ID PANEL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                ID                             Status
+%%                ------------------------       ------
+%%                ID_UTIL_BURIED               : DISABLED
+%%                ID_BITVIS_DEBUG              : DISABLED
+%%                ID_UTIL_SETUP                : ENABLED
+%%                ID_LOG_MSG_CTRL              : ENABLED
+%%                ID_ALERT_CTRL                : ENABLED
+%%                ID_FINISH_OR_STOP            : ENABLED
+%%                ID_CLOCK_GEN                 : ENABLED
+%%                ID_GEN_PULSE                 : ENABLED
+%%                ID_BLOCKING                  : ENABLED
+%%                ID_WATCHDOG                  : ENABLED
+%%                ID_RAND_GEN                  : DISABLED
+%%                ID_RAND_CONF                 : DISABLED
+%%                ID_FUNC_COV_BINS             : DISABLED
+%%                ID_FUNC_COV_BINS_INFO        : DISABLED
+%%                ID_FUNC_COV_RAND             : DISABLED
+%%                ID_FUNC_COV_SAMPLE           : DISABLED
+%%                ID_FUNC_COV_CONFIG           : DISABLED
+%%                ID_POS_ACK                   : ENABLED
+%%                ID_UVVM_ASSERTION            : ENABLED
+%%                ID_LOG_HDR                   : ENABLED
+%%                ID_LOG_HDR_LARGE             : ENABLED
+%%                ID_LOG_HDR_XL                : ENABLED
+%%                ID_SEQUENCER                 : ENABLED
+%%                ID_SEQUENCER_SUB             : ENABLED
+%%                ID_BFM                       : ENABLED
+%%                ID_BFM_WAIT                  : ENABLED
+%%                ID_BFM_POLL                  : ENABLED
+%%                ID_BFM_POLL_SUMMARY          : ENABLED
+%%                ID_CHANNEL_BFM               : ENABLED
+%%                ID_TERMINATE_CMD             : ENABLED
+%%                ID_SEGMENT_INITIATE          : ENABLED
+%%                ID_SEGMENT_COMPLETE          : ENABLED
+%%                ID_SEGMENT_HDR               : ENABLED
+%%                ID_SEGMENT_DATA              : ENABLED
+%%                ID_PACKET_INITIATE           : ENABLED
+%%                ID_PACKET_PREAMBLE           : ENABLED
+%%                ID_PACKET_COMPLETE           : ENABLED
+%%                ID_PACKET_HDR                : ENABLED
+%%                ID_PACKET_DATA               : ENABLED
+%%                ID_PACKET_CHECKSUM           : ENABLED
+%%                ID_PACKET_GAP                : ENABLED
+%%                ID_PACKET_PAYLOAD            : ENABLED
+%%                ID_FRAME_INITIATE            : ENABLED
+%%                ID_FRAME_COMPLETE            : ENABLED
+%%                ID_FRAME_HDR                 : ENABLED
+%%                ID_FRAME_DATA                : ENABLED
+%%                ID_COVERAGE_MAKEBIN          : DISABLED
+%%                ID_COVERAGE_ADDBIN           : DISABLED
+%%                ID_COVERAGE_ICOVER           : DISABLED
+%%                ID_COVERAGE_CONFIG           : ENABLED
+%%                ID_COVERAGE_SUMMARY          : ENABLED
+%%                ID_COVERAGE_HOLES            : ENABLED
+%%                ID_UVVM_SEND_CMD             : ENABLED
+%%                ID_UVVM_CMD_ACK              : ENABLED
+%%                ID_UVVM_CMD_RESULT           : ENABLED
+%%                ID_CMD_INTERPRETER           : ENABLED
+%%                ID_CMD_INTERPRETER_WAIT      : ENABLED
+%%                ID_IMMEDIATE_CMD             : ENABLED
+%%                ID_IMMEDIATE_CMD_WAIT        : ENABLED
+%%                ID_CMD_EXECUTOR              : ENABLED
+%%                ID_CMD_EXECUTOR_WAIT         : ENABLED
+%%                ID_CHANNEL_EXECUTOR          : ENABLED
+%%                ID_CHANNEL_EXECUTOR_WAIT     : ENABLED
+%%                ID_NEW_HVVC_CMD_SEQ          : ENABLED
+%%                ID_INSERTED_DELAY            : ENABLED
+%%                ID_OLD_AWAIT_COMPLETION      : ENABLED
+%%                ID_AWAIT_COMPLETION          : ENABLED
+%%                ID_AWAIT_COMPLETION_LIST     : ENABLED
+%%                ID_AWAIT_COMPLETION_WAIT     : ENABLED
+%%                ID_AWAIT_COMPLETION_END      : ENABLED
+%%                ID_AWAIT_UVVM_COMPLETION     : ENABLED
+%%                ID_UVVM_DATA_QUEUE           : ENABLED
+%%                ID_CONSTRUCTOR               : ENABLED
+%%                ID_CONSTRUCTOR_SUB           : ENABLED
+%%                ID_VVC_ACTIVITY              : ENABLED
+%%                ID_MONITOR                   : ENABLED
+%%                ID_MONITOR_ERROR             : ENABLED
+%%                ID_DATA                      : ENABLED
+%%                ID_CTRL                      : ENABLED
+%%                ID_SPEC_COV_INIT             : ENABLED
+%%                ID_SPEC_COV_REQS             : ENABLED
+%%                ID_SPEC_COV                  : ENABLED
+%%                ID_FILE_OPEN_CLOSE           : ENABLED
+%%                ID_FILE_PARSER               : ENABLED
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ALL_MESSAGES).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_LOG_HDR).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_SEQUENCER).
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  AXISTREAM_VVC,7     Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  AXISTREAM_VVC,6     Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  AXISTREAM_VVC,5     Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  AXISTREAM_VVC,4     Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  AXISTREAM_VVC,3     Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  AXISTREAM_VVC,2     Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  AXISTREAM_VVC,1     Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  AXISTREAM_VVC,0     Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,7     disable_log_msg(AXISTREAM_VVC,ALL_INSTANCES, ALL_MESSAGES). Command received  [1]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,7     disable_log_msg(ALL_MESSAGES). ' [1]'
+%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,6     disable_log_msg(AXISTREAM_VVC,ALL_INSTANCES, ALL_MESSAGES). Command received  [1]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,6     disable_log_msg(ALL_MESSAGES). ' [1]'
+%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,5     disable_log_msg(AXISTREAM_VVC,ALL_INSTANCES, ALL_MESSAGES). Command received  [1]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,5     disable_log_msg(ALL_MESSAGES). ' [1]'
+%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,4     disable_log_msg(AXISTREAM_VVC,ALL_INSTANCES, ALL_MESSAGES). Command received  [1]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,4     disable_log_msg(ALL_MESSAGES). ' [1]'
+%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,3     disable_log_msg(AXISTREAM_VVC,ALL_INSTANCES, ALL_MESSAGES). Command received  [1]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,3     disable_log_msg(ALL_MESSAGES). ' [1]'
+%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,2     disable_log_msg(AXISTREAM_VVC,ALL_INSTANCES, ALL_MESSAGES). Command received  [1]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,2     disable_log_msg(ALL_MESSAGES). ' [1]'
+%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,1     disable_log_msg(AXISTREAM_VVC,ALL_INSTANCES, ALL_MESSAGES). Command received  [1]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,1     disable_log_msg(ALL_MESSAGES). ' [1]'
+%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,0     disable_log_msg(AXISTREAM_VVC,ALL_INSTANCES, ALL_MESSAGES). Command received  [1]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,0     disable_log_msg(ALL_MESSAGES). ' [1]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,7     enable_log_msg(ID_SEQUENCER). ' [2]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,6     enable_log_msg(ID_SEQUENCER). ' [2]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,5     enable_log_msg(ID_SEQUENCER). ' [2]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,4     enable_log_msg(ID_SEQUENCER). ' [2]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,3     enable_log_msg(ID_SEQUENCER). ' [2]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,2     enable_log_msg(ID_SEQUENCER). ' [2]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,1     enable_log_msg(ID_SEQUENCER). ' [2]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,0     enable_log_msg(ID_SEQUENCER). ' [2]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,0     enable_log_msg(ID_SEQUENCER). ' [3]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,1     enable_log_msg(ID_SEQUENCER). ' [4]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,2     enable_log_msg(ID_SEQUENCER). ' [5]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,3     enable_log_msg(ID_SEQUENCER). ' [6]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,0     enable_log_msg(ID_IMMEDIATE_CMD). ' [7]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,1     enable_log_msg(ID_IMMEDIATE_CMD). ' [8]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,2     enable_log_msg(ID_IMMEDIATE_CMD). ' [9]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,3     enable_log_msg(ID_IMMEDIATE_CMD). ' [10]'
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Start Simulation of AXI-Stream
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    200 ns    Log    PASSED              TB seq.             check_value(time, 100 ns) => OK. Value was 100 ns. 'check insert_delay ''
+%%   1200 ns    Log    PASSED              TB seq.             check_value(time, 1 us) => OK. Value was 1 us. 'check insert_delay ''
+%% 1312.5 ns    Log    PASSED              TB seq.             check_value(int, 11) => OK. Value was 11. '2 vvcs: checking that we waited long enough for the quickest VVC to finish'
+%% 1522.5 ns    Log    PASSED              TB seq.             check_value(int, 11) => OK. Value was 11. '3 vvcs: checking that we waited long enough for the quickest VVC to finish'
+%% 1722.5 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. '3 vvcs: checking that we waited 0 time'
+%% 2032.5 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. '3 vvcs: checking that we waited 0 time'
+%% 2342.5 ns    Log    PASSED              TB seq.             check_value(int, 0) => OK. Value was 0. 'all vvcs: checking that we waited 0 time'
+%% 2452.5 ns    Log    PASSED              TB seq.             check_value(int, 11) => OK. Value was 11. 'all vvcs: checking that we waited shortest time'
+%% 2562.5 ns    Log    PASSED              TB seq.             check_value(int, 11) => OK. Value was 11. 'all vvcs: checking that we waited shortest time'
+%% 2773.5 ns    Alert  ERROR               TB seq.(uvvm)       await_completion(ANY_OF,(AXISTREAM_VVC,0)(AXISTREAM_VVC,1),1 ns)=> Timeout. 'timeout after 1 ns' [118]
+%% 2773.5 ns    Log    PASSED              TB seq.             check_value(time, 1 ns) => OK. Value was 1 ns. 'all vvcs: checking that we waited for 'timeout''
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%% 2983.5 ns    DONE   PASSED   axistream_vvc_multiple_tb  Passed: 10  Affirmations Checked: 10
+%%    Expected      Failures: 0  Errors: -1  Warnings: 0  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 1  Warnings: 0  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% 2983.5 ns    Log    ID_LOG_HDR          TB seq.             SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

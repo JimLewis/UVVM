@@ -1,0 +1,654 @@
+%%      0 ns    Log    ID_CONSTRUCTOR      SBI_VVC,1           VVC instantiated.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  SBI_VVC,1           Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  SBI_VVC,1           Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR      UART_VVC,1,RX       VVC instantiated for channel RX
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  UART_VVC,1,RX       Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  UART_VVC,1,RX       Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR      UART_VVC,1,TX       VVC instantiated for channel TX
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  UART_VVC,1,TX       Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  UART_VVC,1,TX       Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR      CLOCK_GENERATOR_VVC,1  VVC instantiated.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  CLOCK_GENERATOR_VVC,1  Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  CLOCK_GENERATOR_VVC,1  Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_WATCHDOG         TB seq.             Starting general watchdog: 1 sec.
+Watchdog A
+%%      0 ns    Log    ID_WATCHDOG         TB seq.             Starting general watchdog: 1 sec.
+Watchdog B
+%%      0 ns    Log    ID_WATCHDOG         TB seq.             Starting general watchdog: 1 sec.
+Watchdog C
+%%      0 ns    Log    ID_WATCHDOG         TB seq.             Starting general watchdog: 1 sec.
+Watchdog D
+%%      0 ns    Log    ID_WATCHDOG         TB seq.             Starting activity watchdog , timeout=8000 ns. Activity_Watchdog
+%%      0 ns    Log    ID_CMD_INTERPRETER  SBI_VVC,1           Interpreter: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  UART_VVC,1,RX       Interpreter: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  UART_VVC,1,TX       Interpreter: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  CLOCK_GENERATOR_VVC,1  Interpreter: Waiting for command
+%%      0 ns    Log    ID_CTRL             SBI_VVC_SB,1        enable() => SB enabled. 'SBI VVC SB Enabled'
+%%      0 ns    Log    ID_CTRL             SBI_VVC_SB,1        config() => config applied to SB.
+%%      0 ns    Log    ID_CTRL             SBI_VVC_SB,1        enable_log_msg() => message id id_data enabled.
+%%      0 ns    Log    ID_CTRL             UART_VVC_SB,1       enable() => SB enabled. 'UART VVC SB Enabled'
+%%      0 ns    Log    ID_CTRL             UART_VVC_SB,1       enable_log_msg() => message id id_data enabled.
+%%      0 ns    Log    ID_CTRL             UART_VVC_SB,1       config() => config applied to SB.
+%%      0 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       start_clock(CLOCK_GENERATOR_VVC,1): 'Start clock generator'. [1]
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  SBI_VVC,1           Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  UART_VVC,1,RX       Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  UART_VVC,1,TX       Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  CLOCK_GENERATOR_VVC,1  Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  CLOCK_GENERATOR_VVC,1  start_clock(CLOCK_GENERATOR_VVC,1). Command received  [1]
+%%      0 ns    Log    ID_CMD_EXECUTOR     CLOCK_GENERATOR_VVC,1  start_clock(CLOCK_GENERATOR_VVC,1) - Will be executed  [1]
+%%      0 ns    Log    ID_UVVM_CMD_ACK     TB seq.(uvvm)       ACK received.   [1]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ALL_MESSAGES).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_LOG_HDR).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_LOG_HDR_XL).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_SEQUENCER).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_SEQUENCER_SUB).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_UVVM_SEND_CMD).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_AWAIT_UVVM_COMPLETION).
+%%      0 ns    Log    ID_CMD_INTERPRETER  CLOCK_GENERATOR_VVC,1  Interpreter: Waiting for command
+%%      0 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(SBI_VVC,1, ALL_MESSAGES):. [2]
+%%      0 ns    Log    ID_CMD_INTERPRETER  SBI_VVC,1           disable_log_msg(SBI_VVC,1, ALL_MESSAGES). Command received  [2]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     SBI_VVC,1           disable_log_msg(ALL_MESSAGES). ' [2]'
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  CLOCK_GENERATOR_VVC,1  Executor: Waiting for command
+%%      0 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(UART_VVC,1,RX, ALL_MESSAGES):. [3]
+%%      0 ns    Log    ID_CMD_INTERPRETER  UART_VVC,1,RX       disable_log_msg(UART_VVC,1,RX, ALL_MESSAGES). Command received  [3]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     UART_VVC,1,RX       disable_log_msg(ALL_MESSAGES). ' [3]'
+%%      0 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(UART_VVC,1,TX, ALL_MESSAGES):. [4]
+%%      0 ns    Log    ID_CMD_INTERPRETER  UART_VVC,1,TX       disable_log_msg(UART_VVC,1,TX, ALL_MESSAGES). Command received  [4]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     UART_VVC,1,TX       disable_log_msg(ALL_MESSAGES). ' [4]'
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF GLOBAL CTRL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                                IGNORE    STOP_LIMIT
+%%                NOTE         :  REGARD    integer'high
+%%                TB_NOTE      :  REGARD    integer'high
+%%                WARNING      :  REGARD    integer'high
+%%                TB_WARNING   :  REGARD    integer'high
+%%                MANUAL_CHECK :  REGARD    integer'high
+%%                ERROR        :  REGARD    integer'high
+%%                TB_ERROR     :  REGARD    integer'high
+%%                FAILURE      :  REGARD         1
+%%                TB_FAILURE   :  REGARD         1
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF MSG ID PANEL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                ID                             Status
+%%                ------------------------       ------
+%%                ID_UTIL_BURIED               : DISABLED
+%%                ID_BITVIS_DEBUG              : DISABLED
+%%                ID_UTIL_SETUP                : DISABLED
+%%                ID_LOG_MSG_CTRL              : ENABLED
+%%                ID_ALERT_CTRL                : DISABLED
+%%                ID_FINISH_OR_STOP            : DISABLED
+%%                ID_CLOCK_GEN                 : DISABLED
+%%                ID_GEN_PULSE                 : DISABLED
+%%                ID_BLOCKING                  : DISABLED
+%%                ID_WATCHDOG                  : DISABLED
+%%                ID_RAND_GEN                  : DISABLED
+%%                ID_RAND_CONF                 : DISABLED
+%%                ID_FUNC_COV_BINS             : DISABLED
+%%                ID_FUNC_COV_BINS_INFO        : DISABLED
+%%                ID_FUNC_COV_RAND             : DISABLED
+%%                ID_FUNC_COV_SAMPLE           : DISABLED
+%%                ID_FUNC_COV_CONFIG           : DISABLED
+%%                ID_POS_ACK                   : DISABLED
+%%                ID_UVVM_ASSERTION            : DISABLED
+%%                ID_LOG_HDR                   : ENABLED
+%%                ID_LOG_HDR_LARGE             : DISABLED
+%%                ID_LOG_HDR_XL                : ENABLED
+%%                ID_SEQUENCER                 : ENABLED
+%%                ID_SEQUENCER_SUB             : ENABLED
+%%                ID_BFM                       : DISABLED
+%%                ID_BFM_WAIT                  : DISABLED
+%%                ID_BFM_POLL                  : DISABLED
+%%                ID_BFM_POLL_SUMMARY          : DISABLED
+%%                ID_CHANNEL_BFM               : DISABLED
+%%                ID_TERMINATE_CMD             : DISABLED
+%%                ID_SEGMENT_INITIATE          : DISABLED
+%%                ID_SEGMENT_COMPLETE          : DISABLED
+%%                ID_SEGMENT_HDR               : DISABLED
+%%                ID_SEGMENT_DATA              : DISABLED
+%%                ID_PACKET_INITIATE           : DISABLED
+%%                ID_PACKET_PREAMBLE           : DISABLED
+%%                ID_PACKET_COMPLETE           : DISABLED
+%%                ID_PACKET_HDR                : DISABLED
+%%                ID_PACKET_DATA               : DISABLED
+%%                ID_PACKET_CHECKSUM           : DISABLED
+%%                ID_PACKET_GAP                : DISABLED
+%%                ID_PACKET_PAYLOAD            : DISABLED
+%%                ID_FRAME_INITIATE            : DISABLED
+%%                ID_FRAME_COMPLETE            : DISABLED
+%%                ID_FRAME_HDR                 : DISABLED
+%%                ID_FRAME_DATA                : DISABLED
+%%                ID_COVERAGE_MAKEBIN          : DISABLED
+%%                ID_COVERAGE_ADDBIN           : DISABLED
+%%                ID_COVERAGE_ICOVER           : DISABLED
+%%                ID_COVERAGE_CONFIG           : DISABLED
+%%                ID_COVERAGE_SUMMARY          : DISABLED
+%%                ID_COVERAGE_HOLES            : DISABLED
+%%                ID_UVVM_SEND_CMD             : ENABLED
+%%                ID_UVVM_CMD_ACK              : DISABLED
+%%                ID_UVVM_CMD_RESULT           : DISABLED
+%%                ID_CMD_INTERPRETER           : DISABLED
+%%                ID_CMD_INTERPRETER_WAIT      : DISABLED
+%%                ID_IMMEDIATE_CMD             : DISABLED
+%%                ID_IMMEDIATE_CMD_WAIT        : DISABLED
+%%                ID_CMD_EXECUTOR              : DISABLED
+%%                ID_CMD_EXECUTOR_WAIT         : DISABLED
+%%                ID_CHANNEL_EXECUTOR          : DISABLED
+%%                ID_CHANNEL_EXECUTOR_WAIT     : DISABLED
+%%                ID_NEW_HVVC_CMD_SEQ          : DISABLED
+%%                ID_INSERTED_DELAY            : DISABLED
+%%                ID_OLD_AWAIT_COMPLETION      : DISABLED
+%%                ID_AWAIT_COMPLETION          : DISABLED
+%%                ID_AWAIT_COMPLETION_LIST     : DISABLED
+%%                ID_AWAIT_COMPLETION_WAIT     : DISABLED
+%%                ID_AWAIT_COMPLETION_END      : DISABLED
+%%                ID_AWAIT_UVVM_COMPLETION     : ENABLED
+%%                ID_UVVM_DATA_QUEUE           : DISABLED
+%%                ID_CONSTRUCTOR               : DISABLED
+%%                ID_CONSTRUCTOR_SUB           : DISABLED
+%%                ID_VVC_ACTIVITY              : DISABLED
+%%                ID_MONITOR                   : DISABLED
+%%                ID_MONITOR_ERROR             : DISABLED
+%%                ID_DATA                      : DISABLED
+%%                ID_CTRL                      : DISABLED
+%%                ID_SPEC_COV_INIT             : DISABLED
+%%                ID_SPEC_COV_REQS             : DISABLED
+%%                ID_SPEC_COV                  : DISABLED
+%%                ID_FILE_OPEN_CLOSE           : DISABLED
+%%                ID_FILE_PARSER               : DISABLED
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Configure UART Monitor
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Starting simulation of UVVM DEMO TB using SBI and UART VVCs
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 
+%% 
+%%    100 ns    Log    ID_LOG_HDR          TB seq.             Configure UART VVC 1
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 
+%% 
+%% 
+%% ############################################################################################################################################################################
+%% 
+%%    100 ns    Log    ID_LOG_HDR_XL       TB seq.             Test error injection.\n\nUART TX VVC is used to randomly send error injected data to DUT.\nThe UART Monitor will report any transfer errors detected.
+%% 
+%% ############################################################################################################################################################################
+%% 
+%% 
+%%    100 ns    Log    ID_SEQUENCER        TB seq.             Note: SBI_READ() is requested by Model.\nResults are checked in Scoreboard.\n
+%% 
+%% 
+%%    100 ns    Log    ID_LOG_HDR          TB seq.             Performing 10x SBI Write and UART Reveive with random parity bit error injection
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    100 ns    Log    ID_SEQUENCER        TB seq.             \nSetting parity error probability to 0.1%
+%%    100 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"01"): 'UART TX'. [5]
+%%    100 ns    Log    ID_DATA             SBI_VVC_SB,1        add_expected() => expected: 00000000000000000000000000000001. 
+%%    100 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1920000 ps): 'Wait for UART TX to finish'. [7]
+%%    100 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_read(SBI_VVC,1, x"0", TO_SB): 'SBI_READ'. [8]
+%%   1780 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%% 2032.5 ns    Log    ID_DATA             SBI_VVC_SB,1        check_received() => MATCH, for value: 00000000000000000000000000000001.
+%%   2060 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(UART_VVC,1,TX, 160000 ps): 'Insert delay before next UART TX'. [9]
+%%   2060 ns    Log    ID_SEQUENCER        TB seq.             \nSetting parity error probability to 0.2%
+%%   2060 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"02"): 'UART TX'. [10]
+%%   2220 ns    Log    ID_DATA             SBI_VVC_SB,1        add_expected() => expected: 00000000000000000000000000000010. 
+%%   2220 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1920000 ps): 'Wait for UART TX to finish'. [12]
+%%   2220 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_read(SBI_VVC,1, x"0", TO_SB): 'SBI_READ'. [13]
+%%   3900 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%% 4152.5 ns    Log    ID_DATA             SBI_VVC_SB,1        check_received() => MATCH, for value: 00000000000000000000000000000010.
+%%   4180 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(UART_VVC,1,TX, 160000 ps): 'Insert delay before next UART TX'. [14]
+%%   4180 ns    Log    ID_SEQUENCER        TB seq.             \nSetting parity error probability to 0.3%
+%%   4180 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"03"): 'UART TX'. [15]
+%%   4340 ns    Log    ID_DATA             SBI_VVC_SB,1        add_expected() => expected: 00000000000000000000000000000011. 
+%%   4340 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1920000 ps): 'Wait for UART TX to finish'. [17]
+%%   4340 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_read(SBI_VVC,1, x"0", TO_SB): 'SBI_READ'. [18]
+%%   6020 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%% 6272.5 ns    Log    ID_DATA             SBI_VVC_SB,1        check_received() => MATCH, for value: 00000000000000000000000000000011.
+%%   6300 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(UART_VVC,1,TX, 160000 ps): 'Insert delay before next UART TX'. [19]
+%%   6300 ns    Log    ID_SEQUENCER        TB seq.             \nSetting parity error probability to 0.4%
+%%   6300 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"04"): 'UART TX'. [20]
+%%   6460 ns    Log    ID_DATA             SBI_VVC_SB,1        add_expected() => expected: 00000000000000000000000000000100. 
+%%   6460 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1920000 ps): 'Wait for UART TX to finish'. [22]
+%%   6460 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_read(SBI_VVC,1, x"0", TO_SB): 'SBI_READ'. [23]
+%%   8140 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%% 8392.5 ns    Log    ID_DATA             SBI_VVC_SB,1        check_received() => MATCH, for value: 00000000000000000000000000000100.
+%%   8420 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(UART_VVC,1,TX, 160000 ps): 'Insert delay before next UART TX'. [24]
+%%   8420 ns    Log    ID_SEQUENCER        TB seq.             \nSetting parity error probability to 0.5%
+%%   8420 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"05"): 'UART TX'. [25]
+%%  10260 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: true; stop_bit_error: false.
+%%  10540 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(UART_VVC,1,TX, 160000 ps): 'Insert delay before next UART TX'. [27]
+%%  10540 ns    Log    ID_SEQUENCER        TB seq.             \nSetting parity error probability to 0.6%
+%%  10540 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"06"): 'UART TX'. [28]
+%%  10700 ns    Log    ID_DATA             SBI_VVC_SB,1        add_expected() => expected: 00000000000000000000000000000110. 
+%%  10700 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1920000 ps): 'Wait for UART TX to finish'. [30]
+%%  10700 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_read(SBI_VVC,1, x"0", TO_SB): 'SBI_READ'. [31]
+%%  12380 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%% 12632.5 ns    Log    ID_DATA             SBI_VVC_SB,1        check_received() => MATCH, for value: 00000000000000000000000000000110.
+%%  12660 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(UART_VVC,1,TX, 160000 ps): 'Insert delay before next UART TX'. [32]
+%%  12660 ns    Log    ID_SEQUENCER        TB seq.             \nSetting parity error probability to 0.7%
+%%  12660 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"07"): 'UART TX'. [33]
+%%  12820 ns    Log    ID_DATA             SBI_VVC_SB,1        add_expected() => expected: 00000000000000000000000000000111. 
+%%  12820 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1920000 ps): 'Wait for UART TX to finish'. [35]
+%%  12820 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_read(SBI_VVC,1, x"0", TO_SB): 'SBI_READ'. [36]
+%%  14500 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%% 14752.5 ns    Log    ID_DATA             SBI_VVC_SB,1        check_received() => MATCH, for value: 00000000000000000000000000000111.
+%%  14780 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(UART_VVC,1,TX, 160000 ps): 'Insert delay before next UART TX'. [37]
+%%  14780 ns    Log    ID_SEQUENCER        TB seq.             \nSetting parity error probability to 0.8%
+%%  14780 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"08"): 'UART TX'. [38]
+%%  16620 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: true; stop_bit_error: false.
+%%  16900 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(UART_VVC,1,TX, 160000 ps): 'Insert delay before next UART TX'. [40]
+%%  16900 ns    Log    ID_SEQUENCER        TB seq.             \nSetting parity error probability to 0.9%
+%%  16900 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"09"): 'UART TX'. [41]
+%%  18740 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: true; stop_bit_error: false.
+%%  19020 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(UART_VVC,1,TX, 160000 ps): 'Insert delay before next UART TX'. [43]
+%%  19020 ns    Log    ID_SEQUENCER        TB seq.             \nSetting parity error probability to 1%
+%%  19020 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"0A"): 'UART TX'. [44]
+%%  20860 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: true; stop_bit_error: false.
+%%  21140 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(UART_VVC,1,TX, 160000 ps): 'Insert delay before next UART TX'. [46]
+%%  21140 ns    Log    ID_SEQUENCER        TB seq.             \nSetting parity error probability to 0%
+%% 
+%% 
+%%  21140 ns    Log    ID_LOG_HDR          TB seq.             Performing 10x SBI Write and UART Reveive with random stop bit error injection
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  21140 ns    Log    ID_SEQUENCER        TB seq.             \nSetting stop error probability to 0.1%
+%%  21140 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"01"): 'UART TX'. [47]
+%%  21300 ns    Log    ID_DATA             SBI_VVC_SB,1        add_expected() => expected: 00000000000000000000000000000001. 
+%%  21300 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1920000 ps): 'Wait for UART TX to finish'. [49]
+%%  21300 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_read(SBI_VVC,1, x"0", TO_SB): 'SBI_READ'. [50]
+%%  22980 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%% 23232.5 ns    Log    ID_DATA             SBI_VVC_SB,1        check_received() => MATCH, for value: 00000000000000000000000000000001.
+%%  23260 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(UART_VVC,1,TX, 160000 ps): 'Insert delay before next UART TX'. [51]
+%%  23260 ns    Log    ID_SEQUENCER        TB seq.             \nSetting stop error probability to 0.2%
+%%  23260 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"02"): 'UART TX'. [52]
+%%  25100 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%%  25380 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(UART_VVC,1,TX, 160000 ps): 'Insert delay before next UART TX'. [54]
+%%  25380 ns    Log    ID_SEQUENCER        TB seq.             \nSetting stop error probability to 0.3%
+%%  25380 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"03"): 'UART TX'. [55]
+%%  25540 ns    Log    ID_DATA             SBI_VVC_SB,1        add_expected() => expected: 00000000000000000000000000000011. 
+%%  25540 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1920000 ps): 'Wait for UART TX to finish'. [57]
+%%  25540 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_read(SBI_VVC,1, x"0", TO_SB): 'SBI_READ'. [58]
+%%  27220 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%% 27472.5 ns    Log    ID_DATA             SBI_VVC_SB,1        check_received() => MATCH, for value: 00000000000000000000000000000011.
+%%  27500 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(UART_VVC,1,TX, 160000 ps): 'Insert delay before next UART TX'. [59]
+%%  27500 ns    Log    ID_SEQUENCER        TB seq.             \nSetting stop error probability to 0.4%
+%%  27500 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"04"): 'UART TX'. [60]
+%%  27660 ns    Log    ID_DATA             SBI_VVC_SB,1        add_expected() => expected: 00000000000000000000000000000100. 
+%%  27660 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1920000 ps): 'Wait for UART TX to finish'. [62]
+%%  27660 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_read(SBI_VVC,1, x"0", TO_SB): 'SBI_READ'. [63]
+%%  29340 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%% 29592.5 ns    Log    ID_DATA             SBI_VVC_SB,1        check_received() => MATCH, for value: 00000000000000000000000000000100.
+%%  29620 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(UART_VVC,1,TX, 160000 ps): 'Insert delay before next UART TX'. [64]
+%%  29620 ns    Log    ID_SEQUENCER        TB seq.             \nSetting stop error probability to 0.5%
+%%  29620 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"05"): 'UART TX'. [65]
+%%  29780 ns    Log    ID_DATA             SBI_VVC_SB,1        add_expected() => expected: 00000000000000000000000000000101. 
+%%  29780 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1920000 ps): 'Wait for UART TX to finish'. [67]
+%%  29780 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_read(SBI_VVC,1, x"0", TO_SB): 'SBI_READ'. [68]
+%%  31460 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%% 31712.5 ns    Log    ID_DATA             SBI_VVC_SB,1        check_received() => MATCH, for value: 00000000000000000000000000000101.
+%%  31740 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(UART_VVC,1,TX, 160000 ps): 'Insert delay before next UART TX'. [69]
+%%  31740 ns    Log    ID_SEQUENCER        TB seq.             \nSetting stop error probability to 0.6%
+%%  31740 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"06"): 'UART TX'. [70]
+%%  33580 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%%  33860 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(UART_VVC,1,TX, 160000 ps): 'Insert delay before next UART TX'. [72]
+%%  33860 ns    Log    ID_SEQUENCER        TB seq.             \nSetting stop error probability to 0.7%
+%%  33860 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"07"): 'UART TX'. [73]
+%%  35700 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%%  35980 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(UART_VVC,1,TX, 160000 ps): 'Insert delay before next UART TX'. [75]
+%%  35980 ns    Log    ID_SEQUENCER        TB seq.             \nSetting stop error probability to 0.8%
+%%  35980 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"08"): 'UART TX'. [76]
+%%  37820 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%%  38100 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(UART_VVC,1,TX, 160000 ps): 'Insert delay before next UART TX'. [78]
+%%  38100 ns    Log    ID_SEQUENCER        TB seq.             \nSetting stop error probability to 0.9%
+%%  38100 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"09"): 'UART TX'. [79]
+%%  39940 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%%  40220 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(UART_VVC,1,TX, 160000 ps): 'Insert delay before next UART TX'. [81]
+%%  40220 ns    Log    ID_SEQUENCER        TB seq.             \nSetting stop error probability to 1%
+%%  40220 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, x"0A"): 'UART TX'. [82]
+%%  42060 ns    Log    ID_MONITOR          UART Monitor        RX: Non-legal transaction detected: parity_error: false; stop_bit_error: true.
+%%  42340 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(UART_VVC,1,TX, 160000 ps): 'Insert delay before next UART TX'. [84]
+%%  42340 ns    Log    ID_SEQUENCER        TB seq.             \nSetting stop error probability to 0%
+%%      
+%%      =======================================================================================================================================================================
+%%      42340 ns *** SCOREBOARD COUNTERS SUMMARY: SBI_VVC_SB ***                                                                                                               
+%%      =======================================================================================================================================================================
+%%                       ENTERED         PENDING          MATCH         MISMATCH          DROP          INITIAL_GARBAGE         DELETE         OVERDUE_CHECK                   
+%%      instance:   1      10               0              10               0               0                  0                   0                 0                         
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%  42340 ns    Log    ID_CTRL             SBI_VVC_SB,1        reset() => reseting SB.  'Empty SB for next test'
+%% 
+%% 
+%% 
+%% ############################################################################################################################################################################
+%% 
+%%  42820 ns    Log    ID_LOG_HDR_XL       TB seq.             Test randomise data.\n\nUART TX VVC is used to send randomised data to DUT.
+%% 
+%% ############################################################################################################################################################################
+%% 
+%% 
+%%  42820 ns    Log    ID_SEQUENCER        TB seq.             Note: SBI_READ() is requested by Model.\nResults are checked in Scoreboard.\n
+%% 
+%% 
+%%  42820 ns    Log    ID_LOG_HDR          TB seq.             Check 1 byte random transmit
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  42820 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, 1, RANDOM): 'UART TX RANDOM'. [85]
+%%  42820 ns    Log    ID_DATA             SBI_VVC_SB,1        add_expected() => expected: 00000000000000000000000000010011. 
+%%  42820 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1920000 ps): 'Wait for UART TX to finish'. [87]
+%%  42820 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_read(SBI_VVC,1, x"0", TO_SB): 'SBI_READ'. [88]
+%%  44500 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%%  44580 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(UART_VVC,1,TX, 200000 ps): 'Insert delay before next UART TX'. [89]
+%% 
+%% 
+%%  44580 ns    Log    ID_LOG_HDR          TB seq.             Check 3 byte random transmit
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  44580 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_transmit(UART_VVC,1,TX, 3, RANDOM): 'UART TX RANDOM'. [90]
+%% 44752.5 ns    Log    ID_DATA             SBI_VVC_SB,1        check_received() => MATCH, for value: 00000000000000000000000000010011.
+%%  44780 ns    Log    ID_DATA             SBI_VVC_SB,1        add_expected() => expected: 00000000000000000000000001010111. 
+%%  44780 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1920000 ps): 'Wait for UART TX to finish'. [92]
+%%  44780 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_read(SBI_VVC,1, x"0", TO_SB): 'SBI_READ'. [93]
+%%  46460 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%%  46540 ns    Log    ID_DATA             SBI_VVC_SB,1        add_expected() => expected: 00000000000000000000000011100010. 
+%%  46540 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1920000 ps): 'Wait for UART TX to finish'. [94]
+%%  46540 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_read(SBI_VVC,1, x"0", TO_SB): 'SBI_READ'. [95]
+%% 46712.5 ns    Log    ID_DATA             SBI_VVC_SB,1        check_received() => MATCH, for value: 00000000000000000000000001010111.
+%%  48220 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%%  48300 ns    Log    ID_DATA             SBI_VVC_SB,1        add_expected() => expected: 00000000000000000000000000011100. 
+%%  48300 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(SBI_VVC,1, 1920000 ps): 'Wait for UART TX to finish'. [96]
+%%  48300 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_read(SBI_VVC,1, x"0", TO_SB): 'SBI_READ'. [97]
+%% 48642.5 ns    Log    ID_DATA             SBI_VVC_SB,1        check_received() => MATCH, for value: 00000000000000000000000011100010.
+%%  49980 ns    Log    ID_MONITOR          UART Monitor        RX: Legal transaction completed.
+%% 50572.5 ns    Log    ID_DATA             SBI_VVC_SB,1        check_received() => MATCH, for value: 00000000000000000000000000011100.
+%%      
+%%      =======================================================================================================================================================================
+%%      50572.5 ns *** SCOREBOARD COUNTERS SUMMARY: SBI_VVC_SB ***                                                                                                             
+%%      =======================================================================================================================================================================
+%%                       ENTERED         PENDING          MATCH         MISMATCH          DROP          INITIAL_GARBAGE         DELETE         OVERDUE_CHECK                   
+%%      instance:   1       4               0               4               0               0                  0                   0                 0                         
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%% 50572.5 ns    Log    ID_CTRL             SBI_VVC_SB,1        reset() => reseting SB.  'Empty SB for next test'
+%% 
+%% 
+%% 
+%% ############################################################################################################################################################################
+%% 
+%% 51052.5 ns    Log    ID_LOG_HDR_XL       TB seq.             Test protocol checker.\n\nUART RX VVC is configured to control the bit rate checker,\nwhich is will monitor the bit periods.
+%% 
+%% ############################################################################################################################################################################
+%% 
+%% 
+%% 51052.5 ns    Log    ID_SEQUENCER        TB seq.             Note: results are checked in Scoreboard.\n
+%% 51212.5 ns    Log    ID_SEQUENCER        TB seq.             \nIncrease number of expected alerts with 5.
+%% 51212.5 ns    Log    ID_SEQUENCER        TB seq.             \nEnable and configure bit rate checker.
+%% 51212.5 ns    Log    ID_SEQUENCER        TB seq.             \nSBI Write 6 bytes to DUT, UART Receive bytes from DUT. Changing protocol checker min_period during sequence.\n
+%% 51212.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_write(SBI_VVC,1, x"2", x"51"): 'SBI WRITE'. [99]
+%% 51212.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_receive(UART_VVC,1,RX, TO_SB): 'UART TX'. [100]
+%% 51212.5 ns    Log    ID_DATA             UART_VVC_SB,1       add_expected() => expected: 01010001. 
+%%  52920 ns    Log    ID_DATA             UART_VVC_SB,1       check_received() => MATCH, for value: 01010001.
+%%  52920 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%%  52920 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_write(SBI_VVC,1, x"2", x"52"): 'SBI WRITE'. [102]
+%%  52920 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_receive(UART_VVC,1,RX, TO_SB): 'UART TX'. [103]
+%%  52920 ns    Log    ID_DATA             UART_VVC_SB,1       add_expected() => expected: 01010010. 
+%%  54700 ns    Log    ID_DATA             UART_VVC_SB,1       check_received() => MATCH, for value: 01010010.
+%%  54700 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%%  54700 ns    Log    ID_SEQUENCER        TB seq.             \nSetting bit rate checker min_period=152000 ps (bit period=160000 ps).
+%%  54700 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_write(SBI_VVC,1, x"2", x"53"): 'SBI WRITE'. [105]
+%%  54700 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_receive(UART_VVC,1,RX, TO_SB): 'UART TX'. [106]
+%%  54700 ns    Log    ID_DATA             UART_VVC_SB,1       add_expected() => expected: 01010011. 
+%%  56480 ns    Log    ID_DATA             UART_VVC_SB,1       check_received() => MATCH, for value: 01010011.
+%%  56480 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%%  56480 ns    Log    ID_SEQUENCER        TB seq.             \nSetting bit rate checker min_period=168000 ps (bit period=160000 ps).
+%%  56480 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_write(SBI_VVC,1, x"2", x"54"): 'SBI WRITE'. [108]
+%%  56480 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_receive(UART_VVC,1,RX, TO_SB): 'UART TX'. [109]
+%%  56480 ns    Log    ID_DATA             UART_VVC_SB,1       add_expected() => expected: 01010100. 
+%%  57220 ns    Alert  WARNING             UART_VVC,1,RX       check_value(bool, true) => Failed. Value was false. Expected true. 'Checking bit_rate minimum period: 168000 ps'
+%%  57380 ns    Alert  WARNING             UART_VVC,1,RX       check_value(bool, true) => Failed. Value was false. Expected true. 'Checking bit_rate minimum period: 168000 ps'
+%%  57540 ns    Alert  WARNING             UART_VVC,1,RX       check_value(bool, true) => Failed. Value was false. Expected true. 'Checking bit_rate minimum period: 168000 ps'
+%%  57700 ns    Alert  WARNING             UART_VVC,1,RX       check_value(bool, true) => Failed. Value was false. Expected true. 'Checking bit_rate minimum period: 168000 ps'
+%%  57860 ns    Alert  WARNING             UART_VVC,1,RX       check_value(bool, true) => Failed. Value was false. Expected true. 'Checking bit_rate minimum period: 168000 ps'
+%%  58260 ns    Log    ID_DATA             UART_VVC_SB,1       check_received() => MATCH, for value: 01010100.
+%%  58260 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%%  58260 ns    Log    ID_SEQUENCER        TB seq.             \nDisable bit rate checker.
+%%  58260 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_write(SBI_VVC,1, x"2", x"55"): 'SBI WRITE'. [111]
+%%  58260 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_receive(UART_VVC,1,RX, TO_SB): 'UART TX'. [112]
+%%  58260 ns    Log    ID_DATA             UART_VVC_SB,1       add_expected() => expected: 01010101. 
+%%  60040 ns    Log    ID_DATA             UART_VVC_SB,1       check_received() => MATCH, for value: 01010101.
+%%  60040 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%%  60040 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_write(SBI_VVC,1, x"2", x"56"): 'SBI WRITE'. [114]
+%%  60040 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_receive(UART_VVC,1,RX, TO_SB): 'UART TX'. [115]
+%%  60040 ns    Log    ID_DATA             UART_VVC_SB,1       add_expected() => expected: 01010110. 
+%%  61820 ns    Log    ID_DATA             UART_VVC_SB,1       check_received() => MATCH, for value: 01010110.
+%%  61820 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%%      
+%%      =======================================================================================================================================================================
+%%      61820 ns *** SCOREBOARD COUNTERS SUMMARY: UART_VVC_SB ***                                                                                                              
+%%      =======================================================================================================================================================================
+%%                       ENTERED         PENDING          MATCH         MISMATCH          DROP          INITIAL_GARBAGE         DELETE         OVERDUE_CHECK                   
+%%      instance:   1       6               0               6               0               0                  0                   0                 0                         
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%  61820 ns    Log    ID_CTRL             UART_VVC_SB,1       reset() => reseting SB.  'Empty SB for next test'
+%% 
+%% 
+%% 
+%% ############################################################################################################################################################################
+%% 
+%%  62300 ns    Log    ID_LOG_HDR_XL       TB seq.             Test activity watchdog.\n\nSBI VVC will transmit 3 bytes and UART RX VVC will receive 3 bytes,\nbefore a pause of TB sequencer will make the activity watchdog\ntimeout and alert. Then a new 3 bytes transmit and receive sequence is performed.
+%% 
+%% ############################################################################################################################################################################
+%% 
+%% 
+%%  62300 ns    Log    ID_SEQUENCER        TB seq.             Note: results are checked in Scoreboard.\n
+%%  62300 ns    Log    ID_SEQUENCER        TB seq.             \nIncrease number of expected alerts for activity watchdog testing.
+%%  62300 ns    Log    ID_SEQUENCER        TB seq.             \nSBI Write 3 bytes to DUT, UART Receive 5 bytes from DUT. No activity watchdog timeout.\n
+%%  62300 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_write(SBI_VVC,1, x"2", x"51"): 'DUT TX DATA'. [117]
+%%  62300 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_receive(UART_VVC,1,RX, TO_SB): 'UART TX'. [118]
+%%  62300 ns    Log    ID_DATA             UART_VVC_SB,1       add_expected() => expected: 01010001. 
+%%  64010 ns    Log    ID_DATA             UART_VVC_SB,1       check_received() => MATCH, for value: 01010001.
+%%  64010 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%%  64010 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_write(SBI_VVC,1, x"2", x"52"): 'DUT TX DATA'. [120]
+%%  64010 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_receive(UART_VVC,1,RX, TO_SB): 'UART TX'. [121]
+%%  64010 ns    Log    ID_DATA             UART_VVC_SB,1       add_expected() => expected: 01010010. 
+%%  65790 ns    Log    ID_DATA             UART_VVC_SB,1       check_received() => MATCH, for value: 01010010.
+%%  65790 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%%  65790 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_write(SBI_VVC,1, x"2", x"53"): 'DUT TX DATA'. [123]
+%%  65790 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_receive(UART_VVC,1,RX, TO_SB): 'UART TX'. [124]
+%%  65790 ns    Log    ID_DATA             UART_VVC_SB,1       add_expected() => expected: 01010011. 
+%%  67570 ns    Log    ID_DATA             UART_VVC_SB,1       check_received() => MATCH, for value: 01010011.
+%%  67570 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%%  67570 ns    Log    ID_SEQUENCER        TB seq.             \nStalling TB to trigger inactivity watchdog timeout.\n
+%%  75570 ns    Alert  ERROR               TB seq.             Activity watchdog timer ended after 8000 ns! Activity_Watchdog
+%%  75571 ns    Log    ID_SEQUENCER        TB seq.             \nSBI Write 3 bytes to DUT, UART Receive 5 bytes from DUT. No activity watchdog timeout.\n
+%%  75571 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_write(SBI_VVC,1, x"2", x"51"): 'DUT TX DATA'. [126]
+%%  75571 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_receive(UART_VVC,1,RX, TO_SB): 'UART TX'. [127]
+%%  75571 ns    Log    ID_DATA             UART_VVC_SB,1       add_expected() => expected: 01010001. 
+%%  77280 ns    Log    ID_DATA             UART_VVC_SB,1       check_received() => MATCH, for value: 01010001.
+%%  77280 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%%  77280 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_write(SBI_VVC,1, x"2", x"52"): 'DUT TX DATA'. [129]
+%%  77280 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_receive(UART_VVC,1,RX, TO_SB): 'UART TX'. [130]
+%%  77280 ns    Log    ID_DATA             UART_VVC_SB,1       add_expected() => expected: 01010010. 
+%%  79060 ns    Log    ID_DATA             UART_VVC_SB,1       check_received() => MATCH, for value: 01010010.
+%%  79060 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%%  79060 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_write(SBI_VVC,1, x"2", x"53"): 'DUT TX DATA'. [132]
+%%  79060 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_receive(UART_VVC,1,RX, TO_SB): 'UART TX'. [133]
+%%  79060 ns    Log    ID_DATA             UART_VVC_SB,1       add_expected() => expected: 01010011. 
+%%  80840 ns    Log    ID_DATA             UART_VVC_SB,1       check_received() => MATCH, for value: 01010011.
+%%  80840 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%%      
+%%      =======================================================================================================================================================================
+%%      80840 ns *** SCOREBOARD COUNTERS SUMMARY: UART_VVC_SB ***                                                                                                              
+%%      =======================================================================================================================================================================
+%%                       ENTERED         PENDING          MATCH         MISMATCH          DROP          INITIAL_GARBAGE         DELETE         OVERDUE_CHECK                   
+%%      instance:   1       6               0               6               0               0                  0                   0                 0                         
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%  80840 ns    Log    ID_CTRL             UART_VVC_SB,1       reset() => reseting SB.  'Empty SB for next test'
+%% 
+%% 
+%% 
+%% ############################################################################################################################################################################
+%% 
+%%  81320 ns    Log    ID_LOG_HDR_XL       TB seq.             Test general watchdog.\n\nThis test demonstrates configuration and usage of the general watchdog.
+%% 
+%% ############################################################################################################################################################################
+%% 
+%% 
+%%  81320 ns    Log    ID_SEQUENCER        TB seq.             Incrementing UVVM stop limit\n
+%%  81320 ns    Log    ID_SEQUENCER        TB seq.             Reconfigure general watchdogs for test\n
+%% 
+%% 
+%%  81420 ns    Log    ID_LOG_HDR          TB seq.             Testing general watchdog timer A (110 ns) - terminate command
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 
+%% 
+%%  81420 ns    Log    ID_LOG_HDR          TB seq.             Testing general watchdog timer B (120 ns) - initial timeout
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  81439 ns    Log    ID_SEQUENCER        TB seq.             General watchdog B still running - waiting for timeout
+%%  81440 ns    Alert  ERROR               TB seq.             General watchdog timer ended! Watchdog B
+%% 
+%% 
+%%  81440 ns    Log    ID_LOG_HDR          TB seq.             Testing general watchdog timer C (130 ns) - extend command with input value
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  81540 ns    Log    ID_SEQUENCER        TB seq.             General watchdog C still running - extend command with previous input value (100 ns)
+%%  81670 ns    Log    ID_SEQUENCER        TB seq.             General watchdog C still running - extend command with input value 300 ns
+%%  81970 ns    Log    ID_SEQUENCER        TB seq.             General watchdog C still running - extend command with input value 300 ns
+%%  82270 ns    Log    ID_SEQUENCER        TB seq.             General watchdog C still running - extend command with previous input value (300 ns)
+%%  82400 ns    Log    ID_SEQUENCER        TB seq.             General watchdog C still running - reinitialize command with input value 101 ns
+%%  82500 ns    Log    ID_SEQUENCER        TB seq.             General watchdog C still running - extend command with input value 300 ns
+%%  82800 ns    Log    ID_SEQUENCER        TB seq.             General watchdog C still running - waiting for timeout
+%%  82801 ns    Alert  ERROR               TB seq.             General watchdog timer ended! Watchdog C
+%% 
+%% 
+%%  82801 ns    Log    ID_LOG_HDR          TB seq.             Testing general watchdog timer D (5000 ns) - reinitialize command (100 ns)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  82900 ns    Log    ID_SEQUENCER        TB seq.             General watchdog D still running - waiting for timeout
+%%  82901 ns    Alert  ERROR               TB seq.             General watchdog timer ended! Watchdog D
+%% 
+%% 
+%% 
+%% ############################################################################################################################################################################
+%% 
+%%  83381 ns    Log    ID_LOG_HDR_XL       TB seq.             Test unwanted activity detection.\n\nThis test demonstrates configuration and usage of the unwanted activity detection.
+%% 
+%% ############################################################################################################################################################################
+%% 
+%% 
+%%  83381 ns    Log    ID_SEQUENCER        TB seq.             Configure unwanted activity severity to ERROR.
+%% 
+%% 
+%%  83381 ns    Log    ID_LOG_HDR          TB seq.             Testing normal data transmission.
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  83381 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_write(SBI_VVC,1, x"2", x"55"): 'Transmit data'. [135]
+%%  83381 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_expect(UART_VVC,1,RX, x"55"): 'Expect data'. [136]
+%%  83381 ns    Log    ID_DATA             UART_VVC_SB,1       add_expected() => expected: 01010101. 
+%%  85090 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%% 
+%% 
+%%  85090 ns    Log    ID_LOG_HDR          TB seq.             Testing unexpected data transmission.
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  85090 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_write(SBI_VVC,1, x"2", x"55"): 'Transmit data'. [138]
+%%  85090 ns    Log    ID_DATA             UART_VVC_SB,1       add_expected() => expected: 01010101. 
+%%  85190 ns    Alert  ERROR               UART_VVC,1,RX       Unwanted activity detected. The DUT TX output changed from 1 to 0
+%%  85350 ns    Alert  ERROR               UART_VVC,1,RX       Unwanted activity detected. The DUT TX output changed from 0 to 1
+%%  85510 ns    Alert  ERROR               UART_VVC,1,RX       Unwanted activity detected. The DUT TX output changed from 1 to 0
+%%  85670 ns    Alert  ERROR               UART_VVC,1,RX       Unwanted activity detected. The DUT TX output changed from 0 to 1
+%%  85830 ns    Alert  ERROR               UART_VVC,1,RX       Unwanted activity detected. The DUT TX output changed from 1 to 0
+%%  85990 ns    Alert  ERROR               UART_VVC,1,RX       Unwanted activity detected. The DUT TX output changed from 0 to 1
+%%  86150 ns    Alert  ERROR               UART_VVC,1,RX       Unwanted activity detected. The DUT TX output changed from 1 to 0
+%%  86310 ns    Alert  ERROR               UART_VVC,1,RX       Unwanted activity detected. The DUT TX output changed from 0 to 1
+%%  86470 ns    Alert  ERROR               UART_VVC,1,RX       Unwanted activity detected. The DUT TX output changed from 1 to 0
+%%  86630 ns    Alert  ERROR               UART_VVC,1,RX       Unwanted activity detected. The DUT TX output changed from 0 to 1
+%% 86702.5 ns    Log    ID_SEQUENCER        TB seq.             Configure unwanted activity severity to FAILURE.
+%% 
+%% 
+%% 86702.5 ns    Log    ID_LOG_HDR          TB seq.             Testing normal data transmission.
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 86702.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_write(SBI_VVC,1, x"2", x"55"): 'Transmit data'. [140]
+%% 86702.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_expect(UART_VVC,1,RX, x"55"): 'Expect data'. [141]
+%% 86702.5 ns    Log    ID_DATA             UART_VVC_SB,1       add_expected() => expected: 01010101. 
+%%  86870 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%%  88650 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%% 
+%% 
+%%  88650 ns    Log    ID_LOG_HDR          TB seq.             Testing unexpected data transmission.
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  88650 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_write(SBI_VVC,1, x"2", x"55"): 'Transmit data'. [143]
+%%  88650 ns    Log    ID_DATA             UART_VVC_SB,1       add_expected() => expected: 01010101. 
+%%  88750 ns    Alert  FAILURE             UART_VVC,1,RX       Unwanted activity detected. The DUT TX output changed from 1 to 0
+%%  88910 ns    Alert  FAILURE             UART_VVC,1,RX       Unwanted activity detected. The DUT TX output changed from 0 to 1
+%%  89070 ns    Alert  FAILURE             UART_VVC,1,RX       Unwanted activity detected. The DUT TX output changed from 1 to 0
+%%  89230 ns    Alert  FAILURE             UART_VVC,1,RX       Unwanted activity detected. The DUT TX output changed from 0 to 1
+%%  89390 ns    Alert  FAILURE             UART_VVC,1,RX       Unwanted activity detected. The DUT TX output changed from 1 to 0
+%%  89550 ns    Alert  FAILURE             UART_VVC,1,RX       Unwanted activity detected. The DUT TX output changed from 0 to 1
+%%  89710 ns    Alert  FAILURE             UART_VVC,1,RX       Unwanted activity detected. The DUT TX output changed from 1 to 0
+%%  89870 ns    Alert  FAILURE             UART_VVC,1,RX       Unwanted activity detected. The DUT TX output changed from 0 to 1
+%%  90030 ns    Alert  FAILURE             UART_VVC,1,RX       Unwanted activity detected. The DUT TX output changed from 1 to 0
+%%  90190 ns    Alert  FAILURE             UART_VVC,1,RX       Unwanted activity detected. The DUT TX output changed from 0 to 1
+%% 90262.5 ns    Log    ID_SEQUENCER        TB seq.             Configure unwanted activity severity to NO_ALERT.
+%% 
+%% 
+%% 90262.5 ns    Log    ID_LOG_HDR          TB seq.             Testing normal data transmission.
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 90262.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_write(SBI_VVC,1, x"2", x"55"): 'Transmit data'. [145]
+%% 90262.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       uart_expect(UART_VVC,1,RX, x"55"): 'Expect data'. [146]
+%% 90262.5 ns    Log    ID_DATA             UART_VVC_SB,1       add_expected() => expected: 01010101. 
+%%  90430 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%%  92210 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%% 
+%% 
+%%  92210 ns    Log    ID_LOG_HDR          TB seq.             Testing unexpected data transmission.
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  92210 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       sbi_write(SBI_VVC,1, x"2", x"55"): 'Transmit data'. [148]
+%%  92210 ns    Log    ID_DATA             UART_VVC_SB,1       add_expected() => expected: 01010101. 
+%% 93822.5 ns    Log    ID_CTRL             UART_VVC_SB,1       reset() => reseting SB.  'Empty SB for next test'
+%%  93990 ns    Log    ID_MONITOR          UART Monitor        TX: Legal transaction completed.
+%% 94303.5 ns    Log    ID_AWAIT_UVVM_COMP  TB seq.             await_uvvm_completion() => OK. All VVCs are inactive. Condition occurred after 1 ns
+%% 94303.5 ns    Log    ID_AWAIT_UVVM_COMP  TB seq.             await_uvvm_completion()() => OK. All UVVM scoreboards are empty. Condition occurred after 0 ns
+%%      
+%%      =======================================================================================================================================================================
+%%      94303.5 ns *** SUMMARY OF SCOREBOARDS***                                                                                                                               
+%%      =======================================================================================================================================================================
+%%           SBI_VVC_SB,1,ENABLED
+%%           UART_VVC_SB,1,ENABLED
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%      
+%%      =======================================================================================================================================================================
+%%      94303.5 ns *** SUMMARY OF VVCS***                                                                                                                                      
+%%      =======================================================================================================================================================================
+%%           SBI_VVC,1
+%%           UART_VVC,1,RX
+%%           UART_VVC,1,TX
+%%           CLOCK_GENERATOR_VVC,1
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%% 94303.5 ns    DONE   FAILED   uvvm_demo_tb  Total Error(s) = 10  Failures: 0  Errors: 10  Warnings: 0  Passed: 0  Affirmations Checked: 5
+%%    Expected      Failures: -10  Errors: -14  Warnings: -5  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 10  Warnings: 0  Passed: 0
+%%    Default       Failures: 10  Errors: 14  Warnings: 5  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% 94303.5 ns    Log    ID_LOG_HDR          TB seq.             SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

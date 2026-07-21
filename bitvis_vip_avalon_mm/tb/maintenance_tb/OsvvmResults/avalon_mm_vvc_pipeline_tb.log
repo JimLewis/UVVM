@@ -1,0 +1,323 @@
+%%      0 ns    Log    ID_CONSTRUCTOR      AVALON_MM_VVC,1     VVC instantiated.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AVALON_MM_VVC,1     Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AVALON_MM_VVC,1     Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CMD_INTERPRETER  AVALON_MM_VVC,1     Interpreter: Waiting for command
+%%      0 ns    Log    ID_CTRL             AVALON_MM_VVC_SB,1  enable() => SB enabled. 'AVALON_MM VVC SB Enabled'
+%%      0 ns    Log    ID_CTRL             AVALON_MM_VVC_SB,1  config() => config applied to SB.
+%%      0 ns    Log    ID_CTRL             AVALON_MM_VVC_SB,1  enable_log_msg() => message id id_data enabled.
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ALL_MESSAGES).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_SEQUENCER).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_LOG_HDR).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_BFM).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_BFM_POLL).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_POS_ACK).
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  AVALON_MM_VVC_RR,1  Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  AVALON_MM_VVC,1     Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  AVALON_MM_VVC,1     disable_log_msg(AVALON_MM_VVC,1, ALL_MESSAGES). Command received  [1]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AVALON_MM_VVC,1     disable_log_msg(ALL_MESSAGES). ' [1]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AVALON_MM_VVC,1     enable_log_msg(ID_BFM). ' [2]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AVALON_MM_VVC,1     enable_log_msg(ID_BFM_POLL). ' [3]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AVALON_MM_VVC,1     enable_log_msg(ID_CMD_EXECUTOR). ' [4]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AVALON_MM_VVC,1     enable_log_msg(ID_IMMEDIATE_CMD). ' [5]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AVALON_MM_VVC,1     enable_log_msg(ID_IMMEDIATE_CMD_WAIT). ' [6]'
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF GLOBAL CTRL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                                IGNORE    STOP_LIMIT
+%%                NOTE         :  REGARD    integer'high
+%%                TB_NOTE      :  REGARD    integer'high
+%%                WARNING      :  REGARD    integer'high
+%%                TB_WARNING   :  REGARD    integer'high
+%%                MANUAL_CHECK :  REGARD    integer'high
+%%                ERROR        :  REGARD    integer'high
+%%                TB_ERROR     :  REGARD    integer'high
+%%                FAILURE      :  REGARD         1
+%%                TB_FAILURE   :  REGARD         1
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF MSG ID PANEL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                ID                             Status
+%%                ------------------------       ------
+%%                ID_UTIL_BURIED               : DISABLED
+%%                ID_BITVIS_DEBUG              : DISABLED
+%%                ID_UTIL_SETUP                : DISABLED
+%%                ID_LOG_MSG_CTRL              : ENABLED
+%%                ID_ALERT_CTRL                : DISABLED
+%%                ID_FINISH_OR_STOP            : DISABLED
+%%                ID_CLOCK_GEN                 : DISABLED
+%%                ID_GEN_PULSE                 : DISABLED
+%%                ID_BLOCKING                  : DISABLED
+%%                ID_WATCHDOG                  : DISABLED
+%%                ID_RAND_GEN                  : DISABLED
+%%                ID_RAND_CONF                 : DISABLED
+%%                ID_FUNC_COV_BINS             : DISABLED
+%%                ID_FUNC_COV_BINS_INFO        : DISABLED
+%%                ID_FUNC_COV_RAND             : DISABLED
+%%                ID_FUNC_COV_SAMPLE           : DISABLED
+%%                ID_FUNC_COV_CONFIG           : DISABLED
+%%                ID_POS_ACK                   : ENABLED
+%%                ID_UVVM_ASSERTION            : DISABLED
+%%                ID_LOG_HDR                   : ENABLED
+%%                ID_LOG_HDR_LARGE             : DISABLED
+%%                ID_LOG_HDR_XL                : DISABLED
+%%                ID_SEQUENCER                 : ENABLED
+%%                ID_SEQUENCER_SUB             : DISABLED
+%%                ID_BFM                       : ENABLED
+%%                ID_BFM_WAIT                  : DISABLED
+%%                ID_BFM_POLL                  : ENABLED
+%%                ID_BFM_POLL_SUMMARY          : DISABLED
+%%                ID_CHANNEL_BFM               : DISABLED
+%%                ID_TERMINATE_CMD             : DISABLED
+%%                ID_SEGMENT_INITIATE          : DISABLED
+%%                ID_SEGMENT_COMPLETE          : DISABLED
+%%                ID_SEGMENT_HDR               : DISABLED
+%%                ID_SEGMENT_DATA              : DISABLED
+%%                ID_PACKET_INITIATE           : DISABLED
+%%                ID_PACKET_PREAMBLE           : DISABLED
+%%                ID_PACKET_COMPLETE           : DISABLED
+%%                ID_PACKET_HDR                : DISABLED
+%%                ID_PACKET_DATA               : DISABLED
+%%                ID_PACKET_CHECKSUM           : DISABLED
+%%                ID_PACKET_GAP                : DISABLED
+%%                ID_PACKET_PAYLOAD            : DISABLED
+%%                ID_FRAME_INITIATE            : DISABLED
+%%                ID_FRAME_COMPLETE            : DISABLED
+%%                ID_FRAME_HDR                 : DISABLED
+%%                ID_FRAME_DATA                : DISABLED
+%%                ID_COVERAGE_MAKEBIN          : DISABLED
+%%                ID_COVERAGE_ADDBIN           : DISABLED
+%%                ID_COVERAGE_ICOVER           : DISABLED
+%%                ID_COVERAGE_CONFIG           : DISABLED
+%%                ID_COVERAGE_SUMMARY          : DISABLED
+%%                ID_COVERAGE_HOLES            : DISABLED
+%%                ID_UVVM_SEND_CMD             : DISABLED
+%%                ID_UVVM_CMD_ACK              : DISABLED
+%%                ID_UVVM_CMD_RESULT           : DISABLED
+%%                ID_CMD_INTERPRETER           : DISABLED
+%%                ID_CMD_INTERPRETER_WAIT      : DISABLED
+%%                ID_IMMEDIATE_CMD             : DISABLED
+%%                ID_IMMEDIATE_CMD_WAIT        : DISABLED
+%%                ID_CMD_EXECUTOR              : DISABLED
+%%                ID_CMD_EXECUTOR_WAIT         : DISABLED
+%%                ID_CHANNEL_EXECUTOR          : DISABLED
+%%                ID_CHANNEL_EXECUTOR_WAIT     : DISABLED
+%%                ID_NEW_HVVC_CMD_SEQ          : DISABLED
+%%                ID_INSERTED_DELAY            : DISABLED
+%%                ID_OLD_AWAIT_COMPLETION      : DISABLED
+%%                ID_AWAIT_COMPLETION          : DISABLED
+%%                ID_AWAIT_COMPLETION_LIST     : DISABLED
+%%                ID_AWAIT_COMPLETION_WAIT     : DISABLED
+%%                ID_AWAIT_COMPLETION_END      : DISABLED
+%%                ID_AWAIT_UVVM_COMPLETION     : DISABLED
+%%                ID_UVVM_DATA_QUEUE           : DISABLED
+%%                ID_CONSTRUCTOR               : DISABLED
+%%                ID_CONSTRUCTOR_SUB           : DISABLED
+%%                ID_VVC_ACTIVITY              : DISABLED
+%%                ID_MONITOR                   : DISABLED
+%%                ID_MONITOR_ERROR             : DISABLED
+%%                ID_DATA                      : DISABLED
+%%                ID_CTRL                      : DISABLED
+%%                ID_SPEC_COV_INIT             : DISABLED
+%%                ID_SPEC_COV_REQS             : DISABLED
+%%                ID_SPEC_COV                  : DISABLED
+%%                ID_FILE_OPEN_CLOSE           : DISABLED
+%%                ID_FILE_PARSER               : DISABLED
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      0 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC,1     avalon_mm_reset(AVALON_MM_VVC,1, 5) - Will be executed  [7]
+%%      0 ns    Log    ID_BFM              AVALON_MM_VVC,1     avalon_mm_reset(num_rst_cycles=5). ' 'Resetting Avalon MM Interface 1'  [7]'
+%% 1000000 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC,1     insert_delay(AVALON_MM_VVC,1, 50) - Will be executed  [8]
+%% 
+%% 
+%% 1000500 ns    Log    ID_LOG_HDR          TB seq.             Basic read and write tests with pipelined DUT
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 1000500 ns    Log    ID_SEQUENCER        TB seq.             Testing pipeliend read/check, iteration i=0
+%% 1000500 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC,1     avalon_mm_check(AVALON_MM_VVC,1, x"0", x"00110032") - Will be executed  [10]
+%% 1000520 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC_RR,1  avalon_mm_check(AVALON_MM_VVC,1, x"0", x"00110032") - Will be executed  [10]
+%% 1000610 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  readdatavalid was active after 10 clock cycles
+%% 1000612.5 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  avalon_mm_check_response(A:x"000000", x"00110032")=> OK, received data = x"110032". ' 'Reading data, i=0'  [10]'
+%% 1000612.5 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC,1     avalon_mm_check(AVALON_MM_VVC,1, x"0", x"01AB129C") - Will be executed  [12]
+%% 1000630 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC_RR,1  avalon_mm_check(AVALON_MM_VVC,1, x"0", x"01AB129C") - Will be executed  [12]
+%% 1000690 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  readdatavalid was active after 7 clock cycles
+%% 1000692.5 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  avalon_mm_check_response(A:x"000000", x"01AB129C")=> OK, received data = x"1AB129C". ' 'Reading data, i=0'  [12]'
+%% 1000692.5 ns    Log    ID_SEQUENCER        TB seq.             Testing pipeliend read/check, iteration i=1
+%% 1000692.5 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC,1     avalon_mm_check(AVALON_MM_VVC,1, x"0", x"00110032") - Will be executed  [14]
+%% 1000710 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC_RR,1  avalon_mm_check(AVALON_MM_VVC,1, x"0", x"00110032") - Will be executed  [14]
+%% 1000770 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  readdatavalid was active after 7 clock cycles
+%% 1000772.5 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  avalon_mm_check_response(A:x"000000", x"00110032")=> OK, received data = x"110032". ' 'Reading data, i=1'  [14]'
+%% 1000772.5 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC,1     avalon_mm_check(AVALON_MM_VVC,1, x"0", x"01AB129C") - Will be executed  [16]
+%% 1000790 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC_RR,1  avalon_mm_check(AVALON_MM_VVC,1, x"0", x"01AB129C") - Will be executed  [16]
+%% 1000850 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  readdatavalid was active after 7 clock cycles
+%% 1000852.5 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  avalon_mm_check_response(A:x"000000", x"01AB129C")=> OK, received data = x"1AB129C". ' 'Reading data, i=1'  [16]'
+%% 1001852.5 ns    Log    ID_SEQUENCER        TB seq.             Testing pipelined write
+%% 1001852.5 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC,1     avalon_mm_write(AVALON_MM_VVC,1, x"0", x"10") - Will be executed  [18]
+%% 1001892.5 ns    Log    ID_BFM              AVALON_MM_VVC,1     avalon_mm_write(A:x"000000", x"00000010") completed. ' 'Writing to DUT'  [18]'
+%% 1001930 ns    Log    PASSED              TB seq.             await_value(slv, x"10", 0 ns, 1000 ns) => OK. Condition occurred after 37.5 ns. 'Awaiting value on debug output port'
+%% 1002930 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC,1     avalon_mm_write(AVALON_MM_VVC,1, x"0", x"55") - Will be executed  [20]
+%% 1002942.5 ns    Log    ID_BFM              AVALON_MM_VVC,1     avalon_mm_write(A:x"000000", x"00000055") completed. ' 'Writing to DUT'  [20]'
+%% 1002942.5 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC,1     avalon_mm_write(AVALON_MM_VVC,1, x"0", x"AA") - Will be executed  [21]
+%% 1002950 ns    Log    PASSED              TB seq.             await_value(slv, x"55", 0 ns, 1000 ns) => OK. Condition occurred after 20 ns. 'Awaiting value on debug output port'
+%% 1002952.5 ns    Log    ID_BFM              AVALON_MM_VVC,1     avalon_mm_write(A:x"000000", x"000000AA") completed. ' 'Writing to DUT'  [21]'
+%% 1002952.5 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC,1     avalon_mm_write(AVALON_MM_VVC,1, x"0", x"1234") - Will be executed  [22]
+%% 1002960 ns    Log    PASSED              TB seq.             await_value(slv, x"AA", 0 ns, 1000 ns) => OK. Condition occurred after 10 ns. 'Awaiting value on debug output port'
+%% 1002962.5 ns    Log    ID_BFM              AVALON_MM_VVC,1     avalon_mm_write(A:x"000000", x"00001234") completed. ' 'Writing to DUT'  [22]'
+%% 1002970 ns    Log    PASSED              TB seq.             await_value(slv, x"1234", 0 ns, 1000 ns) => OK. Condition occurred after 10 ns. 'Awaiting value on debug output port'
+%% 
+%% 
+%% 1002970 ns    Log    ID_LOG_HDR          TB seq.             Test of multiple pipelined reads
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 1002970 ns    Log    ID_SEQUENCER        TB seq.             Reading multiple times
+%% 1002970 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC,1     avalon_mm_check(AVALON_MM_VVC,1, x"0", x"00001100") - Will be executed  [24]
+%% 1003020 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC_RR,1  avalon_mm_check(AVALON_MM_VVC,1, x"0", x"00001100") - Will be executed  [24]
+%% 1003020 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC,1     avalon_mm_check(AVALON_MM_VVC,1, x"0", x"00001100") - Will be executed  [25]
+%% 1003060 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC,1     avalon_mm_check(AVALON_MM_VVC,1, x"0", x"00001100") - Will be executed  [26]
+%% 1003080 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC,1     avalon_mm_check(AVALON_MM_VVC,1, x"0", x"00001100") - Will be executed  [27]
+%% 1003120 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  readdatavalid was active after 11 clock cycles
+%% 1003122.5 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  avalon_mm_check_response(A:x"000000", x"00001100")=> OK, received data = x"1100". ' 'Reading data'  [24]'
+%% 1003122.5 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC_RR,1  avalon_mm_check(AVALON_MM_VVC,1, x"0", x"00001100") - Will be executed  [25]
+%% 1003130 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  readdatavalid was active after 1 clock cycles
+%% 1003132.5 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  avalon_mm_check_response(A:x"000000", x"00001100")=> OK, received data = x"1100". ' 'Reading data'  [25]'
+%% 1003132.5 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC_RR,1  avalon_mm_check(AVALON_MM_VVC,1, x"0", x"00001100") - Will be executed  [26]
+%% 1003140 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  readdatavalid was active after 1 clock cycles
+%% 1003142.5 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  avalon_mm_check_response(A:x"000000", x"00001100")=> OK, received data = x"1100". ' 'Reading data'  [26]'
+%% 1003142.5 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC_RR,1  avalon_mm_check(AVALON_MM_VVC,1, x"0", x"00001100") - Will be executed  [27]
+%% 1003160 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  readdatavalid was active after 2 clock cycles
+%% 1003162.5 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  avalon_mm_check_response(A:x"000000", x"00001100")=> OK, received data = x"1100". ' 'Reading data'  [27]'
+%% 1013162.5 ns    Log    ID_SEQUENCER        TB seq.             Reading above pipeline limit
+%% 1013162.5 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC,1     avalon_mm_check(AVALON_MM_VVC,1, x"0", x"10100011") - Will be executed  [29]
+%% 1013180 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC_RR,1  avalon_mm_check(AVALON_MM_VVC,1, x"0", x"10100011") - Will be executed  [29]
+%% 1013180 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC,1     avalon_mm_check(AVALON_MM_VVC,1, x"0", x"10100011") - Will be executed  [30]
+%% 1013210 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC,1     avalon_mm_check(AVALON_MM_VVC,1, x"0", x"10100011") - Will be executed  [31]
+%% 1013230 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC,1     avalon_mm_write(AVALON_MM_VVC,1, x"0", x"10101010") - Will be executed  [32]
+%% 1013270 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  readdatavalid was active after 10 clock cycles
+%% 1013272.5 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  avalon_mm_check_response(A:x"000000", x"10100011")=> OK, received data = x"10100011". ' 'Reading data - 1'  [29]'
+%% 1013272.5 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC_RR,1  avalon_mm_check(AVALON_MM_VVC,1, x"0", x"10100011") - Will be executed  [30]
+%% 1013280 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  readdatavalid was active after 1 clock cycles
+%% 1013282.5 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  avalon_mm_check_response(A:x"000000", x"10100011")=> OK, received data = x"10100011". ' 'Reading data - 2'  [30]'
+%% 1013282.5 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC_RR,1  avalon_mm_check(AVALON_MM_VVC,1, x"0", x"10100011") - Will be executed  [31]
+%% 1013290 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  readdatavalid was active after 1 clock cycles
+%% 1013292.5 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  avalon_mm_check_response(A:x"000000", x"10100011")=> OK, received data = x"10100011". ' 'Reading data - 3'  [31]'
+%% 1013322.5 ns    Log    ID_BFM              AVALON_MM_VVC,1     avalon_mm_write(A:x"000000", x"10101010") completed. ' 'Writing to DUT - 1'  [32]'
+%% 1013322.5 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC,1     avalon_mm_check(AVALON_MM_VVC,1, x"0", x"10100011") - Will be executed  [33]
+%% 1013360 ns    Log    PASSED              TB seq.             await_value(slv, x"10101010", 0 ns, 1000 ns) => OK. Condition occurred after 197.5 ns. 'Awaiting value on debug output port'
+%% 1013410 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC_RR,1  avalon_mm_check(AVALON_MM_VVC,1, x"0", x"10100011") - Will be executed  [33]
+%% 1013410 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC,1     avalon_mm_check(AVALON_MM_VVC,1, x"0", x"10100011") - Will be executed  [34]
+%% 1013450 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC,1     avalon_mm_check(AVALON_MM_VVC,1, x"0", x"10100011") - Will be executed  [35]
+%% 1013470 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC,1     avalon_mm_check(AVALON_MM_VVC,1, x"0", x"10100011") - Will be executed  [36]
+%% 1013490 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC,1     avalon_mm_check(AVALON_MM_VVC,1, x"0", x"10100011") - Will be executed  [37]
+%% 1013510 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  readdatavalid was active after 11 clock cycles
+%% 1013510 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC,1     avalon_mm_check(AVALON_MM_VVC,1, x"0", x"10100011") - Will be executed  [38]
+%% 1013512.5 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  avalon_mm_check_response(A:x"000000", x"10100011")=> OK, received data = x"10100011". ' 'Reading data - 4'  [33]'
+%% 1013512.5 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC_RR,1  avalon_mm_check(AVALON_MM_VVC,1, x"0", x"10100011") - Will be executed  [34]
+%% 1013520 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  readdatavalid was active after 1 clock cycles
+%% 1013522.5 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  avalon_mm_check_response(A:x"000000", x"10100011")=> OK, received data = x"10100011". ' 'Reading data - 5'  [34]'
+%% 1013522.5 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC_RR,1  avalon_mm_check(AVALON_MM_VVC,1, x"0", x"10100011") - Will be executed  [35]
+%% 1013530 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  readdatavalid was active after 1 clock cycles
+%% 1013530 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC,1     avalon_mm_check(AVALON_MM_VVC,1, x"0", x"10100011") - Will be executed  [39]
+%% 1013532.5 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  avalon_mm_check_response(A:x"000000", x"10100011")=> OK, received data = x"10100011". ' 'Reading data - 6'  [35]'
+%% 1013532.5 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC_RR,1  avalon_mm_check(AVALON_MM_VVC,1, x"0", x"10100011") - Will be executed  [36]
+%% 1013550 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  readdatavalid was active after 2 clock cycles
+%% 1013550 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC,1     avalon_mm_check(AVALON_MM_VVC,1, x"0", x"10100011") - Will be executed  [40]
+%% 1013552.5 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  avalon_mm_check_response(A:x"000000", x"10100011")=> OK, received data = x"10100011". ' 'Reading data - 7'  [36]'
+%% 1013552.5 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC_RR,1  avalon_mm_check(AVALON_MM_VVC,1, x"0", x"10100011") - Will be executed  [37]
+%% 1013570 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  readdatavalid was active after 2 clock cycles
+%% 1013570 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC,1     avalon_mm_check(AVALON_MM_VVC,1, x"0", x"10100011") - Will be executed  [41]
+%% 1013572.5 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  avalon_mm_check_response(A:x"000000", x"10100011")=> OK, received data = x"10100011". ' 'Reading data - 8'  [37]'
+%% 1013572.5 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC_RR,1  avalon_mm_check(AVALON_MM_VVC,1, x"0", x"10100011") - Will be executed  [38]
+%% 1013590 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  readdatavalid was active after 2 clock cycles
+%% 1013590 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC,1     avalon_mm_check(AVALON_MM_VVC,1, x"0", x"10100011") - Will be executed  [42]
+%% 1013592.5 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  avalon_mm_check_response(A:x"000000", x"10100011")=> OK, received data = x"10100011". ' 'Reading data - 9'  [38]'
+%% 1013592.5 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC_RR,1  avalon_mm_check(AVALON_MM_VVC,1, x"0", x"10100011") - Will be executed  [39]
+%% 1013610 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  readdatavalid was active after 2 clock cycles
+%% 1013610 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC,1     avalon_mm_write(AVALON_MM_VVC,1, x"0", x"12345678") - Will be executed  [43]
+%% 1013612.5 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  avalon_mm_check_response(A:x"000000", x"10100011")=> OK, received data = x"10100011". ' 'Reading data - 10'  [39]'
+%% 1013612.5 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC_RR,1  avalon_mm_check(AVALON_MM_VVC,1, x"0", x"10100011") - Will be executed  [40]
+%% 1013630 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  readdatavalid was active after 2 clock cycles
+%% 1013632.5 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  avalon_mm_check_response(A:x"000000", x"10100011")=> OK, received data = x"10100011". ' 'Reading data - 11'  [40]'
+%% 1013632.5 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC_RR,1  avalon_mm_check(AVALON_MM_VVC,1, x"0", x"10100011") - Will be executed  [41]
+%% 1013650 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  readdatavalid was active after 2 clock cycles
+%% 1013652.5 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  avalon_mm_check_response(A:x"000000", x"10100011")=> OK, received data = x"10100011". ' 'Reading data - 12'  [41]'
+%% 1013652.5 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC_RR,1  avalon_mm_check(AVALON_MM_VVC,1, x"0", x"10100011") - Will be executed  [42]
+%% 1013670 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  readdatavalid was active after 2 clock cycles
+%% 1013672.5 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  avalon_mm_check_response(A:x"000000", x"10100011")=> OK, received data = x"10100011". ' 'Reading data - 13'  [42]'
+%% 1013702.5 ns    Log    ID_BFM              AVALON_MM_VVC,1     avalon_mm_write(A:x"000000", x"12345678") completed. ' 'Writing to DUT - 2'  [43]'
+%% 1013702.5 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC,1     avalon_mm_check(AVALON_MM_VVC,1, x"0", x"10100011") - Will be executed  [44]
+%% 1013740 ns    Log    PASSED              TB seq.             await_value(slv, x"12345678", 0 ns, 1000 ns) => OK. Condition occurred after 380 ns. 'Awaiting value on debug output port'
+%% 1013790 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC_RR,1  avalon_mm_check(AVALON_MM_VVC,1, x"0", x"10100011") - Will be executed  [44]
+%% 1013890 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  readdatavalid was active after 11 clock cycles
+%% 1013892.5 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  avalon_mm_check_response(A:x"000000", x"10100011")=> OK, received data = x"10100011". ' 'Reading data - 14'  [44]'
+%% 1014892.5 ns    Log    PASSED              TB seq.             check_value(sl, 0) => OK. Value was 0. 'Verifying that bus is unlocked'
+%% 1014892.5 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC,1     avalon_mm_lock(AVALON_MM_VVC,1) - Will be executed  [46]
+%% 1014892.5 ns    Log    ID_BFM              AVALON_MM_VVC,1     avalon_mm_lock(). ' 'Locking Avalon MM Master 1'  [46]'
+%% 1014892.5 ns    Log    PASSED              TB seq.             check_value(sl, 1) => OK. Value was 1. 'Verifying that bus is locked'
+%% 1014892.5 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC,1     avalon_mm_write(AVALON_MM_VVC,1, x"0", x"55") - Will be executed  [48]
+%% 1014892.5 ns    Log    PASSED              TB seq.             check_value(sl, 1) => OK. Value was 1. 'Verifying that bus is locked'
+%% 1014892.5 ns    Log    PASSED              TB seq.             check_value(sl, 1) => OK. Value was 1. 'Verifying that bus is locked'
+%% 1014892.5 ns    Log    PASSED              TB seq.             check_value(sl, 1) => OK. Value was 1. 'Verifying that bus is locked'
+%% 1014932.5 ns    Log    ID_BFM              AVALON_MM_VVC,1     avalon_mm_write(A:x"000000", x"00000055") completed. ' 'Writing to DUT'  [48]'
+%% 1014932.5 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC,1     avalon_mm_write(AVALON_MM_VVC,1, x"0", x"AA") - Will be executed  [49]
+%% 1014972.5 ns    Log    ID_BFM              AVALON_MM_VVC,1     avalon_mm_write(A:x"000000", x"000000AA") completed. ' 'Writing to DUT'  [49]'
+%% 1014972.5 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC,1     avalon_mm_write(AVALON_MM_VVC,1, x"0", x"1234") - Will be executed  [50]
+%% 1014982.5 ns    Log    ID_BFM              AVALON_MM_VVC,1     avalon_mm_write(A:x"000000", x"00001234") completed. ' 'Writing to DUT'  [50]'
+%% 1014982.5 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC,1     avalon_mm_unlock(AVALON_MM_VVC,1) - Will be executed  [51]
+%% 1014982.5 ns    Log    ID_BFM              AVALON_MM_VVC,1     avalon_mm_unlock(). ' 'Unlocking Avalon MM Master 1'  [51]'
+%% 1014982.5 ns    Log    PASSED              TB seq.             check_value(sl, 0) => OK. Value was 0. 'Verifying that bus is unlocked'
+%% 
+%% 
+%% 1015982.5 ns    Log    ID_LOG_HDR          TB seq.             Test of pipelined reading, when different readdata each read
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 1015982.5 ns    Log    ID_SEQUENCER        TB seq.             Reading multiple times
+%% 1015982.5 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC,1     avalon_mm_read(AVALON_MM_VVC,1, x"0") - Will be executed  [54]
+%% 1016020 ns    Log    ID_BFM              AVALON_MM_VVC,1     avalon_mm_read_request(A:x"000000") completed. ' 'Reading i=0'  [54]'
+%% 1016020 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC_RR,1  avalon_mm_read(AVALON_MM_VVC,1, x"0") - Will be executed  [54]
+%% 1016120 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  readdatavalid was active after 11 clock cycles
+%% 1016122.5 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  avalon_mm_read_response(A:x"000000")=> x"C". ' 'Reading i=0'  [54]'
+%% 1016122.5 ns    Log    ID_IMMEDIATE_CMD    AVALON_MM_VVC,1     fetch_result(AVALON_MM_VVC,1, 54) Requested result is found. Fetching read-result  [56]
+%% 1016122.5 ns    Log    PASSED              TB seq.             check_value_in_range(int, 5, 1073741823) => OK. Value was 12. 'checking that read data has increased (i.e. not sampling the same readdata twice), Reading i=0'
+%% 1016122.5 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC,1     avalon_mm_read(AVALON_MM_VVC,1, x"0") - Will be executed  [57]
+%% 1016140 ns    Log    ID_BFM              AVALON_MM_VVC,1     avalon_mm_read_request(A:x"000000") completed. ' 'Reading i=1'  [57]'
+%% 1016140 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC_RR,1  avalon_mm_read(AVALON_MM_VVC,1, x"0") - Will be executed  [57]
+%% 1016200 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  readdatavalid was active after 7 clock cycles
+%% 1016202.5 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  avalon_mm_read_response(A:x"000000")=> x"14". ' 'Reading i=1'  [57]'
+%% 1016202.5 ns    Log    ID_IMMEDIATE_CMD    AVALON_MM_VVC,1     fetch_result(AVALON_MM_VVC,1, 57) Requested result is found. Fetching read-result  [59]
+%% 1016202.5 ns    Log    PASSED              TB seq.             check_value_in_range(int, 17, 1073741823) => OK. Value was 20. 'checking that read data has increased (i.e. not sampling the same readdata twice), Reading i=1'
+%% 1016202.5 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC,1     avalon_mm_read(AVALON_MM_VVC,1, x"0") - Will be executed  [60]
+%% 1016220 ns    Log    ID_BFM              AVALON_MM_VVC,1     avalon_mm_read_request(A:x"000000") completed. ' 'Reading i=2'  [60]'
+%% 1016220 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC_RR,1  avalon_mm_read(AVALON_MM_VVC,1, x"0") - Will be executed  [60]
+%% 1016280 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  readdatavalid was active after 7 clock cycles
+%% 1016282.5 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  avalon_mm_read_response(A:x"000000")=> x"1B". ' 'Reading i=2'  [60]'
+%% 1016282.5 ns    Log    ID_IMMEDIATE_CMD    AVALON_MM_VVC,1     fetch_result(AVALON_MM_VVC,1, 60) Requested result is found. Fetching read-result  [62]
+%% 1016282.5 ns    Log    PASSED              TB seq.             check_value_in_range(int, 25, 1073741823) => OK. Value was 27. 'checking that read data has increased (i.e. not sampling the same readdata twice), Reading i=2'
+%% 
+%% 
+%% 1036282.5 ns    Log    ID_LOG_HDR          TB seq.             Test fetch_result with cmd_idx lower than the last_cmd_idx_executed
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 1036282.5 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC,1     avalon_mm_read(AVALON_MM_VVC,1, x"0") - Will be executed  [64]
+%% 1036300 ns    Log    ID_BFM              AVALON_MM_VVC,1     avalon_mm_read_request(A:x"000000") completed. ' 'Reading data'  [64]'
+%% 1036300 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC_RR,1  avalon_mm_read(AVALON_MM_VVC,1, x"0") - Will be executed  [64]
+%% 1036300 ns    Log    ID_CMD_EXECUTOR     AVALON_MM_VVC,1     avalon_mm_unlock(AVALON_MM_VVC,1) - Will be executed  [65]
+%% 1036300 ns    Log    ID_BFM              AVALON_MM_VVC,1     avalon_mm_unlock(). ' 'Send a new command to VVC which executes faster than the read to increase the last_cmd_idx_executed'  [65]'
+%% 1036390 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  readdatavalid was active after 10 clock cycles
+%% 1036392.5 ns    Log    ID_BFM              AVALON_MM_VVC_RR,1  avalon_mm_read_response(A:x"000000")=> x"10100011". ' 'Reading data'  [64]'
+%% 1036392.5 ns    Log    ID_IMMEDIATE_CMD    AVALON_MM_VVC,1     fetch_result(AVALON_MM_VVC,1, 64) Requested result is found. Fetching read-result  [67]
+%% 1036392.5 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Readback OK via fetch_result()'
+%% 1036392.5 ns    Log    PASSED              TB seq.             check_value(slv, x"10100011") => OK. Value was x"10100011". 'Readback data via fetch_result()'
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%% 1036393.5 ns    DONE   PASSED   avalon_mm_vvc_pipeline_tb  Passed: 17  Affirmations Checked: 17
+%%    Expected      Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% 1036393.5 ns    Log    ID_LOG_HDR          TB seq.             SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

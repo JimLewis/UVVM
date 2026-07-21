@@ -1,0 +1,723 @@
+%% 
+%% 
+%% ============================================================================================================================================================================
+%%      0 ns    Log    ID_LOG_HDR_LARGE    TB seq.             Start Simulation of Randomization package - rand_gaussian
+%% ============================================================================================================================================================================
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_RAND_GEN).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_RAND_CONF).
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing Gaussian distribution config
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist(GAUSSIAN)
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking distribution'
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(5.00)
+%%      0 ns    Log    PASSED              TB seq.             check_value(real, 5.0000) => OK. Value was 5.0000. 'Checking mean'
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(1.00)
+%%      0 ns    Log    PASSED              TB seq.             check_value(real, 1.0000) => OK. Value was 1.0000. 'Checking std_deviation'
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_rand_dist_mean()
+%%      0 ns    Alert  WARNING             TB seq.             get_rand_dist_mean()=> mean has not been configured, using default
+%%      0 ns    Log    PASSED              TB seq.             check_value(real, 0.0000) => OK. Value was 0.0000. 'Checking mean config was cleared'
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_rand_dist_std_deviation()
+%%      0 ns    Alert  WARNING             TB seq.             get_rand_dist_std_deviation()=> std_deviation has not been configured, using default
+%%      0 ns    Log    PASSED              TB seq.             check_value(real, 0.0000) => OK. Value was 0.0000. 'Checking std_deviation config was cleared'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_POS_ACK).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_RAND_GEN).
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing Gaussian distribution (integer)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 INT values with min: -10, max: 10, default mean & std_deviation
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range([-10:10])
+%%    100 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 INT values with min: 0, max: 10, default mean & std_deviation
+%%    100 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%    100 ns    Log    ID_RAND_CONF        TB seq.             add_range([0:10])
+%%    200 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 INT values with min: -10, max: 0, default mean & std_deviation
+%%    200 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%    200 ns    Log    ID_RAND_CONF        TB seq.             add_range([-10:0])
+%%    300 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 INT values with min: -32, max: 31, mean: 0.00, std_deviation: 0.10
+%%    300 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%    300 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(0.10)
+%%    300 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%    300 ns    Log    ID_RAND_CONF        TB seq.             add_range([-32:31])
+%%    400 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 INT values with min: -32, max: 31, mean: 0.00, std_deviation: 0.50
+%%    400 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%    400 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(0.50)
+%%    400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%    400 ns    Log    ID_RAND_CONF        TB seq.             add_range([-32:31])
+%%    500 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 INT values with min: -32, max: 31, mean: 0.00, std_deviation: 1.00
+%%    500 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%    500 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(1.00)
+%%    500 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%    500 ns    Log    ID_RAND_CONF        TB seq.             add_range([-32:31])
+%%    600 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 INT values with min: -32, max: 31, mean: 5.00, std_deviation: 1.00
+%%    600 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(5.00)
+%%    600 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(1.00)
+%%    600 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%    600 ns    Log    ID_RAND_CONF        TB seq.             add_range([-32:31])
+%%    700 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 INT values with min: -32, max: 31, mean: 0.00, std_deviation: 3.00
+%%    700 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%    700 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(3.00)
+%%    700 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%    700 ns    Log    ID_RAND_CONF        TB seq.             add_range([-32:31])
+%%    800 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 INT values with min: -32, max: 31, mean: 0.00, std_deviation: 6.00
+%%    800 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%    800 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(6.00)
+%%    800 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%    800 ns    Log    ID_RAND_CONF        TB seq.             add_range([-32:31])
+%%   1100 ns    Log    ID_RAND_CONF        TB seq.             clear_rand_dist_mean()
+%%   1100 ns    Log    ID_RAND_CONF        TB seq.             clear_rand_dist_std_deviation()
+%% 
+%% 
+%%   1100 ns    Log    ID_LOG_HDR          TB seq.             Testing Gaussian distribution (integer_vector)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   1100 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 INT_VEC values with min: -10, max: 10, default mean & std_deviation
+%%   1100 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   1100 ns    Log    ID_RAND_CONF        TB seq.             add_range([-10:10])
+%%   1200 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 INT_VEC values with min: 0, max: 10, default mean & std_deviation
+%%   1200 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   1200 ns    Log    ID_RAND_CONF        TB seq.             add_range([0:10])
+%%   1300 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 INT_VEC values with min: -10, max: 0, default mean & std_deviation
+%%   1300 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   1300 ns    Log    ID_RAND_CONF        TB seq.             add_range([-10:0])
+%%   1400 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 INT_VEC values with min: -32, max: 31, mean: 0.00, std_deviation: 0.10
+%%   1400 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   1400 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(0.10)
+%%   1400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   1400 ns    Log    ID_RAND_CONF        TB seq.             add_range([-32:31])
+%%   1500 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 INT_VEC values with min: -32, max: 31, mean: 0.00, std_deviation: 0.50
+%%   1500 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   1500 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(0.50)
+%%   1500 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   1500 ns    Log    ID_RAND_CONF        TB seq.             add_range([-32:31])
+%%   1600 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 INT_VEC values with min: -32, max: 31, mean: 0.00, std_deviation: 1.00
+%%   1600 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   1600 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(1.00)
+%%   1600 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   1600 ns    Log    ID_RAND_CONF        TB seq.             add_range([-32:31])
+%%   1700 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 INT_VEC values with min: -32, max: 31, mean: 5.00, std_deviation: 1.00
+%%   1700 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(5.00)
+%%   1700 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(1.00)
+%%   1700 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   1700 ns    Log    ID_RAND_CONF        TB seq.             add_range([-32:31])
+%%   1800 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 INT_VEC values with min: -32, max: 31, mean: 0.00, std_deviation: 3.00
+%%   1800 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   1800 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(3.00)
+%%   1800 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   1800 ns    Log    ID_RAND_CONF        TB seq.             add_range([-32:31])
+%%   1900 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 INT_VEC values with min: -32, max: 31, mean: 0.00, std_deviation: 6.00
+%%   1900 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   1900 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(6.00)
+%%   1900 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   1900 ns    Log    ID_RAND_CONF        TB seq.             add_range([-32:31])
+%%   2200 ns    Log    ID_RAND_CONF        TB seq.             clear_rand_dist_mean()
+%%   2200 ns    Log    ID_RAND_CONF        TB seq.             clear_rand_dist_std_deviation()
+%% 
+%% 
+%%   2200 ns    Log    ID_LOG_HDR          TB seq.             Testing Gaussian distribution (real)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   2200 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 REAL values with min: -10, max: 10, default mean & std_deviation
+%%   2200 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   2200 ns    Log    ID_RAND_CONF        TB seq.             add_range_real([-10.00:10.00])
+%%   2300 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 REAL values with min: 0, max: 10, default mean & std_deviation
+%%   2300 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   2300 ns    Log    ID_RAND_CONF        TB seq.             add_range_real([0.00:10.00])
+%%   2400 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 REAL values with min: -10, max: 0, default mean & std_deviation
+%%   2400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   2400 ns    Log    ID_RAND_CONF        TB seq.             add_range_real([-10.00:0.00])
+%%   2500 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 REAL values with min: -32, max: 31, mean: 0.00, std_deviation: 0.10
+%%   2500 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   2500 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(0.10)
+%%   2500 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   2500 ns    Log    ID_RAND_CONF        TB seq.             add_range_real([-32.00:31.00])
+%%   2600 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 REAL values with min: -32, max: 31, mean: 0.00, std_deviation: 0.50
+%%   2600 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   2600 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(0.50)
+%%   2600 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   2600 ns    Log    ID_RAND_CONF        TB seq.             add_range_real([-32.00:31.00])
+%%   2700 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 REAL values with min: -32, max: 31, mean: 0.00, std_deviation: 1.00
+%%   2700 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   2700 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(1.00)
+%%   2700 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   2700 ns    Log    ID_RAND_CONF        TB seq.             add_range_real([-32.00:31.00])
+%%   2800 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 REAL values with min: -32, max: 31, mean: 5.00, std_deviation: 1.00
+%%   2800 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(5.00)
+%%   2800 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(1.00)
+%%   2800 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   2800 ns    Log    ID_RAND_CONF        TB seq.             add_range_real([-32.00:31.00])
+%%   2900 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 REAL values with min: -32, max: 31, mean: 0.00, std_deviation: 3.00
+%%   2900 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   2900 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(3.00)
+%%   2900 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   2900 ns    Log    ID_RAND_CONF        TB seq.             add_range_real([-32.00:31.00])
+%%   3000 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 REAL values with min: -32, max: 31, mean: 0.00, std_deviation: 6.00
+%%   3000 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   3000 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(6.00)
+%%   3000 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   3000 ns    Log    ID_RAND_CONF        TB seq.             add_range_real([-32.00:31.00])
+%%   3300 ns    Log    ID_RAND_CONF        TB seq.             clear_rand_dist_mean()
+%%   3300 ns    Log    ID_RAND_CONF        TB seq.             clear_rand_dist_std_deviation()
+%% 
+%% 
+%%   3300 ns    Log    ID_LOG_HDR          TB seq.             Testing Gaussian distribution (real_vector)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   3300 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 REAL_VEC values with min: -10, max: 10, default mean & std_deviation
+%%   3300 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   3300 ns    Log    ID_RAND_CONF        TB seq.             add_range_real([-10.00:10.00])
+%%   3400 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 REAL_VEC values with min: 0, max: 10, default mean & std_deviation
+%%   3400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   3400 ns    Log    ID_RAND_CONF        TB seq.             add_range_real([0.00:10.00])
+%%   3500 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 REAL_VEC values with min: -10, max: 0, default mean & std_deviation
+%%   3500 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   3500 ns    Log    ID_RAND_CONF        TB seq.             add_range_real([-10.00:0.00])
+%%   3600 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 REAL_VEC values with min: -32, max: 31, mean: 0.00, std_deviation: 0.10
+%%   3600 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   3600 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(0.10)
+%%   3600 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   3600 ns    Log    ID_RAND_CONF        TB seq.             add_range_real([-32.00:31.00])
+%%   3700 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 REAL_VEC values with min: -32, max: 31, mean: 0.00, std_deviation: 0.50
+%%   3700 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   3700 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(0.50)
+%%   3700 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   3700 ns    Log    ID_RAND_CONF        TB seq.             add_range_real([-32.00:31.00])
+%%   3800 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 REAL_VEC values with min: -32, max: 31, mean: 0.00, std_deviation: 1.00
+%%   3800 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   3800 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(1.00)
+%%   3800 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   3800 ns    Log    ID_RAND_CONF        TB seq.             add_range_real([-32.00:31.00])
+%%   3900 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 REAL_VEC values with min: -32, max: 31, mean: 5.00, std_deviation: 1.00
+%%   3900 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(5.00)
+%%   3900 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(1.00)
+%%   3900 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   3900 ns    Log    ID_RAND_CONF        TB seq.             add_range_real([-32.00:31.00])
+%%   4000 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 REAL_VEC values with min: -32, max: 31, mean: 0.00, std_deviation: 3.00
+%%   4000 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   4000 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(3.00)
+%%   4000 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   4000 ns    Log    ID_RAND_CONF        TB seq.             add_range_real([-32.00:31.00])
+%%   4100 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 REAL_VEC values with min: -32, max: 31, mean: 0.00, std_deviation: 6.00
+%%   4100 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   4100 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(6.00)
+%%   4100 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   4100 ns    Log    ID_RAND_CONF        TB seq.             add_range_real([-32.00:31.00])
+%%   4400 ns    Log    ID_RAND_CONF        TB seq.             clear_rand_dist_mean()
+%%   4400 ns    Log    ID_RAND_CONF        TB seq.             clear_rand_dist_std_deviation()
+%% 
+%% 
+%%   4400 ns    Log    ID_LOG_HDR          TB seq.             Testing Gaussian distribution (unsigned)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   4400 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 UNS values with min: 0, max: 20, default mean & std_deviation
+%%   4400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   4400 ns    Log    ID_RAND_CONF        TB seq.             add_range([0:20])
+%%   4500 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 UNS values with min: 10, max: 20, default mean & std_deviation
+%%   4500 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   4500 ns    Log    ID_RAND_CONF        TB seq.             add_range([10:20])
+%%   4600 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 UNS values with min: 0, max: 10, default mean & std_deviation
+%%   4600 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   4600 ns    Log    ID_RAND_CONF        TB seq.             add_range([0:10])
+%%   4700 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 UNS values with min: 0, max: 31, mean: 0.00, std_deviation: 0.10
+%%   4700 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   4700 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(0.10)
+%%   4700 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   4700 ns    Log    ID_RAND_CONF        TB seq.             add_range([0:31])
+%%   4800 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 UNS values with min: 0, max: 31, mean: 0.00, std_deviation: 0.50
+%%   4800 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   4800 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(0.50)
+%%   4800 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   4800 ns    Log    ID_RAND_CONF        TB seq.             add_range([0:31])
+%%   4900 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 UNS values with min: 0, max: 31, mean: 0.00, std_deviation: 1.00
+%%   4900 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   4900 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(1.00)
+%%   4900 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   4900 ns    Log    ID_RAND_CONF        TB seq.             add_range([0:31])
+%%   5000 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 UNS values with min: 0, max: 31, mean: 5.00, std_deviation: 1.00
+%%   5000 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(5.00)
+%%   5000 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(1.00)
+%%   5000 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   5000 ns    Log    ID_RAND_CONF        TB seq.             add_range([0:31])
+%%   5100 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 UNS values with min: 0, max: 31, mean: 0.00, std_deviation: 3.00
+%%   5100 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   5100 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(3.00)
+%%   5100 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   5100 ns    Log    ID_RAND_CONF        TB seq.             add_range([0:31])
+%%   5200 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 UNS values with min: 0, max: 31, mean: 0.00, std_deviation: 6.00
+%%   5200 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   5200 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(6.00)
+%%   5200 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   5200 ns    Log    ID_RAND_CONF        TB seq.             add_range([0:31])
+%%   5500 ns    Log    ID_RAND_CONF        TB seq.             clear_rand_dist_mean()
+%%   5500 ns    Log    ID_RAND_CONF        TB seq.             clear_rand_dist_std_deviation()
+%%   5500 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 UNS_VEC values with min: 0, max: 31, default mean & std_deviation
+%%   5500 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   5600 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 UNS_VEC values with min: 0, max: 31, mean: 0.00, std_deviation: 0.10
+%%   5600 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   5600 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(0.10)
+%%   5600 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   5700 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 UNS_VEC values with min: 0, max: 31, mean: 0.00, std_deviation: 0.50
+%%   5700 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   5700 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(0.50)
+%%   5700 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   5800 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 UNS_VEC values with min: 0, max: 31, mean: 0.00, std_deviation: 1.00
+%%   5800 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   5800 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(1.00)
+%%   5800 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   5900 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 UNS_VEC values with min: 0, max: 31, mean: 5.00, std_deviation: 1.00
+%%   5900 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(5.00)
+%%   5900 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(1.00)
+%%   5900 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   6000 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 UNS_VEC values with min: 0, max: 31, mean: 0.00, std_deviation: 3.00
+%%   6000 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   6000 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(3.00)
+%%   6000 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   6100 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 UNS_VEC values with min: 0, max: 31, mean: 0.00, std_deviation: 6.00
+%%   6100 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   6100 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(6.00)
+%%   6100 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   6400 ns    Log    ID_RAND_CONF        TB seq.             clear_rand_dist_mean()
+%%   6400 ns    Log    ID_RAND_CONF        TB seq.             clear_rand_dist_std_deviation()
+%% 
+%% 
+%%   6400 ns    Log    ID_LOG_HDR          TB seq.             Testing Gaussian distribution (signed)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   6400 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 SIG values with min: -10, max: 10, default mean & std_deviation
+%%   6400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   6400 ns    Log    ID_RAND_CONF        TB seq.             add_range([-10:10])
+%%   6500 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 SIG values with min: 0, max: 10, default mean & std_deviation
+%%   6500 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   6500 ns    Log    ID_RAND_CONF        TB seq.             add_range([0:10])
+%%   6600 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 SIG values with min: -10, max: 0, default mean & std_deviation
+%%   6600 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   6600 ns    Log    ID_RAND_CONF        TB seq.             add_range([-10:0])
+%%   6700 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 SIG values with min: -32, max: 31, mean: 0.00, std_deviation: 0.10
+%%   6700 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   6700 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(0.10)
+%%   6700 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   6700 ns    Log    ID_RAND_CONF        TB seq.             add_range([-32:31])
+%%   6800 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 SIG values with min: -32, max: 31, mean: 0.00, std_deviation: 0.50
+%%   6800 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   6800 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(0.50)
+%%   6800 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   6800 ns    Log    ID_RAND_CONF        TB seq.             add_range([-32:31])
+%%   6900 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 SIG values with min: -32, max: 31, mean: 0.00, std_deviation: 1.00
+%%   6900 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   6900 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(1.00)
+%%   6900 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   6900 ns    Log    ID_RAND_CONF        TB seq.             add_range([-32:31])
+%%   7000 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 SIG values with min: -32, max: 31, mean: 5.00, std_deviation: 1.00
+%%   7000 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(5.00)
+%%   7000 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(1.00)
+%%   7000 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   7000 ns    Log    ID_RAND_CONF        TB seq.             add_range([-32:31])
+%%   7100 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 SIG values with min: -32, max: 31, mean: 0.00, std_deviation: 3.00
+%%   7100 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   7100 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(3.00)
+%%   7100 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   7100 ns    Log    ID_RAND_CONF        TB seq.             add_range([-32:31])
+%%   7200 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 SIG values with min: -32, max: 31, mean: 0.00, std_deviation: 6.00
+%%   7200 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   7200 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(6.00)
+%%   7200 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   7200 ns    Log    ID_RAND_CONF        TB seq.             add_range([-32:31])
+%%   7500 ns    Log    ID_RAND_CONF        TB seq.             clear_rand_dist_mean()
+%%   7500 ns    Log    ID_RAND_CONF        TB seq.             clear_rand_dist_std_deviation()
+%%   7500 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 SIG_VEC values with min: -32, max: 31, default mean & std_deviation
+%%   7500 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   7600 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 SIG_VEC values with min: -32, max: 31, mean: 0.00, std_deviation: 0.10
+%%   7600 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   7600 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(0.10)
+%%   7600 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   7700 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 SIG_VEC values with min: -32, max: 31, mean: 0.00, std_deviation: 0.50
+%%   7700 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   7700 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(0.50)
+%%   7700 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   7800 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 SIG_VEC values with min: -32, max: 31, mean: 0.00, std_deviation: 1.00
+%%   7800 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   7800 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(1.00)
+%%   7800 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   7900 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 SIG_VEC values with min: -32, max: 31, mean: 5.00, std_deviation: 1.00
+%%   7900 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(5.00)
+%%   7900 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(1.00)
+%%   7900 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   8000 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 SIG_VEC values with min: -32, max: 31, mean: 0.00, std_deviation: 3.00
+%%   8000 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   8000 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(3.00)
+%%   8000 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   8100 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 SIG_VEC values with min: -32, max: 31, mean: 0.00, std_deviation: 6.00
+%%   8100 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   8100 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(6.00)
+%%   8100 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   8400 ns    Log    ID_RAND_CONF        TB seq.             clear_rand_dist_mean()
+%%   8400 ns    Log    ID_RAND_CONF        TB seq.             clear_rand_dist_std_deviation()
+%% 
+%% 
+%%   8400 ns    Log    ID_LOG_HDR          TB seq.             Testing Gaussian distribution (std_logic_vector)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   8400 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 SLV values with min: 0, max: 20, default mean & std_deviation
+%%   8400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   8400 ns    Log    ID_RAND_CONF        TB seq.             add_range([0:20])
+%%   8500 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 SLV values with min: 10, max: 20, default mean & std_deviation
+%%   8500 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   8500 ns    Log    ID_RAND_CONF        TB seq.             add_range([10:20])
+%%   8600 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 SLV values with min: 0, max: 10, default mean & std_deviation
+%%   8600 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   8600 ns    Log    ID_RAND_CONF        TB seq.             add_range([0:10])
+%%   8700 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 SLV values with min: 0, max: 31, mean: 0.00, std_deviation: 0.10
+%%   8700 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   8700 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(0.10)
+%%   8700 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   8700 ns    Log    ID_RAND_CONF        TB seq.             add_range([0:31])
+%%   8800 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 SLV values with min: 0, max: 31, mean: 0.00, std_deviation: 0.50
+%%   8800 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   8800 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(0.50)
+%%   8800 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   8800 ns    Log    ID_RAND_CONF        TB seq.             add_range([0:31])
+%%   8900 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 SLV values with min: 0, max: 31, mean: 0.00, std_deviation: 1.00
+%%   8900 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   8900 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(1.00)
+%%   8900 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   8900 ns    Log    ID_RAND_CONF        TB seq.             add_range([0:31])
+%%   9000 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 SLV values with min: 0, max: 31, mean: 5.00, std_deviation: 1.00
+%%   9000 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(5.00)
+%%   9000 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(1.00)
+%%   9000 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   9000 ns    Log    ID_RAND_CONF        TB seq.             add_range([0:31])
+%%   9100 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 SLV values with min: 0, max: 31, mean: 0.00, std_deviation: 3.00
+%%   9100 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   9100 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(3.00)
+%%   9100 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   9100 ns    Log    ID_RAND_CONF        TB seq.             add_range([0:31])
+%%   9200 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 SLV values with min: 0, max: 31, mean: 0.00, std_deviation: 6.00
+%%   9200 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   9200 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(6.00)
+%%   9200 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   9200 ns    Log    ID_RAND_CONF        TB seq.             add_range([0:31])
+%%   9500 ns    Log    ID_RAND_CONF        TB seq.             clear_rand_dist_mean()
+%%   9500 ns    Log    ID_RAND_CONF        TB seq.             clear_rand_dist_std_deviation()
+%%   9500 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 SLV_VEC values with min: 0, max: 31, default mean & std_deviation
+%%   9500 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   9600 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 SLV_VEC values with min: 0, max: 31, mean: 0.00, std_deviation: 0.10
+%%   9600 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   9600 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(0.10)
+%%   9600 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   9700 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 SLV_VEC values with min: 0, max: 31, mean: 0.00, std_deviation: 0.50
+%%   9700 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   9700 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(0.50)
+%%   9700 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   9800 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 SLV_VEC values with min: 0, max: 31, mean: 0.00, std_deviation: 1.00
+%%   9800 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%   9800 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(1.00)
+%%   9800 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%   9900 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 SLV_VEC values with min: 0, max: 31, mean: 5.00, std_deviation: 1.00
+%%   9900 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(5.00)
+%%   9900 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(1.00)
+%%   9900 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10000 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 SLV_VEC values with min: 0, max: 31, mean: 0.00, std_deviation: 3.00
+%%  10000 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%  10000 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(3.00)
+%%  10000 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10100 ns    Log    ID_SEQUENCER        TB seq.             Generating 5000 SLV_VEC values with min: 0, max: 31, mean: 0.00, std_deviation: 6.00
+%%  10100 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(0.00)
+%%  10100 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_std_deviation(6.00)
+%%  10100 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_rand_dist_mean()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_rand_dist_std_deviation()
+%% 
+%% 
+%%  10400 ns    Log    ID_LOG_HDR          TB seq.             Testing invalid parameters
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Alert  ERROR               TB seq.             set_rand_dist_std_deviation(-1.00)=> Must use positive values
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist_mean(1.00)
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([0:10])
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([20:30])
+%%  10400 ns    Alert  WARNING             TB seq.             randm(RANGE:[0:10],[20:30])=> GAUSSIAN distribution only supported for a single range(min/max) constraint. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_val(-2, -1, 0, 1, 2)
+%%  10400 ns    Alert  WARNING             TB seq.             randm(ONLY:(-2, -1, 0, 1, 2))=> GAUSSIAN distribution only supported for range(min/max) constraints. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             excl_val(-1, 0, 1)
+%%  10400 ns    Alert  WARNING             TB seq.             randm(EXCL:(-1, 0, 1))=> GAUSSIAN distribution only supported for range(min/max) constraints. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([-2:2])
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_val(-10)
+%%  10400 ns    Alert  WARNING             TB seq.             randm(RANGE:[-2:2], ADD:(-10))=> GAUSSIAN distribution only supported for range(min/max) constraints. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([20:30])
+%%  10400 ns    Alert  WARNING             TB seq.             randm(RANGE:[-2:2],[20:30], ADD:(-10))=> GAUSSIAN distribution only supported for a single range(min/max) constraint. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([-2:2])
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             excl_val(-1, 0, 1)
+%%  10400 ns    Alert  WARNING             TB seq.             randm(RANGE:[-2:2], EXCL:(-1, 0, 1))=> GAUSSIAN distribution only supported for range(min/max) constraints. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([20:30])
+%%  10400 ns    Alert  WARNING             TB seq.             randm(RANGE:[-2:2],[20:30], EXCL:(-1, 0, 1))=> GAUSSIAN distribution only supported for a single range(min/max) constraint. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_val(-3, -2, -1, 0, 1, 2, 3)
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             excl_val(-1, 0, 1)
+%%  10400 ns    Alert  WARNING             TB seq.             randm(ONLY:(-3, -2, -1, 0, 1, 2, 3), EXCL:(-1, 0, 1))=> GAUSSIAN distribution only supported for range(min/max) constraints. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([-2:2])
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_val(-10)
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             excl_val(0)
+%%  10400 ns    Alert  WARNING             TB seq.             randm(RANGE:[-2:2], ADD:(-10), EXCL:(0))=> GAUSSIAN distribution only supported for range(min/max) constraints. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([20:30])
+%%  10400 ns    Alert  WARNING             TB seq.             randm(RANGE:[-2:2],[20:30], ADD:(-10), EXCL:(0))=> GAUSSIAN distribution only supported for a single range(min/max) constraint. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([-2:2])
+%%  10400 ns    Alert  ERROR               TB seq.             set_cyclic_mode(CYCLIC)=> Cyclic mode and GAUSSIAN distribution cannot be combined.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist(UNIFORM)
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             set_cyclic_mode(CYCLIC)
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist(GAUSSIAN)
+%%  10400 ns    Alert  WARNING             TB seq.             randm(RANGE:[-2:2], CYCLIC)=> GAUSSIAN distribution and cyclic mode cannot be combined. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             set_cyclic_mode(NON_CYCLIC)
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([1000:2000])
+%%  10400 ns    Alert  ERROR               TB seq.             random_gaussian()=> Mean: 1.00 must be inside min/max range: 1000,2000
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([0:10])
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([20:30])
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:5, RANGE:[0:10],[20:30])=> GAUSSIAN distribution only supported for a single range(min/max) constraint. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_val(-2, -1, 0, 1, 2)
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:5, ONLY:(-2, -1, 0, 1, 2))=> GAUSSIAN distribution only supported for a single range(min/max) constraint. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             excl_val(-1, 0, 1)
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:5, EXCL:(-1, 0, 1))=> GAUSSIAN distribution only supported for a single range(min/max) constraint. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist(UNIFORM)
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             set_cyclic_mode(CYCLIC)
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist(GAUSSIAN)
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:5, CYCLIC)=> GAUSSIAN distribution and cyclic mode cannot be combined. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             set_cyclic_mode(NON_CYCLIC)
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([-2:2])
+%%  10400 ns    Alert  ERROR               TB seq.             set_uniqueness(UNIQUE)=> Uniqueness and GAUSSIAN distribution cannot be combined.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist(UNIFORM)
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             set_uniqueness(UNIQUE)
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist(GAUSSIAN)
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:5, RANGE:[-2:2], UNIQUE)=> GAUSSIAN distribution and uniqueness cannot be combined. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             set_uniqueness(NON_UNIQUE)
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([1000:2000])
+%%  10400 ns    Alert  ERROR               TB seq.             random_gaussian()=> Mean: 1.00 must be inside min/max range: 1000,2000
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range_real([0.00:10.00])
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range_real([20.00:30.00])
+%%  10400 ns    Alert  WARNING             TB seq.             randm(RANGE:[0.00:10.00],[20.00:30.00])=> GAUSSIAN distribution only supported for a single range(min/max) constraint. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_val_real(-2.00, -1.00, 0.00, 1.00, 2.00)
+%%  10400 ns    Alert  WARNING             TB seq.             randm(ONLY:(-2.00, -1.00, 0.00, 1.00, 2.00))=> GAUSSIAN distribution only supported for range(min/max) constraints. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range_real([-2.00:2.00])
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_val_real(-10.00)
+%%  10400 ns    Alert  WARNING             TB seq.             randm(RANGE:[-2.00:2.00], ADD:(-10.00))=> GAUSSIAN distribution only supported for range(min/max) constraints. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range_real([20.00:30.00])
+%%  10400 ns    Alert  WARNING             TB seq.             randm(RANGE:[-2.00:2.00],[20.00:30.00], ADD:(-10.00))=> GAUSSIAN distribution only supported for a single range(min/max) constraint. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range_real([-2.00:2.00])
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             excl_val_real(-1.00, 0.00, 1.00)
+%%  10400 ns    Alert  WARNING             TB seq.             randm(RANGE:[-2.00:2.00], EXCL:(-1.00, 0.00, 1.00))=> GAUSSIAN distribution only supported for range(min/max) constraints. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range_real([20.00:30.00])
+%%  10400 ns    Alert  WARNING             TB seq.             randm(RANGE:[-2.00:2.00],[20.00:30.00], EXCL:(-1.00, 0.00, 1.00))=> GAUSSIAN distribution only supported for a single range(min/max) constraint. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_val_real(-3.00, -2.00, -1.00, 0.00, 1.00, 2.00, 3.00)
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             excl_val_real(-1.00, 0.00, 1.00)
+%%  10400 ns    Alert  WARNING             TB seq.             randm(ONLY:(-3.00, -2.00, -1.00, 0.00, 1.00, 2.00, 3.00), EXCL:(-1.00, 0.00, 1.00))=> GAUSSIAN distribution only supported for range(min/max) constraints. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range_real([-2.00:2.00])
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_val_real(-10.00)
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             excl_val_real(0.00)
+%%  10400 ns    Alert  WARNING             TB seq.             randm(RANGE:[-2.00:2.00], ADD:(-10.00), EXCL:(0.00))=> GAUSSIAN distribution only supported for range(min/max) constraints. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range_real([20.00:30.00])
+%%  10400 ns    Alert  WARNING             TB seq.             randm(RANGE:[-2.00:2.00],[20.00:30.00], ADD:(-10.00), EXCL:(0.00))=> GAUSSIAN distribution only supported for a single range(min/max) constraint. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range_real([1000.00:2000.00])
+%%  10400 ns    Alert  ERROR               TB seq.             random_gaussian()=> Mean: 1.00 must be inside min/max range: 1000.00,2000.00
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range_real([0.00:1.00])
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range_real([2.00:3.00])
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:5, RANGE:[0.00:1.00],[2.00:3.00])=> GAUSSIAN distribution only supported for a single range(min/max) constraint. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_val_real(-2.00, -1.10, 0.25, 1.10, 2.00)
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:5, ONLY:(-2.00, -1.10, 0.25, 1.10, 2.00))=> GAUSSIAN distribution only supported for a single range(min/max) constraint. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range_real([-2.00:2.00])
+%%  10400 ns    Alert  ERROR               TB seq.             set_uniqueness(UNIQUE)=> Uniqueness and GAUSSIAN distribution cannot be combined.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range_real([-2.00:2.00])
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist(UNIFORM)
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             set_uniqueness(UNIQUE)
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist(GAUSSIAN)
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:5, RANGE:[-2.00:2.00],[-2.00:2.00], UNIQUE)=> GAUSSIAN distribution and uniqueness cannot be combined. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             set_uniqueness(NON_UNIQUE)
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range_real([1000.00:2000.00])
+%%  10400 ns    Alert  ERROR               TB seq.             random_gaussian()=> Mean: 1.00 must be inside min/max range: 1000.00,2000.00
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range_time([-2 ps:2 ps])
+%%  10400 ns    Alert  ERROR               TB seq.             randm(RANGE:[-2 ps:2 ps])=> GAUSSIAN distribution not supported for time type.
+%%  10400 ns    Alert  ERROR               TB seq.             randm(LEN:5, RANGE:[-2 ps:2 ps])=> GAUSSIAN distribution not supported for time_vector type.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:128)=> GAUSSIAN distribution not supported for long vectors. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([0:2])
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([10:15])
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:4, RANGE:[0:2],[10:15])=> GAUSSIAN distribution only supported for a single range(min/max) constraint. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range_unsigned([x"0":x"2"])
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:4, RANGE:[x"0":x"2"])=> GAUSSIAN distribution not supported for unsigned constraints. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_val(0, 1, 2)
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:4, ONLY:(0, 1, 2))=> GAUSSIAN distribution only supported for range(min/max) constraints. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             excl_val(0, 1)
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:4, EXCL:(0, 1))=> GAUSSIAN distribution only supported for range(min/max) constraints. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([0:2])
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_val(5)
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:4, RANGE:[0:2], ADD:(5))=> GAUSSIAN distribution only supported for range(min/max) constraints. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([10:15])
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:4, RANGE:[0:2],[10:15], ADD:(5))=> GAUSSIAN distribution only supported for a single range(min/max) constraint. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([0:2])
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             excl_val(0, 1)
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:4, RANGE:[0:2], EXCL:(0, 1))=> GAUSSIAN distribution only supported for range(min/max) constraints. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([10:15])
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:4, RANGE:[0:2],[10:15], EXCL:(0, 1))=> GAUSSIAN distribution only supported for a single range(min/max) constraint. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_val(0, 1, 2, 3)
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             excl_val(0, 1)
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:4, ONLY:(0, 1, 2, 3), EXCL:(0, 1))=> GAUSSIAN distribution only supported for range(min/max) constraints. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([0:2])
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_val(5)
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             excl_val(0)
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:4, RANGE:[0:2], ADD:(5), EXCL:(0))=> GAUSSIAN distribution only supported for range(min/max) constraints. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([10:15])
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:4, RANGE:[0:2],[10:15], ADD:(5), EXCL:(0))=> GAUSSIAN distribution only supported for a single range(min/max) constraint. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([0:2])
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist(UNIFORM)
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             set_cyclic_mode(CYCLIC)
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist(GAUSSIAN)
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:4, RANGE:[0:2], CYCLIC)=> GAUSSIAN distribution and cyclic mode cannot be combined. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             set_cyclic_mode(NON_CYCLIC)
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([10:15])
+%%  10400 ns    Alert  ERROR               TB seq.             random_gaussian()=> Mean: 1.00 must be inside min/max range: 10,15
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:128)=> GAUSSIAN distribution not supported for long vectors. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([0:2])
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([5:7])
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:4, RANGE:[0:2],[5:7])=> GAUSSIAN distribution only supported for a single range(min/max) constraint. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range_signed([x"0":x"2"])
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:4, RANGE:[x"0":x"2"])=> GAUSSIAN distribution not supported for signed constraints. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_val(0, 1, 2)
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:4, ONLY:(0, 1, 2))=> GAUSSIAN distribution only supported for range(min/max) constraints. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             excl_val(0, 1)
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:4, EXCL:(0, 1))=> GAUSSIAN distribution only supported for range(min/max) constraints. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([0:2])
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_val(4)
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:4, RANGE:[0:2], ADD:(4))=> GAUSSIAN distribution only supported for range(min/max) constraints. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([5:7])
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:4, RANGE:[0:2],[5:7], ADD:(4))=> GAUSSIAN distribution only supported for a single range(min/max) constraint. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([0:2])
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             excl_val(0, 1)
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:4, RANGE:[0:2], EXCL:(0, 1))=> GAUSSIAN distribution only supported for range(min/max) constraints. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([5:7])
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:4, RANGE:[0:2],[5:7], EXCL:(0, 1))=> GAUSSIAN distribution only supported for a single range(min/max) constraint. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_val(0, 1, 2, 3)
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             excl_val(0, 1)
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:4, ONLY:(0, 1, 2, 3), EXCL:(0, 1))=> GAUSSIAN distribution only supported for range(min/max) constraints. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([0:2])
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_val(4)
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             excl_val(0)
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:4, RANGE:[0:2], ADD:(4), EXCL:(0))=> GAUSSIAN distribution only supported for range(min/max) constraints. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([5:7])
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:4, RANGE:[0:2],[5:7], ADD:(4), EXCL:(0))=> GAUSSIAN distribution only supported for a single range(min/max) constraint. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([0:2])
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist(UNIFORM)
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             set_cyclic_mode(CYCLIC)
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist(GAUSSIAN)
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:4, RANGE:[0:2], CYCLIC)=> GAUSSIAN distribution and cyclic mode cannot be combined. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             set_cyclic_mode(NON_CYCLIC)
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([5:7])
+%%  10400 ns    Alert  ERROR               TB seq.             random_gaussian()=> Mean: 1.00 must be inside min/max range: 5,7
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:128)=> GAUSSIAN distribution not supported for long vectors. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([0:2])
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([10:15])
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:4, RANGE:[0:2],[10:15])=> GAUSSIAN distribution only supported for a single range(min/max) constraint. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range_unsigned([x"0":x"2"])
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:4, RANGE:[x"0":x"2"])=> GAUSSIAN distribution not supported for unsigned constraints. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_val(0, 1, 2)
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:4, ONLY:(0, 1, 2))=> GAUSSIAN distribution only supported for range(min/max) constraints. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             excl_val(0, 1)
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:4, EXCL:(0, 1))=> GAUSSIAN distribution only supported for range(min/max) constraints. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([0:2])
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_val(5)
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:4, RANGE:[0:2], ADD:(5))=> GAUSSIAN distribution only supported for range(min/max) constraints. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([10:15])
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:4, RANGE:[0:2],[10:15], ADD:(5))=> GAUSSIAN distribution only supported for a single range(min/max) constraint. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([0:2])
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             excl_val(0, 1)
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:4, RANGE:[0:2], EXCL:(0, 1))=> GAUSSIAN distribution only supported for range(min/max) constraints. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([10:15])
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:4, RANGE:[0:2],[10:15], EXCL:(0, 1))=> GAUSSIAN distribution only supported for a single range(min/max) constraint. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_val(0, 1, 2, 3)
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             excl_val(0, 1)
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:4, ONLY:(0, 1, 2, 3), EXCL:(0, 1))=> GAUSSIAN distribution only supported for range(min/max) constraints. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([0:2])
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_val(5)
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             excl_val(0)
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:4, RANGE:[0:2], ADD:(5), EXCL:(0))=> GAUSSIAN distribution only supported for range(min/max) constraints. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([10:15])
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:4, RANGE:[0:2],[10:15], ADD:(5), EXCL:(0))=> GAUSSIAN distribution only supported for a single range(min/max) constraint. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([0:2])
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist(UNIFORM)
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             set_cyclic_mode(CYCLIC)
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             set_rand_dist(GAUSSIAN)
+%%  10400 ns    Alert  WARNING             TB seq.             randm(LEN:4, RANGE:[0:2], CYCLIC)=> GAUSSIAN distribution and cyclic mode cannot be combined. Using UNIFORM instead.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             set_cyclic_mode(NON_CYCLIC)
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_range([10:15])
+%%  10400 ns    Alert  ERROR               TB seq.             random_gaussian()=> Mean: 1.00 must be inside min/max range: 10,15
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(1,20)
+%%  10400 ns    Alert  WARNING             TB seq.             randm((1,20))=> GAUSSIAN distribution and weighted randomization cannot be combined. Ignoring GAUSSIAN configuration.
+%%  10400 ns    Alert  WARNING             TB seq.             randm((1,20))=> GAUSSIAN distribution and weighted randomization cannot be combined. Ignoring GAUSSIAN configuration.
+%%  10400 ns    Alert  WARNING             TB seq.             randm((1,20))=> GAUSSIAN distribution and weighted randomization cannot be combined. Ignoring GAUSSIAN configuration.
+%%  10400 ns    Alert  WARNING             TB seq.             randm((1,20))=> GAUSSIAN distribution and weighted randomization cannot be combined. Ignoring GAUSSIAN configuration.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight_real(1.00,20)
+%%  10400 ns    Alert  WARNING             TB seq.             randm((1.00,20))=> GAUSSIAN distribution and weighted randomization cannot be combined. Ignoring GAUSSIAN configuration.
+%%  10400 ns    Log    ID_RAND_CONF        TB seq.             clear_constraints()
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%  11400 ns    DONE   PASSED   rand_gaussian_multi  Passed: 5  Affirmations Checked: 5
+%%    Expected      Failures: 0  Errors: -13  Warnings: -74  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 13  Warnings: 74  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%%  11400 ns    Log    ID_LOG_HDR          TB seq.             SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -1,0 +1,1734 @@
+%% 
+%% 
+%% ============================================================================================================================================================================
+%%      0 ns    Log    ID_LOG_HDR_LARGE    TB seq.             Start Simulation of Functional Coverage package - fc_bins
+%% ============================================================================================================================================================================
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_FUNC_COV_BINS).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_FUNC_COV_BINS_INFO).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_FUNC_COV_RAND).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_FUNC_COV_SAMPLE).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_FUNC_COV_CONFIG).
+%%      0 ns    Log    PASSED              TB seq.             check_value(string, 'MY_COVERPOINT') => OK. Value was 'MY_COVERPOINT'. 'Checking name'
+%%      0 ns    Log    PASSED              TB seq.             check_value(string, 'MY_SCOPE') => OK. Value was 'MY_SCOPE'. 'Checking scope'
+%%      0 ns    Log    ID_FUNC_COV_CONFIG  MY_SCOPE            [MY_COVERPOINT] set_num_allocated_bins(40)
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Wait 100 ns until the coverpoint is initialized
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_SEQUENCER        p_sampling          Waiting for coverpoint to be initialized
+%% 
+%% 
+%%    100 ns    Log    ID_LOG_HDR          TB seq.             Testing bins with single values
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    100 ns    Log    ID_FUNC_COV_BINS    MY_SCOPE            [MY_COVERPOINT] add_bins(bin(-101), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  MY_SCOPE            [MY_COVERPOINT] Adding bins: (-101), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_BINS    MY_SCOPE            [MY_COVERPOINT] add_bins(bin(-100), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  MY_SCOPE            [MY_COVERPOINT] Adding bins: (-100), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_BINS    MY_SCOPE            [MY_COVERPOINT] add_bins(bin(100), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  MY_SCOPE            [MY_COVERPOINT] Adding bins: (100), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_BINS    MY_SCOPE            [MY_COVERPOINT] add_bins(bin(101), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  MY_SCOPE            [MY_COVERPOINT] Adding bins: (101), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_SEQUENCER        p_sampling          Coverpoint initialized, ready to sample
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(10000)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_1
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_2
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_3
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_4
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(-101)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(-100)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(100)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(101)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(-103)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(-102)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(102)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  MY_SCOPE            [MY_COVERPOINT] sample_coverage(103)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_1
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_2
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_3
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_4
+%%    100 ns    Log    ID_FUNC_COV_CONFIG  MY_SCOPE            [MY_COVERPOINT] delete_coverpoint()
+%% 
+%% 
+%%    100 ns    Log    ID_LOG_HDR          TB seq.             Testing bins with multiple values
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_2] add_bins(bin((202, 204, 206, 208)), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_2] Adding bins: (202, 204, 206, 208), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_2] add_bins(bin((210, 211, 212, 213, 214, 215, 216, 217, 218, 219)), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_2] Adding bins: (210, 211, 212, 213, 214, 215, 216, 217, 218, 219), min_hits:1, rand_weight:1, ""
+%%    100 ns    Alert  WARNING             TB seq.             bin((220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230))=> Number of values (11) exceeds C_FC_MAX_NUM_BIN_VALUES.\n Increase C_FC_MAX_NUM_BIN_VALUES in adaptations package.
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_2] add_bins(bin((220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230)), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_2] Adding bins: (220, 221, 222, 223, 224, 225, 226, 227, 228, 229), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_1
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_2
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_3
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_2] sample_coverage(202)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_2] sample_coverage(204)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_2] sample_coverage(206)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_2] sample_coverage(208)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_2] sample_coverage(210)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_2] sample_coverage(211)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_2] sample_coverage(212)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_2] sample_coverage(213)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_2] sample_coverage(214)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_2] sample_coverage(215)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_2] sample_coverage(216)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_2] sample_coverage(217)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_2] sample_coverage(218)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_2] sample_coverage(219)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_2] sample_coverage(220)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_2] sample_coverage(221)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_2] sample_coverage(222)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_2] sample_coverage(223)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_2] sample_coverage(224)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_2] sample_coverage(225)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_2] sample_coverage(226)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_2] sample_coverage(227)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_2] sample_coverage(228)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_2] sample_coverage(229)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_2] sample_coverage(201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_2] sample_coverage(203)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_2] sample_coverage(205)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_2] sample_coverage(207)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_2] sample_coverage(209)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_2] sample_coverage(230)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_1
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_2
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_3
+%%    100 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             [Covpt_2] delete_coverpoint()
+%% 
+%% 
+%%    100 ns    Log    ID_LOG_HDR          TB seq.             Testing bins with ranges of values
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_3] add_bins(bin_range(300, 309), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_3] Adding bins: (300 to 309), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_3] add_bins(bin_range(311, 315, num_bins:2), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_3] Adding bins: (311 to 312),(313 to 315), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_3] add_bins(bin_range(320, 328, num_bins:3), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_3] Adding bins: (320 to 322),(323 to 325),(326 to 328), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_3] add_bins(bin_range(330, 334, num_bins:20), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_3] Adding bins: (330),(331),(332),(333),(334), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_3] add_bins(bin_range(341, 343, num_bins:0), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_3] Adding bins: (341),(342),(343), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_3] add_bins(bin_range(355, 355), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_3] Adding bins: (355), min_hits:1, rand_weight:1, ""
+%%    100 ns    Alert  ERROR               TB seq.             bin_range(363, 361)=> Failed. min_value must be less or equal than max_value
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_3] add_bins(, "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_3] Adding bins: , min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_1
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_2[1]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_2[2]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_3[1]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_3[2]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_3[3]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_4[1]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_4[2]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_4[3]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_4[4]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_4[5]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_5[1]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_5[2]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_5[3]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_6
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(300)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(301)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(302)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(303)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(304)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(305)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(306)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(307)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(308)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(309)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(311)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(312)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(313)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(314)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(315)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(320)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(321)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(322)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(323)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(324)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(325)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(326)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(327)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(328)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(330)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(331)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(332)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(333)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(334)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(341)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(342)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(343)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(355)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(310)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(316)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(317)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(318)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(319)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(329)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(335)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(340)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(344)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(354)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_3] sample_coverage(356)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_1
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_2[1]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_2[2]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_3[1]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_3[2]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_3[3]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_4[1]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_4[2]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_4[3]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_4[4]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_4[5]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_5[1]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_5[2]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_5[3]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_6
+%%    100 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             [Covpt_3] delete_coverpoint()
+%% 
+%% 
+%%    100 ns    Log    ID_LOG_HDR          TB seq.             Testing bins created from a vector
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_4] add_bins(bin_vector(LEN:2), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_4] Adding bins: (0 to 3), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_4] add_bins(bin_vector(LEN:2, num_bins:2), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_4] Adding bins: (0 to 1),(2 to 3), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_4] add_bins(bin_vector(LEN:2, num_bins:3), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_4] Adding bins: (0 to 0),(1 to 1),(2 to 3), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_4] add_bins(bin_vector(LEN:2, num_bins:20), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_4] Adding bins: (0),(1),(2),(3), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_4] add_bins(bin_vector(LEN:2, num_bins:0), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_4] Adding bins: (0),(1),(2),(3), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_1
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_2[1]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_2[2]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_3[1]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_3[2]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_3[3]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_4[1]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_4[2]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_4[3]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_4[4]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_5[1]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_5[2]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_5[3]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_5[4]
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage(0)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage(1)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage(2)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage(3)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage(-1)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage(4)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage(5)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_4] sample_coverage(6)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_1
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_2[1]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_2[2]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_3[1]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_3[2]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_3[3]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_4[1]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_4[2]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_4[3]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_4[4]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_5[1]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_5[2]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_5[3]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_5[4]
+%%    100 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             [Covpt_4] delete_coverpoint()
+%% 
+%% 
+%%    100 ns    Log    ID_LOG_HDR          TB seq.             Testing bins with transitions of values
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_5] add_bins(bin_transition((401, 403, 401)), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_5] Adding bins: (401->403->401), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_5] add_bins(bin_transition((401, 403, 401, 409)), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_5] Adding bins: (401->403->401->409), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_5] add_bins(bin_transition((410, 410, 410, 418, 415, 415, 410)), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_5] Adding bins: (410->410->410->418->415->415->410), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_5] add_bins(bin_transition((420, 421, 422, 423, 424, 425, 426, 427, 428, 429)), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_5] Adding bins: (420->421->422->423->424->425->426->427->428->429), min_hits:1, rand_weight:1, ""
+%%    100 ns    Alert  WARNING             TB seq.             bin_transition((430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440))=> Number of values (11) exceeds C_FC_MAX_NUM_BIN_VALUES.\n Increase C_FC_MAX_NUM_BIN_VALUES in adaptations package.
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_5] add_bins(bin_transition((430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440)), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_5] Adding bins: (430->431->432->433->434->435->436->437->438->439), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_1
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_2
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_3
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_4
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_5
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(401)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(403)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(401)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(409)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(401)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(403)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(401)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(409)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(401)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(403)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(401)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(403)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(401)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(409)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(401)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(403)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(401)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(403)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(401)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(409)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(401)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(403)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(401)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(403)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(401)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(403)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(401)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(409)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(401)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(403)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(401)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(403)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(401)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(403)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(401)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(409)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(401)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(403)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(401)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(401)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(403)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(401)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(409)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(401)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(403)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(401)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(401)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(403)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(401)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(409)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(410)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(410)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(410)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(418)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(415)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(415)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(410)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(410)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(410)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(410)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(418)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(415)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(415)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(410)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(410)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(410)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(410)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(418)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(415)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(415)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(410)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(420)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(421)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(422)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(423)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(424)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(425)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(426)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(427)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(428)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(429)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(420)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(421)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(422)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(423)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(424)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(425)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(426)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(427)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(428)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(429)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(420)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(421)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(422)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(423)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(424)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(425)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(426)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(427)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(428)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(429)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(430)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(431)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(432)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(433)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(434)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(435)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(436)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(437)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(438)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(439)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(430)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(431)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(432)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(433)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(434)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(435)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(436)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(437)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(438)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(439)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(430)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(431)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(432)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(433)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(434)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(435)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(436)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(437)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(438)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(439)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(410)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(410)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(410)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(418)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(415)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(414)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(410)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(420)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(421)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(422)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(423)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(424)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(425)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(426)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(427)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(428)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(430)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(430)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(431)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(432)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(433)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(434)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(435)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(436)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(437)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(438)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_5] sample_coverage(440)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_1
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_2
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_3
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_4
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_5
+%%    100 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             [Covpt_5] delete_coverpoint()
+%% 
+%% 
+%%    100 ns    Log    ID_LOG_HDR          TB seq.             Testing ignore bins with single values
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_6] add_bins(ignore_bin(-2001), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_6] Adding bins: IGN(-2001), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_6] add_bins(ignore_bin(-2000), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_6] Adding bins: IGN(-2000), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_6] add_bins(ignore_bin(2000), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_6] Adding bins: IGN(2000), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_6] add_bins(ignore_bin(2001), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_6] Adding bins: IGN(2001), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_1
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_2
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_3
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_4
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_6] sample_coverage(-2001)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_6] sample_coverage(-2000)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_6] sample_coverage(2000)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_6] sample_coverage(2001)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_6] sample_coverage(-2003)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_6] sample_coverage(-2002)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_6] sample_coverage(2002)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_6] sample_coverage(2003)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_1
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_2
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_3
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_4
+%%    100 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             [Covpt_6] delete_coverpoint()
+%% 
+%% 
+%%    100 ns    Log    ID_LOG_HDR          TB seq.             Testing ignore bins with ranges of values
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_7] add_bins(ignore_bin_range(2100,2109), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_7] Adding bins: IGN(2100 to 2109), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_7] add_bins(ignore_bin_range(2115,2115), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_7] Adding bins: IGN(2115), min_hits:1, rand_weight:1, ""
+%%    100 ns    Alert  ERROR               TB seq.             ignore_bin_range(2129,2126)=> Failed. min_value must be less or equal than max_value
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_7] add_bins(, "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_7] Adding bins: , min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_1
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_2
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_7] sample_coverage(2100)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_7] sample_coverage(2101)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_7] sample_coverage(2102)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_7] sample_coverage(2103)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_7] sample_coverage(2104)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_7] sample_coverage(2105)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_7] sample_coverage(2106)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_7] sample_coverage(2107)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_7] sample_coverage(2108)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_7] sample_coverage(2109)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_7] sample_coverage(2115)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_7] sample_coverage(2110)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_7] sample_coverage(2111)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_7] sample_coverage(2114)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_7] sample_coverage(2116)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_1
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_2
+%%    100 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             [Covpt_7] delete_coverpoint()
+%% 
+%% 
+%%    100 ns    Log    ID_LOG_HDR          TB seq.             Testing ignore bins with transitions of values
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_8] add_bins(ignore_bin_transition((2201, 2203, 2201)), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_8] Adding bins: IGN(2201->2203->2201), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_8] add_bins(ignore_bin_transition((2201, 2203, 2201, 2209)), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_8] Adding bins: IGN(2201->2203->2201->2209), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_8] add_bins(ignore_bin_transition((2210, 2210, 2210, 2218, 2215, 2215, 2210)), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_8] Adding bins: IGN(2210->2210->2210->2218->2215->2215->2210), min_hits:1, rand_weight:1, ""
+%%    100 ns    Alert  WARNING             TB seq.             ignore_bin_transition((2220, 2221, 2222, 2223, 2224, 2225, 2226, 2227, 2228, 2229, 2230))=> Number of values (11) exceeds C_FC_MAX_NUM_BIN_VALUES.\n Increase C_FC_MAX_NUM_BIN_VALUES in adaptations package.
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_8] add_bins(ignore_bin_transition((2220, 2221, 2222, 2223, 2224, 2225, 2226, 2227, 2228, 2229, 2230)), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_8] Adding bins: IGN(2220->2221->2222->2223->2224->2225->2226->2227->2228->2229), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_1
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_2
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_3
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_4
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2203)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2209)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2203)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2209)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2203)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2203)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2209)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2203)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2203)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2209)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2203)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2203)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2203)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2209)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2203)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2203)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2203)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2209)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2203)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2203)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2209)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2203)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2203)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2209)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2210)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2210)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2210)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2218)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2215)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2215)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2210)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2210)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2210)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2210)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2218)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2215)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2215)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2210)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2210)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2210)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2210)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2218)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2215)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2215)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2210)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2220)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2221)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2222)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2223)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2224)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2225)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2226)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2227)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2228)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2229)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2220)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2221)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2222)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2223)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2224)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2225)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2226)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2227)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2228)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2229)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2220)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2221)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2222)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2223)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2224)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2225)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2226)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2227)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2228)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2229)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2210)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2210)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2210)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2218)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2215)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2214)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2210)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2220)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2221)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2222)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2223)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2224)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2225)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2226)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2227)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2228)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_8] sample_coverage(2230)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_1
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_2
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_3
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_4
+%%    100 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             [Covpt_8] delete_coverpoint()
+%% 
+%% 
+%%    100 ns    Log    ID_LOG_HDR          TB seq.             Testing illegal bins with single values
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    100 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             [Covpt_9] set_illegal_bin_alert_level(WARNING)
+%%    100 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking illegal bin alert level'
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_9] add_bins(illegal_bin(-3001), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_9] Adding bins: ILL(-3001), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_9] add_bins(illegal_bin(-3000), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_9] Adding bins: ILL(-3000), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_9] add_bins(illegal_bin(3000), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_9] Adding bins: ILL(3000), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_9] add_bins(illegal_bin(3001), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_9] Adding bins: ILL(3001), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_1
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_2
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_3
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_4
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_9] sample_coverage(-3001)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_9] sample_coverage(-3001)=> Sampled illegal_bin(-3001)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_9] sample_coverage(-3000)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_9] sample_coverage(-3000)=> Sampled illegal_bin(-3000)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_9] sample_coverage(3000)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_9] sample_coverage(3000)=> Sampled illegal_bin(3000)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_9] sample_coverage(3001)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_9] sample_coverage(3001)=> Sampled illegal_bin(3001)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_9] sample_coverage(-3003)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_9] sample_coverage(-3002)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_9] sample_coverage(3002)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_9] sample_coverage(3003)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_1
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_2
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_3
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_4
+%%    100 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             [Covpt_9] delete_coverpoint()
+%% 
+%% 
+%%    100 ns    Log    ID_LOG_HDR          TB seq.             Testing illegal bins with ranges of values
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    100 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             [Covpt_10] set_illegal_bin_alert_level(WARNING)
+%%    100 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking illegal bin alert level'
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_10] add_bins(illegal_bin_range(3100,3109), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_10] Adding bins: ILL(3100 to 3109), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_10] add_bins(illegal_bin_range(3115,3115), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_10] Adding bins: ILL(3115), min_hits:1, rand_weight:1, ""
+%%    100 ns    Alert  ERROR               TB seq.             illegal_bin_range(3129,3126)=> Failed. min_value must be less or equal than max_value
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_10] add_bins(, "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_10] Adding bins: , min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_1
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_2
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_10] sample_coverage(3100)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_10] sample_coverage(3100)=> Sampled illegal_bin_range(3100 to 3109)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_10] sample_coverage(3101)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_10] sample_coverage(3101)=> Sampled illegal_bin_range(3100 to 3109)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_10] sample_coverage(3102)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_10] sample_coverage(3102)=> Sampled illegal_bin_range(3100 to 3109)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_10] sample_coverage(3103)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_10] sample_coverage(3103)=> Sampled illegal_bin_range(3100 to 3109)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_10] sample_coverage(3104)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_10] sample_coverage(3104)=> Sampled illegal_bin_range(3100 to 3109)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_10] sample_coverage(3105)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_10] sample_coverage(3105)=> Sampled illegal_bin_range(3100 to 3109)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_10] sample_coverage(3106)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_10] sample_coverage(3106)=> Sampled illegal_bin_range(3100 to 3109)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_10] sample_coverage(3107)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_10] sample_coverage(3107)=> Sampled illegal_bin_range(3100 to 3109)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_10] sample_coverage(3108)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_10] sample_coverage(3108)=> Sampled illegal_bin_range(3100 to 3109)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_10] sample_coverage(3109)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_10] sample_coverage(3109)=> Sampled illegal_bin_range(3100 to 3109)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_10] sample_coverage(3115)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_10] sample_coverage(3115)=> Sampled illegal_bin(3115)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_10] sample_coverage(3110)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_10] sample_coverage(3111)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_10] sample_coverage(3114)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_10] sample_coverage(3116)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_1
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_2
+%%    100 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             [Covpt_10] delete_coverpoint()
+%% 
+%% 
+%%    100 ns    Log    ID_LOG_HDR          TB seq.             Testing illegal bins with transitions of values
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    100 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             [Covpt_11] set_illegal_bin_alert_level(WARNING)
+%%    100 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking illegal bin alert level'
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_11] add_bins(illegal_bin_transition((3201, 3203, 3201)), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_11] Adding bins: ILL(3201->3203->3201), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_11] add_bins(illegal_bin_transition((3201, 3203, 3201, 3209)), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_11] Adding bins: ILL(3201->3203->3201->3209), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_11] add_bins(illegal_bin_transition((3210, 3210, 3210, 3218, 3215, 3215, 3210)), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_11] Adding bins: ILL(3210->3210->3210->3218->3215->3215->3210), min_hits:1, rand_weight:1, ""
+%%    100 ns    Alert  WARNING             TB seq.             illegal_bin_transition((3220, 3221, 3222, 3223, 3224, 3225, 3226, 3227, 3228, 3229, 3230))=> Number of values (11) exceeds C_FC_MAX_NUM_BIN_VALUES.\n Increase C_FC_MAX_NUM_BIN_VALUES in adaptations package.
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_11] add_bins(illegal_bin_transition((3220, 3221, 3222, 3223, 3224, 3225, 3226, 3227, 3228, 3229, 3230)), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_11] Adding bins: ILL(3220->3221->3222->3223->3224->3225->3226->3227->3228->3229), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_1
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_2
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_3
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_4
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3203)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3201)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_11] sample_coverage(3201)=> Sampled illegal_bin_transition(3201->3203->3201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3209)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_11] sample_coverage(3209)=> Sampled illegal_bin_transition(3201->3203->3201->3209)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3203)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3201)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_11] sample_coverage(3201)=> Sampled illegal_bin_transition(3201->3203->3201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3209)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_11] sample_coverage(3209)=> Sampled illegal_bin_transition(3201->3203->3201->3209)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3203)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3201)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_11] sample_coverage(3201)=> Sampled illegal_bin_transition(3201->3203->3201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3203)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3209)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_11] sample_coverage(3209)=> Sampled illegal_bin_transition(3201->3203->3201->3209)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3203)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3201)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_11] sample_coverage(3201)=> Sampled illegal_bin_transition(3201->3203->3201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3203)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3209)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_11] sample_coverage(3209)=> Sampled illegal_bin_transition(3201->3203->3201->3209)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3203)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3201)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_11] sample_coverage(3201)=> Sampled illegal_bin_transition(3201->3203->3201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3203)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3203)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3201)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_11] sample_coverage(3201)=> Sampled illegal_bin_transition(3201->3203->3201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3209)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_11] sample_coverage(3209)=> Sampled illegal_bin_transition(3201->3203->3201->3209)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3203)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3201)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_11] sample_coverage(3201)=> Sampled illegal_bin_transition(3201->3203->3201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3203)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3203)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3201)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_11] sample_coverage(3201)=> Sampled illegal_bin_transition(3201->3203->3201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3209)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_11] sample_coverage(3209)=> Sampled illegal_bin_transition(3201->3203->3201->3209)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3203)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3201)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_11] sample_coverage(3201)=> Sampled illegal_bin_transition(3201->3203->3201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3203)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3201)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_11] sample_coverage(3201)=> Sampled illegal_bin_transition(3201->3203->3201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3209)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_11] sample_coverage(3209)=> Sampled illegal_bin_transition(3201->3203->3201->3209)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3203)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3201)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_11] sample_coverage(3201)=> Sampled illegal_bin_transition(3201->3203->3201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3203)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3201)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_11] sample_coverage(3201)=> Sampled illegal_bin_transition(3201->3203->3201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3209)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_11] sample_coverage(3209)=> Sampled illegal_bin_transition(3201->3203->3201->3209)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3210)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3210)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3210)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3218)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3215)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3215)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3210)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_11] sample_coverage(3210)=> Sampled illegal_bin_transition(3210->3210->3210->3218->3215->3215->3210)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3210)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3210)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3210)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3218)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3215)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3215)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3210)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_11] sample_coverage(3210)=> Sampled illegal_bin_transition(3210->3210->3210->3218->3215->3215->3210)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3210)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3210)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3210)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3218)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3215)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3215)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3210)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_11] sample_coverage(3210)=> Sampled illegal_bin_transition(3210->3210->3210->3218->3215->3215->3210)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3220)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3221)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3222)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3223)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3224)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3225)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3226)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3227)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3228)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3229)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_11] sample_coverage(3229)=> Sampled illegal_bin_transition(3220->3221->3222->3223->3224->3225->3226->3227->3228->3229)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3220)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3221)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3222)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3223)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3224)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3225)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3226)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3227)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3228)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3229)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_11] sample_coverage(3229)=> Sampled illegal_bin_transition(3220->3221->3222->3223->3224->3225->3226->3227->3228->3229)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3220)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3221)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3222)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3223)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3224)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3225)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3226)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3227)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3228)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3229)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_11] sample_coverage(3229)=> Sampled illegal_bin_transition(3220->3221->3222->3223->3224->3225->3226->3227->3228->3229)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3210)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3210)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3210)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3218)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3215)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3214)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3210)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3220)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3221)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3222)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3223)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3224)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3225)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3226)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3227)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3228)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_11] sample_coverage(3230)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_1
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_2
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_3
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_4
+%%    100 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             [Covpt_11] delete_coverpoint()
+%% 
+%% 
+%%    100 ns    Log    ID_LOG_HDR          TB seq.             Testing concatenation of bins
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_12] add_bins(bin(4000),bin((4100, 4110, 4120)),bin_range(4200, 4209, num_bins:2),bin_transition((4300, 4302, 4304, 4305)), "concatenated")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_12] Adding bins: (4000),(4100, 4110, 4120),(4200 to 4204),(4205 to 4209),(4300->4302->4304->4305), min_hits:1, rand_weight:1, "concatenated"
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_12] add_bins(bin_range(4400, 4450),ignore_bin(4401),ignore_bin_range(4410,4420),ignore_bin_transition((4400, 4425, 4450)), "concatenated")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_12] Adding bins: (4400 to 4450),IGN(4401),IGN(4410 to 4420),IGN(4400->4425->4450), min_hits:1, rand_weight:1, "concatenated"
+%%    100 ns    Alert  WARNING             TB seq.             append_bin_name_and_check(concatenated)=> The bin name: 'concatenated' has already been used.
+This warning can be turned off by setting the
+C_FC_BIN_NAME_DUPLICATION_WARNING constant in the
+adaptations_pkg to 'false'
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for concatenated[1]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for concatenated[2]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for concatenated[3]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for concatenated[4]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for concatenated[5]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for concatenated[1]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for concatenated[2]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for concatenated[3]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for concatenated[4]
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_12] sample_coverage(4000)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_12] sample_coverage(4100)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_12] sample_coverage(4110)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_12] sample_coverage(4120)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_12] sample_coverage(4200)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_12] sample_coverage(4201)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_12] sample_coverage(4202)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_12] sample_coverage(4203)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_12] sample_coverage(4204)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_12] sample_coverage(4205)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_12] sample_coverage(4206)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_12] sample_coverage(4207)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_12] sample_coverage(4208)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_12] sample_coverage(4209)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_12] sample_coverage(4300)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_12] sample_coverage(4302)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_12] sample_coverage(4304)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_12] sample_coverage(4305)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_12] sample_coverage(4400)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_12] sample_coverage(4402)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_12] sample_coverage(4449)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_12] sample_coverage(4450)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_12] sample_coverage(4401)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_12] sample_coverage(4410)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_12] sample_coverage(4420)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_12] sample_coverage(4400)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_12] sample_coverage(4425)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_12] sample_coverage(4450)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for concatenated[1]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for concatenated[2]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for concatenated[3]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for concatenated[4]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for concatenated[5]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for concatenated[1]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for concatenated[2]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for concatenated[3]
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for concatenated[4]
+%%    100 ns    Log    PASSED              TB seq.             check_num_bins(int, 6) => OK. Value was 6. 'Checking number of valid bins'
+%%    100 ns    Log    PASSED              TB seq.             check_num_bins(int, 3) => OK. Value was 3. 'Checking number of invalid bins'
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 100.00% - Coverage completed
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 100.00% - Coverage completed
+%%      
+%%      =======================================================================================================================================================================
+%%      100 ns *** COVERAGE SUMMARY REPORT (VERBOSE): TB seq. ***                                                                                                              
+%%      =======================================================================================================================================================================
+%%      Coverpoint:              Covpt_12
+%%      Coverage (for goal 100): Bins: 100.00%,  Hits: 100.00% 
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                            BINS                            HITS             MIN HITS         HIT COVERAGE             NAME             ILLEGAL/IGNORE                       
+%%                           (4401)                            1                 N/A                N/A             concatenated[2]           IGNORE                           
+%%                       (4410 to 4420)                        2                 N/A                N/A             concatenated[3]           IGNORE                           
+%%                     (4400->4425->4450)                      1                 N/A                N/A             concatenated[4]           IGNORE                           
+%%                           (4000)                            1                  1               100.00%           concatenated[1]             -                              
+%%                     (4100, 4110, 4120)                      3                  1               100.00%           concatenated[2]             -                              
+%%                       (4200 to 4204)                        5                  1               100.00%           concatenated[3]             -                              
+%%                       (4205 to 4209)                        5                  1               100.00%           concatenated[4]             -                              
+%%                  (4300->4302->4304->4305)                   1                  1               100.00%           concatenated[5]             -                              
+%%                       (4400 to 4450)                        6                  1               100.00%           concatenated[1]             -                              
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%    100 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             [Covpt_12] delete_coverpoint()
+%% 
+%% 
+%%    100 ns    Log    ID_LOG_HDR          TB seq.             Testing bins and ignore bins with transitions of values
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_13] add_bins(bin_transition((5000, 5001, 5010)), "transition_1")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_13] Adding bins: (5000->5001->5010), min_hits:1, rand_weight:1, "transition_1"
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_13] add_bins(bin_transition((5000, 5001, 5020)), "transition_2")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_13] Adding bins: (5000->5001->5020), min_hits:1, rand_weight:1, "transition_2"
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_13] add_bins(bin_transition((5000, 5001, 5030)), "transition_3")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_13] Adding bins: (5000->5001->5030), min_hits:1, rand_weight:1, "transition_3"
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_13] add_bins(bin_transition((5000, 5002, 5010)), "transition_4")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_13] Adding bins: (5000->5002->5010), min_hits:1, rand_weight:1, "transition_4"
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_13] add_bins(bin_transition((5000, 5002, 5020)), "transition_5")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_13] Adding bins: (5000->5002->5020), min_hits:1, rand_weight:1, "transition_5"
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_13] add_bins(bin_transition((5000, 5002, 5030)), "transition_6")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_13] Adding bins: (5000->5002->5030), min_hits:1, rand_weight:1, "transition_6"
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_13] add_bins(bin_transition((5000, 5003, 5010)), "transition_7")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_13] Adding bins: (5000->5003->5010), min_hits:1, rand_weight:1, "transition_7"
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_13] add_bins(bin_transition((5000, 5003, 5020)), "transition_8")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_13] Adding bins: (5000->5003->5020), min_hits:1, rand_weight:1, "transition_8"
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_13] add_bins(bin_transition((5000, 5003, 5030)), "transition_9")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_13] Adding bins: (5000->5003->5030), min_hits:1, rand_weight:1, "transition_9"
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_13] add_bins(bin_transition((5000, 5004, 5010)), "transition_10")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_13] Adding bins: (5000->5004->5010), min_hits:1, rand_weight:1, "transition_10"
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_13] add_bins(bin_transition((5000, 5004, 5020)), "transition_11")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_13] Adding bins: (5000->5004->5020), min_hits:1, rand_weight:1, "transition_11"
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_13] add_bins(bin_transition((5000, 5004, 5030)), "transition_12")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_13] Adding bins: (5000->5004->5030), min_hits:1, rand_weight:1, "transition_12"
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_13] add_bins(ignore_bin_transition((5000, 5001, 5010)), "ignore_transition_1")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_13] Adding bins: IGN(5000->5001->5010), min_hits:1, rand_weight:1, "ignore_transition_1"
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_13] add_bins(ignore_bin_transition((5000, 5002)), "ignore_transition_2")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_13] Adding bins: IGN(5000->5002), min_hits:1, rand_weight:1, "ignore_transition_2"
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_13] add_bins(ignore_bin_transition((5003, 5010)), "ignore_transition_3")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_13] Adding bins: IGN(5003->5010), min_hits:1, rand_weight:1, "ignore_transition_3"
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_13] add_bins(ignore_bin(5004), "ignore_value")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_13] Adding bins: IGN(5004), min_hits:1, rand_weight:1, "ignore_value"
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_13] sample_coverage(5000)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_13] sample_coverage(5001)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_13] sample_coverage(5010)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_13] sample_coverage(5000)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_13] sample_coverage(5001)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_13] sample_coverage(5020)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_13] sample_coverage(5000)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_13] sample_coverage(5001)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_13] sample_coverage(5030)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_13] sample_coverage(5000)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_13] sample_coverage(5002)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_13] sample_coverage(5010)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_13] sample_coverage(5000)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_13] sample_coverage(5002)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_13] sample_coverage(5020)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_13] sample_coverage(5000)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_13] sample_coverage(5002)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_13] sample_coverage(5030)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_13] sample_coverage(5000)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_13] sample_coverage(5003)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_13] sample_coverage(5010)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_13] sample_coverage(5000)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_13] sample_coverage(5003)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_13] sample_coverage(5020)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_13] sample_coverage(5000)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_13] sample_coverage(5003)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_13] sample_coverage(5030)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_13] sample_coverage(5000)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_13] sample_coverage(5004)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_13] sample_coverage(5010)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_13] sample_coverage(5000)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_13] sample_coverage(5004)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_13] sample_coverage(5020)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_13] sample_coverage(5000)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_13] sample_coverage(5004)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_13] sample_coverage(5030)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for transition_1
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for transition_2
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for transition_3
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for transition_4
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for transition_5
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for transition_6
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for transition_7
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for transition_8
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for transition_9
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for transition_10
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for transition_11
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for transition_12
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for ignore_transition_1
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for ignore_transition_2
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for ignore_transition_3
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for ignore_value
+%%    100 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             [Covpt_13] delete_coverpoint()
+%% 
+%% 
+%%    100 ns    Log    ID_LOG_HDR          TB seq.             Testing minimum coverage
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_14] add_bins(bin(500), min_hits:7, "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_14] Adding bins: (500), min_hits:7, rand_weight:7, ""
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_1
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 0.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 0.00%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(500)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 0.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 14.29%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(500)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 0.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 28.57%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(500)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 0.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 42.86%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(500)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 0.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 57.14%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(500)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 0.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 71.43%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(500)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 0.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 85.71%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(500)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 100.00% - Coverage completed
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 100.00% - Coverage completed
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_1
+%%    100 ns    Alert  WARNING             TB seq.             add_bins(bin(229), min_hits:18, "")=> Coverpoint has already been sampled, adding more bins is not recommended otherwise their coverage might not be correct.
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_14] add_bins(bin(229), min_hits:18, "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_14] Adding bins: (229), min_hits:18, rand_weight:18, ""
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_2
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 50.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 28.00%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(229)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 50.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 32.00%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(229)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 50.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 36.00%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(229)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 50.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 40.00%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(229)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 50.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 44.00%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(229)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 50.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 48.00%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(229)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 50.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 52.00%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(229)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 50.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 56.00%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(229)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 50.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 60.00%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(229)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 50.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 64.00%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(229)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 50.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 68.00%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(229)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 50.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 72.00%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(229)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 50.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 76.00%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(229)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 50.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 80.00%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(229)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 50.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 84.00%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(229)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 50.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 88.00%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(229)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 50.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 92.00%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(229)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 50.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 96.00%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(229)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 100.00% - Coverage completed
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 100.00% - Coverage completed
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_2
+%%    100 ns    Alert  WARNING             TB seq.             add_bins(bin(102), min_hits:1, "")=> Coverpoint has already been sampled, adding more bins is not recommended otherwise their coverage might not be correct.
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_14] add_bins(bin(102), min_hits:1, "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_14] Adding bins: (102), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_3
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 66.67%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 96.15%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(102)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 100.00% - Coverage completed
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 100.00% - Coverage completed
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_3
+%%    100 ns    Alert  WARNING             TB seq.             add_bins(bin(184), min_hits:17, "")=> Coverpoint has already been sampled, adding more bins is not recommended otherwise their coverage might not be correct.
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_14] add_bins(bin(184), min_hits:17, "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_14] Adding bins: (184), min_hits:17, rand_weight:17, ""
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_4
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 75.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 60.47%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(184)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 75.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 62.79%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(184)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 75.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 65.12%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(184)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 75.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 67.44%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(184)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 75.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 69.77%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(184)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 75.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 72.09%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(184)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 75.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 74.42%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(184)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 75.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 76.74%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(184)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 75.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 79.07%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(184)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 75.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 81.40%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(184)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 75.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 83.72%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(184)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 75.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 86.05%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(184)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 75.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 88.37%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(184)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 75.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 90.70%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(184)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 75.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 93.02%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(184)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 75.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 95.35%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(184)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 75.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 97.67%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(184)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 100.00% - Coverage completed
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 100.00% - Coverage completed
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_4
+%%    100 ns    Alert  WARNING             TB seq.             add_bins(bin(268), min_hits:14, "")=> Coverpoint has already been sampled, adding more bins is not recommended otherwise their coverage might not be correct.
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_14] add_bins(bin(268), min_hits:14, "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_14] Adding bins: (268), min_hits:14, rand_weight:14, ""
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_5
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 80.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 75.44%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(268)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 80.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 77.19%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(268)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 80.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 78.95%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(268)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 80.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 80.70%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(268)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 80.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 82.46%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(268)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 80.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 84.21%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(268)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 80.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 85.96%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(268)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 80.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 87.72%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(268)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 80.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 89.47%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(268)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 80.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 91.23%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(268)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 80.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 92.98%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(268)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 80.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 94.74%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(268)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 80.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 96.49%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(268)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 80.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 98.25%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(268)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 100.00% - Coverage completed
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 100.00% - Coverage completed
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_5
+%%    100 ns    Alert  WARNING             TB seq.             add_bins(bin(366), min_hits:13, "")=> Coverpoint has already been sampled, adding more bins is not recommended otherwise their coverage might not be correct.
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_14] add_bins(bin(366), min_hits:13, "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_14] Adding bins: (366), min_hits:13, rand_weight:13, ""
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_6
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 83.33%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 81.43%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(366)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 83.33%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 82.86%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(366)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 83.33%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 84.29%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(366)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 83.33%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 85.71%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(366)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 83.33%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 87.14%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(366)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 83.33%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 88.57%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(366)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 83.33%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 90.00%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(366)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 83.33%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 91.43%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(366)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 83.33%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 92.86%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(366)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 83.33%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 94.29%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(366)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 83.33%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 95.71%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(366)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 83.33%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 97.14%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(366)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 83.33%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 98.57%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(366)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 100.00% - Coverage completed
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 100.00% - Coverage completed
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_6
+%%    100 ns    Alert  WARNING             TB seq.             add_bins(bin(483), min_hits:9, "")=> Coverpoint has already been sampled, adding more bins is not recommended otherwise their coverage might not be correct.
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_14] add_bins(bin(483), min_hits:9, "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_14] Adding bins: (483), min_hits:9, rand_weight:9, ""
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_7
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 85.71%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 88.61%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(483)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 85.71%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 89.87%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(483)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 85.71%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 91.14%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(483)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 85.71%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 92.41%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(483)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 85.71%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 93.67%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(483)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 85.71%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 94.94%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(483)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 85.71%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 96.20%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(483)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 85.71%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 97.47%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(483)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 85.71%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 98.73%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(483)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 100.00% - Coverage completed
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 100.00% - Coverage completed
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_7
+%%    100 ns    Alert  WARNING             TB seq.             add_bins(bin(186), min_hits:10, "")=> Coverpoint has already been sampled, adding more bins is not recommended otherwise their coverage might not be correct.
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_14] add_bins(bin(186), min_hits:10, "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_14] Adding bins: (186), min_hits:10, rand_weight:10, ""
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_8
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 87.50%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 88.76%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(186)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 87.50%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 89.89%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(186)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 87.50%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 91.01%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(186)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 87.50%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 92.13%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(186)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 87.50%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 93.26%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(186)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 87.50%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 94.38%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(186)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 87.50%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 95.51%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(186)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 87.50%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 96.63%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(186)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 87.50%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 97.75%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(186)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 87.50%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 98.88%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(186)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 100.00% - Coverage completed
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 100.00% - Coverage completed
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_8
+%%    100 ns    Alert  WARNING             TB seq.             add_bins(bin(460), min_hits:19, "")=> Coverpoint has already been sampled, adding more bins is not recommended otherwise their coverage might not be correct.
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_14] add_bins(bin(460), min_hits:19, "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_14] Adding bins: (460), min_hits:19, rand_weight:19, ""
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_9
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 88.89%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 82.41%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(460)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 88.89%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 83.33%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(460)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 88.89%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 84.26%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(460)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 88.89%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 85.19%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(460)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 88.89%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 86.11%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(460)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 88.89%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 87.04%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(460)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 88.89%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 87.96%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(460)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 88.89%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 88.89%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(460)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 88.89%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 89.81%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(460)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 88.89%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 90.74%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(460)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 88.89%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 91.67%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(460)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 88.89%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 92.59%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(460)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 88.89%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 93.52%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(460)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 88.89%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 94.44%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(460)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 88.89%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 95.37%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(460)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 88.89%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 96.30%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(460)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 88.89%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 97.22%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(460)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 88.89%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 98.15%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(460)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 88.89%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 99.07%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(460)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 100.00% - Coverage completed
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 100.00% - Coverage completed
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_9
+%%    100 ns    Alert  WARNING             TB seq.             add_bins(bin(190), min_hits:1, "")=> Coverpoint has already been sampled, adding more bins is not recommended otherwise their coverage might not be correct.
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_14] add_bins(bin(190), min_hits:1, "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_14] Adding bins: (190), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_10
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 90.00%
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 99.08%
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_14] sample_coverage(190)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bins_coverage => OK, for 100.00% - Coverage completed
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_hits_coverage => OK, for 100.00% - Coverage completed
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_10
+%%      
+%%      =======================================================================================================================================================================
+%%      100 ns *** COVERAGE SUMMARY REPORT (VERBOSE): TB seq. ***                                                                                                              
+%%      =======================================================================================================================================================================
+%%      Coverpoint:              Covpt_14
+%%      Coverage (for goal 100): Bins: 100.00%,  Hits: 100.00% 
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                            BINS                            HITS             MIN HITS         HIT COVERAGE             NAME             ILLEGAL/IGNORE                       
+%%                            (500)                            7                  7               100.00%                bin_1                  -                              
+%%                            (229)                            18                 18              100.00%                bin_2                  -                              
+%%                            (102)                            1                  1               100.00%                bin_3                  -                              
+%%                            (184)                            17                 17              100.00%                bin_4                  -                              
+%%                            (268)                            14                 14              100.00%                bin_5                  -                              
+%%                            (366)                            13                 13              100.00%                bin_6                  -                              
+%%                            (483)                            9                  9               100.00%                bin_7                  -                              
+%%                            (186)                            10                 10              100.00%                bin_8                  -                              
+%%                            (460)                            19                 19              100.00%                bin_9                  -                              
+%%                            (190)                            1                  1               100.00%               bin_10                  -                              
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%    100 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             [Covpt_14] delete_coverpoint()
+%% 
+%% 
+%%    100 ns    Log    ID_LOG_HDR          TB seq.             Testing bin names
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_15] add_bins(bin(1000), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_15] Adding bins: (1000), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_15] add_bins(bin(1001), "my_bin_1")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_15] Adding bins: (1001), min_hits:1, rand_weight:1, "my_bin_1"
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_15] add_bins(bin(1002), min_hits:5, "my_bin_2")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_15] Adding bins: (1002), min_hits:5, rand_weight:5, "my_bin_2"
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_15] add_bins(bin(1003), min_hits:5, rand_weight:1, "my_bin_3")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_15] Adding bins: (1003), min_hits:5, rand_weight:1, "my_bin_3"
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_15] add_bins(bin(1004), min_hits:5, rand_weight:1, "my_bin_long_name_abcdefghijklmno")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_15] Adding bins: (1004), min_hits:5, rand_weight:1, "my_bin_long_name_abcdefghijklmno"
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_1
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for my_bin_1
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for my_bin_2
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for my_bin_3
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for my_bin_long_name_abc
+%%      
+%%      =======================================================================================================================================================================
+%%      100 ns *** COVERAGE SUMMARY REPORT (VERBOSE): TB seq. ***                                                                                                              
+%%      =======================================================================================================================================================================
+%%      Coverpoint:              Covpt_15
+%%      Coverage (for goal 100): Bins: 0.00%,    Hits: 0.00%   
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                            BINS                            HITS             MIN HITS         HIT COVERAGE             NAME             ILLEGAL/IGNORE                       
+%%                           (1000)                            0                  1                0.00%                 bin_1                  -                              
+%%                           (1001)                            0                  1                0.00%               my_bin_1                 -                              
+%%                           (1002)                            0                  5                0.00%               my_bin_2                 -                              
+%%                           (1003)                            0                  5                0.00%               my_bin_3                 -                              
+%%                           (1004)                            0                  5                0.00%         my_bin_long_name_abc           -                              
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%    100 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             [Covpt_15] delete_coverpoint()
+%% 
+%% 
+%%    100 ns    Log    ID_LOG_HDR          TB seq.             Testing bin overlap - valid bins
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_16] add_bins(bin(2000), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_16] Adding bins: (2000), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_16] add_bins(bin(2000), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_16] Adding bins: (2000), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_16] add_bins(bin(2000), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_16] Adding bins: (2000), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_16] add_bins(bin((2100, 2101, 2102, 2113, 2114)), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_16] Adding bins: (2100, 2101, 2102, 2113, 2114), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_16] add_bins(bin((2114, 2115, 2116, 2117)), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_16] Adding bins: (2114, 2115, 2116, 2117), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_16] add_bins(bin_range(2200, 2250), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_16] Adding bins: (2200 to 2250), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_16] add_bins(bin_range(2249, 2299), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_16] Adding bins: (2249 to 2299), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_16] sample_coverage(2000)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_16] sample_coverage(2001)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_16] sample_coverage(2113)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_16] sample_coverage(2114)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_16] sample_coverage(2115)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_16] sample_coverage(2248)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_16] sample_coverage(2249)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_16] sample_coverage(2250)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_16] sample_coverage(2251)
+%%    100 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             [Covpt_16] set_bin_overlap_alert_level(TB_WARNING)
+%%    100 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking bin overlap alert level'
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_16] sample_coverage(2000)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_16] There is an overlap between 3 bins.
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_16] sample_coverage(2001)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_16] sample_coverage(2113)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_16] sample_coverage(2114)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_16] There is an overlap between 2 bins.
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_16] sample_coverage(2115)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_16] sample_coverage(2248)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_16] sample_coverage(2249)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_16] There is an overlap between 2 bins.
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_16] sample_coverage(2250)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_16] There is an overlap between 2 bins.
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_16] sample_coverage(2251)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_1
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_2
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_3
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_4
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_5
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_6
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for bin_7
+%%    100 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             [Covpt_16] delete_coverpoint()
+%% 
+%% 
+%%    100 ns    Log    ID_LOG_HDR          TB seq.             Testing bin overlap - valid and ignore bins
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_17] add_bins(bin_range(3000, 3020), "overlap")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_17] Adding bins: (3000 to 3020), min_hits:1, rand_weight:1, "overlap"
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_17] add_bins(ignore_bin_range(3005,3015), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_17] Adding bins: IGN(3005 to 3015), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_17] sample_coverage(3000)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_17] sample_coverage(3004)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_17] sample_coverage(3005)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_17] sample_coverage(3006)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_17] sample_coverage(3014)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_17] sample_coverage(3015)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_17] sample_coverage(3016)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_17] sample_coverage(3020)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for overlap
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_1
+%%    100 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             [Covpt_17] delete_coverpoint()
+%% 
+%% 
+%%    100 ns    Log    ID_LOG_HDR          TB seq.             Testing bin overlap - valid and illegal bins
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_18] add_bins(bin_range(3100, 3120), "overlap")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_18] Adding bins: (3100 to 3120), min_hits:1, rand_weight:1, "overlap"
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_18] add_bins(illegal_bin_range(3105,3115), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_18] Adding bins: ILL(3105 to 3115), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             [Covpt_18] set_illegal_bin_alert_level(WARNING)
+%%    100 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking illegal bin alert level'
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_18] sample_coverage(3100)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_18] sample_coverage(3104)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_18] sample_coverage(3105)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_18] sample_coverage(3105)=> Sampled illegal_bin_range(3105 to 3115)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_18] sample_coverage(3106)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_18] sample_coverage(3106)=> Sampled illegal_bin_range(3105 to 3115)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_18] sample_coverage(3114)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_18] sample_coverage(3114)=> Sampled illegal_bin_range(3105 to 3115)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_18] sample_coverage(3115)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_18] sample_coverage(3115)=> Sampled illegal_bin_range(3105 to 3115)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_18] sample_coverage(3116)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_18] sample_coverage(3120)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_bin => OK, for overlap
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_1
+%%    100 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             [Covpt_18] delete_coverpoint()
+%% 
+%% 
+%%    100 ns    Log    ID_LOG_HDR          TB seq.             Testing bin overlap - ignore and illegal bins
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_19] add_bins(ignore_bin_range(3200,3220), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_19] Adding bins: IGN(3200 to 3220), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_19] add_bins(illegal_bin_range(3205,3215), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_19] Adding bins: ILL(3205 to 3215), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             [Covpt_19] set_illegal_bin_alert_level(WARNING)
+%%    100 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking illegal bin alert level'
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_19] sample_coverage(3200)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_19] sample_coverage(3204)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_19] sample_coverage(3205)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_19] sample_coverage(3205)=> Sampled illegal_bin_range(3205 to 3215)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_19] sample_coverage(3206)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_19] sample_coverage(3206)=> Sampled illegal_bin_range(3205 to 3215)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_19] sample_coverage(3214)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_19] sample_coverage(3214)=> Sampled illegal_bin_range(3205 to 3215)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_19] sample_coverage(3215)
+%%    100 ns    Alert  WARNING             TB seq.             [Covpt_19] sample_coverage(3215)=> Sampled illegal_bin_range(3205 to 3215)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_19] sample_coverage(3216)
+%%    100 ns    Log    ID_FUNC_COV_SAMPLE  TB seq.             [Covpt_19] sample_coverage(3220)
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_1
+%%    100 ns    Log    ID_POS_ACK          TB seq.             check_invalid_bin => OK, for bin_2
+%%      
+%%      =======================================================================================================================================================================
+%%      100 ns *** COVERAGE SUMMARY REPORT (VERBOSE): TB seq. ***                                                                                                              
+%%      =======================================================================================================================================================================
+%%      Coverpoint:              Covpt_19
+%%      Coverage (for goal 100): Bins: 0.00%,    Hits: 0.00%   
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                            BINS                            HITS             MIN HITS         HIT COVERAGE             NAME             ILLEGAL/IGNORE                       
+%%                       (3205 to 3215)                        4                 N/A                N/A                  bin_2               ILLEGAL                           
+%%                       (3200 to 3220)                        8                 N/A                N/A                  bin_1                IGNORE                           
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%    100 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             [Covpt_19] delete_coverpoint()
+%% 
+%% 
+%%    100 ns    Log    ID_LOG_HDR          TB seq.             Testing coverpoint name and scope
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    100 ns    Log    PASSED              TB seq.             check_value(string, 'MY_COVERPOINT_2_abcd') => OK. Value was 'MY_COVERPOINT_2_abcd'. 'Checking name'
+%%    100 ns    Log    PASSED              TB seq.             check_value(string, 'MY_SCOPE_2') => OK. Value was 'MY_SCOPE_2'. 'Checking scope'
+%% 
+%% 
+%%    100 ns    Log    ID_LOG_HDR          TB seq.             Testing coverpoint num bins allocation error
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    100 ns    Log    ID_FUNC_COV_CONFIG  MY_SCOPE_2          [MY_COVERPOINT_2_abcd] set_num_allocated_bins(50)
+%%    100 ns    Log    ID_FUNC_COV_CONFIG  MY_SCOPE_2          [MY_COVERPOINT_2_abcd] set_num_allocated_bins(10)
+%%    100 ns    Log    ID_FUNC_COV_BINS    MY_SCOPE_2          [MY_COVERPOINT_2_abcd] add_bins(bin_range(1, 10, num_bins:10), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS_I  MY_SCOPE_2          [MY_COVERPOINT_2_abcd] Adding bins: (1),(2),(3),(4),(5),(6),(7),(8),(9),(10), min_hits:1, rand_weight:1, ""
+%%    100 ns    Log    ID_FUNC_COV_CONFIG  MY_SCOPE_2          [MY_COVERPOINT_2_abcd] set_num_allocated_bins(5)
+%%    100 ns    Alert  ERROR               MY_SCOPE_2          set_num_allocated_bins(5)=> Cannot set the allocated size to a value smaller than the actual number of bins
+%%    100 ns    Log    ID_FUNC_COV_CONFIG  MY_SCOPE_2          [MY_COVERPOINT_2_abcd] delete_coverpoint()
+%% 
+%% 
+%%    100 ns    Log    ID_LOG_HDR          TB seq.             Testing C_FC_MAX_NUM_NEW_BINS limit
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    100 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_FUNC_COV_BINS_INFO).
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_21] add_bins(bin_range(1, 1000, num_bins:1000), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_21] add_bins(bin_range(1, 1000, num_bins:1001), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_21] add_bins(bin_range(1, 1001, num_bins:1000), "")
+%%    100 ns    Alert  ERROR               TB seq.             bin_range(1, 1001, num_bins:1001)=> Failed. Number of bins (1001) added in a single procedure call exceeds C_FC_MAX_NUM_NEW_BINS.\n Increase C_FC_MAX_NUM_NEW_BINS in adaptations package.
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_21] add_bins(, "")
+%%    100 ns    Alert  ERROR               TB seq.             bin_range(1, 1001, num_bins:1002)=> Failed. Number of bins (1001) added in a single procedure call exceeds C_FC_MAX_NUM_NEW_BINS.\n Increase C_FC_MAX_NUM_NEW_BINS in adaptations package.
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_21] add_bins(, "")
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_21] add_bins(bin_range(1, 1002, num_bins:1000), "")
+%%    100 ns    Alert  ERROR               TB seq.             bin_range(1, 1002, num_bins:1001)=> Failed. Number of bins (1001) added in a single procedure call exceeds C_FC_MAX_NUM_NEW_BINS.\n Increase C_FC_MAX_NUM_NEW_BINS in adaptations package.
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_21] add_bins(, "")
+%%    100 ns    Alert  ERROR               TB seq.             bin_range(1, 1002, num_bins:1002)=> Failed. Number of bins (1002) added in a single procedure call exceeds C_FC_MAX_NUM_NEW_BINS.\n Increase C_FC_MAX_NUM_NEW_BINS in adaptations package.
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_21] add_bins(, "")
+%%    100 ns    Alert  ERROR               TB seq.             bin_range(1, 1002, num_bins:1003)=> Failed. Number of bins (1002) added in a single procedure call exceeds C_FC_MAX_NUM_NEW_BINS.\n Increase C_FC_MAX_NUM_NEW_BINS in adaptations package.
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_21] add_bins(, "")
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_21] add_bins(bin_range(1, 1000, num_bins:0),bin(0), "")
+%%    100 ns    Alert  ERROR               TB seq.             add_bins(bin_range(1, 1000, num_bins:0),bin(0), "")=> Number of bins added in a single procedure call exceeds C_FC_MAX_NUM_NEW_BINS.\nIncrease C_FC_MAX_NUM_NEW_BINS in adaptations package.
+%% 
+%% 
+%%    100 ns    Log    ID_LOG_HDR          TB seq.             Testing C_FC_MAX_PROC_CALL_LENGTH limit
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    100 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_FUNC_COV_BINS_INFO).
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_21] add_bins(bin(-2147483648), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_21] add_bins(ignore_bin(-2147483648), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_21] add_bins(illegal_bin(-2147483648), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_21] add_bins(bin_range(-2147483648, -2147483647, num_bins:2147483647), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_21] add_bins(bin_transition((0, 1, 2, 3, 4, 5, 6, 7, 8, 9)), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_21] add_bins(bin_transition((100000000, 100000001, 100000002, 100000003, 100000004, 100000005, 100000006, 1000..., "")
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_21] add_bins(bin(-2147483648),bin(-2147483648), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_21] add_bins(ignore_bin(-2147483648),ignore_bin(-2147483648), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_21] add_bins(illegal_bin(-2147483648),illegal_bin(-2147483648), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_21] add_bins(bin_range(-2147483648, -2147483647, num_bins:2147483647),bin_range(-2147483648, -2147483647, num_bins:2147483647), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_21] add_bins(bin_transition((0, 1, 2, 3, 4, 5, 6, 7, 8, 9)),bin_transition((0, 1, 2, 3, 4, 5, 6, 7, 8, 9)), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_21] add_bins(bin_transition((100000000, 100000001, 100000002, 100000003, 100000004, 100000005, 100000006, 1000...,bin_transition((100000000, 100000001, 100000002, 100000003, 100000004, 100000005, 100000006, 1000..., "")
+%% 
+%% 
+%%    100 ns    Log    ID_LOG_HDR          TB seq.             Testing C_FC_MAX_NUM_COVERPOINTS limit
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_21] add_bins(bin(0), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_22] add_bins(bin(0), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_23] add_bins(bin(0), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_24] add_bins(bin(0), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_25] add_bins(bin(0), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_26] add_bins(bin(0), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_27] add_bins(bin(0), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_28] add_bins(bin(0), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_29] add_bins(bin(0), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_30] add_bins(bin(0), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_31] add_bins(bin(0), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_32] add_bins(bin(0), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_33] add_bins(bin(0), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_34] add_bins(bin(0), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_35] add_bins(bin(0), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_36] add_bins(bin(0), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_37] add_bins(bin(0), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_38] add_bins(bin(0), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_39] add_bins(bin(0), "")
+%%    100 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_40] add_bins(bin(0), "")
+%%    100 ns    Alert  FAILURE             TB seq.             set_scope(scope)=> Number of coverpoints exceeds C_FC_MAX_NUM_COVERPOINTS.\n Increase C_FC_MAX_NUM_COVERPOINTS in adaptations package.
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%   1100 ns    DONE   PASSED   fc_bins  Passed: 12  Affirmations Checked: 12
+%%    Expected      Failures: -1  Errors: -10  Warnings: -67  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 1  Errors: 10  Warnings: 67  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%%   1100 ns    Log    ID_LOG_HDR          TB seq.             SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

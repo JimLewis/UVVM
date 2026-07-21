@@ -1,0 +1,362 @@
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF GLOBAL CTRL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                                IGNORE    STOP_LIMIT
+%%                NOTE         :  REGARD    integer'high
+%%                TB_NOTE      :  REGARD    integer'high
+%%                WARNING      :  REGARD    integer'high
+%%                TB_WARNING   :  REGARD    integer'high
+%%                MANUAL_CHECK :  REGARD    integer'high
+%%                ERROR        :  REGARD    integer'high
+%%                TB_ERROR     :  REGARD    integer'high
+%%                FAILURE      :  REGARD         1
+%%                TB_FAILURE   :  REGARD         1
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF MSG ID PANEL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                ID                             Status
+%%                ------------------------       ------
+%%                ID_UTIL_BURIED               : DISABLED
+%%                ID_BITVIS_DEBUG              : DISABLED
+%%                ID_UTIL_SETUP                : ENABLED
+%%                ID_LOG_MSG_CTRL              : ENABLED
+%%                ID_ALERT_CTRL                : ENABLED
+%%                ID_FINISH_OR_STOP            : ENABLED
+%%                ID_CLOCK_GEN                 : ENABLED
+%%                ID_GEN_PULSE                 : ENABLED
+%%                ID_BLOCKING                  : ENABLED
+%%                ID_WATCHDOG                  : ENABLED
+%%                ID_RAND_GEN                  : DISABLED
+%%                ID_RAND_CONF                 : DISABLED
+%%                ID_FUNC_COV_BINS             : DISABLED
+%%                ID_FUNC_COV_BINS_INFO        : DISABLED
+%%                ID_FUNC_COV_RAND             : DISABLED
+%%                ID_FUNC_COV_SAMPLE           : DISABLED
+%%                ID_FUNC_COV_CONFIG           : DISABLED
+%%                ID_POS_ACK                   : ENABLED
+%%                ID_UVVM_ASSERTION            : ENABLED
+%%                ID_LOG_HDR                   : ENABLED
+%%                ID_LOG_HDR_LARGE             : ENABLED
+%%                ID_LOG_HDR_XL                : ENABLED
+%%                ID_SEQUENCER                 : ENABLED
+%%                ID_SEQUENCER_SUB             : ENABLED
+%%                ID_BFM                       : ENABLED
+%%                ID_BFM_WAIT                  : ENABLED
+%%                ID_BFM_POLL                  : ENABLED
+%%                ID_BFM_POLL_SUMMARY          : ENABLED
+%%                ID_CHANNEL_BFM               : ENABLED
+%%                ID_TERMINATE_CMD             : ENABLED
+%%                ID_SEGMENT_INITIATE          : ENABLED
+%%                ID_SEGMENT_COMPLETE          : ENABLED
+%%                ID_SEGMENT_HDR               : ENABLED
+%%                ID_SEGMENT_DATA              : ENABLED
+%%                ID_PACKET_INITIATE           : ENABLED
+%%                ID_PACKET_PREAMBLE           : ENABLED
+%%                ID_PACKET_COMPLETE           : ENABLED
+%%                ID_PACKET_HDR                : ENABLED
+%%                ID_PACKET_DATA               : ENABLED
+%%                ID_PACKET_CHECKSUM           : ENABLED
+%%                ID_PACKET_GAP                : ENABLED
+%%                ID_PACKET_PAYLOAD            : ENABLED
+%%                ID_FRAME_INITIATE            : ENABLED
+%%                ID_FRAME_COMPLETE            : ENABLED
+%%                ID_FRAME_HDR                 : ENABLED
+%%                ID_FRAME_DATA                : ENABLED
+%%                ID_COVERAGE_MAKEBIN          : DISABLED
+%%                ID_COVERAGE_ADDBIN           : DISABLED
+%%                ID_COVERAGE_ICOVER           : DISABLED
+%%                ID_COVERAGE_CONFIG           : ENABLED
+%%                ID_COVERAGE_SUMMARY          : ENABLED
+%%                ID_COVERAGE_HOLES            : ENABLED
+%%                ID_UVVM_SEND_CMD             : ENABLED
+%%                ID_UVVM_CMD_ACK              : ENABLED
+%%                ID_UVVM_CMD_RESULT           : ENABLED
+%%                ID_CMD_INTERPRETER           : ENABLED
+%%                ID_CMD_INTERPRETER_WAIT      : ENABLED
+%%                ID_IMMEDIATE_CMD             : ENABLED
+%%                ID_IMMEDIATE_CMD_WAIT        : ENABLED
+%%                ID_CMD_EXECUTOR              : ENABLED
+%%                ID_CMD_EXECUTOR_WAIT         : ENABLED
+%%                ID_CHANNEL_EXECUTOR          : ENABLED
+%%                ID_CHANNEL_EXECUTOR_WAIT     : ENABLED
+%%                ID_NEW_HVVC_CMD_SEQ          : ENABLED
+%%                ID_INSERTED_DELAY            : ENABLED
+%%                ID_OLD_AWAIT_COMPLETION      : ENABLED
+%%                ID_AWAIT_COMPLETION          : ENABLED
+%%                ID_AWAIT_COMPLETION_LIST     : ENABLED
+%%                ID_AWAIT_COMPLETION_WAIT     : ENABLED
+%%                ID_AWAIT_COMPLETION_END      : ENABLED
+%%                ID_AWAIT_UVVM_COMPLETION     : ENABLED
+%%                ID_UVVM_DATA_QUEUE           : ENABLED
+%%                ID_CONSTRUCTOR               : ENABLED
+%%                ID_CONSTRUCTOR_SUB           : ENABLED
+%%                ID_VVC_ACTIVITY              : ENABLED
+%%                ID_MONITOR                   : ENABLED
+%%                ID_MONITOR_ERROR             : ENABLED
+%%                ID_DATA                      : ENABLED
+%%                ID_CTRL                      : ENABLED
+%%                ID_SPEC_COV_INIT             : ENABLED
+%%                ID_SPEC_COV_REQS             : ENABLED
+%%                ID_SPEC_COV                  : ENABLED
+%%                ID_FILE_OPEN_CLOSE           : ENABLED
+%%                ID_FILE_PARSER               : ENABLED
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ALL_MESSAGES).
+%%      0 ns    Log    NO_ID               TB seq.             Start Simulation of TB for AVALON_MM
+%%      0 ns    Log    ID_BFM              TB seq.             avalon_mm_reset(num_rst_cycles=5). 'Resetting avalon MM interface'
+%%      0 ns    Log    ID_CLOCK_GEN        TB seq.             Starting clock Avalon Mem Mapped clock
+%%    560 ns    Log    NO_ID               TB seq.             Do some avalon_mm writes to the FIFO
+%%  572.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"ABBA5959") completed.
+%%  582.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"01234567") completed.
+%%  592.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"98765432") completed.
+%%  592.5 ns    Log    NO_ID               TB seq.             Read back data, and check it
+%%  612.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"ABBA5959")=> OK, received data = x"ABBA5959".
+%%  632.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"01234567")=> OK, received data = x"1234567".
+%%  652.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"98765432")=> OK, received data = x"98765432".
+%%  652.5 ns    Log    NO_ID               TB seq.             Do another read - should timeout
+%%    760 ns    Alert  WARNING             TB seq.             avalon_mm_read while executing avalon_mm_read_request=> Failed. Timeout waiting for waitrequest during 10 clock cycles.
+%%  772.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"10") completed.
+%%  792.5 ns    Log    NO_ID               TB seq.             Fill the FIFO
+%%  802.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"253B1447") completed.
+%%  812.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"70E32293") completed.
+%%  822.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"2C112B99") completed.
+%%  832.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"64CB809C") completed.
+%%  842.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"6092214F") completed.
+%%  852.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"C58B607B") completed.
+%%  862.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"565D0688") completed.
+%%  872.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"1F1C6B65") completed.
+%%  882.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"8BB6B112") completed.
+%%  892.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"A2718EBB") completed.
+%%  902.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"B7FF50EE") completed.
+%%  912.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"10AC2F51") completed.
+%%  922.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"3AF79909") completed.
+%%  932.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"3BC1ED00") completed.
+%%  942.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"E6DCD540") completed.
+%%  952.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"D8E31FA6") completed.
+%%  952.5 ns    Log    NO_ID               TB seq.             Do another write - should timeout
+%%   1060 ns    Alert  WARNING             TB seq.             avalon_mm_write(A:x"0", x"DEADBEEF")=> Failed. Timeout waiting for waitrequest during 10 clock cycles.
+%% 1062.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"DEADBEEF") completed.
+%% 1062.5 ns    Log    NO_ID               TB seq.             Empty the FIFO
+%% 1382.5 ns    Log    NO_ID               TB seq.             Random data write and read-back w check
+%% 1392.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"63EAC404") completed.
+%% 1412.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"63EAC404")=> OK, received data = x"63EAC404".
+%% 1422.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"2502D02C") completed.
+%% 1442.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"2502D02C")=> OK, received data = x"2502D02C".
+%% 1452.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"A329E192") completed.
+%% 1472.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"A329E192")=> OK, received data = x"A329E192".
+%% 1482.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"01D44DE0") completed.
+%% 1502.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"01D44DE0")=> OK, received data = x"1D44DE0".
+%% 1512.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"78C1D241") completed.
+%% 1532.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"78C1D241")=> OK, received data = x"78C1D241".
+%% 1542.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"513F728A") completed.
+%% 1562.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"513F728A")=> OK, received data = x"513F728A".
+%% 1572.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"C56563B5") completed.
+%% 1592.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"C56563B5")=> OK, received data = x"C56563B5".
+%% 1602.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"35C59A4A") completed.
+%% 1622.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"35C59A4A")=> OK, received data = x"35C59A4A".
+%% 1632.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"E26741BD") completed.
+%% 1652.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"E26741BD")=> OK, received data = x"E26741BD".
+%% 1662.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"CC5C1722") completed.
+%% 1682.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"CC5C1722")=> OK, received data = x"CC5C1722".
+%% 1692.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"C636E0BA") completed.
+%% 1712.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"C636E0BA")=> OK, received data = x"C636E0BA".
+%% 1722.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"E75949DB") completed.
+%% 1742.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"E75949DB")=> OK, received data = x"E75949DB".
+%% 1752.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"8056AE85") completed.
+%% 1772.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"8056AE85")=> OK, received data = x"8056AE85".
+%% 1782.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"1D8897AD") completed.
+%% 1802.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"1D8897AD")=> OK, received data = x"1D8897AD".
+%% 1812.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"902E91F3") completed.
+%% 1832.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"902E91F3")=> OK, received data = x"902E91F3".
+%% 1842.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"AABBC292") completed.
+%% 1862.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"AABBC292")=> OK, received data = x"AABBC292".
+%% 1872.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"9802C912") completed.
+%% 1892.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"9802C912")=> OK, received data = x"9802C912".
+%% 1902.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"A188C20C") completed.
+%% 1922.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"A188C20C")=> OK, received data = x"A188C20C".
+%% 1932.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"5A4FD2A4") completed.
+%% 1952.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"5A4FD2A4")=> OK, received data = x"5A4FD2A4".
+%% 1962.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"D92E6FFD") completed.
+%% 1982.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"D92E6FFD")=> OK, received data = x"D92E6FFD".
+%% 1992.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"03A74DC9") completed.
+%% 2012.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"03A74DC9")=> OK, received data = x"3A74DC9".
+%% 2022.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"403ED641") completed.
+%% 2042.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"403ED641")=> OK, received data = x"403ED641".
+%% 2052.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"CB6DDB51") completed.
+%% 2072.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"CB6DDB51")=> OK, received data = x"CB6DDB51".
+%% 2082.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"AF98D4D7") completed.
+%% 2102.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"AF98D4D7")=> OK, received data = x"AF98D4D7".
+%% 2112.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"CB651577") completed.
+%% 2132.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"CB651577")=> OK, received data = x"CB651577".
+%% 2142.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"C80FDAAC") completed.
+%% 2162.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"C80FDAAC")=> OK, received data = x"C80FDAAC".
+%% 2172.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"05E92140") completed.
+%% 2192.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"05E92140")=> OK, received data = x"5E92140".
+%% 2202.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"1B8CBE20") completed.
+%% 2222.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"1B8CBE20")=> OK, received data = x"1B8CBE20".
+%% 2232.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"2655ED03") completed.
+%% 2252.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"2655ED03")=> OK, received data = x"2655ED03".
+%% 2262.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"743359E2") completed.
+%% 2282.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"743359E2")=> OK, received data = x"743359E2".
+%% 2292.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"6C5BBB89") completed.
+%% 2312.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"6C5BBB89")=> OK, received data = x"6C5BBB89".
+%% 2322.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"7C4D1D69") completed.
+%% 2342.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"7C4D1D69")=> OK, received data = x"7C4D1D69".
+%% 2352.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"1AD92CCD") completed.
+%% 2372.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"1AD92CCD")=> OK, received data = x"1AD92CCD".
+%% 2382.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"54A3C04C") completed.
+%% 2402.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"54A3C04C")=> OK, received data = x"54A3C04C".
+%% 2412.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"25FAE9FF") completed.
+%% 2432.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"25FAE9FF")=> OK, received data = x"25FAE9FF".
+%% 2442.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"B3D07B28") completed.
+%% 2462.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"B3D07B28")=> OK, received data = x"B3D07B28".
+%% 2472.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"0F03DBF4") completed.
+%% 2492.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"0F03DBF4")=> OK, received data = x"F03DBF4".
+%% 2502.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"D9DBC525") completed.
+%% 2522.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"D9DBC525")=> OK, received data = x"D9DBC525".
+%% 2532.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"389C6609") completed.
+%% 2552.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"389C6609")=> OK, received data = x"389C6609".
+%% 2562.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"6EF7EB61") completed.
+%% 2582.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"6EF7EB61")=> OK, received data = x"6EF7EB61".
+%% 2592.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"91DC06F5") completed.
+%% 2612.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"91DC06F5")=> OK, received data = x"91DC06F5".
+%% 2622.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"041EE999") completed.
+%% 2642.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"041EE999")=> OK, received data = x"41EE999".
+%% 2652.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"552602E8") completed.
+%% 2672.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"552602E8")=> OK, received data = x"552602E8".
+%% 2682.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"4ABFA959") completed.
+%% 2702.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"4ABFA959")=> OK, received data = x"4ABFA959".
+%% 2712.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"0426DC70") completed.
+%% 2732.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"0426DC70")=> OK, received data = x"426DC70".
+%% 2742.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"F926B3DC") completed.
+%% 2762.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"F926B3DC")=> OK, received data = x"F926B3DC".
+%% 2772.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"D98EEB10") completed.
+%% 2792.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"D98EEB10")=> OK, received data = x"D98EEB10".
+%% 2802.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"A71F18B8") completed.
+%% 2822.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"A71F18B8")=> OK, received data = x"A71F18B8".
+%% 2832.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"37BD0648") completed.
+%% 2852.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"37BD0648")=> OK, received data = x"37BD0648".
+%% 2862.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"C3B6EF98") completed.
+%% 2882.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"C3B6EF98")=> OK, received data = x"C3B6EF98".
+%% 2892.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"CBACDF43") completed.
+%% 2912.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"CBACDF43")=> OK, received data = x"CBACDF43".
+%% 2922.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"EB2471F4") completed.
+%% 2942.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"EB2471F4")=> OK, received data = x"EB2471F4".
+%% 2952.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"6DE15F5F") completed.
+%% 2972.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"6DE15F5F")=> OK, received data = x"6DE15F5F".
+%% 2982.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"F00E86A8") completed.
+%% 3002.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"F00E86A8")=> OK, received data = x"F00E86A8".
+%% 3012.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"CC16CD7E") completed.
+%% 3032.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"CC16CD7E")=> OK, received data = x"CC16CD7E".
+%% 3042.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"B26ECC78") completed.
+%% 3062.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"B26ECC78")=> OK, received data = x"B26ECC78".
+%% 3072.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"AB63EA5A") completed.
+%% 3092.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"AB63EA5A")=> OK, received data = x"AB63EA5A".
+%% 3102.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"46927E1A") completed.
+%% 3122.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"46927E1A")=> OK, received data = x"46927E1A".
+%% 3132.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"DF1AC44C") completed.
+%% 3152.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"DF1AC44C")=> OK, received data = x"DF1AC44C".
+%% 3162.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"B4D97E07") completed.
+%% 3182.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"B4D97E07")=> OK, received data = x"B4D97E07".
+%% 3192.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"DAC1A4CE") completed.
+%% 3212.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"DAC1A4CE")=> OK, received data = x"DAC1A4CE".
+%% 3222.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"EB6CB92E") completed.
+%% 3242.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"EB6CB92E")=> OK, received data = x"EB6CB92E".
+%% 3252.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"B0575437") completed.
+%% 3272.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"B0575437")=> OK, received data = x"B0575437".
+%% 3282.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"3E59F491") completed.
+%% 3302.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"3E59F491")=> OK, received data = x"3E59F491".
+%% 3312.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"4B95C898") completed.
+%% 3332.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"4B95C898")=> OK, received data = x"4B95C898".
+%% 3342.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"9F515058") completed.
+%% 3362.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"9F515058")=> OK, received data = x"9F515058".
+%% 3372.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"5A3DCFB5") completed.
+%% 3392.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"5A3DCFB5")=> OK, received data = x"5A3DCFB5".
+%% 3402.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"A3CD870D") completed.
+%% 3422.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"A3CD870D")=> OK, received data = x"A3CD870D".
+%% 3432.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"FFB3BC20") completed.
+%% 3452.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"FFB3BC20")=> OK, received data = x"FFB3BC20".
+%% 3462.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"768498FB") completed.
+%% 3482.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"768498FB")=> OK, received data = x"768498FB".
+%% 3492.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"B4FCF43D") completed.
+%% 3512.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"B4FCF43D")=> OK, received data = x"B4FCF43D".
+%% 3522.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"B24E6861") completed.
+%% 3542.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"B24E6861")=> OK, received data = x"B24E6861".
+%% 3552.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"E96F1B8D") completed.
+%% 3572.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"E96F1B8D")=> OK, received data = x"E96F1B8D".
+%% 3582.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"BC0A56D9") completed.
+%% 3602.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"BC0A56D9")=> OK, received data = x"BC0A56D9".
+%% 3612.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"AC6F7B8E") completed.
+%% 3632.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"AC6F7B8E")=> OK, received data = x"AC6F7B8E".
+%% 3642.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"EBEC8B41") completed.
+%% 3662.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"EBEC8B41")=> OK, received data = x"EBEC8B41".
+%% 3672.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"0EFAE30A") completed.
+%% 3692.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"0EFAE30A")=> OK, received data = x"EFAE30A".
+%% 3702.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"719B8C90") completed.
+%% 3722.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"719B8C90")=> OK, received data = x"719B8C90".
+%% 3732.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"7A6CA16A") completed.
+%% 3752.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"7A6CA16A")=> OK, received data = x"7A6CA16A".
+%% 3762.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"EB825FC6") completed.
+%% 3782.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"EB825FC6")=> OK, received data = x"EB825FC6".
+%% 3792.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"625A91D4") completed.
+%% 3812.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"625A91D4")=> OK, received data = x"625A91D4".
+%% 3822.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"FC8C08F1") completed.
+%% 3842.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"FC8C08F1")=> OK, received data = x"FC8C08F1".
+%% 3852.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"DE6D2F8C") completed.
+%% 3872.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"DE6D2F8C")=> OK, received data = x"DE6D2F8C".
+%% 3882.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"8D1E8A1E") completed.
+%% 3902.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"8D1E8A1E")=> OK, received data = x"8D1E8A1E".
+%% 3912.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"01D68B02") completed.
+%% 3932.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"01D68B02")=> OK, received data = x"1D68B02".
+%% 3942.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"1D822082") completed.
+%% 3962.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"1D822082")=> OK, received data = x"1D822082".
+%% 3972.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"47E2DEBE") completed.
+%% 3992.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"47E2DEBE")=> OK, received data = x"47E2DEBE".
+%% 4002.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"8F582F9C") completed.
+%% 4022.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"8F582F9C")=> OK, received data = x"8F582F9C".
+%% 4032.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"ACD7FD97") completed.
+%% 4052.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"ACD7FD97")=> OK, received data = x"ACD7FD97".
+%% 4062.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"96ED5AA6") completed.
+%% 4082.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"96ED5AA6")=> OK, received data = x"96ED5AA6".
+%% 4092.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"C4ACAE80") completed.
+%% 4112.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"C4ACAE80")=> OK, received data = x"C4ACAE80".
+%% 4122.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"E3C5A8D8") completed.
+%% 4142.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"E3C5A8D8")=> OK, received data = x"E3C5A8D8".
+%% 4152.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"19395C25") completed.
+%% 4172.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"19395C25")=> OK, received data = x"19395C25".
+%% 4182.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"CDF47ABD") completed.
+%% 4202.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"CDF47ABD")=> OK, received data = x"CDF47ABD".
+%% 4212.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"EF9AA8AD") completed.
+%% 4232.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"EF9AA8AD")=> OK, received data = x"EF9AA8AD".
+%% 4242.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"6F81047E") completed.
+%% 4262.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"6F81047E")=> OK, received data = x"6F81047E".
+%% 4272.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"94EA059A") completed.
+%% 4292.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"94EA059A")=> OK, received data = x"94EA059A".
+%% 4302.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"4339DAB6") completed.
+%% 4322.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"4339DAB6")=> OK, received data = x"4339DAB6".
+%% 4332.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"24211D32") completed.
+%% 4352.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"24211D32")=> OK, received data = x"24211D32".
+%% 4362.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"19259187") completed.
+%% 4382.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"19259187")=> OK, received data = x"19259187".
+%% 4392.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"0", x"1BD95573") completed.
+%% 4412.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"1BD95573")=> OK, received data = x"1BD95573".
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%% 5412.5 ns    DONE   NOCHECKS   avalon_mm_bfm_tb  Passed: 0
+%%    Expected      Failures: 0  Errors: 0  Warnings: -2  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 0  Warnings: 2  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% 5412.5 ns    Log    ID_LOG_HDR          TB seq.             SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

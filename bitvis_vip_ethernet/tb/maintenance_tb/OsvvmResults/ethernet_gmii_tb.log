@@ -1,0 +1,603 @@
+%%      0 ns    Log    ID_CONSTRUCTOR      GMII_VVC,1,TX       VVC instantiated for channel TX
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  GMII_VVC,1,TX       Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  GMII_VVC,1,TX       Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR      GMII_VVC,1,RX       VVC instantiated for channel RX
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  GMII_VVC,1,RX       Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  GMII_VVC,1,RX       Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR      GMII_VVC,2,TX       VVC instantiated for channel TX
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  GMII_VVC,2,TX       Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  GMII_VVC,2,TX       Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR      GMII_VVC,2,RX       VVC instantiated for channel RX
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  GMII_VVC,2,RX       Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  GMII_VVC,2,RX       Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CMD_INTERPRETER  GMII_VVC,1,TX       Interpreter: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  GMII_VVC,1,RX       Interpreter: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  GMII_VVC,2,TX       Interpreter: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  GMII_VVC,2,RX       Interpreter: Waiting for command
+%%      0 ns    Log    ID_CTRL             ETHERNET_VVC_SB,1   enable() => SB enabled. 'ETHERNET VVC SB Enabled'
+%%      0 ns    Log    ID_CTRL             ETHERNET_VVC_SB,1   config() => config applied to SB.
+%%      0 ns    Log    ID_CTRL             ETHERNET_VVC_SB,1   enable_log_msg() => message id id_data enabled.
+%%      0 ns    Log    ID_CTRL             GMII_VVC_SB,1       enable() => SB enabled. 'GMII VVC SB Enabled'
+%%      0 ns    Log    ID_CTRL             GMII_VVC_SB,1       config() => config applied to SB.
+%%      0 ns    Log    ID_CTRL             GMII_VVC_SB,1       enable_log_msg() => message id id_data enabled.
+%%      0 ns    Log    ID_CTRL             ETHERNET_VVC_SB,2   enable() => SB enabled. 'ETHERNET VVC SB Enabled'
+%%      0 ns    Log    ID_CTRL             ETHERNET_VVC_SB,2   config() => config applied to SB.
+%%      0 ns    Log    ID_CTRL             ETHERNET_VVC_SB,2   enable_log_msg() => message id id_data enabled.
+%%      0 ns    Log    ID_CTRL             GMII_VVC_SB,2       enable() => SB enabled. 'GMII VVC SB Enabled'
+%%      0 ns    Log    ID_CTRL             GMII_VVC_SB,2       config() => config applied to SB.
+%%      0 ns    Log    ID_CTRL             GMII_VVC_SB,2       enable_log_msg() => message id id_data enabled.
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_UVVM_CMD_ACK).
+%% 
+%% 
+%% ============================================================================================================================================================================
+%%      0 ns    Log    ID_LOG_HDR_LARGE    TB seq.             START SIMULATION OF ETHERNET VVC
+%% ============================================================================================================================================================================
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Transmit 1 bytes of data from i1 to i2 (need padding)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_transmit(ETHERNET_VVC,1,TX, MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 1): 'Transmit a frame from instance 1.'. [1]
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,1,TX       Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,1,RX       Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,2,TX       Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,2,RX       Executor: Waiting for command
+%%      0 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_expect(ETHERNET_VVC,2,RX, MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 1): 'Expect a frame at instance 2.'. [2]
+%%      0 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,1,TX   ethernet_transmit(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 1). Start transmitting packet. 'Transmit a frame from instance 1.' [1]
+%%      0 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,1          VVC is busy while executing an HVVC command
+%%      0 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,2,RX   ethernet_expect(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 1) while executing ethernet_receive. Waiting for packet. 'Expect a frame at instance 2.' [2]
+%%      0 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,2          VVC is busy while executing an HVVC command
+%%      0 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns): 'Wait for transmit to finish.'. [4]
+%%      0 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns) - Pending completion. 'Wait for transmit to finish.' [4]
+%%    578 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,1,TX       Executor: Waiting for command
+%%    578 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,2,RX       Executor: Waiting for command
+%%    578 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,1,TX   ethernet_transmit(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 1). Finished transmitting packet. 'Transmit a frame from instance 1.' [1]
+%%    578 ns    Log    ID_CMD_INTERPRETER  GMII_VVC,2,RX       Interpreter: Waiting for command
+%%    578 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,2,RX   ethernet_expect(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 1) => OK. 'Expect a frame at instance 2.' [2]
+%%    674 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns)=> ETHERNET_VVC,1,TX finished. 'Wait for transmit to finish.' [4]
+%%    674 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,RX, 1000000 ns): 'Wait for expect to finish.'. [55]
+%%    674 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,RX, 1000000 ns)=> ETHERNET_VVC,2,RX finished. 'Wait for expect to finish.' [55]
+%% 
+%% 
+%%    674 ns    Log    ID_LOG_HDR          TB seq.             Transmit 2 bytes of data from i1 to i2 (need padding)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%    674 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_transmit(ETHERNET_VVC,1,TX, MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 2): 'Transmit a frame from instance 1.'. [56]
+%%    674 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_expect(ETHERNET_VVC,2,RX, MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 2): 'Expect a frame at instance 2.'. [57]
+%%    674 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,1,TX   ethernet_transmit(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 2). Start transmitting packet. 'Transmit a frame from instance 1.' [56]
+%%    674 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,1          VVC is busy while executing an HVVC command
+%%    674 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,2,RX   ethernet_expect(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 2) while executing ethernet_receive. Waiting for packet. 'Expect a frame at instance 2.' [57]
+%%    674 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,2          VVC is busy while executing an HVVC command
+%%    674 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns): 'Wait for transmit to finish.'. [59]
+%%    674 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns) - Pending completion. 'Wait for transmit to finish.' [59]
+%%   1250 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,1,TX       Executor: Waiting for command
+%%   1250 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,2,RX       Executor: Waiting for command
+%%   1250 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,1,TX   ethernet_transmit(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 2). Finished transmitting packet. 'Transmit a frame from instance 1.' [56]
+%%   1250 ns    Log    ID_CMD_INTERPRETER  GMII_VVC,2,RX       Interpreter: Waiting for command
+%%   1250 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,2,RX   ethernet_expect(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 2) => OK. 'Expect a frame at instance 2.' [57]
+%%   1346 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns)=> ETHERNET_VVC,1,TX finished. 'Wait for transmit to finish.' [59]
+%%   1346 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,RX, 1000000 ns): 'Wait for expect to finish.'. [110]
+%%   1346 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,RX, 1000000 ns)=> ETHERNET_VVC,2,RX finished. 'Wait for expect to finish.' [110]
+%% 
+%% 
+%%   1346 ns    Log    ID_LOG_HDR          TB seq.             Transmit 3 bytes of data from i1 to i2 (need padding)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   1346 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_transmit(ETHERNET_VVC,1,TX, MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 3): 'Transmit a frame from instance 1.'. [111]
+%%   1346 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_expect(ETHERNET_VVC,2,RX, MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 3): 'Expect a frame at instance 2.'. [112]
+%%   1346 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,1,TX   ethernet_transmit(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 3). Start transmitting packet. 'Transmit a frame from instance 1.' [111]
+%%   1346 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,1          VVC is busy while executing an HVVC command
+%%   1346 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,2,RX   ethernet_expect(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 3) while executing ethernet_receive. Waiting for packet. 'Expect a frame at instance 2.' [112]
+%%   1346 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,2          VVC is busy while executing an HVVC command
+%%   1346 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns): 'Wait for transmit to finish.'. [114]
+%%   1346 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns) - Pending completion. 'Wait for transmit to finish.' [114]
+%%   1922 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,1,TX       Executor: Waiting for command
+%%   1922 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,2,RX       Executor: Waiting for command
+%%   1922 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,1,TX   ethernet_transmit(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 3). Finished transmitting packet. 'Transmit a frame from instance 1.' [111]
+%%   1922 ns    Log    ID_CMD_INTERPRETER  GMII_VVC,2,RX       Interpreter: Waiting for command
+%%   1922 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,2,RX   ethernet_expect(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 3) => OK. 'Expect a frame at instance 2.' [112]
+%%   2018 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns)=> ETHERNET_VVC,1,TX finished. 'Wait for transmit to finish.' [114]
+%%   2018 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,RX, 1000000 ns): 'Wait for expect to finish.'. [165]
+%%   2018 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,RX, 1000000 ns)=> ETHERNET_VVC,2,RX finished. 'Wait for expect to finish.' [165]
+%% 
+%% 
+%%   2018 ns    Log    ID_LOG_HDR          TB seq.             Transmit 4 bytes of data from i1 to i2 (need padding)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   2018 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_transmit(ETHERNET_VVC,1,TX, MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 4): 'Transmit a frame from instance 1.'. [166]
+%%   2018 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_expect(ETHERNET_VVC,2,RX, MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 4): 'Expect a frame at instance 2.'. [167]
+%%   2018 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,1,TX   ethernet_transmit(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 4). Start transmitting packet. 'Transmit a frame from instance 1.' [166]
+%%   2018 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,1          VVC is busy while executing an HVVC command
+%%   2018 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,2,RX   ethernet_expect(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 4) while executing ethernet_receive. Waiting for packet. 'Expect a frame at instance 2.' [167]
+%%   2018 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,2          VVC is busy while executing an HVVC command
+%%   2018 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns): 'Wait for transmit to finish.'. [169]
+%%   2018 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns) - Pending completion. 'Wait for transmit to finish.' [169]
+%%   2594 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,1,TX       Executor: Waiting for command
+%%   2594 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,2,RX       Executor: Waiting for command
+%%   2594 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,1,TX   ethernet_transmit(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 4). Finished transmitting packet. 'Transmit a frame from instance 1.' [166]
+%%   2594 ns    Log    ID_CMD_INTERPRETER  GMII_VVC,2,RX       Interpreter: Waiting for command
+%%   2594 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,2,RX   ethernet_expect(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 4) => OK. 'Expect a frame at instance 2.' [167]
+%%   2690 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns)=> ETHERNET_VVC,1,TX finished. 'Wait for transmit to finish.' [169]
+%%   2690 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,RX, 1000000 ns): 'Wait for expect to finish.'. [220]
+%%   2690 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,RX, 1000000 ns)=> ETHERNET_VVC,2,RX finished. 'Wait for expect to finish.' [220]
+%% 
+%% 
+%%   2690 ns    Log    ID_LOG_HDR          TB seq.             Transmit 5 bytes of data from i1 to i2 (need padding)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   2690 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_transmit(ETHERNET_VVC,1,TX, MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 5): 'Transmit a frame from instance 1.'. [221]
+%%   2690 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_expect(ETHERNET_VVC,2,RX, MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 5): 'Expect a frame at instance 2.'. [222]
+%%   2690 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,1,TX   ethernet_transmit(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 5). Start transmitting packet. 'Transmit a frame from instance 1.' [221]
+%%   2690 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,1          VVC is busy while executing an HVVC command
+%%   2690 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,2,RX   ethernet_expect(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 5) while executing ethernet_receive. Waiting for packet. 'Expect a frame at instance 2.' [222]
+%%   2690 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,2          VVC is busy while executing an HVVC command
+%%   2690 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns): 'Wait for transmit to finish.'. [224]
+%%   2690 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns) - Pending completion. 'Wait for transmit to finish.' [224]
+%%   3266 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,1,TX       Executor: Waiting for command
+%%   3266 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,2,RX       Executor: Waiting for command
+%%   3266 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,1,TX   ethernet_transmit(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 5). Finished transmitting packet. 'Transmit a frame from instance 1.' [221]
+%%   3266 ns    Log    ID_CMD_INTERPRETER  GMII_VVC,2,RX       Interpreter: Waiting for command
+%%   3266 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,2,RX   ethernet_expect(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 5) => OK. 'Expect a frame at instance 2.' [222]
+%%   3362 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns)=> ETHERNET_VVC,1,TX finished. 'Wait for transmit to finish.' [224]
+%%   3362 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,RX, 1000000 ns): 'Wait for expect to finish.'. [275]
+%%   3362 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,RX, 1000000 ns)=> ETHERNET_VVC,2,RX finished. 'Wait for expect to finish.' [275]
+%% 
+%% 
+%%   3362 ns    Log    ID_LOG_HDR          TB seq.             Transmit 6 bytes of data from i1 to i2 (need padding)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   3362 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_transmit(ETHERNET_VVC,1,TX, MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 6): 'Transmit a frame from instance 1.'. [276]
+%%   3362 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_expect(ETHERNET_VVC,2,RX, MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 6): 'Expect a frame at instance 2.'. [277]
+%%   3362 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,1,TX   ethernet_transmit(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 6). Start transmitting packet. 'Transmit a frame from instance 1.' [276]
+%%   3362 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,1          VVC is busy while executing an HVVC command
+%%   3362 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,2,RX   ethernet_expect(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 6) while executing ethernet_receive. Waiting for packet. 'Expect a frame at instance 2.' [277]
+%%   3362 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,2          VVC is busy while executing an HVVC command
+%%   3362 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns): 'Wait for transmit to finish.'. [279]
+%%   3362 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns) - Pending completion. 'Wait for transmit to finish.' [279]
+%%   3938 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,1,TX       Executor: Waiting for command
+%%   3938 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,2,RX       Executor: Waiting for command
+%%   3938 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,1,TX   ethernet_transmit(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 6). Finished transmitting packet. 'Transmit a frame from instance 1.' [276]
+%%   3938 ns    Log    ID_CMD_INTERPRETER  GMII_VVC,2,RX       Interpreter: Waiting for command
+%%   3938 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,2,RX   ethernet_expect(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 6) => OK. 'Expect a frame at instance 2.' [277]
+%%   4034 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns)=> ETHERNET_VVC,1,TX finished. 'Wait for transmit to finish.' [279]
+%%   4034 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,RX, 1000000 ns): 'Wait for expect to finish.'. [330]
+%%   4034 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,RX, 1000000 ns)=> ETHERNET_VVC,2,RX finished. 'Wait for expect to finish.' [330]
+%% 
+%% 
+%%   4034 ns    Log    ID_LOG_HDR          TB seq.             Transmit 7 bytes of data from i1 to i2 (need padding)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   4034 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_transmit(ETHERNET_VVC,1,TX, MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 7): 'Transmit a frame from instance 1.'. [331]
+%%   4034 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_expect(ETHERNET_VVC,2,RX, MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 7): 'Expect a frame at instance 2.'. [332]
+%%   4034 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,1,TX   ethernet_transmit(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 7). Start transmitting packet. 'Transmit a frame from instance 1.' [331]
+%%   4034 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,1          VVC is busy while executing an HVVC command
+%%   4034 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,2,RX   ethernet_expect(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 7) while executing ethernet_receive. Waiting for packet. 'Expect a frame at instance 2.' [332]
+%%   4034 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,2          VVC is busy while executing an HVVC command
+%%   4034 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns): 'Wait for transmit to finish.'. [334]
+%%   4034 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns) - Pending completion. 'Wait for transmit to finish.' [334]
+%%   4610 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,1,TX       Executor: Waiting for command
+%%   4610 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,2,RX       Executor: Waiting for command
+%%   4610 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,1,TX   ethernet_transmit(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 7). Finished transmitting packet. 'Transmit a frame from instance 1.' [331]
+%%   4610 ns    Log    ID_CMD_INTERPRETER  GMII_VVC,2,RX       Interpreter: Waiting for command
+%%   4610 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,2,RX   ethernet_expect(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 7) => OK. 'Expect a frame at instance 2.' [332]
+%%   4706 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns)=> ETHERNET_VVC,1,TX finished. 'Wait for transmit to finish.' [334]
+%%   4706 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,RX, 1000000 ns): 'Wait for expect to finish.'. [385]
+%%   4706 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,RX, 1000000 ns)=> ETHERNET_VVC,2,RX finished. 'Wait for expect to finish.' [385]
+%% 
+%% 
+%%   4706 ns    Log    ID_LOG_HDR          TB seq.             Transmit 8 bytes of data from i1 to i2 (need padding)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   4706 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_transmit(ETHERNET_VVC,1,TX, MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 8): 'Transmit a frame from instance 1.'. [386]
+%%   4706 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_expect(ETHERNET_VVC,2,RX, MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 8): 'Expect a frame at instance 2.'. [387]
+%%   4706 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,1,TX   ethernet_transmit(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 8). Start transmitting packet. 'Transmit a frame from instance 1.' [386]
+%%   4706 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,1          VVC is busy while executing an HVVC command
+%%   4706 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,2,RX   ethernet_expect(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 8) while executing ethernet_receive. Waiting for packet. 'Expect a frame at instance 2.' [387]
+%%   4706 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,2          VVC is busy while executing an HVVC command
+%%   4706 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns): 'Wait for transmit to finish.'. [389]
+%%   4706 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns) - Pending completion. 'Wait for transmit to finish.' [389]
+%%   5282 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,1,TX       Executor: Waiting for command
+%%   5282 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,2,RX       Executor: Waiting for command
+%%   5282 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,1,TX   ethernet_transmit(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 8). Finished transmitting packet. 'Transmit a frame from instance 1.' [386]
+%%   5282 ns    Log    ID_CMD_INTERPRETER  GMII_VVC,2,RX       Interpreter: Waiting for command
+%%   5282 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,2,RX   ethernet_expect(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 8) => OK. 'Expect a frame at instance 2.' [387]
+%%   5378 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns)=> ETHERNET_VVC,1,TX finished. 'Wait for transmit to finish.' [389]
+%%   5378 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,RX, 1000000 ns): 'Wait for expect to finish.'. [440]
+%%   5378 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,RX, 1000000 ns)=> ETHERNET_VVC,2,RX finished. 'Wait for expect to finish.' [440]
+%% 
+%% 
+%%   5378 ns    Log    ID_LOG_HDR          TB seq.             Transmit 9 bytes of data from i1 to i2 (need padding)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   5378 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_transmit(ETHERNET_VVC,1,TX, MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 9): 'Transmit a frame from instance 1.'. [441]
+%%   5378 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_expect(ETHERNET_VVC,2,RX, MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 9): 'Expect a frame at instance 2.'. [442]
+%%   5378 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,1,TX   ethernet_transmit(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 9). Start transmitting packet. 'Transmit a frame from instance 1.' [441]
+%%   5378 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,1          VVC is busy while executing an HVVC command
+%%   5378 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,2,RX   ethernet_expect(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 9) while executing ethernet_receive. Waiting for packet. 'Expect a frame at instance 2.' [442]
+%%   5378 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,2          VVC is busy while executing an HVVC command
+%%   5378 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns): 'Wait for transmit to finish.'. [444]
+%%   5378 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns) - Pending completion. 'Wait for transmit to finish.' [444]
+%%   5954 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,1,TX       Executor: Waiting for command
+%%   5954 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,2,RX       Executor: Waiting for command
+%%   5954 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,1,TX   ethernet_transmit(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 9). Finished transmitting packet. 'Transmit a frame from instance 1.' [441]
+%%   5954 ns    Log    ID_CMD_INTERPRETER  GMII_VVC,2,RX       Interpreter: Waiting for command
+%%   5954 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,2,RX   ethernet_expect(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 9) => OK. 'Expect a frame at instance 2.' [442]
+%%   6050 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns)=> ETHERNET_VVC,1,TX finished. 'Wait for transmit to finish.' [444]
+%%   6050 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,RX, 1000000 ns): 'Wait for expect to finish.'. [495]
+%%   6050 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,RX, 1000000 ns)=> ETHERNET_VVC,2,RX finished. 'Wait for expect to finish.' [495]
+%% 
+%% 
+%%   6050 ns    Log    ID_LOG_HDR          TB seq.             Transmit 10 bytes of data from i1 to i2 (need padding)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   6050 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_transmit(ETHERNET_VVC,1,TX, MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 10): 'Transmit a frame from instance 1.'. [496]
+%%   6050 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_expect(ETHERNET_VVC,2,RX, MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 10): 'Expect a frame at instance 2.'. [497]
+%%   6050 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,1,TX   ethernet_transmit(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 10). Start transmitting packet. 'Transmit a frame from instance 1.' [496]
+%%   6050 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,1          VVC is busy while executing an HVVC command
+%%   6050 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,2,RX   ethernet_expect(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 10) while executing ethernet_receive. Waiting for packet. 'Expect a frame at instance 2.' [497]
+%%   6050 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,2          VVC is busy while executing an HVVC command
+%%   6050 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns): 'Wait for transmit to finish.'. [499]
+%%   6050 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns) - Pending completion. 'Wait for transmit to finish.' [499]
+%%   6626 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,1,TX       Executor: Waiting for command
+%%   6626 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,2,RX       Executor: Waiting for command
+%%   6626 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,1,TX   ethernet_transmit(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 10). Finished transmitting packet. 'Transmit a frame from instance 1.' [496]
+%%   6626 ns    Log    ID_CMD_INTERPRETER  GMII_VVC,2,RX       Interpreter: Waiting for command
+%%   6626 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,2,RX   ethernet_expect(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 10) => OK. 'Expect a frame at instance 2.' [497]
+%%   6722 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns)=> ETHERNET_VVC,1,TX finished. 'Wait for transmit to finish.' [499]
+%%   6722 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,RX, 1000000 ns): 'Wait for expect to finish.'. [550]
+%%   6722 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,RX, 1000000 ns)=> ETHERNET_VVC,2,RX finished. 'Wait for expect to finish.' [550]
+%% 
+%% 
+%%   6722 ns    Log    ID_LOG_HDR          TB seq.             Transmit 46 bytes of data from i1 to i2 (minimum size)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   6722 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_transmit(ETHERNET_VVC,1,TX, MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 46): 'Transmit a frame from instance 1.'. [551]
+%%   6722 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_expect(ETHERNET_VVC,2,RX, MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 46): 'Expect a frame at instance 2.'. [552]
+%%   6722 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,1,TX   ethernet_transmit(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 46). Start transmitting packet. 'Transmit a frame from instance 1.' [551]
+%%   6722 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,1          VVC is busy while executing an HVVC command
+%%   6722 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,2,RX   ethernet_expect(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 46) while executing ethernet_receive. Waiting for packet. 'Expect a frame at instance 2.' [552]
+%%   6722 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,2          VVC is busy while executing an HVVC command
+%%   6722 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns): 'Wait for transmit to finish.'. [554]
+%%   6722 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns) - Pending completion. 'Wait for transmit to finish.' [554]
+%%   7298 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,1,TX       Executor: Waiting for command
+%%   7298 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,2,RX       Executor: Waiting for command
+%%   7298 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,1,TX   ethernet_transmit(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 46). Finished transmitting packet. 'Transmit a frame from instance 1.' [551]
+%%   7298 ns    Log    ID_CMD_INTERPRETER  GMII_VVC,2,RX       Interpreter: Waiting for command
+%%   7298 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,2,RX   ethernet_expect(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 46) => OK. 'Expect a frame at instance 2.' [552]
+%%   7394 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns)=> ETHERNET_VVC,1,TX finished. 'Wait for transmit to finish.' [554]
+%%   7394 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,RX, 1000000 ns): 'Wait for expect to finish.'. [605]
+%%   7394 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,RX, 1000000 ns)=> ETHERNET_VVC,2,RX finished. 'Wait for expect to finish.' [605]
+%% 
+%% 
+%%   7394 ns    Log    ID_LOG_HDR          TB seq.             Transmit 1500 bytes of data from i1 to i2 (maximum size)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   7394 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_transmit(ETHERNET_VVC,1,TX, MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 1500): 'Transmit a frame from instance 1.'. [606]
+%%   7394 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_expect(ETHERNET_VVC,2,RX, MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 1500): 'Expect a frame at instance 2.'. [607]
+%%   7394 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,1,TX   ethernet_transmit(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 1500). Start transmitting packet. 'Transmit a frame from instance 1.' [606]
+%%   7394 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,1          VVC is busy while executing an HVVC command
+%%   7394 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,2,RX   ethernet_expect(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 1500) while executing ethernet_receive. Waiting for packet. 'Expect a frame at instance 2.' [607]
+%%   7394 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,2          VVC is busy while executing an HVVC command
+%%   7394 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns): 'Wait for transmit to finish.'. [609]
+%%   7394 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns) - Pending completion. 'Wait for transmit to finish.' [609]
+%%  19602 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,1,TX       Executor: Waiting for command
+%%  19602 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,2,RX       Executor: Waiting for command
+%%  19602 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,1,TX   ethernet_transmit(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 1500). Finished transmitting packet. 'Transmit a frame from instance 1.' [606]
+%%  19602 ns    Log    ID_CMD_INTERPRETER  GMII_VVC,2,RX       Interpreter: Waiting for command
+%%  19602 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,2,RX   ethernet_expect(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 1500) => OK. 'Expect a frame at instance 2.' [607]
+%%  19698 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns)=> ETHERNET_VVC,1,TX finished. 'Wait for transmit to finish.' [609]
+%%  19698 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,RX, 1000000 ns): 'Wait for expect to finish.'. [660]
+%%  19698 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,RX, 1000000 ns)=> ETHERNET_VVC,2,RX finished. 'Wait for expect to finish.' [660]
+%% 
+%% 
+%%  19698 ns    Log    ID_LOG_HDR          TB seq.             Transmit 50 bytes of data from i2 to i1
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  19698 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_transmit(ETHERNET_VVC,2,TX, MAC dest: x"000000000001", MAC src: x"000000000002", payload length: 50): 'Transmit a frame from instance 2.'. [661]
+%%  19698 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_receive(ETHERNET_VVC,1,RX): 'Receive a frame at instance 1.'. [662]
+%%  19698 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,2,TX   ethernet_transmit(MAC dest: x"000000000001", MAC src: x"000000000002", payload length: 50). Start transmitting packet. 'Transmit a frame from instance 2.' [661]
+%%  19698 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,2          VVC is busy while executing an HVVC command
+%%  19698 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,1,RX   ethernet_receive(). Waiting for packet. 'Receive a frame at instance 1.' [662]
+%%  19698 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,1          VVC is busy while executing an HVVC command
+%%  19698 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,TX, 1000000 ns): 'Wait for transmit to finish.'. [664]
+%%  19698 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,TX, 1000000 ns) - Pending completion. 'Wait for transmit to finish.' [664]
+%%  20306 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,1,RX       Executor: Waiting for command
+%%  20306 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,2,TX       Executor: Waiting for command
+%%  20306 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,2,TX   ethernet_transmit(MAC dest: x"000000000001", MAC src: x"000000000002", payload length: 50). Finished transmitting packet. 'Transmit a frame from instance 2.' [661]
+%%  20306 ns    Log    ID_CMD_INTERPRETER  GMII_VVC,1,RX       Interpreter: Waiting for command
+%%  20306 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,1,RX   ethernet_receive(). Finished receiving packet. 'Receive a frame at instance 1.' [662]
+%%  20402 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,TX, 1000000 ns)=> ETHERNET_VVC,2,TX finished. 'Wait for transmit to finish.' [664]
+%%  20402 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,RX, 1000000 ns): 'Wait for receive to finish.'. [715]
+%%  20402 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,RX, 1000000 ns)=> ETHERNET_VVC,1,RX finished. 'Wait for receive to finish.' [715]
+%% 
+%% 
+%%  20402 ns    Log    ID_LOG_HDR          TB seq.             Fetch data from i1 and check
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  20402 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(ETHERNET_VVC,1,RX, 662): 'Fetching received data.'. [716]
+%%  20402 ns    Log    ID_UVVM_CMD_RESULT  TB seq.(uvvm)       fetch_result(ETHERNET_VVC,1,RX, 662): Legal=>true, Result=>
+    MAC destination: x"000000000001"
+    MAC source:      x"000000000002"
+    payload length:  50
+    FCS error:  false [716]
+%%  20402 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verify MAC destination.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Verify MAC source.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(bool, false) => OK. Value was false. 'Verify FCS.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"1F") => OK. Value was x"1F". 'Verify payload, byte 0.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"4C") => OK. Value was x"4C". 'Verify payload, byte 1.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"01") => OK. Value was x"01". 'Verify payload, byte 2.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"9E") => OK. Value was x"9E". 'Verify payload, byte 3.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"DD") => OK. Value was x"DD". 'Verify payload, byte 4.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"FA") => OK. Value was x"FA". 'Verify payload, byte 5.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"F2") => OK. Value was x"F2". 'Verify payload, byte 6.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"43") => OK. Value was x"43". 'Verify payload, byte 7.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"27") => OK. Value was x"27". 'Verify payload, byte 8.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"F6") => OK. Value was x"F6". 'Verify payload, byte 9.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"3C") => OK. Value was x"3C". 'Verify payload, byte 10.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"49") => OK. Value was x"49". 'Verify payload, byte 11.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"39") => OK. Value was x"39". 'Verify payload, byte 12.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"8D") => OK. Value was x"8D". 'Verify payload, byte 13.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"49") => OK. Value was x"49". 'Verify payload, byte 14.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"2F") => OK. Value was x"2F". 'Verify payload, byte 15.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"0D") => OK. Value was x"0D". 'Verify payload, byte 16.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"69") => OK. Value was x"69". 'Verify payload, byte 17.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"B0") => OK. Value was x"B0". 'Verify payload, byte 18.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"8E") => OK. Value was x"8E". 'Verify payload, byte 19.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"F4") => OK. Value was x"F4". 'Verify payload, byte 20.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"4C") => OK. Value was x"4C". 'Verify payload, byte 21.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"51") => OK. Value was x"51". 'Verify payload, byte 22.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"72") => OK. Value was x"72". 'Verify payload, byte 23.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"3B") => OK. Value was x"3B". 'Verify payload, byte 24.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"9D") => OK. Value was x"9D". 'Verify payload, byte 25.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"57") => OK. Value was x"57". 'Verify payload, byte 26.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"33") => OK. Value was x"33". 'Verify payload, byte 27.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"85") => OK. Value was x"85". 'Verify payload, byte 28.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"FB") => OK. Value was x"FB". 'Verify payload, byte 29.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"4D") => OK. Value was x"4D". 'Verify payload, byte 30.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"D6") => OK. Value was x"D6". 'Verify payload, byte 31.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"77") => OK. Value was x"77". 'Verify payload, byte 32.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"47") => OK. Value was x"47". 'Verify payload, byte 33.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"3D") => OK. Value was x"3D". 'Verify payload, byte 34.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"8C") => OK. Value was x"8C". 'Verify payload, byte 35.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"58") => OK. Value was x"58". 'Verify payload, byte 36.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"81") => OK. Value was x"81". 'Verify payload, byte 37.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"34") => OK. Value was x"34". 'Verify payload, byte 38.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"41") => OK. Value was x"41". 'Verify payload, byte 39.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"E5") => OK. Value was x"E5". 'Verify payload, byte 40.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"8F") => OK. Value was x"8F". 'Verify payload, byte 41.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"48") => OK. Value was x"48". 'Verify payload, byte 42.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"3A") => OK. Value was x"3A". 'Verify payload, byte 43.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"12") => OK. Value was x"12". 'Verify payload, byte 44.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"E4") => OK. Value was x"E4". 'Verify payload, byte 45.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"E2") => OK. Value was x"E2". 'Verify payload, byte 46.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"C0") => OK. Value was x"C0". 'Verify payload, byte 47.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"19") => OK. Value was x"19". 'Verify payload, byte 48.'
+%%  20402 ns    Log    PASSED              TB seq.             check_value(slv, x"B0") => OK. Value was x"B0". 'Verify payload, byte 49.'
+%% 
+%% 
+%%  20402 ns    Log    ID_LOG_HDR          TB seq.             Transmit 44 bytes of data from i2 to i1 (use scoreboard)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  20402 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_transmit(ETHERNET_VVC,2,TX, MAC dest: x"000000000001", MAC src: x"000000000002", payload length: 44): 'Transmit a frame from instance 2.'. [717]
+%%  20402 ns    Log    ID_DATA             ETHERNET_VVC_SB,1   add_expected() => value: MAC dest: x"000000000001", MAC src: x"000000000002", payload length: 44.
+%%  20402 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_receive(ETHERNET_VVC,1,RX, TO_SB): 'Receive a frame at instance 1 and put it in the Scoreboard.'. [718]
+%%  20402 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,2,TX   ethernet_transmit(MAC dest: x"000000000001", MAC src: x"000000000002", payload length: 44). Start transmitting packet. 'Transmit a frame from instance 2.' [717]
+%%  20402 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,2          VVC is busy while executing an HVVC command
+%%  20402 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,1,RX   ethernet_receive(). Waiting for packet. 'Receive a frame at instance 1 and put it in the Scoreboard.' [718]
+%%  20402 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,1          VVC is busy while executing an HVVC command
+%%  20402 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,TX, 1000000 ns): 'Wait for transmit to finish.'. [720]
+%%  20402 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,TX, 1000000 ns) - Pending completion. 'Wait for transmit to finish.' [720]
+%%  20978 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,1,RX       Executor: Waiting for command
+%%  20978 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,2,TX       Executor: Waiting for command
+%%  20978 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,2,TX   ethernet_transmit(MAC dest: x"000000000001", MAC src: x"000000000002", payload length: 44). Finished transmitting packet. 'Transmit a frame from instance 2.' [717]
+%%  20978 ns    Log    ID_CMD_INTERPRETER  GMII_VVC,1,RX       Interpreter: Waiting for command
+%%  20978 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,1,RX   ethernet_receive(). Finished receiving packet. 'Receive a frame at instance 1 and put it in the Scoreboard.' [718]
+%%  20978 ns    Log    ID_DATA             ETHERNET_VVC_SB,1   check_received() => MATCH, for value: MAC dest: x"000000000001", MAC src: x"000000000002", payload length: 44.
+%%  21074 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,TX, 1000000 ns)=> ETHERNET_VVC,2,TX finished. 'Wait for transmit to finish.' [720]
+%%  21074 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,RX, 1000000 ns): 'Wait for receive to finish.'. [771]
+%%  21074 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,RX, 1000000 ns)=> ETHERNET_VVC,1,RX finished. 'Wait for receive to finish.' [771]
+%% 
+%% 
+%%  21074 ns    Log    ID_LOG_HDR          TB seq.             Transmit 45 bytes of data from i2 to i1 (use scoreboard)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  21074 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_transmit(ETHERNET_VVC,2,TX, MAC dest: x"000000000001", MAC src: x"000000000002", payload length: 45): 'Transmit a frame from instance 2.'. [772]
+%%  21074 ns    Log    ID_DATA             ETHERNET_VVC_SB,1   add_expected() => value: MAC dest: x"000000000001", MAC src: x"000000000002", payload length: 45.
+%%  21074 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_receive(ETHERNET_VVC,1,RX, TO_SB): 'Receive a frame at instance 1 and put it in the Scoreboard.'. [773]
+%%  21074 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,2,TX   ethernet_transmit(MAC dest: x"000000000001", MAC src: x"000000000002", payload length: 45). Start transmitting packet. 'Transmit a frame from instance 2.' [772]
+%%  21074 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,2          VVC is busy while executing an HVVC command
+%%  21074 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,1,RX   ethernet_receive(). Waiting for packet. 'Receive a frame at instance 1 and put it in the Scoreboard.' [773]
+%%  21074 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,1          VVC is busy while executing an HVVC command
+%%  21074 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,TX, 1000000 ns): 'Wait for transmit to finish.'. [775]
+%%  21074 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,TX, 1000000 ns) - Pending completion. 'Wait for transmit to finish.' [775]
+%%  21650 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,1,RX       Executor: Waiting for command
+%%  21650 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,2,TX       Executor: Waiting for command
+%%  21650 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,2,TX   ethernet_transmit(MAC dest: x"000000000001", MAC src: x"000000000002", payload length: 45). Finished transmitting packet. 'Transmit a frame from instance 2.' [772]
+%%  21650 ns    Log    ID_CMD_INTERPRETER  GMII_VVC,1,RX       Interpreter: Waiting for command
+%%  21650 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,1,RX   ethernet_receive(). Finished receiving packet. 'Receive a frame at instance 1 and put it in the Scoreboard.' [773]
+%%  21650 ns    Log    ID_DATA             ETHERNET_VVC_SB,1   check_received() => MATCH, for value: MAC dest: x"000000000001", MAC src: x"000000000002", payload length: 45.
+%%  21746 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,TX, 1000000 ns)=> ETHERNET_VVC,2,TX finished. 'Wait for transmit to finish.' [775]
+%%  21746 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,RX, 1000000 ns): 'Wait for receive to finish.'. [826]
+%%  21746 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,RX, 1000000 ns)=> ETHERNET_VVC,1,RX finished. 'Wait for receive to finish.' [826]
+%% 
+%% 
+%%  21746 ns    Log    ID_LOG_HDR          TB seq.             Transmit 46 bytes of data from i2 to i1 (use scoreboard)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  21746 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_transmit(ETHERNET_VVC,2,TX, MAC dest: x"000000000001", MAC src: x"000000000002", payload length: 46): 'Transmit a frame from instance 2.'. [827]
+%%  21746 ns    Log    ID_DATA             ETHERNET_VVC_SB,1   add_expected() => value: MAC dest: x"000000000001", MAC src: x"000000000002", payload length: 46.
+%%  21746 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_receive(ETHERNET_VVC,1,RX, TO_SB): 'Receive a frame at instance 1 and put it in the Scoreboard.'. [828]
+%%  21746 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,2,TX   ethernet_transmit(MAC dest: x"000000000001", MAC src: x"000000000002", payload length: 46). Start transmitting packet. 'Transmit a frame from instance 2.' [827]
+%%  21746 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,2          VVC is busy while executing an HVVC command
+%%  21746 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,1,RX   ethernet_receive(). Waiting for packet. 'Receive a frame at instance 1 and put it in the Scoreboard.' [828]
+%%  21746 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,1          VVC is busy while executing an HVVC command
+%%  21746 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,TX, 1000000 ns): 'Wait for transmit to finish.'. [830]
+%%  21746 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,TX, 1000000 ns) - Pending completion. 'Wait for transmit to finish.' [830]
+%%  22322 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,1,RX       Executor: Waiting for command
+%%  22322 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,2,TX       Executor: Waiting for command
+%%  22322 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,2,TX   ethernet_transmit(MAC dest: x"000000000001", MAC src: x"000000000002", payload length: 46). Finished transmitting packet. 'Transmit a frame from instance 2.' [827]
+%%  22322 ns    Log    ID_CMD_INTERPRETER  GMII_VVC,1,RX       Interpreter: Waiting for command
+%%  22322 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,1,RX   ethernet_receive(). Finished receiving packet. 'Receive a frame at instance 1 and put it in the Scoreboard.' [828]
+%%  22322 ns    Log    ID_DATA             ETHERNET_VVC_SB,1   check_received() => MATCH, for value: MAC dest: x"000000000001", MAC src: x"000000000002", payload length: 46.
+%%  22418 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,TX, 1000000 ns)=> ETHERNET_VVC,2,TX finished. 'Wait for transmit to finish.' [830]
+%%  22418 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,RX, 1000000 ns): 'Wait for receive to finish.'. [881]
+%%  22418 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,RX, 1000000 ns)=> ETHERNET_VVC,1,RX finished. 'Wait for receive to finish.' [881]
+%% 
+%% 
+%%  22418 ns    Log    ID_LOG_HDR          TB seq.             Transmit 47 bytes of data from i2 to i1 (use scoreboard)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  22418 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_transmit(ETHERNET_VVC,2,TX, MAC dest: x"000000000001", MAC src: x"000000000002", payload length: 47): 'Transmit a frame from instance 2.'. [882]
+%%  22418 ns    Log    ID_DATA             ETHERNET_VVC_SB,1   add_expected() => value: MAC dest: x"000000000001", MAC src: x"000000000002", payload length: 47.
+%%  22418 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_receive(ETHERNET_VVC,1,RX, TO_SB): 'Receive a frame at instance 1 and put it in the Scoreboard.'. [883]
+%%  22418 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,2,TX   ethernet_transmit(MAC dest: x"000000000001", MAC src: x"000000000002", payload length: 47). Start transmitting packet. 'Transmit a frame from instance 2.' [882]
+%%  22418 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,2          VVC is busy while executing an HVVC command
+%%  22418 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,1,RX   ethernet_receive(). Waiting for packet. 'Receive a frame at instance 1 and put it in the Scoreboard.' [883]
+%%  22418 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,1          VVC is busy while executing an HVVC command
+%%  22418 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,TX, 1000000 ns): 'Wait for transmit to finish.'. [885]
+%%  22418 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,TX, 1000000 ns) - Pending completion. 'Wait for transmit to finish.' [885]
+%%  23002 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,1,RX       Executor: Waiting for command
+%%  23002 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,2,TX       Executor: Waiting for command
+%%  23002 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,2,TX   ethernet_transmit(MAC dest: x"000000000001", MAC src: x"000000000002", payload length: 47). Finished transmitting packet. 'Transmit a frame from instance 2.' [882]
+%%  23002 ns    Log    ID_CMD_INTERPRETER  GMII_VVC,1,RX       Interpreter: Waiting for command
+%%  23002 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,1,RX   ethernet_receive(). Finished receiving packet. 'Receive a frame at instance 1 and put it in the Scoreboard.' [883]
+%%  23002 ns    Log    ID_DATA             ETHERNET_VVC_SB,1   check_received() => MATCH, for value: MAC dest: x"000000000001", MAC src: x"000000000002", payload length: 47.
+%%  23098 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,TX, 1000000 ns)=> ETHERNET_VVC,2,TX finished. 'Wait for transmit to finish.' [885]
+%%  23098 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,RX, 1000000 ns): 'Wait for receive to finish.'. [936]
+%%  23098 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,RX, 1000000 ns)=> ETHERNET_VVC,1,RX finished. 'Wait for receive to finish.' [936]
+%% 
+%% 
+%%  23098 ns    Log    ID_LOG_HDR          TB seq.             Transmit 48 bytes of data from i2 to i1 (use scoreboard)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  23098 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_transmit(ETHERNET_VVC,2,TX, MAC dest: x"000000000001", MAC src: x"000000000002", payload length: 48): 'Transmit a frame from instance 2.'. [937]
+%%  23098 ns    Log    ID_DATA             ETHERNET_VVC_SB,1   add_expected() => value: MAC dest: x"000000000001", MAC src: x"000000000002", payload length: 48.
+%%  23098 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_receive(ETHERNET_VVC,1,RX, TO_SB): 'Receive a frame at instance 1 and put it in the Scoreboard.'. [938]
+%%  23098 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,2,TX   ethernet_transmit(MAC dest: x"000000000001", MAC src: x"000000000002", payload length: 48). Start transmitting packet. 'Transmit a frame from instance 2.' [937]
+%%  23098 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,2          VVC is busy while executing an HVVC command
+%%  23098 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,1,RX   ethernet_receive(). Waiting for packet. 'Receive a frame at instance 1 and put it in the Scoreboard.' [938]
+%%  23098 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,1          VVC is busy while executing an HVVC command
+%%  23098 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,TX, 1000000 ns): 'Wait for transmit to finish.'. [940]
+%%  23098 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,TX, 1000000 ns) - Pending completion. 'Wait for transmit to finish.' [940]
+%%  23690 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,1,RX       Executor: Waiting for command
+%%  23690 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,2,TX       Executor: Waiting for command
+%%  23690 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,2,TX   ethernet_transmit(MAC dest: x"000000000001", MAC src: x"000000000002", payload length: 48). Finished transmitting packet. 'Transmit a frame from instance 2.' [937]
+%%  23690 ns    Log    ID_CMD_INTERPRETER  GMII_VVC,1,RX       Interpreter: Waiting for command
+%%  23690 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,1,RX   ethernet_receive(). Finished receiving packet. 'Receive a frame at instance 1 and put it in the Scoreboard.' [938]
+%%  23690 ns    Log    ID_DATA             ETHERNET_VVC_SB,1   check_received() => MATCH, for value: MAC dest: x"000000000001", MAC src: x"000000000002", payload length: 48.
+%%  23786 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,TX, 1000000 ns)=> ETHERNET_VVC,2,TX finished. 'Wait for transmit to finish.' [940]
+%%  23786 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,RX, 1000000 ns): 'Wait for receive to finish.'. [991]
+%%  23786 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,RX, 1000000 ns)=> ETHERNET_VVC,1,RX finished. 'Wait for receive to finish.' [991]
+%% 
+%% 
+%%  23786 ns    Log    ID_LOG_HDR          TB seq.             Verify insert_delay
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  23788 ns    Log    PASSED              TB seq.             await_change(sl, 0 ns, 6 ns) => OK. Condition occurred after 2 ns. 'Sync to clock.'
+%%  23792 ns    Log    PASSED              TB seq.             await_value(sl, 1, 0 ns, 6 ns) => OK. Condition occurred after 4 ns. 'Sync to clock.'
+%%  23792 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       insert_delay(ETHERNET_VVC,1,TX, 1000000 ps): 'Insert delay in instance 1.'. [992]
+%%  23792 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_transmit(ETHERNET_VVC,1,TX, MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 47): 'Transmit a frame from instance 1.'. [993]
+%%  23792 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_expect(ETHERNET_VVC,2,RX, MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 47): 'Expect a frame at instance 2.'. [994]
+%%  23792 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,2,RX   ethernet_expect(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 47) while executing ethernet_receive. Waiting for packet. 'Expect a frame at instance 2.' [994]
+%%  23792 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,2          VVC is busy while executing an HVVC command
+%%  24792 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,1,TX   ethernet_transmit(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 47). Start transmitting packet. 'Transmit a frame from instance 1.' [993]
+%%  24792 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,1          VVC is busy while executing an HVVC command
+%%  24796 ns    Log    PASSED              TB seq.             await_value(sl, 1, 0 ns, 1100 ns) => OK. Condition occurred after 1004 ns. 'Await ethernet transfer.'
+%%  24796 ns    Log    PASSED              TB seq.             check_value_in_range(time, 1 us, 1.01 us) => OK. Value was 1.004 us. 'Verify inserted delay.'
+%%  24796 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns): 'Wait for transmit to finish.'. [999]
+%%  24796 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns) - Pending completion. 'Wait for transmit to finish.' [999]
+%%  25378 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,1,TX       Executor: Waiting for command
+%%  25378 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,2,RX       Executor: Waiting for command
+%%  25378 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,1,TX   ethernet_transmit(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 47). Finished transmitting packet. 'Transmit a frame from instance 1.' [993]
+%%  25378 ns    Log    ID_CMD_INTERPRETER  GMII_VVC,2,RX       Interpreter: Waiting for command
+%%  25378 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,2,RX   ethernet_expect(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 47) => OK. 'Expect a frame at instance 2.' [994]
+%%  25474 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns)=> ETHERNET_VVC,1,TX finished. 'Wait for transmit to finish.' [999]
+%%  25474 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,RX, 1000000 ns): 'Wait for expect to finish.'. [1047]
+%%  25474 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,RX, 1000000 ns)=> ETHERNET_VVC,2,RX finished. 'Wait for expect to finish.' [1047]
+%% 
+%% 
+%%  25474 ns    Log    ID_LOG_HDR          TB seq.             Transmit a frame with the wrong MAC destination address
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  25474 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_transmit(ETHERNET_VVC,1,TX, MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 46): 'Transmit a frame from instance 1.'. [1048]
+%%  25474 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_expect(ETHERNET_VVC,2,RX, MAC dest: x"0000000000F2", MAC src: x"000000000001", payload length: 46): 'Expect a frame at instance 2.'. [1049]
+%%  25474 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,1,TX   ethernet_transmit(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 46). Start transmitting packet. 'Transmit a frame from instance 1.' [1048]
+%%  25474 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,1          VVC is busy while executing an HVVC command
+%%  25474 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,2,RX   ethernet_expect(MAC dest: x"0000000000F2", MAC src: x"000000000001", payload length: 46) while executing ethernet_receive. Waiting for packet. 'Expect a frame at instance 2.' [1049]
+%%  25474 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,2          VVC is busy while executing an HVVC command
+%%  25474 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns): 'Wait for transmit to finish.'. [1051]
+%%  25474 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns) - Pending completion. 'Wait for transmit to finish.' [1051]
+%%  26050 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,1,TX       Executor: Waiting for command
+%%  26050 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,2,RX       Executor: Waiting for command
+%%  26050 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,1,TX   ethernet_transmit(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 46). Finished transmitting packet. 'Transmit a frame from instance 1.' [1048]
+%%  26050 ns    Log    ID_CMD_INTERPRETER  GMII_VVC,2,RX       Interpreter: Waiting for command
+%%  26050 ns    Alert  ERROR               ETHERNET_VVC,2,RX   ethernet_expect(MAC dest: x"0000000000F2", MAC src: x"000000000001", payload length: 46)(u, x"0000000000F2") => Failed. Value was x"000000000002". Expected x"0000000000F2". 'Verify MAC destination. 'Expect a frame at instance 2.' [1049]'
+%%  26146 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns)=> ETHERNET_VVC,1,TX finished. 'Wait for transmit to finish.' [1051]
+%%  26146 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,RX, 1000000 ns): 'Wait for expect to finish.'. [1102]
+%%  26146 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,RX, 1000000 ns)=> ETHERNET_VVC,2,RX finished. 'Wait for expect to finish.' [1102]
+%% 
+%% 
+%%  26146 ns    Log    ID_LOG_HDR          TB seq.             Transmit a frame with the wrong MAC source address
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  26146 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_transmit(ETHERNET_VVC,1,TX, MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 46): 'Transmit a frame from instance 1.'. [1103]
+%%  26146 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_expect(ETHERNET_VVC,2,RX, MAC dest: x"000000000002", MAC src: x"0000000000F1", payload length: 46): 'Expect a frame at instance 2.'. [1104]
+%%  26146 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,1,TX   ethernet_transmit(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 46). Start transmitting packet. 'Transmit a frame from instance 1.' [1103]
+%%  26146 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,1          VVC is busy while executing an HVVC command
+%%  26146 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,2,RX   ethernet_expect(MAC dest: x"000000000002", MAC src: x"0000000000F1", payload length: 46) while executing ethernet_receive. Waiting for packet. 'Expect a frame at instance 2.' [1104]
+%%  26146 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,2          VVC is busy while executing an HVVC command
+%%  26146 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns): 'Wait for transmit to finish.'. [1106]
+%%  26146 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns) - Pending completion. 'Wait for transmit to finish.' [1106]
+%%  26722 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,1,TX       Executor: Waiting for command
+%%  26722 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,2,RX       Executor: Waiting for command
+%%  26722 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,1,TX   ethernet_transmit(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 46). Finished transmitting packet. 'Transmit a frame from instance 1.' [1103]
+%%  26722 ns    Log    ID_CMD_INTERPRETER  GMII_VVC,2,RX       Interpreter: Waiting for command
+%%  26722 ns    Alert  ERROR               ETHERNET_VVC,2,RX   ethernet_expect(MAC dest: x"000000000002", MAC src: x"0000000000F1", payload length: 46)(u, x"0000000000F1") => Failed. Value was x"000000000001". Expected x"0000000000F1". 'Verify MAC source. 'Expect a frame at instance 2.' [1104]'
+%%  26818 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns)=> ETHERNET_VVC,1,TX finished. 'Wait for transmit to finish.' [1106]
+%%  26818 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,RX, 1000000 ns): 'Wait for expect to finish.'. [1157]
+%%  26818 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,RX, 1000000 ns)=> ETHERNET_VVC,2,RX finished. 'Wait for expect to finish.' [1157]
+%% 
+%% 
+%%  26818 ns    Log    ID_LOG_HDR          TB seq.             Transmit a frame with the wrong payload length
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  26818 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_transmit(ETHERNET_VVC,1,TX, MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 46): 'Transmit a frame from instance 1.'. [1158]
+%%  26818 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_expect(ETHERNET_VVC,2,RX, MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 47): 'Expect a frame at instance 2.'. [1159]
+%%  26818 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,1,TX   ethernet_transmit(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 46). Start transmitting packet. 'Transmit a frame from instance 1.' [1158]
+%%  26818 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,1          VVC is busy while executing an HVVC command
+%%  26818 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,2,RX   ethernet_expect(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 47) while executing ethernet_receive. Waiting for packet. 'Expect a frame at instance 2.' [1159]
+%%  26818 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,2          VVC is busy while executing an HVVC command
+%%  26818 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns): 'Wait for transmit to finish.'. [1161]
+%%  26818 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns) - Pending completion. 'Wait for transmit to finish.' [1161]
+%%  27394 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,1,TX       Executor: Waiting for command
+%%  27394 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,2,RX       Executor: Waiting for command
+%%  27394 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,1,TX   ethernet_transmit(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 46). Finished transmitting packet. 'Transmit a frame from instance 1.' [1158]
+%%  27394 ns    Log    ID_CMD_INTERPRETER  GMII_VVC,2,RX       Interpreter: Waiting for command
+%%  27394 ns    Alert  ERROR               ETHERNET_VVC,2,RX   ethernet_expect(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 47)(int, 47) => Failed. Value was 46. Expected 47. 'Verify payload length. 'Expect a frame at instance 2.' [1159]'
+%%  27490 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns)=> ETHERNET_VVC,1,TX finished. 'Wait for transmit to finish.' [1161]
+%%  27490 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,RX, 1000000 ns): 'Wait for expect to finish.'. [1212]
+%%  27490 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,RX, 1000000 ns)=> ETHERNET_VVC,2,RX finished. 'Wait for expect to finish.' [1212]
+%% 
+%% 
+%%  27490 ns    Log    ID_LOG_HDR          TB seq.             Transmit a frame with the wrong payload
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  27490 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_transmit(ETHERNET_VVC,1,TX, MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 1): 'Transmit a frame from instance 1.'. [1213]
+%%  27490 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       ethernet_expect(ETHERNET_VVC,2,RX, MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 1): 'Expect a frame at instance 2.'. [1214]
+%%  27490 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,1,TX   ethernet_transmit(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 1). Start transmitting packet. 'Transmit a frame from instance 1.' [1213]
+%%  27490 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,1          VVC is busy while executing an HVVC command
+%%  27490 ns    Log    ID_PACKET_INITIATE  ETHERNET_VVC,2,RX   ethernet_expect(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 1) while executing ethernet_receive. Waiting for packet. 'Expect a frame at instance 2.' [1214]
+%%  27490 ns    Log    ID_NEW_HVVC_CMD_SE  GMII_VVC,2          VVC is busy while executing an HVVC command
+%%  27490 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns): 'Wait for transmit to finish.'. [1216]
+%%  27490 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns) - Pending completion. 'Wait for transmit to finish.' [1216]
+%%  28066 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,1,TX       Executor: Waiting for command
+%%  28066 ns    Log    ID_CMD_EXECUTOR_WA  GMII_VVC,2,RX       Executor: Waiting for command
+%%  28066 ns    Log    ID_PACKET_COMPLETE  ETHERNET_VVC,1,TX   ethernet_transmit(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 1). Finished transmitting packet. 'Transmit a frame from instance 1.' [1213]
+%%  28066 ns    Log    ID_CMD_INTERPRETER  GMII_VVC,2,RX       Interpreter: Waiting for command
+%%  28066 ns    Alert  ERROR               ETHERNET_VVC,2,RX   ethernet_expect(MAC dest: x"000000000002", MAC src: x"000000000001", payload length: 1)(slv, x"2E") => Failed. Value was x"28". Expected x"2E". 'Verify payload byte 0. 'Expect a frame at instance 2.' [1214]'
+%%  28162 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,1,TX, 1000000 ns)=> ETHERNET_VVC,1,TX finished. 'Wait for transmit to finish.' [1216]
+%%  28162 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,RX, 1000000 ns): 'Wait for expect to finish.'. [1267]
+%%  28162 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(ETHERNET_VVC,2,RX, 1000000 ns)=> ETHERNET_VVC,2,RX finished. 'Wait for expect to finish.' [1267]
+%%      
+%%      =======================================================================================================================================================================
+%%      29162 ns *** SCOREBOARD COUNTERS SUMMARY: ETHERNET_VVC_SB ***                                                                                                          
+%%      =======================================================================================================================================================================
+%%                       ENTERED         PENDING          MATCH         MISMATCH          DROP          INITIAL_GARBAGE         DELETE         OVERDUE_CHECK                   
+%%      instance:   1       5               0               5               0               0                  0                   0                 0                         
+%%      instance:   2       0               0               0               0               0                  0                   0                 0                         
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%%  29163 ns    Log    ID_AWAIT_UVVM_COMP  TB seq.             await_uvvm_completion() => OK. All VVCs are inactive. Condition occurred after 1 ns
+%%  29163 ns    Log    ID_AWAIT_UVVM_COMP  TB seq.             await_uvvm_completion()() => OK. All UVVM scoreboards are empty. Condition occurred after 0 ns
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%  29163 ns    DONE   PASSED   ethernet_gmii_tb  Passed: 57  Affirmations Checked: 61
+%%    Expected      Failures: 0  Errors: -4  Warnings: 0  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 4  Warnings: 0  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%%  29163 ns    Log    ID_LOG_HDR          TB seq.             SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

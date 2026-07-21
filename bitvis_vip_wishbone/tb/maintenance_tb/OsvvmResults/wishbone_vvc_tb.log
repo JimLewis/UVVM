@@ -1,0 +1,380 @@
+%%      0 ns    Log    ID_CONSTRUCTOR      WISHBONE_VVC,0      VVC instantiated.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  WISHBONE_VVC,0      Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  WISHBONE_VVC,0      Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CMD_INTERPRETER  WISHBONE_VVC,0      Interpreter: Waiting for command
+%%      0 ns    Log    ID_CTRL             WISHBONE_VVC_SB,0   enable() => SB enabled. 'WISHBONE VVC SB Enabled'
+%%      0 ns    Log    ID_CTRL             WISHBONE_VVC_SB,0   config() => config applied to SB.
+%%      0 ns    Log    ID_CTRL             WISHBONE_VVC_SB,0   enable_log_msg() => message id id_data enabled.
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_UVVM_CMD_ACK).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_UVVM_CMD_RESULT).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_AWAIT_COMPLETION).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_AWAIT_COMPLETION_LIST).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_AWAIT_COMPLETION_WAIT).
+%%      0 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(WISHBONE_VVC,0, ALL_MESSAGES):. [1]
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  WISHBONE_VVC,0      Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  WISHBONE_VVC,0      disable_log_msg(WISHBONE_VVC,0, ALL_MESSAGES). Command received  [1]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     WISHBONE_VVC,0      disable_log_msg(ALL_MESSAGES). ' [1]'
+%%      0 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       enable_log_msg(WISHBONE_VVC,0, ID_BFM):. [2]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     WISHBONE_VVC,0      enable_log_msg(ID_BFM). ' [2]'
+%%      0 ns    Log    ID_CTRL             WISHBONE_VVC_SB,0   disable_log_msg() => message id id_data disabled.
+%% 
+%% 
+%% ============================================================================================================================================================================
+%%      0 ns    Log    ID_LOG_HDR_LARGE    TB seq.             Start Simulation of Wishbone
+%% ============================================================================================================================================================================
+%% 
+%% 
+%%     30 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       Test of simple write and check
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%     30 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Send continuous write commands
+%%     30 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0001"): 'Writing to FIFO'. [3]
+%%     30 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0002"): 'Writing to FIFO'. [4]
+%%     30 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0003"): 'Writing to FIFO'. [5]
+%%     30 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0004"): 'Writing to FIFO'. [6]
+%%     30 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0005"): 'Writing to FIFO'. [7]
+%%     30 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0006"): 'Writing to FIFO'. [8]
+%%     30 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0007"): 'Writing to FIFO'. [9]
+%%     30 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0008"): 'Writing to FIFO'. [10]
+%%   42.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0001") completed. ' 'Writing to FIFO'  [3]'
+%%   52.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0002") completed. ' 'Writing to FIFO'  [4]'
+%%   62.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0003") completed. ' 'Writing to FIFO'  [5]'
+%%   72.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0004") completed. ' 'Writing to FIFO'  [6]'
+%%   82.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0005") completed. ' 'Writing to FIFO'  [7]'
+%%   92.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0006") completed. ' 'Writing to FIFO'  [8]'
+%%  102.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0007") completed. ' 'Writing to FIFO'  [9]'
+%%  112.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0008") completed. ' 'Writing to FIFO'  [10]'
+%%  112.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(WISHBONE_VVC,0, 1000 ns)=> WISHBONE_VVC,0 finished. 'Awaiting execution' [11]
+%%  112.5 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Send continuous check commands
+%%  112.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"0", x"0001"): 'Checking data from FIFO'. [12]
+%%  112.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"0", x"0002"): 'Checking data from FIFO'. [13]
+%%  112.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"0", x"0003"): 'Checking data from FIFO'. [14]
+%%  112.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"0", x"0004"): 'Checking data from FIFO'. [15]
+%%  112.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"0", x"0005"): 'Checking data from FIFO'. [16]
+%%  112.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"0", x"0006"): 'Checking data from FIFO'. [17]
+%%  112.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"0", x"0007"): 'Checking data from FIFO'. [18]
+%%  112.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"0", x"0008"): 'Checking data from FIFO'. [19]
+%%  122.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"0", x"0001")=> OK, received data = x"1". ' 'Checking data from FIFO'  [12]'
+%%  132.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"0", x"0002")=> OK, received data = x"2". ' 'Checking data from FIFO'  [13]'
+%%  142.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"0", x"0003")=> OK, received data = x"3". ' 'Checking data from FIFO'  [14]'
+%%  152.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"0", x"0004")=> OK, received data = x"4". ' 'Checking data from FIFO'  [15]'
+%%  162.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"0", x"0005")=> OK, received data = x"5". ' 'Checking data from FIFO'  [16]'
+%%  172.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"0", x"0006")=> OK, received data = x"6". ' 'Checking data from FIFO'  [17]'
+%%  182.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"0", x"0007")=> OK, received data = x"7". ' 'Checking data from FIFO'  [18]'
+%%  192.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"0", x"0008")=> OK, received data = x"8". ' 'Checking data from FIFO'  [19]'
+%%  192.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(WISHBONE_VVC,0, 1000 ns)=> WISHBONE_VVC,0 finished. 'Awaiting execution' [20]
+%%  192.5 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Send interleaved write and check commands
+%%  192.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0001"): 'Writing to FIFO'. [21]
+%%  192.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"0", x"0001"): 'Checking data from FIFO'. [22]
+%%  192.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0002"): 'Writing to FIFO'. [23]
+%%  192.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"0", x"0002"): 'Checking data from FIFO'. [24]
+%%  192.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0003"): 'Writing to FIFO'. [25]
+%%  192.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"0", x"0003"): 'Checking data from FIFO'. [26]
+%%  192.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0004"): 'Writing to FIFO'. [27]
+%%  192.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"0", x"0004"): 'Checking data from FIFO'. [28]
+%%  192.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0005"): 'Writing to FIFO'. [29]
+%%  192.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"0", x"0005"): 'Checking data from FIFO'. [30]
+%%  192.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0006"): 'Writing to FIFO'. [31]
+%%  192.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"0", x"0006"): 'Checking data from FIFO'. [32]
+%%  192.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0007"): 'Writing to FIFO'. [33]
+%%  192.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"0", x"0007"): 'Checking data from FIFO'. [34]
+%%  192.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0008"): 'Writing to FIFO'. [35]
+%%  192.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"0", x"0008"): 'Checking data from FIFO'. [36]
+%%  202.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0001") completed. ' 'Writing to FIFO'  [21]'
+%%  212.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"0", x"0001")=> OK, received data = x"1". ' 'Checking data from FIFO'  [22]'
+%%  222.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0002") completed. ' 'Writing to FIFO'  [23]'
+%%  232.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"0", x"0002")=> OK, received data = x"2". ' 'Checking data from FIFO'  [24]'
+%%  242.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0003") completed. ' 'Writing to FIFO'  [25]'
+%%  252.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"0", x"0003")=> OK, received data = x"3". ' 'Checking data from FIFO'  [26]'
+%%  262.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0004") completed. ' 'Writing to FIFO'  [27]'
+%%  272.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"0", x"0004")=> OK, received data = x"4". ' 'Checking data from FIFO'  [28]'
+%%  282.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0005") completed. ' 'Writing to FIFO'  [29]'
+%%  292.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"0", x"0005")=> OK, received data = x"5". ' 'Checking data from FIFO'  [30]'
+%%  302.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0006") completed. ' 'Writing to FIFO'  [31]'
+%%  312.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"0", x"0006")=> OK, received data = x"6". ' 'Checking data from FIFO'  [32]'
+%%  322.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0007") completed. ' 'Writing to FIFO'  [33]'
+%%  332.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"0", x"0007")=> OK, received data = x"7". ' 'Checking data from FIFO'  [34]'
+%%  342.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0008") completed. ' 'Writing to FIFO'  [35]'
+%%  352.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"0", x"0008")=> OK, received data = x"8". ' 'Checking data from FIFO'  [36]'
+%%  352.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(WISHBONE_VVC,0, 1000 ns)=> WISHBONE_VVC,0 finished. 'Awaiting execution' [37]
+%% 
+%% 
+%%  452.5 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       Test of simple write and read + fetch_result
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  452.5 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Send write and read commands
+%%  452.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0001"): 'Writing to FIFO'. [38]
+%%  452.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"0"): 'Reading data from FIFO'. [39]
+%%  462.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0001") completed. ' 'Writing to FIFO'  [38]'
+%%  472.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"0")=> x"1". ' 'Reading data from FIFO'  [39]'
+%%  472.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(WISHBONE_VVC,0, 39, 100 ns)=> WISHBONE_VVC,0 finished. 'Waiting for read to finish' [40]
+%%  472.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 39): 'Fetching read-result'. [41]
+%%  472.5 ns    Log    PASSED              TB seq.             check_value(slv, x"0001") => OK. Value was x"0001". 'Checking fetched data'
+%%  472.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0002"): 'Writing to FIFO'. [42]
+%%  472.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"0"): 'Reading data from FIFO'. [43]
+%%  482.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0002") completed. ' 'Writing to FIFO'  [42]'
+%%  492.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"0")=> x"2". ' 'Reading data from FIFO'  [43]'
+%%  492.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(WISHBONE_VVC,0, 43, 100 ns)=> WISHBONE_VVC,0 finished. 'Waiting for read to finish' [44]
+%%  492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 43): 'Fetching read-result'. [45]
+%%  492.5 ns    Log    PASSED              TB seq.             check_value(slv, x"0002") => OK. Value was x"0002". 'Checking fetched data'
+%%  492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0003"): 'Writing to FIFO'. [46]
+%%  492.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"0"): 'Reading data from FIFO'. [47]
+%%  502.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0003") completed. ' 'Writing to FIFO'  [46]'
+%%  512.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"0")=> x"3". ' 'Reading data from FIFO'  [47]'
+%%  512.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(WISHBONE_VVC,0, 47, 100 ns)=> WISHBONE_VVC,0 finished. 'Waiting for read to finish' [48]
+%%  512.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 47): 'Fetching read-result'. [49]
+%%  512.5 ns    Log    PASSED              TB seq.             check_value(slv, x"0003") => OK. Value was x"0003". 'Checking fetched data'
+%%  512.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0004"): 'Writing to FIFO'. [50]
+%%  512.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"0"): 'Reading data from FIFO'. [51]
+%%  522.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0004") completed. ' 'Writing to FIFO'  [50]'
+%%  532.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"0")=> x"4". ' 'Reading data from FIFO'  [51]'
+%%  532.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(WISHBONE_VVC,0, 51, 100 ns)=> WISHBONE_VVC,0 finished. 'Waiting for read to finish' [52]
+%%  532.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 51): 'Fetching read-result'. [53]
+%%  532.5 ns    Log    PASSED              TB seq.             check_value(slv, x"0004") => OK. Value was x"0004". 'Checking fetched data'
+%%  532.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0005"): 'Writing to FIFO'. [54]
+%%  532.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"0"): 'Reading data from FIFO'. [55]
+%%  542.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0005") completed. ' 'Writing to FIFO'  [54]'
+%%  552.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"0")=> x"5". ' 'Reading data from FIFO'  [55]'
+%%  552.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(WISHBONE_VVC,0, 55, 100 ns)=> WISHBONE_VVC,0 finished. 'Waiting for read to finish' [56]
+%%  552.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 55): 'Fetching read-result'. [57]
+%%  552.5 ns    Log    PASSED              TB seq.             check_value(slv, x"0005") => OK. Value was x"0005". 'Checking fetched data'
+%%  552.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0006"): 'Writing to FIFO'. [58]
+%%  552.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"0"): 'Reading data from FIFO'. [59]
+%%  562.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0006") completed. ' 'Writing to FIFO'  [58]'
+%%  572.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"0")=> x"6". ' 'Reading data from FIFO'  [59]'
+%%  572.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(WISHBONE_VVC,0, 59, 100 ns)=> WISHBONE_VVC,0 finished. 'Waiting for read to finish' [60]
+%%  572.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 59): 'Fetching read-result'. [61]
+%%  572.5 ns    Log    PASSED              TB seq.             check_value(slv, x"0006") => OK. Value was x"0006". 'Checking fetched data'
+%%  572.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0007"): 'Writing to FIFO'. [62]
+%%  572.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"0"): 'Reading data from FIFO'. [63]
+%%  582.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0007") completed. ' 'Writing to FIFO'  [62]'
+%%  592.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"0")=> x"7". ' 'Reading data from FIFO'  [63]'
+%%  592.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(WISHBONE_VVC,0, 63, 100 ns)=> WISHBONE_VVC,0 finished. 'Waiting for read to finish' [64]
+%%  592.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 63): 'Fetching read-result'. [65]
+%%  592.5 ns    Log    PASSED              TB seq.             check_value(slv, x"0007") => OK. Value was x"0007". 'Checking fetched data'
+%%  592.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0008"): 'Writing to FIFO'. [66]
+%%  592.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"0"): 'Reading data from FIFO'. [67]
+%%  602.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0008") completed. ' 'Writing to FIFO'  [66]'
+%%  612.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"0")=> x"8". ' 'Reading data from FIFO'  [67]'
+%%  612.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(WISHBONE_VVC,0, 67, 100 ns)=> WISHBONE_VVC,0 finished. 'Waiting for read to finish' [68]
+%%  612.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 67): 'Fetching read-result'. [69]
+%%  612.5 ns    Log    PASSED              TB seq.             check_value(slv, x"0008") => OK. Value was x"0008". 'Checking fetched data'
+%% 
+%% 
+%%  712.5 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       Test of different addresses
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  712.5 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Check the FIFO version
+%%  712.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"2", x"0001"): 'Checking C_ADDR_VERSION'. [70]
+%%  722.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"2", x"0001")=> OK, received data = x"1". ' 'Checking C_ADDR_VERSION'  [70]'
+%%  722.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(WISHBONE_VVC,0, 1000 ns)=> WISHBONE_VVC,0 finished. 'Awaiting execution' [71]
+%%  722.5 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Write 3 words to the FIFO
+%%  722.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"1447"): 'Writing to FIFO'. [72]
+%%  722.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"253B"): 'Writing to FIFO'. [73]
+%%  722.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"2293"): 'Writing to FIFO'. [74]
+%%  732.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"1447") completed. ' 'Writing to FIFO'  [72]'
+%%  742.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"253B") completed. ' 'Writing to FIFO'  [73]'
+%%  752.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"2293") completed. ' 'Writing to FIFO'  [74]'
+%%  752.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(WISHBONE_VVC,0, 1000 ns)=> WISHBONE_VVC,0 finished. 'Awaiting execution' [75]
+%%  752.5 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Check the FIFO status
+%%  752.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"1", x"0003"): 'Checking C_ADDR_STATUS'. [76]
+%%  762.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"1", x"0003")=> OK, received data = x"3". ' 'Checking C_ADDR_STATUS'  [76]'
+%%  762.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(WISHBONE_VVC,0, 1000 ns)=> WISHBONE_VVC,0 finished. 'Awaiting execution' [77]
+%%  762.5 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Read 3 words from the FIFO
+%%  762.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"0"): 'Reading data from FIFO'. [78]
+%%  762.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"0"): 'Reading data from FIFO'. [79]
+%%  762.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"0"): 'Reading data from FIFO'. [80]
+%%  762.5 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Check the FIFO status
+%%  762.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"1", x"0000"): 'Checking C_ADDR_STATUS'. [81]
+%%  772.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"0")=> x"1447". ' 'Reading data from FIFO'  [78]'
+%%  782.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"0")=> x"253B". ' 'Reading data from FIFO'  [79]'
+%%  792.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"0")=> x"2293". ' 'Reading data from FIFO'  [80]'
+%%  802.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"1", x"0000")=> OK, received data = x"0000". ' 'Checking C_ADDR_STATUS'  [81]'
+%%  802.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(WISHBONE_VVC,0, 1000 ns)=> WISHBONE_VVC,0 finished. 'Awaiting execution' [82]
+%% 
+%% 
+%%  902.5 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       Test of bfm_sync = SYNC_WITH_SETUP_AND_HOLD
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  902.5 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Send continuous write commands
+%%  902.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0001"): 'Writing to FIFO'. [83]
+%%  902.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0002"): 'Writing to FIFO'. [84]
+%%  902.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0003"): 'Writing to FIFO'. [85]
+%%  902.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0004"): 'Writing to FIFO'. [86]
+%%  902.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0005"): 'Writing to FIFO'. [87]
+%%  902.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0006"): 'Writing to FIFO'. [88]
+%%  902.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0007"): 'Writing to FIFO'. [89]
+%%  902.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0008"): 'Writing to FIFO'. [90]
+%%  912.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0001") completed. ' 'Writing to FIFO'  [83]'
+%%  922.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0002") completed. ' 'Writing to FIFO'  [84]'
+%%  932.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0003") completed. ' 'Writing to FIFO'  [85]'
+%%  942.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0004") completed. ' 'Writing to FIFO'  [86]'
+%%  952.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0005") completed. ' 'Writing to FIFO'  [87]'
+%%  962.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0006") completed. ' 'Writing to FIFO'  [88]'
+%%  972.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0007") completed. ' 'Writing to FIFO'  [89]'
+%%  982.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0008") completed. ' 'Writing to FIFO'  [90]'
+%%  982.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(WISHBONE_VVC,0, 1000 ns)=> WISHBONE_VVC,0 finished. 'Awaiting execution' [91]
+%%  982.5 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Send continuous check commands
+%%  982.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"0", x"0001"): 'Checking data from FIFO'. [92]
+%%  982.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"0", x"0002"): 'Checking data from FIFO'. [93]
+%%  982.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"0", x"0003"): 'Checking data from FIFO'. [94]
+%%  982.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"0", x"0004"): 'Checking data from FIFO'. [95]
+%%  982.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"0", x"0005"): 'Checking data from FIFO'. [96]
+%%  982.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"0", x"0006"): 'Checking data from FIFO'. [97]
+%%  982.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"0", x"0007"): 'Checking data from FIFO'. [98]
+%%  982.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"0", x"0008"): 'Checking data from FIFO'. [99]
+%%  992.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"0", x"0001")=> OK, received data = x"1". ' 'Checking data from FIFO'  [92]'
+%% 1002.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"0", x"0002")=> OK, received data = x"2". ' 'Checking data from FIFO'  [93]'
+%% 1012.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"0", x"0003")=> OK, received data = x"3". ' 'Checking data from FIFO'  [94]'
+%% 1022.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"0", x"0004")=> OK, received data = x"4". ' 'Checking data from FIFO'  [95]'
+%% 1032.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"0", x"0005")=> OK, received data = x"5". ' 'Checking data from FIFO'  [96]'
+%% 1042.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"0", x"0006")=> OK, received data = x"6". ' 'Checking data from FIFO'  [97]'
+%% 1052.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"0", x"0007")=> OK, received data = x"7". ' 'Checking data from FIFO'  [98]'
+%% 1062.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"0", x"0008")=> OK, received data = x"8". ' 'Checking data from FIFO'  [99]'
+%% 1062.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(WISHBONE_VVC,0, 1000 ns)=> WISHBONE_VVC,0 finished. 'Awaiting execution' [100]
+%% 1062.5 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Send interleaved write and check commands
+%% 1062.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0001"): 'Writing to FIFO'. [101]
+%% 1062.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"0", x"0001"): 'Checking data from FIFO'. [102]
+%% 1062.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0002"): 'Writing to FIFO'. [103]
+%% 1062.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"0", x"0002"): 'Checking data from FIFO'. [104]
+%% 1062.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0003"): 'Writing to FIFO'. [105]
+%% 1062.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"0", x"0003"): 'Checking data from FIFO'. [106]
+%% 1062.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0004"): 'Writing to FIFO'. [107]
+%% 1062.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"0", x"0004"): 'Checking data from FIFO'. [108]
+%% 1062.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0005"): 'Writing to FIFO'. [109]
+%% 1062.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"0", x"0005"): 'Checking data from FIFO'. [110]
+%% 1062.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0006"): 'Writing to FIFO'. [111]
+%% 1062.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"0", x"0006"): 'Checking data from FIFO'. [112]
+%% 1062.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0007"): 'Writing to FIFO'. [113]
+%% 1062.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"0", x"0007"): 'Checking data from FIFO'. [114]
+%% 1062.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0008"): 'Writing to FIFO'. [115]
+%% 1062.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"0", x"0008"): 'Checking data from FIFO'. [116]
+%% 1072.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0001") completed. ' 'Writing to FIFO'  [101]'
+%% 1082.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"0", x"0001")=> OK, received data = x"1". ' 'Checking data from FIFO'  [102]'
+%% 1092.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0002") completed. ' 'Writing to FIFO'  [103]'
+%% 1102.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"0", x"0002")=> OK, received data = x"2". ' 'Checking data from FIFO'  [104]'
+%% 1112.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0003") completed. ' 'Writing to FIFO'  [105]'
+%% 1122.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"0", x"0003")=> OK, received data = x"3". ' 'Checking data from FIFO'  [106]'
+%% 1132.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0004") completed. ' 'Writing to FIFO'  [107]'
+%% 1142.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"0", x"0004")=> OK, received data = x"4". ' 'Checking data from FIFO'  [108]'
+%% 1152.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0005") completed. ' 'Writing to FIFO'  [109]'
+%% 1162.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"0", x"0005")=> OK, received data = x"5". ' 'Checking data from FIFO'  [110]'
+%% 1172.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0006") completed. ' 'Writing to FIFO'  [111]'
+%% 1182.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"0", x"0006")=> OK, received data = x"6". ' 'Checking data from FIFO'  [112]'
+%% 1192.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0007") completed. ' 'Writing to FIFO'  [113]'
+%% 1202.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"0", x"0007")=> OK, received data = x"7". ' 'Checking data from FIFO'  [114]'
+%% 1212.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0008") completed. ' 'Writing to FIFO'  [115]'
+%% 1222.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"0", x"0008")=> OK, received data = x"8". ' 'Checking data from FIFO'  [116]'
+%% 1222.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(WISHBONE_VVC,0, 1000 ns)=> WISHBONE_VVC,0 finished. 'Awaiting execution' [117]
+%% 
+%% 
+%% 1322.5 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       Test of scoreboard
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 1322.5 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Send write commands and add expected values to Scoreboard
+%% 1322.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0001"): 'Writing to FIFO'. [118]
+%% 1322.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0002"): 'Writing to FIFO'. [119]
+%% 1322.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0003"): 'Writing to FIFO'. [120]
+%% 1322.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0004"): 'Writing to FIFO'. [121]
+%% 1322.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0005"): 'Writing to FIFO'. [122]
+%% 1322.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0006"): 'Writing to FIFO'. [123]
+%% 1322.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0007"): 'Writing to FIFO'. [124]
+%% 1322.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"0008"): 'Writing to FIFO'. [125]
+%% 1332.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0001") completed. ' 'Writing to FIFO'  [118]'
+%% 1342.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0002") completed. ' 'Writing to FIFO'  [119]'
+%% 1352.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0003") completed. ' 'Writing to FIFO'  [120]'
+%% 1362.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0004") completed. ' 'Writing to FIFO'  [121]'
+%% 1372.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0005") completed. ' 'Writing to FIFO'  [122]'
+%% 1382.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0006") completed. ' 'Writing to FIFO'  [123]'
+%% 1392.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0007") completed. ' 'Writing to FIFO'  [124]'
+%% 1402.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"0008") completed. ' 'Writing to FIFO'  [125]'
+%% 1402.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(WISHBONE_VVC,0, 1000 ns)=> WISHBONE_VVC,0 finished. 'Awaiting execution' [126]
+%% 1402.5 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Send read commands and compare data in the Scoreboard
+%% 1402.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"0", TO_SB): 'Reading data from FIFO and storing it in the Scoreboard'. [127]
+%% 1402.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"0", TO_SB): 'Reading data from FIFO and storing it in the Scoreboard'. [128]
+%% 1402.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"0", TO_SB): 'Reading data from FIFO and storing it in the Scoreboard'. [129]
+%% 1402.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"0", TO_SB): 'Reading data from FIFO and storing it in the Scoreboard'. [130]
+%% 1402.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"0", TO_SB): 'Reading data from FIFO and storing it in the Scoreboard'. [131]
+%% 1402.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"0", TO_SB): 'Reading data from FIFO and storing it in the Scoreboard'. [132]
+%% 1402.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"0", TO_SB): 'Reading data from FIFO and storing it in the Scoreboard'. [133]
+%% 1402.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"0", TO_SB): 'Reading data from FIFO and storing it in the Scoreboard'. [134]
+%% 1412.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"0")=> x"1". ' 'Reading data from FIFO and storing it in the Scoreboard'  [127]'
+%% 1422.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"0")=> x"2". ' 'Reading data from FIFO and storing it in the Scoreboard'  [128]'
+%% 1432.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"0")=> x"3". ' 'Reading data from FIFO and storing it in the Scoreboard'  [129]'
+%% 1442.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"0")=> x"4". ' 'Reading data from FIFO and storing it in the Scoreboard'  [130]'
+%% 1452.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"0")=> x"5". ' 'Reading data from FIFO and storing it in the Scoreboard'  [131]'
+%% 1462.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"0")=> x"6". ' 'Reading data from FIFO and storing it in the Scoreboard'  [132]'
+%% 1472.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"0")=> x"7". ' 'Reading data from FIFO and storing it in the Scoreboard'  [133]'
+%% 1482.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"0")=> x"8". ' 'Reading data from FIFO and storing it in the Scoreboard'  [134]'
+%% 1482.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(WISHBONE_VVC,0, 1000 ns)=> WISHBONE_VVC,0 finished. 'Awaiting execution' [135]
+%%      
+%%      =======================================================================================================================================================================
+%%      1482.5 ns *** SCOREBOARD COUNTERS SUMMARY: WISHBONE_VVC_SB ***                                                                                                         
+%%      =======================================================================================================================================================================
+%%                       ENTERED         PENDING          MATCH         MISMATCH          DROP          INITIAL_GARBAGE         DELETE         OVERDUE_CHECK                   
+%%      instance:   0       8               0               8               0               0                  0                   0                 0                         
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%% 
+%% 
+%% 1582.5 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       Testing Unwanted Activity Detection in VVC
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 1582.5 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Setting unwanted_activity_severity to ERROR
+%% 1582.5 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Testing normal data transmission
+%% 1582.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"70E3"): 'Writing to FIFO'. [136]
+%% 1592.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"70E3") completed. ' 'Writing to FIFO'  [136]'
+%% 1592.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(WISHBONE_VVC,0, 1000 ns)=> WISHBONE_VVC,0 finished. 'Awaiting execution' [137]
+%% 1592.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"0", x"70E3"): 'Checking data from FIFO'. [138]
+%% 1602.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"0", x"70E3")=> OK, received data = x"70E3". ' 'Checking data from FIFO'  [138]'
+%% 1602.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(WISHBONE_VVC,0, 1000 ns)=> WISHBONE_VVC,0 finished. 'Awaiting execution' [139]
+%% 1602.5 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Wait 100 ns
+%% 1702.5 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Testing unexpected data transmission
+%% 1702.5 ns    Alert  ERROR               WISHBONE_VVC,0      Unwanted activity detected. dat_i changed from x"70E3" to x"8F1C"
+%% 1702.5 ns    Alert  ERROR               WISHBONE_VVC,0      Unwanted activity detected. ack_i changed from 0 to 1
+%% 1712.5 ns    Alert  ERROR               WISHBONE_VVC,0      Unwanted activity detected. dat_i changed from x"8F1C" to x"70E3"
+%% 1712.5 ns    Alert  ERROR               WISHBONE_VVC,0      Unwanted activity detected. ack_i changed from 1 to 0
+%% 1712.5 ns    Alert  ERROR               WISHBONE_VVC,0      Unwanted activity detected. dat_i changed from x"70E3" to x"8F1C"
+%% 1717.5 ns    Alert  ERROR               WISHBONE_VVC,0      Unwanted activity detected. dat_i changed from x"8F1C" to x"70E3"
+%% 1717.5 ns    Alert  ERROR               WISHBONE_VVC,0      Unwanted activity detected. ack_i changed from 0 to 1
+%% 1718.5 ns    Alert  ERROR               WISHBONE_VVC,0      Unwanted activity detected. ack_i changed from 1 to 0
+%% 1718.5 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Setting unwanted_activity_severity to FAILURE
+%% 1718.5 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Testing normal data transmission
+%% 1718.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"2B99"): 'Writing to FIFO'. [140]
+%% 1732.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"2B99") completed. ' 'Writing to FIFO'  [140]'
+%% 1732.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(WISHBONE_VVC,0, 1000 ns)=> WISHBONE_VVC,0 finished. 'Awaiting execution' [141]
+%% 1732.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"0", x"2B99"): 'Checking data from FIFO'. [142]
+%% 1742.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"0", x"2B99")=> OK, received data = x"2B99". ' 'Checking data from FIFO'  [142]'
+%% 1742.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(WISHBONE_VVC,0, 1000 ns)=> WISHBONE_VVC,0 finished. 'Awaiting execution' [143]
+%% 1742.5 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Wait 1 clock period
+%% 1752.5 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Testing unexpected data transmission
+%% 1752.5 ns    Alert  FAILURE             WISHBONE_VVC,0      Unwanted activity detected. dat_i changed from x"2B99" to x"D466"
+%% 1752.5 ns    Alert  FAILURE             WISHBONE_VVC,0      Unwanted activity detected. ack_i changed from 0 to 1
+%% 1762.5 ns    Alert  FAILURE             WISHBONE_VVC,0      Unwanted activity detected. dat_i changed from x"D466" to x"2B99"
+%% 1762.5 ns    Alert  FAILURE             WISHBONE_VVC,0      Unwanted activity detected. ack_i changed from 1 to 0
+%% 1762.5 ns    Alert  FAILURE             WISHBONE_VVC,0      Unwanted activity detected. dat_i changed from x"2B99" to x"D466"
+%% 1767.5 ns    Alert  FAILURE             WISHBONE_VVC,0      Unwanted activity detected. dat_i changed from x"D466" to x"2B99"
+%% 1767.5 ns    Alert  FAILURE             WISHBONE_VVC,0      Unwanted activity detected. ack_i changed from 0 to 1
+%% 1768.5 ns    Alert  FAILURE             WISHBONE_VVC,0      Unwanted activity detected. ack_i changed from 1 to 0
+%% 1768.5 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Setting unwanted_activity_severity to NO_ALERT
+%% 1768.5 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Testing normal data transmission
+%% 1768.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"2C11"): 'Writing to FIFO'. [144]
+%% 1782.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"2C11") completed. ' 'Writing to FIFO'  [144]'
+%% 1782.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(WISHBONE_VVC,0, 1000 ns)=> WISHBONE_VVC,0 finished. 'Awaiting execution' [145]
+%% 1782.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"0", x"2C11"): 'Checking data from FIFO'. [146]
+%% 1792.5 ns    Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"0", x"2C11")=> OK, received data = x"2C11". ' 'Checking data from FIFO'  [146]'
+%% 1792.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(WISHBONE_VVC,0, 1000 ns)=> WISHBONE_VVC,0 finished. 'Awaiting execution' [147]
+%% 1792.5 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Wait 1 clock period
+%% 1802.5 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Testing unexpected data transmission
+%% 1819.5 ns    Log    ID_AWAIT_UVVM_COMP  TB seq.(uvvm)       await_uvvm_completion() => OK. All VVCs are inactive. Condition occurred after 1 ns
+%% 1819.5 ns    Log    ID_AWAIT_UVVM_COMP  TB seq.(uvvm)       await_uvvm_completion()() => OK. All UVVM scoreboards are empty. Condition occurred after 0 ns
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%% 1819.5 ns    DONE   PASSED   wishbone_vvc_tb  Passed: 8  Affirmations Checked: 8
+%%    Expected      Failures: -8  Errors: -8  Warnings: 0  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 8  Errors: 8  Warnings: 0  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% 1819.5 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

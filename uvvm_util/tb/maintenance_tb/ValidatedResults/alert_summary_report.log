@@ -1,0 +1,160 @@
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq              Testing alert summary report
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Testing without any major or minor alerts
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%      0 ns    DONE   NOCHECKS   alert_summary_report  Passed: 0
+%%    Expected      Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Testing NOTE
+%%      0 ns    Alert  WARNING             TB seq              This alert shall set mismatch in minor alerts report
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%      0 ns    DONE   FAILED   alert_summary_report  Total Error(s) = 1  Failures: 0  Errors: 0  Warnings: 1  Passed: 0
+%%    Expected      Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 0  Warnings: 1  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Testing TB_NOTE
+%%      0 ns    Alert  WARNING             TB seq              This alert shall set mismatch in minor alerts report
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%      0 ns    DONE   FAILED   alert_summary_report  Total Error(s) = 1  Failures: 0  Errors: 0  Warnings: 1  Passed: 0
+%%    Expected      Failures: 0  Errors: 0  Warnings: -1  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 0  Warnings: 2  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Testing WARNING
+%%      0 ns    Alert  WARNING             TB seq              This alert shall set mismatch in minor alerts report
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%      0 ns    DONE   FAILED   alert_summary_report  Total Error(s) = 1  Failures: 0  Errors: 0  Warnings: 1  Passed: 0
+%%    Expected      Failures: 0  Errors: 0  Warnings: -2  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 0  Warnings: 3  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Testing TB_WARNING
+%%      0 ns    Alert  WARNING             TB seq              This alert shall set mismatch in minor alerts report
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%      0 ns    DONE   FAILED   alert_summary_report  Total Error(s) = 1  Failures: 0  Errors: 0  Warnings: 1  Passed: 0
+%%    Expected      Failures: 0  Errors: 0  Warnings: -3  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 0  Warnings: 4  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Testing MANUAL_CHECK
+%%      0 ns    Log    MANUAL_CHECK        TB seq              MANUAL_CHECK is now a log and it sets a flag for reporting
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%      0 ns    DONE   MANUALCHECKS   alert_summary_report  Passed: 0
+%%    Expected      Failures: 0  Errors: 0  Warnings: -4  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 0  Warnings: 4  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Testing ERROR
+%%      0 ns    Alert  ERROR               TB seq              This alert shall set mismatch in major alerts report
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%      0 ns    DONE   FAILED   alert_summary_report  Total Error(s) = 1  Failures: 0  Errors: 1  Warnings: 0  Passed: 0
+%%    Expected      Failures: 0  Errors: 0  Warnings: -4  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 1  Warnings: 4  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Testing TB_ERROR
+%%      0 ns    Alert  ERROR               TB seq              This alert shall set mismatch in major alerts report
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%      0 ns    DONE   FAILED   alert_summary_report  Total Error(s) = 1  Failures: 0  Errors: 1  Warnings: 0  Passed: 0
+%%    Expected      Failures: 0  Errors: -1  Warnings: -4  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 2  Warnings: 4  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Testing FAILURE
+%%      0 ns    Alert  FAILURE             TB seq              This alert shall set mismatch in major alerts report
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%      0 ns    DONE   FAILED   alert_summary_report  Total Error(s) = 1  Failures: 1  Errors: 0  Warnings: 0  Passed: 0
+%%    Expected      Failures: 0  Errors: -2  Warnings: -4  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 1  Errors: 2  Warnings: 4  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Testing TB_FAILURE
+%%      0 ns    Alert  FAILURE             TB seq              This alert shall set mismatch in major alerts report
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%      0 ns    DONE   FAILED   alert_summary_report  Total Error(s) = 1  Failures: 1  Errors: 0  Warnings: 0  Passed: 0
+%%    Expected      Failures: -1  Errors: -2  Warnings: -4  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 2  Errors: 2  Warnings: 4  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%%      0 ns    Log    ID_SEQUENCER        TB seq.             Testing final summary, all OK
+%% 
+%% ============================================================================================================================================================================
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%   1000 ns    DONE   MANUALCHECKS   alert_summary_report  Passed: 0
+%%    Expected      Failures: -2  Errors: -2  Warnings: -4  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 2  Errors: 2  Warnings: 4  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%   1000 ns    DONE   MANUALCHECKS   alert_summary_report  Passed: 0
+%%    Expected      Failures: -2  Errors: -2  Warnings: -4  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 2  Errors: 2  Warnings: 4  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%%   1000 ns    Log    ID_LOG_HDR          TB seq              SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

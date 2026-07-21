@@ -1,0 +1,354 @@
+%%      0 ns    Log    ID_CONSTRUCTOR      AXILITE_VVC,1       VVC instantiated.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXILITE_VVC,1       Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXILITE_VVC,1       Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR      AXILITE_VVC,2       VVC instantiated.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXILITE_VVC,2       Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXILITE_VVC,2       Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CMD_INTERPRETER  AXILITE_VVC,1       Interpreter: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  AXILITE_VVC,2       Interpreter: Waiting for command
+%%      0 ns    Log    ID_CTRL             AXILITE_VVC_SB,1    enable() => SB enabled. 'AXILITE VVC SB Enabled'
+%%      0 ns    Log    ID_CTRL             AXILITE_VVC_SB,1    config() => config applied to SB.
+%%      0 ns    Log    ID_CTRL             AXILITE_VVC_SB,1    enable_log_msg() => message id id_data enabled.
+%%      0 ns    Log    ID_CTRL             AXILITE_VVC_SB,2    enable() => SB enabled. 'AXILITE VVC SB Enabled'
+%%      0 ns    Log    ID_CTRL             AXILITE_VVC_SB,2    config() => config applied to SB.
+%%      0 ns    Log    ID_CTRL             AXILITE_VVC_SB,2    enable_log_msg() => message id id_data enabled.
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF GLOBAL CTRL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                                IGNORE    STOP_LIMIT
+%%                NOTE         :  REGARD    integer'high
+%%                TB_NOTE      :  REGARD    integer'high
+%%                WARNING      :  REGARD    integer'high
+%%                TB_WARNING   :  REGARD    integer'high
+%%                MANUAL_CHECK :  REGARD    integer'high
+%%                ERROR        :  REGARD    integer'high
+%%                TB_ERROR     :  REGARD    integer'high
+%%                FAILURE      :  REGARD         1
+%%                TB_FAILURE   :  REGARD         1
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF MSG ID PANEL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                ID                             Status
+%%                ------------------------       ------
+%%                ID_UTIL_BURIED               : DISABLED
+%%                ID_BITVIS_DEBUG              : DISABLED
+%%                ID_UTIL_SETUP                : ENABLED
+%%                ID_LOG_MSG_CTRL              : ENABLED
+%%                ID_ALERT_CTRL                : ENABLED
+%%                ID_FINISH_OR_STOP            : ENABLED
+%%                ID_CLOCK_GEN                 : ENABLED
+%%                ID_GEN_PULSE                 : ENABLED
+%%                ID_BLOCKING                  : ENABLED
+%%                ID_WATCHDOG                  : ENABLED
+%%                ID_RAND_GEN                  : DISABLED
+%%                ID_RAND_CONF                 : DISABLED
+%%                ID_FUNC_COV_BINS             : DISABLED
+%%                ID_FUNC_COV_BINS_INFO        : DISABLED
+%%                ID_FUNC_COV_RAND             : DISABLED
+%%                ID_FUNC_COV_SAMPLE           : DISABLED
+%%                ID_FUNC_COV_CONFIG           : DISABLED
+%%                ID_POS_ACK                   : ENABLED
+%%                ID_UVVM_ASSERTION            : ENABLED
+%%                ID_LOG_HDR                   : ENABLED
+%%                ID_LOG_HDR_LARGE             : ENABLED
+%%                ID_LOG_HDR_XL                : ENABLED
+%%                ID_SEQUENCER                 : ENABLED
+%%                ID_SEQUENCER_SUB             : ENABLED
+%%                ID_BFM                       : ENABLED
+%%                ID_BFM_WAIT                  : ENABLED
+%%                ID_BFM_POLL                  : ENABLED
+%%                ID_BFM_POLL_SUMMARY          : ENABLED
+%%                ID_CHANNEL_BFM               : ENABLED
+%%                ID_TERMINATE_CMD             : ENABLED
+%%                ID_SEGMENT_INITIATE          : ENABLED
+%%                ID_SEGMENT_COMPLETE          : ENABLED
+%%                ID_SEGMENT_HDR               : ENABLED
+%%                ID_SEGMENT_DATA              : ENABLED
+%%                ID_PACKET_INITIATE           : ENABLED
+%%                ID_PACKET_PREAMBLE           : ENABLED
+%%                ID_PACKET_COMPLETE           : ENABLED
+%%                ID_PACKET_HDR                : ENABLED
+%%                ID_PACKET_DATA               : ENABLED
+%%                ID_PACKET_CHECKSUM           : ENABLED
+%%                ID_PACKET_GAP                : ENABLED
+%%                ID_PACKET_PAYLOAD            : ENABLED
+%%                ID_FRAME_INITIATE            : ENABLED
+%%                ID_FRAME_COMPLETE            : ENABLED
+%%                ID_FRAME_HDR                 : ENABLED
+%%                ID_FRAME_DATA                : ENABLED
+%%                ID_COVERAGE_MAKEBIN          : DISABLED
+%%                ID_COVERAGE_ADDBIN           : DISABLED
+%%                ID_COVERAGE_ICOVER           : DISABLED
+%%                ID_COVERAGE_CONFIG           : ENABLED
+%%                ID_COVERAGE_SUMMARY          : ENABLED
+%%                ID_COVERAGE_HOLES            : ENABLED
+%%                ID_UVVM_SEND_CMD             : ENABLED
+%%                ID_UVVM_CMD_ACK              : ENABLED
+%%                ID_UVVM_CMD_RESULT           : ENABLED
+%%                ID_CMD_INTERPRETER           : ENABLED
+%%                ID_CMD_INTERPRETER_WAIT      : ENABLED
+%%                ID_IMMEDIATE_CMD             : ENABLED
+%%                ID_IMMEDIATE_CMD_WAIT        : ENABLED
+%%                ID_CMD_EXECUTOR              : ENABLED
+%%                ID_CMD_EXECUTOR_WAIT         : ENABLED
+%%                ID_CHANNEL_EXECUTOR          : ENABLED
+%%                ID_CHANNEL_EXECUTOR_WAIT     : ENABLED
+%%                ID_NEW_HVVC_CMD_SEQ          : ENABLED
+%%                ID_INSERTED_DELAY            : ENABLED
+%%                ID_OLD_AWAIT_COMPLETION      : ENABLED
+%%                ID_AWAIT_COMPLETION          : ENABLED
+%%                ID_AWAIT_COMPLETION_LIST     : ENABLED
+%%                ID_AWAIT_COMPLETION_WAIT     : ENABLED
+%%                ID_AWAIT_COMPLETION_END      : ENABLED
+%%                ID_AWAIT_UVVM_COMPLETION     : ENABLED
+%%                ID_UVVM_DATA_QUEUE           : ENABLED
+%%                ID_CONSTRUCTOR               : ENABLED
+%%                ID_CONSTRUCTOR_SUB           : ENABLED
+%%                ID_VVC_ACTIVITY              : ENABLED
+%%                ID_MONITOR                   : ENABLED
+%%                ID_MONITOR_ERROR             : ENABLED
+%%                ID_DATA                      : ENABLED
+%%                ID_CTRL                      : ENABLED
+%%                ID_SPEC_COV_INIT             : ENABLED
+%%                ID_SPEC_COV_REQS             : ENABLED
+%%                ID_SPEC_COV                  : ENABLED
+%%                ID_FILE_OPEN_CLOSE           : ENABLED
+%%                ID_FILE_PARSER               : ENABLED
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ALL_MESSAGES).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_LOG_HDR).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_SEQUENCER).
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  AXILITE_VVC,1       Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  AXILITE_VVC,2       Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  AXILITE_VVC,1       disable_log_msg(AXILITE_VVC,1, ALL_MESSAGES). Command received  [1]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXILITE_VVC,1       disable_log_msg(ALL_MESSAGES). ' [1]'
+%%      0 ns    Log    ID_CMD_INTERPRETER  AXILITE_VVC,2       disable_log_msg(AXILITE_VVC,2, ALL_MESSAGES). Command received  [2]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXILITE_VVC,2       disable_log_msg(ALL_MESSAGES). ' [2]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXILITE_VVC,1       enable_log_msg(ID_BFM). ' [3]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXILITE_VVC,2       enable_log_msg(ID_BFM). ' [4]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXILITE_VVC,1       enable_log_msg(ID_IMMEDIATE_CMD). ' [5]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXILITE_VVC,2       enable_log_msg(ID_IMMEDIATE_CMD). ' [6]'
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Start Simulation of AXI-Lite
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  152.5 ns    Log    ID_BFM              AXILITE_VVC_B,1     write_response_channel_check()=> OK. ' 'Test of axilite write'  [7]'
+%%  192.5 ns    Log    ID_BFM              AXILITE_VVC_B,1     write_response_channel_check()=> OK. ' 'Write'  [8]'
+%%  232.5 ns    Log    ID_BFM              AXILITE_VVC_B,1     write_response_channel_check()=> OK. ' 'Write'  [9]'
+%%  272.5 ns    Log    ID_BFM              AXILITE_VVC_B,1     write_response_channel_check()=> OK. ' 'Write'  [10]'
+%%  312.5 ns    Log    ID_BFM              AXILITE_VVC_B,1     write_response_channel_check()=> OK. ' 'Write'  [11]'
+%%  352.5 ns    Log    ID_BFM              AXILITE_VVC_R,1     read_data_channel_receive()=> x"XXXXXXXX". '  [13]'
+%%  382.5 ns    Log    ID_BFM              AXILITE_VVC_R,1     read_data_channel_receive()=> x"54321". '  [14]'
+%%  382.5 ns    Log    ID_IMMEDIATE_CMD    AXILITE_VVC,1       fetch_result(AXILITE_VVC,1, 14) Requested result is found. Fetching read-result.  [16]
+%%  412.5 ns    Log    ID_BFM              AXILITE_VVC_B,2     write_response_channel_check()=> OK. ' 'Test of axilite write'  [17]'
+%%  432.5 ns    Log    ID_BFM              AXILITE_VVC_B,2     write_response_channel_check()=> OK. ' 'Write'  [18]'
+%%  452.5 ns    Log    ID_BFM              AXILITE_VVC_B,2     write_response_channel_check()=> OK. ' 'Write'  [19]'
+%%  472.5 ns    Log    ID_BFM              AXILITE_VVC_B,2     write_response_channel_check()=> OK. ' 'Write'  [20]'
+%%  492.5 ns    Log    ID_BFM              AXILITE_VVC_B,2     write_response_channel_check()=> OK. ' 'Write'  [21]'
+%%  512.5 ns    Log    ID_BFM              AXILITE_VVC_B,2     write_response_channel_check()=> OK. ' 'Write'  [22]'
+%%  542.5 ns    Log    ID_BFM              AXILITE_VVC_R,2     read_data_channel_receive()=> x"54321". '  [24]'
+%%  562.5 ns    Log    ID_BFM              AXILITE_VVC_R,2     read_data_channel_receive()=> x"54321". '  [25]'
+%%  582.5 ns    Log    ID_BFM              AXILITE_VVC_R,2     read_data_channel_receive()=> x"F00B0". '  [26]'
+%%  582.5 ns    Log    ID_IMMEDIATE_CMD    AXILITE_VVC,2       fetch_result(AXILITE_VVC,2, 26) Requested result is found. Fetching read-result.  [28]
+%%  622.5 ns    Log    ID_BFM              AXILITE_VVC_R,1     read_data_channel_check(x"00054321")=> OK, received data = x"54321". ' 'Check'  [29]'
+%%  662.5 ns    Log    ID_BFM              AXILITE_VVC_B,1     write_response_channel_check()=> OK. ' 'Write'  [30]'
+%%  692.5 ns    Log    ID_BFM              AXILITE_VVC_R,2     read_data_channel_check(x"0000000000005555")=> OK, received data = x"5555". ' 'Check'  [33]'
+%%  702.5 ns    Log    ID_BFM              AXILITE_VVC_R,1     read_data_channel_check(x"ABBA1972")=> OK, received data = x"ABBA1972". ' 'Check'  [32]'
+%%  712.5 ns    Log    ID_BFM              AXILITE_VVC_R,2     read_data_channel_check(x"000000000BEFBEEF")=> OK, received data = x"BEFBEEF". ' 'Check'  [34]'
+%%  732.5 ns    Log    ID_BFM              AXILITE_VVC_R,2     read_data_channel_check(x"0000000000EFBEEF")=> OK, received data = x"EFBEEF". ' 'Check'  [35]'
+%%  752.5 ns    Log    ID_BFM              AXILITE_VVC_R,2     read_data_channel_check(x"000000000000BEEF")=> OK, received data = x"BEEF". ' 'Check'  [36]'
+%%  772.5 ns    Log    ID_BFM              AXILITE_VVC_R,2     read_data_channel_check(x"0000000000054321")=> OK, received data = x"54321". ' 'Check'  [37]'
+%%  802.5 ns    Log    ID_BFM              AXILITE_VVC_B,2     write_response_channel_check()=> OK. ' 'Write'  [39]'
+%%  832.5 ns    Log    ID_BFM              AXILITE_VVC_R,2     read_data_channel_check(x"00000000ABBA1972")=> OK, received data = x"ABBA1972". ' 'Check'  [41]'
+%% 
+%% 
+%%  832.5 ns    Log    ID_LOG_HDR          TB seq.             Test scoreboard
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%  832.5 ns    Log    ID_DATA             AXILITE_VVC_SB,1    add_expected() => value: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001010100001100100001.
+%%  882.5 ns    Log    ID_BFM              AXILITE_VVC_B,1     write_response_channel_check()=> OK. ' 'Test of axilite write'  [44]'
+%%  922.5 ns    Log    ID_BFM              AXILITE_VVC_B,1     write_response_channel_check()=> OK. ' 'Write'  [45]'
+%%  962.5 ns    Log    ID_BFM              AXILITE_VVC_B,1     write_response_channel_check()=> OK. ' 'Write'  [46]'
+%% 1002.5 ns    Log    ID_BFM              AXILITE_VVC_B,1     write_response_channel_check()=> OK. ' 'Write'  [47]'
+%% 1042.5 ns    Log    ID_BFM              AXILITE_VVC_B,1     write_response_channel_check()=> OK. ' 'Write'  [48]'
+%% 1082.5 ns    Log    ID_BFM              AXILITE_VVC_R,1     read_data_channel_receive()=> x"XXXXXXXX". '  [50]'
+%% 1112.5 ns    Log    ID_BFM              AXILITE_VVC_R,1     read_data_channel_receive()=> x"54321". ' 'Read data and send to SB'  [51]'
+%% 1112.5 ns    Log    ID_DATA             AXILITE_VVC_SB,1    check_received() => MATCH, for value: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001010100001100100001.
+%% 1112.5 ns    Log    ID_DATA             AXILITE_VVC_SB,2    add_expected() => value: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011110000000010110000.
+%% 1142.5 ns    Log    ID_BFM              AXILITE_VVC_B,2     write_response_channel_check()=> OK. ' 'Test of axilite write'  [53]'
+%% 1142.5 ns    Log    ID_BFM              AXILITE_VVC_R,2     read_data_channel_receive()=> x"ABBA1972". '  [59]'
+%% 1162.5 ns    Log    ID_BFM              AXILITE_VVC_R,2     read_data_channel_receive()=> x"ABBA1972". '  [60]'
+%% 1162.5 ns    Log    ID_BFM              AXILITE_VVC_B,2     write_response_channel_check()=> OK. ' 'Write'  [54]'
+%% 1182.5 ns    Log    ID_BFM              AXILITE_VVC_B,2     write_response_channel_check()=> OK. ' 'Write'  [55]'
+%% 1182.5 ns    Log    ID_BFM              AXILITE_VVC_R,2     read_data_channel_receive()=> x"F00B0". ' 'Read data and send to SB'  [61]'
+%% 1182.5 ns    Log    ID_DATA             AXILITE_VVC_SB,2    check_received() => MATCH, for value: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011110000000010110000.
+%% 1202.5 ns    Log    ID_BFM              AXILITE_VVC_B,2     write_response_channel_check()=> OK. ' 'Write'  [56]'
+%% 1222.5 ns    Log    ID_BFM              AXILITE_VVC_B,2     write_response_channel_check()=> OK. ' 'Write'  [57]'
+%% 1242.5 ns    Log    ID_BFM              AXILITE_VVC_B,2     write_response_channel_check()=> OK. ' 'Write'  [58]'
+%%      
+%%      =======================================================================================================================================================================
+%%      1242.5 ns *** SCOREBOARD COUNTERS SUMMARY: AXILITE_VVC_SB ***                                                                                                          
+%%      =======================================================================================================================================================================
+%%                       ENTERED         PENDING          MATCH         MISMATCH          DROP          INITIAL_GARBAGE         DELETE         OVERDUE_CHECK                   
+%%      instance:   1       1               0               1               0               0                  0                   0                 0                         
+%%      instance:   2       1               0               1               0               0                  0                   0                 0                         
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%% 
+%% 
+%% 1242.5 ns    Log    ID_LOG_HDR          TB seq.             Test of timeout of check
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 1282.5 ns    Alert  WARNING             AXILITE_VVC_R,1     read_data_channel_check(x"00000000")=> Failed. Was x"00054321". Expected x"00000000". ' 'Write'  [63]'
+%% 1312.5 ns    Alert  WARNING             AXILITE_VVC_R,2     read_data_channel_check(x"0000000000000000")=> Failed. Was x"0000000000054321". Expected x"0000000000000000". ' 'Check'  [65]'
+%% 
+%% 
+%% 1312.5 ns    Log    ID_LOG_HDR          TB seq.             Test with byte enable
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 1362.5 ns    Log    ID_BFM              AXILITE_VVC_B,1     write_response_channel_check()=> OK. ' 'Clearing register'  [67]'
+%% 1402.5 ns    Log    ID_BFM              AXILITE_VVC_B,1     write_response_channel_check()=> OK. ' 'Write to only byte 0 and 1'  [68]'
+%% 1442.5 ns    Log    ID_BFM              AXILITE_VVC_R,1     read_data_channel_check(x"00001960")=> OK, received data = x"1960". ' 'Checking that only byte 0 and 1 were set'  [70]'
+%% 1482.5 ns    Log    ID_BFM              AXILITE_VVC_B,1     write_response_channel_check()=> OK. ' 'Clearing register'  [71]'
+%% 1522.5 ns    Log    ID_BFM              AXILITE_VVC_B,1     write_response_channel_check()=> OK. ' 'Write to only byte 2 and 3'  [72]'
+%% 1552.5 ns    Log    ID_BFM              AXILITE_VVC_B,2     write_response_channel_check()=> OK. ' 'Clearing register'  [75]'
+%% 1562.5 ns    Log    ID_BFM              AXILITE_VVC_R,1     read_data_channel_check(x"DADA0000")=> OK, received data = x"DADA0000". ' 'Checking that only byte 2 and 3 were set'  [74]'
+%% 1572.5 ns    Log    ID_BFM              AXILITE_VVC_B,2     write_response_channel_check()=> OK. ' 'Write to only byte 0 and 1'  [76]'
+%% 1602.5 ns    Log    ID_BFM              AXILITE_VVC_R,2     read_data_channel_check(x"0000000000001972")=> OK, received data = x"1972". ' 'Checking that only byte 0 and 1 were set'  [78]'
+%% 1602.5 ns    Log    ID_BFM              AXILITE_VVC_B,2     write_response_channel_check()=> OK. ' 'Clearing register'  [79]'
+%% 1622.5 ns    Log    ID_BFM              AXILITE_VVC_B,2     write_response_channel_check()=> OK. ' 'Write to only byte 2 and 3'  [80]'
+%% 1652.5 ns    Log    ID_BFM              AXILITE_VVC_R,2     read_data_channel_check(x"00000000ABBA0000")=> OK, received data = x"ABBA0000". ' 'Checking that only byte 2 and 3 were set'  [82]'
+%% 
+%% 
+%% 1652.5 ns    Log    ID_LOG_HDR          TB seq.             Testing inter-bfm delay
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 2222.5 ns    Log    ID_BFM              AXILITE_VVC_B,1     write_response_channel_check()=> OK. ' 'First inter-bfm delay axilite write'  [85]'
+%% 2722.5 ns    Log    ID_BFM              AXILITE_VVC_B,1     write_response_channel_check()=> OK. ' 'Second inter-bfm delay axilite write'  [87]'
+%% 3292.5 ns    Log    ID_BFM              AXILITE_VVC_B,1     write_response_channel_check()=> OK. ' 'Third inter-bfm delay axilite write'  [89]'
+%% 3832.5 ns    Log    ID_BFM              AXILITE_VVC_B,1     write_response_channel_check()=> OK. ' 'Fourth inter-bfm delay axilite write'  [95]'
+%% 3982.5 ns    Log    ID_BFM              AXILITE_VVC_B,1     write_response_channel_check()=> OK. ' 'First inter-bfm delay axilite write'  [97]'
+%% 4022.5 ns    Log    ID_BFM              AXILITE_VVC_B,1     write_response_channel_check()=> OK. ' 'Second inter-bfm delay axilite write'  [98]'
+%% 
+%% 
+%% 4022.5 ns    Log    ID_LOG_HDR          TB seq.             Simulation of AXI-Lite with bfm_sync = SYNC_WITH_SETUP_AND_HOLD, setup_time = 2 ns and hold_time = 3 ns
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   4073 ns    Log    ID_BFM              AXILITE_VVC_B,1     write_response_channel_check()=> OK. ' 'Test of axilite write'  [100]'
+%%   4113 ns    Log    ID_BFM              AXILITE_VVC_B,1     write_response_channel_check()=> OK. ' 'Write'  [101]'
+%%   4153 ns    Log    ID_BFM              AXILITE_VVC_B,1     write_response_channel_check()=> OK. ' 'Write'  [102]'
+%%   4193 ns    Log    ID_BFM              AXILITE_VVC_B,1     write_response_channel_check()=> OK. ' 'Write'  [103]'
+%%   4233 ns    Log    ID_BFM              AXILITE_VVC_B,1     write_response_channel_check()=> OK. ' 'Write'  [104]'
+%%   4273 ns    Log    ID_BFM              AXILITE_VVC_R,1     read_data_channel_receive()=> x"XXXXXXXX". '  [106]'
+%%   4303 ns    Log    ID_BFM              AXILITE_VVC_R,1     read_data_channel_receive()=> x"54321". '  [107]'
+%%   4303 ns    Log    ID_IMMEDIATE_CMD    AXILITE_VVC,1       fetch_result(AXILITE_VVC,1, 107) Requested result is found. Fetching read-result.  [109]
+%%   4333 ns    Log    ID_BFM              AXILITE_VVC_B,2     write_response_channel_check()=> OK. ' 'Test of axilite write'  [110]'
+%%   4353 ns    Log    ID_BFM              AXILITE_VVC_B,2     write_response_channel_check()=> OK. ' 'Write'  [111]'
+%%   4373 ns    Log    ID_BFM              AXILITE_VVC_B,2     write_response_channel_check()=> OK. ' 'Write'  [112]'
+%%   4393 ns    Log    ID_BFM              AXILITE_VVC_B,2     write_response_channel_check()=> OK. ' 'Write'  [113]'
+%%   4413 ns    Log    ID_BFM              AXILITE_VVC_B,2     write_response_channel_check()=> OK. ' 'Write'  [114]'
+%%   4433 ns    Log    ID_BFM              AXILITE_VVC_B,2     write_response_channel_check()=> OK. ' 'Write'  [115]'
+%%   4463 ns    Log    ID_BFM              AXILITE_VVC_R,2     read_data_channel_receive()=> x"54321". '  [117]'
+%%   4483 ns    Log    ID_BFM              AXILITE_VVC_R,2     read_data_channel_receive()=> x"54321". '  [118]'
+%%   4503 ns    Log    ID_BFM              AXILITE_VVC_R,2     read_data_channel_receive()=> x"F00B0". '  [119]'
+%%   4503 ns    Log    ID_IMMEDIATE_CMD    AXILITE_VVC,2       fetch_result(AXILITE_VVC,2, 119) Requested result is found. Fetching read-result.  [121]
+%%   4543 ns    Log    ID_BFM              AXILITE_VVC_R,1     read_data_channel_check(x"00054321")=> OK, received data = x"54321". ' 'Check'  [122]'
+%%   4583 ns    Log    ID_BFM              AXILITE_VVC_B,1     write_response_channel_check()=> OK. ' 'Write'  [123]'
+%%   4613 ns    Log    ID_BFM              AXILITE_VVC_R,2     read_data_channel_check(x"0000000000005555")=> OK, received data = x"5555". ' 'Check'  [126]'
+%%   4623 ns    Log    ID_BFM              AXILITE_VVC_R,1     read_data_channel_check(x"ABBA1972")=> OK, received data = x"ABBA1972". ' 'Check'  [125]'
+%%   4633 ns    Log    ID_BFM              AXILITE_VVC_R,2     read_data_channel_check(x"000000000BEFBEEF")=> OK, received data = x"BEFBEEF". ' 'Check'  [127]'
+%%   4653 ns    Log    ID_BFM              AXILITE_VVC_R,2     read_data_channel_check(x"0000000000EFBEEF")=> OK, received data = x"EFBEEF". ' 'Check'  [128]'
+%%   4673 ns    Log    ID_BFM              AXILITE_VVC_R,2     read_data_channel_check(x"000000000000BEEF")=> OK, received data = x"BEEF". ' 'Check'  [129]'
+%%   4693 ns    Log    ID_BFM              AXILITE_VVC_R,2     read_data_channel_check(x"0000000000054321")=> OK, received data = x"54321". ' 'Check'  [130]'
+%%   4723 ns    Log    ID_BFM              AXILITE_VVC_B,2     write_response_channel_check()=> OK. ' 'Write'  [132]'
+%%   4753 ns    Log    ID_BFM              AXILITE_VVC_R,2     read_data_channel_check(x"00000000ABBA1972")=> OK, received data = x"ABBA1972". ' 'Check'  [134]'
+%% 
+%% 
+%%   4753 ns    Log    ID_LOG_HDR          TB seq.             Test of timeout of check
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   4793 ns    Alert  WARNING             AXILITE_VVC_R,1     read_data_channel_check(x"00000000")=> Failed. Was x"ABBA1972". Expected x"00000000". ' 'Write'  [137]'
+%%   4823 ns    Alert  WARNING             AXILITE_VVC_R,2     read_data_channel_check(x"0000000000000000")=> Failed. Was x"00000000ABBA1972". Expected x"0000000000000000". ' 'Check'  [139]'
+%% 
+%% 
+%%   4823 ns    Log    ID_LOG_HDR          TB seq.             Testing to force single pending transactions
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   4853 ns    Log    ID_BFM              AXILITE_VVC_B,2     write_response_channel_check()=> OK. ' 'Test of axilite write'  [141]'
+%%   4853 ns    Log    ID_BFM              AXILITE_VVC_R,2     read_data_channel_receive()=> x"ABBA1972". ' 'Test of axilite read'  [142]'
+%%   4883 ns    Log    ID_BFM              AXILITE_VVC_B,2     write_response_channel_check()=> OK. ' 'Test of axilite write'  [144]'
+%%   4913 ns    Log    ID_BFM              AXILITE_VVC_R,2     read_data_channel_receive()=> x"ABBA1972". ' 'Test of axilite read'  [145]'
+%% 
+%% 
+%%   4913 ns    Log    ID_LOG_HDR          TB seq.             Testing Unwanted Activity Detection in VVC
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%   4913 ns    Log    ID_SEQUENCER        TB seq.             Setting unwanted_activity_severity to ERROR
+%%   4913 ns    Log    ID_SEQUENCER        TB seq.             Testing normal data transmission
+%%   4963 ns    Log    ID_BFM              AXILITE_VVC_B,1     write_response_channel_check()=> OK. ' 'Write'  [147]'
+%%   5003 ns    Log    ID_BFM              AXILITE_VVC_R,1     read_data_channel_check(x"00054321")=> OK, received data = x"54321". ' 'Check'  [149]'
+%%   5003 ns    Log    ID_SEQUENCER        TB seq.             Wait 100 ns
+%%   5103 ns    Log    ID_SEQUENCER        TB seq.             Testing unexpected data transmission
+%%   5103 ns    Alert  ERROR               AXILITE_VVC,1       Unwanted activity detected. bvalid changed from 0 to 1
+%%   5103 ns    Alert  ERROR               AXILITE_VVC,1       Unwanted activity detected. bresp changed from x"0" to x"3"
+%%   5103 ns    Alert  ERROR               AXILITE_VVC,1       Unwanted activity detected. rvalid changed from 0 to 1
+%%   5103 ns    Alert  ERROR               AXILITE_VVC,1       Unwanted activity detected. rdata changed from x"00054321" to x"FFFABCDE"
+%%   5103 ns    Alert  ERROR               AXILITE_VVC,1       Unwanted activity detected. rresp changed from x"0" to x"3"
+%%   5113 ns    Alert  ERROR               AXILITE_VVC,1       Unwanted activity detected. bvalid changed from 1 to 0
+%%   5113 ns    Alert  ERROR               AXILITE_VVC,1       Unwanted activity detected. bresp changed from x"3" to x"0"
+%%   5113 ns    Alert  ERROR               AXILITE_VVC,1       Unwanted activity detected. rvalid changed from 1 to 0
+%%   5113 ns    Alert  ERROR               AXILITE_VVC,1       Unwanted activity detected. rdata changed from x"FFFABCDE" to x"00054321"
+%%   5113 ns    Alert  ERROR               AXILITE_VVC,1       Unwanted activity detected. rresp changed from x"3" to x"0"
+%%   5113 ns    Alert  ERROR               AXILITE_VVC,1       Unwanted activity detected. bresp changed from x"0" to x"3"
+%%   5118 ns    Alert  ERROR               AXILITE_VVC,1       Unwanted activity detected. bresp changed from x"3" to x"0"
+%%   5118 ns    Alert  ERROR               AXILITE_VVC,1       Unwanted activity detected. bvalid changed from 0 to 1
+%%   5119 ns    Alert  ERROR               AXILITE_VVC,1       Unwanted activity detected. bvalid changed from 1 to 0
+%%   5119 ns    Alert  ERROR               AXILITE_VVC,1       Unwanted activity detected. rdata changed from x"00054321" to x"FFFABCDE"
+%%   5129 ns    Alert  ERROR               AXILITE_VVC,1       Unwanted activity detected. rdata changed from x"FFFABCDE" to x"00054321"
+%%   5129 ns    Alert  ERROR               AXILITE_VVC,1       Unwanted activity detected. rresp changed from x"0" to x"3"
+%%   5130 ns    Alert  ERROR               AXILITE_VVC,1       Unwanted activity detected. rresp changed from x"3" to x"0"
+%%   5130 ns    Alert  ERROR               AXILITE_VVC,1       Unwanted activity detected. rvalid changed from 0 to 1
+%%   5131 ns    Alert  ERROR               AXILITE_VVC,1       Unwanted activity detected. rvalid changed from 1 to 0
+%%   5131 ns    Log    ID_SEQUENCER        TB seq.             Setting unwanted_activity_severity to FAILURE
+%%   5131 ns    Log    ID_SEQUENCER        TB seq.             Testing normal data transmission
+%%   5183 ns    Log    ID_BFM              AXILITE_VVC_B,1     write_response_channel_check()=> OK. ' 'Write'  [151]'
+%%   5223 ns    Log    ID_BFM              AXILITE_VVC_R,1     read_data_channel_check(x"00054321")=> OK, received data = x"54321". ' 'Check'  [153]'
+%%   5223 ns    Log    ID_SEQUENCER        TB seq.             Testing unexpected data transmission
+%%   5223 ns    Alert  FAILURE             AXILITE_VVC,1       Unwanted activity detected. bvalid changed from 0 to 1
+%%   5223 ns    Alert  FAILURE             AXILITE_VVC,1       Unwanted activity detected. bresp changed from x"0" to x"3"
+%%   5223 ns    Alert  FAILURE             AXILITE_VVC,1       Unwanted activity detected. rvalid changed from 0 to 1
+%%   5223 ns    Alert  FAILURE             AXILITE_VVC,1       Unwanted activity detected. rdata changed from x"00054321" to x"FFFABCDE"
+%%   5223 ns    Alert  FAILURE             AXILITE_VVC,1       Unwanted activity detected. rresp changed from x"0" to x"3"
+%%   5233 ns    Alert  FAILURE             AXILITE_VVC,1       Unwanted activity detected. bvalid changed from 1 to 0
+%%   5233 ns    Alert  FAILURE             AXILITE_VVC,1       Unwanted activity detected. bresp changed from x"3" to x"0"
+%%   5233 ns    Alert  FAILURE             AXILITE_VVC,1       Unwanted activity detected. rvalid changed from 1 to 0
+%%   5233 ns    Alert  FAILURE             AXILITE_VVC,1       Unwanted activity detected. rdata changed from x"FFFABCDE" to x"00054321"
+%%   5233 ns    Alert  FAILURE             AXILITE_VVC,1       Unwanted activity detected. rresp changed from x"3" to x"0"
+%%   5233 ns    Alert  FAILURE             AXILITE_VVC,1       Unwanted activity detected. bresp changed from x"0" to x"3"
+%%   5238 ns    Alert  FAILURE             AXILITE_VVC,1       Unwanted activity detected. bresp changed from x"3" to x"0"
+%%   5238 ns    Alert  FAILURE             AXILITE_VVC,1       Unwanted activity detected. bvalid changed from 0 to 1
+%%   5239 ns    Alert  FAILURE             AXILITE_VVC,1       Unwanted activity detected. bvalid changed from 1 to 0
+%%   5239 ns    Alert  FAILURE             AXILITE_VVC,1       Unwanted activity detected. rdata changed from x"00054321" to x"FFFABCDE"
+%%   5249 ns    Alert  FAILURE             AXILITE_VVC,1       Unwanted activity detected. rdata changed from x"FFFABCDE" to x"00054321"
+%%   5249 ns    Alert  FAILURE             AXILITE_VVC,1       Unwanted activity detected. rresp changed from x"0" to x"3"
+%%   5250 ns    Alert  FAILURE             AXILITE_VVC,1       Unwanted activity detected. rresp changed from x"3" to x"0"
+%%   5250 ns    Alert  FAILURE             AXILITE_VVC,1       Unwanted activity detected. rvalid changed from 0 to 1
+%%   5251 ns    Alert  FAILURE             AXILITE_VVC,1       Unwanted activity detected. rvalid changed from 1 to 0
+%%   5251 ns    Log    ID_SEQUENCER        TB seq.             Setting unwanted_activity_severity to NO_ALERT
+%%   5251 ns    Log    ID_SEQUENCER        TB seq.             Testing normal data transmission
+%%   5303 ns    Log    ID_BFM              AXILITE_VVC_B,1     write_response_channel_check()=> OK. ' 'Write'  [155]'
+%%   5343 ns    Log    ID_BFM              AXILITE_VVC_R,1     read_data_channel_check(x"00054321")=> OK, received data = x"54321". ' 'Check'  [157]'
+%%   5343 ns    Log    ID_SEQUENCER        TB seq.             Testing unexpected data transmission
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%   5372 ns    DONE   PASSED   axilite_vvc_tb  Passed: 0  Affirmations Checked: 8
+%%    Expected      Failures: -20  Errors: -20  Warnings: -4  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 20  Errors: 20  Warnings: 4  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%%   5372 ns    Log    ID_LOG_HDR          TB seq.             SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

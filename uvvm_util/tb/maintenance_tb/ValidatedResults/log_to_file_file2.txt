@@ -1,0 +1,2 @@
+%%      1 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Line to specified file and console
+%%      1 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Line to specified file and console, append

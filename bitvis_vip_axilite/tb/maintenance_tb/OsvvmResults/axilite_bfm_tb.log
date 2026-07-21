@@ -1,0 +1,185 @@
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF GLOBAL CTRL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                                IGNORE    STOP_LIMIT
+%%                NOTE         :  REGARD    integer'high
+%%                TB_NOTE      :  REGARD    integer'high
+%%                WARNING      :  REGARD    integer'high
+%%                TB_WARNING   :  REGARD    integer'high
+%%                MANUAL_CHECK :  REGARD    integer'high
+%%                ERROR        :  REGARD    integer'high
+%%                TB_ERROR     :  REGARD    integer'high
+%%                FAILURE      :  REGARD         1
+%%                TB_FAILURE   :  REGARD         1
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF MSG ID PANEL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                ID                             Status
+%%                ------------------------       ------
+%%                ID_UTIL_BURIED               : DISABLED
+%%                ID_BITVIS_DEBUG              : DISABLED
+%%                ID_UTIL_SETUP                : ENABLED
+%%                ID_LOG_MSG_CTRL              : ENABLED
+%%                ID_ALERT_CTRL                : ENABLED
+%%                ID_FINISH_OR_STOP            : ENABLED
+%%                ID_CLOCK_GEN                 : ENABLED
+%%                ID_GEN_PULSE                 : ENABLED
+%%                ID_BLOCKING                  : ENABLED
+%%                ID_WATCHDOG                  : ENABLED
+%%                ID_RAND_GEN                  : DISABLED
+%%                ID_RAND_CONF                 : DISABLED
+%%                ID_FUNC_COV_BINS             : DISABLED
+%%                ID_FUNC_COV_BINS_INFO        : DISABLED
+%%                ID_FUNC_COV_RAND             : DISABLED
+%%                ID_FUNC_COV_SAMPLE           : DISABLED
+%%                ID_FUNC_COV_CONFIG           : DISABLED
+%%                ID_POS_ACK                   : ENABLED
+%%                ID_UVVM_ASSERTION            : ENABLED
+%%                ID_LOG_HDR                   : ENABLED
+%%                ID_LOG_HDR_LARGE             : ENABLED
+%%                ID_LOG_HDR_XL                : ENABLED
+%%                ID_SEQUENCER                 : ENABLED
+%%                ID_SEQUENCER_SUB             : ENABLED
+%%                ID_BFM                       : ENABLED
+%%                ID_BFM_WAIT                  : ENABLED
+%%                ID_BFM_POLL                  : ENABLED
+%%                ID_BFM_POLL_SUMMARY          : ENABLED
+%%                ID_CHANNEL_BFM               : ENABLED
+%%                ID_TERMINATE_CMD             : ENABLED
+%%                ID_SEGMENT_INITIATE          : ENABLED
+%%                ID_SEGMENT_COMPLETE          : ENABLED
+%%                ID_SEGMENT_HDR               : ENABLED
+%%                ID_SEGMENT_DATA              : ENABLED
+%%                ID_PACKET_INITIATE           : ENABLED
+%%                ID_PACKET_PREAMBLE           : ENABLED
+%%                ID_PACKET_COMPLETE           : ENABLED
+%%                ID_PACKET_HDR                : ENABLED
+%%                ID_PACKET_DATA               : ENABLED
+%%                ID_PACKET_CHECKSUM           : ENABLED
+%%                ID_PACKET_GAP                : ENABLED
+%%                ID_PACKET_PAYLOAD            : ENABLED
+%%                ID_FRAME_INITIATE            : ENABLED
+%%                ID_FRAME_COMPLETE            : ENABLED
+%%                ID_FRAME_HDR                 : ENABLED
+%%                ID_FRAME_DATA                : ENABLED
+%%                ID_COVERAGE_MAKEBIN          : DISABLED
+%%                ID_COVERAGE_ADDBIN           : DISABLED
+%%                ID_COVERAGE_ICOVER           : DISABLED
+%%                ID_COVERAGE_CONFIG           : ENABLED
+%%                ID_COVERAGE_SUMMARY          : ENABLED
+%%                ID_COVERAGE_HOLES            : ENABLED
+%%                ID_UVVM_SEND_CMD             : ENABLED
+%%                ID_UVVM_CMD_ACK              : ENABLED
+%%                ID_UVVM_CMD_RESULT           : ENABLED
+%%                ID_CMD_INTERPRETER           : ENABLED
+%%                ID_CMD_INTERPRETER_WAIT      : ENABLED
+%%                ID_IMMEDIATE_CMD             : ENABLED
+%%                ID_IMMEDIATE_CMD_WAIT        : ENABLED
+%%                ID_CMD_EXECUTOR              : ENABLED
+%%                ID_CMD_EXECUTOR_WAIT         : ENABLED
+%%                ID_CHANNEL_EXECUTOR          : ENABLED
+%%                ID_CHANNEL_EXECUTOR_WAIT     : ENABLED
+%%                ID_NEW_HVVC_CMD_SEQ          : ENABLED
+%%                ID_INSERTED_DELAY            : ENABLED
+%%                ID_OLD_AWAIT_COMPLETION      : ENABLED
+%%                ID_AWAIT_COMPLETION          : ENABLED
+%%                ID_AWAIT_COMPLETION_LIST     : ENABLED
+%%                ID_AWAIT_COMPLETION_WAIT     : ENABLED
+%%                ID_AWAIT_COMPLETION_END      : ENABLED
+%%                ID_AWAIT_UVVM_COMPLETION     : ENABLED
+%%                ID_UVVM_DATA_QUEUE           : ENABLED
+%%                ID_CONSTRUCTOR               : ENABLED
+%%                ID_CONSTRUCTOR_SUB           : ENABLED
+%%                ID_VVC_ACTIVITY              : ENABLED
+%%                ID_MONITOR                   : ENABLED
+%%                ID_MONITOR_ERROR             : ENABLED
+%%                ID_DATA                      : ENABLED
+%%                ID_CTRL                      : ENABLED
+%%                ID_SPEC_COV_INIT             : ENABLED
+%%                ID_SPEC_COV_REQS             : ENABLED
+%%                ID_SPEC_COV                  : ENABLED
+%%                ID_FILE_OPEN_CLOSE           : ENABLED
+%%                ID_FILE_PARSER               : ENABLED
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ALL_MESSAGES).
+%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_POS_ACK).
+%% 
+%% 
+%%      0 ns    Log    ID_LOG_HDR          TB seq.             Start Simulation of TB for AXILITE 1
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      0 ns    Log    ID_CLOCK_GEN        TB seq.             Starting clock Axilite CLK
+%%    100 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to 1 for 100000 ps. 'Pulsing reset for 10 clock periods'
+%%    100 ns    Log    NO_ID               TB seq.             Do some axilite writes
+%%  182.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"0000", x"5555") completed.
+%%  262.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"1000", x"BEFBEEF") completed.
+%%  342.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"2000", x"EFBEEF") completed.
+%%  422.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"3000", x"BEEF") completed.
+%%  502.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"6000", x"54321") completed.
+%%  562.5 ns    Log    ID_BFM              TB seq.             axilite_read(A:x"3000")=> x"XXXXXXXX".
+%%  622.5 ns    Log    ID_BFM              TB seq.             axilite_read(A:x"6000")=> x"54321".
+%%  622.5 ns    Log    NO_ID               TB seq.             Check the written data
+%%  682.5 ns    Log    ID_BFM              TB seq.             axilite_check(A:x"0006000", x"54321")=> OK, received data = x"54321".
+%%  762.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"0006000", x"ABBA1972") completed.
+%%  822.5 ns    Log    ID_BFM              TB seq.             axilite_check(A:x"0006000", x"ABBA1972")=> OK, received data = x"ABBA1972".
+%%  882.5 ns    Alert  WARNING             TB seq.             axilite_check(A:x"0006000", x"00000000")=> Failed. Was x"ABBA1972". Expected x"00000000".
+%%  882.5 ns    Log    NO_ID               TB seq.             Checking write with byte_enable
+%%  962.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"0006000", x"0") completed.
+%% 1042.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"0006000", x"ABBA1972") completed.
+%% 1102.5 ns    Log    ID_BFM              TB seq.             axilite_check(A:x"0006000", x"00001972")=> OK, received data = x"1972".
+%% 1182.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"0006000", x"0") completed.
+%% 1262.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"0006000", x"ABBA1972") completed.
+%% 1322.5 ns    Log    ID_BFM              TB seq.             axilite_check(A:x"0006000", x"ABBA0000")=> OK, received data = x"ABBA0000".
+%% 
+%% 
+%% 1322.5 ns    Log    ID_LOG_HDR          TB seq.             Start Simulation of TB for AXILITE 2
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 1322.5 ns    Log    NO_ID               TB seq.             Do some axilite writes
+%% 1382.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"0000", x"5555") completed.
+%% 1442.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"0010", x"BEFBEEF") completed.
+%% 1502.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"0020", x"EFBEEF") completed.
+%% 1562.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"0030", x"BEEF") completed.
+%% 1622.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"0040", x"54321") completed.
+%% 1682.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"0060", x"54321") completed.
+%% 1732.5 ns    Log    ID_BFM              TB seq.             axilite_read(A:x"0030")=> x"BEEF".
+%% 1782.5 ns    Log    ID_BFM              TB seq.             axilite_read(A:x"0040")=> x"54321".
+%% 1832.5 ns    Log    ID_BFM              TB seq.             axilite_read(A:x"0060")=> x"54321".
+%% 1832.5 ns    Log    NO_ID               TB seq.             Check the written data
+%% 1882.5 ns    Log    ID_BFM              TB seq.             axilite_check(A:x"0000", x"5555")=> OK, received data = x"5555".
+%% 1932.5 ns    Log    ID_BFM              TB seq.             axilite_check(A:x"0010", x"BEFBEEF")=> OK, received data = x"BEFBEEF".
+%% 1982.5 ns    Log    ID_BFM              TB seq.             axilite_check(A:x"0020", x"EFBEEF")=> OK, received data = x"EFBEEF".
+%% 2032.5 ns    Log    ID_BFM              TB seq.             axilite_check(A:x"0030", x"BEEF")=> OK, received data = x"BEEF".
+%% 2082.5 ns    Log    ID_BFM              TB seq.             axilite_check(A:x"0040", x"54321")=> OK, received data = x"54321".
+%% 2142.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"0000040", x"ABBA1972") completed.
+%% 2192.5 ns    Log    ID_BFM              TB seq.             axilite_check(A:x"0000040", x"ABBA1972")=> OK, received data = x"ABBA1972".
+%% 2242.5 ns    Alert  WARNING             TB seq.             axilite_check(A:x"0000040", x"00000000")=> Failed. Was x"00000000ABBA1972". Expected x"0000000000000000".
+%% 2242.5 ns    Log    NO_ID               TB seq.             Checking write with byte_enable
+%% 2302.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"0000040", x"0") completed.
+%% 2362.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"0000040", x"AFAF1191") completed.
+%% 2412.5 ns    Log    ID_BFM              TB seq.             axilite_check(A:x"0000040", x"00001191")=> OK, received data = x"1191".
+%% 2472.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"0000040", x"0") completed.
+%% 2532.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"0000040", x"AFAF1191") completed.
+%% 2582.5 ns    Log    ID_BFM              TB seq.             axilite_check(A:x"0000040", x"AFAF0000")=> OK, received data = x"AFAF0000".
+%%   2640 ns    Alert  WARNING             TB seq.             axilite_write(A:x"0000040", x"0")(slv, b"10") => Failed. Value was b"00". Expected b"10". ': BRESP detected'
+%% 2642.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"0000040", x"0") completed.
+%%   2700 ns    Alert  WARNING             TB seq.             axilite_write(A:x"0000040", x"AFAF1191")(slv, b"11") => Failed. Value was b"00". Expected b"11". ': BRESP detected'
+%% 2702.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"0000040", x"AFAF1191") completed.
+%% 
+%% ============================================================================================================================================================================
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%% 3702.5 ns    DONE   PASSED   axilite_bfm_tb  Passed: 0  Affirmations Checked: 6
+%%    Expected      Failures: 0  Errors: 0  Warnings: -4  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 0  Warnings: 4  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%% 3702.5 ns    Log    ID_LOG_HDR          TB seq.             SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
