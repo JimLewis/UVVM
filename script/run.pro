@@ -11,7 +11,7 @@
 include sim_init.pro
 
 # Testbenches are not updated, so do not expect the VHDL TestName to match the Script TestName
-set $::osvvm::FailOnVhdlNameNotMatchTestName "false"
+set ::osvvm::FailOnVhdlNameNotMatchTestName "false"
 # FailOnVhdlNameNotMatchTestName is recommended when running a UVVM test case with the library updated in UseOsvvmAlertLogInUvvm
 # emulated this capability here by
 #     1. Checking out repository branch UseOsvvmAlertLogInUvvm and doing a build of UVVM library
