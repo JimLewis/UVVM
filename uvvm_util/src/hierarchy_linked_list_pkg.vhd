@@ -24,8 +24,6 @@ use work.string_methods_pkg.all;
 use work.adaptations_pkg.all;
 use work.global_signals_and_shared_variables_pkg.all;
 
---!! library osvvm ;
-
 package hierarchy_linked_list_pkg is
 
   type t_hierarchy_linked_list is protected
@@ -556,17 +554,16 @@ package body hierarchy_linked_list_pkg is
 
         if v_do_print then -- Only print if alert level print enabled for this alert level.
           write_line_to_log_destination(v_info);
-          --!! OSVVM writes to console if TranscriptFile not open
-          --!! if shared_log_file_name_is_set and shared_alert_file_name_is_set then
-          --!!   -- tee_and_keep_line(ALERT_FILE, v_info); -- Removed.  OSVVM only uses on TranscriptFile
-          --!!  write_line_to_log_destination(v_info);
-          --!!   -- osvvm.TranscriptPkg.WriteLine(v_info) ;
-          --!! else
-          --!!   bitvis_assert(false, FAILURE, "Attempting to write to an unopened log file. Please use a log procedure before this call.", "hierarchy_linked_list_pkg.alert()");
-          --!! end if;
+          --O  OSVVM writes to console if TranscriptFile not open
+          --O  if shared_log_file_name_is_set and shared_alert_file_name_is_set then
+          --O    tee_and_keep_line(ALERT_FILE, v_info); -- Write to file, while keeping the line contents
+          --O    write_line_to_log_destination(v_info);
+          --O  else
+          --O    bitvis_assert(false, FAILURE, "Attempting to write to an unopened log file. Please use a log procedure before this call.", "hierarchy_linked_list_pkg.alert()");
+          --O  end if;
         end if;
 
-        -- deallocate(v_info);  -- deallocate only necessary on bitvis_assert branch
+        --O deallocate(v_info);  -- updated write_line_to_log_destination s.t. this is never necessary
 
         if (alert_level /= NO_ALERT) and (alert_level /= NOTE) and (alert_level /= TB_NOTE) and (alert_level /= MANUAL_CHECK) then
           update_uvvm_sim_status;
@@ -931,13 +928,13 @@ package body hierarchy_linked_list_pkg is
 
       -- Write the report to the log destination
       write_line_to_log_destination(v_line);
-      --!! OSVVM writes to console if TranscriptFile not open
-      --!! if shared_log_file_name_is_set then
-      --!!   write_line_to_log_destination(v_line);
-      --!! else
-      --!!   bitvis_assert(false, FAILURE, "Attempting to write to an unopened log file. Please use a log procedure before this call.", "hierarchy_linked_list_pkg.print_hierarchical_log()");
-      --!! end if;
-      --!! deallocate(v_line);
+      --O  OSVVM writes to console if TranscriptFile not open
+      --O  if shared_log_file_name_is_set then
+      --O    write_line_to_log_destination(v_line);
+      --O  else
+      --O    bitvis_assert(false, FAILURE, "Attempting to write to an unopened log file. Please use a log procedure before this call.", "hierarchy_linked_list_pkg.print_hierarchical_log()");
+      --O  end if;
+      --O  deallocate(v_line);  -- updated write_line_to_log_destination s.t. this is never necessary
     end procedure;
 
     impure function get_parent_scope(

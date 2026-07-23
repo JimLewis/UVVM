@@ -121,7 +121,7 @@ package string_methods_pkg is
     return_val : boolean
   ) return string;
 
-  --O removes ambiguity
+  --O to_upper also defined in OSVVM.  alias removes ambiguity
   alias to_upper is osvvm.TextUtilPkg.to_upper[string return string] ;
 --O  function to_upper(
 --O    val : string
@@ -291,10 +291,16 @@ package string_methods_pkg is
     prefix : t_radix_prefix := EXCL_RADIX -- Insert radix prefix in string?
   ) return string;
 
+  --O needed in methods_pkg to get real output in the same format for all sims
+  function format_real(
+    constant value : real)
+  return string ;
+
   function to_string(
     val : real_vector
   ) return string;
 
+  --O Needed for to_string[time_vector return string]
   function format_time(
     val : time
   ) return string ;
@@ -1535,6 +1541,7 @@ package body string_methods_pkg is
     return to_string(integer_vector(val), radix, format, prefix);
   end function;
 
+  --O Needed for to_string[real_vector return string]
   function format_real(
     constant value : real)
   return string is
@@ -1568,6 +1575,7 @@ package body string_methods_pkg is
       write(v_line, string'("("));
 
       for idx in val'range loop
+        --O  normalize printing of type real
         write(v_line, format_real(val(idx)));
 
         if (idx < val'right) and (val'ascending) then
@@ -1586,6 +1594,7 @@ package body string_methods_pkg is
     end if;
   end function;
 
+  --O Needed for to_string[time_vector return string]
   function format_time(
     val : time
   ) return string is
@@ -1614,7 +1623,7 @@ package body string_methods_pkg is
       write(v_line, string'("("));
 
       for idx in val'range loop
---        write(v_line, to_string(val(idx), get_time_unit(val(idx))));
+        --O adds handling for time'low
         write(v_line, format_time(val(idx)));
 
         if (idx < val'right) and (val'ascending) then
@@ -1745,9 +1754,9 @@ package body string_methods_pkg is
     if msg'length /= 0 then
       if valid_length(msg) /= 1 then
         if msg(1) = C_MSG_DELIMITER then
-          return " " & to_string(msg);
+          return " " & msg;
         else
-          return " " & C_MSG_DELIMITER & to_string(msg) & C_MSG_DELIMITER;
+          return " " & C_MSG_DELIMITER & msg & C_MSG_DELIMITER;
         end if;
       end if;
     end if;
@@ -1842,10 +1851,11 @@ package body string_methods_pkg is
   begin
     write(v_line, my_line.all);
     writeline(file_handle, v_line);
-    deallocate(v_line);  --?? Not necessary.  WriteLine already does this.
+    --O deallocate(v_line);  -- writeline does the deallocate
   end procedure;
 
   -- Writes a line to the specified log destination and clears the content of the line
+  --O  Updated to merge OSVVM's and UVVM's sense of Console and Log
   procedure write_line_to_log_destination(
     variable log_line        : inout line;
     constant log_destination : in t_log_destination := shared_default_log_destination;
@@ -1853,45 +1863,49 @@ package body string_methods_pkg is
     constant open_mode       : in file_open_kind    := append_mode) is
     file v_file_handle : text;
   begin
+    --O  OSVVM policy:  if line blank, print new-line
     if log_line = null then
       -- if null, print blank line to log destination
       write(log_line, string'("")) ;
     end if;
+    --O  Adapted to work in conjunction with OSVVM transcript capability
     case log_destination is
       when CONSOLE_AND_LOG =>
-        -- Write to log and empty the line contents
+        -- Write to OUTPUT and File
         if log_file_name'length = 0 or log_file_name = C_LOG_FILE_NAME then
+          -- log_file_name not specified, write to OUTPUT and OSVVM's TranscriptFile
           if osvvm.TranscriptPkg.IsTranscriptOpen and not osvvm.TranscriptPkg.IsTranscriptMirrored then
-            -- Write to console if OSVVM is not already doing it
+            -- Write to OUTPUT if OSVVM is not already doing it
             tee_and_keep_line(OUTPUT, log_line);
           end if;
           osvvm.TranscriptPkg.WriteLine(log_line) ;
         else
+          -- write to OUTPUT and log_file_name
           tee_and_keep_line(OUTPUT, log_line);
-          -- If the log file is a custom file name, the file will have to be opened
+          -- write to file specified by log_file_name
           file_open(v_file_handle, log_file_name, open_mode);
           writeline(v_file_handle, log_line);
           file_close(v_file_handle);
         end if;
       when CONSOLE_ONLY =>
-        -- Write to console and empty the line contents
+        -- Write to OUTPUT
         writeline(OUTPUT, log_line);
       when LOG_ONLY =>
-        -- Write to log and empty the line contents
+        -- Write to File
         if log_file_name'length = 0 or log_file_name = C_LOG_FILE_NAME then
-          -- If the log file is the default file, it is not necessary to open and close it again
-          -- writeline(LOG_FILE, log_line);
+          -- log_file_name not specified, write to OSVVM's TranscriptFile
           osvvm.TranscriptPkg.WriteLine(log_line) ;
         else
-          -- If the log file is a custom file name, the file will have to be opened
+          -- log_file_name specified, write to file
           file_open(v_file_handle, log_file_name, open_mode);
           writeline(v_file_handle, log_line);
           file_close(v_file_handle);
         end if;
     end case;
+    --O  all paths use writeline which will leave log_line deallocated.
   end procedure;
 
-  -- Function for getting time unit
+  --O  Needed for to_string for type time and time_vector
   function get_time_unit(
     constant value : time
   ) return time is

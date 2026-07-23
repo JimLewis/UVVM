@@ -50,15 +50,16 @@ package methods_pkg is
     constant scope     : in string := C_SCOPE
   );
 
-  procedure set_alert_file_name(
-    constant file_name : string := C_ALERT_FILE_NAME
-  );
+--O  procedure set_alert_file_name(
+--O    constant file_name : string := C_ALERT_FILE_NAME
+--O  );
+--O
+--O  -- DEPRECATED: will be removed in v3
+--O  procedure set_alert_file_name(
+--O    constant file_name : string := C_ALERT_FILE_NAME;
+--O    constant msg_id    : t_msg_id
+--O  );
 
-  -- DEPRECATED: will be removed in v3
-  procedure set_alert_file_name(
-    constant file_name : string := C_ALERT_FILE_NAME;
-    constant msg_id    : t_msg_id
-  );
 
   procedure set_log_file_name(
     constant file_name : string := C_LOG_FILE_NAME
@@ -69,6 +70,9 @@ package methods_pkg is
     constant file_name : string := C_LOG_FILE_NAME;
     constant msg_id    : t_msg_id
   );
+
+  alias set_alert_file_name is set_log_file_name[string] ;
+  alias set_alert_file_name is set_log_file_name[string, t_msg_id] ;
 
   -- ============================================================================
   -- Log-related
@@ -156,6 +160,9 @@ package methods_pkg is
     constant log_destination : t_log_destination;
     constant quietness       : t_quietness := NON_QUIET
   );
+
+  --O  Moved to get_time_unit and get_range_time_unit to string_methods_pkg -
+  --O  needed by format_time[time return string] and to_string[time_vector return string]
 
   -- ============================================================================
   -- Alert-related
@@ -3274,13 +3281,16 @@ end package methods_pkg;
 --=================================================================================================
 
 package body methods_pkg is
+--O  General note, replaced to_string(real_value) with format_real(real_value) to get consistent output in different simulators
+--O  General note, replaced many to_string(time_value, get_time_unit) with format_time(time_value) to get consistent output in different simulators
+--O     Did not replace all to_string to format_time due to complexity.  Will reconsider if necessary to get simulation outputs to match
 
   constant C_BURIED_SCOPE : string := "(Util buried)";
 
---O removed UVVM license notifications - not required with APACHE - not appropriate in an OSVVM environment
-  -- The following constants are not used. Report statements in the given functions allow elaboration time messages
---  constant C_BITVIS_LICENSE_INITIALISED : boolean := show_license(VOID);
---  constant C_BITVIS_LIBRARY_INFO_SHOWN  : boolean := show_uvvm_utility_library_info(VOID);
+--O removed UVVM license notifications - not required with APACHE - not appropriate in a mixed OSVVM & UVVM environment
+--O  -- The following constants are not used. Report statements in the given functions allow elaboration time messages
+--O  constant C_BITVIS_LICENSE_INITIALISED : boolean := show_license(VOID);
+--O  constant C_BITVIS_LIBRARY_INFO_SHOWN  : boolean := show_uvvm_utility_library_info(VOID);
 
   -- ============================================================================
   -- Initialization
@@ -3296,9 +3306,10 @@ package body methods_pkg is
       if not shared_log_file_name_is_set then
         set_log_file_name(C_LOG_FILE_NAME);
       end if;
---      if not shared_alert_file_name_is_set then
---        set_alert_file_name(C_ALERT_FILE_NAME);
---      end if;
+--O  OSVVM only supports one shared file for Alerts and Logs
+--O      if not shared_alert_file_name_is_set then
+--O        set_alert_file_name(C_ALERT_FILE_NAME);
+--O      end if;
       if C_ENABLE_HIERARCHICAL_ALERTS then
         initialize_hierarchy;
       end if;
@@ -3351,63 +3362,27 @@ package body methods_pkg is
     end case;
   end procedure;
 
-  procedure set_alert_file_name(
-    constant file_name : string := C_ALERT_FILE_NAME
-  ) is
-  begin
-    if shared_alert_file_name_is_set then
-      warning("set_alert_file_name already open.  Closing current file.");
-      osvvm.TranscriptPkg.TranscriptClose ;
-    end if;
-    shared_alert_file_name_is_set := TRUE ;
-    if shared_log_file_name_is_set then
-      log(ID_UTIL_SETUP, "Ignoring set_alert_file_name.  OSVVM only supports a single transcript file shared by log and alert.");
-      return ;
-    end if ;
-    if file_name /= C_ALERT_FILE_NAME then
-      osvvm.TranscriptPkg.TranscriptOpen(file_name) ;
-    else
-      osvvm.ReportPkg.TranscriptOpen ;
-    end if ;
-    if now > 0 ns then -- Do not show note if set at the very start.
-      report "alert file name set: " & file_name;
-    end if;
-  end procedure;
-
-  procedure set_alert_file_name(
-    constant file_name : string := C_ALERT_FILE_NAME;
-    constant msg_id    : t_msg_id
-  ) is
-  begin
-    deprecate(get_procedure_name_from_instance_name(file_name'instance_name), "msg_id parameter is no longer in use. Please call this procedure without the msg_id parameter.");
-    set_alert_file_name(file_name);
-  end procedure;
-
+  --O Entirely restructured to use OSVVM transcript file
+  --O OSVVM uses a single file for both alerts and logs
+  --O OSVVM tracks handles transcript closing
+  --O set_alert_file_name is aliased to set_log_file_name
   procedure set_log_file_name(
-    constant file_name : string := C_LOG_FILE_NAME
+    constant file_name : string   := C_LOG_FILE_NAME
   ) is
   begin
-    if shared_log_file_name_is_set then
-      warning("set_log_file_name already open.  Closing current file.");
-      osvvm.TranscriptPkg.TranscriptClose ;
-    end if;
-    shared_log_file_name_is_set := TRUE ;
-    if shared_alert_file_name_is_set then
-      log(ID_UTIL_SETUP, "Ignoring set_log_file_name.  OSVVM only supports a single transcript file shared by log and alert.");
-      return ;
+    if file_name = C_LOG_FILE_NAME or file_name = C_ALERT_FILE_NAME then
+      -- Open the OSVVM default transcript name which is set by SetTestName
+      osvvm.ReportPkg.TranscriptOpen ;
+    else
+      -- Open a transcript named file_name
+      osvvm.TranscriptPkg.TranscriptOpen(file_name) ;
     end if ;
-    if (not osvvm.TranscriptPkg.IsTranscriptOpen) then
-      if file_name /= C_LOG_FILE_NAME then
-        osvvm.TranscriptPkg.TranscriptOpen(file_name) ;
-      else
-        osvvm.ReportPkg.TranscriptOpen ;
-      end if ;
-    end if;
     if now > 0 ns then -- Do not show note if set at the very start.
-      report "log file name set: " & file_name;
+      report "alert/log file name set: " & file_name;
     end if;
   end procedure;
 
+  -- DEPRECATED: will be removed in v3
   procedure set_log_file_name(
     constant file_name : string := C_LOG_FILE_NAME;
     constant msg_id    : t_msg_id
@@ -3420,8 +3395,10 @@ package body methods_pkg is
   -- ============================================================================
   -- Log-related
   -- ============================================================================
+  --O used to pass information to OSVVM
   type t_alt_id is (NORMAL, PASSED, MANUAL_CHECK) ;
 
+  --O Translated code to OSVVM and sorted complexity so it is understandable.
   procedure local_log(
     msg_id          : t_msg_id;
     msg             : string;
@@ -3491,6 +3468,8 @@ package body methods_pkg is
     end if;
   end procedure local_log ;
 
+  --O Checks the msg_id_panel and if enabled calls local_log
+  --O NO_ID used to handle overloading issues with log("message")
   procedure log(
     msg_id          : t_msg_id;
     msg             : string;
@@ -3502,6 +3481,7 @@ package body methods_pkg is
   ) is
     variable v_msg_id : t_msg_id := msg_id ;
   begin
+    --O  Used by OSVVM to handle overloading issues with log("message") which is ambiguous if both OSVVM and UVVM are visible.
     if msg_id = NO_ID then
       v_msg_id := C_TB_MSG_ID_DEFAULT ;
     end if ;
@@ -3511,6 +3491,7 @@ package body methods_pkg is
     end if;
   end procedure log ;
 
+  --O  OSVVM uses this to print passed messages and track passed affirmations
   procedure log_passed(
     msg_id          : t_msg_id;
     msg             : string;
@@ -3546,6 +3527,7 @@ package body methods_pkg is
   end procedure;
 
   -- Logging for multi line text. Also empty the text_block, for consistency.
+  --O UVVM log_text_block function entirely rebuild.  Formerly did too many pointer to string to pointer to string manipulations.
   procedure log_text_block(
     msg_id              : t_msg_id;
     variable text_block : inout line;
@@ -3562,10 +3544,11 @@ package body methods_pkg is
   begin
     -- Only log if message ID is enabled
     if (msg_id_panel(msg_id) = ENABLED) then
+      --O  If text_block empty (NULL), then it represents a single blank line
       if text_block = NULL then
-        -- If text_block empty (NULL), print a single blank line
         write(text_block, string'(""));
       end if ;
+      --O  Observation, log_text_block with formatting = UNFORMATTED is just like WriteLine()
       if formatting = UNFORMATTED then
         -- Just print the text block
         write_line_to_log_destination(text_block, log_destination, log_file_name, open_mode);
@@ -3695,6 +3678,7 @@ package body methods_pkg is
     end if;
   end function;
 
+  --O  Translates UVVM settings to OSVVM
   procedure set_log_destination(
     constant log_destination : t_log_destination;
     constant quietness       : t_quietness := NON_QUIET
@@ -3720,6 +3704,7 @@ package body methods_pkg is
     end case ;
   end procedure;
 
+  --O  Translates UVVM Alert Levels to OSVVM Alert Levels
   function to_OsvvmAlert(
     constant alert_level : t_alert_level
   ) return osvvm.AlertLogPkg.AlertType is
@@ -3738,6 +3723,12 @@ package body methods_pkg is
     end case;
   end function;
 
+  --O  Map UVVM alert to OSVVM alert hierarchy.
+  --O  Scope is used to formulate an AlertLogID
+  --O    Using the scope in this way is inefficient as it is a string look up in a data structure
+  --O    It is better to commit to switching to OSVVM AlertLogIDs which are an index into the
+  --O    OSVVM singleton data structure that allows lookup by the string value
+  --O
   procedure alert(
     constant alert_level : t_alert_level;
     constant msg         : string;
@@ -3839,6 +3830,7 @@ package body methods_pkg is
     alert(tb_failure, msg, scope);
   end procedure;
 
+  --O  map into the OSVVM equivalent functionality
   procedure increment_expected_alerts(
     constant alert_level : t_alert_level;
     constant number      : natural := 1;
@@ -3855,8 +3847,9 @@ package body methods_pkg is
 
   -- Arguments:
   -- - order = FINAL : print out Simulation Success/Fail
+  --O  Rewritten to use with OSVVM test reporting and finalization
   procedure report_alert_counters(
-    constant order : in t_order
+    constant order     : in t_order
   ) is
     variable buf : line ;
     constant C_PREFIX : string := C_LOG_PREFIX ;
@@ -3866,15 +3859,22 @@ package body methods_pkg is
       LF & C_PREFIX & (1 to C_LOG_INFO_WIDTH => '=') ) ;
     if order = INTERMEDIATE then
       write(buf, LF & C_PREFIX & " *** INTERMEDIATE SUMMARY OF ALL ALERTS ***") ;
+      write(buf, LF & C_PREFIX & (1 to C_LOG_INFO_WIDTH => '=') ) ;
+      osvvm.TranscriptPkg.WriteLine(buf) ;
+      osvvm.AlertLogPkg.ReportAlerts(ReportAll => TRUE) ;
+      osvvm.TranscriptPkg.Print(
+        C_PREFIX & (1 to C_LOG_INFO_WIDTH => '=') &
+        LF & C_PREFIX) ;
     else
       write(buf, LF & C_PREFIX & " *** FINAL SUMMARY OF ALL ALERTS ***") ;
+      write(buf, LF & C_PREFIX & (1 to C_LOG_INFO_WIDTH => '=') ) ;
+      osvvm.TranscriptPkg.WriteLine(buf) ;
+      osvvm.ReportPkg.EndOfTestReports(ReportAll => TRUE) ;
+      osvvm.TranscriptPkg.Print(
+        C_PREFIX & (1 to C_LOG_INFO_WIDTH => '=') &
+        LF & C_PREFIX) ;
+      osvvm.TranscriptPkg.TranscriptClose ;
     end if;
-    write(buf, LF & C_PREFIX & (1 to C_LOG_INFO_WIDTH => '=') ) ;
-    osvvm.TranscriptPkg.WriteLine(buf) ;
-    osvvm.AlertLogPkg.ReportAlerts(ReportAll => TRUE) ;
-    osvvm.TranscriptPkg.Print(
-      C_PREFIX & (1 to C_LOG_INFO_WIDTH => '=') &
-      LF & C_PREFIX) ;
   end procedure;
 
   -- This version (with the t_void argument) is kept for backwards compatibility
@@ -3885,6 +3885,7 @@ package body methods_pkg is
     report_alert_counters(FINAL); -- Default when calling this old method is order=FINAL
   end procedure;
 
+  --O  Updated to translate OSVVM Stop Count to UVVM - in particular 0 in UVVM is integer'high in OSVVM
   procedure report_global_ctrl(
     constant dummy : in t_void
   ) is
@@ -3908,7 +3909,7 @@ package body methods_pkg is
       if stop_limit /= integer'high then
         write(v_line, justify(to_string(integer'(get_alert_stop_limit(i))), right, 6) & LF);
       else
-        write(v_line, justify("integer'high", right, 6) & LF);
+        write(v_line, justify(to_string(integer'(0)), right, 6) & LF);
       end if ;
     end loop;
     write(v_line, fill_string('-', (C_LOG_LINE_WIDTH - C_PREFIX'length)) & LF);
@@ -3919,8 +3920,7 @@ package body methods_pkg is
 
     -- Write the report to the log destination
     write_line_to_log_destination(v_line);
-    -- deallocate(v_line);  --??nn
---!!    -- osvvm.TranscriptPkg.WriteLine(v_line) ;
+    --O deallocate(v_line);  --O write_line_to_log_destination uses WriteLine in each branch so v_line is deallocated.
   end procedure;
 
   procedure report_msg_id_panel(
@@ -3929,7 +3929,7 @@ package body methods_pkg is
     constant C_PREFIX : string := C_LOG_PREFIX & "     ";
     variable v_line   : line;
   begin
---    initialize_util(VOID); -- Only executed the first time called. Ensures that the log and alert files are open.
+--O    initialize_util(VOID); -- not necessary with OSVVM
     write(v_line,
     LF &
     fill_string('-', (C_LOG_LINE_WIDTH - C_PREFIX'length)) & LF &
@@ -3951,10 +3951,10 @@ package body methods_pkg is
 
     -- Write the report to the log destination
     write_line_to_log_destination(v_line);
-    -- deallocate(v_line);  --??nn
---!!    -- osvvm.TranscriptPkg.WriteLine(v_line) ;
+    --O deallocate(v_line);  --O write_line_to_log_destination uses WriteLine in each branch so v_line is deallocated.
   end procedure;
 
+  --O Translated code to OSVVM and sorted complexity so it is understandable.
   procedure set_alert_attention(
     alert_level : t_alert_level;
     attention   : t_attention;
@@ -3967,11 +3967,13 @@ package body methods_pkg is
       if attention = EXPECT then
         tb_warning("set_alert_attention not allowed for EXPECT. Use increment_expected_alerts() instead.");
       else
+        --O Translate UVVM to OSVVM SetAlertEnable
         osvvm.AlertLogPkg.SetAlertEnable(to_OsvvmAlert(alert_level), attention = REGARD) ;
       end if;
     end if;
   end procedure;
 
+  --O Translated code to OSVVM
   impure function get_alert_attention(
     alert_level : t_alert_level
   ) return t_attention is
@@ -3987,6 +3989,8 @@ package body methods_pkg is
     end if;
   end function;
 
+  --O Translated code to OSVVM
+  --O There is no scope here, so there is no way to translate this to OSVVM hierarchical controls
   procedure set_alert_stop_limit(
     alert_level : t_alert_level;
     value       : natural
@@ -4004,6 +4008,8 @@ package body methods_pkg is
     end if;
   end procedure;
 
+  --O Translated code to OSVVM
+  --O There is no scope here, so there is no way to translate this to OSVVM hierarchical controls
   impure function get_alert_stop_limit(
     alert_level : t_alert_level
   ) return natural is
@@ -4015,6 +4021,7 @@ package body methods_pkg is
     end if;
   end function;
 
+  --O Translated code to OSVVM
   impure function get_alert_counter(
     alert_level : t_alert_level;
     attention   : t_attention := REGARD
@@ -4036,6 +4043,8 @@ package body methods_pkg is
     end if;
   end function;
 
+  --O  Translated code to OSVVM
+  --O  OSVVM does not rectify expected errors until reporting so the code is simplified
   procedure increment_alert_counter(
     alert_level : t_alert_level;
     attention   : t_attention := REGARD; -- regard, expect, ignore
@@ -4047,6 +4056,7 @@ package body methods_pkg is
     end loop ;
   end procedure;
 
+  --O  Translated code to OSVVM
   procedure increment_expected_alerts_and_stop_limit(
     constant alert_level : t_alert_level;
     constant number      : natural := 1;
@@ -4055,10 +4065,10 @@ package body methods_pkg is
   ) is
     variable v_alert_stop_limit : natural := get_alert_stop_limit(alert_level);
   begin
-    if v_alert_stop_limit /= natural'right then
-      v_alert_stop_limit := v_alert_stop_limit + number;
-      set_alert_stop_limit(alert_level, v_alert_stop_limit);
+    if v_alert_stop_limit = natural'right or v_alert_stop_limit = 0 then
+      v_alert_stop_limit := 1 ;
     end if ;
+    set_alert_stop_limit(alert_level, v_alert_stop_limit + number);
     increment_expected_alerts(alert_level, number, msg, scope);
   end procedure;
 
@@ -4066,7 +4076,7 @@ package body methods_pkg is
     constant order : in t_order
   ) is
   begin
---    initialize_util(VOID); -- Only executed the first time called. Ensures that the log and alert files are open.
+    --O  initialize_util(VOID); -- not needed in OSVVM environment
     protected_check_counters.to_string(order);
   end procedure;
 
@@ -4084,7 +4094,7 @@ package body methods_pkg is
     constant C_PREFIX : string := C_LOG_PREFIX & "     ";
     variable v_line   : line;
   begin
-    -- initialize_util(void); -- Only executed the first time called. Ensures that the log and alert files are open.
+    --O  initialize_util(VOID); -- not needed in OSVVM environment
     -- Print report header
     write(v_line, LF & fill_string('=', (C_LOG_LINE_WIDTH - C_PREFIX'length)) & LF);
     write(v_line, timestamp_header(now, justify("*** SUMMARY OF SCOREBOARDS***", LEFT, C_LOG_LINE_WIDTH - C_PREFIX'length, SKIP_LEADING_SPACE, DISALLOW_TRUNCATE)) & LF);
@@ -4109,8 +4119,7 @@ package body methods_pkg is
 
     -- Write the report to the log destination
     write_line_to_log_destination(v_line);
-    -- deallocate(v_line);  --??nn
---!!    -- osvvm.TranscriptPkg.WriteLine(v_line) ;
+    --O  deallocate(v_line);  -- write_line_to_log_destination was fixed so that it always ended with v_line deallocated
   end procedure;
 
   -- ============================================================================
@@ -4280,6 +4289,7 @@ package body methods_pkg is
 
   -- Function check_value,
   -- returning 'true' if OK
+  --O  Updated s.t. UVVM checks are translated to OSVVM Affirmations
   impure function check_value(
     constant value        : boolean;
     constant alert_level  : t_alert_level;
@@ -4304,6 +4314,7 @@ package body methods_pkg is
     return value;
   end function;
 
+  --O  Updated s.t. UVVM checks are translated to OSVVM Affirmations
   impure function check_value(
     constant value        : boolean;
     constant exp          : boolean;
@@ -4330,6 +4341,7 @@ package body methods_pkg is
     end if;
   end function;
 
+  --O  Updated s.t. UVVM checks are translated to OSVVM Affirmations
   impure function check_value(
     constant value            : std_logic;
     constant exp              : std_logic;
@@ -4403,6 +4415,7 @@ package body methods_pkg is
     return check_value(value, exp, MATCH_STD, alert_level, msg, scope, msg_id, msg_id_panel, caller_name);
   end function;
 
+  --O  Updated s.t. UVVM checks are translated to OSVVM Affirmations
   impure function check_value(
     constant value            : std_logic_vector;
     constant exp              : std_logic_vector;
@@ -4597,6 +4610,7 @@ package body methods_pkg is
     return v_check_ok;
   end function;
 
+  --O  Updated s.t. UVVM checks are translated to OSVVM Affirmations
   impure function check_value(
     constant value        : integer;
     constant exp          : integer;
@@ -4623,6 +4637,7 @@ package body methods_pkg is
     end if;
   end function;
 
+  --O  Updated s.t. UVVM checks are translated to OSVVM Affirmations
   impure function check_value(
     constant value        : real;
     constant exp          : real;
@@ -4634,8 +4649,8 @@ package body methods_pkg is
     constant caller_name  : string         := "check_value"
   ) return boolean is
     constant C_VALUE_TYPE : string := "real";
-    constant C_VALUE_STR  : string := to_string(value, C_REAL_NUM_FRACTION_DIGITS);
-    constant C_EXP_STR    : string := to_string(exp,   C_REAL_NUM_FRACTION_DIGITS);
+    constant C_VALUE_STR  : string := format_real(value);
+    constant C_EXP_STR    : string := format_real(exp);
   begin
     protected_check_counters.increment(CHECK_VALUE);
 
@@ -4649,6 +4664,7 @@ package body methods_pkg is
     end if;
   end function;
 
+  --O  Updated s.t. UVVM checks are translated to OSVVM Affirmations
   impure function check_value(
     constant value        : time;
     constant exp          : time;
@@ -4684,6 +4700,7 @@ package body methods_pkg is
     return v_return_val;
   end function;
 
+  --O  Updated s.t. UVVM checks are translated to OSVVM Affirmations
   impure function check_value(
     constant value        : string;
     constant exp          : string;
@@ -4878,8 +4895,8 @@ package body methods_pkg is
   end function;
 
   ----------------------------------------------------------------------
-  -- Overloads for impure function check_value methods
-  -- to make alert_level optional
+  -- Overloads for impure function check_value methods,
+  -- to allow optional alert_level
   ----------------------------------------------------------------------
   impure function check_value(
     constant value        : boolean;
@@ -5932,6 +5949,7 @@ package body methods_pkg is
   ------------------------------------------------------------------------
   -- check_value_in_range
   ------------------------------------------------------------------------
+  --O  Updated s.t. UVVM checks are translated to OSVVM Affirmations
   impure function check_value_in_range(
     constant value        : integer;
     constant min_value    : integer;
@@ -5968,6 +5986,7 @@ package body methods_pkg is
     end if;
   end function;
 
+  --O  Updated s.t. UVVM checks are translated to OSVVM Affirmations
   impure function check_value_in_range(
     constant value        : unsigned;
     constant min_value    : unsigned;
@@ -6004,6 +6023,7 @@ package body methods_pkg is
     end if;
   end function;
 
+  --O  Updated s.t. UVVM checks are translated to OSVVM Affirmations
   impure function check_value_in_range(
     constant value        : signed;
     constant min_value    : signed;
@@ -6040,6 +6060,7 @@ package body methods_pkg is
     end if;
   end function;
 
+  --O  Updated s.t. UVVM checks are translated to OSVVM Affirmations
   impure function check_value_in_range(
     constant value        : time;
     constant min_value    : time;
@@ -6085,6 +6106,7 @@ package body methods_pkg is
     return v_return_val;
   end function;
 
+  --O  Updated s.t. UVVM checks are translated to OSVVM Affirmations
   impure function check_value_in_range(
     constant value        : real;
     constant min_value    : real;
@@ -6097,9 +6119,9 @@ package body methods_pkg is
     constant caller_name  : string         := "check_value_in_range"
   ) return boolean is
     constant C_VALUE_TYPE    : string := "real";
-    constant C_VALUE_STR     : string := to_string(value,     C_REAL_NUM_FRACTION_DIGITS);
-    constant C_MIN_VALUE_STR : string := to_string(min_value, C_REAL_NUM_FRACTION_DIGITS);
-    constant C_MAX_VALUE_STR : string := to_string(max_value, C_REAL_NUM_FRACTION_DIGITS);
+    constant C_VALUE_STR     : string := format_real(value);
+    constant C_MIN_VALUE_STR : string := format_real(min_value);
+    constant C_MAX_VALUE_STR : string := format_real(max_value);
   begin
     protected_check_counters.increment(CHECK_VALUE_IN_RANGE);
 
@@ -6381,6 +6403,7 @@ package body methods_pkg is
   --------------------------------------------------------------------------------
   -- check_stable
   --------------------------------------------------------------------------------
+  --O  Updated s.t. UVVM checks are translated to OSVVM Affirmations
   procedure check_stable(
     signal target         : boolean;
     constant stable_req   : time;
@@ -6395,8 +6418,8 @@ package body methods_pkg is
     constant C_VALUE_STRING       : string := to_string(target);
     constant C_LAST_VALUE_STRING  : string := to_string(target'last_value);
     constant C_LAST_CHANGE        : time   := target'last_event;
-    constant C_LAST_CHANGE_STRING : string := to_string(C_LAST_CHANGE, get_time_unit(C_LAST_CHANGE));
-    constant C_STABLE_REQ_STRING  : string := to_string(stable_req, get_time_unit(stable_req));
+    constant C_LAST_CHANGE_STRING : string := format_time(C_LAST_CHANGE);
+    constant C_STABLE_REQ_STRING  : string := format_time(stable_req);
   begin
     protected_check_counters.increment(CHECK_STABLE);
 
@@ -6408,6 +6431,7 @@ package body methods_pkg is
     end if;
   end procedure;
 
+  --O  Updated s.t. UVVM checks are translated to OSVVM Affirmations
   procedure check_stable(
     signal target         : in std_logic_vector;
     constant stable_req   : in time;
@@ -6423,8 +6447,8 @@ package body methods_pkg is
     constant C_VALUE_STRING       : string := to_string(target, HEX_BIN_IF_INVALID, KEEP_LEADING_0, INCL_RADIX);
     constant C_LAST_VALUE_STRING  : string := to_string(target'last_value, HEX_BIN_IF_INVALID, KEEP_LEADING_0, INCL_RADIX);
     constant C_LAST_CHANGE        : time   := target'last_event;
-    constant C_LAST_CHANGE_STRING : string := to_string(C_LAST_CHANGE, get_time_unit(C_LAST_CHANGE));
-    constant C_STABLE_REQ_STRING  : string := to_string(stable_req, get_time_unit(stable_req));
+    constant C_LAST_CHANGE_STRING : string := format_time(C_LAST_CHANGE);
+    constant C_STABLE_REQ_STRING  : string := format_time(stable_req);
   begin
     protected_check_counters.increment(CHECK_STABLE);
     success := true;
@@ -6454,6 +6478,7 @@ package body methods_pkg is
     check_stable(target, stable_req, alert_level, v_success, msg, scope, msg_id, msg_id_panel, caller_name, value_type);
   end procedure;
 
+  --O  Updated s.t. UVVM checks are translated to OSVVM Affirmations
   procedure check_stable(
     signal target         : unsigned;
     constant stable_req   : time;
@@ -6468,8 +6493,8 @@ package body methods_pkg is
     constant C_VALUE_STRING       : string := to_string(target, HEX_BIN_IF_INVALID, KEEP_LEADING_0, INCL_RADIX);
     constant C_LAST_VALUE_STRING  : string := to_string(target'last_value, HEX_BIN_IF_INVALID, KEEP_LEADING_0, INCL_RADIX);
     constant C_LAST_CHANGE        : time   := target'last_event;
-    constant C_LAST_CHANGE_STRING : string := to_string(C_LAST_CHANGE, get_time_unit(C_LAST_CHANGE));
-    constant C_STABLE_REQ_STRING  : string := to_string(stable_req, get_time_unit(stable_req));
+    constant C_LAST_CHANGE_STRING : string := format_time(C_LAST_CHANGE);
+    constant C_STABLE_REQ_STRING  : string := format_time(stable_req);
   begin
     protected_check_counters.increment(CHECK_STABLE);
 
@@ -6481,6 +6506,7 @@ package body methods_pkg is
     end if;
   end procedure;
 
+  --O  Updated s.t. UVVM checks are translated to OSVVM Affirmations
   procedure check_stable(
     signal target         : signed;
     constant stable_req   : time;
@@ -6495,8 +6521,8 @@ package body methods_pkg is
     constant C_VALUE_STRING       : string := to_string(target, HEX_BIN_IF_INVALID, KEEP_LEADING_0, INCL_RADIX);
     constant C_LAST_VALUE_STRING  : string := to_string(target'last_value, HEX_BIN_IF_INVALID, KEEP_LEADING_0, INCL_RADIX);
     constant C_LAST_CHANGE        : time   := target'last_event;
-    constant C_LAST_CHANGE_STRING : string := to_string(C_LAST_CHANGE, get_time_unit(C_LAST_CHANGE));
-    constant C_STABLE_REQ_STRING  : string := to_string(stable_req, get_time_unit(stable_req));
+    constant C_LAST_CHANGE_STRING : string := format_time(C_LAST_CHANGE);
+    constant C_STABLE_REQ_STRING  : string := format_time(stable_req);
   begin
     protected_check_counters.increment(CHECK_STABLE);
 
@@ -6508,6 +6534,7 @@ package body methods_pkg is
     end if;
   end procedure;
 
+  --O  Updated s.t. UVVM checks are translated to OSVVM Affirmations
   procedure check_stable(
     signal target         : std_logic;
     constant stable_req   : time;
@@ -6522,8 +6549,8 @@ package body methods_pkg is
     constant C_VALUE_STRING       : string := to_string(target);
     constant C_LAST_VALUE_STRING  : string := to_string(target'last_value);
     constant C_LAST_CHANGE        : time   := target'last_event;
-    constant C_LAST_CHANGE_STRING : string := to_string(C_LAST_CHANGE, get_time_unit(C_LAST_CHANGE));
-    constant C_STABLE_REQ_STRING  : string := to_string(stable_req, get_time_unit(stable_req));
+    constant C_LAST_CHANGE_STRING : string := format_time(C_LAST_CHANGE);
+    constant C_STABLE_REQ_STRING  : string := format_time(stable_req);
   begin
     protected_check_counters.increment(CHECK_STABLE);
 
@@ -6535,6 +6562,7 @@ package body methods_pkg is
     end if;
   end procedure;
 
+  --O  Updated s.t. UVVM checks are translated to OSVVM Affirmations
   procedure check_stable(
     signal target         : integer;
     constant stable_req   : time;
@@ -6549,8 +6577,8 @@ package body methods_pkg is
     constant C_VALUE_STRING       : string := to_string(target);
     constant C_LAST_VALUE_STRING  : string := to_string(target'last_value);
     constant C_LAST_CHANGE        : time   := target'last_event;
-    constant C_LAST_CHANGE_STRING : string := to_string(C_LAST_CHANGE, get_time_unit(C_LAST_CHANGE));
-    constant C_STABLE_REQ_STRING  : string := to_string(stable_req, get_time_unit(stable_req));
+    constant C_LAST_CHANGE_STRING : string := format_time(C_LAST_CHANGE);
+    constant C_STABLE_REQ_STRING  : string := format_time(stable_req);
   begin
     protected_check_counters.increment(CHECK_STABLE);
 
@@ -6562,6 +6590,7 @@ package body methods_pkg is
     end if;
   end procedure;
 
+  --O  Updated s.t. UVVM checks are translated to OSVVM Affirmations
   procedure check_stable(
     signal target         : real;
     constant stable_req   : time;
@@ -6573,11 +6602,11 @@ package body methods_pkg is
     constant caller_name  : string         := "check_stable";
     constant value_type   : string         := "real"
   ) is
-    constant C_VALUE_STRING       : string := to_string(target, C_REAL_NUM_FRACTION_DIGITS);
-    constant C_LAST_VALUE_STRING  : string := to_string(target'last_value, C_REAL_NUM_FRACTION_DIGITS);
+    constant C_VALUE_STRING       : string := format_real(target);
+    constant C_LAST_VALUE_STRING  : string := format_real(target'last_value);
     constant C_LAST_CHANGE        : time   := target'last_event;
-    constant C_LAST_CHANGE_STRING : string := to_string(C_LAST_CHANGE, get_time_unit(C_LAST_CHANGE));
-    constant C_STABLE_REQ_STRING  : string := to_string(stable_req, get_time_unit(stable_req));
+    constant C_LAST_CHANGE_STRING : string := format_time(C_LAST_CHANGE);
+    constant C_STABLE_REQ_STRING  : string := format_time(stable_req);
   begin
     protected_check_counters.increment(CHECK_STABLE);
 
@@ -6822,6 +6851,7 @@ package body methods_pkg is
   --      - the signal reached success condition at max_time,
   --      - max_time was reached with no success condition
   ----------------------------------------------------------------------------
+  --O  Updated s.t. UVVM checks are translated to OSVVM Affirmations
   procedure check_time_window(
     constant success      : in boolean; -- F.ex target'event, or target=exp
     constant elapsed_time : in time;
@@ -7952,7 +7982,7 @@ package body methods_pkg is
   ) is
     constant C_VALUE_TYPE : string := "real";
     constant C_START_TIME : time   := now;
-    constant C_NAME       : string := "await_value(" & C_VALUE_TYPE & ", " & to_string(exp, C_REAL_NUM_FRACTION_DIGITS) & ", " & to_string(min_time, ns) & ", " & to_string(max_time, ns) & ")";
+    constant C_NAME       : string := "await_value(" & C_VALUE_TYPE & ", " & format_real(exp) & ", " & to_string(min_time, ns) & ", " & to_string(max_time, ns) & ")";
   begin
     if (target /= exp) then
       wait until (target = exp) for max_time;
@@ -8535,7 +8565,7 @@ package body methods_pkg is
     constant value_type   : string         := "real"
   ) is
     constant C_START_TIME        : time    := now;
-    constant C_NAME              : string  := "await_change_to_value(" & value_type & ", " & to_string(exp_value, C_REAL_NUM_FRACTION_DIGITS) & ", " & to_string(min_time, ns) & ", " & to_string(max_time, ns) & ")";
+    constant C_NAME              : string  := "await_change_to_value(" & value_type & ", " & format_real(exp_value) & ", " & to_string(min_time, ns) & ", " & to_string(max_time, ns) & ")";
     variable v_no_alert_min_time : boolean := true;
     variable v_ch_to_exp_value   : boolean := false;
     variable v_match             : boolean := false;
