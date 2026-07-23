@@ -353,7 +353,7 @@
 %%  10400 ns    Alert  WARNING             TB seq.             rand_val_weight((0,30),(1,20),(2,50))=> GAUSSIAN distribution and weighted randomization cannot be combined. Ignoring GAUSSIAN configuration.
 %% 
 %% ============================================================================================================================================================================
-%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
 %%  11400 ns    DONE   PASSED   rand_gaussian  Passed: 5  Affirmations Checked: 5
 %%    Expected      Failures: 0  Errors: -10  Warnings: -63  Passed: 0

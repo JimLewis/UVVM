@@ -73,7 +73,7 @@
 %%    425 ns    Alert  ERROR               TB seq.(uvvm)       await_value(real, 17.0000, 1 ns, 2 ns) => Failed. Condition occurred too early, after 0 ns. 'Val=exp already, Min_time>0ns, Fail. '
 %% 
 %% ============================================================================================================================================================================
-%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
 %%   1425 ns    DONE   PASSED   await_value_default_alert  Passed: 35  Affirmations Checked: 63
 %%    Expected      Failures: 0  Errors: -29  Warnings: 0  Passed: 0

@@ -20,11 +20,11 @@
 %%      ***  REPORT OF GLOBAL CTRL ***
 %%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 %%                                IGNORE    STOP_LIMIT
-%%                NOTE         :  REGARD    integer'high
-%%                TB_NOTE      :  REGARD    integer'high
-%%                WARNING      :  REGARD    integer'high
-%%                TB_WARNING   :  REGARD    integer'high
-%%                MANUAL_CHECK :  REGARD    integer'high
+%%                NOTE         :  REGARD         0
+%%                TB_NOTE      :  REGARD         0
+%%                WARNING      :  REGARD         0
+%%                TB_WARNING   :  REGARD         0
+%%                MANUAL_CHECK :  REGARD         0
 %%                ERROR        :  REGARD         4
 %%                TB_ERROR     :  REGARD         4
 %%                FAILURE      :  REGARD         1
@@ -125,7 +125,7 @@
 %%      
 %% 
 %% ============================================================================================================================================================================
-%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
 %%     31 ns    DONE   NOCHECKS   sbi_vvc_multi_cycle_read_tb  Passed: 0
 %%    Expected      Failures: 0  Errors: 0  Warnings: 0  Passed: 0

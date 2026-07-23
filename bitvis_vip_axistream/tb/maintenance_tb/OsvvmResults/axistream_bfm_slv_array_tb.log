@@ -3,13 +3,13 @@
 %%      ***  REPORT OF GLOBAL CTRL ***
 %%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 %%                                IGNORE    STOP_LIMIT
-%%                NOTE         :  REGARD    integer'high
-%%                TB_NOTE      :  REGARD    integer'high
-%%                WARNING      :  REGARD    integer'high
-%%                TB_WARNING   :  REGARD    integer'high
-%%                MANUAL_CHECK :  REGARD    integer'high
-%%                ERROR        :  REGARD    integer'high
-%%                TB_ERROR     :  REGARD    integer'high
+%%                NOTE         :  REGARD         0
+%%                TB_NOTE      :  REGARD         0
+%%                WARNING      :  REGARD         0
+%%                TB_WARNING   :  REGARD         0
+%%                MANUAL_CHECK :  REGARD         0
+%%                ERROR        :  REGARD         0
+%%                TB_ERROR     :  REGARD         0
 %%                FAILURE      :  REGARD         1
 %%                TB_FAILURE   :  REGARD         1
 %%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -261,7 +261,7 @@
 %%  20775 ns    Alert  ERROR               TB seq.             axistream_receive()=> Failed. Timeout while waiting for valid data during 1000 clock cycles. 'invalid receive'
 %% 
 %% ============================================================================================================================================================================
-%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
 %% 21762.5 ns    DONE   PASSED   axistream_bfm_slv_array_tb  Passed: 0  Affirmations Checked: 16
 %%    Expected      Failures: 0  Errors: -20  Warnings: 0  Passed: 0

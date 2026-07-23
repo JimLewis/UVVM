@@ -588,7 +588,7 @@
 %%  29163 ns    Log    ID_AWAIT_UVVM_COMP  TB seq.             await_uvvm_completion()() => OK. All UVVM scoreboards are empty. Condition occurred after 0 ns
 %% 
 %% ============================================================================================================================================================================
-%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
 %%  29163 ns    DONE   PASSED   ethernet_gmii_tb  Passed: 57  Affirmations Checked: 61
 %%    Expected      Failures: 0  Errors: -4  Warnings: 0  Passed: 0

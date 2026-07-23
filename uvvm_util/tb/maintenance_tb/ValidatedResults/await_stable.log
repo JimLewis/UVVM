@@ -107,7 +107,7 @@
 %%   4620 ns    Alert  ERROR               TB seq.(uvvm)       await_stable(real, 50 ns, 49 ns) => Failed immediately: Stable for stable_req = 40 ns is not possible before timeout = 39 ns. 'real_a: Stable FROM_LAST_EVENT, FROM_LAST_EVENT, FAIL after 39 ns'
 %% 
 %% ============================================================================================================================================================================
-%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
 %%   5620 ns    DONE   NOCHECKS   await_stable  Passed: 0
 %%    Expected      Failures: 0  Errors: -35  Warnings: 0  Passed: 0

@@ -41,13 +41,13 @@
 %%      ***  REPORT OF GLOBAL CTRL ***
 %%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 %%                                IGNORE    STOP_LIMIT
-%%                NOTE         :  REGARD    integer'high
-%%                TB_NOTE      :  REGARD    integer'high
-%%                WARNING      :  REGARD    integer'high
-%%                TB_WARNING   :  REGARD    integer'high
-%%                MANUAL_CHECK :  REGARD    integer'high
-%%                ERROR        :  REGARD    integer'high
-%%                TB_ERROR     :  REGARD    integer'high
+%%                NOTE         :  REGARD         0
+%%                TB_NOTE      :  REGARD         0
+%%                WARNING      :  REGARD         0
+%%                TB_WARNING   :  REGARD         0
+%%                MANUAL_CHECK :  REGARD         0
+%%                ERROR        :  REGARD         0
+%%                TB_ERROR     :  REGARD         0
 %%                FAILURE      :  REGARD         1
 %%                TB_FAILURE   :  REGARD         1
 %%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -457,7 +457,7 @@ RDATA(1): x"55555555", RRESP(1): okay, RUSER(1): x"00000000000000000000000000000
 %%  27438 ns    Log    ID_AWAIT_UVVM_COMP  TB seq.             await_uvvm_completion()() => OK. All UVVM scoreboards are empty. Condition occurred after 0 ns
 %% 
 %% ============================================================================================================================================================================
-%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
 %%  27438 ns    DONE   PASSED   axi_vvc_tb  Passed: 0  Affirmations Checked: 33
 %%    Expected      Failures: -40  Errors: -40  Warnings: -3  Passed: 0

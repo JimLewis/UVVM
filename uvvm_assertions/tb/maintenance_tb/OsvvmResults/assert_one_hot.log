@@ -228,7 +228,7 @@
 %%   1642 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_hot() => Failed, tracked_value (1111) was not one-hot. Occurred after 0 ns.
 %% 
 %% ============================================================================================================================================================================
-%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
 %%   1690 ns    DONE   NOCHECKS   assert_one_hot  Passed: 0
 %%    Expected      Failures: 0  Errors: -49  Warnings: 0  Passed: 0

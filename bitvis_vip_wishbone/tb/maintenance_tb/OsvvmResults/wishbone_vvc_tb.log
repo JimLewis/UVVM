@@ -365,7 +365,7 @@
 %% 1819.5 ns    Log    ID_AWAIT_UVVM_COMP  TB seq.(uvvm)       await_uvvm_completion()() => OK. All UVVM scoreboards are empty. Condition occurred after 0 ns
 %% 
 %% ============================================================================================================================================================================
-%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
 %% 1819.5 ns    DONE   PASSED   wishbone_vvc_tb  Passed: 8  Affirmations Checked: 8
 %%    Expected      Failures: -8  Errors: -8  Warnings: 0  Passed: 0

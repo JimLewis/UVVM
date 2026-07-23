@@ -1,33 +1,33 @@
-%%      0 ns    Log    ID_CONSTRUCTOR      UART_VVC,1,TX       VVC instantiated for channel TX
-%%      0 ns    Log    ID_CONSTRUCTOR_SUB  UART_VVC,1,TX       Command queue instantiated and will give a warning when reaching 1000 elements in queue.
-%%      0 ns    Log    ID_CONSTRUCTOR_SUB  UART_VVC,1,TX       Result queue instantiated and will give a warning when reaching 1000 elements in queue.
-%%      0 ns    Log    ID_CONSTRUCTOR      UART_VVC,1,RX       VVC instantiated for channel RX
-%%      0 ns    Log    ID_CONSTRUCTOR_SUB  UART_VVC,1,RX       Command queue instantiated and will give a warning when reaching 1000 elements in queue.
-%%      0 ns    Log    ID_CONSTRUCTOR_SUB  UART_VVC,1,RX       Result queue instantiated and will give a warning when reaching 1000 elements in queue.
 %%      0 ns    Log    ID_CONSTRUCTOR      SBI_VVC,1           VVC instantiated.
 %%      0 ns    Log    ID_CONSTRUCTOR_SUB  SBI_VVC,1           Command queue instantiated and will give a warning when reaching 1000 elements in queue.
 %%      0 ns    Log    ID_CONSTRUCTOR_SUB  SBI_VVC,1           Result queue instantiated and will give a warning when reaching 1000 elements in queue.
-%%      0 ns    Log    ID_CMD_INTERPRETER  UART_VVC,1,TX       Interpreter: Waiting for command
-%%      0 ns    Log    ID_CMD_INTERPRETER  UART_VVC,1,RX       Interpreter: Waiting for command
+%%      0 ns    Log    ID_CONSTRUCTOR      UART_VVC,1,RX       VVC instantiated for channel RX
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  UART_VVC,1,RX       Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  UART_VVC,1,RX       Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR      UART_VVC,1,TX       VVC instantiated for channel TX
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  UART_VVC,1,TX       Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  UART_VVC,1,TX       Result queue instantiated and will give a warning when reaching 1000 elements in queue.
 %%      0 ns    Log    ID_CMD_INTERPRETER  SBI_VVC,1           Interpreter: Waiting for command
-%%      0 ns    Log    ID_CTRL             UART_VVC_SB,1       enable() => SB enabled. 'UART VVC SB Enabled'
-%%      0 ns    Log    ID_CTRL             UART_VVC_SB,1       enable_log_msg() => message id id_data enabled.
-%%      0 ns    Log    ID_CTRL             UART_VVC_SB,1       config() => config applied to SB.
+%%      0 ns    Log    ID_CMD_INTERPRETER  UART_VVC,1,RX       Interpreter: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  UART_VVC,1,TX       Interpreter: Waiting for command
 %%      0 ns    Log    ID_CTRL             SBI_VVC_SB,1        enable() => SB enabled. 'SBI VVC SB Enabled'
 %%      0 ns    Log    ID_CTRL             SBI_VVC_SB,1        config() => config applied to SB.
 %%      0 ns    Log    ID_CTRL             SBI_VVC_SB,1        enable_log_msg() => message id id_data enabled.
+%%      0 ns    Log    ID_CTRL             UART_VVC_SB,1       enable() => SB enabled. 'UART VVC SB Enabled'
+%%      0 ns    Log    ID_CTRL             UART_VVC_SB,1       enable_log_msg() => message id id_data enabled.
+%%      0 ns    Log    ID_CTRL             UART_VVC_SB,1       config() => config applied to SB.
 %%      
 %%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 %%      ***  REPORT OF GLOBAL CTRL ***
 %%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 %%                                IGNORE    STOP_LIMIT
-%%                NOTE         :  REGARD    integer'high
-%%                TB_NOTE      :  REGARD    integer'high
-%%                WARNING      :  REGARD    integer'high
-%%                TB_WARNING   :  REGARD    integer'high
-%%                MANUAL_CHECK :  REGARD    integer'high
-%%                ERROR        :  REGARD    integer'high
-%%                TB_ERROR     :  REGARD    integer'high
+%%                NOTE         :  REGARD         0
+%%                TB_NOTE      :  REGARD         0
+%%                WARNING      :  REGARD         0
+%%                TB_WARNING   :  REGARD         0
+%%                MANUAL_CHECK :  REGARD         0
+%%                ERROR        :  REGARD         0
+%%                TB_ERROR     :  REGARD         0
 %%                FAILURE      :  REGARD         1
 %%                TB_FAILURE   :  REGARD         1
 %%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -128,9 +128,9 @@
 %%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_LOG_HDR).
 %%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_SEQUENCER).
 %%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_SEQUENCER_SUB).
-%%      0 ns    Log    ID_CMD_EXECUTOR_WA  UART_VVC,1,TX       Executor: Waiting for command
-%%      0 ns    Log    ID_CMD_EXECUTOR_WA  UART_VVC,1,RX       Executor: Waiting for command
 %%      0 ns    Log    ID_CMD_EXECUTOR_WA  SBI_VVC,1           Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  UART_VVC,1,RX       Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  UART_VVC,1,TX       Executor: Waiting for command
 %%      0 ns    Log    ID_CMD_INTERPRETER  SBI_VVC,1           disable_log_msg(SBI_VVC,1, ALL_MESSAGES). Command received  [1]
 %%      0 ns    Log    ID_LOG_MSG_CTRL     SBI_VVC,1           disable_log_msg(ALL_MESSAGES). ' [1]'
 %%      0 ns    Log    ID_CMD_INTERPRETER  UART_VVC,1,RX       disable_log_msg(UART_VVC,1,RX, ALL_MESSAGES). Command received  [2]
@@ -620,7 +620,7 @@
 %%      
 %% 
 %% ============================================================================================================================================================================
-%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
 %% 296316 ns    DONE   NOCHECKS   uart_monitor_tb  Passed: 0
 %%    Expected      Failures: 0  Errors: 0  Warnings: 0  Passed: 0

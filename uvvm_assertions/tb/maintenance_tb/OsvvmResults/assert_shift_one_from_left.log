@@ -2149,7 +2149,7 @@
 %% 243790 ns    Log    ID_SEQUENCER        TB seq.             Triggering assertion while clk is disabled, expecting no behavior
 %% 
 %% ============================================================================================================================================================================
-%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
 %% 243890 ns    DONE   NOCHECKS   assert_shift_one_from_left  Passed: 0
 %%    Expected      Failures: 0  Errors: -2038  Warnings: 0  Passed: 0

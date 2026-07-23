@@ -142,7 +142,7 @@
 %%    170 ns    Alert  ERROR               TB seq.             The flag FLAG_99 was not found and the maximum number of flags (100) have been used. Configure in adaptations_pkg.
 %% 
 %% ============================================================================================================================================================================
-%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
 %%   1170 ns    DONE   PASSED   synchronization_methods  Passed: 0  Affirmations Checked: 1
 %%    Expected      Failures: 0  Errors: -1  Warnings: -2  Passed: 0

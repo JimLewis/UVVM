@@ -51,7 +51,7 @@ Watchdog D
 %%  20100 ns    Alert  ERROR               TB seq.             General watchdog timer ended! Watchdog D
 %% 
 %% ============================================================================================================================================================================
-%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
 %%  21100 ns    DONE   NOCHECKS   watchdog_timer  Passed: 0
 %%    Expected      Failures: 0  Errors: -3  Warnings: 0  Passed: 0

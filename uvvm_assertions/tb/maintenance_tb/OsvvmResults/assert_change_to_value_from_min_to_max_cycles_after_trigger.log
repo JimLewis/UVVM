@@ -387,7 +387,7 @@
 %%  26950 ns    Log    ID_SEQUENCER        TB seq.             Hold '1' from 40-cycles to 50-cycles
 %% 
 %% ============================================================================================================================================================================
-%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
 %%  27510 ns    DONE   NOCHECKS   assert_change_to_value_from_min_to_max_cycles_after_trigger  Passed: 0
 %%    Expected      Failures: 0  Errors: -120  Warnings: 0  Passed: 0

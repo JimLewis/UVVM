@@ -105,7 +105,7 @@
 %%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_real([30.00:40.00])
 %%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_real(0.00, 0.10, 0.20, 0.30)
 %%      0 ns    Log    ID_RAND_CONF        TB seq.             excl_val_real(15.00, 35.00)
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[10.00:20.00],[30.00:40.00], ADD:(0.00, 0.10, 0.20, 0.30), EXCL:(15.00, 35.00))=> 0.00
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[10.00:20.00],[30.00:40.00], ADD:(0.00, 0.10, 0.20, 0.30), EXCL:(15.00, 35.00))=> 0
 %%      
 %%      =======================================================================================================================================================================
 %%      ***  REPORT OF RANDOM GENERATOR CONFIGURATION ***
@@ -162,7 +162,7 @@
 %%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight_real([50.00:60.00],10)
 %%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_real(0.00)
 %%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight_real(1.00,8)
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([10.00:20.00],1,COMBINED),([30.00:40.00],5,COMBINED),([50.00:60.00],10,COMBINED),(0.00,1),(1.00,8))=> 12.10
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([10.00:20.00],1,COMBINED),([30.00:40.00],5,COMBINED),([50.00:60.00],10,COMBINED),(0.00,1),(1.00,8))=> 12.1005
 %%      
 %%      =======================================================================================================================================================================
 %%      ***  REPORT OF RANDOM GENERATOR CONFIGURATION ***
@@ -380,16 +380,16 @@
 %% 
 %%      0 ns    Log    ID_LOG_HDR          TB seq.             Real
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2.00:2.00])=> -0.12
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2.00:2.00],[8.00:9.00])=> -0.83
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(ONLY:(-5.00, -3.00, 4.00))=> -3.00
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-1.00:1.00], ADD:(10.00))=> 0.63
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-1.00:1.00],[8.00:9.00], ADD:(10.00, -5.00, -3.00, 4.00))=> -0.42
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2.00:2.00], EXCL:(-1.00, 0.00, 1.00))=> -0.70
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2.00:2.00],[8.00:10.00], EXCL:(-1.00, 0.00, 1.00, 10.00))=> -0.50
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(ONLY:(-6.00, -4.00, -2.00, 0.00, 2.00, 4.00, 6.00), EXCL:(-2.00, 0.00, 2.00))=> -6.00
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2.00:2.00], ADD:(-5.00, -3.00, 4.00), EXCL:(-5.00, -1.00, 1.00))=> -3.00
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2.00:2.00],[8.00:10.00], ADD:(-5.00, -3.00, 4.00, 20.00, 30.00, 40.00), EXCL:(-5.00, -1.00, 1.00, 9.00, 30.00, 40.00))=> -1.25
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2.00:2.00])=> -0.116242
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2.00:2.00],[8.00:9.00])=> -0.833945
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(ONLY:(-5.00, -3.00, 4.00))=> -3
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-1.00:1.00], ADD:(10.00))=> 0.630771
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-1.00:1.00],[8.00:9.00], ADD:(10.00, -5.00, -3.00, 4.00))=> -0.418939
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2.00:2.00], EXCL:(-1.00, 0.00, 1.00))=> -0.701489
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2.00:2.00],[8.00:10.00], EXCL:(-1.00, 0.00, 1.00, 10.00))=> -0.497782
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(ONLY:(-6.00, -4.00, -2.00, 0.00, 2.00, 4.00, 6.00), EXCL:(-2.00, 0.00, 2.00))=> -6
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2.00:2.00], ADD:(-5.00, -3.00, 4.00), EXCL:(-5.00, -1.00, 1.00))=> -3
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2.00:2.00],[8.00:10.00], ADD:(-5.00, -3.00, 4.00, 20.00, 30.00, 40.00), EXCL:(-5.00, -1.00, 1.00, 9.00, 30.00, 40.00))=> -1.249
 %% 
 %% 
 %%      0 ns    Log    ID_LOG_HDR          TB seq.             Time
@@ -478,7 +478,7 @@
 %%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:128, RANGE:[x"FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF":x"00000000000000000000000000000003"], [x"00000000000000000000000000000005":x"00000000000000000000000000000007"])=> x"00000000000000000000000000000002"
 %% 
 %% ============================================================================================================================================================================
-%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
 %%   1000 ns    DONE   NOCHECKS   rand_report_multi  Passed: 0
 %%    Expected      Failures: 0  Errors: 0  Warnings: 0  Passed: 0

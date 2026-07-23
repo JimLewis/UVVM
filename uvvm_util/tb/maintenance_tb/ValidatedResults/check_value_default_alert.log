@@ -1,7 +1,7 @@
 %% 
 %% 
 %%      0 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       Verifying check_value with default alert level
-%% --------------------------------------------------------------------------------
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 %%      0 ns    Log    PASSED              TB seq.(uvvm)       check_value(bool, true) => OK. Value was true. 'A must be higher than B, OK'
 %%      0 ns    Log    PASSED              TB seq.(uvvm)       check_value(bool, true) => OK. Value was true. 'check_value with return value shall return true when OK'
 %%      0 ns    Log    PASSED              TB seq.(uvvm)       check_value(slv, x"0F") => OK. Value was x"0F". 'My msg1, OK'
@@ -73,8 +73,8 @@
 %%      0 ns    Alert  ERROR               TB seq.(uvvm)       check_value(int, 12345) => Failed. Value was 5. Expected 12345. 'My msg I, Fail'
 %%      0 ns    Alert  ERROR               TB seq.(uvvm)       check_value(int, 23456) => Failed. Value was 5. Expected 23456. 'My msg I, Fail'
 %%      0 ns    Log    PASSED              TB seq.(uvvm)       check_value(bool, true) => OK. Value was true. 'check_value with return value shall return false when Fail'
-%%      0 ns    Log    PASSED              TB seq.(uvvm)       check_value(real, 5222.01) => OK. Value was 5222.01. 'My msg I, OK'
-%%      0 ns    Alert  ERROR               TB seq.(uvvm)       check_value(real, 1421.02) => Failed. Value was 5222.01. Expected 1421.02. 'My msg I, Fail'
+%%      0 ns    Log    PASSED              TB seq.(uvvm)       check_value(real, 5222.0100) => OK. Value was 5222.0100. 'My msg I, OK'
+%%      0 ns    Alert  ERROR               TB seq.(uvvm)       check_value(real, 1421.0200) => Failed. Value was 5222.0100. Expected 1421.0200. 'My msg I, Fail'
 %%      0 ns    Log    PASSED              TB seq.(uvvm)       check_value(bool, true) => OK. Value was true. 'check_value with return value shall return false when Fail'
 %%      0 ns    Log    PASSED              TB seq.(uvvm)       check_value(sl, 1) => OK. Value was 1. 'My msg SL, OK'
 %%      0 ns    Log    PASSED              TB seq.(uvvm)       check_value(bool, true) => OK. Value was true. 'check_value with return value shall return true when OK'
@@ -121,6 +121,31 @@
 %%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Incrementing alert_stop_limit(TB_ERROR) for 1 provoked tb_error to pass in simulation.
 %%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'array directions do not match'
 %%      0 ns    Alert  ERROR               TB seq.             check_value(bool, true) => Failed. Value was false. Expected true. 'array lengths do not match'
-
-%% Alert Stop Count on ERROR   reached at 0 ns 
-%%      0 ns    DONE   PASSED   check_value_default_alert  Passed: 0  Affirmations Checked: 39
+%%      0 ns    Alert  WARNING             TB seq.             check_value(bool, true) => Failed. Value was false. Expected true. 'array directions do not match'
+%%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'array lengths do not match'
+%%      
+%%      =======================================================================================================================================================================
+%%      *** FINAL SUMMARY OF ALL CHECK COUNTERS ***
+%%      =======================================================================================================================================================================
+%%                CHECK_VALUE           :          0    
+%%                CHECK_VALUE_IN_RANGE  :          0    
+%%                CHECK_STABLE          :          0    
+%%                CHECK_TIME_WINDOW     :          0    
+%%      =======================================================================================================================================================================
+%%      
+%%      
+%% 
+%% ============================================================================================================================================================================
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%   1000 ns    DONE   PASSED   check_value_default_alert  Passed: 80  Affirmations Checked: 120
+%%    Expected      Failures: 0  Errors: -39  Warnings: -1  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 39  Warnings: 1  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%%   1000 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

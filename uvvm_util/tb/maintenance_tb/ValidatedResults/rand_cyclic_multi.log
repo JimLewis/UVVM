@@ -637,9 +637,9 @@
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 %%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_real([-2.00:2.00])
 %%      0 ns    Alert  WARNING             TB seq.             randm(RANGE:[-2.00:2.00])=> Cyclic mode not supported for real type. Ignoring cyclic configuration.
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2.00:2.00])=> -1.29
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2.00:2.00])=> -1.29033
 %%      0 ns    Alert  WARNING             TB seq.             randm(LEN:5, RANGE:[-2.00:2.00])=> Cyclic mode not supported for real_vector type. Ignoring cyclic configuration.
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:5, RANGE:[-2.00:2.00])=> (1.25, -0.58, 1.11, 0.74, -0.45)
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:5, RANGE:[-2.00:2.00])=> (1.2508, -0.5751, 1.1106, 0.7434, -0.4548)
 %%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_config()
 %%      0 ns    Log    ID_RAND_CONF        TB seq.             set_cyclic_mode(CYCLIC)
 %% 
@@ -2319,7 +2319,7 @@
 %%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_rand_cyclic()=> Deallocating cyclic list/queue
 %% 
 %% ============================================================================================================================================================================
-%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
 %%   1000 ns    DONE   PASSED   rand_cyclic_multi  Passed: 20  Affirmations Checked: 20
 %%    Expected      Failures: 0  Errors: -2  Warnings: -7  Passed: 0

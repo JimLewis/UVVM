@@ -390,7 +390,7 @@
 %%   4727 ns    Alert  ERROR               TB seq.(uvvm)       assert_value_in_range() => Failed, tracked_value (-1) was not in range [0..10]. Occurred after 0 ns.
 %% 
 %% ============================================================================================================================================================================
-%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
 %%   4779 ns    DONE   NOCHECKS   assert_value_in_range  Passed: 0
 %%    Expected      Failures: 0  Errors: -163  Warnings: 0  Passed: 0

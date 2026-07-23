@@ -306,7 +306,7 @@
 %%   4373 ns    Log    PASSED              TB seq.             check_value(int, 1) => OK. Value was 1. 'Verifying increment after wrap'
 %% 
 %% ============================================================================================================================================================================
-%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
 %%   5373 ns    DONE   PASSED   clock_generators  Passed: 188  Affirmations Checked: 193
 %%    Expected      Failures: 0  Errors: -5  Warnings: 0  Passed: 0

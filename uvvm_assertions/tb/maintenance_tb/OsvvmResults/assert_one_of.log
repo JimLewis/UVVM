@@ -496,7 +496,7 @@
 %%   6773 ns    Alert  ERROR               TB seq.(uvvm)       assert_one_of() => Failed, tracked_value (X) was not one of '0'/'1'. Occurred after 0 ns.
 %% 
 %% ============================================================================================================================================================================
-%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
 %%   6816 ns    DONE   NOCHECKS   assert_one_of  Passed: 0
 %%    Expected      Failures: 0  Errors: -75  Warnings: 0  Passed: 0

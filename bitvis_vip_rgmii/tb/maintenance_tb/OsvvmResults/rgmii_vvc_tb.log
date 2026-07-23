@@ -14,13 +14,13 @@
 %%      ***  REPORT OF GLOBAL CTRL ***
 %%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 %%                                IGNORE    STOP_LIMIT
-%%                NOTE         :  REGARD    integer'high
-%%                TB_NOTE      :  REGARD    integer'high
-%%                WARNING      :  REGARD    integer'high
-%%                TB_WARNING   :  REGARD    integer'high
-%%                MANUAL_CHECK :  REGARD    integer'high
-%%                ERROR        :  REGARD    integer'high
-%%                TB_ERROR     :  REGARD    integer'high
+%%                NOTE         :  REGARD         0
+%%                TB_NOTE      :  REGARD         0
+%%                WARNING      :  REGARD         0
+%%                TB_WARNING   :  REGARD         0
+%%                MANUAL_CHECK :  REGARD         0
+%%                ERROR        :  REGARD         0
+%%                TB_ERROR     :  REGARD         0
 %%                FAILURE      :  REGARD         1
 %%                TB_FAILURE   :  REGARD         1
 %%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -850,7 +850,7 @@ Expected:
 %%  33849 ns    Log    ID_AWAIT_UVVM_COMP  TB seq.             await_uvvm_completion()() => OK. All UVVM scoreboards are empty. Condition occurred after 0 ns
 %% 
 %% ============================================================================================================================================================================
-%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
 %%  33849 ns    DONE   PASSED   rgmii_vvc_tb  Passed: 101  Affirmations Checked: 182
 %%    Expected      Failures: -8  Errors: -13  Warnings: 0  Passed: 0

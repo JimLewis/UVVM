@@ -232,7 +232,7 @@
 %%   9130 ns    Log    ID_SEQUENCER        TB seq.             Hold '0' from 0-cycle to 5-cycles
 %% 
 %% ============================================================================================================================================================================
-%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
 %%   9240 ns    DONE   NOCHECKS   assert_value_from_start_to_end_trigger  Passed: 0
 %%    Expected      Failures: 0  Errors: -70  Warnings: 0  Passed: 0

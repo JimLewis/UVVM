@@ -64,7 +64,7 @@
 %%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_rand_cyclic()=> Deallocating cyclic list/queue
 %% 
 %% ============================================================================================================================================================================
-%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
 %%   1000 ns    DONE   NOCHECKS   rand_cyclic_performance  Passed: 0
 %%    Expected      Failures: 0  Errors: 0  Warnings: -1  Passed: 0

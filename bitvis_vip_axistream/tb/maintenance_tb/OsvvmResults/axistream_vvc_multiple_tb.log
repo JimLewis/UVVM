@@ -1,45 +1,45 @@
-%%      0 ns    Log    ID_CONSTRUCTOR      AXISTREAM_VVC,7     VVC instantiated.
-%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,7     Command queue instantiated and will give a warning when reaching 1000 elements in queue.
-%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,7     Result queue instantiated and will give a warning when reaching 1000 elements in queue.
-%%      0 ns    Log    ID_CONSTRUCTOR      AXISTREAM_VVC,6     VVC instantiated.
-%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,6     Command queue instantiated and will give a warning when reaching 1000 elements in queue.
-%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,6     Result queue instantiated and will give a warning when reaching 1000 elements in queue.
-%%      0 ns    Log    ID_CONSTRUCTOR      AXISTREAM_VVC,5     VVC instantiated.
-%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,5     Command queue instantiated and will give a warning when reaching 1000 elements in queue.
-%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,5     Result queue instantiated and will give a warning when reaching 1000 elements in queue.
-%%      0 ns    Log    ID_CONSTRUCTOR      AXISTREAM_VVC,4     VVC instantiated.
-%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,4     Command queue instantiated and will give a warning when reaching 1000 elements in queue.
-%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,4     Result queue instantiated and will give a warning when reaching 1000 elements in queue.
-%%      0 ns    Log    ID_CONSTRUCTOR      AXISTREAM_VVC,3     VVC instantiated.
-%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,3     Command queue instantiated and will give a warning when reaching 1000 elements in queue.
-%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,3     Result queue instantiated and will give a warning when reaching 1000 elements in queue.
-%%      0 ns    Log    ID_CONSTRUCTOR      AXISTREAM_VVC,2     VVC instantiated.
-%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,2     Command queue instantiated and will give a warning when reaching 1000 elements in queue.
-%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,2     Result queue instantiated and will give a warning when reaching 1000 elements in queue.
-%%      0 ns    Log    ID_CONSTRUCTOR      AXISTREAM_VVC,1     VVC instantiated.
-%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,1     Command queue instantiated and will give a warning when reaching 1000 elements in queue.
-%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,1     Result queue instantiated and will give a warning when reaching 1000 elements in queue.
 %%      0 ns    Log    ID_CONSTRUCTOR      AXISTREAM_VVC,0     VVC instantiated.
 %%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,0     Command queue instantiated and will give a warning when reaching 1000 elements in queue.
 %%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,0     Result queue instantiated and will give a warning when reaching 1000 elements in queue.
-%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,7     Interpreter: Waiting for command
-%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,6     Interpreter: Waiting for command
-%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,5     Interpreter: Waiting for command
-%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,4     Interpreter: Waiting for command
-%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,3     Interpreter: Waiting for command
-%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,2     Interpreter: Waiting for command
-%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,1     Interpreter: Waiting for command
+%%      0 ns    Log    ID_CONSTRUCTOR      AXISTREAM_VVC,1     VVC instantiated.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,1     Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,1     Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR      AXISTREAM_VVC,2     VVC instantiated.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,2     Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,2     Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR      AXISTREAM_VVC,3     VVC instantiated.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,3     Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,3     Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR      AXISTREAM_VVC,4     VVC instantiated.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,4     Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,4     Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR      AXISTREAM_VVC,5     VVC instantiated.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,5     Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,5     Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR      AXISTREAM_VVC,6     VVC instantiated.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,6     Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,6     Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR      AXISTREAM_VVC,7     VVC instantiated.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,7     Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%      0 ns    Log    ID_CONSTRUCTOR_SUB  AXISTREAM_VVC,7     Result queue instantiated and will give a warning when reaching 1000 elements in queue.
 %%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,0     Interpreter: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,1     Interpreter: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,2     Interpreter: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,3     Interpreter: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,4     Interpreter: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,5     Interpreter: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,6     Interpreter: Waiting for command
+%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,7     Interpreter: Waiting for command
 %%      
 %%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 %%      ***  REPORT OF GLOBAL CTRL ***
 %%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 %%                                IGNORE    STOP_LIMIT
-%%                NOTE         :  REGARD    integer'high
-%%                TB_NOTE      :  REGARD    integer'high
-%%                WARNING      :  REGARD    integer'high
-%%                TB_WARNING   :  REGARD    integer'high
-%%                MANUAL_CHECK :  REGARD    integer'high
+%%                NOTE         :  REGARD         0
+%%                TB_NOTE      :  REGARD         0
+%%                WARNING      :  REGARD         0
+%%                TB_WARNING   :  REGARD         0
+%%                MANUAL_CHECK :  REGARD         0
 %%                ERROR        :  REGARD         3
 %%                TB_ERROR     :  REGARD         3
 %%                FAILURE      :  REGARD         1
@@ -141,38 +141,38 @@
 %%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ALL_MESSAGES).
 %%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_LOG_HDR).
 %%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_SEQUENCER).
-%%      0 ns    Log    ID_CMD_EXECUTOR_WA  AXISTREAM_VVC,7     Executor: Waiting for command
-%%      0 ns    Log    ID_CMD_EXECUTOR_WA  AXISTREAM_VVC,6     Executor: Waiting for command
-%%      0 ns    Log    ID_CMD_EXECUTOR_WA  AXISTREAM_VVC,5     Executor: Waiting for command
-%%      0 ns    Log    ID_CMD_EXECUTOR_WA  AXISTREAM_VVC,4     Executor: Waiting for command
-%%      0 ns    Log    ID_CMD_EXECUTOR_WA  AXISTREAM_VVC,3     Executor: Waiting for command
-%%      0 ns    Log    ID_CMD_EXECUTOR_WA  AXISTREAM_VVC,2     Executor: Waiting for command
-%%      0 ns    Log    ID_CMD_EXECUTOR_WA  AXISTREAM_VVC,1     Executor: Waiting for command
 %%      0 ns    Log    ID_CMD_EXECUTOR_WA  AXISTREAM_VVC,0     Executor: Waiting for command
-%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,7     disable_log_msg(AXISTREAM_VVC,ALL_INSTANCES, ALL_MESSAGES). Command received  [1]
-%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,7     disable_log_msg(ALL_MESSAGES). ' [1]'
-%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,6     disable_log_msg(AXISTREAM_VVC,ALL_INSTANCES, ALL_MESSAGES). Command received  [1]
-%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,6     disable_log_msg(ALL_MESSAGES). ' [1]'
-%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,5     disable_log_msg(AXISTREAM_VVC,ALL_INSTANCES, ALL_MESSAGES). Command received  [1]
-%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,5     disable_log_msg(ALL_MESSAGES). ' [1]'
-%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,4     disable_log_msg(AXISTREAM_VVC,ALL_INSTANCES, ALL_MESSAGES). Command received  [1]
-%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,4     disable_log_msg(ALL_MESSAGES). ' [1]'
-%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,3     disable_log_msg(AXISTREAM_VVC,ALL_INSTANCES, ALL_MESSAGES). Command received  [1]
-%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,3     disable_log_msg(ALL_MESSAGES). ' [1]'
-%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,2     disable_log_msg(AXISTREAM_VVC,ALL_INSTANCES, ALL_MESSAGES). Command received  [1]
-%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,2     disable_log_msg(ALL_MESSAGES). ' [1]'
-%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,1     disable_log_msg(AXISTREAM_VVC,ALL_INSTANCES, ALL_MESSAGES). Command received  [1]
-%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,1     disable_log_msg(ALL_MESSAGES). ' [1]'
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  AXISTREAM_VVC,1     Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  AXISTREAM_VVC,2     Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  AXISTREAM_VVC,3     Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  AXISTREAM_VVC,4     Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  AXISTREAM_VVC,5     Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  AXISTREAM_VVC,6     Executor: Waiting for command
+%%      0 ns    Log    ID_CMD_EXECUTOR_WA  AXISTREAM_VVC,7     Executor: Waiting for command
 %%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,0     disable_log_msg(AXISTREAM_VVC,ALL_INSTANCES, ALL_MESSAGES). Command received  [1]
 %%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,0     disable_log_msg(ALL_MESSAGES). ' [1]'
-%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,7     enable_log_msg(ID_SEQUENCER). ' [2]'
-%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,6     enable_log_msg(ID_SEQUENCER). ' [2]'
-%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,5     enable_log_msg(ID_SEQUENCER). ' [2]'
-%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,4     enable_log_msg(ID_SEQUENCER). ' [2]'
-%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,3     enable_log_msg(ID_SEQUENCER). ' [2]'
-%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,2     enable_log_msg(ID_SEQUENCER). ' [2]'
-%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,1     enable_log_msg(ID_SEQUENCER). ' [2]'
+%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,1     disable_log_msg(AXISTREAM_VVC,ALL_INSTANCES, ALL_MESSAGES). Command received  [1]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,1     disable_log_msg(ALL_MESSAGES). ' [1]'
+%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,2     disable_log_msg(AXISTREAM_VVC,ALL_INSTANCES, ALL_MESSAGES). Command received  [1]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,2     disable_log_msg(ALL_MESSAGES). ' [1]'
+%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,3     disable_log_msg(AXISTREAM_VVC,ALL_INSTANCES, ALL_MESSAGES). Command received  [1]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,3     disable_log_msg(ALL_MESSAGES). ' [1]'
+%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,4     disable_log_msg(AXISTREAM_VVC,ALL_INSTANCES, ALL_MESSAGES). Command received  [1]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,4     disable_log_msg(ALL_MESSAGES). ' [1]'
+%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,5     disable_log_msg(AXISTREAM_VVC,ALL_INSTANCES, ALL_MESSAGES). Command received  [1]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,5     disable_log_msg(ALL_MESSAGES). ' [1]'
+%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,6     disable_log_msg(AXISTREAM_VVC,ALL_INSTANCES, ALL_MESSAGES). Command received  [1]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,6     disable_log_msg(ALL_MESSAGES). ' [1]'
+%%      0 ns    Log    ID_CMD_INTERPRETER  AXISTREAM_VVC,7     disable_log_msg(AXISTREAM_VVC,ALL_INSTANCES, ALL_MESSAGES). Command received  [1]
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,7     disable_log_msg(ALL_MESSAGES). ' [1]'
 %%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,0     enable_log_msg(ID_SEQUENCER). ' [2]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,1     enable_log_msg(ID_SEQUENCER). ' [2]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,2     enable_log_msg(ID_SEQUENCER). ' [2]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,3     enable_log_msg(ID_SEQUENCER). ' [2]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,4     enable_log_msg(ID_SEQUENCER). ' [2]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,5     enable_log_msg(ID_SEQUENCER). ' [2]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,6     enable_log_msg(ID_SEQUENCER). ' [2]'
+%%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,7     enable_log_msg(ID_SEQUENCER). ' [2]'
 %%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,0     enable_log_msg(ID_SEQUENCER). ' [3]'
 %%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,1     enable_log_msg(ID_SEQUENCER). ' [4]'
 %%      0 ns    Log    ID_LOG_MSG_CTRL     AXISTREAM_VVC,2     enable_log_msg(ID_SEQUENCER). ' [5]'
@@ -198,7 +198,7 @@
 %% 2773.5 ns    Log    PASSED              TB seq.             check_value(time, 1 ns) => OK. Value was 1 ns. 'all vvcs: checking that we waited for 'timeout''
 %% 
 %% ============================================================================================================================================================================
-%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
 %% 2983.5 ns    DONE   PASSED   axistream_vvc_multiple_tb  Passed: 10  Affirmations Checked: 10
 %%    Expected      Failures: 0  Errors: -1  Warnings: 0  Passed: 0

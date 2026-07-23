@@ -371,7 +371,7 @@
 %%  25770 ns    Log    ID_SEQUENCER        TB seq.             Change the value from 'U' to '1', window (30-cycles to 40-cycles)
 %% 
 %% ============================================================================================================================================================================
-%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
 %%  26220 ns    DONE   NOCHECKS   assert_stable_from_min_to_max_cycles_after_trigger  Passed: 0
 %%    Expected      Failures: 0  Errors: -118  Warnings: 0  Passed: 0

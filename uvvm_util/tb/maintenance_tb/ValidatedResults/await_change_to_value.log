@@ -113,7 +113,7 @@
 %%    750 ns    Log    PASSED              TB seq.(uvvm)       await_change_to_value(real, 1.0000, 1 ns, 3 ns) => OK. Condition occurred after 2 ns. 'Change to acceptable value within timeframe'
 %% 
 %% ============================================================================================================================================================================
-%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
 %%   1760 ns    DONE   PASSED   await_change_to_value  Passed: 64  Affirmations Checked: 134
 %%    Expected      Failures: 0  Errors: -25  Warnings: -7  Passed: 0

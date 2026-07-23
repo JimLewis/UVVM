@@ -459,7 +459,7 @@
 %%      0 ns    Alert  ERROR               TB seq.             sample_coverage((5, 6, 7))=> Coverpoint does not contain any bins
 %% 
 %% ============================================================================================================================================================================
-%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
 %%   1000 ns    DONE   PASSED   fc_init_delete  Passed: 66  Affirmations Checked: 66
 %%    Expected      Failures: 0  Errors: -9  Warnings: 0  Passed: 0

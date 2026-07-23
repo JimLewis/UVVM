@@ -154,7 +154,7 @@
 %%      0 ns    Log    PASSED              TB seq.             check_value(string, 'file_name.txt') => OK. Value was 'file_name.txt'. 'Verifying get_basename() with no path.'
 %% 
 %% ============================================================================================================================================================================
-%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
 %%   1000 ns    DONE   PASSED   string_methods  Passed: 106  Affirmations Checked: 106
 %%    Expected      Failures: 0  Errors: 0  Warnings: 0  Passed: 0

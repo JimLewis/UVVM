@@ -62,19 +62,19 @@
 %% 
 %%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing weighted real (single values) - Generate 1000 random values for each test
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand_val_weight((-5.00,1),(10.10,3))=> 10.10
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand_val_weight((-5.00,1),(10.10,3))=> 10.1
 %%                                                                    =========================================================================================================
 %%                                                                    value:      -5     10
 %%                                                                    weight:    25%    75%
 %%                                                                    count:     246    754
 %%                                                                    =========================================================================================================
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand_val_weight((-5.00,1),(10.10,0))=> -5.00
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand_val_weight((-5.00,1),(10.10,0))=> -5
 %%                                                                    =========================================================================================================
 %%                                                                    value:      -5     10
 %%                                                                    weight:   100%     0%
 %%                                                                    count:    1000      0
 %%                                                                    =========================================================================================================
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand_val_weight((-5.00,10),(0.00,30),(10.10,60))=> 0.00
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand_val_weight((-5.00,10),(0.00,30),(10.10,60))=> 0
 %%                                                                    =========================================================================================================
 %%                                                                    value:      -5      0     10
 %%                                                                    weight:    10%    30%    60%
@@ -86,7 +86,7 @@
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 %%      0 ns    Log    ID_RAND_CONF        TB seq.             set_range_weight_default_mode(COMBINED_WEIGHT)
 %%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking range_weight_default_mode'
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand_range_weight(([-5.00:-3.00],30,COMBINED),(0.00,20),([9.30:10.10],50,COMBINED))=> -4.76
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand_range_weight(([-5.00:-3.00],30,COMBINED),(0.00,20),([9.30:10.10],50,COMBINED))=> -4.76405
 %%                                                                    =========================================================================================================
 %%                                                                    value:   -5:-3      0   9:10
 %%                                                                    weight:    30%    20%    50%
@@ -95,12 +95,12 @@
 %%      0 ns    Log    ID_RAND_CONF        TB seq.             set_range_weight_default_mode(INDIVIDUAL_WEIGHT)
 %%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking range_weight_default_mode'
 %%      0 ns    Alert  ERROR               TB seq.             rand_range_weight(([-5.00:-3.00],30,INDIVIDUAL),(0.00,20),([9.30:10.10],50,INDIVIDUAL))=> INDIVIDUAL_WEIGHT not supported for real type
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand_range_weight(([-5.00:-3.00],30,INDIVIDUAL),(0.00,20),([9.30:10.10],50,INDIVIDUAL))=> real'low
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand_range_weight(([-5.00:-3.00],30,INDIVIDUAL),(0.00,20),([9.30:10.10],50,INDIVIDUAL))=> -1e+308
 %% 
 %% 
 %%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing weighted real (ranges w/explicit mode) - Generate 1000 random values for each test
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand_range_weight_mode(([-5.00:-3.00],30,COMBINED),(0.00,20),([9.30:10.10],50,COMBINED))=> -3.47
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand_range_weight_mode(([-5.00:-3.00],30,COMBINED),(0.00,20),([9.30:10.10],50,COMBINED))=> -3.46772
 %%                                                                    =========================================================================================================
 %%                                                                    value:   -5:-3      0   9:10
 %%                                                                    weight:    30%    20%    50%
@@ -149,7 +149,7 @@
 %%      0 ns    Log    ID_RAND_CONF        TB seq.             set_range_weight_default_mode(INDIVIDUAL_WEIGHT)
 %%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking range_weight_default_mode'
 %%      0 ns    Alert  ERROR               TB seq.             rand_range_weight(([-5 ps:-3 ps],30,INDIVIDUAL),(0 ns,20),([9 ps:10 ps],50,INDIVIDUAL))=> INDIVIDUAL_WEIGHT not supported for time type
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand_range_weight(([-5 ps:-3 ps],30,INDIVIDUAL),(0 ns,20),([9 ps:10 ps],50,INDIVIDUAL))=> time'low
+%%      0 ns    Log    ID_RAND_GEN         TB seq.             rand_range_weight(([-5 ps:-3 ps],30,INDIVIDUAL),(0 ns,20),([9 ps:10 ps],50,INDIVIDUAL))=> -2562.047788015215501944444 hr
 %% 
 %% 
 %%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing weighted time (ranges w/explicit mode) - Generate 1000 random values for each test
@@ -333,7 +333,7 @@
 %%      0 ns    Log    ID_RAND_GEN         TB seq.             rand_range_weight(([10:5],50,INDIVIDUAL),(1,50))=> -2147483648
 %% 
 %% ============================================================================================================================================================================
-%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
 %%   1000 ns    DONE   PASSED   rand_weighted  Passed: 12  Affirmations Checked: 12
 %%    Expected      Failures: 0  Errors: -5  Warnings: 0  Passed: 0

@@ -1,16 +1,15 @@
-%%      0 ns    Log    ID_UTIL_SETUP       TB seq.             Ignoring set_alert_file_name.  OSVVM only supports a single transcript file shared by log and alert.
 %%      
 %%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 %%      ***  REPORT OF GLOBAL CTRL ***
 %%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 %%                                IGNORE    STOP_LIMIT
-%%                NOTE         :  REGARD    integer'high
-%%                TB_NOTE      :  REGARD    integer'high
-%%                WARNING      :  REGARD    integer'high
-%%                TB_WARNING   :  REGARD    integer'high
-%%                MANUAL_CHECK :  REGARD    integer'high
-%%                ERROR        :  REGARD    integer'high
-%%                TB_ERROR     :  REGARD    integer'high
+%%                NOTE         :  REGARD         0
+%%                TB_NOTE      :  REGARD         0
+%%                WARNING      :  REGARD         0
+%%                TB_WARNING   :  REGARD         0
+%%                MANUAL_CHECK :  REGARD         0
+%%                ERROR        :  REGARD         0
+%%                TB_ERROR     :  REGARD         0
 %%                FAILURE      :  REGARD         1
 %%                TB_FAILURE   :  REGARD         1
 %%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -10535,7 +10534,7 @@ exp_data_array as t_byte_array has been deprecated. Use exp_data_array as t_slv_
 %% 18482.5 ns    Log    ID_PACKET_COMPLETE  TB seq.             axistream_expect(99 words[8b])=> OK, received 99 words[8b]). 'ready_low_at_word_num = 12ready_low_duration = 0ready_default_value = 1i=99'
 %% 
 %% ============================================================================================================================================================================
-%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
 %% 19552.5 ns    DONE   NOCHECKS   axistream_bfm_tb  Passed: 0
 %%    Expected      Failures: 0  Errors: 0  Warnings: -2  Passed: 0

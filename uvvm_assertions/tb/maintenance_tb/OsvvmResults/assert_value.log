@@ -664,7 +664,7 @@
 %%   8359 ns    Alert  ERROR               TB seq.(uvvm)       assert_value() => Failed, tracked_value (1) was not 0. Occurred after 0 ns.
 %% 
 %% ============================================================================================================================================================================
-%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
 %%   8413 ns    DONE   NOCHECKS   assert_value  Passed: 0
 %%    Expected      Failures: 0  Errors: -91  Warnings: 0  Passed: 0

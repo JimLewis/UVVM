@@ -50,7 +50,7 @@
 %%      0 ns    Alert  ERROR               bfm_common          normalize_and_check(signed: v_sig5_a=10110101, v_sig8=) => Target length is zero!
 %% 
 %% ============================================================================================================================================================================
-%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
 %%   1000 ns    DONE   PASSED   normalize_and_check  Passed: 18  Affirmations Checked: 18
 %%    Expected      Failures: 0  Errors: -25  Warnings: 0  Passed: 0

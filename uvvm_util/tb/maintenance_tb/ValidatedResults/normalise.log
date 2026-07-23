@@ -64,7 +64,7 @@ Use normalize_and_check().
 %%      0 ns    Log    PASSED              TB seq.(uvvm)       check_value(t_u_array, x"9") => OK. Value was x"09".
 %% 
 %% ============================================================================================================================================================================
-%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
 %%   1000 ns    DONE   PASSED   normalise  Passed: 27  Affirmations Checked: 27
 %%    Expected      Failures: 0  Errors: -25  Warnings: -1  Passed: 0

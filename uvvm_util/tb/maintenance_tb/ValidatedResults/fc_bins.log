@@ -1719,7 +1719,7 @@ adaptations_pkg to 'false'
 %%    100 ns    Alert  FAILURE             TB seq.             set_scope(scope)=> Number of coverpoints exceeds C_FC_MAX_NUM_COVERPOINTS.\n Increase C_FC_MAX_NUM_COVERPOINTS in adaptations package.
 %% 
 %% ============================================================================================================================================================================
-%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
 %%   1100 ns    DONE   PASSED   fc_bins  Passed: 12  Affirmations Checked: 12
 %%    Expected      Failures: -1  Errors: -10  Warnings: -67  Passed: 0

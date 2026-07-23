@@ -158,7 +158,7 @@
 %%      0 ns    Log    PASSED              TB seq.             check_value(bool, true) => OK. Value was true. 'Checking convert_slv_to_byte_array() result, byte #9'
 %% 
 %% ============================================================================================================================================================================
-%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
 %%   1000 ns    DONE   PASSED   byte_and_slv_arrays  Passed: 128  Affirmations Checked: 128
 %%    Expected      Failures: 0  Errors: 0  Warnings: 0  Passed: 0
