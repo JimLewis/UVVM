@@ -3377,10 +3377,14 @@ package body methods_pkg is
       -- Open a transcript named file_name
       osvvm.TranscriptPkg.TranscriptOpen(file_name) ;
     end if ;
+    if shared_default_log_destination /= LOG_ONLY then
+      shared_default_log_destination := CONSOLE_AND_LOG ;
+      osvvm.TranscriptPkg.SetTranscriptMirror;
+    end if;
     if now > 0 ns then -- Do not show note if set at the very start.
       report "alert/log file name set: " & file_name;
     end if;
-  end procedure;
+  end procedure set_log_file_name;
 
   -- DEPRECATED: will be removed in v3
   procedure set_log_file_name(
