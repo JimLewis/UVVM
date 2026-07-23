@@ -24,9 +24,17 @@ use std.textio.all;
 library uvvm_util;
 context uvvm_util.uvvm_util_context;
 
+library osvvm ;
+use OSVVM.FileLinePathPkg.FILE_PATH ;
+use std.env.all ;
+
 --HDLRegression:TB
 entity methods_tb is
   generic(
     GC_TESTCASE : string := "UVVM"
   );
+
+  constant RawTestFilePath : string  := FILE_PATH ;
+  constant TestFilePath    : string  := OSVVM.FileUtilPkg.RemoveEndingSeparator(OSVVM.FileUtilPkg.ChangeSeparator(RawTestFilePath)) ;
+  constant CheckResults    : boolean := RawTestFilePath'length > 0 ;
 end entity;

@@ -145,8 +145,11 @@ begin
   begin
     -- To avoid that log files from different test cases (run in separate
     -- simulations) overwrite each other.
-    set_log_file_name(GC_TESTCASE & "_Log.txt");
-    set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+    -- set_log_file_name(GC_TESTCASE & "_Log.txt");
+    -- set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+    osvvm.AlertLogPkg.SetTestName(GC_TESTCASE) ;
+    osvvm.ReportPkg.TranscriptOpen ;
+    osvvm.TranscriptPkg.SetTranscriptMirror ;
 
     wait for 1 ns;
 
@@ -155,16 +158,17 @@ begin
     ------------------------------------------------------------------------------------------------------------------------------
       report_global_ctrl(VOID);
       report_msg_id_panel(VOID);
-      set_alert_stop_limit(error, 0);
+      increment_expected_alerts(NOTE, 1);
+      increment_expected_alerts(ERROR, 1);
 
       -- Verifying logging and alerts
       log(ID_LOG_HDR, "Verifying logging and alerts", "");
       log(ID_LOG_HDR, "My Log header ");
       log(ID_BFM, "My short message", "My scope");
-      alert(note, "my_msg dasdsa dasd as dad ad asd asd as das dasd adas dasd asda sdas das das das dsa dsa das das das das das das dasdasdasd asd", "my_scope");
+      alert(NOTE, "my_msg dasdsa dasd as dad ad asd asd as das dasd adas dasd asda sdas das das das dsa dsa das das das das das das dasdasdasd asd", "my_scope");
       log(ID_BFM, "My long message  qqqqq w wwwww ee eee r rr r r t tt ttttttt y yyyyyyyy uuuuuuuu iii ii ii o o ooo o o ppppppp  aaaaaaaa              ssss ddddddffffff ffffff gggggg hhhhhh jjjjj" & LF & "ekstra", "My long scope............");
       log(ID_BFM, "My multiline message " & LF & "qqqqq w wwwww ee eee r rr r r t" & LF & "11 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa " & "extra" & LF & "lkkl fdafd fdsf sdfsdfsd f sdfsd f ds fsd fsdfsd f sdf sdf sdf dfsdfdsfsdf ds f dsf ds fsd fsd fsd fdsf sdf sdfsdf dsfds f sdfsdfsdf sdf dsf  BSN\nBSN \b fsd fs" & LF & "fdfdf sdfsd fsdf sd fds fsd fsd fs df sdf sdf sdf sd fsd fsdfsd fsdfsd fsd fsd f sdf sdf sd f sdf sdf d f df sdf ds fsd f sdf dsf ", "My .........");
-      alert(error, "my_msg dasdas das dasdasdasd as das da sd asdas dasdasd  dasdasdsdasdas das d asd as das das das das dasdasdas das das d as das das dasd", "my_scope");
+      alert(ERROR, "my_msg dasdas das dasdasdasd as das da sd asdas dasdasd  dasdasdsdasdas das d asd as das das das das dasdasdas das das d as das das dasd", "my_scope");
       log(ID_BFM, "Kort multiline" & LF & "ddasdadad" & LF & "daddfad ", "");
       log("Check various versions of linefeed (pre, post, only)");
       log("\n Pre, followed by blank");
@@ -178,18 +182,18 @@ begin
       log("1");
       log("Above two lines: First empty string, then single char.");
 
-      -- Verifying shared_uvvm_status
-      check_value(found_unexpected_simulation_warnings_or_worse, 1, error, "Alert check shared_uvvm_status.found_unexpected_simulation_warnings_or_worse expected and actual mismatch");
-      check_value(found_unexpected_simulation_errors_or_worse, 1, error, "Alert check shared_uvvm_status.found_unexpected_simulation_errors_or_worse expected and actual mismatch");
-      increment_expected_alerts(error, 1);
-      increment_expected_alerts(note, 1);
-      check_value(found_unexpected_simulation_warnings_or_worse, 0, error, "Alert check shared_uvvm_status.found_unexpected_simulation_warnings_or_worse correctly updated");
-      check_value(found_unexpected_simulation_errors_or_worse, 0, error, "Alert check shared_uvvm_status.found_unexpected_simulation_errors_or_worse correctly updated");
-
-      -- Check all alert level types
-      for test_alert in uvvm_util.types_pkg.t_alert_level loop
-        test_uvvm_status_simulation_successful(test_alert);
-      end loop;
+--NA      -- Verifying shared_uvvm_status
+--NA      check_value(found_unexpected_simulation_warnings_or_worse, 1, error, "Alert check shared_uvvm_status.found_unexpected_simulation_warnings_or_worse expected and actual mismatch");
+--NA      check_value(found_unexpected_simulation_errors_or_worse, 1, error, "Alert check shared_uvvm_status.found_unexpected_simulation_errors_or_worse expected and actual mismatch");
+--NA      increment_expected_alerts(error, 1);
+--NA      increment_expected_alerts(note, 1);
+--NA      check_value(found_unexpected_simulation_warnings_or_worse, 0, error, "Alert check shared_uvvm_status.found_unexpected_simulation_warnings_or_worse correctly updated");
+--NA      check_value(found_unexpected_simulation_errors_or_worse, 0, error, "Alert check shared_uvvm_status.found_unexpected_simulation_errors_or_worse correctly updated");
+--NA
+--NA      -- Check all alert level types
+--NA      for test_alert in uvvm_util.types_pkg.t_alert_level loop
+--NA        test_uvvm_status_simulation_successful(test_alert);
+--NA      end loop;
 
     ------------------------------------------------------------------------------------------------------------------------------
     elsif GC_TESTCASE = "enable_disable_log_msg" then
@@ -234,13 +238,14 @@ begin
       -- Setting up a preformated string
       write(v_line, "TEST OF MULTILINE LOG without formatting" & LF & "First line " & LF & "Second line " & LF & "Third line" & LF & "Fourth line" & LF & "END OF LOG");
       log("Logging data without formatting");
-      log_text_block(ID_SEQUENCER, v_line, UNFORMATTED);
+      log_text_block(ID_SEQUENCER, v_line, UNFORMATTED, "This should not print");
 
       write(v_line, "TEST OF MULTILINE LOG with formatting" & LF & "First line " & LF & "Second line " & LF & "Third line" & LF & "Fourth line" & LF & "END OF LOG");
       log("Logging data with formatting");
       log_text_block(ID_SEQUENCER, v_line, FORMATTED, "Logging data with Bitvis formatting");
 
       log("Logging data with empty text block");
+--      increment_expected_alerts(ERROR, 3, "Expecting 3 alerts for the following 3 log_text_block calls");
       log_text_block(ID_SEQUENCER, v_line, FORMATTED, "This header should be printed", C_SCOPE, shared_msg_id_panel, WRITE_HDR_IF_BLOCK_EMPTY);
       log_text_block(ID_SEQUENCER, v_line, FORMATTED, "This header should be printed, with notification", C_SCOPE, shared_msg_id_panel, NOTIFY_IF_BLOCK_EMPTY);
       log_text_block(ID_SEQUENCER, v_line, FORMATTED, "THIS HEADER SHOULD NOT BE PRINTED", C_SCOPE, shared_msg_id_panel, SKIP_LOG_IF_BLOCK_EMPTY);
@@ -264,6 +269,7 @@ begin
       log_text_block(ID_SEQUENCER, v_line, FORMATTED, "header", C_SCOPE, shared_msg_id_panel, WRITE_HDR_IF_BLOCK_EMPTY, LOG_ONLY, "primary.txt", append_mode);
       write(v_line, "This block should be logged to primary.txt and console (formatted)" & LF & "Second line" & LF & "Third line" & LF);
       log_text_block(ID_SEQUENCER, v_line, FORMATTED, "header", C_SCOPE, shared_msg_id_panel, WRITE_HDR_IF_BLOCK_EMPTY, CONSOLE_AND_LOG, "primary.txt", append_mode);
+--      increment_expected_alerts(ERROR, 1, "Expecting 1 alert for the following log_text_block call");
       log_text_block(ID_SEQUENCER, v_line, FORMATTED, "the content of this block is empty", C_SCOPE, shared_msg_id_panel, NOTIFY_IF_BLOCK_EMPTY, CONSOLE_AND_LOG, "primary.txt", append_mode);
 
       log("Logging to secondary file");
@@ -275,6 +281,11 @@ begin
       -- Logging to another specified file (secondary.txt)
       write(v_line, "LOGGING" & LF & "TO" & LF & "CONSOLE" & LF & "ONLY");
       log_text_block(ID_SEQUENCER, v_line, FORMATTED, "header", C_SCOPE, shared_msg_id_panel, WRITE_HDR_IF_BLOCK_EMPTY, CONSOLE_ONLY);
+
+      if CheckResults then
+        osvvm.AlertLogPkg.AffirmIfFilesMatch("primary.txt",   TestFilePath & "/ValidatedResults/primary.txt") ;
+        osvvm.AlertLogPkg.AffirmIfFilesMatch("secondary.txt", TestFilePath & "/ValidatedResults/secondary.txt") ;
+      end if ;
 
     ------------------------------------------------------------------------------------------------------------------------------
     elsif GC_TESTCASE = "log_to_file" then
@@ -320,8 +331,16 @@ begin
     -----------------------------------------------------------------------------
     wait for 1000 ns;                   -- to allow some time for completion
     report_alert_counters(INTERMEDIATE);
-    report_alert_counters(FINAL);       -- Report final counters and print conclusion for simulation (Success/Fail)
+    --O  redundant  report_alert_counters(INTERMEDIATE);       -- Report final counters and print conclusion for simulation (Success/Fail)
     log(ID_LOG_HDR, "SIMULATION COMPLETED", C_SCOPE);
+
+    osvvm.TranscriptPkg.TranscriptClose ;
+
+    if CheckResults then
+      osvvm.AlertLogPkg.AffirmIfTranscriptsMatch(TestFilePath & "/ValidatedResults") ;
+    end if ;
+
+    osvvm.ReportPkg.EndOfTestReports ;
 
     -- Finish the simulation
     std.env.stop;

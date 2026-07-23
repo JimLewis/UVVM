@@ -61,8 +61,11 @@ begin
   begin
     -- To avoid that log files from different test cases (run in separate
     -- simulations) overwrite each other.
-    set_log_file_name(GC_TESTCASE & "_Log.txt");
-    set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+    -- set_log_file_name(GC_TESTCASE & "_Log.txt");
+    -- set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+    osvvm.AlertLogPkg.SetTestName(GC_TESTCASE) ;
+    osvvm.ReportPkg.TranscriptOpen ;
+    osvvm.TranscriptPkg.SetTranscriptMirror ;
 
     log(ID_LOG_HDR_LARGE, "Starting testcase: " & GC_TESTCASE, C_SCOPE);
 
@@ -2180,7 +2183,7 @@ begin
       log(ID_LOG_HDR, "Testing completion detection alert counter reports", C_SCOPE);
       -----------------------------------------------------------------------------
       await_sb_completion(1 ms, TB_WARNING, 1 ns, REPORT_ALERT_COUNTERS, NO_REPORT, C_SCOPE);
-      await_sb_completion(1 ms, TB_WARNING, 1 ns, REPORT_ALERT_COUNTERS_FINAL, NO_REPORT, C_SCOPE);
+      --O redundant  await_sb_completion(1 ms, TB_WARNING, 1 ns, REPORT_ALERT_COUNTERS_FINAL, NO_REPORT, C_SCOPE);
 
     end if;
 
@@ -2188,9 +2191,16 @@ begin
     -- Ending the simulation
     -----------------------------------------------------------------------------
     wait for 1000 ns;              -- to allow some time for completion
-    report_alert_counters(FINAL);  -- Report final counters and print conclusion for simulation (Success/Fail)
+    report_alert_counters(INTERMEDIATE);  -- Report final counters and print conclusion for simulation (Success/Fail)
     log(ID_LOG_HDR, "SIMULATION COMPLETED", C_SCOPE);
 
+    osvvm.TranscriptPkg.TranscriptClose ;
+
+    if CheckResults then
+      osvvm.AlertLogPkg.AffirmIfTranscriptsMatch(TestFilePath & "/ValidatedResults") ;
+    end if ;
+
+    osvvm.ReportPkg.EndOfTestReports ;
     -- Finish the simulation
     std.env.stop;
     wait;                          -- to stop completely

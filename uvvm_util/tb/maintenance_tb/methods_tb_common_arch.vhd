@@ -67,8 +67,11 @@ begin
   begin
     -- To avoid that log files from different test cases (run in separate
     -- simulations) overwrite each other.
-    set_log_file_name(GC_TESTCASE & "_Log.txt");
-    set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+    -- set_log_file_name(GC_TESTCASE & "_Log.txt");
+    -- set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+    osvvm.AlertLogPkg.SetTestName(GC_TESTCASE) ;
+    osvvm.ReportPkg.TranscriptOpen ;
+    osvvm.TranscriptPkg.SetTranscriptMirror ;
 
     ------------------------------------------------------------------------------------------------------------------------------
     if GC_TESTCASE = "random_functions" then
@@ -214,22 +217,22 @@ begin
 
       log(ID_SEQUENCER, "-- Test the random time function with same min and max values", C_SCOPE);
       v_time := random(1 ms * C_RANDOM_MAX_VALUE, 1 ms * C_RANDOM_MAX_VALUE);
-      log(ID_SEQUENCER, "time:" & to_string(v_time));
+      log(ID_SEQUENCER, "time:" & format_time(v_time));
 
       log(ID_SEQUENCER, "-- Test the random time function with min greater than max values", C_SCOPE);
       v_time := random(1 ms * C_RANDOM_MAX_VALUE, 1 ms * C_RANDOM_MIN_VALUE);
-      log(ID_SEQUENCER, "time:" & to_string(v_time));
+      log(ID_SEQUENCER, "time:" & format_time(v_time));
 
       log(ID_SEQUENCER, "-- Test the random time function with too small time resolution", C_SCOPE);
       increment_expected_alerts(TB_WARNING, 1);
       v_time := random(1 ms * C_RANDOM_MIN_VALUE, 1 ms * C_RANDOM_MAX_VALUE, ps);
-      log(ID_SEQUENCER, "time:" & to_string(v_time));
+      log(ID_SEQUENCER, "time:" & format_time(v_time));
       shared_warned_rand_time_res := false; -- Reset to test warning again
 
       log(ID_SEQUENCER, "-- Test the random time function with too big time resolution", C_SCOPE);
       increment_expected_alerts(TB_WARNING, 1);
       v_time := random(1 ms * C_RANDOM_MIN_VALUE, 1 ms * C_RANDOM_MAX_VALUE, min);
-      log(ID_SEQUENCER, "time:" & to_string(v_time));
+      log(ID_SEQUENCER, "time:" & format_time(v_time));
       shared_warned_rand_time_res := false; -- Reset to test warning again
 
       log(ID_SEQUENCER, "-- Test the random time procedure", C_SCOPE);
@@ -273,22 +276,22 @@ begin
 
       log(ID_SEQUENCER, "-- Test the random time procedure with same min and max values", C_SCOPE);
       random(1 sec * C_RANDOM_MIN_VALUE, 1 sec * C_RANDOM_MIN_VALUE, v_seed1, v_seed2, v_time);
-      log(ID_SEQUENCER, "time:" & to_string(v_time));
+      log(ID_SEQUENCER, "time:" & format_time(v_time));
 
       log(ID_SEQUENCER, "-- Test the random time procedure with min greater than max values", C_SCOPE);
       random(1 sec * C_RANDOM_MAX_VALUE, 1 sec * C_RANDOM_MIN_VALUE, v_seed1, v_seed2, v_time);
-      log(ID_SEQUENCER, "time:" & to_string(v_time));
+      log(ID_SEQUENCER, "time:" & format_time(v_time));
 
       log(ID_SEQUENCER, "-- Test the random time procedure with too small time resolution", C_SCOPE);
       increment_expected_alerts(TB_WARNING, 1);
       random(1 sec * C_RANDOM_MIN_VALUE, 1 sec * C_RANDOM_MAX_VALUE, ps, v_seed1, v_seed2, v_time);
-      log(ID_SEQUENCER, "time:" & to_string(v_time));
+      log(ID_SEQUENCER, "time:" & format_time(v_time));
       shared_warned_rand_time_res := false; -- Reset to test warning again
 
       log(ID_SEQUENCER, "-- Test the random time procedure with too big time resolution", C_SCOPE);
       increment_expected_alerts(TB_WARNING, 1);
       random(1 sec * C_RANDOM_MIN_VALUE, 1 sec * C_RANDOM_MAX_VALUE, hr, v_seed1, v_seed2, v_time);
-      log(ID_SEQUENCER, "time:" & to_string(v_time));
+      log(ID_SEQUENCER, "time:" & format_time(v_time));
       shared_warned_rand_time_res := false; -- Reset to test warning again
 
     ------------------------------------------------------------------------------------------------------------------------------
@@ -764,7 +767,7 @@ begin
       check_value(char_to_ascii('a'), 97, error, "Check ascii value for a");
 
       log("\rCheck to_string on illegal characters");
-      check_value(to_string("abcdef A z Z 0 9" & NUL & ",:;#.End"), "abcdef A z Z 0 9,:;#.End", error, "to_string() for illegal chars");
+      check_value(uvvm_util.string_methods_pkg.to_string(string'("abcdef A z Z 0 9" & NUL & ",:;#.End")), "abcdef A z Z 0 9,:;#.End", error, "to_string() for illegal chars");
 
       log("\rCheck function remove_initial_chars()");
       check_value(remove_initial_chars("abcdef", 3), "def", error, "remove_initial_chars() case 1");
@@ -1138,8 +1141,16 @@ begin
     -- Ending the simulation
     -----------------------------------------------------------------------------
     wait for 1000 ns;              -- to allow some time for completion
-    report_alert_counters(FINAL);  -- Report final counters and print conclusion for simulation (Success/Fail)
+    report_alert_counters(INTERMEDIATE);  -- Report final counters and print conclusion for simulation (Success/Fail)
     log(ID_LOG_HDR, "SIMULATION COMPLETED", C_SCOPE);
+
+    osvvm.TranscriptPkg.TranscriptClose ;
+
+    if CheckResults then
+      osvvm.AlertLogPkg.AffirmIfTranscriptsMatch(TestFilePath & "/ValidatedResults") ;
+    end if ;
+
+    osvvm.ReportPkg.EndOfTestReports ;
 
     -- Finish the simulation
     std.env.stop;

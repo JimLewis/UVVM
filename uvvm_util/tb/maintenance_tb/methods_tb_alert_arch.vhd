@@ -32,8 +32,11 @@ begin
   begin
     -- To avoid that log files from different test cases (run in separate
     -- simulations) overwrite each other.
-    set_log_file_name(GC_TESTCASE & "_Log.txt");
-    set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+    -- set_log_file_name(GC_TESTCASE & "_Log.txt");
+    -- set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+    osvvm.AlertLogPkg.SetTestName(GC_TESTCASE) ;
+    osvvm.ReportPkg.TranscriptOpen ;
+    osvvm.TranscriptPkg.SetTranscriptMirror ;
 
     ------------------------------------------------------------------------------------------------------------------------------
     if GC_TESTCASE = "alert_summary_report" then
@@ -41,55 +44,55 @@ begin
       log(ID_LOG_HDR, "Testing alert summary report", C_SCOPE);
 
       log("Testing without any major or minor alerts");
-      report_alert_counters(FINAL);
+      report_alert_counters(INTERMEDIATE);
 
       log("Testing NOTE");
       alert(NOTE, "This alert shall set mismatch in minor alerts report", C_SCOPE);
-      report_alert_counters(FINAL);
+      report_alert_counters(INTERMEDIATE);
       increment_expected_alerts(NOTE);
 
       log("Testing TB_NOTE");
       alert(TB_NOTE, "This alert shall set mismatch in minor alerts report", C_SCOPE);
-      report_alert_counters(FINAL);
+      report_alert_counters(INTERMEDIATE);
       increment_expected_alerts(TB_NOTE);
 
       log("Testing WARNING");
       alert(WARNING, "This alert shall set mismatch in minor alerts report", C_SCOPE);
-      report_alert_counters(FINAL);
+      report_alert_counters(INTERMEDIATE);
       increment_expected_alerts(WARNING);
 
       log("Testing TB_WARNING");
       alert(TB_WARNING, "This alert shall set mismatch in minor alerts report", C_SCOPE);
-      report_alert_counters(FINAL);
+      report_alert_counters(INTERMEDIATE);
       increment_expected_alerts(TB_WARNING);
 
       log("Testing MANUAL_CHECK");
-      alert(MANUAL_CHECK, "This alert shall set mismatch in minor alerts report", C_SCOPE);
-      report_alert_counters(FINAL);
-      increment_expected_alerts(MANUAL_CHECK);
+      alert(MANUAL_CHECK, "MANUAL_CHECK is now a log and it sets a flag for reporting", C_SCOPE);
+      report_alert_counters(INTERMEDIATE);
+--      increment_expected_alerts(MANUAL_CHECK);
 
       log("Testing ERROR");
-      set_alert_stop_limit(ERROR, 2);
+      set_alert_stop_limit(ERROR, 3);
       alert(ERROR, "This alert shall set mismatch in major alerts report", C_SCOPE);
-      report_alert_counters(FINAL);
+      report_alert_counters(INTERMEDIATE);
       increment_expected_alerts(ERROR);
 
       log("Testing TB_ERROR");
-      set_alert_stop_limit(TB_ERROR, 2);
+      set_alert_stop_limit(TB_ERROR, 3);
       alert(TB_ERROR, "This alert shall set mismatch in major alerts report", C_SCOPE);
-      report_alert_counters(FINAL);
+      report_alert_counters(INTERMEDIATE);
       increment_expected_alerts(TB_ERROR);
 
       log("Testing FAILURE");
-      set_alert_stop_limit(FAILURE, 2);
+      set_alert_stop_limit(FAILURE, 3);
       alert(FAILURE, "This alert shall set mismatch in major alerts report", C_SCOPE);
-      report_alert_counters(FINAL);
+      report_alert_counters(INTERMEDIATE);
       increment_expected_alerts(FAILURE);
 
       log("Testing TB_FAILURE");
-      set_alert_stop_limit(TB_FAILURE, 2);
+      set_alert_stop_limit(TB_FAILURE, 3);
       alert(TB_FAILURE, "This alert shall set mismatch in major alerts report", C_SCOPE);
-      report_alert_counters(FINAL);
+      report_alert_counters(INTERMEDIATE);
       increment_expected_alerts(TB_FAILURE);
 
       log("Testing final summary, all OK");
@@ -112,8 +115,11 @@ begin
 
       log("Testing increment_expected_alerts_and_stop_limit");
       v_alert_stop_limit := get_alert_stop_limit(TB_FAILURE);
+      log("StopCount(TB_FAILURE):  " & to_string(v_alert_stop_limit) ) ;
       v_alert_count      := get_alert_counter(TB_FAILURE);
+      log("AlertCount(TB_FAILURE): " & to_string(v_alert_count)) ;
       increment_expected_alerts_and_stop_limit(TB_FAILURE);
+      log("Increment Expected Alerts and Stop Limit.  StopCount(Tb_FAILURE): " & to_string(get_alert_stop_limit(TB_FAILURE))) ;
       check_value(get_alert_stop_limit(TB_FAILURE) = (v_alert_stop_limit + 1), TB_ERROR, "Verifying that TB_WARNING alert stop limit was incremented", C_SCOPE);
       check_value(true = false, TB_FAILURE, "Cause TB_FAILURE trigger", C_SCOPE);
 
@@ -641,8 +647,14 @@ begin
     -----------------------------------------------------------------------------
     wait for 1000 ns;                   -- to allow some time for completion
     report_alert_counters(INTERMEDIATE);
-    report_alert_counters(FINAL);       -- Report final counters and print conclusion for simulation (Success/Fail)
+    --O redundant report_alert_counters(INTERMEDIATE);       -- Report final counters and print conclusion for simulation (Success/Fail)
     log(ID_LOG_HDR, "SIMULATION COMPLETED", C_SCOPE);
+
+    osvvm.TranscriptPkg.TranscriptClose ;
+    if CheckResults then
+      osvvm.AlertLogPkg.AffirmIfTranscriptsMatch(TestFilePath & "/ValidatedResults") ;
+    end if ;
+    osvvm.ReportPkg.EndOfTestReports ;
 
     -- Finish the simulation
     std.env.stop;

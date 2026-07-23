@@ -33,8 +33,11 @@ begin
   begin
     -- To avoid that log files from different test cases (run in separate
     -- simulations) overwrite each other.
-    set_log_file_name(GC_TESTCASE & "_Log.txt");
-    set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+    -- set_log_file_name(GC_TESTCASE & "_Log.txt");
+    -- set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+    osvvm.AlertLogPkg.SetTestName(GC_TESTCASE) ;
+    osvvm.ReportPkg.TranscriptOpen ;
+    osvvm.TranscriptPkg.SetTranscriptMirror ;
 
     ------------------------------------------------------------------------------------------------------------------------------
     if GC_TESTCASE = "watchdog_timer" then
@@ -84,8 +87,14 @@ begin
     -- Ending the simulation
     -----------------------------------------------------------------------------
     wait for 1000 ns;              -- to allow some time for completion
-    report_alert_counters(FINAL);  -- Report final counters and print conclusion for simulation (Success/Fail)
+    report_alert_counters(INTERMEDIATE);  -- Report final counters and print conclusion for simulation (Success/Fail)
     log(ID_LOG_HDR, "SIMULATION COMPLETED", C_SCOPE);
+
+    osvvm.TranscriptPkg.TranscriptClose ;
+    if CheckResults then
+      osvvm.AlertLogPkg.AffirmIfTranscriptsMatch(TestFilePath & "/ValidatedResults") ;
+    end if ;
+    osvvm.ReportPkg.EndOfTestReports ;
 
     -- Finish the simulation
     std.env.stop;

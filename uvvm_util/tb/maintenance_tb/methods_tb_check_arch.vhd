@@ -70,14 +70,19 @@ begin
     variable v_exp_unsigned_array   : t_unsigned_array(0 to 1)(0 to 3);
     variable v_value_unsigned_array : t_unsigned_array(2 to 3)(0 to 3);
 
+    variable v_stop_limit           : integer;
+
     alias found_unexpected_simulation_warnings_or_worse is shared_uvvm_status.found_unexpected_simulation_warnings_or_worse;
     alias found_unexpected_simulation_errors_or_worse is shared_uvvm_status.found_unexpected_simulation_errors_or_worse;
 
   begin
     -- To avoid that log files from different test cases (run in separate
     -- simulations) overwrite each other.
-    set_log_file_name(GC_TESTCASE & "_Log.txt");
-    set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+    -- set_log_file_name(GC_TESTCASE & "_Log.txt");
+    -- set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+    osvvm.AlertLogPkg.SetTestName(GC_TESTCASE) ;
+    osvvm.ReportPkg.TranscriptOpen ;
+    osvvm.TranscriptPkg.SetTranscriptMirror ;
 
     ------------------------------------------------------------------------------------------------------------------------------
     if GC_TESTCASE = "check_value" then
@@ -256,7 +261,9 @@ begin
       check_value(v_value_unsigned_array, v_exp_unsigned_array, tb_warning, "check_value with t_unsigned_array of different array indexes");
 
       log(ID_SEQUENCER, "Incrementing alert_stop_limit(TB_ERROR) for 1 provoked tb_error to pass in simulation.", C_SCOPE);
-      set_alert_stop_limit(TB_ERROR, 2);
+--O      set_alert_stop_limit(TB_ERROR, 2);
+      v_stop_limit := get_alert_stop_limit(TB_ERROR) ;
+      set_alert_stop_limit(TB_ERROR,  v_stop_limit + 2);
 
       -- Verify warning with arrays of different directions and unequal lengths
       v_exp_slv_array        := (others => "1010");
@@ -448,7 +455,8 @@ begin
       check_value(v_value_unsigned_array, v_exp_unsigned_array, "check_value with t_unsigned_array of different array indexes");
 
       log(ID_SEQUENCER, "Incrementing alert_stop_limit(TB_ERROR) for 1 provoked tb_error to pass in simulation.", C_SCOPE);
-      set_alert_stop_limit(TB_ERROR, 2);
+--O      set_alert_stop_limit(TB_ERROR, 2);
+      set_alert_stop_limit(TB_ERROR, get_alert_stop_limit(TB_ERROR) + 2);
 
       -- Verify warning with arrays of different directions and unequal lengths
       v_exp_slv_array        := (others => "1010");
@@ -628,7 +636,7 @@ begin
       check_value(not v_bool, error, "check_value with return value shall return false when Fail", C_SCOPE);
 
       report_check_counters(VOID);
-    
+
     elsif GC_TESTCASE = "check_sb_completion" then
 
       -----------------------------------------------------------------------------
@@ -808,7 +816,7 @@ begin
       increment_expected_alerts_and_stop_limit(TB_ERROR, 1, "Increment for await sb completion alert");
       v_bool := check_sb_completion(TB_ERROR, NO_REPORT, NO_REPORT, C_SCOPE); -- Should give a single alert as it never got expected
       check_value(not v_bool, "check_sb_completion with return value shall return false when SB has expected", C_SCOPE);
-      
+
       -- Will remove the SB for the next test
       v_sb.disable(1);
       v_sb.disable(2);
@@ -827,8 +835,16 @@ begin
     -- Ending the simulation
     -----------------------------------------------------------------------------
     wait for 1000 ns;              -- to allow some time for completion
-    report_alert_counters(FINAL);  -- Report final counters and print conclusion for simulation (Success/Fail)
+    report_alert_counters(INTERMEDIATE);  -- Report final counters and print conclusion for simulation (Success/Fail)
     log(ID_LOG_HDR, "SIMULATION COMPLETED", C_SCOPE);
+
+    osvvm.TranscriptPkg.TranscriptClose ;
+
+    if CheckResults then
+      osvvm.AlertLogPkg.AffirmIfTranscriptsMatch(TestFilePath & "/ValidatedResults") ;
+    end if ;
+
+    osvvm.ReportPkg.EndOfTestReports ;
 
     -- Finish the simulation
     std.env.stop;
