@@ -27,6 +27,12 @@ use bitvis_vip_sbi.sbi_bfm_pkg.all;
 library bitvis_irqc ;
 use bitvis_irqc.irqc_pif_pkg.all;
 
+-- Required by OSVVM
+library osvvm ;
+context OSVVM.OsvvmContext ;
+use std.env.all ;
+-- End of Required by OSVVM
+
 --hdlregression:tb
 -- Test case entity
 entity irqc_tb is
@@ -37,6 +43,9 @@ end entity;
 
 -- Test case architecture
 architecture func of irqc_tb is
+  -- Required by OSVVM
+  constant C_TESTCASE_FILE_PATH : string  := FILE_PATH ;
+  -- End of Required by OSVVM
 
   -- DSP interface and general control signals
   signal clk    : std_logic                                                        := '0';
@@ -151,10 +160,16 @@ begin
     variable v_irq_mask_inv : std_logic_vector(7 downto 0);
 
   begin
+    -- OSVVM Start of Test Case
+    SetTestName("irqc_tb") ;
+    TranscriptOpen ;
+    SetTranscriptMirror ;
+    -- End of OSVVM Start of Test Case
+
     -- To avoid that log files from different test cases (run in separate
     -- simulations) overwrite each other.
     set_log_file_name(GC_TESTCASE & "_Log.txt");
-    set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+    --O set_alert_file_name(GC_TESTCASE & "_Alert.txt");
 
     -- Print the configuration to the log
     report_global_ctrl(VOID);
@@ -185,13 +200,13 @@ begin
 
     log(ID_LOG_HDR, "Check register defaults and access (write + read)", C_SCOPE);
     ------------------------------------------------------------
-    log("\nChecking Register defaults");
+    log(NO_ID, LF & "Checking Register defaults");
     check(C_ADDR_IRR, x"00", ERROR, "IRR default");
     check(C_ADDR_IER, x"00", ERROR, "IER default");
     check(C_ADDR_IPR, x"00", ERROR, "IPR default");
     check(C_ADDR_IRQ2CPU_ALLOWED, x"00", ERROR, "IRQ2CPU_ALLOWED default");
 
-    log("\nChecking Register Write/Read");
+    log(NO_ID, LF & "Checking Register Write/Read");
     write(C_ADDR_IER, fit(x"55"), "IER");
     check(C_ADDR_IER, fit(x"55"), ERROR, "IER pure readback");
     write(C_ADDR_IER, fit(x"AA"), "IER");
@@ -216,7 +231,7 @@ begin
 
     log(ID_LOG_HDR, "Check interrupt sources, IER, IPR and irq2cpu", C_SCOPE);
     ------------------------------------------------------------
-    log("\nChecking interrupts and IRR");
+    log(NO_ID, LF & "Checking interrupts and IRR");
     write(C_ADDR_ICR, fit(x"FF"), "ICR : Clear all interrupts");
     gen_pulse(irq_source, trim(x"AA"), clk, 1, "Pulse irq_source 1T");
     check(C_ADDR_IRR, fit(x"AA"), ERROR, "IRR after irq pulses");
@@ -232,7 +247,7 @@ begin
     write(C_ADDR_ICR, fit(x"FF"), "ICR : Clear all interrupts");
     check(C_ADDR_IRR, fit(x"00"), ERROR, "IRR after clearing all");
 
-    log("\nChecking IER, IPR and irq2cpu");
+    log(NO_ID, LF & "Checking IER, IPR and irq2cpu");
     write(C_ADDR_ICR, fit(x"FF"), "ICR : Clear all interrupts");
     write(C_ADDR_IER, fit(x"55"), "IER : Enable some interrupts");
     write(C_ADDR_ITR, fit(x"AA"), "ITR : Trigger non-enable interrupts");
@@ -248,7 +263,7 @@ begin
     check(C_ADDR_IRR, fit(x"AB"), ERROR, "IRR should now be active");
     check(C_ADDR_IPR, fit(x"01"), ERROR, "IPR should now be active");
 
-    log("\nMore details checked in the autonomy section below");
+    log(NO_ID, LF & "More details checked in the autonomy section below");
     check_value(irq2cpu, '1', ERROR, "Interrupt to CPU must still be active", C_SCOPE);
     check_stable(irq2cpu, (now - v_time_stamp), ERROR, "No spikes allowed on irq2cpu", C_SCOPE);
 
@@ -259,9 +274,9 @@ begin
     write(C_ADDR_IRQ2CPU_ENA, x"01", "IRQ2CPU_ENA : Allow interrupt to CPU");
     for i in 0 to C_NUM_SOURCES - 1 loop
 
-      log(" ");
-      log("- Checking irq_source(" & to_string(i) & ") and all corresponding functionality");
-      log("- - Check interrupt activation not affected by non related interrupts or registers");
+      log(NO_ID, " ");
+      log(NO_ID, "- Checking irq_source(" & to_string(i) & ") and all corresponding functionality");
+      log(NO_ID, "- - Check interrupt activation not affected by non related interrupts or registers");
       v_time_stamp      := now;         -- from time of stable inactive irq2cpu
       v_irq_mask        := (others => '0');
       v_irq_mask(i)     := '1';
@@ -279,7 +294,7 @@ begin
       check(C_ADDR_IRR, fit(x"FF"), ERROR, "All IRR triggered");
       check(C_ADDR_IPR, v_irq_mask, ERROR, "IPR triggered for selected");
 
-      log("\n- - Check interrupt deactivation not affected by non related interrupts or registers");
+      log(NO_ID, LF & "- - Check interrupt deactivation not affected by non related interrupts or registers");
       v_time_stamp := now;              -- from time of stable active irq2cpu
       write(C_ADDR_ICR, v_irq_mask_inv, "ICR : Clear all non-enabled interrupts");
       write(C_ADDR_IER, fit(x"FF"), "IER : Enable all interrupts");
@@ -306,25 +321,25 @@ begin
 
     log(ID_LOG_HDR, "Check irq acknowledge and re-enable", C_SCOPE);
     ------------------------------------------------------------
-    log("- Activate interrupt");
+    log(NO_ID, "- Activate interrupt");
     write(C_ADDR_ITR, v_irq_mask, "ICR : Set single upper interrupt");
     write(C_ADDR_IER, v_irq_mask, "IER : Enable single upper interrupts");
     write(C_ADDR_IRQ2CPU_ENA, x"01", "IRQ2CPU_ENA : Allow interrupt to CPU");
     await_value(irq2cpu, '1', 0 ns, C_CLK_PERIOD, ERROR, "Interrupt activation expected", C_SCOPE);
     v_time_stamp := now;                -- from time of stable active irq2cpu
 
-    log("\n- Try potential malfunction");
+    log(NO_ID, LF & "- Try potential malfunction");
     write(C_ADDR_IRQ2CPU_ENA, x"01", "IRQ2CPU_ENA : Allow interrupt to CPU again - should not affect anything");
     write(C_ADDR_IRQ2CPU_ENA, x"00", "IRQ2CPU_ENA : Set to 0 - should not affect anything");
     write(C_ADDR_IRQ2CPU_DISABLE, x"00", "IRQ2CPU_DISABLE : Set to 0 - should not affect anything");
     check_stable(irq2cpu, (now - v_time_stamp), ERROR, "No spikes allowed on irq2cpu (='1')", C_SCOPE);
 
-    log("\n- Acknowledge and deactivate interrupt");
+    log(NO_ID, LF & "- Acknowledge and deactivate interrupt");
     gen_pulse(irq2cpu_ack, clk, 1, "Pulse irq2cpu_ack");
     await_value(irq2cpu, '0', 0 ns, C_CLK_PERIOD, ERROR, "Interrupt deactivation expected", C_SCOPE);
     v_time_stamp := now;                -- from time of stable inactive irq2cpu
 
-    log("\n- Test for potential malfunction");
+    log(NO_ID, LF & "- Test for potential malfunction");
     write(C_ADDR_IRQ2CPU_DISABLE, x"01", "IRQ2CPU_DISABLE : Disable interrupt to CPU again - should not affect anything");
     write(C_ADDR_IRQ2CPU_DISABLE, x"00", "IRQ2CPU_DISABLE : Set to 0 - should not affect anything");
     write(C_ADDR_IRQ2CPU_ENA, x"00", "IRQ2CPU_ENA : Set to 0 - should not affect anything");
@@ -334,7 +349,7 @@ begin
     gen_pulse(irq2cpu_ack, clk, 1, "Pulse irq2cpu_ack");
     check_stable(irq2cpu, (now - v_time_stamp), ERROR, "No spikes allowed on irq2cpu (='0')", C_SCOPE);
 
-    log("\n- Re-/de-activation");
+    log(NO_ID, LF & "- Re-/de-activation");
     write(C_ADDR_IRQ2CPU_ENA, x"01", "IRQ2CPU_ENA : Reactivate interrupt to CPU");
     await_value(irq2cpu, '1', 0 ns, C_CLK_PERIOD, ERROR, "Interrupt reactivation expected", C_SCOPE);
     write(C_ADDR_IRQ2CPU_DISABLE, x"01", "IRQ2CPU_DISABLE : Deactivate interrupt to CPU");
@@ -344,7 +359,7 @@ begin
 
     log(ID_LOG_HDR, "Check Reset", C_SCOPE);
     ------------------------------------------------------------
-    log("- Activate all interrupts");
+    log(NO_ID, "- Activate all interrupts");
     write(C_ADDR_ITR, x"FF", "ICR : Set all interrupts");
     write(C_ADDR_IER, x"FF", "IER : Enable all interrupts");
     write(C_ADDR_IRQ2CPU_ENA, x"01", "IRQ2CPU_ENA : Allow interrupt to CPU");
@@ -359,8 +374,16 @@ begin
     -- Ending the simulation
     -----------------------------------------------------------------------------
     wait for 1000 ns;                   -- to allow some time for completion
-    report_alert_counters(FINAL);       -- Report final counters and print conclusion for simulation (Success/Fail)
+    report_alert_counters(INTERMEDIATE);       -- Report final counters and print conclusion for simulation (Success/Fail)
     log(ID_LOG_HDR, "SIMULATION COMPLETED", C_SCOPE);
+
+    -- OSVVM Test Completion Steps
+    TranscriptClose ;
+    if C_TESTCASE_FILE_PATH'length > 0 then
+      AffirmIfTranscriptsMatch(RemoveEndingSeparator(ChangeSeparator(C_TESTCASE_FILE_PATH)) & "/OsvvmResults") ;
+    end if ;
+    EndOfTestReports ;
+    -- End of Test OSVVM Completion Steps
 
     -- Finish the simulation
     std.env.stop;

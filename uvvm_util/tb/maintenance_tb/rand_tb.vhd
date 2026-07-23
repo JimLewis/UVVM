@@ -23,11 +23,18 @@ context uvvm_util.uvvm_util_context;
 
 use work.rand_tb_pkg.all;
 
+library osvvm ;
+use OSVVM.FileLinePathPkg.FILE_PATH ;
+use std.env.all ;
+
 --HDLRegression:TB
 entity rand_tb is
   generic(
     GC_TESTCASE : string
   );
+  constant RawTestFilePath : string  := FILE_PATH ;
+  constant TestFilePath    : string  := OSVVM.FileUtilPkg.RemoveEndingSeparator(OSVVM.FileUtilPkg.ChangeSeparator(RawTestFilePath)) ;
+  constant CheckResults    : boolean := RawTestFilePath'length > 0 ;
 end entity;
 
 architecture func of rand_tb is
@@ -35,7 +42,8 @@ architecture func of rand_tb is
   constant C_NUM_RAND_REPETITIONS   : natural := 7;
   constant C_NUM_WEIGHT_REPETITIONS : natural := 1000; -- Changing this value affects check_weight_distribution() C_MARGIN.
   constant C_NUM_CYCLIC_REPETITIONS : natural := 3;
-  constant C_TIME_RES               : time    := std.env.resolution_limit;
+--  constant C_TIME_RES               : time    := std.env.resolution_limit;
+  constant C_TIME_RES               : time    := 1 ps;
 
 begin
 
@@ -83,8 +91,11 @@ begin
   begin
     -- To avoid that log files from different test cases (run in separate
     -- simulations) overwrite each other.
-    set_log_file_name(GC_TESTCASE & "_Log.txt");
-    set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+    -- set_log_file_name(GC_TESTCASE & "_Log.txt");
+    -- set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+    osvvm.AlertLogPkg.SetTestName(GC_TESTCASE) ;
+    osvvm.ReportPkg.TranscriptOpen ;
+    osvvm.TranscriptPkg.SetTranscriptMirror ;
 
     -------------------------------------------------------------------------------------
     log(ID_LOG_HDR_LARGE, "Start Simulation of Randomization package - " & GC_TESTCASE);
@@ -1392,7 +1403,7 @@ begin
       for i in 1 to v_num_values * C_NUM_RAND_REPETITIONS loop
         v_slv_long := v_rand.rand(v_slv_long_min, v_slv_long_max);
         v_range_uns_vec(0) := (unsigned(v_slv_long_min), unsigned(v_slv_long_max));
-        check_rand_value_long(unsigned(v_slv_long), v_range_uns_vec);        
+        check_rand_value_long(unsigned(v_slv_long), v_range_uns_vec);
         count_rand_value(v_value_cnt, unsigned(v_slv_long) - unsigned(v_slv_long_min));
       end loop;
       check_uniform_distribution(v_value_cnt, v_num_values);
@@ -3167,8 +3178,15 @@ begin
     -- Ending the simulation
     -----------------------------------------------------------------------------
     wait for 1000 ns;                   -- Allow some time for completion
-    report_alert_counters(FINAL);       -- Report final counters and print conclusion (Success/Fail)
+    report_alert_counters(INTERMEDIATE);       -- Report final counters and print conclusion (Success/Fail)
     log(ID_LOG_HDR, "SIMULATION COMPLETED");
+
+    osvvm.TranscriptPkg.TranscriptClose ;
+    if CheckResults then
+      osvvm.AlertLogPkg.AffirmIfTranscriptsMatch(TestFilePath & "/ValidatedResults") ;
+    end if ;
+    osvvm.ReportPkg.EndOfTestReports ;
+
     -- Finish the simulation
     std.env.stop;
     wait;                               -- to stop completely

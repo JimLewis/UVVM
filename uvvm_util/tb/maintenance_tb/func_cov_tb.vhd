@@ -21,12 +21,19 @@ use ieee.numeric_std.all;
 library uvvm_util;
 context uvvm_util.uvvm_util_context;
 
+library osvvm ;
+use OSVVM.FileLinePathPkg.FILE_PATH ;
+use std.env.all ;
+
 --HDLRegression:TB
 entity func_cov_tb is
   generic(
     GC_TESTCASE  : string;
     GC_FILE_PATH : string := ""
   );
+  constant RawTestFilePath : string  := FILE_PATH ;
+  constant TestFilePath    : string  := OSVVM.FileUtilPkg.RemoveEndingSeparator(OSVVM.FileUtilPkg.ChangeSeparator(RawTestFilePath)) ;
+  constant CheckResults    : boolean := RawTestFilePath'length > 0 ;
 end entity;
 
 architecture func of func_cov_tb is
@@ -138,7 +145,7 @@ begin
       check_value(v_bin.hits, hits, ERROR, "Checking bin hits", C_TB_SCOPE_DEFAULT, ID_NEVER, caller_name => proc_call);
 
       bin_idx := bin_idx + 1;
-      log(ID_POS_ACK, proc_call & " => OK, for " & v_bin.name);
+      log(ID_POS_ACK, proc_call & " => OK, for " & to_string(v_bin.name));
     end procedure;
 
     -- Overload
@@ -409,7 +416,7 @@ begin
       variable v_bin       : t_cov_bin;
     begin
       v_bin := coverpoint.get_valid_bin(bin_idx);
-      check_value(v_bin.hits > min_hits, ERROR, "Checking " & v_bin.name & " was selected for randomization",
+      check_value(v_bin.hits > min_hits, ERROR, "Checking " & to_string(v_bin.name) & " was selected for randomization",
                   C_TB_SCOPE_DEFAULT, caller_name => C_PROC_NAME);
     end procedure;
 
@@ -504,8 +511,12 @@ begin
   begin
     -- To avoid that log files from different test cases (run in separate
     -- simulations) overwrite each other.
-    set_log_file_name(GC_TESTCASE & "_Log.txt");
-    set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+    -- set_log_file_name(GC_TESTCASE & "_Log.txt");
+    -- set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+    osvvm.AlertLogPkg.SetTestName(GC_TESTCASE) ;
+    osvvm.ReportPkg.TranscriptOpen ;
+    osvvm.TranscriptPkg.SetTranscriptMirror ;
+
 
     -------------------------------------------------------------------------------------------
     log(ID_LOG_HDR_LARGE, "Start Simulation of Functional Coverage package - " & GC_TESTCASE);
@@ -4044,8 +4055,17 @@ begin
     -- Ending the simulation
     -----------------------------------------------------------------------------
     wait for 1000 ns;                   -- Allow some time for completion
-    report_alert_counters(FINAL);       -- Report final counters and print conclusion (Success/Fail)
+    report_alert_counters(INTERMEDIATE);       -- Report final counters and print conclusion (Success/Fail)
     log(ID_LOG_HDR, "SIMULATION COMPLETED");
+
+    osvvm.TranscriptPkg.TranscriptClose ;
+
+    if CheckResults then
+      osvvm.AlertLogPkg.AffirmIfTranscriptsMatch(TestFilePath & "/ValidatedResults") ;
+    end if ;
+
+    osvvm.ReportPkg.EndOfTestReports ;
+
     -- Finish the simulation
     std.env.stop;
     wait;                               -- to stop completely
@@ -4059,9 +4079,9 @@ begin
     if GC_TESTCASE = "fc_bins" then
       -- To avoid that log files from different test cases (run in separate
       -- simulations) overwrite each other.
-      set_log_file_name(GC_TESTCASE & "_Log.txt");
-      set_alert_file_name(GC_TESTCASE & "_Alert.txt");
-
+      -- set_log_file_name(GC_TESTCASE & "_Log.txt");
+      -- set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+      wait for 0 ns ; wait for 0 ns ;
       log(ID_SEQUENCER, "Waiting for coverpoint to be initialized", C_SCOPE);
       wait until shared_coverpoint_initialized'event;
       log(ID_SEQUENCER, "Coverpoint initialized, ready to sample", C_SCOPE);

@@ -28,6 +28,12 @@ use uvvm_vvc_framework.ti_vvc_framework_support_pkg.all;
 library bitvis_vip_axistream;
 context bitvis_vip_axistream.vvc_context;
 
+-- Required by OSVVM
+library osvvm ;
+context OSVVM.OsvvmContext ;
+use std.env.all ;
+-- End of Required by OSVVM
+
 --hdlregression:tb
 -- Test case entity
 entity axistream_vvc_width_tb is
@@ -44,6 +50,9 @@ end entity;
 
 -- Test case architecture
 architecture func of axistream_vvc_width_tb is
+  -- Required by OSVVM
+  constant C_TESTCASE_FILE_PATH : string  := FILE_PATH ;
+  -- End of Required by OSVVM
 
   --------------------------------------------------------------------------------
   -- Types and constants declarations
@@ -123,10 +132,16 @@ begin
     variable v_data_array_4_byte  : t_slv_array(0 to C_MAX_BYTES - 1)(4 * C_BYTE - 1 downto 0);
 
   begin
+    -- OSVVM Start of Test Case
+    SetTestName("axistream_vvc_width_tb") ;
+    TranscriptOpen ;
+    SetTranscriptMirror ;
+    -- End of OSVVM Start of Test Case
+
     -- To avoid that log files from different test cases (run in separate
     -- simulations) overwrite each other.
-    set_log_file_name(GC_TESTCASE & "_Log.txt");
-    set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+    --O set_log_file_name(GC_TESTCASE & "_Log.txt");
+    --O set_alert_file_name(GC_TESTCASE & "_Alert.txt");
 
     await_uvvm_initialization(VOID);
 
@@ -216,8 +231,16 @@ begin
     -----------------------------------------------------------------------------
     -- Ending the simulation
     -----------------------------------------------------------------------------
-    await_uvvm_completion(1000 ns, print_alert_counters => REPORT_ALERT_COUNTERS_FINAL, scope => C_SCOPE);
+    await_uvvm_completion(1000 ns, print_alert_counters => REPORT_ALERT_COUNTERS, scope => C_SCOPE);
     log(ID_LOG_HDR, "SIMULATION COMPLETED", C_SCOPE);
+
+    -- OSVVM Test Completion Steps
+    TranscriptClose ;
+    if C_TESTCASE_FILE_PATH'length > 0 then
+      AffirmIfTranscriptsMatch(RemoveEndingSeparator(ChangeSeparator(C_TESTCASE_FILE_PATH)) & "/OsvvmResults") ;
+    end if ;
+    EndOfTestReports ;
+    -- End of Test OSVVM Completion Steps
 
     -- Finish the simulation
     std.env.stop;

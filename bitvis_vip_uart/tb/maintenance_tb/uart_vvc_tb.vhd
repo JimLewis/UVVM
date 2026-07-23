@@ -30,6 +30,12 @@ context bitvis_vip_sbi.vvc_context;
 library bitvis_vip_uart;
 context bitvis_vip_uart.vvc_context;
 
+-- Required by OSVVM
+library osvvm ;
+context OSVVM.OsvvmContext ;
+use std.env.all ;
+-- End of Required by OSVVM
+
 --hdlregression:tb
 -- Test case entity
 entity uart_vvc_tb is
@@ -40,6 +46,9 @@ end entity;
 
 -- Test case architecture
 architecture func of uart_vvc_tb is
+  -- Required by OSVVM
+  constant C_TESTCASE_FILE_PATH : string  := FILE_PATH ;
+  -- End of Required by OSVVM
 
   constant C_CLK_PERIOD : time := 10 ns;
   constant C_BIT_PERIOD : time := 16 * C_CLK_PERIOD; -- default in design and BFM
@@ -141,10 +150,16 @@ begin
     end procedure;
 
   begin
+    -- OSVVM Start of Test Case
+    SetTestName("uart_vvc_tb") ;
+    TranscriptOpen ;
+    SetTranscriptMirror ;
+    -- End of OSVVM Start of Test Case
+
     -- To avoid that log files from different test cases (run in separate
     -- simulations) overwrite each other.
-    set_log_file_name(GC_TESTCASE & "_Log.txt");
-    set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+    --O set_log_file_name(GC_TESTCASE & "_Log.txt");
+    --O set_alert_file_name(GC_TESTCASE & "_Alert.txt");
 
     await_uvvm_initialization(VOID);
 
@@ -180,7 +195,7 @@ begin
     log(ID_LOG_HDR, "Start Test of UART VIP", C_SCOPE);
     ------------------------------------------------------------
 
-    log("Wait 10 clock period for reset to be turned off");
+    log(NO_ID, "Wait 10 clock period for reset to be turned off");
     wait for (10 * C_CLK_PERIOD);       -- for reset to be turned off
 
     log(ID_LOG_HDR, "Check register defaults ", C_SCOPE);
@@ -264,7 +279,7 @@ begin
 
     log(ID_LOG_HDR, "Test of advanced uart_expect()", C_SCOPE);
     ------------------------------------------------------------
-    log("Testing uart_expect with multiple occurrences");
+    log(NO_ID, "Testing uart_expect with multiple occurrences");
     uart_expect(UART_VVCT, 1, RX, x"42", "Expecting TX data", 4, 0 ns);
     sbi_write(SBI_VVCT, 1, C_ADDR_TX_DATA, x"ab", "TX_DATA");
     sbi_write(SBI_VVCT, 1, C_ADDR_TX_DATA, x"ee", "TX_DATA");
@@ -273,7 +288,7 @@ begin
     await_completion(SBI_VVCT, 1, 13 * C_BIT_PERIOD * 4);
     wait for 10 * C_BIT_PERIOD;         -- margin
 
-    log("Testing uart_expect with delay");
+    log(NO_ID, "Testing uart_expect with delay");
     uart_expect(UART_VVCT, 1, RX, x"af", "Expecting TX data", 0, 10000 ns);
     wait for 6000 ns;
     sbi_write(SBI_VVCT, 1, C_ADDR_TX_DATA, x"af", "TX_DATA");
@@ -282,7 +297,7 @@ begin
     wait for 10 * C_BIT_PERIOD;         -- margin
 
     -- Testing that the UART TX buffer works correctly
-    log("Testing uart_expect with more occurrences");
+    log(NO_ID, "Testing uart_expect with more occurrences");
     uart_expect(UART_VVCT, 1, RX, x"bb", "Expecting TX data", 17, 0 ns);
     sbi_write(SBI_VVCT, 1, C_ADDR_TX_DATA, x"01", "TX_DATA");
     sbi_write(SBI_VVCT, 1, C_ADDR_TX_DATA, x"02", "TX_DATA");
@@ -314,7 +329,7 @@ begin
     await_completion(UART_VVCT, 1, RX, 13 * C_BIT_PERIOD * 2);
     wait for 10 * C_BIT_PERIOD;         -- margin
 
-    log("Test detection of parity error");
+    log(NO_ID, "Test detection of parity error");
     -- Configure VVC to expect the opposite parity
     shared_uart_vvc_config(RX, 1).bfm_config.parity := PARITY_EVEN;
     increment_expected_alerts_and_stop_limit(ERROR);
@@ -331,18 +346,18 @@ begin
     log(ID_LOG_HDR, "Test of reading executor status");
     ------------------------------------------------------------
 
-    log("current_cmd_idx: " & to_string(shared_uart_vvc_status(RX, 1).current_cmd_idx));
-    log("previous_cmd_idx: " & to_string(shared_uart_vvc_status(RX, 1).previous_cmd_idx));
-    log("pending_cmd_cnt: " & to_string(shared_uart_vvc_status(RX, 1).pending_cmd_cnt));
+    log(NO_ID, "current_cmd_idx: " & to_string(shared_uart_vvc_status(RX, 1).current_cmd_idx));
+    log(NO_ID, "previous_cmd_idx: " & to_string(shared_uart_vvc_status(RX, 1).previous_cmd_idx));
+    log(NO_ID, "pending_cmd_cnt: " & to_string(shared_uart_vvc_status(RX, 1).pending_cmd_cnt));
 
-    log("current_cmd_idx: " & to_string(shared_uart_vvc_status(TX, 1).current_cmd_idx));
-    log("previous_cmd_idx: " & to_string(shared_uart_vvc_status(TX, 1).previous_cmd_idx));
-    log("pending_cmd_cnt: " & to_string(shared_uart_vvc_status(TX, 1).pending_cmd_cnt));
+    log(NO_ID, "current_cmd_idx: " & to_string(shared_uart_vvc_status(TX, 1).current_cmd_idx));
+    log(NO_ID, "previous_cmd_idx: " & to_string(shared_uart_vvc_status(TX, 1).previous_cmd_idx));
+    log(NO_ID, "pending_cmd_cnt: " & to_string(shared_uart_vvc_status(TX, 1).pending_cmd_cnt));
 
     log(ID_LOG_HDR, "Test of advanced uart_expect() with expected errors", C_SCOPE);
     ------------------------------------------------------------
 
-    log("Testing uart_expect with wrong data and one occurence. The wrong data received shall be printed in error message when only expecting one occurance.");
+    log(NO_ID, "Testing uart_expect with wrong data and one occurence. The wrong data received shall be printed in error message when only expecting one occurance.");
     increment_expected_alerts_and_stop_limit(ERROR);
     uart_expect(UART_VVCT, 1, RX, x"32", "Provoking failure by expecting wrong data.", 1, 0 ns, ERROR);
     sbi_write(SBI_VVCT, 1, C_ADDR_TX_DATA, x"31", "TX_DATA");
@@ -350,7 +365,7 @@ begin
     await_completion(SBI_VVCT, 1, 13 * C_BIT_PERIOD * 2);
     wait for 10 * C_BIT_PERIOD;         -- margin
 
-    log("Testing uart_expect with too many occurrences before expected data");
+    log(NO_ID, "Testing uart_expect with too many occurrences before expected data");
     increment_expected_alerts_and_stop_limit(ERROR);
     uart_expect(UART_VVCT, 1, RX, x"42", "Provoking failure due to too many occurrences before expected data", 2, 0 ns, ERROR);
     sbi_write(SBI_VVCT, 1, C_ADDR_TX_DATA, x"ab", "TX_DATA");
@@ -362,7 +377,7 @@ begin
     wait for 10 * C_BIT_PERIOD;         -- margin
     shared_uart_vvc_config(RX, 1).unwanted_activity_severity := C_UART_VVC_CONFIG_DEFAULT.unwanted_activity_severity;
 
-    log("Testing uart_expect with delay and timeout error");
+    log(NO_ID, "Testing uart_expect with delay and timeout error");
     increment_expected_alerts_and_stop_limit(ERROR);   -- Will result in failure ERROR in uart_expect()
     uart_expect(UART_VVCT, 1, RX, x"af", "Provoking failure due to timeout", 0, 4000 ns);
     wait for 6000 ns;
@@ -373,7 +388,7 @@ begin
     wait for 10 * C_BIT_PERIOD;         -- margin
     shared_uart_vvc_config(RX, 1).unwanted_activity_severity := C_UART_VVC_CONFIG_DEFAULT.unwanted_activity_severity;
 
-    log("Testing error due to timeout=0 and max_receptions=0");
+    log(NO_ID, "Testing error due to timeout=0 and max_receptions=0");
     increment_expected_alerts_and_stop_limit(ERROR);
     uart_expect(UART_VVCT, 1, RX, x"01", "Provoking failure due to timeout", 0, 0 ns, ERROR);
     sbi_write(SBI_VVCT, 1, C_ADDR_TX_DATA, x"01", "TX_DATA"); -- resetting
@@ -395,7 +410,7 @@ begin
     wait for 100 * C_BIT_PERIOD;        -- margin
     shared_uart_vvc_config(RX, 1).unwanted_activity_severity := C_UART_VVC_CONFIG_DEFAULT.unwanted_activity_severity;
 
-    log("Check that terminate flag has been reset");
+    log(NO_ID, "Check that terminate flag has been reset");
     sbi_write(SBI_VVCT, 1, C_ADDR_TX_DATA, x"55", "TX_DATA");
     uart_expect(UART_VVCT, 1, RX, x"55", "Expecting TX data");
     await_completion(UART_VVCT, 1, RX, 13 * C_BIT_PERIOD);
@@ -430,11 +445,11 @@ begin
     await_completion(UART_VVCT, 1, ALL_CHANNELS, 40 * C_BIT_PERIOD);
     check_value(shared_uart_vvc_status(TX, 1).pending_cmd_cnt, 0, ERROR, "Checking that UART TX has no pending commands after await_completion", C_SCOPE, ID_SEQUENCER);
     check_value(shared_uart_vvc_status(RX, 1).pending_cmd_cnt, 0, ERROR, "Checking that UART RX has no pending commands after await_completion", C_SCOPE, ID_SEQUENCER);
-    log("Both channels have now completed.");
+    log(NO_ID, "Both channels have now completed.");
 
     log(ID_LOG_HDR, "Testing inter-bfm delay");
 
-    log("\rChecking TIME_START2START");
+    log(NO_ID, "\rChecking TIME_START2START");
     wait for C_BIT_PERIOD * 51;
     shared_uart_vvc_config(TX, 1).inter_bfm_delay.delay_type    := TIME_START2START;
     shared_uart_vvc_config(TX, 1).inter_bfm_delay.delay_in_time := C_BIT_PERIOD * 50;
@@ -444,8 +459,8 @@ begin
     await_completion(UART_VVCT, 1, TX, (50 * C_BIT_PERIOD) + (11 * C_BIT_PERIOD) + (C_CLK_PERIOD));
     check_value(((now - v_timestamp) = ((50 * C_BIT_PERIOD) + (11 * C_BIT_PERIOD))), ERROR, "Checking that inter-bfm delay was upheld");
 
-    --log("\rChecking that insert_delay does not affect inter-BFM delay");
-    log("\rChecking that insert_delay is added to inter-BFM delay");
+    --log(NO_ID, "\rChecking that insert_delay does not affect inter-BFM delay");
+    log(NO_ID, "\rChecking that insert_delay is added to inter-BFM delay");
     wait for C_BIT_PERIOD * 51;
     v_timestamp := now;
     uart_transmit(UART_VVCT, 1, TX, x"CC", "Third transmit with UART TX");
@@ -455,7 +470,7 @@ begin
     await_completion(UART_VVCT, 1, TX, (50 * C_BIT_PERIOD) + (12 * C_BIT_PERIOD * 2) + (C_CLK_PERIOD) + (2 * C_BIT_PERIOD));
     check_value(((now - v_timestamp) = ((50 * C_BIT_PERIOD) + (11 * C_BIT_PERIOD) + (2 * C_BIT_PERIOD))), ERROR, "Checking that inter-bfm delay and insert_delay was added");
 
-    log("\rChecking TIME_FINISH2START");
+    log(NO_ID, "\rChecking TIME_FINISH2START");
     wait for C_BIT_PERIOD * 101;
     shared_uart_vvc_config(TX, 1).inter_bfm_delay.delay_type    := TIME_FINISH2START;
     shared_uart_vvc_config(TX, 1).inter_bfm_delay.delay_in_time := C_BIT_PERIOD * 100;
@@ -465,7 +480,7 @@ begin
     await_completion(UART_VVCT, 1, TX, (100 * C_BIT_PERIOD) + (12 * C_BIT_PERIOD * 2) + (C_CLK_PERIOD));
     check_value(((now - v_timestamp) >= ((100 * C_BIT_PERIOD) + (11 * C_BIT_PERIOD))), ERROR, "Checking that inter-bfm delay was upheld");
 
-    log("\rChecking TIME_START2START and provoking inter-bfm delay violation");
+    log(NO_ID, "\rChecking TIME_START2START and provoking inter-bfm delay violation");
     wait for C_CLK_PERIOD * 10;
     increment_expected_alerts(TB_WARNING, 2);
     shared_uart_vvc_config(TX, 1).inter_bfm_delay.inter_bfm_delay_violation_severity := TB_WARNING;
@@ -475,7 +490,7 @@ begin
     uart_transmit(UART_VVCT, 1, TX, x"FF", "Second transmit with UART TX");
     await_completion(UART_VVCT, 1, TX, (100 * C_BIT_PERIOD) + (12 * C_BIT_PERIOD * 2) + (C_CLK_PERIOD));
 
-    log("Setting delay back to initial value");
+    log(NO_ID, "Setting delay back to initial value");
     shared_uart_vvc_config(TX, 1).inter_bfm_delay.inter_bfm_delay_violation_severity := WARNING;
     shared_uart_vvc_config(TX, 1).inter_bfm_delay.delay_type                         := NO_DELAY;
     shared_uart_vvc_config(TX, 1).inter_bfm_delay.delay_in_time                      := 0 ns;
@@ -492,7 +507,7 @@ begin
       v_timeout := v_timeout + shared_uart_vvc_config(RX, 1).bfm_config.bit_time;
     end if;
     v_timeout                                        := v_timeout;
-    log("Setting config.timeout to transfer time (" & to_string(v_timeout) & "). Expecting TB_ERROR from BFM and ERROR from VVC.");
+    log(NO_ID, "Setting config.timeout to transfer time (" & to_string(v_timeout) & "). Expecting TB_ERROR from BFM and ERROR from VVC.");
     shared_uart_vvc_config(RX, 1).bfm_config.timeout := v_timeout;
     increment_expected_alerts_and_stop_limit(TB_ERROR);
     increment_expected_alerts_and_stop_limit(ERROR);
@@ -535,8 +550,16 @@ begin
     -----------------------------------------------------------------------------
     -- Ending the simulation
     -----------------------------------------------------------------------------
-    await_uvvm_completion(1000 ns, print_alert_counters => REPORT_ALERT_COUNTERS_FINAL, scope => C_SCOPE);
+    await_uvvm_completion(1000 ns, print_alert_counters => REPORT_ALERT_COUNTERS, scope => C_SCOPE);
     log(ID_LOG_HDR, "SIMULATION COMPLETED", C_SCOPE);
+
+    -- OSVVM Test Completion Steps
+    TranscriptClose ;
+    if C_TESTCASE_FILE_PATH'length > 0 then
+      AffirmIfTranscriptsMatch(RemoveEndingSeparator(ChangeSeparator(C_TESTCASE_FILE_PATH)) & "/OsvvmResults") ;
+    end if ;
+    EndOfTestReports ;
+    -- End of Test OSVVM Completion Steps
 
     -- Finish the simulation
     std.env.stop;

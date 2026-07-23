@@ -24,6 +24,12 @@ context uvvm_util.uvvm_util_context;
 library bitvis_vip_axilite;
 use bitvis_vip_axilite.axilite_bfm_pkg.all;
 
+-- Required by OSVVM
+library osvvm ;
+context OSVVM.OsvvmContext ;
+use std.env.all ;
+-- End of Required by OSVVM
+
 --hdlregression:tb
 -- Test case entity
 entity axilite_bfm_tb is
@@ -34,6 +40,9 @@ end entity;
 
 -- Test case architecture
 architecture func of axilite_bfm_tb is
+  -- Required by OSVVM
+  constant C_TESTCASE_FILE_PATH : string  := FILE_PATH ;
+  -- End of Required by OSVVM
 
   constant C_CLK_PERIOD   : time    := 10 ns;
   constant C_ADDR_WIDTH_1 : natural := 32;
@@ -146,10 +155,16 @@ begin
     end;
 
   begin
+    -- OSVVM Start of Test Case
+    SetTestName("axilite_bfm_tb") ;
+    TranscriptOpen ;
+    SetTranscriptMirror ;
+    -- End of OSVVM Start of Test Case
+
     -- To avoid that log files from different test cases (run in separate
     -- simulations) overwrite each other.
     set_log_file_name(GC_TESTCASE & "_Log.txt");
-    set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+    --O set_alert_file_name(GC_TESTCASE & "_Alert.txt");
 
     -- override default config with settings for this testbench
     axilite_bfm_config.clock_period             := C_CLK_PERIOD;
@@ -175,7 +190,7 @@ begin
     clock_ena <= true;                  -- the axilite_reset routine assumes the clock is running
     gen_pulse(areset, 10 * C_CLK_PERIOD, "Pulsing reset for 10 clock periods");
 
-    log("Do some axilite writes");
+    log(NO_ID, "Do some axilite writes");
     -- write some data; the current axislave isn't very implemented - doesn't
     -- have FIFO, and just has one RW slave register at addr_valueess 0x6000
     axilite_write(axilite_if_1, x"0000", x"5555");
@@ -189,7 +204,7 @@ begin
 
     check_value(v_read_data_1, x"54321", error, "verifying read data on interface 1.");
 
-    log("Check the written data");
+    log(NO_ID, "Check the written data");
     -- check that is was correctly written (calls axilite_read)
     axilite_check(axilite_if_1, x"0006000", x"54321");
     axilite_write(axilite_if_1, x"0006000", x"abba1972");
@@ -200,7 +215,7 @@ begin
     axilite_check(x"0006000", x"00000000", "", clk, axilite_if_1, WARNING, C_SCOPE, shared_msg_id_panel, axilite_bfm_config);
 
     -- Test byte_enable functionality
-    log("Checking write with byte_enable");
+    log(NO_ID, "Checking write with byte_enable");
     axilite_write(axilite_if_1, x"0006000", x"0");
     axilite_write(axilite_if_1, x"0006000", x"abba1972", "0011");
     axilite_check(axilite_if_1, x"0006000", x"00001972");
@@ -213,7 +228,7 @@ begin
     -- Change config to default
     --axilite_bfm_config := C_AXILITE_BFM_CONFIG_DEFAULT;
 
-    log("Do some axilite writes");
+    log(NO_ID, "Do some axilite writes");
     -- write some data; the current axislave isn't very implemented - doesn't
     -- have FIFO, and just has one RW slave register at addr_valueess 0x6000
     axilite_write(axilite_if_2, x"0000", x"5555");
@@ -229,7 +244,7 @@ begin
 
     check_value(v_read_data_2, x"54321", error, "verifying read data on interface 2.");
 
-    log("Check the written data");
+    log(NO_ID, "Check the written data");
     -- check that is was correctly written
     axilite_check(axilite_if_2, x"0000", x"5555");
     axilite_check(axilite_if_2, x"0010", x"befbeef");
@@ -244,7 +259,7 @@ begin
     axilite_check(x"0000040", x"00000000", "", clk, axilite_if_2, WARNING, C_SCOPE, shared_msg_id_panel, axilite_bfm_config);
 
     -- Test byte_enable functionality
-    log("Checking write with byte_enable");
+    log(NO_ID, "Checking write with byte_enable");
 
     axilite_write(axilite_if_2, x"0000040", x"0");
     axilite_write(axilite_if_2, x"0000040", x"afaf1191", "00000011");
@@ -267,8 +282,16 @@ begin
     -- Ending the simulation
     -----------------------------------------------------------------------------
     wait for 1000 ns;                   -- to allow some time for completion
-    report_alert_counters(FINAL);       -- Report final counters and print conclusion for simulation (Success/Fail)
+    report_alert_counters(INTERMEDIATE);       -- Report final counters and print conclusion for simulation (Success/Fail)
     log(ID_LOG_HDR, "SIMULATION COMPLETED", C_SCOPE);
+
+    -- OSVVM Test Completion Steps
+    TranscriptClose ;
+    if C_TESTCASE_FILE_PATH'length > 0 then
+      AffirmIfTranscriptsMatch(RemoveEndingSeparator(ChangeSeparator(C_TESTCASE_FILE_PATH)) & "/OsvvmResults") ;
+    end if ;
+    EndOfTestReports ;
+    -- End of Test OSVVM Completion Steps
 
     -- Finish the simulation
     std.env.stop;

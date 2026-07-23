@@ -25,6 +25,12 @@ context uvvm_util.uvvm_util_context;
 library bitvis_vip_axistream;
 use bitvis_vip_axistream.axistream_bfm_pkg.all;
 
+-- Required by OSVVM
+library osvvm ;
+context OSVVM.OsvvmContext ;
+use std.env.all ;
+-- End of Required by OSVVM
+
 --hdlregression:tb
 -- Test case entity
 entity axistream_bfm_tb is
@@ -40,6 +46,9 @@ end entity;
 
 -- Test case architecture
 architecture func of axistream_bfm_tb is
+  -- Required by OSVVM
+  constant C_TESTCASE_FILE_PATH : string  := FILE_PATH ;
+  -- End of Required by OSVVM
 
   --------------------------------------------------------------------------------
   -- Types and constants declarations
@@ -119,6 +128,12 @@ begin
     variable v_dest_array : t_dest_array(v_data_array'range) := (others => (others => '0'));
 
   begin
+    -- OSVVM Start of Test Case
+    SetTestName("axistream_bfm_tb") ;
+    TranscriptOpen ;
+    SetTranscriptMirror ;
+    -- End of OSVVM Start of Test Case
+
     -- To avoid that log files from different test cases (run in separate
     -- simulations) overwrite each other.
     set_log_file_name(GC_TESTCASE & "_Log.txt");
@@ -149,7 +164,7 @@ begin
     ------------------------------------------------------------
     clock_ena <= true;              -- the axistream_reset routine assumes the clock is running
 
-    log("TC: axistream transmits: ");
+    log(NO_ID, "TC: axistream transmits: ");
 
     -- Directly assigning args
     v_data_array(0 to 2) := (x"a0", x"a1", x"a2");
@@ -194,8 +209,16 @@ begin
     -- Ending the simulation
     -----------------------------------------------------------------------------
     wait for 1000 ns;               -- to allow some time for completion
-    report_alert_counters(FINAL);   -- Report final counters and print conclusion for simulation (Success/Fail)
+    report_alert_counters(INTERMEDIATE);   -- Report final counters and print conclusion for simulation (Success/Fail)
     log(ID_LOG_HDR, "SIMULATION COMPLETED", C_SCOPE);
+
+    -- OSVVM Test Completion Steps
+    TranscriptClose ;
+    if C_TESTCASE_FILE_PATH'length > 0 then
+      AffirmIfTranscriptsMatch(RemoveEndingSeparator(ChangeSeparator(C_TESTCASE_FILE_PATH)) & "/OsvvmResults") ;
+    end if ;
+    EndOfTestReports ;
+    -- End of Test OSVVM Completion Steps
 
     -- Finish the simulation
     std.env.stop;

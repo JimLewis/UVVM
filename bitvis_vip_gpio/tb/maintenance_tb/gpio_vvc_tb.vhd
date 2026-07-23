@@ -29,6 +29,12 @@ library bitvis_vip_gpio;
 context bitvis_vip_gpio.vvc_context;
 use bitvis_vip_gpio.vvc_sb_support_pkg.all;
 
+-- Required by OSVVM
+library osvvm ;
+context OSVVM.OsvvmContext ;
+use std.env.all ;
+-- End of Required by OSVVM
+
 --hdlregression:tb
 -- Test case entity
 entity gpio_vvc_tb is
@@ -39,6 +45,9 @@ end entity;
 
 -- Test case architecture
 architecture func of gpio_vvc_tb is
+  -- Required by OSVVM
+  constant C_TESTCASE_FILE_PATH : string  := FILE_PATH ;
+  -- End of Required by OSVVM
 
   constant C_CLK_PERIOD        : time    := 10 ns;
   constant C_SCOPE             : string  := C_TB_SCOPE_DEFAULT;
@@ -48,12 +57,12 @@ architecture func of gpio_vvc_tb is
   signal gpio_2_input  : std_logic_vector(1 downto 0);
   signal gpio_3_input  : std_logic_vector(7 downto 0);
   signal gpio_4_input  : std_logic_vector(1023 downto 0);
-  
+
   signal gpio_5_output : std_logic_vector(0 downto 0);
   signal gpio_6_output : std_logic_vector(1 downto 0);
   signal gpio_7_output : std_logic_vector(7 downto 0);
   signal gpio_8_output : std_logic_vector(1023 downto 0);
-  
+
   signal gpio_9_inout  : std_logic_vector(7 downto 0);
 
   procedure set_gpio(
@@ -65,7 +74,7 @@ architecture func of gpio_vvc_tb is
     if pins'length /= data'length then
       alert(TB_ERROR, "pin length " & to_string(pins'length) & " and data length " & to_string(data'length) & " doesn't match.");
     end if;
-    log("Setting GPIO to " & to_string(data, BIN) & "." & add_msg_delimiter(msg));
+    log(NO_ID, "Setting GPIO to " & to_string(data, BIN) & "." & add_msg_delimiter(msg));
     pins <= data;
   end procedure;
 
@@ -87,7 +96,7 @@ begin
     port map(
       gpio_vvc_if => gpio_1_input
     );
-    
+
   -- GPIO as input
   i2_gpio_vvc : entity bitvis_vip_gpio.gpio_vvc
     generic map(
@@ -120,7 +129,7 @@ begin
     port map(
       gpio_vvc_if => gpio_4_input
     );
-    
+
   ---------------------------------------------------------------
 
   -- GPIO as output
@@ -133,7 +142,7 @@ begin
     port map(
       gpio_vvc_if => gpio_5_output
     );
-    
+
   -- GPIO as output
   i6_gpio_vvc : entity bitvis_vip_gpio.gpio_vvc
     generic map(
@@ -166,8 +175,8 @@ begin
     port map(
       gpio_vvc_if => gpio_8_output
     );
-    
-  ---------------------------------------------------------------   
+
+  ---------------------------------------------------------------
 
   -- GPIO as input/output
   i9_gpio_vvc : entity bitvis_vip_gpio.gpio_vvc
@@ -191,7 +200,7 @@ begin
     variable v_data_exp_1024 : std_logic_vector(1023 downto 0);
     variable v_cmd_idx       : natural;
     variable v_alert_level   : t_alert_level;
-    
+
     --------------------------------------------------------------------------------------------------
     -- Toggles all the signals in the VVC interface and checks that the expected alerts are generated
     --------------------------------------------------------------------------------------------------
@@ -255,7 +264,7 @@ begin
       check_value(vvc_output, expected_data, error, "Checking value of GPIO VVC " & to_string(vvc_instance_idx));
       wait for C_CLK_PERIOD * 4; -- Margin
     end procedure set_and_verify_gpio;
-   
+
     ----------------------------------------------------------------------
     -- Test of GPIO VVC Get method
     -- Set data via pins (VVC input port) and verify data via VVC command
@@ -283,7 +292,7 @@ begin
       check_value(v_received_data, data, error, "Readback data via fetch_result()");
       wait for C_CLK_PERIOD * 4; -- Margin
     end procedure get_and_verify_gpio;
-    
+
     ----------------------------------------------------------------------
     -- Test of GPIO VVC Get method using Scoreboard to check received data
     -- Set data via pins (VVC input port) and verify data via scoreboard
@@ -304,7 +313,7 @@ begin
       await_completion(GPIO_VVCT, vvc_instance_idx, v_cmd_idx, 100 ns, "Wait for gpio_get to finish");
       wait for C_CLK_PERIOD * 4; -- Margin
     end procedure get_and_verify_gpio_sb;
-    
+
     ----------------------------------------------------------------------
     -- Test of GPIO VVC Check method
     -- Set data via pins (VVC input port) and verify data via VVC command
@@ -362,10 +371,16 @@ begin
     end procedure check_stable_gpio;
 
   begin
+    -- OSVVM Start of Test Case
+    SetTestName("gpio_vvc_tb") ;
+    TranscriptOpen ;
+    SetTranscriptMirror ;
+    -- End of OSVVM Start of Test Case
+
     -- To avoid that log files from different test cases (run in separate
     -- simulations) overwrite each other.
-    set_log_file_name(GC_TESTCASE & "_Log.txt");
-    set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+    --O set_log_file_name(GC_TESTCASE & "_Log.txt");
+    --O set_alert_file_name(GC_TESTCASE & "_Alert.txt");
 
     await_uvvm_initialization(VOID);
 
@@ -417,7 +432,7 @@ begin
     set_and_verify_gpio(6, gpio_6_output, "01", "01");
     set_and_verify_gpio(7, gpio_7_output, "10101010", "10101010");
     set_and_verify_gpio(8, gpio_8_output, "10101010101", "10101010101");
-    
+
     -- Set GPIO setting to all 0's. Check GPIO setting
     set_and_verify_gpio(5, gpio_5_output, '0', "0");
     set_and_verify_gpio(6, gpio_6_output, "00", "00");
@@ -471,8 +486,8 @@ begin
     get_and_verify_gpio(2, gpio_2_input, "11");
     get_and_verify_gpio(3, gpio_3_input, "00011101");
     get_and_verify_gpio(4, gpio_4_input, v_data_exp_1024);
-    
-    
+
+
     --------------------------------------------------------------------------------------
     -- Test GPIO Get method using Scoreboard to check received data.
     --------------------------------------------------------------------------------------
@@ -513,7 +528,7 @@ begin
 
     -- Set GPIO setting to 0xFF. Test GPIO Expect and that GPIO setting is
     -- updated immediately (within 0 ns).
-    log("Testing gpio_expect as instant change check");
+    log(NO_ID, "Testing gpio_expect as instant change check");
     v_set_data    := x"FF";
     v_expect_data := v_set_data;
     set_gpio(gpio_3_input, v_set_data, "Setting GPIO 3 input to 0xff");
@@ -523,7 +538,7 @@ begin
 
     -- Set GPIO setting to 0xFF, then to 0x12 after 90 ns. Test GPIO Expect
     -- with delay by checking that GPIO setting is set to 0x12 after 100 ns.
-    log("Testing gpio_expect where value is correct after a delay");
+    log(NO_ID, "Testing gpio_expect where value is correct after a delay");
     v_set_data    := x"FF";
     v_expect_data := x"12";
     set_gpio(gpio_3_input, v_set_data, "Setting GPIO 3 input to 0xff");
@@ -537,7 +552,7 @@ begin
 
     -- Set GPIO setting to 0xFF, 0xAA, 0xAB, 0xAC and finally 0x00. Test GPIO
     -- Expect by checking that GPIO setting is set to 0x00 after 10 clk periods.
-    log("Testing gpio_expect where value is not first to arrive");
+    log(NO_ID, "Testing gpio_expect where value is not first to arrive");
     v_set_data    := x"FF";
     v_expect_data := x"00";
     set_gpio(gpio_3_input, v_set_data, "Setting GPIO 3 input to 0xff");
@@ -559,7 +574,7 @@ begin
 
     -- Set GPIO 3 input to 0xAA. Call GPIO Expect Stable and check actual GPIO
     -- setting is same as expected and that it remains stable for a certain time.
-    log("Testing gpio_expect_stable with expected stable value FROM_NOW");
+    log(NO_ID, "Testing gpio_expect_stable with expected stable value FROM_NOW");
     v_set_data    := x"AA";
     v_expect_data := v_set_data;
     set_gpio(gpio_3_input, v_set_data, "Setting GPIO 3 input to 0xAA");
@@ -570,7 +585,7 @@ begin
     -- Set GPIO 3 input to 0xBB and wait. Call GPIO Expect Stable and check actual GPIO
     -- setting is same as expected and that it has been stable for a certain time after
     -- the last event.
-    log("Testing gpio_expect_stable with expected stable value FROM_LAST_EVENT");
+    log(NO_ID, "Testing gpio_expect_stable with expected stable value FROM_LAST_EVENT");
     v_set_data    := x"BB";
     v_expect_data := v_set_data;
     set_gpio(gpio_3_input, v_set_data, "Setting GPIO 3 input to 0xBB");
@@ -581,7 +596,7 @@ begin
 
     -- Set GPIO 3 input to 0xCC after 10 ns. Call GPIO Expect Stable and wait until actual GPIO
     -- setting is same as expected and that it remains stable for a certain time.
-    log("Testing gpio_expect_stable with expected stable value after a delayed update");
+    log(NO_ID, "Testing gpio_expect_stable with expected stable value after a delayed update");
     v_set_data    := x"CC";
     v_expect_data := v_set_data;
     gpio_expect_stable(GPIO_VVCT, 3, v_expect_data, C_CLK_PERIOD * 5, FROM_NOW, 20 ns, "Checking GPIO 3", error);
@@ -597,7 +612,7 @@ begin
     log(ID_LOG_HDR, "Test of GPIO VVC as inout port", C_SCOPE);
 
     for i in 0 to 1 loop
-      log("GPIO 9 port is 'Z', set data using the DUT to configure as input");
+      log(NO_ID, "GPIO 9 port is 'Z', set data using the DUT to configure as input");
       v_set_data    := x"55";
       v_expect_data := v_set_data;
       set_gpio(gpio_9_inout, v_set_data, "Setting GPIO 9 input to " & to_string(v_set_data, HEX, KEEP_LEADING_0, INCL_RADIX));
@@ -614,13 +629,13 @@ begin
       await_completion(GPIO_VVCT, 9, v_cmd_idx, 100 ns, "Wait for gpio_expect to finish");
       wait for C_CLK_PERIOD;
 
-      log("Set GPIO 9 port to 'Z' from the DUT to release the port");
+      log(NO_ID, "Set GPIO 9 port to 'Z' from the DUT to release the port");
       v_set_data := x"ZZ";
       set_gpio(gpio_9_inout, v_set_data, "Releasing the port");
       await_completion(GPIO_VVCT, 9, C_GPIO_SET_MAX_TIME);
       wait for C_CLK_PERIOD;
 
-      log("GPIO 9 port is 'Z', set data using the VVC to configure as output");
+      log(NO_ID, "GPIO 9 port is 'Z', set data using the VVC to configure as output");
       v_set_data    := x"FF";
       v_expect_data := v_set_data;
       gpio_set(GPIO_VVCT, 9, v_set_data, "Setting GPIO 9 input to " & to_string(v_set_data, HEX, KEEP_LEADING_0, INCL_RADIX));
@@ -635,7 +650,7 @@ begin
       check_value(gpio_9_inout, v_expect_data, error, "Checking value of GPIO VVC 9");
       wait for C_CLK_PERIOD;
 
-      log("Set GPIO 9 port to 'Z' from the VVC to release the port");
+      log(NO_ID, "Set GPIO 9 port to 'Z' from the VVC to release the port");
       v_set_data := x"ZZ";
       gpio_set(GPIO_VVCT, 9, v_set_data, "Releasing the port");
       await_completion(GPIO_VVCT, 9, C_GPIO_SET_MAX_TIME);
@@ -677,8 +692,16 @@ begin
     -----------------------------------------------------------------------------
     -- Ending the simulation
     -----------------------------------------------------------------------------
-    await_uvvm_completion(1000 ns, print_alert_counters => REPORT_ALERT_COUNTERS_FINAL, scope => C_SCOPE);
+    await_uvvm_completion(1000 ns, print_alert_counters => REPORT_ALERT_COUNTERS, scope => C_SCOPE);
     log(ID_LOG_HDR, "SIMULATION COMPLETED", C_SCOPE);
+
+    -- OSVVM Test Completion Steps
+    TranscriptClose ;
+    if C_TESTCASE_FILE_PATH'length > 0 then
+      AffirmIfTranscriptsMatch(RemoveEndingSeparator(ChangeSeparator(C_TESTCASE_FILE_PATH)) & "/OsvvmResults") ;
+    end if ;
+    EndOfTestReports ;
+    -- End of Test OSVVM Completion Steps
 
     -- Finish the simulation
     std.env.stop;

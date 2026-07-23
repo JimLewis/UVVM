@@ -28,6 +28,12 @@ library bitvis_vip_sbi;
 context bitvis_vip_sbi.vvc_context;
 use bitvis_vip_sbi.vvc_sb_support_pkg.all;
 
+-- Required by OSVVM
+library osvvm ;
+context OSVVM.OsvvmContext ;
+use std.env.all ;
+-- End of Required by OSVVM
+
 --hdlregression:tb
 -- Test case entity
 entity sbi_vvc_tb is
@@ -38,6 +44,9 @@ end entity;
 
 -- Test case architecture
 architecture func of sbi_vvc_tb is
+  -- Required by OSVVM
+  constant C_TESTCASE_FILE_PATH : string  := FILE_PATH ;
+  -- End of Required by OSVVM
 
   constant C_CLK_PERIOD : time   := 10 ns; -- **** Trenger metode for setting av clk period
   constant C_SCOPE      : string := "SBI_VVC_TB";
@@ -127,10 +136,16 @@ begin
     end procedure;
 
   begin
+    -- OSVVM Start of Test Case
+    SetTestName("sbi_vvc_tb") ;
+    TranscriptOpen ;
+    SetTranscriptMirror ;
+    -- End of OSVVM Start of Test Case
+
     -- To avoid that log files from different test cases (run in separate
     -- simulations) overwrite each other.
-    set_log_file_name(GC_TESTCASE & "_Log.txt");
-    set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+    --O set_log_file_name(GC_TESTCASE & "_Log.txt");
+    --O set_alert_file_name(GC_TESTCASE & "_Alert.txt");
 
     await_uvvm_initialization(VOID);
 
@@ -160,12 +175,12 @@ begin
       ----------------------------------------------------------------------------------------------------------------------------
       log(ID_LOG_HDR, "Test of simple write and check", C_SCOPE);
       ----------------------------------------------------------------------------------------------------------------------------
-      log("Write with both interfaces");
+      log(NO_ID, "Write with both interfaces");
       sbi_write(SBI_VVCT, 1, C_ADDR_FIFO_PUT, x"AA", "Write PUT on FIFO 1");
       sbi_write(SBI_VVCT, 2, C_ADDR_FIFO_PUT, x"FF", "Write PUT on FIFO 2");
       await_completion(SBI_VVCT, 1, 16 ns, "Await execution");
 
-      log("Read and check with both interfaces");
+      log(NO_ID, "Read and check with both interfaces");
       sbi_check(SBI_VVCT, 1, C_ADDR_FIFO_GET, x"FF", "Check GET data on FIFO 2", ERROR);
       sbi_check(SBI_VVCT, 2, C_ADDR_FIFO_GET, x"AA", "Check GET data on FIFO 1", ERROR);
       await_completion(SBI_VVCT, 1, 16 ns, "Await execution");
@@ -175,13 +190,13 @@ begin
       log(ID_LOG_HDR, "Test of simple write and read", C_SCOPE);
       ----------------------------------------------------------------------------------------------------------------------------
       -- Write to FIFO
-      log("Write with both interfaces");
+      log(NO_ID, "Write with both interfaces");
       sbi_write(SBI_VVCT, 1, C_ADDR_FIFO_PUT, x"12", "Write PUT on FIFO 1");
       sbi_write(SBI_VVCT, 2, C_ADDR_FIFO_PUT, x"53", "Write PUT on FIFO 2");
       await_completion(SBI_VVCT, 1, 16 ns, "Await execution");
 
       -- Read, fetch and check on FIFO 2
-      log("Read and check FIFO 2 using SBI IF 1");
+      log(NO_ID, "Read and check FIFO 2 using SBI IF 1");
       sbi_read(SBI_VVCT, 1, C_ADDR_FIFO_GET, "Read from FIFO 2 and store result in VVC");
       v_cmd_idx := get_last_received_cmd_idx(SBI_VVCT, 1); -- for last read
       await_completion(SBI_VVCT, 1, v_cmd_idx, 100 ns, "Wait for sbi_read to finish");
@@ -190,7 +205,7 @@ begin
       check_value(v_data(7 downto 0), x"53", ERROR, "Readback data via fetch_result()");
 
       -- Read, fetch and check on FIFO 1
-      log("Read and check FIFO 1 using SBI IF 2");
+      log(NO_ID, "Read and check FIFO 1 using SBI IF 2");
       sbi_read(SBI_VVCT, 2, C_ADDR_FIFO_GET, "Read from FIFO 1 and store result in VVC");
       v_cmd_idx := get_last_received_cmd_idx(SBI_VVCT, 2); -- for last read
       await_completion(SBI_VVCT, 2, v_cmd_idx, 100 ns, "Wait for sbi_read to finish");
@@ -204,18 +219,18 @@ begin
       ----------------------------------------------------------------------------------------------------------------------------
       log(ID_LOG_HDR, "Scoreboard test", C_SCOPE);
       ----------------------------------------------------------------------------------------------------------------------------
-      log("Write with both interfaces");
+      log(NO_ID, "Write with both interfaces");
       sbi_write(SBI_VVCT, 1, C_ADDR_FIFO_PUT, x"85", "Write on FIFO 1");
       sbi_vvc_sb.add_expected(2, pad_sbi_sb(x"85"));
       sbi_write(SBI_VVCT, 2, C_ADDR_FIFO_PUT, x"EC", "Write on FIFO 2");
       sbi_vvc_sb.add_expected(1, pad_sbi_sb(x"EC"));
       await_completion(SBI_VVCT, 2, 16 ns, "Await execution");
 
-      log("Read and check FIFO 1 using SBI IF 2");
+      log(NO_ID, "Read and check FIFO 1 using SBI IF 2");
       sbi_read(SBI_VVCT, 2, C_ADDR_FIFO_GET, TO_SB, "Read from FIFO 1 and store result in VVC's SB");
       await_completion(SBI_VVCT, 2, 100 ns, "Wait for sbi_read to finish");
 
-      log("Read and check FIFO 2 using SBI IF 1");
+      log(NO_ID, "Read and check FIFO 2 using SBI IF 1");
       sbi_read(SBI_VVCT, 1, C_ADDR_FIFO_GET, TO_SB, "Read from FIFO 2 and store result in VVC's SB");
       await_completion(SBI_VVCT, 1, 100 ns, "Wait for sbi_read to finish");
 
@@ -299,7 +314,7 @@ begin
       sbi_write(SBI_VVCT, 1, C_ADDR_FIFO_PUT, x"C2", "Write PUT on FIFO 1");
       await_completion(SBI_VVCT, 1, 100 ns);
 
-      log("\rNow starting readback with 100T delay between 1st and 2nd read");
+      log(NO_ID, "\rNow starting readback with 100T delay between 1st and 2nd read");
       sbi_read(SBI_VVCT, 2, C_ADDR_FIFO_GET, "Readback inside VVC");
       v_cmd_idx   := get_last_received_cmd_idx(SBI_VVCT, 2); -- for last read
       insert_delay(SBI_VVCT, 2, 100, "100T delay");
@@ -307,20 +322,20 @@ begin
       sbi_read(SBI_VVCT, 2, C_ADDR_FIFO_GET, "Readback inside VVC");
       v_timestamp := now;
 
-      log("\rFetch the 1st result");
+      log(NO_ID, "\rFetch the 1st result");
       await_completion(SBI_VVCT, 2, v_cmd_idx, 100 ns, "first read should be executed immediately");
       fetch_result(SBI_VVCT, 2, v_cmd_idx, v_data, v_is_ok, "Fetching available read-result");
       check_value(v_is_ok, ERROR, "Readback OK via fetch_result()");
       check_value(v_data(7 downto 0), x"A0", ERROR, "Readback data via fetch_result()");
 
-      log("\rFetch the 2nd result");
+      log(NO_ID, "\rFetch the 2nd result");
       await_completion(SBI_VVCT, 2, v_cmd_idx + 2, 110 * C_CLK_PERIOD, "2nd read should be executed 100 cycles after the first");
       fetch_result(SBI_VVCT, 2, v_cmd_idx + 2, v_data, v_is_ok, "Fetching 2nd read-result");
       check_value(v_is_ok, ERROR, "Readback OK via fetch_result()");
       check_value(v_data(7 downto 0), x"B1", ERROR, "Readback data via fetch_result()");
       check_value_in_range((now - v_timestamp), 100 * C_CLK_PERIOD, 102 * C_CLK_PERIOD, ERROR, "2nd read should be executed 100 cycles after the first");
 
-      log("\rFetch the 3rd result");
+      log(NO_ID, "\rFetch the 3rd result");
       await_completion(SBI_VVCT, 2, v_cmd_idx + 3, 2 * C_CLK_PERIOD, "3rd read should be executed 1 cycle after the 2nd");
       fetch_result(SBI_VVCT, 2, v_cmd_idx + 3, v_data, v_is_ok, "Fetching 3rd read-result");
       check_value(v_is_ok, ERROR, "Readback OK via fetch_result()");
@@ -328,7 +343,7 @@ begin
 
       await_completion(SBI_VVCT, 2, 1000 ns);
 
-      -- Reset BFM clock_period 
+      -- Reset BFM clock_period
       shared_sbi_vvc_config(1).bfm_config.clock_period := C_UNDEFINED_TIME;
       shared_sbi_vvc_config(2).bfm_config.clock_period := C_UNDEFINED_TIME;
 
@@ -336,19 +351,19 @@ begin
       ----------------------------------------------------------------------------------------------------------------------------
       log(ID_LOG_HDR, "Test of reading executor status");
       ----------------------------------------------------------------------------------------------------------------------------
-      log("current_cmd_idx: " & to_string(shared_sbi_vvc_status(1).current_cmd_idx));
-      log("previous_cmd_idx: " & to_string(shared_sbi_vvc_status(1).previous_cmd_idx));
-      log("pending_cmd_cnt: " & to_string(shared_sbi_vvc_status(1).pending_cmd_cnt));
+      log(NO_ID, "current_cmd_idx: " & to_string(shared_sbi_vvc_status(1).current_cmd_idx));
+      log(NO_ID, "previous_cmd_idx: " & to_string(shared_sbi_vvc_status(1).previous_cmd_idx));
+      log(NO_ID, "pending_cmd_cnt: " & to_string(shared_sbi_vvc_status(1).pending_cmd_cnt));
       check_value(shared_sbi_vvc_status(1).pending_cmd_cnt, 0, ERROR, "Checking that no commands are pending");
       sbi_write(SBI_VVCT, 1, x"00", x"A0", "Write SBI1");
       sbi_write(SBI_VVCT, 1, x"00", x"A0", "Write SBI1");
       sbi_write(SBI_VVCT, 1, x"00", x"A0", "Write SBI1");
-      log("current_cmd_idx: " & to_string(shared_sbi_vvc_status(1).current_cmd_idx));
-      log("previous_cmd_idx: " & to_string(shared_sbi_vvc_status(1).previous_cmd_idx));
+      log(NO_ID, "current_cmd_idx: " & to_string(shared_sbi_vvc_status(1).current_cmd_idx));
+      log(NO_ID, "previous_cmd_idx: " & to_string(shared_sbi_vvc_status(1).previous_cmd_idx));
       check_value(shared_sbi_vvc_status(1).pending_cmd_cnt, 2, ERROR, "Checking pending commands");
       await_completion(SBI_VVCT, 1, 100 ns);
-      log("current_cmd_idx: " & to_string(shared_sbi_vvc_status(1).current_cmd_idx));
-      log("previous_cmd_idx: " & to_string(shared_sbi_vvc_status(1).previous_cmd_idx));
+      log(NO_ID, "current_cmd_idx: " & to_string(shared_sbi_vvc_status(1).current_cmd_idx));
+      log(NO_ID, "previous_cmd_idx: " & to_string(shared_sbi_vvc_status(1).previous_cmd_idx));
       check_value(shared_sbi_vvc_status(1).pending_cmd_cnt, 0, ERROR, "Checking that no commands are pending after completion");
       -- Cleanup
       sbi_write(SBI_VVCT, 1, C_ADDR_FIFO_FLUSH, C_DATA_DONTCARE, "Flush FIFO 1");
@@ -356,7 +371,7 @@ begin
 
       log(ID_LOG_HDR, "Testing inter-bfm delay");
 
-      log("\rChecking TIME_START2START");
+      log(NO_ID, "\rChecking TIME_START2START");
       wait for C_CLK_PERIOD * 51;
       shared_sbi_vvc_config(1).inter_bfm_delay.delay_type    := TIME_START2START;
       shared_sbi_vvc_config(1).inter_bfm_delay.delay_in_time := C_CLK_PERIOD * 50;
@@ -366,7 +381,7 @@ begin
       await_completion(SBI_VVCT, 1, 52 * C_CLK_PERIOD);
       check_value(((now - v_timestamp) = C_CLK_PERIOD * 51), ERROR, "Checking that inter-bfm delay was upheld");
 
-      log("\rChecking that insert_delay does not affect inter-BFM delay");
+      log(NO_ID, "\rChecking that insert_delay does not affect inter-BFM delay");
       wait for C_CLK_PERIOD * 51;
       v_timestamp := now;
       sbi_write(SBI_VVCT, 1, x"00", x"AB", "First Write SBI1");
@@ -378,7 +393,7 @@ begin
       await_completion(SBI_VVCT, 1, 52 * C_CLK_PERIOD + (4 * C_CLK_PERIOD));
       check_value(((now - v_timestamp) = C_CLK_PERIOD * 51 + (4 * C_CLK_PERIOD)), ERROR, "Checking that inter-bfm delay was upheld");
 
-      log("\rChecking TIME_FINISH2START");
+      log(NO_ID, "\rChecking TIME_FINISH2START");
       wait for C_CLK_PERIOD * 101;
       shared_sbi_vvc_config(1).inter_bfm_delay.delay_type    := TIME_FINISH2START;
       shared_sbi_vvc_config(1).inter_bfm_delay.delay_in_time := C_CLK_PERIOD * 100;
@@ -388,7 +403,7 @@ begin
       await_completion(SBI_VVCT, 1, 103 * C_CLK_PERIOD);
       check_value(((now - v_timestamp) = C_CLK_PERIOD * 102), ERROR, "Checking that inter-bfm delay was upheld");
 
-      log("\rChecking TIME_START2START and provoking inter-bfm delay violation");
+      log(NO_ID, "\rChecking TIME_START2START and provoking inter-bfm delay violation");
       wait for C_CLK_PERIOD * 10;
       increment_expected_alerts(TB_WARNING, 2);
       shared_sbi_vvc_config(1).inter_bfm_delay.inter_bfm_delay_violation_severity := TB_WARNING;
@@ -398,7 +413,7 @@ begin
       sbi_write(SBI_VVCT, 1, x"00", x"03", "Second write to SBI1");
       await_completion(SBI_VVCT, 1, 3 * C_CLK_PERIOD);
 
-      log("Setting delay back to initial value");
+      log(NO_ID, "Setting delay back to initial value");
       shared_sbi_vvc_config(1).inter_bfm_delay.delay_type                         := NO_DELAY;
       shared_sbi_vvc_config(1).inter_bfm_delay.delay_in_time                      := 0 ns;
       shared_sbi_vvc_config(1).inter_bfm_delay.inter_bfm_delay_violation_severity := WARNING;
@@ -415,7 +430,7 @@ begin
       insert_delay(SBI_VVCT, 1, TX, C_CLK_PERIOD, "Inserting delay on SBI TX channel, expecting tb warning and tb error");
       insert_delay(SBI_VVCT, 1, RX, C_CLK_PERIOD, "Inserting delay on SBI RX channel, expecting tb warning and tb error");
       insert_delay(SBI_VVCT, 42, C_CLK_PERIOD, "Inserting delay on SBI VVC 42, expecting tb error");
-      log("Logging a message to provoke the tb warning due to truncated timestamp");
+      log(NO_ID, "Logging a message to provoke the tb warning due to truncated timestamp");
 
     elsif GC_TESTCASE = "vvc_broadcast_test" then
       ----------------------------------------------------------------------------------------------------------------------------
@@ -449,7 +464,7 @@ begin
 
       log(ID_LOG_HDR, "Checking broadcast of insert_delay (time)");
 
-      log("Setting no initial inter-bfm delay");
+      log(NO_ID, "Setting no initial inter-bfm delay");
       shared_sbi_vvc_config(1).inter_bfm_delay.delay_type                         := NO_DELAY;
       shared_sbi_vvc_config(1).inter_bfm_delay.delay_in_time                      := 0 ns;
       shared_sbi_vvc_config(1).inter_bfm_delay.inter_bfm_delay_violation_severity := WARNING;
@@ -471,7 +486,7 @@ begin
       log(ID_LOG_HDR, "Checking setup and hold time");
       ----------------------------------------------------------------------------------------------------------------------------
       -- Set setup and hold times
-      log("Setup time: 2 ns, hold time: 1 ns");
+      log(NO_ID, "Setup time: 2 ns, hold time: 1 ns");
       shared_sbi_vvc_config(1).bfm_config.setup_time   := 2 ns;
       shared_sbi_vvc_config(1).bfm_config.hold_time    := 1 ns;
       shared_sbi_vvc_config(1).bfm_config.bfm_sync     := SYNC_WITH_SETUP_AND_HOLD;
@@ -495,7 +510,7 @@ begin
 
       -- New values
       -- Set setup and hold times
-      log("\nSetup time: 1 ns, hold time: 3 ns");
+      log(NO_ID, "\nSetup time: 1 ns, hold time: 3 ns");
       shared_sbi_vvc_config(1).bfm_config.setup_time := 1 ns;
       shared_sbi_vvc_config(1).bfm_config.hold_time  := 3 ns;
 
@@ -556,8 +571,16 @@ begin
     -----------------------------------------------------------------------------
     -- Ending the simulation
     -----------------------------------------------------------------------------
-    await_uvvm_completion(1000 ns, print_alert_counters => REPORT_ALERT_COUNTERS_FINAL, scope => C_SCOPE);
+    await_uvvm_completion(1000 ns, print_alert_counters => REPORT_ALERT_COUNTERS, scope => C_SCOPE);
     log(ID_LOG_HDR, "SIMULATION COMPLETED", C_SCOPE);
+
+    -- OSVVM Test Completion Steps
+    TranscriptClose ;
+    if C_TESTCASE_FILE_PATH'length > 0 then
+      AffirmIfTranscriptsMatch(RemoveEndingSeparator(ChangeSeparator(C_TESTCASE_FILE_PATH)) & "/OsvvmResults") ;
+    end if ;
+    EndOfTestReports ;
+    -- End of Test OSVVM Completion Steps
 
     -- Finish the simulation
     std.env.stop;

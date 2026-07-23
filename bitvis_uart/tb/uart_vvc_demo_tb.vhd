@@ -35,6 +35,14 @@ use bitvis_vip_uart.td_vvc_framework_common_methods_pkg.all;
 library bitvis_vip_clock_generator;
 context bitvis_vip_clock_generator.vvc_context;
 
+library tb_bitvis_uart ;
+
+-- Required by OSVVM
+library osvvm ;
+context OSVVM.OsvvmContext ;
+use std.env.all ;
+-- End of Required by OSVVM
+
 -- hdlregression:tb
 -- Test bench entity
 entity uart_vvc_demo_tb is
@@ -42,6 +50,9 @@ end entity uart_vvc_demo_tb;
 
 -- Test bench architecture
 architecture func of uart_vvc_demo_tb is
+  -- Required by OSVVM
+  constant C_TESTCASE_FILE_PATH : string  := FILE_PATH ;
+  -- End of Required by OSVVM
 
   constant C_SCOPE : string := C_TB_SCOPE_DEFAULT;
 
@@ -70,6 +81,12 @@ begin
   ------------------------------------------------
   p_main : process
   begin
+    -- OSVVM Start of Test Case
+    SetTestName("uart_vvc_demo_tb") ;
+    TranscriptOpen ;
+    SetTranscriptMirror ;
+    -- End of OSVVM Start of Test Case
+
     -- Wait for UVVM to finish initialization
     await_uvvm_initialization(VOID);
 
@@ -98,7 +115,7 @@ begin
     log(ID_LOG_HDR, "Starting simulation of TB for UART using VVCs", C_SCOPE);
     ------------------------------------------------------------
 
-    log("Wait 10 clock period for reset to be turned off");
+    log(NO_ID, "Wait 10 clock period for reset to be turned off");
     wait for (10 * C_CLK_PERIOD);       -- for reset to be turned off
 
     log(ID_LOG_HDR, "Configure UART VVC 1", C_SCOPE);
@@ -190,12 +207,12 @@ begin
     -- after the UART VVC has completed its transmission. At this point there will be two complete bytes in the DUT RX buffer
     -- when the SBI VVC reads from it. After the test is completed the two final bytes in the RX buffer are checked. When this
     -- is done, the test case is complete.
-    log("Setting up the UART VVC to transmit 102 samples to the DUT");
+    log(NO_ID, "Setting up the UART VVC to transmit 102 samples to the DUT");
     for i in 1 to 102 loop
       uart_transmit(UART_VVCT, 1, TX, std_logic_vector(to_unsigned(16#80# + i, 8)), string'("Set up new data. Now byte # " & to_string(i)));
     end loop;
 
-    log("Setting up the SBI VVC to read and check the DUT RX register after each completed UART TX operation");
+    log(NO_ID, "Setting up the SBI VVC to read and check the DUT RX register after each completed UART TX operation");
     -- 1760 ns is measured time from start of UART receive to received data is available in the DUT C_ADDR_RX_DATA register
     -- The SBI VVC will wait until the UART VVC is 50 clock periods away from successfully transmitting the first byte.
     insert_delay(SBI_VVCT, 1, C_TIME_OF_ONE_UART_TX - 50 * C_CLK_PERIOD, "Inserting delay in SBI VVC to wait for first byte to complete");
@@ -217,17 +234,17 @@ begin
     log(ID_LOG_HDR, "Skew SBI read over UART receive with inter-BFM delay functionality", C_SCOPE);
     ------------------------------------------------------------
     -- This test case will test the same as the test case above, but using the built in delay functionality in the SBI VVC
-    log("Setting up the UART VVC to transmit 102 samples to the DUT");
+    log(NO_ID, "Setting up the UART VVC to transmit 102 samples to the DUT");
     for i in 1 to 102 loop
       uart_transmit(UART_VVCT, 1, TX, std_logic_vector(to_unsigned(16#80# + i, 8)), string'("Set up new data. Now byte # " & to_string(i)));
     end loop;
 
-    log("Setting up the SBI VVC to read and check the DUT RX register after each completed UART TX operation");
+    log(NO_ID, "Setting up the SBI VVC to read and check the DUT RX register after each completed UART TX operation");
     -- The SBI VVC will wait until the UART VVC is 50 clock periods away from successfully transmitting the second byte.
     insert_delay(SBI_VVCT, 1, C_TIME_OF_ONE_UART_TX, "Insert delay in SBI VVC until the first UART transmission has completed");
     insert_delay(SBI_VVCT, 1, C_TIME_OF_ONE_UART_TX - 50 * C_CLK_PERIOD, "Inserting delay in SBI VVC until second UART transmission has almost completed");
 
-    log("Setting the SBI VVC to separate each BFM access with 1760 ns");
+    log(NO_ID, "Setting the SBI VVC to separate each BFM access with 1760 ns");
     shared_sbi_vvc_config(1).inter_bfm_delay.delay_type    := TIME_START2START;
     shared_sbi_vvc_config(1).inter_bfm_delay.delay_in_time := C_TIME_OF_ONE_UART_TX + C_CLK_PERIOD;
 
@@ -240,7 +257,7 @@ begin
 
     wait for 50 ns;                     -- to assure UART RX complete internally
     -- Check the last two bytes in the DUT RX buffer.
-    log("Setting the SBI VVC back to no delay between BFM accesses");
+    log(NO_ID, "Setting the SBI VVC back to no delay between BFM accesses");
     shared_sbi_vvc_config(1).inter_bfm_delay.delay_type    := NO_DELAY;
     shared_sbi_vvc_config(1).inter_bfm_delay.delay_in_time := 0 ns;
 
@@ -251,8 +268,16 @@ begin
     -----------------------------------------------------------------------------
     -- Ending the simulation
     -----------------------------------------------------------------------------
-    await_uvvm_completion(1000 ns, print_alert_counters => REPORT_ALERT_COUNTERS_FINAL, scope => C_SCOPE);
+    await_uvvm_completion(1000 ns, print_alert_counters => REPORT_ALERT_COUNTERS, scope => C_SCOPE);
     log(ID_LOG_HDR, "SIMULATION COMPLETED", C_SCOPE);
+
+    -- OSVVM Test Completion Steps
+    TranscriptClose ;
+    if C_TESTCASE_FILE_PATH'length > 0 then
+      AffirmIfTranscriptsMatch(RemoveEndingSeparator(ChangeSeparator(C_TESTCASE_FILE_PATH)) & "/maintenance_tb/OsvvmResults") ;
+    end if ;
+    EndOfTestReports ;
+    -- End of Test OSVVM Completion Steps
 
     -- Finish the simulation
     std.env.stop;

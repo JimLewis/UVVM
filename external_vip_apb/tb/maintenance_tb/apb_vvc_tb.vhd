@@ -28,6 +28,12 @@ library external_vip_apb;
 context external_vip_apb.vvc_context;
 use external_vip_apb.vvc_sb_support_pkg.all;
 
+-- Required by OSVVM
+library osvvm ;
+context OSVVM.OsvvmContext ;
+use std.env.all ;
+-- End of Required by OSVVM
+
 --HDLRegression:tb
 entity apb_vvc_tb is
   generic(
@@ -38,6 +44,9 @@ entity apb_vvc_tb is
 end entity apb_vvc_tb;
 
 architecture tb of apb_vvc_tb is
+  -- Required by OSVVM
+  constant C_TESTCASE_FILE_PATH : string  := FILE_PATH ;
+  -- End of Required by OSVVM
 
   constant C_CLK_PERIOD   : time    := 10 ns;
   constant C_REG_ADDR     : natural := 8; -- Must be addressable with the number of GC_ADDR_WIDTH bits
@@ -160,9 +169,15 @@ begin
     end procedure;
 
   begin
+    -- OSVVM Start Test Case Stuff
+    SetTestName("apb_vvc_tb") ;
+    TranscriptOpen ;
+    SetTranscriptMirror ;
+    -- End of OSVVM Start Test Case Stuff
+
     -- To avoid that log files from different test cases (run in separate simulations) overwrite each other.
     set_log_file_name(GC_TESTCASE & "_Log.txt");
-    set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+    -- set_alert_file_name(GC_TESTCASE & "_Alert.txt");  --O OSVVM only supports one
 
     -- Wait for UVVM to finish initialization
     await_uvvm_initialization(VOID);
@@ -289,8 +304,16 @@ begin
     -----------------------------------------------------------------------------
     -- Ending the simulation
     -----------------------------------------------------------------------------
-    await_uvvm_completion(1000 ns, print_alert_counters => REPORT_ALERT_COUNTERS_FINAL, scope => C_SCOPE);
+    await_uvvm_completion(1000 ns, print_alert_counters => REPORT_ALERT_COUNTERS, scope => C_SCOPE);
     log(ID_LOG_HDR, "SIMULATION COMPLETED", C_SCOPE);
+
+    -- OSVVM Completion Steps
+    TranscriptClose ;
+    if C_TESTCASE_FILE_PATH'length > 0 then
+      AffirmIfTranscriptsMatch(RemoveEndingSeparator(ChangeSeparator(C_TESTCASE_FILE_PATH)) & "/OsvvmResults") ;
+    end if ;
+    EndOfTestReports ;
+    -- End of OSVVM Completion Steps
 
     -- Finish the simulation
     std.env.stop;

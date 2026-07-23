@@ -28,6 +28,12 @@ library bitvis_vip_axilite;
 context bitvis_vip_axilite.vvc_context;
 use bitvis_vip_axilite.vvc_sb_support_pkg.all;
 
+-- Required by OSVVM
+library osvvm ;
+context OSVVM.OsvvmContext ;
+use std.env.all ;
+-- End of Required by OSVVM
+
 --hdlregression:tb
 -- Test case entity
 entity axilite_vvc_tb is
@@ -38,6 +44,9 @@ end entity;
 
 -- Test case architecture
 architecture func of axilite_vvc_tb is
+  -- Required by OSVVM
+  constant C_TESTCASE_FILE_PATH : string  := FILE_PATH ;
+  -- End of Required by OSVVM
 
   constant C_CLK_PERIOD   : time    := 10 ns;
   constant C_ADDR_WIDTH_1 : natural := 32;
@@ -163,10 +172,16 @@ begin
     end procedure;
 
   begin
+    -- OSVVM Start of Test Case
+    SetTestName("axilite_vvc_tb") ;
+    TranscriptOpen ;
+    SetTranscriptMirror ;
+    -- End of OSVVM Start of Test Case
+
     -- To avoid that log files from different test cases (run in separate
     -- simulations) overwrite each other.
     set_log_file_name(GC_TESTCASE & "_Log.txt");
-    set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+    --O set_alert_file_name(GC_TESTCASE & "_Alert.txt");
 
     await_uvvm_initialization(VOID);
 
@@ -193,7 +208,7 @@ begin
     clock_ena <= true;                  -- the axilite_reset routine assumes the clock is running
     gen_pulse(areset, 10 * C_CLK_PERIOD, "Pulsing reset for 10 clock periods");
 
-    log("Do some axilite writes", C_SCOPE);
+    log(NO_ID, "Do some axilite writes", C_SCOPE);
     -- write some data; the current axislave isn't very implemented - doesn't
     -- have FIFO, and just has one RW slave register at addr_valueess 0x6000
 
@@ -328,7 +343,7 @@ begin
 
     log(ID_LOG_HDR, "Testing inter-bfm delay", C_SCOPE);
 
-    log("\rChecking TIME_START2START", C_SCOPE);
+    log(NO_ID, LF & "Checking TIME_START2START", C_SCOPE);
     wait for C_CLK_PERIOD * 51;
     wait until rising_edge(clk);
     shared_axilite_vvc_config(1).inter_bfm_delay.delay_type    := TIME_START2START;
@@ -340,7 +355,7 @@ begin
     await_completion(AXILITE_VVCT, 1, (56 * C_CLK_PERIOD));
     check_value(now - v_timestamp, C_CLK_PERIOD * 50, ERROR, "Checking that inter-bfm delay was upheld");
 
-    log("\rChecking that insert_delay does not affect inter-BFM delay", C_SCOPE);
+    log(NO_ID, LF & "Checking that insert_delay does not affect inter-BFM delay", C_SCOPE);
     wait for C_CLK_PERIOD * 51;
     wait until rising_edge(clk);
     axilite_write(AXILITE_VVCT, 1, x"0000", x"ffff", "Third inter-bfm delay axilite write");
@@ -354,7 +369,7 @@ begin
     await_completion(AXILITE_VVCT, 1, (56 * C_CLK_PERIOD));
     check_value(now - v_timestamp, C_CLK_PERIOD * 54, ERROR, "Checking that inter-bfm delay was upheld");
 
-    log("\rChecking TIME_START2START and provoking inter-bfm delay violation", C_SCOPE);
+    log(NO_ID, LF & "Checking TIME_START2START and provoking inter-bfm delay violation", C_SCOPE);
     wait for C_CLK_PERIOD * 10;
     shared_axilite_vvc_config(1).inter_bfm_delay.inter_bfm_delay_violation_severity := TB_WARNING;
     shared_axilite_vvc_config(1).inter_bfm_delay.delay_type                         := TIME_START2START;
@@ -363,7 +378,7 @@ begin
     axilite_write(AXILITE_VVCT, 1, x"0000", x"1000", "Second inter-bfm delay axilite write");
     await_completion(AXILITE_VVCT, 1, 111 * C_CLK_PERIOD);
 
-    log("Setting delay back to initial value", C_SCOPE);
+    log(NO_ID, "Setting delay back to initial value", C_SCOPE);
     shared_axilite_vvc_config(1).inter_bfm_delay.delay_type    := NO_DELAY;
     shared_axilite_vvc_config(1).inter_bfm_delay.delay_in_time := 0 ns;
 
@@ -495,8 +510,16 @@ begin
     -----------------------------------------------------------------------------
     -- Ending the simulation
     -----------------------------------------------------------------------------
-    await_uvvm_completion(1000 ns, print_alert_counters => REPORT_ALERT_COUNTERS_FINAL, scope => C_SCOPE);
+    await_uvvm_completion(1000 ns, print_alert_counters => REPORT_ALERT_COUNTERS, scope => C_SCOPE);
     log(ID_LOG_HDR, "SIMULATION COMPLETED", C_SCOPE);
+
+    -- OSVVM Test Completion Steps
+    TranscriptClose ;
+    if C_TESTCASE_FILE_PATH'length > 0 then
+      AffirmIfTranscriptsMatch(RemoveEndingSeparator(ChangeSeparator(C_TESTCASE_FILE_PATH)) & "/OsvvmResults") ;
+    end if ;
+    EndOfTestReports ;
+    -- End of Test OSVVM Completion Steps
 
     -- Finish the simulation
     std.env.stop;

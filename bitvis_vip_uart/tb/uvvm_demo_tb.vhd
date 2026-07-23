@@ -34,6 +34,12 @@ use bitvis_vip_uart.monitor_cmd_pkg.all;
 library bitvis_vip_clock_generator;
 context bitvis_vip_clock_generator.vvc_context;
 
+-- Required by OSVVM
+library osvvm ;
+context OSVVM.OsvvmContext ;
+use std.env.all ;
+-- End of Required by OSVVM
+
 --hdlregression:tb
 -- Test bench entity
 entity uvvm_demo_tb is
@@ -41,6 +47,9 @@ end entity uvvm_demo_tb;
 
 -- Test bench architecture
 architecture func of uvvm_demo_tb is
+  -- Required by OSVVM
+  constant C_TESTCASE_FILE_PATH : string  := FILE_PATH ;
+  -- End of Required by OSVVM
 
   constant C_SCOPE         : string := C_TB_SCOPE_DEFAULT;
   constant C_MONITOR_SCOPE : string := "UART Monitor";
@@ -486,6 +495,12 @@ begin
     end procedure test_unwanted_activity_detection;
 
   begin
+    -- OSVVM Start of Test Case
+    SetTestName("uvvm_demo_tb") ;
+    TranscriptOpen ;
+    SetTranscriptMirror ;
+    -- End of OSVVM Start of Test Case
+
     -- Wait for UVVM to finish initialization
     await_uvvm_initialization(VOID);
 
@@ -525,7 +540,7 @@ begin
 
     log(ID_LOG_HDR, "Starting simulation of UVVM DEMO TB using SBI and UART VVCs", C_SCOPE);
     --============================================================================================================
-    log("Wait 10 clock period for reset to be turned off");
+    log(NO_ID, "Wait 10 clock period for reset to be turned off");
     wait for (10 * C_CLK_PERIOD);
 
     log(ID_LOG_HDR, "Configure UART VVC 1", C_SCOPE);
@@ -555,6 +570,14 @@ begin
     -----------------------------------------------------------------------------
     await_uvvm_completion(1000 ns, ERROR, 1 ns, REPORT_ALERT_COUNTERS_FINAL, REPORT_SCOREBOARDS, REPORT_VVCS, C_SCOPE);
     log(ID_LOG_HDR, "SIMULATION COMPLETED", C_SCOPE);
+
+    -- OSVVM Test Completion Steps
+    TranscriptClose ;
+    if C_TESTCASE_FILE_PATH'length > 0 then
+      AffirmIfTranscriptsMatch(RemoveEndingSeparator(ChangeSeparator(C_TESTCASE_FILE_PATH)) & "/maintenance_tb/OsvvmResults") ;
+    end if ;
+    EndOfTestReports ;
+    -- End of Test OSVVM Completion Steps
 
     -- Finish the simulation
     std.env.stop;

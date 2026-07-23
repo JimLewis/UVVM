@@ -28,6 +28,14 @@ library bitvis_vip_avalon_mm;
 context bitvis_vip_avalon_mm.vvc_context;
 use bitvis_vip_avalon_mm.vvc_sb_support_pkg.all;
 
+library altera_mf ;
+
+-- Required by OSVVM
+library osvvm ;
+context OSVVM.OsvvmContext ;
+use std.env.all ;
+-- End of Required by OSVVM
+
 --hdlregression:tb
 -- Test case entity
 entity avalon_mm_vvc_tb is
@@ -38,6 +46,10 @@ end entity;
 
 -- Test case architecture
 architecture func of avalon_mm_vvc_tb is
+  -- Required by OSVVM
+  constant C_TESTCASE_FILE_PATH : string  := FILE_PATH ;
+  -- End of Required by OSVVM
+
   constant C_CLK_PERIOD : time := 10 ns;
 
 begin
@@ -130,10 +142,16 @@ begin
     end procedure;
 
   begin
+    -- OSVVM Start of Test Case
+    SetTestName("avalon_mm_vvc_tb") ;
+    TranscriptOpen ;
+    SetTranscriptMirror ;
+    -- End of OSVVM Start of Test Case
+
     -- To avoid that log files from different test cases (run in separate
     -- simulations) overwrite each other.
     set_log_file_name(GC_TESTCASE & "_Log.txt");
-    set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+    --O set_alert_file_name(GC_TESTCASE & "_Alert.txt");
 
     await_uvvm_initialization(VOID);
 
@@ -160,7 +178,7 @@ begin
     shared_avalon_mm_vvc_config(1).bfm_config.clock_period := C_CLK_PERIOD;
     shared_avalon_mm_vvc_config(2).bfm_config.clock_period := C_CLK_PERIOD;
 
-    log("Start Simulation of TB for AVALON_MM");
+    log(NO_ID, "Start Simulation of TB for AVALON_MM");
     ------------------------------------------------------------
     -- Reset the Avalon bus
     avalon_mm_reset(AVALON_MM_VVCT, 1, 5, "Resetting Avalon MM Interface 1");
@@ -195,7 +213,7 @@ begin
     await_completion(AVALON_MM_VVCT, 1, 100 ns, "Waiting for checks to complete");
     await_completion(AVALON_MM_VVCT, 2, 100 ns, "Waiting for checks to complete");
 
-    log("Write, read back and check data with Scoreboard on one VVC");
+    log(NO_ID, "Write, read back and check data with Scoreboard on one VVC");
     v_data_8 := x"10";
 
     avalon_mm_write(AVALON_MM_VVCT, 1, "0", v_data_8, "Write to Avalon MM 1");
@@ -210,7 +228,7 @@ begin
 
     avalon_mm_vvc_sb.report_counters(ALL_INSTANCES);
 
-    log("Write, read back and check data with avalon_mm_read on one VVC");
+    log(NO_ID, "Write, read back and check data with avalon_mm_read on one VVC");
     avalon_mm_write(AVALON_MM_VVCT, 1, "0", x"10", "Write to Avalon MM 1");
     avalon_mm_read(AVALON_MM_VVCT, 1, "0", "Reading without expected timeout");
     v_cmd_idx := get_last_received_cmd_idx(AVALON_MM_VVCT, 1); -- for last read
@@ -219,7 +237,7 @@ begin
     check_value(v_is_ok, ERROR, "Readback OK via fetch_result()");
     check_value(v_data(31 downto 0), x"10", ERROR, "Readback data via fetch_result()");
 
-    log("Do another read - should timeout");
+    log(NO_ID, "Do another read - should timeout");
     shared_avalon_mm_vvc_config(1).bfm_config.max_wait_cycles_severity := WARNING;
 
     increment_expected_alerts(WARNING, 1);
@@ -227,13 +245,13 @@ begin
     await_completion(AVALON_MM_VVCT, 1, 20000 ns, "Waiting for read() to timeout");
 
     shared_avalon_mm_vvc_config(1).use_read_pipeline := false;
-    log("Do a check where the BFM procedure *check() calls *read_request() - should timeout");
+    log(NO_ID, "Do a check where the BFM procedure *check() calls *read_request() - should timeout");
     increment_expected_alerts(WARNING, 1);
     avalon_mm_check(AVALON_MM_VVCT, 1, "0", "------------", "Check() with expected timeout", NO_ALERT);
     await_completion(AVALON_MM_VVCT, 1, 20000 ns, "Waiting for check() to timeout");
 
     shared_avalon_mm_vvc_config(1).use_read_pipeline := true;
-    log("Do a check where the VVC calls *read_request() directly due to pipelining - should timeout");
+    log(NO_ID, "Do a check where the VVC calls *read_request() directly due to pipelining - should timeout");
     increment_expected_alerts(WARNING, 1);
     avalon_mm_check(AVALON_MM_VVCT, 1, "0", "------------", "Check() with expected timeout", NO_ALERT);
     await_completion(AVALON_MM_VVCT, 1, 20000 ns, "Waiting for check() to timeout");
@@ -243,7 +261,7 @@ begin
     log(ID_LOG_HDR, "Testing FIFO Capacity", C_SCOPE);
     ----------------------------------------------------------------------
 
-    log("Fill the FIFO with VVC 1 and 2 simultaneously");
+    log(NO_ID, "Fill the FIFO with VVC 1 and 2 simultaneously");
     for i in 0 to 15 loop
       avalon_mm_write(AVALON_MM_VVCT, 1, "0", random(32), "Filling FIFO with random data");
       avalon_mm_write(AVALON_MM_VVCT, 2, "0", random(32), "Filling FIFO with random data");
@@ -251,7 +269,7 @@ begin
     await_completion(AVALON_MM_VVCT, 1, 1000 ns, "Waiting for FIFO to be filled");
     await_completion(AVALON_MM_VVCT, 2, 1000 ns, "Waiting for FIFO to be filled");
 
-    log("Do another write - should timeout");
+    log(NO_ID, "Do another write - should timeout");
     shared_avalon_mm_vvc_config(1).bfm_config.max_wait_cycles_severity := WARNING;
     increment_expected_alerts(WARNING, 1);
     avalon_mm_write(AVALON_MM_VVCT, 1, "0", x"deadbeef", "Writing to Avalon VVC 2");
@@ -264,7 +282,7 @@ begin
     await_completion(AVALON_MM_VVCT, 2, 20000 ns, "Waiting for write timeout");
     shared_avalon_mm_vvc_config(2).bfm_config.max_wait_cycles_severity := TB_FAILURE;
 
-    log("Empty the FIFO with VVC 2");
+    log(NO_ID, "Empty the FIFO with VVC 2");
     for i in 0 to 15 loop
       avalon_mm_read(AVALON_MM_VVCT, 1, "0", "Reading the FIFO until empty");
       avalon_mm_read(AVALON_MM_VVCT, 2, "0", "Reading the FIFO until empty");
@@ -274,7 +292,7 @@ begin
 
     log(ID_LOG_HDR, "Testing Random FIFO Read and Write", C_SCOPE);
     ----------------------------------------------------------------------
-    log("Data write and read-back with check");
+    log(NO_ID, "Data write and read-back with check");
     avalon_mm_write(AVALON_MM_VVCT, 1, "0", std_logic_vector(to_unsigned(100, 32)), "Writing to Avalon MM 2");
     avalon_mm_write(AVALON_MM_VVCT, 2, "0", std_logic_vector(to_unsigned(100, 32)), "Writing to Avalon MM 2");
     await_completion(AVALON_MM_VVCT, 2, 100 ns, "Awaiting first sample ready in FIFO");
@@ -295,7 +313,7 @@ begin
 
     log(ID_LOG_HDR, "Testing inter-bfm delay");
 
-    log("\rChecking TIME_START2START");
+    log(NO_ID, "\rChecking TIME_START2START");
     wait for C_CLK_PERIOD * 51;
     shared_avalon_mm_vvc_config(1).inter_bfm_delay.delay_type    := TIME_START2START;
     shared_avalon_mm_vvc_config(1).inter_bfm_delay.delay_in_time := C_CLK_PERIOD * 50;
@@ -305,7 +323,7 @@ begin
     await_completion(AVALON_MM_VVCT, 1, 52 * C_CLK_PERIOD);
     check_value(((now - v_timestamp) = C_CLK_PERIOD * 51 + C_CLK_PERIOD / 4), ERROR, "Checking that inter-bfm delay was upheld");
 
-    log("\rChecking that insert_delay does not affect inter-BFM delay");
+    log(NO_ID, "\rChecking that insert_delay does not affect inter-BFM delay");
     wait for C_CLK_PERIOD * 51;
     v_timestamp := now;
     avalon_mm_write(AVALON_MM_VVCT, 1, "0", x"aabbcccc", "Third write to the DUT");
@@ -317,7 +335,7 @@ begin
     await_completion(AVALON_MM_VVCT, 1, 52 * C_CLK_PERIOD + (4 * C_CLK_PERIOD));
     check_value(((now - v_timestamp) = C_CLK_PERIOD * 51 + (4 * C_CLK_PERIOD)), ERROR, "Checking that inter-bfm delay was upheld");
 
-    log("\rChecking TIME_FINISH2START");
+    log(NO_ID, "\rChecking TIME_FINISH2START");
     wait for C_CLK_PERIOD * 101;
     shared_avalon_mm_vvc_config(1).inter_bfm_delay.delay_type    := TIME_FINISH2START;
     shared_avalon_mm_vvc_config(1).inter_bfm_delay.delay_in_time := C_CLK_PERIOD * 100;
@@ -327,7 +345,7 @@ begin
     await_completion(AVALON_MM_VVCT, 1, 103 * C_CLK_PERIOD);
     check_value(((now - v_timestamp) = C_CLK_PERIOD * 102), ERROR, "Checking that inter-bfm delay was upheld");
 
-    log("\rChecking TIME_START2START and provoking inter-bfm delay violation");
+    log(NO_ID, "\rChecking TIME_START2START and provoking inter-bfm delay violation");
     wait for C_CLK_PERIOD * 101;
     increment_expected_alerts(TB_WARNING, 2);
     shared_avalon_mm_vvc_config(1).inter_bfm_delay.inter_bfm_delay_violation_severity := TB_WARNING;
@@ -337,7 +355,7 @@ begin
     avalon_mm_write(AVALON_MM_VVCT, 1, "0", x"deedbeef", "Second write to the DUT");
     await_completion(AVALON_MM_VVCT, 1, 103 * C_CLK_PERIOD);
 
-    log("Setting delay back to initial value");
+    log(NO_ID, "Setting delay back to initial value");
     shared_avalon_mm_vvc_config(1).inter_bfm_delay.inter_bfm_delay_violation_severity := WARNING;
     shared_avalon_mm_vvc_config(1).inter_bfm_delay.delay_type                         := NO_DELAY;
     shared_avalon_mm_vvc_config(1).inter_bfm_delay.delay_in_time                      := 0 ns;
@@ -419,8 +437,16 @@ begin
     -----------------------------------------------------------------------------
     -- Ending the simulation
     -----------------------------------------------------------------------------
-    await_uvvm_completion(1000 ns, print_alert_counters => REPORT_ALERT_COUNTERS_FINAL, scope => C_SCOPE);
+    await_uvvm_completion(1000 ns, print_alert_counters => REPORT_ALERT_COUNTERS, scope => C_SCOPE);
     log(ID_LOG_HDR, "SIMULATION COMPLETED", C_SCOPE);
+
+    -- OSVVM Test Completion Steps
+    TranscriptClose ;
+    if C_TESTCASE_FILE_PATH'length > 0 then
+      AffirmIfTranscriptsMatch(RemoveEndingSeparator(ChangeSeparator(C_TESTCASE_FILE_PATH)) & "/OsvvmResults") ;
+    end if ;
+    EndOfTestReports ;
+    -- End of Test OSVVM Completion Steps
 
     -- Finish the simulation
     std.env.stop;

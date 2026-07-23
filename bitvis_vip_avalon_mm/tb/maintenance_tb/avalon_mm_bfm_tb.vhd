@@ -25,6 +25,14 @@ context uvvm_util.uvvm_util_context;
 library bitvis_vip_avalon_mm;
 use bitvis_vip_avalon_mm.avalon_mm_bfm_pkg.all;
 
+library altera_mf ;
+
+-- Required by OSVVM
+library osvvm ;
+context OSVVM.OsvvmContext ;
+use std.env.all ;
+-- End of Required by OSVVM
+
 --hdlregression:tb
 -- Test case entity
 entity avalon_mm_bfm_tb is
@@ -35,6 +43,9 @@ end entity;
 
 -- Test case architecture
 architecture func of avalon_mm_bfm_tb is
+  -- Required by OSVVM
+  constant C_TESTCASE_FILE_PATH : string  := FILE_PATH ;
+  -- End of Required by OSVVM
 
   constant C_CLK_PERIOD : time := 10 ns;
   signal clk            : std_logic;
@@ -134,10 +145,16 @@ begin
     end;
 
   begin
+    -- OSVVM Start of Test Case
+    SetTestName("avalon_mm_bfm_tb") ;
+    TranscriptOpen ;
+    SetTranscriptMirror ;
+    -- End of OSVVM Start of Test Case
+
     -- To avoid that log files from different test cases (run in separate
     -- simulations) overwrite each other.
     set_log_file_name(GC_TESTCASE & "_Log.txt");
-    set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+    --O set_alert_file_name(GC_TESTCASE & "_Alert.txt");
 
     -- set up our avalon_mm config - could be different than default config in BFM
     avalon_mm_bfm_config.clock_period             := C_CLK_PERIOD; -- same clock period for BFM as
@@ -158,7 +175,7 @@ begin
     --disable_log_msg(ALL_MESSAGES);
     --enable_log_msg(ID_LOG_HDR);
 
-    log("Start Simulation of TB for AVALON_MM");
+    log(NO_ID, "Start Simulation of TB for AVALON_MM");
     ------------------------------------------------------------
     clock_ena <= true;                  -- the avalon_mm_reset routine assumes the clock is running
     avalon_mm_reset(clk, avalon_mm_if, 5, "Resetting avalon MM interface", C_SCOPE, shared_msg_id_panel, avalon_mm_bfm_config);
@@ -168,17 +185,17 @@ begin
       wait until rising_edge(clk);
     end loop;
 
-    log("Do some avalon_mm writes to the FIFO");
+    log(NO_ID, "Do some avalon_mm writes to the FIFO");
     avalon_mm_write("0", x"abba5959");
     avalon_mm_write("0", x"01234567");
     avalon_mm_write("0", x"98765432");
 
-    log("Read back data, and check it");
+    log(NO_ID, "Read back data, and check it");
     avalon_mm_check("0", x"abba5959");
     avalon_mm_check("0", x"01234567");
     avalon_mm_check("0", x"98765432");
 
-    log("Do another read - should timeout");
+    log(NO_ID, "Do another read - should timeout");
     increment_expected_alerts(WARNING, 1);
     avalon_mm_bfm_config.max_wait_cycles_severity := WARNING;
     avalon_mm_read("0", fifo_data);
@@ -186,24 +203,24 @@ begin
     avalon_mm_read("0", fifo_data);
     avalon_mm_bfm_config.max_wait_cycles_severity := TB_FAILURE;
 
-    log("Fill the FIFO");
+    log(NO_ID, "Fill the FIFO");
     for i in 0 to 15 loop
       fifo_data := random(32);
       avalon_mm_write("0", fifo_data);
     end loop;
 
-    log("Do another write - should timeout");
+    log(NO_ID, "Do another write - should timeout");
     increment_expected_alerts(WARNING, 1);
     avalon_mm_bfm_config.max_wait_cycles_severity := WARNING;
     avalon_mm_write("0", x"deadbeef");
     avalon_mm_bfm_config.max_wait_cycles_severity := TB_FAILURE;
 
-    log("Empty the FIFO");
+    log(NO_ID, "Empty the FIFO");
     for i in 0 to 15 loop
       avalon_mm_read("0", fifo_data);
     end loop;
 
-    log("Random data write and read-back w check");
+    log(NO_ID, "Random data write and read-back w check");
     for i in 0 to 100 loop
       fifo_data := random(32);
       avalon_mm_write("0", fifo_data);
@@ -214,8 +231,16 @@ begin
     -- Ending the simulation
     -----------------------------------------------------------------------------
     wait for 1000 ns;                   -- to allow some time for completion
-    report_alert_counters(FINAL);       -- Report final counters and print conclusion for simulation (Success/Fail)
+    report_alert_counters(INTERMEDIATE);       -- Report final counters and print conclusion for simulation (Success/Fail)
     log(ID_LOG_HDR, "SIMULATION COMPLETED", C_SCOPE);
+
+    -- OSVVM Test Completion Steps
+    TranscriptClose ;
+    if C_TESTCASE_FILE_PATH'length > 0 then
+      AffirmIfTranscriptsMatch(RemoveEndingSeparator(ChangeSeparator(C_TESTCASE_FILE_PATH)) & "/OsvvmResults") ;
+    end if ;
+    EndOfTestReports ;
+    -- End of Test OSVVM Completion Steps
 
     -- Finish the simulation
     std.env.stop;

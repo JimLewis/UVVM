@@ -29,6 +29,12 @@ use uvvm_vvc_framework.ti_protected_types_pkg.all;
 library bitvis_vip_axistream;
 context bitvis_vip_axistream.vvc_context;
 
+-- Required by OSVVM
+library osvvm ;
+context OSVVM.OsvvmContext ;
+use std.env.all ;
+-- End of Required by OSVVM
+
 --hdlregression:tb
 -- Test case entity
 entity axistream_vvc_multiple_tb is
@@ -44,6 +50,9 @@ end entity;
 
 -- Test case architecture
 architecture func of axistream_vvc_multiple_tb is
+  -- Required by OSVVM
+  constant C_TESTCASE_FILE_PATH : string  := FILE_PATH ;
+  -- End of Required by OSVVM
 
   --------------------------------------------------------------------------------
   -- Types and constants declarations
@@ -129,10 +138,16 @@ begin
     variable v_vvc_list          : t_prot_vvc_list;
 
   begin
+    -- OSVVM Start of Test Case
+    SetTestName("axistream_vvc_multiple_tb") ;
+    TranscriptOpen ;
+    SetTranscriptMirror ;
+    -- End of OSVVM Start of Test Case
+
     -- To avoid that log files from different test cases (run in separate
     -- simulations) overwrite each other.
-    set_log_file_name(GC_TESTCASE & "_Log.txt");
-    set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+    --O set_log_file_name(GC_TESTCASE & "_Log.txt");
+    --O set_alert_file_name(GC_TESTCASE & "_Alert.txt");
 
     set_alert_stop_limit(TB_ERROR, 3); -- Don't stop at Timeout tests
 
@@ -200,38 +215,38 @@ begin
     ------------------------------------------------------------
 
     ------------------------------------------------------------
-    log("TC: insert_delay : time ");
+    log(NO_ID, "TC: insert_delay : time ");
     ------------------------------------------------------------
     v_start_time := now;
-    log("start.");
+    log(NO_ID, "start.");
 
     insert_delay(AXISTREAM_VVCT, 0, 100 ns, "insert_delay (time)");
 
-    log("command sent.");
+    log(NO_ID, "command sent.");
     for i in 0 to C_NUM_VVCS - 1 loop
       await_completion(AXISTREAM_VVCT, i, 1 ms);
     end loop;
 
-    log("await is done .");
+    log(NO_ID, "await is done .");
     check_value((now - v_start_time), 100 ns, ERROR, "check insert_delay '", C_SCOPE, ID_SEQUENCER);
     ------------------------------------------------------------
-    log("TC: insert_delay : integer ");
+    log(NO_ID, "TC: insert_delay : integer ");
     ------------------------------------------------------------
     v_start_time := now;
-    log("start.");
+    log(NO_ID, "start.");
 
     insert_delay(AXISTREAM_VVCT, 0, 100, "insert_delay (integer)");
 
-    log("command sent.");
+    log(NO_ID, "command sent.");
     for i in 0 to C_NUM_VVCS - 1 loop
       await_completion(AXISTREAM_VVCT, i, 1 ms);
     end loop;
 
-    log("await is done .");
+    log(NO_ID, "await is done .");
     check_value((now - v_start_time), 100 * C_CLK_PERIOD, ERROR, "check insert_delay '", C_SCOPE, ID_SEQUENCER);
 
     ------------------------------------------------------------
-    log("TC: await_completion(ANY_OF): 2 VVCs");
+    log(NO_ID, "TC: await_completion(ANY_OF): 2 VVCs");
     ------------------------------------------------------------
     axistream_transmit(AXISTREAM_VVCT, 0, v_data_array(0 to v_numBytes), "transmit short packte");
     axistream_transmit(AXISTREAM_VVCT, 1, v_data_array(0 to 2 * v_numBytes), "transmit long packet");
@@ -246,12 +261,12 @@ begin
     check_value(v_elapsed_clk_cycles, 1 + v_numWords, ERROR, "2 vvcs: checking that we waited long enough for the quickest VVC to finish", C_SCOPE, ID_SEQUENCER);
 
     -- Cleanup
-    log("Done.");
+    log(NO_ID, "Done.");
     for i in 0 to C_NUM_VVCS - 1 loop
       await_completion(AXISTREAM_VVCT, i, 1 ms);
     end loop;
     ------------------------------------------------------------
-    log("TC: await_completion(ANY_OF): 3 VVCs");
+    log(NO_ID, "TC: await_completion(ANY_OF): 3 VVCs");
     ------------------------------------------------------------
 
     axistream_transmit(AXISTREAM_VVCT, 0, v_data_array(0 to 2 * v_numBytes), "transmit long packte");
@@ -268,13 +283,13 @@ begin
 
     check_value(v_elapsed_clk_cycles, 1 + v_numWords, ERROR, "3 vvcs: checking that we waited long enough for the quickest VVC to finish", C_SCOPE, ID_SEQUENCER);
 
-    log("Done.");
+    log(NO_ID, "Done.");
     for i in 0 to C_NUM_VVCS - 1 loop
       await_completion(AXISTREAM_VVCT, i, 1 ms);
     end loop;
 
     ------------------------------------------------------------
-    log("TC: await_completion(ANY_OF): 3 VVCs, one of them is already complete");
+    log(NO_ID, "TC: await_completion(ANY_OF): 3 VVCs, one of them is already complete");
     ------------------------------------------------------------
 
     axistream_transmit(AXISTREAM_VVCT, 1, v_data_array(0 to v_numBytes), "transmit packet");
@@ -290,13 +305,13 @@ begin
 
     check_value(v_elapsed_clk_cycles, 0, ERROR, "3 vvcs: checking that we waited 0 time", C_SCOPE, ID_SEQUENCER);
 
-    log("Done.");
+    log(NO_ID, "Done.");
     for i in 0 to C_NUM_VVCS - 1 loop
       await_completion(AXISTREAM_VVCT, i, 1 ms);
     end loop;
 
     ------------------------------------------------------------
-    log("TC: await_completion(ANY_OF): 3 VVCs, two of them are already complete");
+    log(NO_ID, "TC: await_completion(ANY_OF): 3 VVCs, two of them are already complete");
     ------------------------------------------------------------
 
     axistream_transmit(AXISTREAM_VVCT, 2, v_data_array(0 to 3 * v_numBytes), "transmit long packet");
@@ -311,13 +326,13 @@ begin
 
     check_value(v_elapsed_clk_cycles, 0, ERROR, "3 vvcs: checking that we waited 0 time", C_SCOPE, ID_SEQUENCER);
 
-    log("Done.");
+    log(NO_ID, "Done.");
     for i in 0 to C_NUM_VVCS - 1 loop
       await_completion(AXISTREAM_VVCT, i, 1 ms);
     end loop;
 
     ------------------------------------------------------------
-    log("TC: await_completion(ANY_OF): all VVCs, all are already complete");
+    log(NO_ID, "TC: await_completion(ANY_OF): all VVCs, all are already complete");
     ------------------------------------------------------------
 
     v_start_time := now;
@@ -332,13 +347,13 @@ begin
 
     check_value(v_elapsed_clk_cycles, 0, ERROR, "all vvcs: checking that we waited 0 time", C_SCOPE, ID_SEQUENCER);
 
-    log("Done.");
+    log(NO_ID, "Done.");
     for i in 0 to C_NUM_VVCS - 1 loop
       await_completion(AXISTREAM_VVCT, i, 1 ms);
     end loop;
 
     ------------------------------------------------------------
-    log("TC: await_completion(ANY_OF): all VVCs, multiple VVCs complete simultaneously ");
+    log(NO_ID, "TC: await_completion(ANY_OF): all VVCs, multiple VVCs complete simultaneously ");
     ------------------------------------------------------------
 
     axistream_transmit(AXISTREAM_VVCT, 0, v_data_array(0 to 2 * v_numBytes), "transmit long packet");
@@ -359,7 +374,7 @@ begin
     check_value(v_elapsed_clk_cycles, 1 + v_numWords, ERROR, "all vvcs: checking that we waited shortest time", C_SCOPE, ID_SEQUENCER);
 
     ------------------------------------------------------------
-    log("TC: await_completion(ANY_OF): all VVCs, all VVCs complete simultaneously ");
+    log(NO_ID, "TC: await_completion(ANY_OF): all VVCs, all VVCs complete simultaneously ");
     ------------------------------------------------------------
 
     for i in 0 to C_NUM_VVCS - 1 loop
@@ -379,7 +394,7 @@ begin
     check_value(v_elapsed_clk_cycles, 1 + v_numWords, ERROR, "all vvcs: checking that we waited shortest time", C_SCOPE, ID_SEQUENCER);
 
     ------------------------------------------------------------
-    log("TC: await_completion(ANY_OF) while VVCs are still busy from previous test, just to see what happens");
+    log(NO_ID, "TC: await_completion(ANY_OF) while VVCs are still busy from previous test, just to see what happens");
     ------------------------------------------------------------
     for i in 1 to C_NUM_VVCS - 1 loop
       axistream_transmit(AXISTREAM_VVCT, i, v_data_array(0 to 2 * v_numBytes), "transmit long packte");
@@ -392,13 +407,13 @@ begin
     end loop;
     await_completion(ANY_OF, v_vvc_list, 1 ms);
 
-    log("Done.");
+    log(NO_ID, "Done.");
     for i in 0 to C_NUM_VVCS - 1 loop
       await_completion(AXISTREAM_VVCT, i, 1 ms);
     end loop;
 
     ------------------------------------------------------------
-    log("TC: await_completion(ANY_OF) timeout, expect tb_ERROR ");
+    log(NO_ID, "TC: await_completion(ANY_OF) timeout, expect tb_ERROR ");
     ------------------------------------------------------------
     axistream_transmit(AXISTREAM_VVCT, 0, v_data_array(0 to 2 * v_numBytes), "transmit long packet");
     axistream_transmit(AXISTREAM_VVCT, 1, v_data_array(0 to v_numBytes), "transmit short packet that shall be waited for");
@@ -412,7 +427,7 @@ begin
     increment_expected_alerts(TB_ERROR, 1);
     check_value((now - v_start_time), 1 ns, ERROR, "all vvcs: checking that we waited for 'timeout'", C_SCOPE, ID_SEQUENCER);
 
-    log("Done.");
+    log(NO_ID, "Done.");
     for i in 0 to C_NUM_VVCS - 1 loop
       await_completion(AXISTREAM_VVCT, i, 1 ms);
     end loop;
@@ -420,8 +435,16 @@ begin
     -----------------------------------------------------------------------------
     -- Ending the simulation
     -----------------------------------------------------------------------------
-    await_uvvm_completion(1000 ns, print_alert_counters => REPORT_ALERT_COUNTERS_FINAL, scope => C_SCOPE);
+    await_uvvm_completion(1000 ns, print_alert_counters => REPORT_ALERT_COUNTERS, scope => C_SCOPE);
     log(ID_LOG_HDR, "SIMULATION COMPLETED", C_SCOPE);
+
+    -- OSVVM Test Completion Steps
+    TranscriptClose ;
+    if C_TESTCASE_FILE_PATH'length > 0 then
+      AffirmIfTranscriptsMatch(RemoveEndingSeparator(ChangeSeparator(C_TESTCASE_FILE_PATH)) & "/OsvvmResults") ;
+    end if ;
+    EndOfTestReports ;
+    -- End of Test OSVVM Completion Steps
 
     -- Finish the simulation
     std.env.stop;

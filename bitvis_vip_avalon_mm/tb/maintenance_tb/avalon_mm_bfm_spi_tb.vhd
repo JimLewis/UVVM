@@ -27,6 +27,14 @@ context uvvm_util.uvvm_util_context;
 library bitvis_vip_avalon_mm;
 use bitvis_vip_avalon_mm.avalon_mm_bfm_pkg.all;
 
+library altera_mf ;
+
+-- Required by OSVVM
+library osvvm ;
+context OSVVM.OsvvmContext ;
+use std.env.all ;
+-- End of Required by OSVVM
+
 --hdlregression:tb
 -- Test case entity
 entity avalon_mm_bfm_spi_tb is
@@ -37,6 +45,9 @@ end entity;
 
 -- Test case architecture
 architecture func of avalon_mm_bfm_spi_tb is
+  -- Required by OSVVM
+  constant C_TESTCASE_FILE_PATH : string  := FILE_PATH ;
+  -- End of Required by OSVVM
 
   constant C_CLK_PERIOD : time := 10 ns;
   signal clk            : std_logic;
@@ -176,10 +187,16 @@ begin
     end;
 
   begin
+    -- OSVVM Start of Test Case
+    SetTestName("avalon_mm_bfm_spi_tb") ;
+    TranscriptOpen ;
+    SetTranscriptMirror ;
+    -- End of OSVVM Start of Test Case
+
     -- To avoid that log files from different test cases (run in separate
     -- simulations) overwrite each other.
     set_log_file_name(GC_TESTCASE & "_Log.txt");
-    set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+    -- set_alert_file_name(GC_TESTCASE & "_Alert.txt");
 
     -- set up our avalon_mm config - could be different than default config in BFM
     avalon_mm_bfm_config.clock_period          := C_CLK_PERIOD; -- same clock period for BFM as for clock generator
@@ -199,7 +216,7 @@ begin
     --disable_log_msg(ALL_MESSAGES);
     --enable_log_msg(ID_LOG_HDR);
 
-    log("Start Simulation of TB for AVALON_MM");
+    log(NO_ID, "Start Simulation of TB for AVALON_MM");
     ------------------------------------------------------------
     clock_ena <= true;                  -- the avalon_mm_reset routine assumes the clock is running
     avalon_mm_reset(clk, avalon_mm_if, 5, "Resetting Avalon MM Interface", C_SCOPE, shared_msg_id_panel, avalon_mm_bfm_config);
@@ -209,7 +226,7 @@ begin
       wait until rising_edge(clk);
     end loop;
 
-    log("Write to TXDATA register");
+    log(NO_ID, "Write to TXDATA register");
     avalon_mm_write("1", x"55");
     avalon_mm_write("1", x"aa");
 
@@ -218,7 +235,7 @@ begin
       wait until rising_edge(clk);
     end loop;
 
-    log("Read back (and check) loopback of TXDATA");
+    log(NO_ID, "Read back (and check) loopback of TXDATA");
     avalon_mm_check("0", x"55");
     wait for 1 ns;
     avalon_mm_check("0", x"aa");
@@ -227,8 +244,16 @@ begin
     -- Ending the simulation
     -----------------------------------------------------------------------------
     wait for 1000 ns;                   -- to allow some time for completion
-    report_alert_counters(FINAL);       -- Report final counters and print conclusion for simulation (Success/Fail)
+    report_alert_counters(INTERMEDIATE);       -- Report final counters and print conclusion for simulation (Success/Fail)
     log(ID_LOG_HDR, "SIMULATION COMPLETED", C_SCOPE);
+
+    -- OSVVM Test Completion Steps
+    TranscriptClose ;
+    if C_TESTCASE_FILE_PATH'length > 0 then
+      AffirmIfTranscriptsMatch(RemoveEndingSeparator(ChangeSeparator(C_TESTCASE_FILE_PATH)) & "/OsvvmResults") ;
+    end if ;
+    EndOfTestReports ;
+    -- End of Test OSVVM Completion Steps
 
     -- Finish the simulation
     std.env.stop;

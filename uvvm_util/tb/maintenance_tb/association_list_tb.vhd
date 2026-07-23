@@ -20,12 +20,19 @@ use ieee.std_logic_1164.all;
 library uvvm_util;
 context uvvm_util.uvvm_util_context;
 
+library osvvm ;
+use OSVVM.FileLinePathPkg.FILE_PATH ;
+use std.env.all ;
+
 --hdlregression:tb
 
 entity association_list_tb is
   generic(
     GC_TESTCASE : string := "UVVM"
   );
+  constant RawTestFilePath : string  := FILE_PATH ;
+  constant TestFilePath    : string  := OSVVM.FileUtilPkg.RemoveEndingSeparator(OSVVM.FileUtilPkg.ChangeSeparator(RawTestFilePath)) ;
+  constant CheckResults    : boolean := RawTestFilePath'length > 0 ;
 end entity;
 
 architecture func of association_list_tb is
@@ -129,7 +136,7 @@ begin
       v_status := v_association_list.clear(VOID);
       check_value(v_status, ASSOCIATION_LIST_SUCCESS, ERROR, "Verifying clear() return value.", C_SCOPE);
       check_value(v_association_list.length(VOID), 0, ERROR, "Checking the list length after calling clear().", C_SCOPE);
-      
+
     end procedure verify_clear;
 
     ------------------------------------------
@@ -307,8 +314,11 @@ begin
     end procedure verify_delete;
 
   begin
-    set_log_file_name(GC_TESTCASE & "_Log.txt");
-    set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+    -- set_log_file_name(GC_TESTCASE & "_Log.txt");
+    -- set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+    osvvm.AlertLogPkg.SetTestName(GC_TESTCASE) ;
+    osvvm.ReportPkg.TranscriptOpen ;
+    osvvm.TranscriptPkg.SetTranscriptMirror ;
 
     -- Print the configuration to the log
     report_global_ctrl(VOID);
@@ -331,8 +341,16 @@ begin
     -- Ending the simulation
     -----------------------------------------------------------------------------
     wait for 1000 ns;                   -- to allow some time for completion
-    report_alert_counters(FINAL);       -- Report final counters and print conclusion for simulation (Success/Fail)
+    report_alert_counters(INTERMEDIATE);       -- Report final counters and print conclusion for simulation (Success/Fail)
     log(ID_LOG_HDR, "SIMULATION COMPLETED", C_SCOPE);
+
+    osvvm.TranscriptPkg.TranscriptClose ;
+
+    if CheckResults then
+      osvvm.AlertLogPkg.AffirmIfTranscriptsMatch(TestFilePath & "/ValidatedResults") ;
+    end if ;
+
+    osvvm.ReportPkg.EndOfTestReports ;
 
     -- Finish the simulation
     std.env.stop;

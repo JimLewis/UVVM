@@ -23,11 +23,18 @@ context uvvm_util.uvvm_util_context;
 
 use work.rand_tb_pkg.all;
 
+library osvvm ;
+use OSVVM.FileLinePathPkg.FILE_PATH ;
+use std.env.all ;
+
 --HDLRegression:TB
 entity rand_multi_method_tb is
   generic(
     GC_TESTCASE : string
   );
+  constant RawTestFilePath : string  := FILE_PATH ;
+  constant TestFilePath    : string  := OSVVM.FileUtilPkg.RemoveEndingSeparator(OSVVM.FileUtilPkg.ChangeSeparator(RawTestFilePath)) ;
+  constant CheckResults    : boolean := RawTestFilePath'length > 0 ;
 end entity;
 
 architecture func of rand_multi_method_tb is
@@ -67,8 +74,11 @@ begin
   begin
     -- To avoid that log files from different test cases (run in separate
     -- simulations) overwrite each other.
-    set_log_file_name(GC_TESTCASE & "_multi_Log.txt");
-    set_alert_file_name(GC_TESTCASE & "_multi_Alert.txt");
+    -- set_log_file_name(GC_TESTCASE & "_multi_Log.txt");
+    -- set_alert_file_name(GC_TESTCASE & "_multi_Alert.txt");
+    osvvm.AlertLogPkg.SetTestName(GC_TESTCASE & "_multi") ;
+    osvvm.ReportPkg.TranscriptOpen ;
+    osvvm.TranscriptPkg.SetTranscriptMirror ;
 
     -------------------------------------------------------------------------------------
     log(ID_LOG_HDR_LARGE, "Start Simulation of Randomization package - " & GC_TESTCASE);
@@ -5227,8 +5237,17 @@ begin
     -- Ending the simulation
     -----------------------------------------------------------------------------
     wait for 1000 ns;                   -- Allow some time for completion
-    report_alert_counters(FINAL);       -- Report final counters and print conclusion (Success/Fail)
+    report_alert_counters(INTERMEDIATE);       -- Report final counters and print conclusion (Success/Fail)
     log(ID_LOG_HDR, "SIMULATION COMPLETED");
+
+    -- OSVVM Completion Steps
+    osvvm.TranscriptPkg.TranscriptClose ;
+    if CheckResults then
+      osvvm.AlertLogPkg.AffirmIfTranscriptsMatch(TestFilePath & "/ValidatedResults") ;
+    end if ;
+    osvvm.ReportPkg.EndOfTestReports ;
+    -- End of OSVVM Completion Steps
+
     -- Finish the simulation
     std.env.stop;
     wait;                               -- to stop completely

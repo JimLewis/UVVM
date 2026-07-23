@@ -18,18 +18,23 @@ use ieee.numeric_std.all;
 library uvvm_util;
 context uvvm_util.uvvm_util_context;
 
+library osvvm ;
+
 --HDLRegression:TB
 entity questa_extension_tb is
   generic (
     GC_EXTENSIONS_ENABLED : boolean := TRUE
   );
+  constant RawTestFilePath : string  := OSVVM.FileLinePathPkg.FILE_PATH ;
+  constant TestFilePath    : string  := OSVVM.FileUtilPkg.RemoveEndingSeparator(OSVVM.FileUtilPkg.ChangeSeparator(RawTestFilePath)) ;
+  constant CheckResults    : boolean := RawTestFilePath'length > 0 ;
 end entity;
 
 architecture sim of questa_extension_tb is
 
   -- Signals for FC auto-sampling
   signal target_signal  : integer   := 0;
-  signal trigger_signal : std_logic := '0';    
+  signal trigger_signal : std_logic := '0';
 
 begin
 
@@ -75,7 +80,7 @@ begin
 
     -- Linking handles
     variable v_link_handle_v2 : integer;
-    variable v_link_handle_v3 : integer;    
+    variable v_link_handle_v3 : integer;
 
     -- Variables used in checking of randomized values
     variable v_vector_sum : integer;
@@ -157,7 +162,7 @@ begin
         v_slv             := v_rand_zero_bitwise_and.randm(8); -- Generate randomized value (8-bit)
         v_slv_bitwise_and := v_slv and std_logic_vector(to_unsigned(3, 8)); -- Perform AND-operation with randomized value
         check_value(v_slv_bitwise_and = "00000000", ERROR, "Check zero bitwise AND"); -- Verify that result is zero
- 
+
         -- Force bits to
         log(ID_LOG_HDR, "Force bits to");
         v_rand_force_bits_to.force_bits_to("1100----");
@@ -238,7 +243,7 @@ begin
         v_integer_v1 := v_rand_v1.randm(VOID);
         v_integer_v2 := v_rand_v2.get_value(VOID);
         log(ID_SEQUENCER, "v1 <= v2: v1=" & to_string(v_integer_v1) & " v2=" & to_string(v_integer_v2));
-        check_value(v_integer_v1 <= v_integer_v2, ERROR, "Check that int v2 <= v1"); 
+        check_value(v_integer_v1 <= v_integer_v2, ERROR, "Check that int v2 <= v1");
 
         -- Greater than or equal
         v_rand_v1.unlink(v_link_handle_v2); -- Unlink from v1
@@ -392,13 +397,13 @@ begin
         -- Check that coverage_completed() method works for all coverpoints
         check_value(v_cp_manual.coverage_completed(BINS_AND_HITS) = TRUE, ERROR, "Check manual CP coverage completed");
         check_value(v_cp_auto_sig.coverage_completed(BINS_AND_HITS) = TRUE, ERROR, "Check auto CP sample sig, sig trigger coverage completed");
-        check_value(v_cp_auto_var.coverage_completed(BINS_AND_HITS) = TRUE, ERROR, "Check auto CP sample var, sig trigger coverage completed");      
+        check_value(v_cp_auto_var.coverage_completed(BINS_AND_HITS) = TRUE, ERROR, "Check auto CP sample var, sig trigger coverage completed");
 
         v_cp_manual.report_coverage(VERBOSE);
         v_cp_auto_sig.report_coverage(VERBOSE);
         v_cp_auto_var.report_coverage(VERBOSE);
 
-        -- TODO: Needs fix for default values of seeds in questaRandPkg. Uncomment when fixed by Siemens. 
+        -- TODO: Needs fix for default values of seeds in questaRandPkg. Uncomment when fixed by Siemens.
         -- v_cp_manual.write_coverage_db("cp_manual_db.txt");
         -- log(ID_LOG_HDR, "Manual db written");
         -- v_cp_auto_sig.write_coverage_db("cp_auto_sig_db.txt");
@@ -417,6 +422,9 @@ begin
     end procedure;
 
   begin
+    osvvm.AlertLogPkg.SetTestName(questa_extension_tb) ;
+    osvvm.ReportPkg.TranscriptOpen ;
+    osvvm.TranscriptPkg.SetTranscriptMirror ;
 
     test_questa_randomization_constraints(VOID);
 
@@ -425,12 +433,19 @@ begin
 
     wait for 10 us;
     log(ID_LOG_HDR, "SIMULATION COMPLETED");
+
+    osvvm.TranscriptPkg.TranscriptClose ;
+    if CheckResults then
+      osvvm.AlertLogPkg.AffirmIfTranscriptsMatch(TestFilePath & "/ValidatedResults") ;
+    end if ;
+    osvvm.ReportPkg.EndOfTestReports ;
+
     -- Finish the simulation
     std.env.stop;
     wait;   -- to stop completely
-    
+
 
   end process p_main;
-  
+
 
 end architecture;

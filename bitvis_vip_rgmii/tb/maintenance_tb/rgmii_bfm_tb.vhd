@@ -24,6 +24,12 @@ context uvvm_util.uvvm_util_context;
 library bitvis_vip_rgmii;
 use bitvis_vip_rgmii.rgmii_bfm_pkg.all;
 
+-- Required by OSVVM
+library osvvm ;
+context OSVVM.OsvvmContext ;
+use std.env.all ;
+-- End of Required by OSVVM
+
 --hdlregression:tb
 -- Test case entity
 entity rgmii_bfm_tb is
@@ -34,6 +40,10 @@ end entity;
 
 -- Test case architecture
 architecture func of rgmii_bfm_tb is
+  -- Required by OSVVM
+  constant C_TESTCASE_FILE_PATH : string  := FILE_PATH ;
+  -- End of Required by OSVVM
+
   --------------------------------------------------------------------------------
   -- Types and constants declarations
   --------------------------------------------------------------------------------
@@ -94,9 +104,15 @@ begin
     end procedure;
 
   begin
+    -- OSVVM Start of Test Case
+    SetTestName("rgmii_bfm_tb") ;
+    TranscriptOpen ;
+    SetTranscriptMirror ;
+    -- End of OSVVM Start of Test Case
+
     -- To avoid that log files from different test cases (run in separate simulations) overwrite each other.
-    set_log_file_name(GC_TESTCASE & "_Log.txt");
-    set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+    --O set_log_file_name(GC_TESTCASE & "_Log.txt");
+    --O set_alert_file_name(GC_TESTCASE & "_Alert.txt");
 
     -- Print the configuration to the log
     report_global_ctrl(VOID);
@@ -222,8 +238,17 @@ begin
     -- Ending the simulation
     ------------------------------------------------------------------------------
     wait for 1000 ns;                   -- Allow some time for completion
-    report_alert_counters(FINAL);       -- Report final counters and print conclusion (Success/Fail)
+    report_alert_counters(INTERMEDIATE);       -- Report final counters and print conclusion (Success/Fail)
     log(ID_LOG_HDR, "SIMULATION COMPLETED", c_scope);
+
+    -- OSVVM Test Completion Steps
+    TranscriptClose ;
+    if C_TESTCASE_FILE_PATH'length > 0 then
+      AffirmIfTranscriptsMatch(RemoveEndingSeparator(ChangeSeparator(C_TESTCASE_FILE_PATH)) & "/OsvvmResults") ;
+    end if ;
+    EndOfTestReports ;
+    -- End of Test OSVVM Completion Steps
+
     -- Finish the simulation
     std.env.stop;
     wait;                               -- to stop completely

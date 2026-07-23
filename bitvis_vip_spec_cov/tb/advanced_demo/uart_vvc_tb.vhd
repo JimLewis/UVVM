@@ -155,7 +155,7 @@ architecture func of uart_vvc_tb is
       -- End the requirement coverage process
       finalize_req_cov(VOID);
 
-      
+
     elsif (GC_TESTCASE = 2) then
       log("Starting the requirement coverage process");
       initialize_req_cov("T_UART_RX", C_REQ_LIST_FILE, C_PARTIAL_COV_FILE);
@@ -198,7 +198,7 @@ architecture func of uart_vvc_tb is
     -----------------------------------------------------------------------------
     -- Ending the simulation
     -----------------------------------------------------------------------------
-    await_uvvm_completion(1000 ns, print_alert_counters => REPORT_ALERT_COUNTERS_FINAL, scope => C_SCOPE);
+    await_uvvm_completion(1000 ns, print_alert_counters => REPORT_ALERT_COUNTERS, scope => C_SCOPE);
     log(ID_LOG_HDR, "SIMULATION COMPLETED", C_SCOPE);
 
     -- Finish the simulation

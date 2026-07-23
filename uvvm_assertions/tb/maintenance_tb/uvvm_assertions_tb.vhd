@@ -8,6 +8,12 @@ context uvvm_util.uvvm_util_context;
 library uvvm_assertions;
 use uvvm_assertions.uvvm_assertions_pkg.all;
 
+-- Required by OSVVM
+library osvvm ;
+context OSVVM.OsvvmContext ;
+use std.env.all ;
+-- End of Required by OSVVM
+
 --hdlregression:tb
 entity uvvm_assertions_tb is
   generic(
@@ -16,6 +22,9 @@ entity uvvm_assertions_tb is
 end entity uvvm_assertions_tb;
 
 architecture func of uvvm_assertions_tb is
+  -- Required by OSVVM
+  constant C_TESTCASE_FILE_PATH : string  := FILE_PATH ;
+  -- End of Required by OSVVM
 
   -- Constants
   constant C_CLK_PERIOD  : time    := 10 ns;
@@ -1184,7 +1193,7 @@ begin
     begin
       -- Testing all values within the range
       for i in to_integer(lower_limit) to to_integer(upper_limit) loop
-        log("tracked_value = " & to_string(i));
+        log(NO_ID, "tracked_value = " & to_string(i));
         tracked_value_unsigned <= to_unsigned(i, tracked_value_unsigned'length);
         -- assert_value_in_range
         if clock_mode = CLOCKED then
@@ -1205,7 +1214,7 @@ begin
     begin
       -- Testing all values within the range
       for i in to_integer(lower_limit) to to_integer(upper_limit) loop
-        log("tracked_value = " & to_string(i));
+        log(NO_ID, "tracked_value = " & to_string(i));
         tracked_value_signed <= to_signed(i, tracked_value_signed'length);
         -- assert_value_in_range
         if clock_mode = CLOCKED then
@@ -1226,7 +1235,7 @@ begin
     begin
       -- Testing all values within the range
       for i in lower_limit to upper_limit loop
-        log("tracked_value = " & to_string(i));
+        log(NO_ID, "tracked_value = " & to_string(i));
         tracked_value_int <= i;
         -- assert_value_in_range
         if clock_mode = CLOCKED then
@@ -1247,7 +1256,7 @@ begin
     begin
       -- Testing all values within the range
       for i in integer(lower_limit) to integer(upper_limit) loop
-        log("tracked_value = " & to_string(real(i)));
+        log(NO_ID, "tracked_value = " & to_string(real(i)));
         tracked_value_real <= real(i);
         -- assert_value_in_range
         if clock_mode = CLOCKED then
@@ -1268,7 +1277,7 @@ begin
     begin
       -- Testing all values within the range
       for i in integer(lower_limit / 1 ns) to integer(upper_limit / 1 ns) loop
-        log("tracked_value = " & to_string(i * 1 ns));
+        log(NO_ID, "tracked_value = " & to_string(i * 1 ns));
         tracked_value_time <= i * 1 ns;
         -- assert_value_in_range
         if clock_mode = CLOCKED then
@@ -1295,10 +1304,10 @@ begin
       for i in 1 to to_integer(upper_limit) - to_integer(lower_limit) loop
         increment_expected_alerts_and_stop_limit(TB_ERROR, 1);
         if out_of_range = ABOVE then
-          log("tracked_value = " & to_string(to_integer(upper_limit) + i));
+          log(NO_ID, "tracked_value = " & to_string(to_integer(upper_limit) + i));
           tracked_value_unsigned <= upper_limit + to_unsigned(i, tracked_value_unsigned'length);
         else
-          log("tracked_value = " & to_string(to_integer(lower_limit) - i));
+          log(NO_ID, "tracked_value = " & to_string(to_integer(lower_limit) - i));
           tracked_value_unsigned <= lower_limit - to_unsigned(i, tracked_value_unsigned'length);
         end if;
         -- assert_value_in_range
@@ -1324,10 +1333,10 @@ begin
       for i in 1 to to_integer(upper_limit) - to_integer(lower_limit) loop
         increment_expected_alerts_and_stop_limit(TB_ERROR, 1);
         if out_of_range = ABOVE then
-          log("tracked_value = " & to_string(to_integer(upper_limit) + i));
+          log(NO_ID, "tracked_value = " & to_string(to_integer(upper_limit) + i));
           tracked_value_signed <= upper_limit + to_signed(i, tracked_value_signed'length);
         else
-          log("tracked_value = " & to_string(to_integer(lower_limit) - i));
+          log(NO_ID, "tracked_value = " & to_string(to_integer(lower_limit) - i));
           tracked_value_signed <= lower_limit - to_signed(i, tracked_value_signed'length);
         end if;
         -- assert_value_in_range
@@ -1353,10 +1362,10 @@ begin
       for i in 1 to upper_limit - lower_limit loop
         increment_expected_alerts_and_stop_limit(TB_ERROR, 1);
         if out_of_range = ABOVE then
-          log("tracked_value = " & to_string(upper_limit + i));
+          log(NO_ID, "tracked_value = " & to_string(upper_limit + i));
           tracked_value_int <= upper_limit + i;
         else
-          log("tracked_value = " & to_string(lower_limit - i));
+          log(NO_ID, "tracked_value = " & to_string(lower_limit - i));
           tracked_value_int <= lower_limit - i;
         end if;
         -- assert_value_in_range
@@ -1382,10 +1391,10 @@ begin
       for i in 1 to integer(upper_limit) - integer(lower_limit) loop
         increment_expected_alerts_and_stop_limit(TB_ERROR, 1);
         if out_of_range = ABOVE then
-          log("tracked_value = " & to_string(upper_limit + real(i)));
+          log(NO_ID, "tracked_value = " & to_string(upper_limit + real(i)));
           tracked_value_real <= upper_limit + real(i);
         else
-          log("tracked_value = " & to_string(lower_limit - real(i)));
+          log(NO_ID, "tracked_value = " & to_string(lower_limit - real(i)));
           tracked_value_real <= lower_limit - real(i);
         end if;
         -- assert_value_in_range
@@ -1411,10 +1420,10 @@ begin
       for i in 1 to integer(upper_limit / 1 ns) - integer(lower_limit / 1 ns) loop
         increment_expected_alerts_and_stop_limit(TB_ERROR, 1);
         if out_of_range = ABOVE then
-          log("tracked_value = " & to_string(upper_limit + (i * 1 ns)));
+          log(NO_ID, "tracked_value = " & to_string(upper_limit + (i * 1 ns)));
           tracked_value_time <= upper_limit + (i * 1 ns);
         else
-          log("tracked_value = " & to_string(lower_limit - (i * 1 ns)));
+          log(NO_ID, "tracked_value = " & to_string(lower_limit - (i * 1 ns)));
           tracked_value_time <= lower_limit - (i * 1 ns);
         end if;
         -- assert_value_in_range
@@ -1602,7 +1611,7 @@ begin
           v_sequence(2) := "1000" srl j;
           for k in 0 to 4 loop
             v_sequence(3) := "1000" srl k;
-            log("Testing the sequence: " & to_string(v_sequence(0)) & " -> " & to_string(v_sequence(1)) & " -> " & to_string(v_sequence(2)) & " -> " & to_string(v_sequence(3)));
+            log(NO_ID, "Testing the sequence: " & to_string(v_sequence(0)) & " -> " & to_string(v_sequence(1)) & " -> " & to_string(v_sequence(2)) & " -> " & to_string(v_sequence(3)));
             tracked_value_slv <= "1000";
             wait for C_CLK_PERIOD;
             tracked_value_slv <= "1000" srl i;
@@ -1639,7 +1648,7 @@ begin
       for i in 0 to 15 loop
         for j in 0 to 15 loop
           for k in 6 to 7 loop
-            log("Testing the sequence: 1000 -> 1100 -> " & to_string(std_logic_vector(to_unsigned(i, 4))) & " -> " & to_string(std_logic_vector(to_unsigned(j, 4))) & " -> " & to_string(std_logic_vector(to_unsigned(k, 4))) & " -> 0011 -> 0001" );
+            log(NO_ID, "Testing the sequence: 1000 -> 1100 -> " & to_string(std_logic_vector(to_unsigned(i, 4))) & " -> " & to_string(std_logic_vector(to_unsigned(j, 4))) & " -> " & to_string(std_logic_vector(to_unsigned(k, 4))) & " -> 0011 -> 0001" );
             tracked_value_slv <= "1000";
             wait for C_CLK_PERIOD;
             tracked_value_slv <= "1100";
@@ -2206,10 +2215,16 @@ begin
     end procedure;
 
   begin
+    -- OSVVM Start Test Case Stuff
+    SetTestName(GC_TESTCASE) ;
+    TranscriptOpen ;
+    SetTranscriptMirror ;
+    -- End of OSVVM Start Test Case Stuff
+
     -- To avoid that log files from different test cases (run in separate
     -- simulations) overwrite each other.
-    set_log_file_name(GC_TESTCASE & "_Log.txt");
-    set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+    --O set_log_file_name(GC_TESTCASE & "_Log.txt");
+    --O set_alert_file_name(GC_TESTCASE & "_Alert.txt");
 
     disable_log_msg(ALL_MESSAGES);
     enable_log_msg(ID_LOG_HDR_LARGE);
@@ -7440,8 +7455,16 @@ begin
     -- Ending the simulation
     -----------------------------------------------------------------------------
     wait for 10 ns;                -- to allow some time for completion
-    report_alert_counters(FINAL);  -- Report final counters and print conclusion (Success/Fail)
+    report_alert_counters(INTERMEDIATE);  -- Report final counters and print conclusion (Success/Fail)
     log(ID_LOG_HDR, "SIMULATION COMPLETED", C_SCOPE);
+
+    -- OSVVM Completion Steps
+    TranscriptClose ;
+    if C_TESTCASE_FILE_PATH'length > 0 then
+      AffirmIfTranscriptsMatch(RemoveEndingSeparator(ChangeSeparator(C_TESTCASE_FILE_PATH)) & "/OsvvmResults") ;
+    end if ;
+    EndOfTestReports ;
+    -- End of OSVVM Completion Steps
 
     -- Finish the simulation
     std.env.stop;

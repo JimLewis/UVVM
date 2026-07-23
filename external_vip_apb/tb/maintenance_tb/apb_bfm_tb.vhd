@@ -24,6 +24,12 @@ context uvvm_util.uvvm_util_context;
 library external_vip_apb;
 use external_vip_apb.apb_bfm_pkg.all;
 
+-- Required by OSVVM
+library osvvm ;
+context OSVVM.OsvvmContext ;
+use std.env.all ;
+-- End of Required by OSVVM
+
 --HDLRegression:tb
 entity apb_bfm_tb is
   generic(
@@ -34,6 +40,10 @@ entity apb_bfm_tb is
 end entity apb_bfm_tb;
 
 architecture tb of apb_bfm_tb is
+  -- Required by OSVVM
+  constant C_TESTCASE_FILE_PATH : string  := FILE_PATH ;
+  -- End of Required by OSVVM
+
 
   constant C_CLK_PERIOD : time    := 10 ns;
   constant C_REG_ADDR   : natural := 8; -- Must be addressable with the number of GC_ADDR_WIDTH bits
@@ -143,9 +153,15 @@ begin
     end procedure;
 
   begin
+    -- OSVVM Start Test Case Stuff
+    SetTestName("apb_bfm_tb") ;
+    TranscriptOpen ;
+    SetTranscriptMirror ;
+    -- End of OSVVM Start Test Case Stuff
+
     -- To avoid that log files from different test cases (run in separate simulations) overwrite each other.
     set_log_file_name(GC_TESTCASE & "_Log.txt");
-    set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+    -- set_alert_file_name(GC_TESTCASE & "_Alert.txt");
 
     --------------------------------------------------------------------------------
     log(ID_LOG_HDR_LARGE, "Start Simulation of APB BFM");
@@ -228,8 +244,16 @@ begin
     -- Ending the simulation
     -----------------------------------------------------------------------------
     wait for 1000 ns;                   -- Allow some time for completion
-    report_alert_counters(FINAL);       -- Report final counters and print conclusion (Success/Fail)
+    report_alert_counters(INTERMEDIATE);       -- Report final counters and print conclusion (Success/Fail)
     log(ID_LOG_HDR, "SIMULATION COMPLETED", C_SCOPE);
+
+    -- OSVVM Completion Steps
+    TranscriptClose ;
+    if C_TESTCASE_FILE_PATH'length > 0 then
+      AffirmIfTranscriptsMatch(RemoveEndingSeparator(ChangeSeparator(C_TESTCASE_FILE_PATH)) & "/OsvvmResults") ;
+    end if ;
+    EndOfTestReports ;
+    -- End of OSVVM Completion Steps
 
     -- Finish the simulation
     std.env.stop;

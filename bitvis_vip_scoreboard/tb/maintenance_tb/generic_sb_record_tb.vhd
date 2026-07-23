@@ -24,6 +24,12 @@ context uvvm_util.uvvm_util_context;
 library bitvis_vip_scoreboard;
 use bitvis_vip_scoreboard.generic_sb_support_pkg.all;
 
+-- Required by OSVVM
+library osvvm ;
+context OSVVM.OsvvmContext ;
+use std.env.all ;
+-- End of Required by OSVVM
+
 --hdlregression:tb
 -- Test case entity
 entity generic_sb_record_tb is
@@ -34,6 +40,9 @@ end entity generic_sb_record_tb;
 
 -- Test case architecture
 architecture func of generic_sb_record_tb is
+  -- Required by OSVVM
+  constant C_TESTCASE_FILE_PATH : string  := FILE_PATH ;
+  -- End of Required by OSVVM
 
   type t_record is record
     address : std_logic_vector(7 downto 0);
@@ -650,7 +659,7 @@ begin
       log(ID_LOG_HDR, "wait 1 ps", scope);
       wait for 1 ps;
 
-      set_alert_stop_limit(ERROR, 6);
+--      set_alert_stop_limit(ERROR, 6);
       increment_expected_alerts(ERROR, 5);
       log(ID_LOG_HDR, "checking received, expecting 5 ERRORs", scope);
       for i in 81 to 85 loop
@@ -1964,15 +1973,21 @@ begin
     end procedure test_instance_is_enabled;
 
   begin
+    -- OSVVM Start of Test Case
+    SetTestName("generic_sb_record_tb") ;
+    TranscriptOpen ;
+    SetTranscriptMirror ;
+    -- End of OSVVM Start of Test Case
+
     -- To avoid that log files from different test cases (run in separate
     -- simulations) overwrite each other.
-    set_log_file_name(GC_TESTCASE & "_Log.txt");
-    set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+    --O set_log_file_name(GC_TESTCASE & "_Log.txt");
+    --O set_alert_file_name(GC_TESTCASE & "_Alert.txt");
 
     -- Print the configuration to the log
     report_global_ctrl(VOID);
     report_msg_id_panel(VOID);
-    set_alert_stop_limit(TB_ERROR, 0);  -- 0 = Never stop
+--    set_alert_stop_limit(TB_ERROR, 0);  -- 0 = Never stop
 
     enable_log_msg(ALL_MESSAGES);
     --disable_log_msg(ID_POS_ACK);
@@ -2007,8 +2022,16 @@ begin
     -----------------------------------------------------------------------------
     -- Ending the simulation
     -----------------------------------------------------------------------------
-    await_sb_completion(1000 ns, print_alert_counters => REPORT_ALERT_COUNTERS_FINAL, scope => C_SCOPE);
+    await_sb_completion(1000 ns, print_alert_counters => REPORT_ALERT_COUNTERS, scope => C_SCOPE);
     log(ID_LOG_HDR, "SIMULATION COMPLETED", C_SCOPE);
+
+    -- OSVVM Test Completion Steps
+    TranscriptClose ;
+    if C_TESTCASE_FILE_PATH'length > 0 then
+      AffirmIfTranscriptsMatch(RemoveEndingSeparator(ChangeSeparator(C_TESTCASE_FILE_PATH)) & "/OsvvmResults") ;
+    end if ;
+    EndOfTestReports ;
+    -- End of Test OSVVM Completion Steps
 
     -- Finish the simulation
     std.env.stop;

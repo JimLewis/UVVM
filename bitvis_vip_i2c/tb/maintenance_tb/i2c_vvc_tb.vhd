@@ -37,6 +37,12 @@ context bitvis_vip_sbi.vvc_context;
 
 -------------------------------------------------------------------------------
 
+-- Required by OSVVM
+library osvvm ;
+context OSVVM.OsvvmContext ;
+use std.env.all ;
+-- End of Required by OSVVM
+
 --hdlregression:tb
 entity i2c_vvc_tb is
   generic(
@@ -47,6 +53,10 @@ end entity i2c_vvc_tb;
 -------------------------------------------------------------------------------
 
 architecture behav of i2c_vvc_tb is
+  -- Required by OSVVM
+  constant C_TESTCASE_FILE_PATH : string  := FILE_PATH ;
+  -- End of Required by OSVVM
+
   constant C_SCOPE : string := "I2C_VVC_TB";
 
   constant C_CLK_PERIOD : time := 10 ns; -- 100 MHz
@@ -184,7 +194,7 @@ architecture behav of i2c_vvc_tb is
 
       if v_equal then
         exit;                           -- Everything as expected
-        log("I2C Master DUT status register equal to expected: " & to_string(expected));
+        log(NO_ID, "I2C Master DUT status register equal to expected: " & to_string(expected));
       end if;
 
       wait for C_I2C_BFM_CONFIG_DEFAULT.i2c_bit_time;
@@ -763,10 +773,16 @@ begin                                   -- architecture behav
     end procedure;
 
   begin
+    -- OSVVM Start of Test Case
+    SetTestName("i2c_vvc_tb") ;
+    TranscriptOpen ;
+    SetTranscriptMirror ;
+    -- End of OSVVM Start of Test Case
+
     -- To avoid that log files from different test cases (run in separate
     -- simulations) overwrite each other.
-    set_log_file_name(GC_TESTCASE & "_Log.txt");
-    set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+    --O set_log_file_name(GC_TESTCASE & "_Log.txt");
+    --O set_alert_file_name(GC_TESTCASE & "_Alert.txt");
 
     await_uvvm_initialization(VOID);
 
@@ -789,7 +805,7 @@ begin                                   -- architecture behav
     report_global_ctrl(VOID);
     report_msg_id_panel(VOID);
 
-    log("\rSetting inter-bfm delay");
+    log(NO_ID, "\rSetting inter-bfm delay");
     shared_i2c_vvc_config(0).inter_bfm_delay.delay_type    := TIME_START2START;
     shared_i2c_vvc_config(0).inter_bfm_delay.delay_in_time := C_I2C_BFM_CONFIG_DEFAULT.i2c_bit_time * 21;
     shared_i2c_vvc_config(1).inter_bfm_delay.delay_type    := TIME_START2START;
@@ -1224,8 +1240,16 @@ begin                                   -- architecture behav
     -----------------------------------------------------------------------------
     -- Ending the simulation
     -----------------------------------------------------------------------------
-    await_uvvm_completion(1000 ns, print_alert_counters => REPORT_ALERT_COUNTERS_FINAL, scope => C_SCOPE);
+    await_uvvm_completion(1000 ns, print_alert_counters => REPORT_ALERT_COUNTERS, scope => C_SCOPE);
     log(ID_LOG_HDR, "SIMULATION COMPLETED", C_SCOPE);
+
+    -- OSVVM Test Completion Steps
+    TranscriptClose ;
+    if C_TESTCASE_FILE_PATH'length > 0 then
+      AffirmIfTranscriptsMatch(RemoveEndingSeparator(ChangeSeparator(C_TESTCASE_FILE_PATH)) & "/OsvvmResults") ;
+    end if ;
+    EndOfTestReports ;
+    -- End of Test OSVVM Completion Steps
 
     -- Finish the simulation
     std.env.stop;

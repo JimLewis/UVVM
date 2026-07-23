@@ -32,8 +32,15 @@ context bitvis_vip_sbi.vvc_context;
 library bitvis_vip_uart;
 context bitvis_vip_uart.vvc_context;
 
+library osvvm ;
+use OSVVM.FileLinePathPkg.FILE_PATH ;
+use std.env.all ;
+
 --HDLRegression:TB
 entity cr_fc_demo_tb is
+  constant RawTestFilePath : string  := FILE_PATH ;
+  constant TestFilePath    : string  := OSVVM.FileUtilPkg.RemoveEndingSeparator(OSVVM.FileUtilPkg.ChangeSeparator(RawTestFilePath)) ;
+  constant CheckResults    : boolean := RawTestFilePath'length > 0 ;
 end entity;
 
 architecture func of cr_fc_demo_tb is
@@ -268,6 +275,10 @@ begin
     end procedure test_func_cov_cross;
 
   begin
+    osvvm.AlertLogPkg.SetTestName("cr_fc_demo_tb") ;
+    osvvm.ReportPkg.TranscriptOpen ;
+    osvvm.TranscriptPkg.SetTranscriptMirror ;
+
     -- Wait for UVVM to finish initialization
     await_uvvm_initialization(VOID);
 
@@ -313,8 +324,15 @@ begin
     -----------------------------------------------------------------------------
     -- Ending the simulation
     -----------------------------------------------------------------------------
-    await_uvvm_completion(1000 ns, print_alert_counters => REPORT_ALERT_COUNTERS_FINAL, scope => C_SCOPE);
+    await_uvvm_completion(1000 ns, print_alert_counters => REPORT_ALERT_COUNTERS, scope => C_SCOPE);
     log(ID_LOG_HDR, "SIMULATION COMPLETED", C_SCOPE);
+
+    osvvm.TranscriptPkg.TranscriptClose ;
+    if CheckResults then
+      osvvm.AlertLogPkg.AffirmIfTranscriptsMatch(TestFilePath & "/maintenance_tb/ValidatedResults") ;
+    end if ;
+    osvvm.ReportPkg.EndOfTestReports ;
+
     -- Finish the simulation
     std.env.stop;
     wait;                               -- to stop completely

@@ -30,6 +30,12 @@ use bitvis_vip_uart.uart_bfm_pkg.all;
 library bitvis_uart;
 use bitvis_uart.uart_pif_pkg.all;
 
+-- Required by OSVVM
+library osvvm ;
+context OSVVM.OsvvmContext ;
+use std.env.all ;
+-- End of Required by OSVVM
+
 --hdlregression:tb
 -- Test case entity
 entity uart_bfm_tb is
@@ -40,6 +46,9 @@ end entity;
 
 -- Test case architecture
 architecture func of uart_bfm_tb is
+  -- Required by OSVVM
+  constant C_TESTCASE_FILE_PATH : string  := FILE_PATH ;
+  -- End of Required by OSVVM
 
   -- DSP interface and general control signals
   signal clk            : std_logic                    := '0';
@@ -261,7 +270,7 @@ begin
 
     procedure uart_expect_7_bit(
       constant data_exp : in std_logic_vector(6 downto 0)
-    ) is 
+    ) is
     begin
       uart_expect(data_exp, "", tx, terminate_loop, 1, 0 ns, ERROR, C_UART_BFM_CONFIG_1, C_SCOPE);
     end;
@@ -279,10 +288,16 @@ begin
     end;
 
   begin
+    -- OSVVM Start of Test Case
+    SetTestName("uart_bfm_tb") ;
+    TranscriptOpen ;
+    SetTranscriptMirror ;
+    -- End of OSVVM Start of Test Case
+
     -- To avoid that log files from different test cases (run in separate
     -- simulations) overwrite each other.
     set_log_file_name(GC_TESTCASE & "_Log.txt");
-    set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+    --O set_alert_file_name(GC_TESTCASE & "_Alert.txt");
 
     -- Print the configuration to the log
     report_global_ctrl(VOID);
@@ -306,12 +321,12 @@ begin
 
     log(ID_LOG_HDR, "Check register defaults and access (transmit + receive)", C_SCOPE);
     ------------------------------------------------------------
-    log("\nChecking Register defaults");
+    log(NO_ID, LF & "Checking Register defaults");
     sbi_check(C_ADDR_RX_DATA, x"00", ERROR, "RX_DATA default");
     sbi_check(C_ADDR_TX_READY, x"01", ERROR, "TX_READY default");
     sbi_check(C_ADDR_RX_DATA_VALID, x"00", ERROR, "RX_DATA_VALID default");
 
-    log("\nChecking Register UART DUT transmission (BFM uart_expect)");
+    log(NO_ID, LF & "Checking Register UART DUT transmission (BFM uart_expect)");
     sbi_check(C_ADDR_TX_READY, x"01", ERROR, "TX_READY active");
     sbi_write(C_ADDR_TX_DATA, x"55", "TX_DATA");
     uart_expect(x"55");
@@ -323,7 +338,7 @@ begin
     uart_expect(x"00");
     sbi_await_value(C_ADDR_TX_READY, x"01", 10, ERROR, "TX_READY active");
 
-    log("\nChecking Register UART DUT transmission (BFM uart_receive)");
+    log(NO_ID, LF & "Checking Register UART DUT transmission (BFM uart_receive)");
     sbi_check(C_ADDR_TX_READY, x"01", ERROR, "TX_READY active");
     sbi_write(C_ADDR_TX_DATA, x"55", "TX_DATA");
     uart_receive(v_received_data);
@@ -338,14 +353,14 @@ begin
     check_value(v_received_data, x"00", ERROR, "", C_SCOPE, HEX_BIN_IF_INVALID, SKIP_LEADING_0, ID_NEVER, shared_msg_id_panel);
     sbi_await_value(C_ADDR_TX_READY, x"01", 10, ERROR, "TX_READY active");
 
-    log("\nChecking two consecutive UART DUT transmissions (BFM uart_expect)");
+    log(NO_ID, LF & "Checking two consecutive UART DUT transmissions (BFM uart_expect)");
     sbi_write(C_ADDR_TX_DATA, x"55", "TX_DATA");
     sbi_write(C_ADDR_TX_DATA, x"AA", "TX_DATA");
     uart_expect(x"55");
     uart_expect(x"AA");
     sbi_await_value(C_ADDR_TX_READY, x"01", 10, ERROR, "TX_READY active");
 
-    log("\nChecking six consecutive UART DUT transmissions (BFM uart_expect)");
+    log(NO_ID, LF & "Checking six consecutive UART DUT transmissions (BFM uart_expect)");
     sbi_write(C_ADDR_TX_DATA, x"55", "TX_DATA");
     sbi_write(C_ADDR_TX_DATA, x"AA", "TX_DATA");
     uart_expect(x"55");
@@ -360,7 +375,7 @@ begin
     uart_expect(x"EE");
     sbi_await_value(C_ADDR_TX_READY, x"01", 10, ERROR, "TX_READY active");
 
-    log("\nChecking UART DUT reception (BFM uart_transmit)");
+    log(NO_ID, LF & "Checking UART DUT reception (BFM uart_transmit)");
     uart_transmit(x"55");
     sbi_await_value(C_ADDR_RX_DATA_VALID, x"01", 10, ERROR, "RX_DATA_VALID enable");
     sbi_check(C_ADDR_RX_DATA, x"55", ERROR, "RX_DATA pure readback");
@@ -372,7 +387,7 @@ begin
     sbi_check(C_ADDR_RX_DATA, x"00", ERROR, "RX_DATA pure readback");
 
     sbi_await_value(C_ADDR_RX_DATA_VALID, x"00", 10, ERROR, "");
-    log("\nChecking five consecutive UART DUT receptions (BFM uart_transmit)");
+    log(NO_ID, LF & "Checking five consecutive UART DUT receptions (BFM uart_transmit)");
     uart_transmit(x"55");
     uart_transmit(x"AA");
     uart_transmit(x"BB");
@@ -404,12 +419,12 @@ begin
 
     log(ID_LOG_HDR, "Check Reset", C_SCOPE);
     ------------------------------------------------------------
-    log("\nChecking tx output");
+    log(NO_ID, LF & "Checking tx output");
     sbi_write(C_ADDR_TX_DATA, x"FF", "TX_DATA : Set to 0xFF");
     pulse(arst, clk, 1, "Pulse reset");
     check_value(tx, '1', ERROR, "UART TX port must be default '1'", C_SCOPE);
 
-    log("\nChecking Register UART TX_READY");
+    log(NO_ID, LF & "Checking Register UART TX_READY");
     sbi_check(C_ADDR_TX_READY, x"01", ERROR, "TX_READY default");
     sbi_write(C_ADDR_TX_DATA, x"FF", "");
     sbi_write(C_ADDR_TX_DATA, x"AA", "");
@@ -427,7 +442,7 @@ begin
     sbi_write(C_ADDR_NUM_DATA_BITS, x"07", "Writing NUM_DATA_BITS = 7");
     sbi_check(C_ADDR_NUM_DATA_BITS, x"07", ERROR, "Checking NUM_DATA_BITS = 7");
 
-    log("\nChecking Register UART DUT transmission (BFM uart_expect) for 7-bit data");
+    log(NO_ID, LF & "Checking Register UART DUT transmission (BFM uart_expect) for 7-bit data");
     sbi_check(C_ADDR_TX_READY, x"01", ERROR, "TX_READY active");
     sbi_write(C_ADDR_TX_DATA, x"55", "TX_DATA");
     uart_expect_7_bit(7x"55");
@@ -445,7 +460,7 @@ begin
     sbi_write(C_ADDR_NUM_DATA_BITS, x"07", "Writing NUM_DATA_BITS = 7");
     sbi_check(C_ADDR_NUM_DATA_BITS, x"07", ERROR, "Checking NUM_DATA_BITS = 7");
 
-    log("\nChecking UART DUT reception (BFM uart_transmit)");
+    log(NO_ID, LF & "Checking UART DUT reception (BFM uart_transmit)");
     uart_transmit_7_bit(7x"55");
     sbi_await_value(C_ADDR_RX_DATA_VALID, x"01", 10, ERROR, "RX_DATA_VALID enable");
     sbi_check(C_ADDR_RX_DATA, x"55", ERROR, "RX_DATA pure readback");
@@ -459,8 +474,16 @@ begin
     -- Ending the simulation
     -----------------------------------------------------------------------------
     wait for 1000 ns;                   -- to allow some time for completion
-    report_alert_counters(FINAL);       -- Report final counters and print conclusion for simulation (Success/Fail)
+    report_alert_counters(INTERMEDIATE);       -- Report final counters and print conclusion for simulation (Success/Fail)
     log(ID_LOG_HDR, "SIMULATION COMPLETED", C_SCOPE);
+
+    -- OSVVM Test Completion Steps
+    TranscriptClose ;
+    if C_TESTCASE_FILE_PATH'length > 0 then
+      AffirmIfTranscriptsMatch(RemoveEndingSeparator(ChangeSeparator(C_TESTCASE_FILE_PATH)) & "/OsvvmResults") ;
+    end if ;
+    EndOfTestReports ;
+    -- End of Test OSVVM Completion Steps
 
     -- Finish the simulation
     std.env.stop;
