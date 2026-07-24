@@ -4017,11 +4017,16 @@ package body methods_pkg is
   impure function get_alert_stop_limit(
     alert_level : t_alert_level
   ) return natural is
+    variable v_alert_stop_limit : integer ;
   begin
     if alert_level = NO_ALERT then
       return 0;
     else
-      return osvvm.AlertLogPkg.GetAlertStopCount(to_OsvvmAlert(alert_level)) ;
+      v_alert_stop_limit := osvvm.AlertLogPkg.GetAlertStopCount(to_OsvvmAlert(alert_level)) ;
+      if v_alert_stop_limit = integer'right then
+        v_alert_stop_limit := 1 ;
+      end if ;
+      return v_alert_stop_limit ;
     end if;
   end function;
 
@@ -4069,7 +4074,7 @@ package body methods_pkg is
   ) is
     variable v_alert_stop_limit : natural := get_alert_stop_limit(alert_level);
   begin
-    if v_alert_stop_limit = natural'right or v_alert_stop_limit = 0 then
+    if v_alert_stop_limit = 0 then
       v_alert_stop_limit := 1 ;
     end if ;
     set_alert_stop_limit(alert_level, v_alert_stop_limit + number);
