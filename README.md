@@ -2,39 +2,57 @@
 ## Abstract
 UVVM (Universal VHDL Verification Methodology) is a free and Open Source Methodology and Library for making very structured VHDL-based testbenches.
 
-## About this Branch
-This branch allows you to run UVVM using within an OSVVM environment using OSVVM's AlertLogPkg.
+## About this Branch:  UseOsvvmAlertLogInUvvm
+This branch allows you to run UVVM using within an OSVVM environment.
 
 What do you gain by using OSVVM
-* OSVVM test reports
-* OSVVM's singleton data structures
-* OSVVM's simplified scripting which is simulator independent
+  * OSVVM test reports
+  * OSVVM's singleton data structures
+  * OSVVM's simplified scripting which is simulator independent
 
 What is the use Model
-* Run older UVVM test cases in an OSVVM environment to get better reporting* 
-* Run mixed UVVM and OSVVM testbenches
-* Transition from UVVM (which uses deprecated VHDL features) to OSVVM (which is fully VHDl compliant)
+  * Run older UVVM test cases in an OSVVM environment to get better reporting*
+  * Run mixed UVVM and OSVVM VC with either UVVM or OSVVM testbenches
+  * Transition from UVVM (which uses deprecated VHDL features) to OSVVM (which is fully VHDL compliant)
 
-Note that to get OSVVM reporting, small additions need to be added to UVVM testbenches.
+### Changes from branch RunWithOsvvmPro
+This branch incorporates the changes made in the branch RunWithOsvvmPro.  Specifically,
+	 * Added build.pro to script and each component script directory to analyze the libraries
+	 * Added run.pro to script and each component script directory to run simulations
 
-This branch is part of a larger effort that intends to be able to run UVVM and OSVVM together.
+### Changes added in this branch: RunWithOsvvmPro
+This update replaces UVVM's alert and log capability with that of OSVVM.
 
-By providing a way to run pro scripts within a UVVM environment, we are able to compare the testbench output of a pure UVVM environment with the output of the combined environment - just by compiling different branches of UVVM.
+The following files in uvvm_util src were updated.
+   * Adaptations_pkg.vhd
+   * hierarchy_linked_list_pkg.vhd
+   * string_methods_pkg.vhd
+   * methods_pkg.vhd
 
-To do this, the low level OSVVM AlertLog capability is used in place of UVVM reporting (log and alert).   UVVM alerts are replaced with OSVVM alerts and affirmations since they are an essential part of OSVVM's reporting.  UVVM logs are replaced with printing that is consistent with OSVVM alerts.   At the same time, the UVVM style headers are preserved.
+All testbench files have OSVVM additions.
 
-Once you have done that, you can freely mix UVVM (and in particular UVVM VC) with OSVVM.
 
-## Full Documentation
-UVVM consists currently of the following elements:
+### How to use these
+After starting OSVVM scripting at the tcl shell do the following:
+```
+   build <PathToUvvm>/script/build.pro  ;# analyze the uvvm libraries
+   build <PathToUvvm>/script/run.pro     ;# simulate all of the uvvm test cases
+```
 
-* [Utility Library](https://uvvm.github.io/utility_library.html)
-* [VVC (VHDL Verification Component) Framework](https://uvvm.github.io/vvc_framework.html) - Including Utility Library
-* BFMs (Bus Functional Models) to be used with any part of UVVM
-* VVCs to be used with UVVM VVC Framework and may be combined with BFMs (See [Available VVCs and BFMs](https://uvvm.github.io/tool_compatibility.html#uvvm-vvcs-and-bfms))
+## Documentation
+* [OSVVM Documentation](https://osvvm.github.io/)
+* [UVVM Documentation](https://uvvm.github.io)
 
-For information on how to get started, see [Getting Started](https://uvvm.github.io/uvvm_getting_started.html).
+## Copyrights
+Copyright 2016 to 2026 UVVM
+Copyright 2026 SynthWorks Design Inc
 
-For frequently asked questions, see [FAQ](https://uvvm.github.io/faq.html).
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
+You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 and in the provided file LICENSE.
 
-The complete UVVM documentation can be found on https://uvvm.github.io.
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
+an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and limitations under the License.
+
+## Modifications
+July 2026 - Updated README.md to reflect the purpose of this branch
