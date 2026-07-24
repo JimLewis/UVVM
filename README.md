@@ -45,9 +45,8 @@ After starting OSVVM scripting at the tcl shell do the following:
 * [UVVM Documentation](https://uvvm.github.io)
 
 ## Copyrights
-Copyright 2016 to 2026 UVVM
-
-Copyright 2026 SynthWorks Design Inc
+Copyright 2016 to 2026 UVVM  &nbsp;
+Copyright 2026 SynthWorks Design Inc  &nbsp;
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
 You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 and in the provided file LICENSE.
