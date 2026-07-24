@@ -639,16 +639,10 @@ Watchdog D
 %%      
 %% 
 %% ============================================================================================================================================================================
-%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
+%%  *** FINAL SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
-%% 94303.5 ns    DONE   FAILED   uvvm_demo_tb  Total Error(s) = 10  Failures: 0  Errors: 10  Warnings: 0  Passed: 0  Affirmations Checked: 5
-%%    Expected      Failures: -10  Errors: -14  Warnings: -5  Passed: 0
+%% 94303.5 ns    DONE   PASSED   uvvm_demo_tb  Passed: 0  Affirmations Checked: 5
+%%    Expected      Failures: -10  Errors: -24  Warnings: -5  Passed: 0
 %%    VHDL Asserts  Failures: 0  Errors: 10  Warnings: 0  Passed: 0
 %%    Default       Failures: 10  Errors: 14  Warnings: 5  Passed: 0
 %%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
-%% ============================================================================================================================================================================
-%% 
-%% 
-%% 
-%% 94303.5 ns    Log    ID_LOG_HDR          TB seq.             SIMULATION COMPLETED
-%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
