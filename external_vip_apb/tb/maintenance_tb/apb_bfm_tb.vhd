@@ -1,5 +1,6 @@
 --================================================================================================================================
 -- Copyright 2026 UVVM
+-- Copyright 2026 SynthWorks Design Inc
 -- Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
 -- You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 and in the provided LICENSE.TXT.
 --
@@ -9,9 +10,19 @@
 --================================================================================================================================
 -- Note : Any functionality not explicitly described in the documentation is subject to change at any time
 ----------------------------------------------------------------------------------------------------------------------------------
-
 ------------------------------------------------------------------------------------------
 -- Description   : See library quick reference (under 'doc') and README-file(s)
+------------------------------------------------------------------------------------------
+-- Modifications:
+--   July 2026  done by SynthWorks
+--       This file is modified from the UVVM Master branch
+--       Minor modifications were done to add
+--       * OSVVM library and context
+--       * Constant C_TESTCASE_FILE_PATH
+--       * Calls to SetTestName, TranscriptOpen, and SetTranscriptMirror
+--       * Calls to OSVVM TranscriptClose, AffirmIfTranscriptsMatch, and EndOfTestReports
+--       UVVM calls to report_alert_counters were changed to INTERMEDIATE (directly or indirectly)
+--       Generally comments associated with these code modifications reference OSVVM or "--O"
 ------------------------------------------------------------------------------------------
 
 library ieee;
@@ -160,8 +171,8 @@ begin
     -- End of OSVVM Start Test Case Stuff
 
     -- To avoid that log files from different test cases (run in separate simulations) overwrite each other.
-    set_log_file_name(GC_TESTCASE & "_Log.txt");
-    -- set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+    --O set_log_file_name(GC_TESTCASE & "_Log.txt");
+    --O set_alert_file_name(GC_TESTCASE & "_Alert.txt");
 
     --------------------------------------------------------------------------------
     log(ID_LOG_HDR_LARGE, "Start Simulation of APB BFM");
