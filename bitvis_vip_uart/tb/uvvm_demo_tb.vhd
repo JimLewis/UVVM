@@ -578,7 +578,7 @@ begin
     test_unwanted_activity_detection(VOID);
 
     -- OSVVM counts Assert ERROR.  There are 10.
-    increment_expected_alerts(ERROR, 1O);
+    increment_expected_alerts(ERROR, 10);
 
     -----------------------------------------------------------------------------
     -- Ending the simulation
