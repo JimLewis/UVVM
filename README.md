@@ -29,8 +29,9 @@ The following files in uvvm_util src were updated.
    * string_methods_pkg.vhd
    * methods_pkg.vhd
 
-All testbench files have OSVVM additions.
+All testbench/test case files have OSVVM additions.
 
+In general OSVVM changes are commented with "--O"
 
 ### How to use these
 After starting OSVVM scripting at the tcl shell do the following:
