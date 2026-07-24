@@ -182,7 +182,7 @@ begin
     -----------------------------------------------------------------------------
     wait for 1000 ns;                   -- Allow some time for completion
     ethernet_vvc_sb.report_counters(ALL_INSTANCES);
-    await_uvvm_completion(1000 ns, print_alert_counters => REPORT_ALERT_COUNTERS, scope => C_SCOPE);
+    await_uvvm_completion(1000 ns, print_alert_counters => REPORT_ALERT_COUNTERS_FINAL, scope => C_SCOPE);
     log(ID_LOG_HDR, "SIMULATION COMPLETED", C_SCOPE);
     -- Finish the simulation
     std.env.stop;
