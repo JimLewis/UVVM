@@ -4024,7 +4024,7 @@ package body methods_pkg is
     else
       v_alert_stop_limit := osvvm.AlertLogPkg.GetAlertStopCount(to_OsvvmAlert(alert_level)) ;
       if v_alert_stop_limit = integer'right then
-        v_alert_stop_limit := 1 ;
+        v_alert_stop_limit := 0 ;
       end if ;
       return v_alert_stop_limit ;
     end if;
