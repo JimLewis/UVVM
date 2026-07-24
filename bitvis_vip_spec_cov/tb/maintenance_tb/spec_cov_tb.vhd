@@ -64,7 +64,7 @@ begin
 
     if GC_TESTCASE = "test_init_with_no_requirement_file" then
       --
-      -- This test will test initialize_req_cov() without a
+      -- This test will test initialize_req_cov() without a 
       -- requirement input file
       --
       log(ID_LOG_HDR, "Testing initialize_req_cov() with no requirement file.", C_SCOPE);
@@ -312,7 +312,7 @@ begin
 
     ---==========================================================================
     --
-    -- The following tests are intended for verifying the run_spec_cov.py post
+    -- The following tests are intended for verifying the run_spec_cov.py post 
     -- processing script, and will not explicitly test the spec_cov_pkg.
     --
     ---==========================================================================
@@ -330,8 +330,8 @@ begin
             -- Run testcase
             initialize_req_cov("TC_1", GC_MIX_REQ_FILE, "pc_mixed_format_a.csv", GC_MIX_MAP_FILE);
             -- Expecting 1 TB_WARNING for compound requirement tickoff
-            increment_expected_alerts(TB_WARNING, 1);
-            tick_off_req_cov("REQ_1"); -- Compound requirement tickoff. Expect alert.
+            increment_expected_alerts(TB_WARNING, 1);    
+            tick_off_req_cov("REQ_1"); -- Compound requirement tickoff. Expect alert. 
             tick_off_req_cov("REQ_1A");
             tick_off_req_cov("REQ_1B"); -- Wrong TC
             tick_off_req_cov("REQ_2A");
@@ -340,7 +340,7 @@ begin
             tick_off_req_cov("REQ_4A");
             tick_off_req_cov("REQ_4B");
             tick_off_req_cov("REQ_5A", FAIL); -- Fail 5A
-
+            
             -- End testcase
             finalize_req_cov(VOID);
 
@@ -358,7 +358,7 @@ begin
     -- Ending the simulation
     -----------------------------------------------------------------------------
     wait for 1000 ns;                   -- to allow some time for completion
-    report_alert_counters(INTERMEDIATE);       -- Report final counters and print conclusion for simulation (Success/Fail)
+    report_alert_counters(FINAL);       -- Report final counters and print conclusion for simulation (Success/Fail)
     log(ID_LOG_HDR, "SIMULATION COMPLETED", C_SCOPE);
 
     -- Finish the simulation

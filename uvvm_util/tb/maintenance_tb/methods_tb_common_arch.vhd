@@ -1,5 +1,6 @@
 --================================================================================================================================
 -- Copyright 2024 UVVM
+-- Copyright 2026 SynthWorks Design Inc
 -- Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
 -- You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 and in the provided LICENSE.TXT.
 --
@@ -12,7 +13,18 @@
 
 ---------------------------------------------------------------------------------------------
 -- Description : See library quick reference (under 'doc') and README-file(s)
----------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+-- Modifications:
+--   July 2026  done by SynthWorks
+--       This file is modified from the UVVM Master branch
+--       Minor modifications were done to add
+--       * OSVVM library and context
+--       * Constant C_TESTCASE_FILE_PATH
+--       * Calls to SetTestName, TranscriptOpen, and SetTranscriptMirror
+--       * Calls to OSVVM TranscriptClose, AffirmIfTranscriptsMatch, and EndOfTestReports
+--       UVVM calls to report_alert_counters were changed to INTERMEDIATE (directly or indirectly)
+--       Generally comments associated with these code modifications reference OSVVM or "--O"
+------------------------------------------------------------------------------------------
 
 architecture common_arch of methods_tb is
   constant C_RANDOM_MIN_VALUE : integer := 10;
