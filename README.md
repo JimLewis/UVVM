@@ -3,7 +3,7 @@
 This is a branch/derivative of Universal VHDL Verification Methodology (UVVM) that supports the usage of Open Source VHDL Verification Methodology (OSVVM) and UVVM together.
 
 ## About this Branch:  UseOsvvmAlertLogInUvvm
-This branch allows you to run UVVM using within an OSVVM environment.
+This branch allows you to run UVVM within an OSVVM environment.
 
 What do you gain by using OSVVM
   * OSVVM test reports
