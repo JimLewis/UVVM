@@ -1,6 +1,6 @@
-# UVVM
+# UVVM that uses OSVVM's AlertLog Capability
 ## Abstract
-UVVM (Universal VHDL Verification Methodology) is a free and Open Source Methodology and Library for making very structured VHDL-based testbenches.
+This is a branch/derivative of Universal VHDL Verification Methodology (UVVM) that supports the usage of Open Source VHDL Verification Methodology (OSVVM) and UVVM together.
 
 ## About this Branch:  UseOsvvmAlertLogInUvvm
 This branch allows you to run UVVM using within an OSVVM environment.
