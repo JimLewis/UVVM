@@ -1,5 +1,6 @@
 --================================================================================================================================
 -- Copyright 2024 UVVM
+-- Copyright 2026 SynthWorks Design Inc
 -- Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
 -- You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 and in the provided LICENSE.TXT.
 --
@@ -9,9 +10,17 @@
 --================================================================================================================================
 -- Note : Any functionality not explicitly described in the documentation is subject to change at any time
 ----------------------------------------------------------------------------------------------------------------------------------
-
 ------------------------------------------------------------------------------------------
 -- Description   : See library quick reference (under 'doc') and README-file(s)
+------------------------------------------------------------------------------------------
+-- Modifications:
+--   July 2026  done by SynthWorks
+--       This file is modified from the UVVM Master branch
+--       Minor modifications were done to change and add constants.
+--       Changed constants C_LOG_PREFIX and C_LOG_TIME_WIDTH
+--       Added constants C_LOG_MSG_ID_JUSTIFY, C_LOG_SCOPE_JUSTIFY, and C_REAL_NUM_FRACTION_DIGITS
+--       All code modifications are noted with "--O" comments
+--
 ------------------------------------------------------------------------------------------
 
 library ieee;

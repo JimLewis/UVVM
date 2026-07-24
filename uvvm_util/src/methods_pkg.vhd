@@ -1,5 +1,6 @@
 --================================================================================================================================
 -- Copyright 2024 UVVM
+-- Copyright 2026 SynthWorks Design Inc
 -- Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
 -- You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 and in the provided LICENSE.TXT.
 --
@@ -11,6 +12,14 @@
 ----------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------
 -- Description   : See library quick reference (under 'doc') and README-file(s)
+------------------------------------------------------------------------------------------
+-- Modifications:
+--   July 2026  done by SynthWorks
+--       THis file is modified from the UVVM Master branch
+--       UVVM's Alert, log, and check_* capability now call the equivalent in OSVVM
+--       OSVVM supports a single, unified transcript file replacing the separate alert/log files.
+--       Most modifications are marked with "--O"
+--
 ------------------------------------------------------------------------------------------
 
 library ieee;
@@ -50,6 +59,8 @@ package methods_pkg is
     constant scope     : in string := C_SCOPE
   );
 
+--O  OSVVM only uses a single transcript file.
+--O  set_alert_file_name now aliased to set_log_file_name
 --O  procedure set_alert_file_name(
 --O    constant file_name : string := C_ALERT_FILE_NAME
 --O  );
@@ -3362,7 +3373,7 @@ package body methods_pkg is
     end case;
   end procedure;
 
-  --O Entirely restructured to use OSVVM transcript file
+  --O set_log_file_name entirely restructured to use OSVVM transcript file
   --O OSVVM uses a single file for both alerts and logs
   --O OSVVM tracks handles transcript closing
   --O set_alert_file_name is aliased to set_log_file_name
@@ -3402,7 +3413,8 @@ package body methods_pkg is
   --O used to pass information to OSVVM
   type t_alt_id is (NORMAL, PASSED, MANUAL_CHECK) ;
 
-  --O Translated code to OSVVM and sorted complexity so it is understandable.
+  --O Translated log to OSVVM and sorted complexity so it is understandable.
+  --O Modified significantly, but keeps the same output.
   procedure local_log(
     msg_id          : t_msg_id;
     msg             : string;
@@ -3417,7 +3429,7 @@ package body methods_pkg is
     variable buf : line ;
     constant v_resolved_scope : string := work.string_methods_pkg.to_string(scope) ; -- remove nul characters
   begin
-    -- Header part top
+    --O Header part top
     if (msg_id = ID_LOG_HDR) then
       write(buf,
           C_LOG_PREFIX &
@@ -3446,6 +3458,7 @@ package body methods_pkg is
     else
       v_msg_id_str := "PASSED" & (1 to C_LOG_MSG_ID_WIDTH - 6 => ' ');
     end if;
+    --O Print msg
     write(buf,
             C_LOG_PREFIX &
             justify(to_string(now, C_LOG_TIME_BASE), C_LOG_TIME_WIDTH, RIGHT) & "    " &
@@ -3455,7 +3468,7 @@ package body methods_pkg is
             to_string(msg));
     write_line_to_log_destination(buf, log_destination, log_file_name, open_mode);
 
-    -- Header part bottom
+    --O Header part bottom
     if (msg_id = ID_LOG_HDR) then
       write(buf, C_LOG_PREFIX & (1 to C_LOG_INFO_WIDTH => '-') ) ;
       write_line_to_log_destination(buf, log_destination, log_file_name, open_mode);
@@ -3557,18 +3570,18 @@ package body methods_pkg is
         -- Just print the text block
         write_line_to_log_destination(text_block, log_destination, log_file_name, open_mode);
       else
-        -- header, preamble
+        --O header, preamble
         write(buf,
           C_LOG_PREFIX &
           LF & C_LOG_PREFIX &
           LF & C_LOG_PREFIX & (1 to C_LOG_INFO_WIDTH => '*') ) ;
         write_line_to_log_destination(buf, log_destination, log_file_name, open_mode);
-        -- header, message
+        --O header, message
         local_log(msg_id, msg_header, scope, log_destination, log_file_name, open_mode);
-        -- header to text block separator
+        --O header to text block separator
         write(buf, C_LOG_PREFIX & (1 to C_LOG_INFO_WIDTH => '-') ) ;
         write_line_to_log_destination(buf, log_destination, log_file_name, open_mode);
-        -- text block
+        --O text block
         write_line_to_log_destination(text_block, log_destination, log_file_name, open_mode);
         write(buf,
         C_LOG_PREFIX & (1 to C_LOG_INFO_WIDTH => '*') &
@@ -3897,7 +3910,7 @@ package body methods_pkg is
     variable v_line   : line;
     variable stop_limit : integer ;
   begin
---    initialize_util(VOID); -- Only executed the first time called. Ensures that the log and alert files are open.
+--O    initialize_util(VOID); -- Only executed the first time called. Ensures that the log and alert files are open.
     write(v_line,
     LF &
     fill_string('-', (C_LOG_LINE_WIDTH - C_PREFIX'length)) & LF &
