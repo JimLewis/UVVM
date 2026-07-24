@@ -192,8 +192,8 @@
 %% ============================================================================================================================================================================
 %%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
-%% 1014343 ns    DONE   FAILED   scoreboard_test  Total Error(s) = 1  Failures: 0  Errors: 0  Warnings: -1  Passed: 0
-%%    Expected      Failures: 0  Errors: 0  Warnings: -1  Passed: 0
+%% 1014343 ns    DONE   NOCHECKS   scoreboard_test  Passed: 0
+%%    Expected      Failures: 0  Errors: 0  Warnings: 0  Passed: 0
 %%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
 %%    Default       Failures: 0  Errors: 0  Warnings: 0  Passed: 0
 %%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0

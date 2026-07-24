@@ -1044,8 +1044,8 @@
 %% ============================================================================================================================================================================
 %%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
-%% 8906657 ns    DONE   FAILED   VVC-to-VVC  Total Error(s) = 1  Failures: 0  Errors: 0  Warnings: -1  Passed: 0  Affirmations Checked: 41
-%%    Expected      Failures: 0  Errors: -38  Warnings: -9  Passed: 0
+%% 8906657 ns    DONE   PASSED   VVC-to-VVC  Passed: 0  Affirmations Checked: 41
+%%    Expected      Failures: 0  Errors: -38  Warnings: -8  Passed: 0
 %%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
 %%    Default       Failures: 0  Errors: 38  Warnings: 8  Passed: 0
 %%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0

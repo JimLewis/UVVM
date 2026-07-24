@@ -220,8 +220,8 @@
 %% ============================================================================================================================================================================
 %%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
-%% 1042009.999 ns    DONE   FAILED   test_unwanted_activity  Total Error(s) = 1  Failures: 0  Errors: 0  Warnings: -1  Passed: 0
-%%    Expected      Failures: -14  Errors: -14  Warnings: -1  Passed: 0
+%% 1042009.999 ns    DONE   NOCHECKS   test_unwanted_activity  Passed: 0
+%%    Expected      Failures: -14  Errors: -14  Warnings: 0  Passed: 0
 %%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
 %%    Default       Failures: 14  Errors: 14  Warnings: 0  Passed: 0
 %%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0

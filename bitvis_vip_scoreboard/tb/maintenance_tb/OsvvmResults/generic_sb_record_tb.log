@@ -8389,8 +8389,8 @@
 %% ============================================================================================================================================================================
 %%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
-%% 20.001 ns    DONE   FAILED   generic_sb_record_tb  Total Error(s) = 1  Failures: 0  Errors: 0  Warnings: -1  Passed: 3198  Affirmations Checked: 3225
-%%    Expected      Failures: 0  Errors: -32  Warnings: -3  Passed: 0
+%% 20.001 ns    DONE   PASSED   generic_sb_record_tb  Passed: 3198  Affirmations Checked: 3225
+%%    Expected      Failures: 0  Errors: -32  Warnings: -2  Passed: 0
 %%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
 %%    Default       Failures: 0  Errors: 32  Warnings: 2  Passed: 0
 %%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0

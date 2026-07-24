@@ -443,8 +443,8 @@
 %% ============================================================================================================================================================================
 %%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
-%% 2904240.999 ns    DONE   FAILED   spi_master_dut_to_slave_VVC  Total Error(s) = 1  Failures: 0  Errors: 0  Warnings: -1  Passed: 0
-%%    Expected      Failures: 0  Errors: 0  Warnings: -1  Passed: 0
+%% 2904240.999 ns    DONE   NOCHECKS   spi_master_dut_to_slave_VVC  Passed: 0
+%%    Expected      Failures: 0  Errors: 0  Warnings: 0  Passed: 0
 %%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
 %%    Default       Failures: 0  Errors: 0  Warnings: 0  Passed: 0
 %%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0

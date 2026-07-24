@@ -385,8 +385,8 @@
 %% ============================================================================================================================================================================
 %%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
-%% 217416.8 ns    DONE   FAILED   uart_vvc_tb  Total Error(s) = 1  Failures: 0  Errors: 0  Warnings: -1  Passed: 2  Affirmations Checked: 29
-%%    Expected      Failures: -9  Errors: -20  Warnings: -8  Passed: 0
+%% 217416.8 ns    DONE   PASSED   uart_vvc_tb  Passed: 2  Affirmations Checked: 29
+%%    Expected      Failures: -9  Errors: -20  Warnings: -7  Passed: 0
 %%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
 %%    Default       Failures: 9  Errors: 20  Warnings: 7  Passed: 0
 %%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0

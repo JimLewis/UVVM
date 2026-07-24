@@ -19,13 +19,13 @@
 %%      ***  REPORT OF GLOBAL CTRL ***
 %%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 %%                                IGNORE    STOP_LIMIT
-%%                NOTE         :  REGARD    integer'high
-%%                TB_NOTE      :  REGARD    integer'high
-%%                WARNING      :  REGARD    integer'high
-%%                TB_WARNING   :  REGARD    integer'high
-%%                MANUAL_CHECK :  REGARD    integer'high
-%%                ERROR        :  REGARD    integer'high
-%%                TB_ERROR     :  REGARD    integer'high
+%%                NOTE         :  REGARD         0
+%%                TB_NOTE      :  REGARD         0
+%%                WARNING      :  REGARD         0
+%%                TB_WARNING   :  REGARD         0
+%%                MANUAL_CHECK :  REGARD         0
+%%                ERROR        :  REGARD         0
+%%                TB_ERROR     :  REGARD         0
 %%                FAILURE      :  REGARD         1
 %%                TB_FAILURE   :  REGARD         1
 %%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -8005,7 +8005,7 @@ Summary of errors in expected transaction. Failed in:
 %% 184242.5 ns    Alert  ERROR               TB seq.(uvvm)       axistream_transmit(AXISTREAM_VVC,0,    14 words)(bool, true) => Failed. Value was false. Expected true. 'Sanity check: Check that data_array word is N*byte'
 %% 
 %% ============================================================================================================================================================================
-%%  *** FINAL SUMMARY OF ALL ALERTS ***
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
 %% 184403.5 ns    DONE   PASSED   axistream_vvc_slv_array_tb  Passed: 4  Affirmations Checked: 3445
 %%    Expected      Failures: 0  Errors: -8  Warnings: -512  Passed: 0
