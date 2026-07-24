@@ -655,7 +655,7 @@ begin
       check_value(sb_under_test.get_delete_count(VOID), 0, ERROR, "verify delete count", scope);
 
       set_alert_stop_limit(TB_WARNING, 2);
-      increment_expected_alerts(TB_WARNING, 1); -- Becouse of time stamp truncate warning
+--O not an error in OSVVM      increment_expected_alerts(TB_WARNING, 1); -- Becouse of time stamp truncate warning
       log(ID_LOG_HDR, "wait 1 ps", scope);
       wait for 1 ps;
 
