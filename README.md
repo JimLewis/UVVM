@@ -1,39 +1,38 @@
-# UVVM that uses OSVVM's AlertLog Capability
+# What if UVVM and OSVVM could work together?
 ## Abstract
-This is a branch/derivative of Universal VHDL Verification Methodology (UVVM) that supports the usage of Open Source VHDL Verification Methodology (OSVVM) and UVVM together.
+This branch is a derivative of the main branch of Universal VHDL Verification Methodology (UVVM).  It is special in that it supports the usage of Open Source VHDL Verification Methodology (OSVVM) and UVVM together.
 
 ## About this Branch:  UseOsvvmAlertLogInUvvm
-This branch allows you to run UVVM within an OSVVM environment.
+This branch edits UVVM's alert and log capability to use OSVVM's capability.  Doing this allows you to:
+  * Run UVVM test cases in an OSVVM environment to get better reporting (minimal modifications recommended)
+  * Run UVVM VVC and OSVVM VC together in a testbench
+  * Select the best features from OSVVM and UVVM and use them together
+  * Transition from UVVM (which uses deprecated VHDL features) to OSVVM (which is fully VHDL compliant)
 
 What do you gain by using OSVVM
   * OSVVM test reports
   * OSVVM's singleton data structures
   * OSVVM's simplified scripting which is simulator independent
 
-What is the use Model
-  * Run older UVVM test cases in an OSVVM environment to get better reporting*
-  * Run mixed UVVM and OSVVM VC with either UVVM or OSVVM testbenches
-  * Transition from UVVM (which uses deprecated VHDL features) to OSVVM (which is fully VHDL compliant)
-
-### Changes from branch RunWithOsvvmPro
+## Changes from branch RunWithOsvvmPro
 This branch incorporates the changes made in the branch RunWithOsvvmPro.  Specifically,
 	 * Added build.pro to script and each component script directory to analyze the libraries
 	 * Added run.pro to script and each component script directory to run simulations
 
-### Changes added in this branch: RunWithOsvvmPro
+## Changes added in this branch: RunWithOsvvmPro
 This update replaces UVVM's alert and log capability with that of OSVVM.
 
 The following files in uvvm_util src were updated.
-   * Adaptations_pkg.vhd
-   * hierarchy_linked_list_pkg.vhd
-   * string_methods_pkg.vhd
-   * methods_pkg.vhd
+   * Adaptations_pkg.vhd  (very little)
+   * hierarchy_linked_list_pkg.vhd  (very little)
+   * string_methods_pkg.vhd (some)
+   * methods_pkg.vhd (significant)
 
 All testbench/test case files have OSVVM additions.
 
-In general OSVVM changes are commented with "--O"
+In general OSVVM changes are commented with either "--O" or "OSVVM"
 
-### How to use these
+## How to build this library and run its test cases
 After starting OSVVM scripting at the tcl shell do the following:
 ```
    build <PathToUvvm>/script/build.pro  ;# analyze the uvvm libraries
