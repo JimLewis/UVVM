@@ -15,9 +15,9 @@ What do you gain by using OSVVM
   * OSVVM's simplified scripting which is simulator independent
 
 ## Changes from branch RunWithOsvvmPro
-This branch incorporates the changes made in the branch RunWithOsvvmPro.  Specifically,
-	 * Added build.pro to script and each component script directory to analyze the libraries
-	 * Added run.pro to script and each component script directory to run simulations
+This branch incorporates the changes made in the branch RunWithOsvvmPro.  Specifically,    
+  * Added build.pro to script and each component script directory to analyze the libraries
+  * Added run.pro to script and each component script directory to run simulations
 
 ## Changes added in this branch: RunWithOsvvmPro
 This update replaces UVVM's alert and log capability with that of OSVVM.
