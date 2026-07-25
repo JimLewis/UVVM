@@ -1,5 +1,6 @@
 --================================================================================================================================
 -- Copyright 2024 UVVM
+-- Copyright 2026 SynthWorks Design Inc
 -- Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
 -- You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 and in the provided LICENSE.TXT.
 --
@@ -12,7 +13,13 @@
 
 ---------------------------------------------------------------------------------------------
 -- Description : See library quick reference (under 'doc') and README-file(s)
----------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+-- Modifications:
+--   July 2026  done by SynthWorks
+--       This file is modified from the UVVM Master branch
+--       Separated testbench library from verification component library
+--       Added altera_mf library
+------------------------------------------------------------------------------------------
 
 library ieee;
 use ieee.std_logic_1164.all;
