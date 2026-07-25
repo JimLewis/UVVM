@@ -1,4 +1,11 @@
--------------------
+------------------------------------------------------------------------------------------
+-- Copyright 2026 SynthWorks Design Inc
+-- Modifications:
+--   July 2026  done by SynthWorks
+--       This file is modified from the UVVM Master branch
+--       Separated testbench library from verification component library
+------------------------------------------------------------------------------------------
+
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
