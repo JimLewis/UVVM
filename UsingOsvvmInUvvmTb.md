@@ -11,19 +11,19 @@ After starting OSVVM scripting at the tcl shell do the following:
 This capaility is available in either the UseOsvvmAlertLogInUvvm or the RunWithOsvvmPro branch.
 The remaining capabilities require the UseOsvvmAlertLogInUvvm branch.
 
-## OSVVM Reports indicate NAMEMISMATCH
+## OSVVM Reports indicate NAME_MISMATCH
 One of the advantages of using OSVVM is the build summary reports.
-With the UseOsvvmAlertLogInUvvm branch, OSVVM tries to report the state of your test, however, with a basic UVVM test case, the test case will fail due to NAMEMISMATCH.
+With the UseOsvvmAlertLogInUvvm branch, OSVVM tries to report the state of your test, however, with a basic UVVM test case, the test case will fail due to NAME_MISMATCH.
 
 NAME_MISMATCH indicates the VHDL test case name does not match the script test case name.
 
-## Fixing NAMEMISMATCH by Hacking the Scripts
+## Fixing NAME_MISMATCH by Hacking the Scripts
 Set the following TCL variable to disable the NAME_MISMATCH error.
 ```
 set $::osvvm::FailOnVhdlNameNotMatchTestName "false"
 ```
 
-## Fixing NAMEMISMATCH by Adding OSVVM Code (recommended)
+## Fixing NAME_MISMATCH by Adding OSVVM Code (recommended)
 Before the entity declaration add a library and context reference for OSVVM. This is shown below
 ```
 library osvvm ;
@@ -53,7 +53,7 @@ TestName Test1
 
 This can be done in the call to RunTest by doing.
 ```
-RunTest Test1_name.vhd [TestName Test1]
+RunTest Test.vhd [TestName Test1] [generic GC_TESTCASE Test1]
 ```
 
 ## Using the OSVVM Context
@@ -90,6 +90,43 @@ log(TbID, "A Message") ;
 
 Currently this is the only known ambiguity between OSVVM and UVVM.
 
+## Ending a Test Case the OSVVM Way
+Currently the test case is ending with a UVVM style finish, such as one of the following.
+```
+    -- One possible UVVM test completion
+    await_uvvm_completion(1000 ns,
+        print_alert_counters => REPORT_ALERT_COUNTERS_FINAL,
+        scope                => C_SCOPE);
+    -- Another possible UVVM test completion
+    report_alert_counters(FINAL);
+    std.env.stop ;
+```
+
+OSVVM ends a test case using TranscriptClose and EndOfTestReports, such as the following.
+```
+    TranscriptClose ;
+    EndOfTestReports ;
+    std.env.stop ;
+```
+
+When report_alert_counters is called with FINAL or await_uvvm_completion is called with REPORT_ALERT_COUNTERS_FINAL TranscriptClose and EndOfTestReports are called.  If using both UVVM and OSVVM in a test case, then change the FINAL to INTERMEDIATE as shown below.
+
+Currently the test case is ending with a UVVM style finish, such as one of the following.
+```
+    -- UVVM Completion
+    -- One possible UVVM test completion
+    await_uvvm_completion(1000 ns,
+        print_alert_counters => REPORT_ALERT_COUNTERS,
+        scope                => C_SCOPE);
+    -- Another possible UVVM test completion
+    report_alert_counters(INTERMEDIATE);
+
+    -- OSVVM Completion
+    TranscriptClose ;
+    EndOfTestReports ;
+    std.env.stop ;
+```
+
 ## Transcript files the OSVVM Way
 OSVVM only uses one transcript file for both alerts and logs.  If you opened two using UVVM, then the last one opened becomes the OSVVM TranscriptFile (and the first one is ignored).   Instead, comment both of these out:
 Comment out the uvvm calls to std_log_file_name and set_alert_file_name - that are used at the beginning of a UVVM test case.  OSVVM only supports a single transcript file, where UVVM splits them into separate files.
@@ -100,10 +137,10 @@ Comment out the uvvm calls to std_log_file_name and set_alert_file_name - that a
 
 Open a transcript file with osvvm using TranscriptOpen.
 ```
-TranscriptOpen("TranscriptFileName.log") ;
+TranscriptOpen("Test1.log") ;
 ```
 
-There is a short-cut.  If you call SetTestName first (recommended), then TranscriptOpen can be called without a parameter, and the transcript file will be named <TestName>.log.
+There is a short-cut.  If you call SetTestName first (recommended/required), then TranscriptOpen can be called without a parameter, and the transcript file will be named <TestName>.log.
 ```
     -- Start of Test Case
     osvvm.AlertLogPkg.SetTestName("Test1") ;
@@ -116,7 +153,7 @@ When the transcript file is opened, OSVVM logs to just the transcript file.   Th
 For debugging, it is useful to also output to the console.  To do this, set transcript mirroring by doing the following after opening the transript.
 ```
     -- Start of Test Case
-    osvvm.AlertLogPkg.SetTestName("Test1") ;
+    SetTestName("Test1") ;
     TranscriptOpen ;
     SetTranscriptMirror ;
 ```
@@ -149,115 +186,96 @@ build <PathToUvvm>/script/run.pro [BuildName uvvm_regression_all]
 Some test cases have a considerable amount of text output that needs to be checked.
 OSVVM checks this by capturing the transcript in a single file and then checks that file against a previously checked.
 
-
-################################################################################
-################################################################################
-################################################################################
-### RESUME EDITING HERE
-################################################################################
-################################################################################
-################################################################################
+OSVVM's AffirmIfFilesMatch compares two files.  If the ValidatedResults directory is in the same directory as the current simulation directory, then the following check is appropriate.
 ```
--- Required by OSVVM
+AffirmIfFilesMatch("Test1.log", "ValidatedResults/Test1.log") ;
+```
+
+If the transcript name is of the form TestName.log, then it is sufficient to use AffirmIfTranscriptsMatch.
+```
+AffirmIfFilesMatch("ValidatedResults") ;
+```
+
+## Locating the ValidatedResults directory
+When there are multiple simulations which may have results files that are the same name, it is not practical to keep the ValidatedResults directory in the current simulation directory.  Instead, a generic can be used to locate them.
+
+```
 library osvvm ;
 context OSVVM.OsvvmContext ;
 use std.env.all ;
--- End of Required by OSVVM
 
-  -- Required by OSVVM
-  constant C_TESTCASE_FILE_PATH : string  := FILE_PATH ;
-  -- End of Required by OSVVM
+entity Test is
+  generic(
+    GC_TESTCASE         : string  := "Test1";
+    GC_FILE_PATH        : string  := FILE_PATH
+  );
+end Test;
+```
 
-    -- OSVVM Start of Test Case
-    SetTestName("avalon_st_bfm_tb") ;
---    SetTestName(GC_TESTCASE ) ;
-    TranscriptOpen ;
-    SetTranscriptMirror ;
-    -- End of OSVVM Start of Test Case
+With OSVVM to avoid setting the generic, OSVVM recommends VHDL-2019 FILE_PATH.  However if the simulator does not support VHDL-2019 FILE_PATH, OSVVM swaps in an alternative FILE_PATH that returns "" and in this case the generic must be mapped.
 
+The following code
+* only does checking if GC_FILE_PATH is not "" (VHDL-2008 without generic mapped),
+* converts "\" in the path to "/" using ChangeSeparator (due to FILE_PATH issues), and
+* removes ending "/" using RemoveEndingseparator (due to FILE_PATH inconsistencies).
+
+```
+if GC_FILE_PATH'length > 0 then
+  AffirmIfTranscriptsMatch(RemoveEndingSeparator(ChangeSeparator(GC_FILE_PATH)) & "/ValidatedResults") ;
+end if ;
+```
+
+## Putting All of the Pieces Together
+The code below puts all of the OSVVM test additions together.   Note in particular to use the OSVVM transript checking you will need to use the OSVVM style test finish.
+
+```
+library osvvm ;
+context OSVVM.OsvvmContext ;
+use std.env.all ;
+
+entity Test1 is
+  generic(
+    GC_TESTCASE         : string  := "Test1";
+    GC_FILE_PATH        : string  := FILE_PATH
+  );
+end Test;
+Architecture T of Test1 is
+begin
+
+  TestProc : process
+  begin
+    -- Start of Test Case
+    SetTestName("Test1") ;      -- Required.  Sets TestName
+    TranscriptOpen ;            -- Required.  Opens Test1.log
+    SetTranscriptMirror ;       -- Optional.  Use for debugging
+
+    -- Remove UVVM log and alert files creation - OSVVM only uses one.
     --O set_log_file_name(GC_TESTCASE & "_Log.txt");
     --O set_alert_file_name(GC_TESTCASE & "_Alert.txt");
 
-    -- OSVVM Test Completion Steps
-    TranscriptClose ;
-    if C_TESTCASE_FILE_PATH'length > 0 then
-      AffirmIfTranscriptsMatch(RemoveEndingSeparator(ChangeSeparator(C_TESTCASE_FILE_PATH)) & "/OsvvmResults") ;
-    end if ;
-    EndOfTestReports ;
-    -- End of Test OSVVM Completion Steps
-```
 
-At the end of the test case, just before the end of the test case (before the call to std.env.stop).
-```
-    TranscriptClose ;
-    EndOfTestReports ;
-```
+    -- Test Case Actions Go Here
 
-If you UVVM test case ended with either of the following,
-```
+
+    -- Test Case Finialization
+    -- UVVM Completion
+    -- One possible UVVM test completion
     await_uvvm_completion(1000 ns,
-        print_alert_counters => REPORT_ALERT_COUNTERS_FINAL,
+        print_alert_counters => REPORT_ALERT_COUNTERS,
         scope                => C_SCOPE);
+    -- Another possible UVVM test completion
+    report_alert_counters(INTERMEDIATE);
 
-One of the advantages of using OSVVM is the build summary reports.
-With the UseOsvvmAlertLogInUvvm branch, OSVVM tries to report the state of your test, however, with a basic UVVM test case, the test case will fail due to NAMEMISMATCH.
-
-NAME_MISMATCH indicates the VHDL test case name does not match the script test case name.
-
-Without changing the VHDL code, you can set the following TCL variable to disable this check.
+    -- OSVVM Completion
+    TranscriptClose ;
+    EndOfTestReports ;
+    std.env.stop ;
+  end process TestProc ;
+end architecture T ;
 ```
-set $::osvvm::FailOnVhdlNameNotMatchTestName "false"
-```
 
-## Getting OSVVM Reports - Hacking the Scripts
-
-At this point if your test did any checking - using one of the UVVM check_* subprograms, the test case will indicate PASSED if they all passed.   If any failed the test case will FAIL.
-
-If your test case did not do any checking, then it will fail with NOCHECKS - which is appropriate since your test case did not do any checking.
-
-If you are expecting an exact text output from your test case, with OSVVM you can add this form of self-checking to your test cases.
-
-## Getting OSVVM Reports
-
-OSVVM generates
-This branch edits UVVM's alert and log capability to use OSVVM's capability.  Doing this allows you to:
-  * Run UVVM test cases in an OSVVM environment to get better reporting (minimal modifications recommended)
-  * Run UVVM VVC and OSVVM VC together in a testbench
-  * Select the best features from OSVVM and UVVM and use them together
-  * Transition from UVVM (which uses deprecated VHDL features) to OSVVM (which is fully VHDL compliant)
-
-What do you gain by using OSVVM
-  * OSVVM test reports
-  * OSVVM's singleton data structures
-  * OSVVM's simplified scripting which is simulator independent
-
-## Changes from branch RunWithOsvvmPro
-This branch incorporates the changes made in the branch RunWithOsvvmPro.  Specifically,
-  * Added build.pro to script and each component script directory to analyze the libraries
-  * Added run.pro to script and each component script directory to run simulations
-
-## Changes added in this branch: RunWithOsvvmPro
-This update replaces UVVM's alert and log capability with that of OSVVM.
-
-The following files in uvvm_util src were updated.
-   * Adaptations_pkg.vhd  (very little)
-   * hierarchy_linked_list_pkg.vhd  (very little)
-   * string_methods_pkg.vhd (some)
-   * methods_pkg.vhd (significant)
-
-All testbench/test case files have OSVVM additions.
-
-In general OSVVM changes are commented with either "--O" or "OSVVM"
-
-## How to build this library and run its test cases
-
-## Documentation
-* [OSVVM Documentation](https://osvvm.github.io/)
-* [UVVM Documentation](https://uvvm.github.io)
 
 ## Copyrights
-Copyright 2016 to 2026 UVVM
-
 Copyright 2026 SynthWorks Design Inc
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
@@ -267,5 +285,3 @@ Unless required by applicable law or agreed to in writing, software distributed 
 an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and limitations under the License.
 
-## Modifications
-July 2026 - Updated README.md to reflect the purpose of this branch
