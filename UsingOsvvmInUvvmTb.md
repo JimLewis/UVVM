@@ -147,7 +147,7 @@ There is a short-cut.  If you call SetTestName first (recommended/required), the
     TranscriptOpen ;  -- opens "Test1.log"
 ```
 
-## Console and Log
+## Sending Messages to both the Console and a Log File
 When the transcript file is opened, OSVVM logs to just the transcript file.   This is a good setting for regressions.
 
 For debugging, it is useful to also output to the console.  To do this, set transcript mirroring by doing the following after opening the transript.

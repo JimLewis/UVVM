@@ -41,6 +41,9 @@ After starting OSVVM scripting at the tcl shell do the following:
    build <PathToUvvm>/script/run.pro     ;# simulate all of the uvvm test cases
 ```
 
+## How to Add OSVVM to a UVVM Testbench
+Details on adding OSVVM capabilities to a UVVM testbench are in [UsingOsvvmInUvvmTb.md](UsingOsvvmInUvvmTb.md).
+
 ## Documentation
 * [OSVVM Documentation](https://osvvm.github.io/)
 * [UVVM Documentation](https://uvvm.github.io)
