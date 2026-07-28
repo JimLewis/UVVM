@@ -68,7 +68,8 @@ The problem with using selecte names is if the contents of a package are refacto
 The problem with using both the context of OSVVM and UVVM is ambiguity.
 
 ## Unfortunately there is Ambiguity
-if you include both the OSVVM and UVVM context declarations there is a minor amount of ambiguity with calls to log("A Message").
+> [!WARNING]
+> If you include both the OSVVM and UVVM context declarations there is a minor amount of ambiguity with calls to log("A Message").
 
 If you are using UVVM logs, add the msg_id NO_ID to the call:
 ```
