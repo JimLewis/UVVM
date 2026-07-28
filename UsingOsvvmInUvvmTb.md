@@ -77,13 +77,14 @@ If you are using UVVM logs, add the msg_id NO_ID to the call:
 log(NO_ID, "A Message") ;  -- Updated call
 ```
 
-For OSVVM, you can follow the UVVM pattern in use  you are using OSVVM logs, use the default log of OSVVM
+For OSVVM, you can use the same pattern with OSVVM logs and use the default ID:
 ```
 -- log("A Message") ;                    -- Ambiguous call
 log(ALERTLOG_DEFAULT_ID, "A Message") ;  -- Updated call
 ```
 
-Instead of using the default ID, with OSVVM it is recommended that you create your own ID using NewID.  This allows you to give each different context in your test case its own ID.   OSVVM VC do this for you.
+With OSVVM instead of using the default ID, it is recommended that you create your own ID using NewID.
+This allows you to give each different context in your test case its own ID.   OSVVM VC do this for you.
 ```
 TbID := NewID("TbID") ;
 log(TbID, "A Message") ;
