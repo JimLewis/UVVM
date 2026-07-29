@@ -3425,9 +3425,13 @@ package body methods_pkg is
     open_mode       : file_open_kind    := append_mode;
     alt_id          : t_alt_id          := NORMAL
   ) is
-    variable v_msg_id_str : string(1 to C_LOG_MSG_ID_WIDTH) := (others => ' ') ;
     variable buf : line ;
+    variable v_msg_id_str : string(1 to C_LOG_MSG_ID_WIDTH) := (others => ' ') ;
     constant v_resolved_scope : string := work.string_methods_pkg.to_string(scope) ; -- remove nul characters
+    variable v_first_premessage_width : integer ;
+    variable v_idx : integer := 1 ;
+    constant C_MSG_LENGTH : integer := msg'length ;
+    alias a_norm_msg : string(1 to C_MSG_LENGTH) is msg;
   begin
     --O Header part top
     if (msg_id = ID_LOG_HDR) then
@@ -3459,13 +3463,63 @@ package body methods_pkg is
       v_msg_id_str := "PASSED" & (1 to C_LOG_MSG_ID_WIDTH - 6 => ' ');
     end if;
     --O Print msg
-    write(buf,
-            C_LOG_PREFIX &
-            justify(to_string(now, C_LOG_TIME_BASE), C_LOG_TIME_WIDTH, RIGHT) & "    " &
-            osvvm.OsvvmSettingsPkg.ALERT_LOG_LOG_NAME & "  " &
-            v_msg_id_str(1 to C_LOG_MSG_ID_JUSTIFY) & "  " &
-            justify(v_resolved_scope, C_LOG_SCOPE_JUSTIFY, LEFT) & "  " &
-            to_string(msg));
+    if C_ALERT_LOG_VERBATIM then
+      --O minimal processing of message.  Only has necessary to_string to remove nul characters from msg
+      write(buf,
+              C_LOG_PREFIX &
+              justify(to_string(now, C_LOG_TIME_BASE), C_LOG_TIME_WIDTH, RIGHT) & "    " &
+              osvvm.OsvvmSettingsPkg.ALERT_LOG_LOG_NAME & "  " &
+              v_msg_id_str(1 to C_LOG_MSG_ID_JUSTIFY) & "  " &
+              justify(v_resolved_scope, C_LOG_SCOPE_JUSTIFY, LEFT) & "  " &
+              to_string(msg));
+    else
+      --O Full UVVM pre-precessing of Message, with complexity sorted to reduce overhead
+      -- Handle \r as potential initial open line
+      v_idx := 1 ;
+      if C_USE_BACKSLASH_R_AS_LF then
+        while v_idx < C_MSG_LENGTH loop
+          -- only replacing initial \r with LF at beginning of alert/log
+          exit when a_norm_msg(v_idx to v_idx+1) /= "\r" ;
+          if not C_SINGLE_LINE_LOG then
+            if v_idx = 1 then
+              write(buf, C_LOG_PREFIX) ;      --O first line
+            else
+              write(buf, LF & C_LOG_PREFIX) ; --O additional lines
+            end if ;
+          end if;
+          v_idx := v_idx + 2;
+        end loop ;
+      end if ;
+      --O print the initial blank lines
+      if v_idx /= 1 and not C_SINGLE_LINE_LOG then
+          write_line_to_log_destination(buf, log_destination, log_file_name, open_mode);
+      end if;
+
+      --O Create premessage portion of output
+      write(buf,
+              justify(to_string(now, C_LOG_TIME_BASE), C_LOG_TIME_WIDTH, RIGHT) & "    " &
+              osvvm.OsvvmSettingsPkg.ALERT_LOG_LOG_NAME & "  " &
+              v_msg_id_str(1 to C_LOG_MSG_ID_JUSTIFY) & "  " &
+              justify(v_resolved_scope, C_LOG_SCOPE_JUSTIFY, LEFT) & "  ") ;
+
+      v_first_premessage_width := buf'length;
+
+      -- Remove the initial \r characters (by slicing), replace \n with LF, and remove nul characters (to_string)
+      -- and then add the message to the output
+      write(buf, replace_backslash_n_with_lf(to_string(a_norm_msg(v_idx to C_MSG_LENGTH))));
+
+      if not C_SINGLE_LINE_LOG then
+        -- Wrap the line into multiple lines as necessary
+        wrap_lines(buf, 1, v_first_premessage_width + 1, C_LOG_LINE_WIDTH - C_LOG_PREFIX_WIDTH);
+      else
+        -- Remove line feed characters
+        replace(buf, LF, ' ');
+      end if;
+
+      -- Add prefix to all lines
+      prefix_lines(buf);
+    end if ;
+    -- Write the log to the log destination
     write_line_to_log_destination(buf, log_destination, log_file_name, open_mode);
 
     --O Header part bottom
