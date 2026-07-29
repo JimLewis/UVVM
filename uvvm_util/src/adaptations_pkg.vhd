@@ -57,22 +57,25 @@ package adaptations_pkg is
   --UVVM: [<ID>]  <time>  <Scope>        Msg
   --PPPPPPPPIIIIII TTTTTTTT  SSSSSSSSSSSSSS MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 --O  constant C_LOG_PREFIX        : string := "UVVM: "; -- Note: ': ' is recommended as final characters
-  constant C_LOG_PREFIX               : string   := osvvm.OsvvmSettingsPkg.OSVVM_PRINT_PREFIX ;  --O
+  constant C_LOG_PREFIX               : string   := osvvm.OsvvmSettingsPkg.OSVVM_PRINT_PREFIX ;  --O use OSVVM settings
   constant C_LOG_PREFIX_WIDTH         : natural  := C_LOG_PREFIX'length;
   constant C_LOG_MSG_ID_WIDTH         : natural  := 24;      -- Maximum msg_id length
-  constant C_LOG_MSG_ID_JUSTIFY       : integer  := minimum(18, C_LOG_MSG_ID_WIDTH) ;  --O
+  constant C_LOG_MSG_ID_JUSTIFY       : integer  := minimum(18, C_LOG_MSG_ID_WIDTH) ;  --O added to shorten IDs (from 24)
 --O  constant C_LOG_TIME_WIDTH           : natural  := 16;      -- 3 chars used for unit eg. " ns"
-  constant C_LOG_TIME_WIDTH           : natural  := osvvm.OsvvmSettingsPkg.ALERT_LOG_TIME_JUSTIFY_AMOUNT ; --O -- 3 chars used for unit eg. " ns"
-  constant C_LOG_TIME_BASE            : time     := osvvm.OsvvmSettingsPkg.OSVVM_DEFAULT_TIME_UNITS;       --O -- Unit in which time is shown in log (ns | ps)
+  constant C_LOG_TIME_WIDTH           : natural  := osvvm.OsvvmSettingsPkg.ALERT_LOG_TIME_JUSTIFY_AMOUNT ; --O use OSVVM settings
+--O  constant C_LOG_TIME_BASE     : time    := ns;      -- Unit in which time is shown in log (ns | ps)
+  constant C_LOG_TIME_BASE            : time     := osvvm.OsvvmSettingsPkg.OSVVM_DEFAULT_TIME_UNITS;       --O use OSVVM settings
   constant C_LOG_TIME_DECIMALS        : natural  := 1;       -- Decimals to show for given C_LOG_TIME_BASE
   constant C_LOG_SCOPE_WIDTH          : natural  := 30;      -- Maximum scope length
-  constant C_LOG_SCOPE_JUSTIFY        : integer  := minimum(18, C_LOG_SCOPE_WIDTH) ;  --O
+  constant C_LOG_SCOPE_JUSTIFY        : integer  := minimum(18, C_LOG_SCOPE_WIDTH) ;  --O added to shorten Scope
   constant C_LOG_LINE_WIDTH           : natural  := 175;     -- Maximum log line length
   constant C_LOG_INFO_WIDTH           : natural  := C_LOG_LINE_WIDTH - C_LOG_PREFIX_WIDTH;
   constant C_REAL_NUM_FRACTION_DIGITS : natural  := osvvm.OsvvmSettingsPkg.ALERT_LOG_DIGITS_FOR_REAL_FRACTION ; --O  is 4
 
-  constant C_USE_BACKSLASH_N_AS_LF : boolean := true; -- If true interprets '\n' as Line feed
-  constant C_USE_BACKSLASH_R_AS_LF : boolean := true; -- If true, inserts an empty line if '\r' is the first character of the string. All others '\r' will be printed as is.
+  constant C_ALERT_LOG_VERBATIM       : boolean := false; -- do not do handling of \r, \n, or Ignore LF (SINGLE_LINE)
+
+  constant C_USE_BACKSLASH_N_AS_LF    : boolean := true; -- If true interprets '\n' as Line feed
+  constant C_USE_BACKSLASH_R_AS_LF    : boolean := true; -- If true, inserts an empty line if '\r' is the first character of the string. All others '\r' will be printed as is.
 
   constant C_SINGLE_LINE_ALERT : boolean := false; -- If true prints alerts on a single line.
   constant C_SINGLE_LINE_LOG   : boolean := false; -- If true prints log messages on a single line.
