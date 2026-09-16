@@ -227,6 +227,10 @@ if GC_FILE_PATH'length > 0 then
 end if ;
 ```
 
+## Current Support
+> [!NOTE]
+> Currently only single line Alerts are supported
+
 ## Putting All of the Pieces Together
 The code below puts all of the OSVVM test additions together.   Note in particular to use the OSVVM transript checking you will need to use the OSVVM style test finish.
 
