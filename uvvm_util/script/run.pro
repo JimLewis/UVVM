@@ -31,9 +31,11 @@ simulate methods_tb [TestName log_header_formatting]   [generic GC_TESTCASE log_
 # alert_arch
 analyze methods_tb_alert_arch.vhd
 simulate methods_tb [TestName alert_summary_report]         [generic GC_TESTCASE alert_summary_report]
+ExpectedStatus MANUALCHECKS 0 0 0
 simulate methods_tb [TestName ignored_alerts]               [generic GC_TESTCASE ignored_alerts]
 simulate methods_tb [TestName hierarchical_alerts_report]   [generic GC_TESTCASE hierarchical_alerts_report]
 simulate methods_tb [TestName hierarchical_alerts]          [generic GC_TESTCASE hierarchical_alerts]
+ExpectedStatus MANUALCHECKS 0 0 0
 
 # check_arch
 analyze  methods_tb_check_arch.vhd

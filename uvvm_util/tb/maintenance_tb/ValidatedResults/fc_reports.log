@@ -1,18 +1,18 @@
 %% 
 %% 
 %% ============================================================================================================================================================================
-%%      0 ns    Log    ID_LOG_HDR_LARGE    TB seq.             Start Simulation of Functional Coverage package - fc_reports
+%%           0.0 ns  Log    ID_LOG_HDR_LARGE    TB seq.             Start Simulation of Functional Coverage package - fc_reports
 %% ============================================================================================================================================================================
-%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_FUNC_COV_BINS).
-%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_FUNC_COV_BINS_INFO).
-%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_FUNC_COV_RAND).
-%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_FUNC_COV_SAMPLE).
-%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_FUNC_COV_CONFIG).
-%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_FUNC_COV_SAMPLE).
-%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_FUNC_COV_RAND).
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_FUNC_COV_BINS).
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_FUNC_COV_BINS_INFO).
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_FUNC_COV_RAND).
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_FUNC_COV_SAMPLE).
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_FUNC_COV_CONFIG).
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_FUNC_COV_SAMPLE).
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_FUNC_COV_RAND).
 %% 
 %% 
-%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing empty reports
+%%           0.0 ns  Log    ID_LOG_HDR          TB seq.             Testing empty reports
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 %%      
 %%      =======================================================================================================================================================================
@@ -55,27 +55,30 @@
 %%      
 %% 
 %% 
-%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing coverpoint reports
+%%           0.0 ns  Log    ID_LOG_HDR          TB seq.             Testing coverpoint reports
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-%%      0 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_1] add_bins(bin_range(0, 125), min_hits:8, "mem_addr_low")
-%%      0 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_1] Adding bins: (0 to 125), min_hits:8, rand_weight:8, "mem_addr_low"
-%%      0 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_1] add_bins(bin((126, 127, 128)), "mem_addr_mid")
-%%      0 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_1] Adding bins: (126, 127, 128), min_hits:1, rand_weight:1, "mem_addr_mid"
-%%      0 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_1] add_bins(bin_range(129, 255), min_hits:4, "mem_addr_high")
-%%      0 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_1] Adding bins: (129 to 255), min_hits:4, rand_weight:4, "mem_addr_high"
-%%      0 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_1] add_bins(bin_transition((0, 1, 2, 3)), min_hits:2, rand_weight:10, "transition_1")
-%%      0 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_1] Adding bins: (0->1->2->3), min_hits:2, rand_weight:10, "transition_1"
-%%      0 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_1] add_bins(bin_transition((0, 15, 127, 248, 249, 250, 251, 252, 253, 254)), min_hits:2, rand_weight:10, "transition_2")
-%%      0 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_1] Adding bins: (0->15->127->248->249->250->251->252->253->254), min_hits:2, rand_weight:10, "transition_2"
-%%      0 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_1] add_bins(ignore_bin(100), min_hits:10, rand_weight:10, "ignore_addr")
-%%      0 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_1] Adding bins: IGN(100), min_hits:10, rand_weight:10, "ignore_addr"
-%%      0 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_1] add_bins(ignore_bin_transition((1000, 15, 127, 248, 249, 250, 251, 252, 253, 254)), "ignore_transition")
-%%      0 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_1] Adding bins: IGN(1000->15->127->248->249->250->251->252->253->254), min_hits:1, rand_weight:1, "ignore_transition"
-%%      0 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_1] add_bins(illegal_bin_range(256,511), min_hits:10, rand_weight:10, "illegal_addr")
-%%      0 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_1] Adding bins: ILL(256 to 511), min_hits:10, rand_weight:10, "illegal_addr"
-%%      0 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_1] add_bins(illegal_bin_transition((2000, 15, 127, 248, 249, 250, 251, 252, 253, 254)), min_hits:2, "illegal_transition")
-%%      0 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_1] Adding bins: ILL(2000->15->127->248->249->250->251->252->253->254), min_hits:2, rand_weight:2, "illegal_transition"
-%%      0 ns    Alert  ERROR               TB seq.             [Covpt_1] sample_coverage(500)=> Sampled illegal_bin_range(256 to 511)
+%%           0.0 ns  Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_1] add_bins(bin_range(0, 125), min_hits:8, "mem_addr_low")
+%%           0.0 ns  Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_1] Adding bins: (0 to 125), min_hits:8, rand_weight:8, "mem_addr_low"
+%%           0.0 ns  Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_1] add_bins(bin((126, 127, 128)), "mem_addr_mid")
+%%           0.0 ns  Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_1] Adding bins: (126, 127, 128), min_hits:1, rand_weight:1, "mem_addr_mid"
+%%           0.0 ns  Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_1] add_bins(bin_range(129, 255), min_hits:4, "mem_addr_high")
+%%           0.0 ns  Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_1] Adding bins: (129 to 255), min_hits:4, rand_weight:4, "mem_addr_high"
+%%           0.0 ns  Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_1] add_bins(bin_transition((0, 1, 2, 3)), min_hits:2, rand_weight:10, "transition_1")
+%%           0.0 ns  Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_1] Adding bins: (0->1->2->3), min_hits:2, rand_weight:10, "transition_1"
+%%           0.0 ns  Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_1] add_bins(bin_transition((0, 15, 127, 248, 249, 250, 251, 252, 253, 254)), min_hits:2,
+%%:                                                                 rand_weight:10, "transition_2")
+%%           0.0 ns  Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_1] Adding bins: (0->15->127->248->249->250->251->252->253->254), min_hits:2, rand_weight:10, "transition_2"
+%%           0.0 ns  Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_1] add_bins(ignore_bin(100), min_hits:10, rand_weight:10, "ignore_addr")
+%%           0.0 ns  Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_1] Adding bins: IGN(100), min_hits:10, rand_weight:10, "ignore_addr"
+%%           0.0 ns  Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_1] add_bins(ignore_bin_transition((1000, 15, 127, 248, 249, 250, 251, 252, 253, 254)),
+%%:                                                                 "ignore_transition")
+%%           0.0 ns  Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_1] Adding bins: IGN(1000->15->127->248->249->250->251->252->253->254), min_hits:1, rand_weight:1, "ignore_transition"
+%%           0.0 ns  Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_1] add_bins(illegal_bin_range(256,511), min_hits:10, rand_weight:10, "illegal_addr")
+%%           0.0 ns  Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_1] Adding bins: ILL(256 to 511), min_hits:10, rand_weight:10, "illegal_addr"
+%%           0.0 ns  Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_1] add_bins(illegal_bin_transition((2000, 15, 127, 248, 249, 250, 251, 252, 253, 254)), min_hits:2,
+%%:                                                                 "illegal_transition")
+%%           0.0 ns  Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_1] Adding bins: ILL(2000->15->127->248->249->250->251->252->253->254), min_hits:2, rand_weight:2, "illegal_transition"
+%%           0.0 ns  Alert  ERROR               TB seq.             [Covpt_1] sample_coverage(500)=> Sampled illegal_bin_range(256 to 511)
 %%      
 %%      =======================================================================================================================================================================
 %%      0 ns *** COVERAGE SUMMARY REPORT (VERBOSE): TB seq. ***                                                                                                                
@@ -209,7 +212,7 @@
 %%      =======================================================================================================================================================================
 %%      
 %%      
-%%      0 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             [Covpt_1] set_bins_coverage_goal(50)
+%%           0.0 ns  Log    ID_FUNC_COV_CONFIG  TB seq.             [Covpt_1] set_bins_coverage_goal(50)
 %%      
 %%      =======================================================================================================================================================================
 %%      0 ns *** COVERAGE SUMMARY REPORT (VERBOSE): TB seq. ***                                                                                                                
@@ -295,16 +298,16 @@
 %%      
 %% 
 %% 
-%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing cross reports
+%%           0.0 ns  Log    ID_LOG_HDR          TB seq.             Testing cross reports
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-%%      0 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_2] add_cross(bin(10), bin_range(0, 15), "")
-%%      0 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_2] Adding cross: (10) x (0 to 15), min_hits:1, rand_weight:1, ""
-%%      0 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_2] add_cross(bin(20), bin_range(16, 31), "")
-%%      0 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_2] Adding cross: (20) x (16 to 31), min_hits:1, rand_weight:1, ""
-%%      0 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_2] add_cross(bin(30), bin_range(32, 63), "")
-%%      0 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_2] Adding cross: (30) x (32 to 63), min_hits:1, rand_weight:1, ""
-%%      0 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_2] add_cross(bin((10, 20, 30)), illegal_bin_range(64,127), "illegal_bin")
-%%      0 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_2] Adding cross: (10, 20, 30) x ILL(64 to 127), min_hits:1, rand_weight:1, "illegal_bin"
+%%           0.0 ns  Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_2] add_cross(bin(10), bin_range(0, 15), "")
+%%           0.0 ns  Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_2] Adding cross: (10) x (0 to 15), min_hits:1, rand_weight:1, ""
+%%           0.0 ns  Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_2] add_cross(bin(20), bin_range(16, 31), "")
+%%           0.0 ns  Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_2] Adding cross: (20) x (16 to 31), min_hits:1, rand_weight:1, ""
+%%           0.0 ns  Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_2] add_cross(bin(30), bin_range(32, 63), "")
+%%           0.0 ns  Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_2] Adding cross: (30) x (32 to 63), min_hits:1, rand_weight:1, ""
+%%           0.0 ns  Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_2] add_cross(bin((10, 20, 30)), illegal_bin_range(64,127), "illegal_bin")
+%%           0.0 ns  Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_2] Adding cross: (10, 20, 30) x ILL(64 to 127), min_hits:1, rand_weight:1, "illegal_bin"
 %%      
 %%      =======================================================================================================================================================================
 %%      0 ns *** COVERAGE SUMMARY REPORT (VERBOSE): TB seq. ***                                                                                                                
@@ -321,8 +324,8 @@
 %%      =======================================================================================================================================================================
 %%      
 %%      
-%%      0 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_3] add_cross(bin(10),bin(20),bin(30), bin_range(0, 7),bin_range(8, 15), bin(1000), "")
-%%      0 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_3] Adding cross: (10),(20),(30) x (0 to 7),(8 to 15) x (1000), min_hits:1, rand_weight:1, ""
+%%           0.0 ns  Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_3] add_cross(bin(10),bin(20),bin(30), bin_range(0, 7),bin_range(8, 15), bin(1000), "")
+%%           0.0 ns  Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_3] Adding cross: (10),(20),(30) x (0 to 7),(8 to 15) x (1000), min_hits:1, rand_weight:1, ""
 %%      
 %%      =======================================================================================================================================================================
 %%      0 ns *** COVERAGE SUMMARY REPORT (VERBOSE): TB seq. ***                                                                                                                
@@ -341,12 +344,12 @@
 %%      =======================================================================================================================================================================
 %%      
 %%      
-%%      0 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_4] add_bins(bin_vector(LEN:2, num_bins:0), "")
-%%      0 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_4] Adding bins: (0),(1),(2),(3), min_hits:1, rand_weight:1, ""
-%%      0 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_5] add_bins(bin_range(0, 127), "")
-%%      0 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_5] Adding bins: (0 to 127), min_hits:1, rand_weight:1, ""
-%%      0 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_6] add_cross(Covpt_4, Covpt_5, "")
-%%      0 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_6] Adding cross: (0),(1),(2),(3) x (0 to 127), min_hits:1, rand_weight:1, ""
+%%           0.0 ns  Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_4] add_bins(bin_vector(LEN:2, num_bins:0), "")
+%%           0.0 ns  Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_4] Adding bins: (0),(1),(2),(3), min_hits:1, rand_weight:1, ""
+%%           0.0 ns  Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_5] add_bins(bin_range(0, 127), "")
+%%           0.0 ns  Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_5] Adding bins: (0 to 127), min_hits:1, rand_weight:1, ""
+%%           0.0 ns  Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_6] add_cross(Covpt_4, Covpt_5, "")
+%%           0.0 ns  Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_6] Adding cross: (0),(1),(2),(3) x (0 to 127), min_hits:1, rand_weight:1, ""
 %%      
 %%      =======================================================================================================================================================================
 %%      0 ns *** COVERAGE SUMMARY REPORT (VERBOSE): TB seq. ***                                                                                                                
@@ -363,10 +366,10 @@
 %%      =======================================================================================================================================================================
 %%      
 %%      
-%%      0 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_7] add_bins(bin(1000),bin(2000),bin(3000), "")
-%%      0 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_7] Adding bins: (1000),(2000),(3000), min_hits:1, rand_weight:1, ""
-%%      0 ns    Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_8] add_cross(Covpt_6, Covpt_7, "")
-%%      0 ns    Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_8] Adding cross: (0),(1),(2),(3) x (0 to 127) x (1000),(2000),(3000), min_hits:1, rand_weight:1, ""
+%%           0.0 ns  Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_7] add_bins(bin(1000),bin(2000),bin(3000), "")
+%%           0.0 ns  Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_7] Adding bins: (1000),(2000),(3000), min_hits:1, rand_weight:1, ""
+%%           0.0 ns  Log    ID_FUNC_COV_BINS    TB seq.             [Covpt_8] add_cross(Covpt_6, Covpt_7, "")
+%%           0.0 ns  Log    ID_FUNC_COV_BINS_I  TB seq.             [Covpt_8] Adding cross: (0),(1),(2),(3) x (0 to 127) x (1000),(2000),(3000), min_hits:1, rand_weight:1, ""
 %%      
 %%      =======================================================================================================================================================================
 %%      0 ns *** COVERAGE SUMMARY REPORT (VERBOSE): TB seq. ***                                                                                                                
@@ -427,7 +430,7 @@
 %%      
 %% 
 %% 
-%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing overall reports
+%%           0.0 ns  Log    ID_LOG_HDR          TB seq.             Testing overall reports
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 %%      
 %%      =======================================================================================================================================================================
@@ -475,7 +478,7 @@
 %%      =======================================================================================================================================================================
 %%      
 %%      
-%%      0 ns    Log    ID_FUNC_COV_CONFIG  TB seq.             fc_set_covpts_coverage_goal(25)
+%%           0.0 ns  Log    ID_FUNC_COV_CONFIG  TB seq.             fc_set_covpts_coverage_goal(25)
 %%      
 %%      =======================================================================================================================================================================
 %%      0 ns *** OVERALL COVERAGE REPORT (VERBOSE): TB seq. ***                                                                                                                
@@ -526,7 +529,7 @@
 %%      
 %% 
 %% 
-%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing reports written to a file
+%%           0.0 ns  Log    ID_LOG_HDR          TB seq.             Testing reports written to a file
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 %%      
 %%      =======================================================================================================================================================================
@@ -675,7 +678,7 @@
 %% ============================================================================================================================================================================
 %%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
-%%   1000 ns    DONE   NOCHECKS   fc_reports  Passed: 0
+%%        1000.0 ns  DONE   NOCHECKS  fc_reports  Passed: 0
 %%    Expected      Failures: 0  Errors: -1  Warnings: 0  Passed: 0
 %%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
 %%    Default       Failures: 0  Errors: 1  Warnings: 0  Passed: 0
@@ -684,5 +687,5 @@
 %% 
 %% 
 %% 
-%%   1000 ns    Log    ID_LOG_HDR          TB seq.             SIMULATION COMPLETED
+%%        1000.0 ns  Log    ID_LOG_HDR          TB seq.             SIMULATION COMPLETED
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

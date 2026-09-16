@@ -1,21 +1,21 @@
 %% 
 %% 
 %% ============================================================================================================================================================================
-%%      0 ns    Log    ID_LOG_HDR_LARGE    TB seq.             Start Simulation of Randomization package - rand_report
+%%           0.0 ns  Log    ID_LOG_HDR_LARGE    TB seq.             Start Simulation of Randomization package - rand_report
 %% ============================================================================================================================================================================
-%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_RAND_GEN).
-%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_RAND_CONF).
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_RAND_GEN).
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_RAND_CONF).
 %% 
 %% 
-%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing config report with integer constraints
+%%           0.0 ns  Log    ID_LOG_HDR          TB seq.             Testing config report with integer constraints
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range([10:20])
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range([30:40])
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range([50:60])
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val(100)
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             excl_val(15, 35, 55)
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             set_cyclic_mode(CYCLIC)
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[10:20],[30:40],[50:60], ADD:(100), EXCL:(15, 35, 55), CYCLIC)=> 100
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             add_range([10:20])
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             add_range([30:40])
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             add_range([50:60])
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             add_val(100)
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             excl_val(15, 35, 55)
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             set_cyclic_mode(CYCLIC)
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(RANGE:[10:20],[30:40],[50:60], ADD:(100), EXCL:(15, 35, 55), CYCLIC)=> 100
 %%      
 %%      =======================================================================================================================================================================
 %%      ***  REPORT OF RANDOM GENERATOR CONFIGURATION ***
@@ -41,7 +41,7 @@
 %%      =======================================================================================================================================================================
 %%      
 %%      
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(200,8)
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             add_val_weight(200,8)
 %%      
 %%      =======================================================================================================================================================================
 %%      ***  REPORT OF RANDOM GENERATOR CONFIGURATION ***
@@ -66,13 +66,13 @@
 %%      =======================================================================================================================================================================
 %%      
 %%      
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_config()
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range([10:20])
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([30:40],5)
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight([50:60],10,INDIVIDUAL_WEIGHT)
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val(100)
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight(200,8)
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([10:20],1,COMBINED),([30:40],5,COMBINED),([50:60],10,INDIVIDUAL),(100,1),(200,8))=> 53
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             clear_config()
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             add_range([10:20])
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             add_range_weight([30:40],5)
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             add_range_weight([50:60],10,INDIVIDUAL_WEIGHT)
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             add_val(100)
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             add_val_weight(200,8)
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(([10:20],1,COMBINED),([30:40],5,COMBINED),([50:60],10,INDIVIDUAL),(100,1),(200,8))=> 53
 %%      
 %%      =======================================================================================================================================================================
 %%      ***  REPORT OF RANDOM GENERATOR CONFIGURATION ***
@@ -96,16 +96,16 @@
 %%      =======================================================================================================================================================================
 %%      
 %%      
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_config()
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             clear_config()
 %% 
 %% 
-%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing config report with real constraints
+%%           0.0 ns  Log    ID_LOG_HDR          TB seq.             Testing config report with real constraints
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_real([10.00:20.00])
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_real([30.00:40.00])
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_real(0.00, 0.10, 0.20, 0.30)
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             excl_val_real(15.00, 35.00)
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[10.00:20.00],[30.00:40.00], ADD:(0.00, 0.10, 0.20, 0.30), EXCL:(15.00, 35.00))=> 0
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             add_range_real([10.00:20.00])
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             add_range_real([30.00:40.00])
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             add_val_real(0.00, 0.10, 0.20, 0.30)
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             excl_val_real(15.00, 35.00)
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(RANGE:[10.00:20.00],[30.00:40.00], ADD:(0.00, 0.10, 0.20, 0.30), EXCL:(15.00, 35.00))=> 0
 %%      
 %%      =======================================================================================================================================================================
 %%      ***  REPORT OF RANDOM GENERATOR CONFIGURATION ***
@@ -131,7 +131,7 @@
 %%      =======================================================================================================================================================================
 %%      
 %%      
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight_real(1.00,8)
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             add_val_weight_real(1.00,8)
 %%      
 %%      =======================================================================================================================================================================
 %%      ***  REPORT OF RANDOM GENERATOR CONFIGURATION ***
@@ -156,13 +156,13 @@
 %%      =======================================================================================================================================================================
 %%      
 %%      
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_config()
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_real([10.00:20.00])
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight_real([30.00:40.00],5)
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight_real([50.00:60.00],10)
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_real(0.00)
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight_real(1.00,8)
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([10.00:20.00],1,COMBINED),([30.00:40.00],5,COMBINED),([50.00:60.00],10,COMBINED),(0.00,1),(1.00,8))=> 12.1005
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             clear_config()
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             add_range_real([10.00:20.00])
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             add_range_weight_real([30.00:40.00],5)
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             add_range_weight_real([50.00:60.00],10)
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             add_val_real(0.00)
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             add_val_weight_real(1.00,8)
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(([10.00:20.00],1,COMBINED),([30.00:40.00],5,COMBINED),([50.00:60.00],10,COMBINED),(0.00,1),(1.00,8))=> 12.1005
 %%      
 %%      =======================================================================================================================================================================
 %%      ***  REPORT OF RANDOM GENERATOR CONFIGURATION ***
@@ -186,16 +186,16 @@
 %%      =======================================================================================================================================================================
 %%      
 %%      
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_config()
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             clear_config()
 %% 
 %% 
-%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing config report with time constraints
+%%           0.0 ns  Log    ID_LOG_HDR          TB seq.             Testing config report with time constraints
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_time([10 ps:20 ps])
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_time([30 ps:40 ps])
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_time(100 ps)
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             excl_val_time(15 ps, 35 ps, 55 ps)
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[10 ps:20 ps],[30 ps:40 ps], ADD:(100 ps), EXCL:(15 ps, 35 ps, 55 ps))=> 37 ps
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             add_range_time([10 ps:20 ps])
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             add_range_time([30 ps:40 ps])
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             add_val_time(100 ps)
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             excl_val_time(15 ps, 35 ps, 55 ps)
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(RANGE:[10 ps:20 ps],[30 ps:40 ps], ADD:(100 ps), EXCL:(15 ps, 35 ps, 55 ps))=> 37 ps
 %%      
 %%      =======================================================================================================================================================================
 %%      ***  REPORT OF RANDOM GENERATOR CONFIGURATION ***
@@ -221,7 +221,7 @@
 %%      =======================================================================================================================================================================
 %%      
 %%      
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight_time(200 ps,8)
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             add_val_weight_time(200 ps,8)
 %%      
 %%      =======================================================================================================================================================================
 %%      ***  REPORT OF RANDOM GENERATOR CONFIGURATION ***
@@ -246,13 +246,13 @@
 %%      =======================================================================================================================================================================
 %%      
 %%      
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_config()
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_time([10 ps:20 ps])
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight_time([30 ps:40 ps],5)
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_weight_time([50 ps:60 ps],10)
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_time(100 ps)
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_val_weight_time(200 ps,8)
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(([10 ps:20 ps],1,COMBINED),([30 ps:40 ps],5,COMBINED),([50 ps:60 ps],10,COMBINED),(100 ps,1),(200 ps,8))=> 57 ps
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             clear_config()
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             add_range_time([10 ps:20 ps])
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             add_range_weight_time([30 ps:40 ps],5)
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             add_range_weight_time([50 ps:60 ps],10)
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             add_val_time(100 ps)
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             add_val_weight_time(200 ps,8)
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(([10 ps:20 ps],1,COMBINED),([30 ps:40 ps],5,COMBINED),([50 ps:60 ps],10,COMBINED),(100 ps,1),(200 ps,8))=> 57 ps
 %%      
 %%      =======================================================================================================================================================================
 %%      ***  REPORT OF RANDOM GENERATOR CONFIGURATION ***
@@ -276,15 +276,15 @@
 %%      =======================================================================================================================================================================
 %%      
 %%      
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_config()
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             clear_config()
 %% 
 %% 
-%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing config report with unsigned constraints
+%%           0.0 ns  Log    ID_LOG_HDR          TB seq.             Testing config report with unsigned constraints
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_unsigned([x"0":x"2"])
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_unsigned([x"6":x"8"])
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_unsigned([x"AAA":x"FFF"])
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:16, RANGE:[x"0000":x"0002"], [x"0006":x"0008"], [x"0AAA":x"0FFF"])=> x"0FF4"
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             add_range_unsigned([x"0":x"2"])
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             add_range_unsigned([x"6":x"8"])
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             add_range_unsigned([x"AAA":x"FFF"])
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:16, RANGE:[x"0000":x"0002"], [x"0006":x"0008"], [x"0AAA":x"0FFF"])=> x"0FF4"
 %%      
 %%      =======================================================================================================================================================================
 %%      ***  REPORT OF RANDOM GENERATOR CONFIGURATION ***
@@ -308,16 +308,16 @@
 %%      =======================================================================================================================================================================
 %%      
 %%      
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_config()
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             clear_config()
 %% 
 %% 
-%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing config report with signed constraints
+%%           0.0 ns  Log    ID_LOG_HDR          TB seq.             Testing config report with signed constraints
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_signed([x"C":x"E"])
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_signed([x"F":x"1"])
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_signed([x"4":x"7"])
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             add_range_signed([x"7AA":x"7FF"])
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:16, RANGE:[x"FFFC":x"FFFE"], [x"FFFF":x"0001"], [x"0004":x"0007"], [x"07AA":x"07FF"])=> x"07F2"
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             add_range_signed([x"C":x"E"])
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             add_range_signed([x"F":x"1"])
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             add_range_signed([x"4":x"7"])
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             add_range_signed([x"7AA":x"7FF"])
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:16, RANGE:[x"FFFC":x"FFFE"], [x"FFFF":x"0001"], [x"0004":x"0007"], [x"07AA":x"07FF"])=> x"07F2"
 %%      
 %%      =======================================================================================================================================================================
 %%      ***  REPORT OF RANDOM GENERATOR CONFIGURATION ***
@@ -342,145 +342,153 @@
 %%      =======================================================================================================================================================================
 %%      
 %%      
-%%      0 ns    Log    ID_RAND_CONF        TB seq.             clear_config()
+%%           0.0 ns  Log    ID_RAND_CONF        TB seq.             clear_config()
 %% 
 %% 
-%%      0 ns    Log    ID_LOG_HDR          TB seq.             Testing log messages
+%%           0.0 ns  Log    ID_LOG_HDR          TB seq.             Testing log messages
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_RAND_CONF).
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_RAND_CONF).
 %% 
 %% 
-%%      0 ns    Log    ID_LOG_HDR          TB seq.             Integer
+%%           0.0 ns  Log    ID_LOG_HDR          TB seq.             Integer
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(UNCONSTRAINED)=> 1955992493
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2:2])=> 0
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2:2],[8:9])=> -1
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(ONLY:(-5, -3, 4))=> -3
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(EXCL:(-1, 0, 1))=> 1712720065
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-1:1], ADD:(10))=> 10
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-1:1],[8:9], ADD:(10, -5, -3, 4))=> 1
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2:2], EXCL:(-1, 0, 1))=> -2
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2:2],[8:10], EXCL:(-1, 0, 1, 10))=> 9
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(ONLY:(-6, -4, -2, 0, 2, 4, 6), EXCL:(-2, 0, 2))=> 6
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2:2], ADD:(-5, -3, 4), EXCL:(-5, -1, 1))=> -2
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2:2],[8:10], ADD:(-5, -3, 4, 20, 30, 40), EXCL:(-5, -1, 1, 9, 30, 40))=> 2
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(UNCONSTRAINED, CYCLIC)=> 471970153
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2:2], CYCLIC)=> -2
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2:2],[8:9], CYCLIC)=> 9
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(ONLY:(-5, -3, 4), CYCLIC)=> -3
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(EXCL:(-1, 0, 1), CYCLIC)=> -1356323145
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-1:1], ADD:(10), CYCLIC)=> -1
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-1:1],[8:9], ADD:(10, -5, -3, 4), CYCLIC)=> -3
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2:2], EXCL:(-1, 0, 1), CYCLIC)=> 2
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2:2],[8:10], EXCL:(-1, 0, 1, 10), CYCLIC)=> -2
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(ONLY:(-6, -4, -2, 0, 2, 4, 6), EXCL:(-2, 0, 2), CYCLIC)=> -6
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2:2], ADD:(-5, -3, 4), EXCL:(-5, -1, 1), CYCLIC)=> -2
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2:2],[8:10], ADD:(-5, -3, 4, 20, 30, 40), EXCL:(-5, -1, 1, 9, 30, 40), CYCLIC)=> 20
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(UNCONSTRAINED)=> 1955992493
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2:2])=> 0
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2:2],[8:9])=> -1
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(ONLY:(-5, -3, 4))=> -3
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(EXCL:(-1, 0, 1))=> 1712720065
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-1:1], ADD:(10))=> 10
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-1:1],[8:9], ADD:(10, -5, -3, 4))=> 1
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2:2], EXCL:(-1, 0, 1))=> -2
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2:2],[8:10], EXCL:(-1, 0, 1, 10))=> 9
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(ONLY:(-6, -4, -2, 0, 2, 4, 6), EXCL:(-2, 0, 2))=> 6
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2:2], ADD:(-5, -3, 4), EXCL:(-5, -1, 1))=> -2
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2:2],[8:10], ADD:(-5, -3, 4, 20, 30, 40), EXCL:(-5, -1, 1, 9, 30, 40))=> 2
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(UNCONSTRAINED, CYCLIC)=> 471970153
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2:2], CYCLIC)=> -2
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2:2],[8:9], CYCLIC)=> 9
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(ONLY:(-5, -3, 4), CYCLIC)=> -3
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(EXCL:(-1, 0, 1), CYCLIC)=> -1356323145
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-1:1], ADD:(10), CYCLIC)=> -1
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-1:1],[8:9], ADD:(10, -5, -3, 4), CYCLIC)=> -3
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2:2], EXCL:(-1, 0, 1), CYCLIC)=> 2
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2:2],[8:10], EXCL:(-1, 0, 1, 10), CYCLIC)=> -2
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(ONLY:(-6, -4, -2, 0, 2, 4, 6), EXCL:(-2, 0, 2), CYCLIC)=> -6
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2:2], ADD:(-5, -3, 4), EXCL:(-5, -1, 1), CYCLIC)=> -2
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2:2],[8:10], ADD:(-5, -3, 4, 20, 30, 40), EXCL:(-5, -1, 1, 9, 30, 40), CYCLIC)=> 20
 %% 
 %% 
-%%      0 ns    Log    ID_LOG_HDR          TB seq.             Real
+%%           0.0 ns  Log    ID_LOG_HDR          TB seq.             Real
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2.00:2.00])=> -0.116242
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2.00:2.00],[8.00:9.00])=> -0.833945
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(ONLY:(-5.00, -3.00, 4.00))=> -3
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-1.00:1.00], ADD:(10.00))=> 0.630771
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-1.00:1.00],[8.00:9.00], ADD:(10.00, -5.00, -3.00, 4.00))=> -0.418939
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2.00:2.00], EXCL:(-1.00, 0.00, 1.00))=> -0.701489
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2.00:2.00],[8.00:10.00], EXCL:(-1.00, 0.00, 1.00, 10.00))=> -0.497782
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(ONLY:(-6.00, -4.00, -2.00, 0.00, 2.00, 4.00, 6.00), EXCL:(-2.00, 0.00, 2.00))=> -6
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2.00:2.00], ADD:(-5.00, -3.00, 4.00), EXCL:(-5.00, -1.00, 1.00))=> -3
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2.00:2.00],[8.00:10.00], ADD:(-5.00, -3.00, 4.00, 20.00, 30.00, 40.00), EXCL:(-5.00, -1.00, 1.00, 9.00, 30.00, 40.00))=> -1.249
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2.00:2.00])=> -0.116242
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2.00:2.00],[8.00:9.00])=> -0.833945
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(ONLY:(-5.00, -3.00, 4.00))=> -3
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-1.00:1.00], ADD:(10.00))=> 0.630771
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-1.00:1.00],[8.00:9.00], ADD:(10.00, -5.00, -3.00, 4.00))=> -0.418939
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2.00:2.00], EXCL:(-1.00, 0.00, 1.00))=> -0.701489
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2.00:2.00],[8.00:10.00], EXCL:(-1.00, 0.00, 1.00, 10.00))=> -0.497782
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(ONLY:(-6.00, -4.00, -2.00, 0.00, 2.00, 4.00, 6.00), EXCL:(-2.00, 0.00, 2.00))=> -6
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2.00:2.00], ADD:(-5.00, -3.00, 4.00), EXCL:(-5.00, -1.00, 1.00))=> -3
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2.00:2.00],[8.00:10.00], ADD:(-5.00, -3.00, 4.00, 20.00, 30.00, 40.00), EXCL:(-5.00, -1.00,
+%%:                                                                 1.00, 9.00, 30.00, 40.00))=> -1.249
 %% 
 %% 
-%%      0 ns    Log    ID_LOG_HDR          TB seq.             Time
+%%           0.0 ns  Log    ID_LOG_HDR          TB seq.             Time
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2 ps:2 ps])=> 0 ns
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2 ps:2 ps],[8 ps:9 ps])=> 8 ps
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(ONLY:(-5 ps, 3 ps, 4 ps))=> 4 ps
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-1 ps:1 ps], ADD:(10 ps))=> 1 ps
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-1 ps:1 ps],[8 ps:9 ps], ADD:(10 ps, -5 ps, 3 ps, 4 ps))=> 9 ps
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2 ps:2 ps], EXCL:(-1 ps, 0 ns, 1 ps))=> 2 ps
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2 ps:2 ps],[8 ps:10 ps], EXCL:(-1 ps, 0 ns, 1 ps, 10 ps))=> 8 ps
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(ONLY:(-6 ps, -4 ps, -2 ps, 0 ns, 2 ps, 4 ps, 6 ps), EXCL:(-2 ps, 0 ns, 2 ps))=> 6 ps
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2 ps:2 ps], ADD:(-5 ps, 3 ps, 4 ps), EXCL:(-5 ps, -1 ps, 1 ps))=> -2 ps
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2 ps:2 ps],[8 ps:10 ps], ADD:(-5 ps, 3 ps, 4 ps, 20 ps, 30 ps, 40 ps), EXCL:(-5 ps, -1 ps, 1 ps, 9 ps, 30 ps, 40 ps))=> 4 ps
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2 ps:2 ps])=> 0 ns
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2 ps:2 ps],[8 ps:9 ps])=> 8 ps
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(ONLY:(-5 ps, 3 ps, 4 ps))=> 4 ps
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-1 ps:1 ps], ADD:(10 ps))=> 1 ps
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-1 ps:1 ps],[8 ps:9 ps], ADD:(10 ps, -5 ps, 3 ps, 4 ps))=> 9 ps
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2 ps:2 ps], EXCL:(-1 ps, 0 ns, 1 ps))=> 2 ps
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2 ps:2 ps],[8 ps:10 ps], EXCL:(-1 ps, 0 ns, 1 ps, 10 ps))=> 8 ps
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(ONLY:(-6 ps, -4 ps, -2 ps, 0 ns, 2 ps, 4 ps, 6 ps), EXCL:(-2 ps, 0 ns, 2 ps))=> 6 ps
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2 ps:2 ps], ADD:(-5 ps, 3 ps, 4 ps), EXCL:(-5 ps, -1 ps, 1 ps))=> -2 ps
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(RANGE:[-2 ps:2 ps],[8 ps:10 ps], ADD:(-5 ps, 3 ps, 4 ps, 20 ps, 30 ps, 40 ps), EXCL:(-5 ps, -1 ps, 1
+%%:                                                                 ps, 9 ps, 30 ps, 40 ps))=> 4 ps
 %% 
 %% 
-%%      0 ns    Log    ID_LOG_HDR          TB seq.             Unsigned
+%%           0.0 ns  Log    ID_LOG_HDR          TB seq.             Unsigned
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4)=> x"0"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[0:2])=> x"0"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[0:2],[8:9])=> x"8"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, ONLY:(5, 3, 4))=> x"3"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, EXCL:(11, 0, 1))=> x"3"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[0:1], ADD:(10))=> x"A"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[0:1],[8:9], ADD:(10, 5, 3, 4))=> x"4"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[0:2], EXCL:(0, 1))=> x"2"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[0:2],[8:10], EXCL:(0, 1, 10))=> x"9"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, ONLY:(0, 2, 4, 6), EXCL:(0, 2))=> x"6"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[0:2], ADD:(5, 3, 4), EXCL:(5, 1))=> x"2"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[0:2],[8:10], ADD:(5, 3, 4, 7, 8, 9), EXCL:(5, 1, 9, 8, 9))=> x"A"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, CYCLIC)=> x"F"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[0:2], CYCLIC)=> x"0"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[0:2],[8:9], CYCLIC)=> x"0"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, ONLY:(5, 3, 4), CYCLIC)=> x"5"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, EXCL:(11, 0, 1), CYCLIC)=> x"C"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[0:1], ADD:(10), CYCLIC)=> x"1"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[0:1],[8:9], ADD:(10, 5, 3, 4), CYCLIC)=> x"5"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[0:2], EXCL:(0, 1), CYCLIC)=> x"2"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[0:2],[8:10], EXCL:(0, 1, 10), CYCLIC)=> x"8"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, ONLY:(0, 2, 4, 6), EXCL:(0, 2), CYCLIC)=> x"6"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[0:2], ADD:(5, 3, 4), EXCL:(5, 1), CYCLIC)=> x"4"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[0:2],[8:10], ADD:(5, 3, 4, 7, 8, 9), EXCL:(5, 1, 9, 8, 9), CYCLIC)=> x"2"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4)=> x"0"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[0:2])=> x"0"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[0:2],[8:9])=> x"8"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, ONLY:(5, 3, 4))=> x"3"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, EXCL:(11, 0, 1))=> x"3"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[0:1], ADD:(10))=> x"A"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[0:1],[8:9], ADD:(10, 5, 3, 4))=> x"4"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[0:2], EXCL:(0, 1))=> x"2"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[0:2],[8:10], EXCL:(0, 1, 10))=> x"9"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, ONLY:(0, 2, 4, 6), EXCL:(0, 2))=> x"6"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[0:2], ADD:(5, 3, 4), EXCL:(5, 1))=> x"2"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[0:2],[8:10], ADD:(5, 3, 4, 7, 8, 9), EXCL:(5, 1, 9, 8, 9))=> x"A"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, CYCLIC)=> x"F"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[0:2], CYCLIC)=> x"0"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[0:2],[8:9], CYCLIC)=> x"0"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, ONLY:(5, 3, 4), CYCLIC)=> x"5"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, EXCL:(11, 0, 1), CYCLIC)=> x"C"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[0:1], ADD:(10), CYCLIC)=> x"1"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[0:1],[8:9], ADD:(10, 5, 3, 4), CYCLIC)=> x"5"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[0:2], EXCL:(0, 1), CYCLIC)=> x"2"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[0:2],[8:10], EXCL:(0, 1, 10), CYCLIC)=> x"8"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, ONLY:(0, 2, 4, 6), EXCL:(0, 2), CYCLIC)=> x"6"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[0:2], ADD:(5, 3, 4), EXCL:(5, 1), CYCLIC)=> x"4"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[0:2],[8:10], ADD:(5, 3, 4, 7, 8, 9), EXCL:(5, 1, 9, 8, 9), CYCLIC)=> x"2"
 %% 
 %% 
-%%      0 ns    Log    ID_LOG_HDR          TB seq.             Unsigned constraints
+%%           0.0 ns  Log    ID_LOG_HDR          TB seq.             Unsigned constraints
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[x"0":x"3"])=> x"0"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[x"0":x"3"], [x"7":x"B"])=> x"9"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:128, RANGE:[x"00000000000000000000000000000000":x"00000000000000000000000000000003"])=> x"00000000000000000000000000000003"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:128, RANGE:[x"00000000000000000000000000000000":x"00000000000000000000000000000003"], [x"00000000000000000000000000000007":x"0000000000000000000000000000000B"])=> x"0000000000000000000000000000000B"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[x"0":x"3"])=> x"0"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[x"0":x"3"], [x"7":x"B"])=> x"9"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:128, RANGE:[x"00000000000000000000000000000000":x"00000000000000000000000000000003"])=>
+%%:                                                                 x"00000000000000000000000000000003"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:128, RANGE:[x"00000000000000000000000000000000":x"00000000000000000000000000000003"],
+%%:                                                                 [x"00000000000000000000000000000007":x"0000000000000000000000000000000B"])=>
+%%:                                                                 x"0000000000000000000000000000000B"
 %% 
 %% 
-%%      0 ns    Log    ID_LOG_HDR          TB seq.             Signed
+%%           0.0 ns  Log    ID_LOG_HDR          TB seq.             Signed
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4)=> x"2"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[-2:2])=> x"1"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[-2:2],[6:7])=> x"2"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, ONLY:(-5, -3, 4))=> x"B"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, EXCL:(-1, 0, 1))=> x"D"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[-1:1], ADD:(3))=> x"3"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[-1:1],[6:7], ADD:(3, -5, -3, 4))=> x"B"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[-2:2], EXCL:(-1, 0, 1))=> x"E"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[-2:2],[5:7], EXCL:(-1, 0, 1, 7))=> x"2"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, ONLY:(-6, -4, -2, 0, 2, 4, 6), EXCL:(-2, 0, 2))=> x"6"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[-2:2], ADD:(-5, -3), EXCL:(-5, -1, 1))=> x"0"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[-2:2],[5:7], ADD:(-5, -3, 4), EXCL:(-5, -1, 1, 6))=> x"0"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, CYCLIC)=> x"9"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[-2:2], CYCLIC)=> x"0"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[-2:2],[6:7], CYCLIC)=> x"E"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, ONLY:(-5, -3, 4), CYCLIC)=> x"D"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, EXCL:(-1, 0, 1), CYCLIC)=> x"D"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[-1:1], ADD:(3), CYCLIC)=> x"F"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[-1:1],[6:7], ADD:(3, -5, -3, 4), CYCLIC)=> x"F"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[-2:2], EXCL:(-1, 0, 1), CYCLIC)=> x"2"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[-2:2],[5:7], EXCL:(-1, 0, 1, 7), CYCLIC)=> x"6"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, ONLY:(-6, -4, -2, 0, 2, 4, 6), EXCL:(-2, 0, 2), CYCLIC)=> x"A"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[-2:2], ADD:(-5, -3), EXCL:(-5, -1, 1), CYCLIC)=> x"D"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[-2:2],[5:7], ADD:(-5, -3, 4), EXCL:(-5, -1, 1, 6), CYCLIC)=> x"4"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4)=> x"2"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[-2:2])=> x"1"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[-2:2],[6:7])=> x"2"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, ONLY:(-5, -3, 4))=> x"B"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, EXCL:(-1, 0, 1))=> x"D"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[-1:1], ADD:(3))=> x"3"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[-1:1],[6:7], ADD:(3, -5, -3, 4))=> x"B"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[-2:2], EXCL:(-1, 0, 1))=> x"E"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[-2:2],[5:7], EXCL:(-1, 0, 1, 7))=> x"2"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, ONLY:(-6, -4, -2, 0, 2, 4, 6), EXCL:(-2, 0, 2))=> x"6"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[-2:2], ADD:(-5, -3), EXCL:(-5, -1, 1))=> x"0"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[-2:2],[5:7], ADD:(-5, -3, 4), EXCL:(-5, -1, 1, 6))=> x"0"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, CYCLIC)=> x"9"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[-2:2], CYCLIC)=> x"0"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[-2:2],[6:7], CYCLIC)=> x"E"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, ONLY:(-5, -3, 4), CYCLIC)=> x"D"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, EXCL:(-1, 0, 1), CYCLIC)=> x"D"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[-1:1], ADD:(3), CYCLIC)=> x"F"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[-1:1],[6:7], ADD:(3, -5, -3, 4), CYCLIC)=> x"F"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[-2:2], EXCL:(-1, 0, 1), CYCLIC)=> x"2"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[-2:2],[5:7], EXCL:(-1, 0, 1, 7), CYCLIC)=> x"6"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, ONLY:(-6, -4, -2, 0, 2, 4, 6), EXCL:(-2, 0, 2), CYCLIC)=> x"A"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[-2:2], ADD:(-5, -3), EXCL:(-5, -1, 1), CYCLIC)=> x"D"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[-2:2],[5:7], ADD:(-5, -3, 4), EXCL:(-5, -1, 1, 6), CYCLIC)=> x"4"
 %% 
 %% 
-%%      0 ns    Log    ID_LOG_HDR          TB seq.             Signed constraints
+%%           0.0 ns  Log    ID_LOG_HDR          TB seq.             Signed constraints
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[x"F":x"3"])=> x"1"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[x"F":x"3"], [x"5":x"7"])=> x"F"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:128, RANGE:[x"FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF":x"00000000000000000000000000000003"])=> x"00000000000000000000000000000000"
-%%      0 ns    Log    ID_RAND_GEN         TB seq.             randm(LEN:128, RANGE:[x"FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF":x"00000000000000000000000000000003"], [x"00000000000000000000000000000005":x"00000000000000000000000000000007"])=> x"00000000000000000000000000000002"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[x"F":x"3"])=> x"1"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:4, RANGE:[x"F":x"3"], [x"5":x"7"])=> x"F"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:128, RANGE:[x"FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF":x"00000000000000000000000000000003"])=>
+%%:                                                                 x"00000000000000000000000000000000"
+%%           0.0 ns  Log    ID_RAND_GEN         TB seq.             randm(LEN:128, RANGE:[x"FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF":x"00000000000000000000000000000003"],
+%%:                                                                 [x"00000000000000000000000000000005":x"00000000000000000000000000000007"])=>
+%%:                                                                 x"00000000000000000000000000000002"
 %% 
 %% ============================================================================================================================================================================
 %%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
-%%   1000 ns    DONE   NOCHECKS   rand_report_multi  Passed: 0
+%%        1000.0 ns  DONE   NOCHECKS  rand_report_multi  Passed: 0
 %%    Expected      Failures: 0  Errors: 0  Warnings: 0  Passed: 0
 %%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
 %%    Default       Failures: 0  Errors: 0  Warnings: 0  Passed: 0
@@ -489,5 +497,5 @@
 %% 
 %% 
 %% 
-%%   1000 ns    Log    ID_LOG_HDR          TB seq.             SIMULATION COMPLETED
+%%        1000.0 ns  Log    ID_LOG_HDR          TB seq.             SIMULATION COMPLETED
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

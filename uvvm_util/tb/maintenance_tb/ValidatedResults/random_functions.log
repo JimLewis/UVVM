@@ -1,149 +1,969 @@
 %% 
 %% 
 %% ============================================================================================================================================================================
-%%      0 ns    Log    ID_LOG_HDR_LARGE    TB seq.(uvvm)       Verifying basic random functions
+%%           0.0 ns  Log    ID_LOG_HDR_LARGE    TB seq.(uvvm)       Verifying basic random functions
 %% ============================================================================================================================================================================
-%%      0 ns    Log    ID_UTIL_SETUP       TB seq.             Setting global seeds to 12, 14
-%%      0 ns    Log    ID_UTIL_SETUP       TB seq.             Setting global seeds to 14, 12
+%%           0.0 ns  Log    ID_UTIL_SETUP       TB seq.             Setting global seeds to 12, 14
+%%           0.0 ns  Log    ID_UTIL_SETUP       TB seq.             Setting global seeds to 14, 12
 %% 
 %% 
-%%      0 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       std_logic_vector / std_logic
+%%           0.0 ns  Log    ID_LOG_HDR          TB seq.(uvvm)       std_logic_vector / std_logic
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random SLV function (not self checking)
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random function slv8 = 11100000
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random function slv8 = 00011110
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random function slv8 = 00011111
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random function slv8 = 10111000
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random function slv8 = 11000100
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random SLV procedure (not self checking)
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random procedure slv8 = 01000111
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random procedure slv8 = 00010100
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random procedure slv8 = 00111011
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random procedure slv8 = 00100101
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random procedure slv8 = 10010011
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random SL function (not self checking)
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random function sl = 0
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random function sl = 0
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random function sl = 0
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random function sl = 0
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random function sl = 0
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random function sl = 1
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random function sl = 1
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random function sl = 0
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random function sl = 1
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random function sl = 0
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random SL procedure (not self checking)
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random procedure sl = 0
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random procedure sl = 1
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random procedure sl = 0
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random procedure sl = 0
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random procedure sl = 0
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random procedure sl = 1
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random procedure sl = 0
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random procedure sl = 0
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random procedure sl = 1
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random procedure sl = 1
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random SLV function (not self checking)
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random function slv8 = 11100000
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random function slv8 = 00011110
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random function slv8 = 00011111
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random function slv8 = 10111000
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random function slv8 = 11000100
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random SLV procedure (not self checking)
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random procedure slv8 = 01000111
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random procedure slv8 = 00010100
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random procedure slv8 = 00111011
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random procedure slv8 = 00100101
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random procedure slv8 = 10010011
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random SL function (not self checking)
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random function sl = 0
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random function sl = 0
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random function sl = 0
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random function sl = 0
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random function sl = 0
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random function sl = 1
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random function sl = 1
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random function sl = 0
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random function sl = 1
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random function sl = 0
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random SL procedure (not self checking)
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random procedure sl = 0
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random procedure sl = 1
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random procedure sl = 0
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random procedure sl = 0
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random procedure sl = 0
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random procedure sl = 1
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random procedure sl = 0
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random procedure sl = 0
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random procedure sl = 1
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random procedure sl = 1
 %% 
 %% 
-%%      0 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       Integer
+%%           0.0 ns  Log    ID_LOG_HDR          TB seq.(uvvm)       Integer
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random integer function
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       integer function: counter(10) =       30
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       integer function: counter(11) =       24
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       integer function: counter(12) =       19
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       integer function: counter(13) =       27
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random integer procedure
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       integer procedure: counter(10) =       30
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       integer procedure: counter(11) =       24
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       integer procedure: counter(12) =       19
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       integer procedure: counter(13) =       27
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the max limit
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the min & max limits (not self checking)
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random int procedure = 1696538084
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random int procedure = 1444254049
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random int procedure = -79746802
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random int procedure = 1249112244
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random int procedure = 999149533
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random int procedure = 1849154016
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random int procedure = 2060080162
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random int procedure = -1311453570
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random int procedure = -177838257
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random int procedure = -1894313752
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random integer function
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer function in range, OK'
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       integer function: counter(10) =       30
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       integer function: counter(11) =       24
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       integer function: counter(12) =       19
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       integer function: counter(13) =       27
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random integer procedure
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 12. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 10. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 13. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 10, 13) => OK. Value was 11. 'Random integer procedure in range, OK'
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       integer procedure: counter(10) =       30
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       integer procedure: counter(11) =       24
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       integer procedure: counter(12) =       19
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       integer procedure: counter(13) =       27
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the max limit
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 0, 2147483647) => OK. Value was 732943135. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 0, 2147483647) => OK. Value was 1338038113. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 0, 2147483647) => OK. Value was 391901798. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 0, 2147483647) => OK. Value was 977471817. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 0, 2147483647) => OK. Value was 38179517. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 0, 2147483647) => OK. Value was 152436979. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 0, 2147483647) => OK. Value was 403442598. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 0, 2147483647) => OK. Value was 2031404658. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 0, 2147483647) => OK. Value was 1715324119. 'Random integer function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(int, 0, 2147483647) => OK. Value was 791757565. 'Random integer function in range, OK'
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the min & max limits (not self checking)
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random int procedure = 1696538084
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random int procedure = 1444254049
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random int procedure = -79746802
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random int procedure = 1249112244
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random int procedure = 999149533
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random int procedure = 1849154016
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random int procedure = 2060080162
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random int procedure = -1311453570
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random int procedure = -177838257
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random int procedure = -1894313752
 %% 
 %% 
-%%      0 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       Real
+%%           0.0 ns  Log    ID_LOG_HDR          TB seq.(uvvm)       Real
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random real function
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random real function = 0.014844
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random real function = 0.014752
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random real function = 0.021915
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random real function = 0.018639
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random real function = 0.012342
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random real procedure
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random real procedure = 0.015613
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random real procedure = 0.019191
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random real procedure = 0.014498
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random real procedure = 0.029138
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Random real procedure = 0.024971
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random real function
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random real function = 0.014844
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(real, 0.0100, 0.0300) => OK. Value was 0.0148. 'Random real function in range, OK'
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random real function = 0.014752
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(real, 0.0100, 0.0300) => OK. Value was 0.0148. 'Random real function in range, OK'
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random real function = 0.021915
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(real, 0.0100, 0.0300) => OK. Value was 0.0219. 'Random real function in range, OK'
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random real function = 0.018639
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(real, 0.0100, 0.0300) => OK. Value was 0.0186. 'Random real function in range, OK'
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random real function = 0.012342
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(real, 0.0100, 0.0300) => OK. Value was 0.0123. 'Random real function in range, OK'
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random real procedure
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random real procedure = 0.015613
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(real, 0.0100, 0.0300) => OK. Value was 0.0156. 'Random real procedure in range, OK'
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random real procedure = 0.019191
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(real, 0.0100, 0.0300) => OK. Value was 0.0192. 'Random real procedure in range, OK'
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random real procedure = 0.014498
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(real, 0.0100, 0.0300) => OK. Value was 0.0145. 'Random real procedure in range, OK'
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random real procedure = 0.029138
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(real, 0.0100, 0.0300) => OK. Value was 0.0291. 'Random real procedure in range, OK'
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Random real procedure = 0.024971
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(real, 0.0100, 0.0300) => OK. Value was 0.0250. 'Random real procedure in range, OK'
 %% 
 %% 
-%%      0 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       Time
+%%           0.0 ns  Log    ID_LOG_HDR          TB seq.(uvvm)       Time
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random time function
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       time function (ns) : counter(10) =       26
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       time function (ns) : counter(11) =       49
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       time function (ns) : counter(12) =       21
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       time function (ns) : counter(13) =       28
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random time function with default time resolution
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       time function (us) : counter(10) =       28
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       time function (us) : counter(11) =       34
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       time function (us) : counter(12) =       40
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       time function (us) : counter(13) =       19
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random time function with explicit time resolution
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       time function (ms) : counter(10) =       22
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       time function (ms) : counter(11) =       64
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       time function (ms) : counter(12) =       22
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       time function (ms) : counter(13) =       26
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random time function with same min and max values
-%%      0 ns    Log    ID_SEQUENCER        TB seq.             time:13 ms
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random time function with min greater than max values
-%%      0 ns    Log    ID_SEQUENCER        TB seq.             time:12 ms
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random time function with too small time resolution
-%%      0 ns    Alert  WARNING             TB seq.             random(10 ms,13 ms,1 ps) => time_resolution is too small for the given range. It has been increased to 1 ns
-%%      0 ns    Log    ID_SEQUENCER        TB seq.             time:12.140664 ms
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random time function with too big time resolution
-%%      0 ns    Alert  WARNING             TB seq.             random(10 ms,13 ms,1 min) => time_resolution is too big for the given range. It has been reduced to 1 ms
-%%      0 ns    Log    ID_SEQUENCER        TB seq.             time:13 ms
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random time procedure
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       time procedure (ns) : counter(10) =       22
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       time procedure (ns) : counter(11) =       64
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       time procedure (ns) : counter(12) =       22
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       time procedure (ns) : counter(13) =       26
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random time procedure with default time resolution
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       time procedure (us) : counter(10) =       22
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       time procedure (us) : counter(11) =       64
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       time procedure (us) : counter(12) =       22
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       time procedure (us) : counter(13) =       26
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random time procedure with explicit time resolution
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       time procedure (sec) : counter(10) =       22
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       time procedure (sec) : counter(11) =       64
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       time procedure (sec) : counter(12) =       22
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       time procedure (sec) : counter(13) =       26
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random time procedure with same min and max values
-%%      0 ns    Log    ID_SEQUENCER        TB seq.             time:10 sec
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random time procedure with min greater than max values
-%%      0 ns    Log    ID_SEQUENCER        TB seq.             time:13 sec
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random time procedure with too small time resolution
-%%      0 ns    Alert  WARNING             TB seq.             random(10 sec,13 sec,1 ps) => time_resolution is too small for the given range. It has been increased to 1 us
-%%      0 ns    Log    ID_SEQUENCER        TB seq.             time:12.053564 sec
-%%      0 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random time procedure with too big time resolution
-%%      0 ns    Alert  WARNING             TB seq.             random(10 sec,13 sec,1 hr) => time_resolution is too big for the given range. It has been reduced to 1 sec
-%%      0 ns    Log    ID_SEQUENCER        TB seq.             time:13 sec
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random time function
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time function in range, OK'
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       time function (ns) : counter(10) =       26
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       time function (ns) : counter(11) =       49
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       time function (ns) : counter(12) =       21
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       time function (ns) : counter(13) =       28
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random time function with default time resolution
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time function in range, OK'
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       time function (us) : counter(10) =       28
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       time function (us) : counter(11) =       34
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       time function (us) : counter(12) =       40
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       time function (us) : counter(13) =       19
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random time function with explicit time resolution
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 11 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 13 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 11 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 10 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 13 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 11 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 10 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 10 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 10 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 11 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 10 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 12 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 10 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 10 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 11 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 12 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 13 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 12 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 11 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 11 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 11 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 12 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 12 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 13 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 11 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 11 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 13 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 13 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 11 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 11 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 10 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 11 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 13 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 13 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 11 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 13 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 13 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 12 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 12 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 12 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 11 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 11 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 10 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 10 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 12 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 12 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 11 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 13 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 10 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 10 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 13 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 12 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 11 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 13 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 10 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 12 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 11 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 10 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 12 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 13 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 11 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 11 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 10 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 13 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 12 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 11 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 10 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 12 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 10 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 10 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 13 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 13 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 11 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 13 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 12 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 11 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 12 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 11 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 11 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 13 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 11 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 10 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 12 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 12 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 11 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 12 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 12 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 10 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 11 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 11 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 13 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 13 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 13 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 13 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 13 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 10 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 13 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 10 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 12 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ms, 13 ms) => OK. Value was 13 ms. 'Random time function in range, OK'
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       time function (ms) : counter(10) =       22
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       time function (ms) : counter(11) =       64
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       time function (ms) : counter(12) =       22
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       time function (ms) : counter(13) =       26
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random time function with same min and max values
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.             time:13 ms
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random time function with min greater than max values
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.             time:12 ms
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random time function with too small time resolution
+%%           0.0 ns  Alert  WARNING             TB seq.             random(10 ms,13 ms,1 ps) => time_resolution is too small for the given range. It has been increased to 1 ns
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.             time:12.140664 ms
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random time function with too big time resolution
+%%           0.0 ns  Alert  WARNING             TB seq.             random(10 ms,13 ms,1 min) => time_resolution is too big for the given range. It has been reduced to 1 ms
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.             time:13 ms
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random time procedure
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 10 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 11 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 12 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 ns, 13 ns) => OK. Value was 13 ns. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       time procedure (ns) : counter(10) =       22
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       time procedure (ns) : counter(11) =       64
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       time procedure (ns) : counter(12) =       22
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       time procedure (ns) : counter(13) =       26
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random time procedure with default time resolution
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 12 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 11 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 13 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 us, 13 us) => OK. Value was 10 us. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       time procedure (us) : counter(10) =       22
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       time procedure (us) : counter(11) =       64
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       time procedure (us) : counter(12) =       22
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       time procedure (us) : counter(13) =       26
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random time procedure with explicit time resolution
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 13 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 11 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 10 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 11 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 11 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 12 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 11 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 10 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 10 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 13 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 10 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 10 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 12 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 11 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 11 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 10 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 11 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 12 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 10 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 10 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 13 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 13 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 11 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 11 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 12 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 12 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 13 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 12 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 10 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 13 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 13 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 13 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 12 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 11 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 12 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 11 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 12 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 12 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 12 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 10 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 10 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 11 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 10 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 10 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 10 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 11 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 10 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 10 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 10 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 13 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 11 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 13 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 13 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 10 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 12 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 13 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 13 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 12 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 10 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 11 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 10 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 10 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 11 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 13 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 12 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 12 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 13 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 10 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 12 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 13 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 12 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 10 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 11 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 11 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 11 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 10 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 10 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 11 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 11 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 13 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 10 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 13 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 10 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 12 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 10 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 13 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 11 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 12 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 12 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 10 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 11 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 13 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 13 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 12 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 11 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 13 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 12 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 10 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 13 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    PASSED              TB seq.(uvvm)       check_value_in_range(time, 10 sec, 13 sec) => OK. Value was 13 sec. 'Random time procedure in range, OK'
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       time procedure (sec) : counter(10) =       22
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       time procedure (sec) : counter(11) =       64
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       time procedure (sec) : counter(12) =       22
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       time procedure (sec) : counter(13) =       26
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random time procedure with same min and max values
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.             time:10 sec
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random time procedure with min greater than max values
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.             time:13 sec
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random time procedure with too small time resolution
+%%           0.0 ns  Alert  WARNING             TB seq.             random(10 sec,13 sec,1 ps) => time_resolution is too small for the given range. It has been increased to 1 us
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.             time:12.053564 sec
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       -- Test the random time procedure with too big time resolution
+%%           0.0 ns  Alert  WARNING             TB seq.             random(10 sec,13 sec,1 hr) => time_resolution is too big for the given range. It has been reduced to 1 sec
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.             time:13 sec
 %% 
 %% ============================================================================================================================================================================
 %%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
-%%   1000 ns    DONE   NOCHECKS   random_functions  Passed: 0
+%%        1000.0 ns  DONE   PASSED  random_functions  Passed: 820  Affirmations Checked: 820
 %%    Expected      Failures: 0  Errors: 0  Warnings: -4  Passed: 0
 %%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
 %%    Default       Failures: 0  Errors: 0  Warnings: 4  Passed: 0
@@ -152,5 +972,5 @@
 %% 
 %% 
 %% 
-%%   1000 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       SIMULATION COMPLETED
+%%        1000.0 ns  Log    ID_LOG_HDR          TB seq.(uvvm)       SIMULATION COMPLETED
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

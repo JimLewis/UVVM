@@ -1,12 +1,19 @@
-%%      1 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Line to log only
-%%      1 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       Line to console and log
-%%      1 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       log with error
-%%      1 ns    Log    ID_SEQUENCER        TB seq.(uvvm)       log with error
+%% 
+%% 
+%%           1.0 ns  Log    ID_LOG_HDR          TB seq.             Test of log with specified destination
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%           1.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Line to console and log
+%%           1.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Line to log only 
+%%           1.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             Changing log destination to console_only. Was console_and_log. 
+%%           1.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Line to log only
+%%           1.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       Line to console and log
+%%           1.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       log with error
+%%           1.0 ns  Log    ID_SEQUENCER        TB seq.(uvvm)       log with error
 %% 
 %% ============================================================================================================================================================================
 %%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
-%%   1001 ns    DONE   NOCHECKS   log_to_file  Passed: 0
+%%        1001.0 ns  DONE   NOCHECKS  log_to_file  Passed: 0
 %%    Expected      Failures: 0  Errors: 0  Warnings: 0  Passed: 0
 %%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
 %%    Default       Failures: 0  Errors: 0  Warnings: 0  Passed: 0
@@ -15,5 +22,5 @@
 %% 
 %% 
 %% 
-%%   1001 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       SIMULATION COMPLETED
+%%        1001.0 ns  Log    ID_LOG_HDR          TB seq.(uvvm)       SIMULATION COMPLETED
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -1,10 +1,10 @@
 %% 
 %% 
 %% ============================================================================================================================================================================
-%%      0 ns    Log    ID_LOG_HDR_LARGE    TB seq.             Start Simulation of Randomization package - rand_report
+%%           0.0 ns  Log    ID_LOG_HDR_LARGE    TB seq.             Start Simulation of Randomization package - rand_report
 %% ============================================================================================================================================================================
-%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_RAND_GEN).
-%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_RAND_CONF).
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_RAND_GEN).
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_RAND_CONF).
 %%      
 %%      =======================================================================================================================================================================
 %%      ***  REPORT OF RANDOM GENERATOR CONFIGURATION ***
@@ -22,11 +22,11 @@
 %%      =======================================================================================================================================================================
 %%      
 %%      
-%%      0 ns    Log    ID_RAND_GEN         MY_SCOPE            rand(RANGE:[10:20])=> 20
-%%      0 ns    Log    ID_RAND_CONF        MY_SCOPE            set_rand_dist(GAUSSIAN)
-%%      0 ns    Log    ID_RAND_CONF        MY_SCOPE            set_range_weight_default_mode(INDIVIDUAL_WEIGHT)
-%%      0 ns    Log    ID_RAND_CONF        MY_SCOPE            set_rand_dist_mean(1.00)
-%%      0 ns    Log    ID_RAND_CONF        MY_SCOPE            set_rand_dist_std_deviation(5.00)
+%%           0.0 ns  Log    ID_RAND_GEN         MY_SCOPE            rand(RANGE:[10:20])=> 20
+%%           0.0 ns  Log    ID_RAND_CONF        MY_SCOPE            set_rand_dist(GAUSSIAN)
+%%           0.0 ns  Log    ID_RAND_CONF        MY_SCOPE            set_range_weight_default_mode(INDIVIDUAL_WEIGHT)
+%%           0.0 ns  Log    ID_RAND_CONF        MY_SCOPE            set_rand_dist_mean(1.00)
+%%           0.0 ns  Log    ID_RAND_CONF        MY_SCOPE            set_rand_dist_std_deviation(5.00)
 %%      
 %%      =======================================================================================================================================================================
 %%      ***  REPORT OF RANDOM GENERATOR CONFIGURATION ***
@@ -48,7 +48,7 @@
 %% ============================================================================================================================================================================
 %%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
-%%   1000 ns    DONE   NOCHECKS   rand_report  Passed: 0
+%%        1000.0 ns  DONE   NOCHECKS  rand_report  Passed: 0
 %%    Expected      Failures: 0  Errors: 0  Warnings: 0  Passed: 0
 %%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
 %%    Default       Failures: 0  Errors: 0  Warnings: 0  Passed: 0
@@ -57,5 +57,5 @@
 %% 
 %% 
 %% 
-%%   1000 ns    Log    ID_LOG_HDR          TB seq.             SIMULATION COMPLETED
+%%        1000.0 ns  Log    ID_LOG_HDR          TB seq.             SIMULATION COMPLETED
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

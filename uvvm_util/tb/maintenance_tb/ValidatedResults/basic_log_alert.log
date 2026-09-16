@@ -108,41 +108,54 @@
 %%      
 %% 
 %% 
-%%      1 ns    Log    ID_LOG_HDR                              Verifying logging and alerts
+%%           1.0 ns  Log    ID_LOG_HDR                              Verifying logging and alerts
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 %% 
 %% 
-%%      1 ns    Log    ID_LOG_HDR          TB seq.             My Log header 
+%%           1.0 ns  Log    ID_LOG_HDR          TB seq.             My Log header 
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-%%      1 ns    Log    ID_BFM              My scope            My short message
-%%      1 ns    Alert  WARNING             my_scope            my_msg dasdsa dasd as dad ad asd asd as das dasd adas dasd asda sdas das das das dsa dsa das das das das das das dasdasdasd asd
-%%      1 ns    Log    ID_BFM              My long scope............  My long message  qqqqq w wwwww ee eee r rr r r t tt ttttttt y yyyyyyyy uuuuuuuu iii ii ii o o ooo o o ppppppp  aaaaaaaa              ssss ddddddffffff ffffff gggggg hhhhhh jjjjj
-ekstra
-%%      1 ns    Log    ID_BFM              My .........        My multiline message 
-qqqqq w wwwww ee eee r rr r r t
-11 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa extra
-lkkl fdafd fdsf sdfsdfsd f sdfsd f ds fsd fsdfsd f sdf sdf sdf dfsdfdsfsdf ds f dsf ds fsd fsd fsd fdsf sdf sdfsdf dsfds f sdfsdfsdf sdf dsf  BSN\nBSN \b fsd fs
-fdfdf sdfsd fsdf sd fds fsd fsd fs df sdf sdf sdf sd fsd fsdfsd fsdfsd fsd fsd f sdf sdf sd f sdf sdf d f df sdf ds fsd f sdf dsf 
-%%      1 ns    Alert  ERROR               my_scope            my_msg dasdas das dasdasdasd as das da sd asdas dasdasd  dasdasdsdasdas das d asd as das das das das dasdasdas das das d as das das dasd
-%%      1 ns    Log    ID_BFM                                  Kort multiline
-ddasdadad
-daddfad 
-%%      1 ns    Log    ID_SEQUENCER        TB seq.             Check various versions of linefeed (pre, post, only)
-%%      1 ns    Log    ID_SEQUENCER        TB seq.             \n Pre, followed by blank
-%%      1 ns    Log    ID_SEQUENCER        TB seq.             \nPre, followed by char
-%%      1 ns    Log    ID_SEQUENCER        TB seq.             Post, preceeded by blank \n
-%%      1 ns    Log    ID_SEQUENCER        TB seq.             Post, preceeded by char\n
-%%      1 ns    Log    ID_SEQUENCER        TB seq.             Next is single linefeed only
-%%      1 ns    Log    ID_SEQUENCER        TB seq.             \n
-%%      1 ns    Log    ID_SEQUENCER        TB seq.             Linefeeds completed. Please check above
-%%      1 ns    Log    ID_SEQUENCER        TB seq.             
-%%      1 ns    Log    ID_SEQUENCER        TB seq.             1
-%%      1 ns    Log    ID_SEQUENCER        TB seq.             Above two lines: First empty string, then single char.
+%%           1.0 ns  Log    ID_BFM              My scope            My short message
+%%           1.0 ns  Alert  WARNING             my_scope            my_msg dasdsa dasd as dad ad asd asd as das dasd adas dasd asda sdas das das das dsa dsa das das das das
+%%:                                                                 das das dasdasdasd asd
+%%           1.0 ns  Log    ID_BFM              My long scope............  My long message  qqqqq w wwwww ee eee r rr r r t tt ttttttt y yyyyyyyy uuuuuuuu iii ii ii o o ooo o
+%%:                                                                        o ppppppp  aaaaaaaa              ssss ddddddffffff ffffff gggggg hhhhhh jjjjj
+%%:                                                                        ekstra
+%%           1.0 ns  Log    ID_BFM              My .........        My multiline message 
+%%:                                                                 qqqqq w wwwww ee eee r rr r r t
+%%:                                                                 11
+%%:                                                                 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+%%:                                                                 aaaaaaaaa extra
+%%:                                                                 lkkl fdafd fdsf sdfsdfsd f sdfsd f ds fsd fsdfsd f sdf sdf sdf dfsdfdsfsdf ds f dsf ds fsd fsd fsd fdsf sdf
+%%:                                                                 sdfsdf dsfds f sdfsdfsdf sdf dsf  BSN
+%%:                                                                 BSN \b fsd fs
+%%:                                                                 fdfdf sdfsd fsdf sd fds fsd fsd fs df sdf sdf sdf sd fsd fsdfsd fsdfsd fsd fsd f sdf sdf sd f sdf sdf d f
+%%:                                                                 df sdf ds fsd f sdf dsf 
+%%           1.0 ns  Alert  ERROR               my_scope            my_msg dasdas das dasdasdasd as das da sd asdas dasdasd  dasdasdsdasdas das d asd as das das das das
+%%:                                                                 dasdasdas das das d as das das dasd
+%%           1.0 ns  Log    ID_BFM                                  Kort multiline
+%%:                                                                 ddasdadad
+%%:                                                                 daddfad 
+%%           1.0 ns  Log    ID_SEQUENCER        TB seq.             Check various versions of linefeed (pre, post, only)
+%%           1.0 ns  Log    ID_SEQUENCER        TB seq.             
+%%:                                                                  Pre, followed by blank
+%%           1.0 ns  Log    ID_SEQUENCER        TB seq.             
+%%:                                                                 Pre, followed by char
+%%           1.0 ns  Log    ID_SEQUENCER        TB seq.             Post, preceeded by blank 
+%%:                                                                 
+%%           1.0 ns  Log    ID_SEQUENCER        TB seq.             Post, preceeded by char
+%%:                                                                 
+%%           1.0 ns  Log    ID_SEQUENCER        TB seq.             Next is single linefeed only
+%%           1.0 ns  Log    ID_SEQUENCER        TB seq.             
+%%:                                                                 
+%%           1.0 ns  Log    ID_SEQUENCER        TB seq.             Linefeeds completed. Please check above
+%%           1.0 ns  Log    ID_SEQUENCER        TB seq.             
+%%           1.0 ns  Log    ID_SEQUENCER        TB seq.             1
+%%           1.0 ns  Log    ID_SEQUENCER        TB seq.             Above two lines: First empty string, then single char.
 %% 
 %% ============================================================================================================================================================================
 %%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
-%%   1001 ns    DONE   NOCHECKS   basic_log_alert  Passed: 0
+%%        1001.0 ns  DONE   NOCHECKS  basic_log_alert  Passed: 0
 %%    Expected      Failures: 0  Errors: -1  Warnings: -1  Passed: 0
 %%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
 %%    Default       Failures: 0  Errors: 1  Warnings: 1  Passed: 0
@@ -151,5 +164,5 @@ daddfad
 %% 
 %% 
 %% 
-%%   1001 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       SIMULATION COMPLETED
+%%        1001.0 ns  Log    ID_LOG_HDR          TB seq.(uvvm)       SIMULATION COMPLETED
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
