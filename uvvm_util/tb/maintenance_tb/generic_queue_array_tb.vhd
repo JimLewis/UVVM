@@ -44,6 +44,7 @@ context uvvm_util.uvvm_util_context;
 
 library osvvm ;
 use OSVVM.FileLinePathPkg.FILE_PATH ;
+context osvvm.OsvvmContext ;
 use std.env.all ;
 
 --hdlregression:tb
@@ -98,7 +99,7 @@ begin
       log(ID_LOG_HDR, "Setting up generic queue and verifying scope and size", C_SCOPE);
 
       queue_under_test.set_scope(C_QUEUE_SCOPE);
-      log("Queue instantiated with depth " & to_string(queue_under_test.get_queue_count_max(VOID)));
+      log(NO_ID, "Queue instantiated with depth " & to_string(queue_under_test.get_queue_count_max(VOID)));
       string_compare(queue_under_test.get_scope(VOID), C_QUEUE_SCOPE, "Checking queue scope");
 
       check_value(queue_under_test.is_empty(VOID), ERROR, "Checking if queue is initially empty", C_SCOPE);
@@ -125,7 +126,7 @@ begin
 
       check_value(v_num_entries <= queue_under_test.get_queue_count_max(VOID), ERROR, "Check if the queue is big enough for the planned test", C_SCOPE);
 
-      log("Filling up the queue with " & to_string(v_num_entries - 1) & " entries = (others => '0'). ");
+      log(NO_ID, "Filling up the queue with " & to_string(v_num_entries - 1) & " entries = (others => '0'). ");
 
       for i in 0 to v_num_entries - 1 loop
         queue_under_test.put(v_element);

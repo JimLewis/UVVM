@@ -126,7 +126,7 @@ begin
       for i in 1 to 100 loop
         v_int      := random(C_RANDOM_MIN_VALUE, C_RANDOM_MAX_VALUE);
         -- Check that the number is in the requested range
-        check_value_in_range(v_int, C_RANDOM_MIN_VALUE, C_RANDOM_MAX_VALUE, error, "Random integer function in range, OK", C_SCOPE, ID_NEVER);
+        check_value_in_range(v_int, C_RANDOM_MIN_VALUE, C_RANDOM_MAX_VALUE, error, "Random integer function in range, OK", C_SCOPE, ID_POS_ACK);
         counter(v_int) <= counter(v_int) + 1;     -- Keep track of how many times the random value got this value
         wait for 0 ns;
       end loop;
@@ -140,7 +140,7 @@ begin
       log(ID_SEQUENCER, "-- Test the random integer procedure", C_SCOPE);
       for i in 1 to 100 loop
         random(C_RANDOM_MIN_VALUE, C_RANDOM_MAX_VALUE, v_seed1, v_seed2, v_int);
-        check_value_in_range(v_int, C_RANDOM_MIN_VALUE, C_RANDOM_MAX_VALUE, error, "Random integer procedure in range, OK", C_SCOPE, ID_NEVER);
+        check_value_in_range(v_int, C_RANDOM_MIN_VALUE, C_RANDOM_MAX_VALUE, error, "Random integer procedure in range, OK", C_SCOPE, ID_POS_ACK);
         counter(v_int) <= counter(v_int) + 1;       -- Keep track of how many times the random value got this value
       end loop;
       -- Print statistics over the random values
@@ -153,7 +153,7 @@ begin
       log(ID_SEQUENCER, "-- Test the max limit", C_SCOPE);
       for i in 1 to 10 loop
         random(0, integer'right, v_seed1, v_seed2, v_int);
-        check_value_in_range(v_int, 0, integer'right, error, "Random integer function in range, OK", C_SCOPE, ID_NEVER);
+        check_value_in_range(v_int, 0, integer'right, error, "Random integer function in range, OK", C_SCOPE, ID_POS_ACK);
       end loop;
 
       log(ID_SEQUENCER, "-- Test the min & max limits (not self checking)", C_SCOPE);
@@ -169,14 +169,14 @@ begin
       for i in 1 to 5 loop
         v_real := random(0.01, 0.03);
         log(ID_SEQUENCER, "Random real function = " & to_string(v_real, "%f"), C_SCOPE);
-        check_value_in_range(v_real, 0.01, 0.03, error, "Random real function in range, OK", C_SCOPE, ID_NEVER);
+        check_value_in_range(v_real, 0.01, 0.03, error, "Random real function in range, OK", C_SCOPE, ID_POS_ACK);
       end loop;
 
       log(ID_SEQUENCER, "-- Test the random real procedure", C_SCOPE);
       for i in 1 to 5 loop
         random(0.01, 0.03, v_seed1, v_seed2, v_real);
         log(ID_SEQUENCER, "Random real procedure = " & to_string(v_real, "%f"), C_SCOPE);
-        check_value_in_range(v_real, 0.01, 0.03, error, "Random real procedure in range, OK", C_SCOPE, ID_NEVER);
+        check_value_in_range(v_real, 0.01, 0.03, error, "Random real procedure in range, OK", C_SCOPE, ID_POS_ACK);
       end loop;
 
       ----------------------------------------------------------------
@@ -186,7 +186,7 @@ begin
       for i in 1 to 100 loop
         v_time             := random(1 ns * C_RANDOM_MIN_VALUE, 1 ns * C_RANDOM_MAX_VALUE);
         -- Check that the number is in the requested range
-        check_value_in_range(v_time, 1 ns * C_RANDOM_MIN_VALUE, 1 ns * C_RANDOM_MAX_VALUE, error, "Random time function in range, OK", C_SCOPE, ID_NEVER);
+        check_value_in_range(v_time, 1 ns * C_RANDOM_MIN_VALUE, 1 ns * C_RANDOM_MAX_VALUE, error, "Random time function in range, OK", C_SCOPE, ID_POS_ACK);
         counter(v_time / 1 ns) <= counter(v_time / 1 ns) + 1; -- Keep track of how many times the random value got this value
         wait for 0 ns;
       end loop;
@@ -201,7 +201,7 @@ begin
       for i in 1 to 100 loop
         v_time             := random(1 us * C_RANDOM_MIN_VALUE, 1 us * C_RANDOM_MAX_VALUE);
         -- Check that the number is in the requested range
-        check_value_in_range(v_time, 1 us * C_RANDOM_MIN_VALUE, 1 us * C_RANDOM_MAX_VALUE, error, "Random time function in range, OK", C_SCOPE, ID_NEVER);
+        check_value_in_range(v_time, 1 us * C_RANDOM_MIN_VALUE, 1 us * C_RANDOM_MAX_VALUE, error, "Random time function in range, OK", C_SCOPE, ID_POS_ACK);
         counter(v_time / 1 us) <= counter(v_time / 1 us) + 1; -- Keep track of how many times the random value got this value
         wait for 0 ns;
       end loop;
@@ -216,7 +216,7 @@ begin
       for i in 1 to 100 loop
         v_time             := random(1 ms * C_RANDOM_MIN_VALUE, 1 ms * C_RANDOM_MAX_VALUE, ms);
         -- Check that the number is in the requested range
-        check_value_in_range(v_time, 1 ms * C_RANDOM_MIN_VALUE, 1 ms * C_RANDOM_MAX_VALUE, error, "Random time function in range, OK", C_SCOPE, ID_NEVER);
+        check_value_in_range(v_time, 1 ms * C_RANDOM_MIN_VALUE, 1 ms * C_RANDOM_MAX_VALUE, error, "Random time function in range, OK", C_SCOPE, ID_POS_ACK);
         counter(v_time / 1 ms) <= counter(v_time / 1 ms) + 1; -- Keep track of how many times the random value got this value
         wait for 0 ns;
       end loop;
@@ -250,7 +250,7 @@ begin
       log(ID_SEQUENCER, "-- Test the random time procedure", C_SCOPE);
       for i in 1 to 100 loop
         random(1 ns * C_RANDOM_MIN_VALUE, 1 ns * C_RANDOM_MAX_VALUE, v_seed1, v_seed2, v_time);
-        check_value_in_range(v_time, 1 ns * C_RANDOM_MIN_VALUE, 1 ns * C_RANDOM_MAX_VALUE, error, "Random time procedure in range, OK", C_SCOPE, ID_NEVER);
+        check_value_in_range(v_time, 1 ns * C_RANDOM_MIN_VALUE, 1 ns * C_RANDOM_MAX_VALUE, error, "Random time procedure in range, OK", C_SCOPE, ID_POS_ACK);
         counter(v_time / 1 ns) <= counter(v_time / 1 ns) + 1; -- Keep track of how many times the random value got this value
       end loop;
       -- Print statistics over the random values
@@ -263,7 +263,7 @@ begin
       log(ID_SEQUENCER, "-- Test the random time procedure with default time resolution", C_SCOPE);
       for i in 1 to 100 loop
         random(1 us * C_RANDOM_MIN_VALUE, 1 us * C_RANDOM_MAX_VALUE, v_seed1, v_seed2, v_time);
-        check_value_in_range(v_time, 1 us * C_RANDOM_MIN_VALUE, 1 us * C_RANDOM_MAX_VALUE, error, "Random time procedure in range, OK", C_SCOPE, ID_NEVER);
+        check_value_in_range(v_time, 1 us * C_RANDOM_MIN_VALUE, 1 us * C_RANDOM_MAX_VALUE, error, "Random time procedure in range, OK", C_SCOPE, ID_POS_ACK);
         counter(v_time / 1 us) <= counter(v_time / 1 us) + 1; -- Keep track of how many times the random value got this value
       end loop;
       -- Print statistics over the random values
@@ -276,7 +276,7 @@ begin
       log(ID_SEQUENCER, "-- Test the random time procedure with explicit time resolution", C_SCOPE);
       for i in 1 to 100 loop
         random(1 sec * C_RANDOM_MIN_VALUE, 1 sec * C_RANDOM_MAX_VALUE, sec, v_seed1, v_seed2, v_time);
-        check_value_in_range(v_time, 1 sec * C_RANDOM_MIN_VALUE, 1 sec * C_RANDOM_MAX_VALUE, error, "Random time procedure in range, OK", C_SCOPE, ID_NEVER);
+        check_value_in_range(v_time, 1 sec * C_RANDOM_MIN_VALUE, 1 sec * C_RANDOM_MAX_VALUE, error, "Random time procedure in range, OK", C_SCOPE, ID_POS_ACK);
         counter(v_time / 1 sec) <= counter(v_time / 1 sec) + 1; -- Keep track of how many times the random value got this value
       end loop;
       -- Print statistics over the random values
@@ -313,7 +313,7 @@ begin
 
       increment_expected_alerts(TB_NOTE, 1); -- Deprecate message from normalise
 
-      log("\rCheck normalise for slv");
+      log(NO_ID, "\rCheck normalise for slv");
       -- slv: No errors expected
       v_slv8   := x"00";
       v_slv5_a := "10101";
@@ -359,7 +359,7 @@ begin
       increment_expected_alerts_and_stop_limit(TB_ERROR) ;
       v_slv5_b(-1 downto 0) := normalise(v_slv8, v_slv5_a(-1 downto 0), ALLOW_WIDER_NARROWER, "v_slv5_a", "v_slv8", "");
 
-      log("\rCheck normalise for unsigned");
+      log(NO_ID, "\rCheck normalise for unsigned");
       -- unsigned: No errors expected
       v_uns8   := x"00";
       v_uns5_a := "10101";
@@ -405,7 +405,7 @@ begin
       increment_expected_alerts_and_stop_limit(TB_ERROR);
       v_uns5_b(-1 downto 0) := normalise(v_uns8, v_uns5_a(-1 downto 0), ALLOW_WIDER_NARROWER, "v_uns5_a", "v_uns8", "");
 
-      log("\rCheck normalise for signed");
+      log(NO_ID, "\rCheck normalise for signed");
       -- signed: No errors expected
       v_sig8   := x"00";
       v_sig5_a := "10101";
@@ -468,7 +468,7 @@ begin
       increment_expected_alerts_and_stop_limit(TB_ERROR);
       v_sig5_b(-1 downto 0) := normalise(v_sig8, v_sig5_a(-1 downto 0), ALLOW_WIDER_NARROWER, "v_sig5_a", "v_sig8", "");
 
-      log("\rCheck normalise and check_value for t_slv_array");
+      log(NO_ID, "\rCheck normalise and check_value for t_slv_array");
       v_slv_array_32 := (others => (others => '0'));
       v_slv_array(0) := "1001";
       v_slv_array(1) := "0110";
@@ -476,7 +476,7 @@ begin
       v_slv_array_32 := normalise(v_slv_array, v_slv_array_32, ALLOW_NARROWER, "v_slv_array", "v_slv_array_32", "");
       check_value(v_slv_array_32(2 downto 0), v_slv_array, error, "", C_SCOPE);
 
-      log("\rCheck normalise and check_value for t_signed_array");
+      log(NO_ID, "\rCheck normalise and check_value for t_signed_array");
       v_signed_array_32 := (others => (others => '0'));
       v_signed_array(0) := "1001";
       v_signed_array(1) := "0110";
@@ -486,7 +486,7 @@ begin
         check_value(to_integer(unsigned(v_slv_array_32(idx))), to_integer(unsigned(v_slv_array(idx))), error, "", C_SCOPE);
       end loop;
 
-      log("\rCheck normalise and check_value for t_unsigned_array");
+      log(NO_ID, "\rCheck normalise and check_value for t_unsigned_array");
       v_unsigned_array_32 := (others => (others => '0'));
       v_unsigned_array(0) := "1001";
       v_unsigned_array(1) := "0110";
@@ -499,7 +499,7 @@ begin
     ------------------------------------------------------------------------------------------------------------------------------
       log(ID_LOG_HDR, "Verifying normalize_and_check", C_SCOPE);
 
-      log("\rCheck normalize_and_check for slv");
+      log(NO_ID, "\rCheck normalize_and_check for slv");
       -- slv: No errors expected
       v_slv8   := x"00";
       v_slv5_a := "10101";
@@ -545,7 +545,7 @@ begin
       increment_expected_alerts_and_stop_limit(TB_ERROR);
       v_slv5_b(-1 downto 0) := normalize_and_check(v_slv8, v_slv5_a(-1 downto 0), ALLOW_WIDER_NARROWER, "v_slv5_a", "v_slv8", "");
 
-      log("\rCheck normalize_and_check for unsigned");
+      log(NO_ID, "\rCheck normalize_and_check for unsigned");
       -- unsigned: No errors expected
       v_uns8   := x"00";
       v_uns5_a := "10101";
@@ -591,7 +591,7 @@ begin
       increment_expected_alerts_and_stop_limit(TB_ERROR);
       v_uns5_b(-1 downto 0) := normalize_and_check(v_uns8, v_uns5_a(-1 downto 0), ALLOW_WIDER_NARROWER, "v_uns5_a", "v_uns8", "");
 
-      log("\rCheck normalize_and_check for signed");
+      log(NO_ID, "\rCheck normalize_and_check for signed");
       -- signed: No errors expected
       v_sig8   := x"00";
       v_sig5_a := "10101";
@@ -659,7 +659,7 @@ begin
     ------------------------------------------------------------------------------------------------------------------------------
       log(ID_LOG_HDR, "Testing runtime setting of output file", C_SCOPE);
 
-      log("Setting output file");
+      log(NO_ID, "Setting output file");
       if C_WARNING_ON_LOG_ALERT_FILE_RUNTIME_RENAME then
         increment_expected_alerts(warning, 2);
       end if;
@@ -667,8 +667,8 @@ begin
       set_log_file_name(GC_TESTCASE & "_testLog2.txt");
       set_alert_file_name(GC_TESTCASE & "_alertLog2.txt");
 
-      log("This string should be written to testLog2.txt");
-      log("This string should also be written to testLog2.txt");
+      log(NO_ID, "This string should be written to testLog2.txt");
+      log(NO_ID, "This string should also be written to testLog2.txt");
       increment_expected_alerts(TB_WARNING);
       alert(TB_WARNING, "This alert should be written to alertLog2.txt");
 
@@ -685,31 +685,31 @@ begin
       slv8     <= x"17";
       v_slv8   := x"17";
       v_slv5_a := "10111";
-      log("Valid hex, no radix");
+      log(NO_ID, "Valid hex, no radix");
       check_value(to_string(v_slv8, HEX), "17", error, "to_string x""17"", HEX", C_SCOPE);
       check_value(to_string(v_slv8, BIN), "00010111", error, "to_string x""17"", BIN", C_SCOPE);
       check_value(to_string(v_slv5_a, HEX), "17", error, "to_string x""17"", HEX", C_SCOPE);
       check_value(to_string(v_slv8, HEX_BIN_IF_INVALID), "17", error, "to_string x""17"", HEX_BIN_IF_INVALID", C_SCOPE);
 
-      log("Invalid hex, no radix");
+      log(NO_ID, "Invalid hex, no radix");
       v_slv8 := "0X010111";
       check_value(to_string(v_slv8, HEX), "X7", error, "to_string b""0x010111"", HEX", C_SCOPE);
       check_value(to_string(v_slv8, BIN), "0X010111", error, "to_string b""0x010111"", BIN", C_SCOPE);
       check_value(to_string(v_slv8, HEX_BIN_IF_INVALID), "X7 (b""0X010111"")", error, "to_string b""0x010111"", HEX_BIN_IF_INVALID", C_SCOPE);
 
-      log("Valid hex, Radix");
+      log(NO_ID, "Valid hex, Radix");
       v_slv8 := x"17";
       check_value(to_string(v_slv8, HEX, KEEP_LEADING_0, INCL_RADIX), "x""17""", error, "to_string b""0x010111"", HEX, KEEP_LEADING_0, INCL_RADIX", C_SCOPE);
       check_value(to_string(v_slv8, BIN, KEEP_LEADING_0, INCL_RADIX), "b""00010111""", error, "to_string b""00010111"", BIN, KEEP_LEADING_0, INCL_RADIX", C_SCOPE);
       check_value(to_string(v_slv8, HEX_BIN_IF_INVALID, KEEP_LEADING_0, INCL_RADIX), "x""17""", error, "to_string b""0x010111"", HEX_BIN_IF_INVALID, KEEP_LEADING_0, INCL_RADIX", C_SCOPE);
 
-      log("Invalid hex, Radix");
+      log(NO_ID, "Invalid hex, Radix");
       v_slv8 := "0X010111";
       check_value(to_string(v_slv8, HEX, KEEP_LEADING_0, INCL_RADIX), "x""X7""", error, "to_string b""0x010111"", HEX, KEEP_LEADING_0, INCL_RADIX", C_SCOPE);
       check_value(to_string(v_slv8, BIN, KEEP_LEADING_0, INCL_RADIX), "b""0X010111""", error, "to_string b""0x010111"", BIN, KEEP_LEADING_0, INCL_RADIX", C_SCOPE);
       check_value(to_string(v_slv8, HEX_BIN_IF_INVALID, KEEP_LEADING_0, INCL_RADIX), "x""X7"" (b""0X010111"")", error, "to_string b""0x010111"", HEX_BIN_IF_INVALID, KEEP_LEADING_0, INCL_RADIX", C_SCOPE);
 
-      log("Signed, positive");
+      log(NO_ID, "Signed, positive");
       v_sig8 := x"17";                    -- +23 decimal
       check_value(to_string(v_sig8, DEC), "23", error, "to_string x""17"", DEC", C_SCOPE);
       check_value(to_string(v_sig8, HEX), "17", error, "to_string x""17"", HEX", C_SCOPE);
@@ -717,7 +717,7 @@ begin
       check_value(to_string(v_sig8, HEX, KEEP_LEADING_0, INCL_RADIX), "x""17""", error, "to_string b""0x010111"", HEX, KEEP_LEADING_0, INCL_RADIX", C_SCOPE);
       check_value(to_string(v_sig8, BIN, KEEP_LEADING_0, INCL_RADIX), "b""00010111""", error, "to_string b""00010111"", BIN, KEEP_LEADING_0, INCL_RADIX", C_SCOPE);
 
-      log("Signed, negative");
+      log(NO_ID, "Signed, negative");
       v_sig8 := x"97";                    -- -105 decimal
       check_value(to_string(v_sig8, DEC), "-105", error, "to_string x""97"", DEC", C_SCOPE);
       check_value(to_string(v_sig8, HEX), "97", error, "to_string x""97"", HEX", C_SCOPE);
@@ -731,27 +731,27 @@ begin
       v_sig33 := 33x"1FEDCBA98";
       check_value(to_string(v_sig33, DEC), "1FEDCBA98 (too wide to be converted to integer)", error, "to_string x""1FEDCBA98"", DEC", C_SCOPE);
 
-      log("Integer as DEC");
+      log(NO_ID, "Integer as DEC");
       v_int := 150;
       check_value(to_string(v_int, DEC, EXCL_RADIX), "150", error, "to_string 150, DEC, EXCL_RADIX", C_SCOPE);
       check_value(to_string(v_int, DEC, INCL_RADIX), "d""150""", error, "to_string d""150"", DEC, INCL_RADIX", C_SCOPE);
-      log("Integer as BIN");
+      log(NO_ID, "Integer as BIN");
       check_value(to_string(v_int, BIN, EXCL_RADIX), "10010110", error, "to_string 10010110, BIN, EXCL_RADIX", C_SCOPE);
       check_value(to_string(v_int, BIN, INCL_RADIX), "b""10010110""", error, "to_string b""10010110"", BIN, INCL_RADIX", C_SCOPE);
       check_value(to_string(v_int, BIN, INCL_RADIX, KEEP_LEADING_0), "b""00000000000000000000000010010110""", error, "to_string b""00000000000000000000000010010110"", BIN, INCL_RADIX, KEEP_LEADING_0", C_SCOPE);
-      log("Integer as HEX");
+      log(NO_ID, "Integer as HEX");
       check_value(to_string(v_int, HEX, EXCL_RADIX), "96", error, "to_string 96, HEX, EXCL_RADIX", C_SCOPE);
       check_value(to_string(v_int, HEX, INCL_RADIX), "x""96""", error, "to_string x""96"", HEX, INCL_RADIX", C_SCOPE);
       check_value(to_string(v_int, HEX, INCL_RADIX, KEEP_LEADING_0), "x""00000096""", error, "to_string x""00000096"", HEX, INCL_RADIX, KEEP_LEADING_0", C_SCOPE);
-      log("Integer as DEC");
+      log(NO_ID, "Integer as DEC");
       v_int := -150;
       check_value(to_string(v_int, DEC, EXCL_RADIX), "-150", error, "to_string -150, DEC, EXCL_RADIX", C_SCOPE);
       check_value(to_string(v_int, DEC, INCL_RADIX), "d""-150""", error, "to_string d""-150"", DEC, INCL_RADIX", C_SCOPE);
-      log("Integer as BIN");
+      log(NO_ID, "Integer as BIN");
       check_value(to_string(v_int, BIN, EXCL_RADIX), "11111111111111111111111101101010", error, "to_string 11111111111111111111111101101010, BIN, EXCL_RADIX", C_SCOPE);
       check_value(to_string(v_int, BIN, INCL_RADIX), "b""11111111111111111111111101101010""", error, "to_string b""11111111111111111111111101101010"", BIN, INCL_RADIX", C_SCOPE);
       check_value(to_string(v_int, BIN, INCL_RADIX, KEEP_LEADING_0), "b""11111111111111111111111101101010""", error, "to_string b""11111111111111111111111101101010"", BIN, INCL_RADIX, KEEP_LEADING_0", C_SCOPE);
-      log("Integer as HEX");
+      log(NO_ID, "Integer as HEX");
       check_value(to_string(v_int, HEX, EXCL_RADIX), "FFFFFF6A", error, "to_string FFFFFF6A, HEX, EXCL_RADIX", C_SCOPE);
       check_value(to_string(v_int, HEX, INCL_RADIX), "x""FFFFFF6A""", error, "to_string x""FFFFFF6A"", HEX, INCL_RADIX", C_SCOPE);
       check_value(to_string(v_int, HEX, INCL_RADIX, KEEP_LEADING_0), "x""FFFFFF6A""", error, "to_string x""FFFFFF6A"", HEX, INCL_RADIX, KEEP_LEADING_0", C_SCOPE);
@@ -767,27 +767,27 @@ begin
       v_string(8)  := ascii_to_char(101);
       v_string(9)  := ascii_to_char(115);
       v_string(10) := ascii_to_char(116);
-      log(v_string);
+      log(NO_ID, v_string);
 
       -- One and two backslash-r
-      log("\rlog using one backslash-r");
-      log("\r\rlog using two backslash-r");
+      log(NO_ID, "\rlog using one backslash-r");
+      log(NO_ID, "\r\rlog using two backslash-r");
 
       -- Conversion from character to ascii integer
-      log("\rCheck char_to_ascii");
+      log(NO_ID, "\rCheck char_to_ascii");
       check_value(char_to_ascii('A'), 65, error, "Check ascii value for A");
       check_value(char_to_ascii('a'), 97, error, "Check ascii value for a");
 
-      log("\rCheck to_string on illegal characters");
+      log(NO_ID, "\rCheck to_string on illegal characters");
       check_value(uvvm_util.string_methods_pkg.to_string(string'("abcdef A z Z 0 9" & NUL & ",:;#.End")), "abcdef A z Z 0 9,:;#.End", error, "to_string() for illegal chars");
 
-      log("\rCheck function remove_initial_chars()");
+      log(NO_ID, "\rCheck function remove_initial_chars()");
       check_value(remove_initial_chars("abcdef", 3), "def", error, "remove_initial_chars() case 1");
       check_value(remove_initial_chars("abcdef", 1), "bcdef", error, "remove_initial_chars() case 1");
       check_value(remove_initial_chars("abcdef", 0), "abcdef", error, "remove_initial_chars() case 1");
       check_value(remove_initial_chars("abcdef", 6), "", error, "remove_initial_chars() case 1");
 
-      log("\rCheck functions pos_of_*() and get_string_between_delimiters()");
+      log(NO_ID, "\rCheck functions pos_of_*() and get_string_between_delimiters()");
       check_value(pos_of_leftmost('c', "abc", 5), 3, error, "leftmost c in abc");
       check_value(pos_of_leftmost('c', "a bcdcdc", 5), 4, error, "leftmost c in a bcdcdc");
       check_value(pos_of_leftmost('c', "a bxdcdx", 5), 6, error, "leftmost c in a bxdcdx, with default 5");
@@ -803,18 +803,18 @@ begin
       check_value(get_string_between_delimiters(":abc,:def:,ghi", ':', ':', right, 1), "def", error, "delimeters case 5");
       check_value(get_string_between_delimiters(":abc,:def:,ghi", ':', ':', right, 2), "abc,", error, "delimeters case 6");
 
-      log("\rCheck functions get_*_name_from_instance_name()");
+      log(NO_ID, "\rCheck functions get_*_name_from_instance_name()");
       check_value(get_process_name_from_instance_name(v_slv8'instance_name), "p_main", error, "get_process_name....");
       check_value(get_entity_name_from_instance_name(slv8'instance_name), "methods_tb", error, "get_entity_name.... 1");
       check_value(get_entity_name_from_instance_name(v_slv8'instance_name), "methods_tb", error, "get_entity_name.... 2");
 
       log(ID_LOG_HDR, "Printing with pad_string()", C_SCOPE);
-      log(pad_string("Fill on right with space", ' ', 40, left));
-      log(pad_string("Fill on left with space", ' ', 40, right));
-      log(pad_string("Fill on right with X", 'X', 40, left));
-      log(pad_string("Fill on left with Y", 'Y', 40, right));
+      log(NO_ID, pad_string("Fill on right with space", ' ', 40, left));
+      log(NO_ID, pad_string("Fill on left with space", ' ', 40, right));
+      log(NO_ID, pad_string("Fill on right with X", 'X', 40, left));
+      log(NO_ID, pad_string("Fill on left with Y", 'Y', 40, right));
 
-      log("\rCheck t_slv_array(2 downto 0)(3 downto 0)");
+      log(NO_ID, "\rCheck t_slv_array(2 downto 0)(3 downto 0)");
       v_slv_array(0) := x"9";
       v_slv_array(1) := x"A";
       v_slv_array(2) := x"6";
@@ -824,7 +824,7 @@ begin
       v_slv_array(1) := (others => 'U');
       check_value(to_string(v_slv_array, HEX_BIN_IF_INVALID), "(6, X (b""UUUU""), 9)", error, "to_string() for t_slv_array(2 downto 0)(3 downto 0) as HEX_BIN_IF_INVALID");
 
-      log("\rCheck long t_slv_array(31 downto 0)(7 downto 0)");
+      log(NO_ID, "\rCheck long t_slv_array(31 downto 0)(7 downto 0)");
       for idx in 0 to v_slv_array_32'length - 1 loop
         v_slv_array_32(idx) := std_logic_vector(to_unsigned(idx, v_slv_array_32(0)'length));
       end loop;
@@ -836,7 +836,7 @@ begin
       v_slv_array_32(v_slv_array_32'high) := (others => 'U');
       check_value(to_string(v_slv_array_32, HEX_BIN_IF_INVALID), "(XX (b""UUUUUUUU""), 1E, 1D, 1C, 1B, 1A, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 0F, 0E, 0D, 0C, 0B, 0A, 09, 08, 07, 06, 05, 04, 03, 02, 01, XX (b""UUUUUUUU""))", error, "to_string() for t_slv_array(31 downto 0)(7 downto 0) as HEX_BIN_IF_INVALID");
 
-      log("\nCheck 32 bit wide t_slv_array");
+      log(NO_ID, "\nCheck 32 bit wide t_slv_array");
       -- 32 bit wide in order to trigger the message "(too wide to be converted to integer)
       v_slv32_array(1) := x"01234567";
       v_slv32_array(2) := x"FEDCBA98";
@@ -846,7 +846,7 @@ begin
       v_slv32_array(2) := (others => 'U');
       check_value(to_string(v_slv32_array, HEX_BIN_IF_INVALID), "(01234567, XXXXXXXX (b""UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU""))", error, "to_string for t_slv_array(1 to 2)(31 downto 0) as HEX_BIN_IF_INVALID");
 
-      log("\nCheck 256 bit wide t_slv_array");
+      log(NO_ID, "\nCheck 256 bit wide t_slv_array");
       v_slv256_array(1) := x"0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF";
       v_slv256_array(0) := x"FEDCBA9876543210FEDCBA9876543210FEDCBA9876543210FEDCBA9876543210";
       check_value(to_string(v_slv256_array, HEX, KEEP_LEADING_0, INCL_RADIX), "(x""0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF"", x""FEDCBA9876543210FEDCBA9876543210FEDCBA9876543210FEDCBA9876543210"")", error, "to_string for t_slv_array(1 downto 0)(255 downto 0) as HEX");
@@ -856,7 +856,7 @@ begin
       v_slv256_array(0) := (others => 'U');
       check_value(to_string(v_slv256_array, HEX_BIN_IF_INVALID, KEEP_LEADING_0, INCL_RADIX), "(x""XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"" (b""UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU""), x""XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"" (b""UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU""))", error, "to_string for t_slv_array(1 downto 0)(255 downto 0) as HEX_BIN_IF_INVALID");
 
-      log("\rCheck t_signed_array(2 downto 0)(3 downto 0)");
+      log(NO_ID, "\rCheck t_signed_array(2 downto 0)(3 downto 0)");
       v_signed_array(0) := "1101";      -- -3
       v_signed_array(1) := "0011";      -- +3
       v_signed_array(2) := "1001";      -- -7
@@ -866,7 +866,7 @@ begin
       v_signed_array(1) := (others => 'U');
       check_value(to_string(v_signed_array, HEX_BIN_IF_INVALID), "(9, X (b""UUUU""), D)", error, "to_string() for t_signed_array(2 downto 0)(3 downto 0) as HEX_BIN_IF_INVALID");
 
-      log("\nCheck 33 bit wide t_signed_array");
+      log(NO_ID, "\nCheck 33 bit wide t_signed_array");
       -- 33 bit wide in order to trigger the message "(too wide to be converted to integer)
       v_signed33_array(1) := 33x"001234567";
       v_signed33_array(2) := 33x"1FEDCBA98";
@@ -876,7 +876,7 @@ begin
       v_signed33_array(2) := (others => 'U');
       check_value(to_string(v_signed33_array, HEX_BIN_IF_INVALID), "(001234567, XXXXXXXXX (b""UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU""))", error, "to_string for t_signed_array(1 to 2)(32 downto 0) as HEX_BIN_IF_INVALID");
 
-      log("\nCheck 256 bit wide t_signed_array");
+      log(NO_ID, "\nCheck 256 bit wide t_signed_array");
       v_signed256_array(1) := x"0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF";
       v_signed256_array(0) := x"FEDCBA9876543210FEDCBA9876543210FEDCBA9876543210FEDCBA9876543210";
       check_value(to_string(v_signed256_array, HEX, KEEP_LEADING_0, INCL_RADIX), "(x""0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF"", x""FEDCBA9876543210FEDCBA9876543210FEDCBA9876543210FEDCBA9876543210"")", error, "to_string for t_signed_array(1 downto 0)(255 downto 0) as HEX");
@@ -886,7 +886,7 @@ begin
       v_signed256_array(0) := (others => 'U');
       check_value(to_string(v_signed256_array, HEX_BIN_IF_INVALID, KEEP_LEADING_0, INCL_RADIX), "(x""XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"" (b""UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU""), x""XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"" (b""UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU""))", error, "to_string for t_signed_array(1 downto 0)(255 downto 0) as HEX_BIN_IF_INVALID");
 
-      log("\rCheck t_unsigned_array(2 downto 0)(3 downto 0)");
+      log(NO_ID, "\rCheck t_unsigned_array(2 downto 0)(3 downto 0)");
       v_unsigned_array(0) := "1101";    -- D
       v_unsigned_array(1) := "0011";    -- 3
       v_unsigned_array(2) := "1001";    -- 9
@@ -896,7 +896,7 @@ begin
       v_unsigned_array(1) := (others => 'U'); -- 3
       check_value(to_string(v_unsigned_array, HEX_BIN_IF_INVALID), "(9, X (b""UUUU""), D)", error, "to_string() for t_unsigned_array(2 downto 0)(3 downto 0) as HEX_BIN_IF_INVALID");
 
-      log("\nCheck 32 bit wide t_unsigned_array");
+      log(NO_ID, "\nCheck 32 bit wide t_unsigned_array");
       -- 32 bit wide in order to trigger the message "(too wide to be converted to integer)
       v_unsigned32_array(1) := x"01234567";
       v_unsigned32_array(2) := x"FEDCBA98";
@@ -906,7 +906,7 @@ begin
       v_unsigned32_array(2) := (others => 'U');
       check_value(to_string(v_unsigned32_array, HEX_BIN_IF_INVALID), "(01234567, XXXXXXXX (b""UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU""))", error, "to_string for t_unsigned_array(1 to 2)(31 downto 0) as HEX_BIN_IF_INVALID");
 
-      log("\nCheck 256 bit wide t_unsigned_array");
+      log(NO_ID, "\nCheck 256 bit wide t_unsigned_array");
       v_unsigned256_array(1) := x"0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF";
       v_unsigned256_array(0) := x"FEDCBA9876543210FEDCBA9876543210FEDCBA9876543210FEDCBA9876543210";
       check_value(to_string(v_unsigned256_array, HEX, KEEP_LEADING_0, INCL_RADIX), "(x""0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF"", x""FEDCBA9876543210FEDCBA9876543210FEDCBA9876543210FEDCBA9876543210"")", error, "to_string for t_unsigned_array(1 downto 0)(255 downto 0) as HEX");
@@ -916,7 +916,7 @@ begin
       v_unsigned256_array(0) := (others => 'U');
       check_value(to_string(v_unsigned256_array, HEX_BIN_IF_INVALID, KEEP_LEADING_0, INCL_RADIX), "(x""XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"" (b""UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU""), x""XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"" (b""UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU""))", error, "to_string for t_unsigned_array(1 downto 0)(255 downto 0) as HEX_BIN_IF_INVALID");
 
-      log("\rVerifying justify()");
+      log(NO_ID, "\rVerifying justify()");
       --Log pre-appended info is 80 chars long
       log(ID_SEQUENCER, justify("    Left", left, C_LOG_LINE_WIDTH - 80, KEEP_LEADING_SPACE, DISALLOW_TRUNCATE));
       log(ID_SEQUENCER, justify("    Left", left, C_LOG_LINE_WIDTH - 80, SKIP_LEADING_SPACE, DISALLOW_TRUNCATE));
@@ -927,7 +927,7 @@ begin
       log(ID_SEQUENCER, justify("Truncate last word", left, 13, KEEP_LEADING_SPACE, DISALLOW_TRUNCATE));
       log(ID_SEQUENCER, justify("Truncate last word", left, 13, KEEP_LEADING_SPACE, ALLOW_TRUNCATE));
 
-      log("\rVerifying get_basename()");
+      log(NO_ID, "\rVerifying get_basename()");
       check_value(get_basename("/home/user/path/to/test/file_name.txt"), "file_name.txt", TB_ERROR, "Verifying get_basename() with a posix path.");
       check_value(get_basename("C:\Users\user\path\to\test\file_name.txt"), "file_name.txt", TB_ERROR, "Verifying get_basename() with a windows path.");
       check_value(get_basename("file_name.txt"), "file_name.txt", TB_ERROR, "Verifying get_basename() with no path.");

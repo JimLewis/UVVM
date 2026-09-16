@@ -34,6 +34,7 @@ context uvvm_util.uvvm_util_context;
 
 library osvvm ;
 use OSVVM.FileLinePathPkg.FILE_PATH ;
+context osvvm.OsvvmContext ;
 use std.env.all ;
 
 --HDLRegression:TB
@@ -466,7 +467,7 @@ begin
       end loop;
       check_value(v_idx, bin_covered_iteration'length, TB_ERROR, "bin_covered_iteration length must be the same size as the number of bins to randomize", C_TB_SCOPE_DEFAULT, ID_NEVER, caller_name => C_PROC_NAME);
 
-      log("Generating " & to_string(v_total_iterations) & " random values");
+      log(NO_ID, "Generating " & to_string(v_total_iterations) & " random values");
       v_margin := integer(real(v_total_iterations) * 0.10) when weight_type = ADAPTIVE else
                   integer(real(v_total_iterations) * 0.15); -- EXPLICIT
       for i in 1 to v_total_iterations loop

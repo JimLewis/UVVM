@@ -15,7 +15,7 @@
 ------------------------------------------------------------------------------------------
 -- Modifications:
 --   July 2026  done by SynthWorks
---       THis file is modified from the UVVM Master branch
+--       This file is modified from the UVVM Master branch
 --       UVVM's Alert, log, and check_* capability now call the equivalent in OSVVM
 --       OSVVM supports a single, unified transcript file replacing the separate alert/log files.
 --       Most modifications are marked with "--O"
@@ -100,12 +100,24 @@ package methods_pkg is
 
   procedure log(
     msg             : string;
-    scope           : string            := C_TB_SCOPE_DEFAULT;
+--    scope           : string            := C_TB_SCOPE_DEFAULT;  -- O conflicts with OSVVM.  Use log(NO_ID, msg)
+    scope           : string;
     msg_id_panel    : t_msg_id_panel    := shared_msg_id_panel;
     log_destination : t_log_destination := shared_default_log_destination;
     log_file_name   : string            := C_LOG_FILE_NAME;
     open_mode       : file_open_kind    := append_mode
   );
+
+  --O  OSVVM uses this to print passed messages and track passed affirmations
+  procedure log_passed(
+    msg_id          : t_msg_id;
+    msg             : string;
+    scope           : string            := C_TB_SCOPE_DEFAULT;
+    msg_id_panel    : t_msg_id_panel    := shared_msg_id_panel;
+    log_destination : t_log_destination := shared_default_log_destination;
+    log_file_name   : string            := C_LOG_FILE_NAME;
+    open_mode       : file_open_kind    := append_mode
+    ) ;
 
   procedure log_text_block(
     msg_id              : t_msg_id;
@@ -183,6 +195,14 @@ package methods_pkg is
     constant msg         : string;
     constant scope       : string := C_TB_SCOPE_DEFAULT
   );
+
+  --O  OSVVM uses this to print error messages and track error affirmations
+  procedure affirm_error(
+    constant alert_level : t_alert_level;
+    constant msg         : string;
+    constant scope       : string := C_TB_SCOPE_DEFAULT ;
+    constant msg_id      : t_msg_id
+  ) ;
 
   -- Dedicated alert-procedures all alert levels (less verbose - as 2 rather than 3 parameters...)
   procedure note(
@@ -3383,7 +3403,7 @@ package body methods_pkg is
   begin
     if file_name = C_LOG_FILE_NAME or file_name = C_ALERT_FILE_NAME then
       -- Open the OSVVM default transcript name which is set by SetTestName
-      osvvm.ReportPkg.TranscriptOpen ;
+      osvvm.TranscriptPkg.TranscriptOpen ;
     else
       -- Open a transcript named file_name
       osvvm.TranscriptPkg.TranscriptOpen(file_name) ;
@@ -3410,12 +3430,88 @@ package body methods_pkg is
   -- ============================================================================
   -- Log-related
   -- ============================================================================
+  --O Added local_print for commonality between Log and Alert
+  procedure local_print (
+    Name             : string ;
+    Level            : string ;
+    scope            : string ;
+    message          : string ;
+    log_destination  : t_log_destination := shared_default_log_destination;
+    log_file_name    : string            := C_LOG_FILE_NAME;
+    open_mode        : file_open_kind    := append_mode
+  ) is
+    variable buf : line ;
+    variable v_first_premessage_width : integer ;
+    variable v_idx : integer := 1 ;
+    constant C_MSG_LENGTH : integer := message'length ;
+    alias a_norm_msg : string(1 to C_MSG_LENGTH) is message;
+  begin
+    -- Handle \r as potential initial open line
+    v_idx := 1 ;
+    if C_USE_BACKSLASH_R_AS_LF then
+      while v_idx < C_MSG_LENGTH loop
+        -- only replacing initial \r with LF at beginning of alert/log
+        exit when a_norm_msg(v_idx to v_idx+1) /= "\r" ;
+        if not C_SINGLE_LINE_LOG then
+          if v_idx = 1 then
+            write(buf, C_LOG_PREFIX) ;      --O first line
+          else
+            write(buf, LF & C_LOG_PREFIX) ; --O additional lines
+          end if ;
+        end if;
+        v_idx := v_idx + 2;
+      end loop ;
+    end if ;
+    --O print the initial blank lines
+    if v_idx /= 1 and not C_SINGLE_LINE_LOG then
+        write_line_to_log_destination(buf, log_destination, log_file_name, open_mode);
+    end if;
+
+    --O Create premessage portion of output
+    write(buf,
+            C_LOG_PREFIX &
+            osvvm.TextUtilPkg.format(NOW, C_LOG_TIME_BASE, C_LOG_TIME_DECIMALS, C_LOG_TIME_WIDTH) & "  " &
+            Name & "  " &
+            justify(Level, C_LOG_MSG_ID_JUSTIFY, LEFT) & "  " &
+            justify(scope, C_LOG_SCOPE_JUSTIFY,  LEFT) & "  ") ;
+
+    v_first_premessage_width := buf'length;
+
+    if not C_SINGLE_LINE_LOG then
+      if C_MSG_LENGTH > C_LOG_WRAP_THRESHOLD - v_first_premessage_width then
+        -- Wrap at LF and for lines that exceed
+        -- wrap_lines(buf, 1, v_first_premessage_width + 1, C_LOG_WRAP_WIDTH);
+        osvvm.TextUtilPkg.WrapToBuf(
+          buf              => buf,
+          --                  Remove initial \r, replace \n with LF, and remove nul characters (to_string)
+          s                => replace_backslash_n_with_lf(to_string(a_norm_msg(v_idx to C_MSG_LENGTH))),
+          SubsequentPrefix => C_LOG_SECONDARY_PREFIX & (C_LOG_SECONDARY_PREFIX'length+1 to v_first_premessage_width => ' '),
+          WrapLength       => C_LOG_LINE_WIDTH - v_first_premessage_width
+        ) ;
+      else
+        -- Wrap at LF in text, but no line wrapping since less than C_LOG_WRAP_THRESHOLD
+        osvvm.TextUtilPkg.WrapToBuf(
+          buf              => buf,
+          --                  Remove initial \r, replace \n with LF, and remove nul characters (to_string)
+          s                => replace_backslash_n_with_lf(to_string(a_norm_msg(v_idx to C_MSG_LENGTH))),
+          SubsequentPrefix => C_LOG_SECONDARY_PREFIX & (C_LOG_SECONDARY_PREFIX'length+1 to v_first_premessage_width => ' '),
+          WrapLength       => integer'high / 2  -- do not wrap for line length for shorter lines
+        ) ;
+      end if ;
+    else
+      -- Remove the initial \r characters (by slicing at v_idx), replace \n with LF, and remove nul characters (to_string)
+      write(buf, replace_backslash_n_with_lf(to_string(a_norm_msg(v_idx to C_MSG_LENGTH))));
+      -- Replace LF with space
+      replace(buf, LF, ' ');
+    end if;
+    write_line_to_log_destination(buf, log_destination, log_file_name, open_mode);
+  end procedure local_print ;
+
   --O used to pass information to OSVVM
   type t_alt_id is (NORMAL, PASSED, MANUAL_CHECK) ;
 
-  --O Translated log to OSVVM and sorted complexity so it is understandable.
-  --O Modified significantly, but keeps the same output.
-  procedure local_log(
+  --O Modified significantly to sort complexity, but keeps the same output.
+  procedure local_log (
     msg_id          : t_msg_id;
     msg             : string;
     scope           : string            := C_TB_SCOPE_DEFAULT;
@@ -3428,113 +3524,57 @@ package body methods_pkg is
     variable buf : line ;
     variable v_msg_id_str : string(1 to C_LOG_MSG_ID_WIDTH) := (others => ' ') ;
     constant v_resolved_scope : string := work.string_methods_pkg.to_string(scope) ; -- remove nul characters
-    variable v_first_premessage_width : integer ;
-    variable v_idx : integer := 1 ;
-    constant C_MSG_LENGTH : integer := msg'length ;
-    alias a_norm_msg : string(1 to C_MSG_LENGTH) is msg;
+--    variable v_first_premessage_width : integer ;
+--    variable v_idx : integer := 1 ;
+--    constant C_MSG_LENGTH : integer := msg'length ;
+--    alias a_norm_msg : string(1 to C_MSG_LENGTH) is msg;
   begin
     --O Header part top
     if (msg_id = ID_LOG_HDR) then
-      write(buf,
-          C_LOG_PREFIX &
-          LF & C_LOG_PREFIX) ;
+      osvvm.TextUtilPkg.HeaderToBuf(buf, "  ", C_LOG_INFO_WIDTH) ;
       write_line_to_log_destination(buf, log_destination, log_file_name, open_mode);
+      shared_current_log_hdr.normal := justify(msg, left, C_LOG_HDR_FOR_WAVEVIEW_WIDTH, KEEP_LEADING_SPACE, ALLOW_TRUNCATE);
+      shared_log_hdr_for_waveview   := justify(msg, left, C_LOG_HDR_FOR_WAVEVIEW_WIDTH, KEEP_LEADING_SPACE, ALLOW_TRUNCATE);
     elsif (msg_id = ID_LOG_HDR_LARGE) then
-      write(buf,
-        C_LOG_PREFIX &
-        LF & C_LOG_PREFIX &
-        LF & C_LOG_PREFIX & (1 to C_LOG_INFO_WIDTH => '=') ) ;
+      osvvm.TextUtilPkg.HeaderToBuf(buf, "  =", C_LOG_INFO_WIDTH) ;
       write_line_to_log_destination(buf, log_destination, log_file_name, open_mode);
+      shared_current_log_hdr.large := justify(msg, left, C_LOG_HDR_FOR_WAVEVIEW_WIDTH, KEEP_LEADING_SPACE, ALLOW_TRUNCATE);
     elsif (msg_id = ID_LOG_HDR_XL) then
-      write(buf,
-          C_LOG_PREFIX &
-          LF & C_LOG_PREFIX &
-          LF & C_LOG_PREFIX &
-          LF & C_LOG_PREFIX & (1 to C_LOG_INFO_WIDTH => '#') &
-          LF & C_LOG_PREFIX) ;
+      osvvm.TextUtilPkg.HeaderToBuf(buf, "  # ", C_LOG_INFO_WIDTH) ;
       write_line_to_log_destination(buf, log_destination, log_file_name, open_mode);
+      shared_current_log_hdr.xl := justify(msg, left, C_LOG_HDR_FOR_WAVEVIEW_WIDTH, KEEP_LEADING_SPACE, ALLOW_TRUNCATE);
     end if;
-
     if alt_id = NORMAL then
-      v_msg_id_str := justify(to_upper(to_string(msg_id)), C_LOG_MSG_ID_WIDTH, LEFT);
+      if msg_id /= NO_ID then
+        v_msg_id_str := justify(to_upper(to_string(msg_id)), C_LOG_MSG_ID_WIDTH, LEFT);
+      else
+        v_msg_id_str := justify(to_upper(to_string(C_TB_MSG_ID_DEFAULT)), C_LOG_MSG_ID_WIDTH, LEFT);
+      end if;
     elsif alt_id = MANUAL_CHECK then
       v_msg_id_str := "MANUAL_CHECK" & (1 to C_LOG_MSG_ID_WIDTH - 12 => ' ');
     else
       v_msg_id_str := "PASSED" & (1 to C_LOG_MSG_ID_WIDTH - 6 => ' ');
     end if;
-    --O Print msg
-    if C_ALERT_LOG_VERBATIM then
-      --O minimal processing of message.  Only has necessary to_string to remove nul characters from msg
-      write(buf,
-              C_LOG_PREFIX &
-              justify(to_string(now, C_LOG_TIME_BASE), C_LOG_TIME_WIDTH, RIGHT) & "    " &
-              osvvm.OsvvmSettingsPkg.ALERT_LOG_LOG_NAME & "  " &
-              v_msg_id_str(1 to C_LOG_MSG_ID_JUSTIFY) & "  " &
-              justify(v_resolved_scope, C_LOG_SCOPE_JUSTIFY, LEFT) & "  " &
-              to_string(msg));
-    else
-      --O Full UVVM pre-precessing of Message, with complexity sorted to reduce overhead
-      -- Handle \r as potential initial open line
-      v_idx := 1 ;
-      if C_USE_BACKSLASH_R_AS_LF then
-        while v_idx < C_MSG_LENGTH loop
-          -- only replacing initial \r with LF at beginning of alert/log
-          exit when a_norm_msg(v_idx to v_idx+1) /= "\r" ;
-          if not C_SINGLE_LINE_LOG then
-            if v_idx = 1 then
-              write(buf, C_LOG_PREFIX) ;      --O first line
-            else
-              write(buf, LF & C_LOG_PREFIX) ; --O additional lines
-            end if ;
-          end if;
-          v_idx := v_idx + 2;
-        end loop ;
-      end if ;
-      --O print the initial blank lines
-      if v_idx /= 1 and not C_SINGLE_LINE_LOG then
-          write_line_to_log_destination(buf, log_destination, log_file_name, open_mode);
-      end if;
 
-      --O Create premessage portion of output
-      write(buf,
-              justify(to_string(now, C_LOG_TIME_BASE), C_LOG_TIME_WIDTH, RIGHT) & "    " &
-              osvvm.OsvvmSettingsPkg.ALERT_LOG_LOG_NAME & "  " &
-              v_msg_id_str(1 to C_LOG_MSG_ID_JUSTIFY) & "  " &
-              justify(v_resolved_scope, C_LOG_SCOPE_JUSTIFY, LEFT) & "  ") ;
-
-      v_first_premessage_width := buf'length;
-
-      -- Remove the initial \r characters (by slicing), replace \n with LF, and remove nul characters (to_string)
-      -- and then add the message to the output
-      write(buf, replace_backslash_n_with_lf(to_string(a_norm_msg(v_idx to C_MSG_LENGTH))));
-
-      if not C_SINGLE_LINE_LOG then
-        -- Wrap the line into multiple lines as necessary
-        wrap_lines(buf, 1, v_first_premessage_width + 1, C_LOG_LINE_WIDTH - C_LOG_PREFIX_WIDTH);
-      else
-        -- Remove line feed characters
-        replace(buf, LF, ' ');
-      end if;
-
-      -- Add prefix to all lines
-      prefix_lines(buf);
-    end if ;
-    -- Write the log to the log destination
-    write_line_to_log_destination(buf, log_destination, log_file_name, open_mode);
+    local_print(
+      Name             =>  osvvm.OsvvmSettingsPkg.ALERT_LOG_LOG_NAME,
+      Level            =>  v_msg_id_str(1 to C_LOG_MSG_ID_JUSTIFY),
+      scope            =>  v_resolved_scope,
+      message          =>  msg,
+      log_destination  =>  log_destination,
+      log_file_name    =>  log_file_name,
+      open_mode        =>  open_mode
+    ) ;
 
     --O Header part bottom
     if (msg_id = ID_LOG_HDR) then
-      write(buf, C_LOG_PREFIX & (1 to C_LOG_INFO_WIDTH => '-') ) ;
+      osvvm.TextUtilPkg.HeaderToBuf(buf, "-", C_LOG_INFO_WIDTH) ;
       write_line_to_log_destination(buf, log_destination, log_file_name, open_mode);
     elsif (msg_id = ID_LOG_HDR_LARGE) then
-      write(buf, C_LOG_PREFIX & (1 to C_LOG_INFO_WIDTH => '=') ) ;
+      osvvm.TextUtilPkg.HeaderToBuf(buf, "=", C_LOG_INFO_WIDTH) ;
       write_line_to_log_destination(buf, log_destination, log_file_name, open_mode);
     elsif (msg_id = ID_LOG_HDR_XL) then
-      write(buf,
-        C_LOG_PREFIX &
-        LF & C_LOG_PREFIX & (1 to C_LOG_INFO_WIDTH => '#') &
-        LF & C_LOG_PREFIX &
-        LF & C_LOG_PREFIX ) ;
+      osvvm.TextUtilPkg.HeaderToBuf(buf, " #  ", C_LOG_INFO_WIDTH) ;
       write_line_to_log_destination(buf, log_destination, log_file_name, open_mode);
     end if;
   end procedure local_log ;
@@ -3559,7 +3599,8 @@ package body methods_pkg is
     -- Only log if message ID is enabled
     if (msg_id_panel(msg_id) = ENABLED) then
       local_log(msg_id, msg, scope, log_destination, log_file_name, open_mode);
-    end if;
+    end if;      --!! Add prefix to all lines
+
   end procedure log ;
 
   --O  OSVVM uses this to print passed messages and track passed affirmations
@@ -3573,9 +3614,11 @@ package body methods_pkg is
     open_mode       : file_open_kind    := append_mode
   ) is
   begin
+    if msg_id /= ID_NEVER then
+      osvvm.AlertLogPkg.IncAffirmPassedCount ;
+    end if ;
     -- Only log if message ID is enabled
     if (msg_id_panel(msg_id) = ENABLED) then
-      osvvm.AlertLogPkg.IncAffirmPassedCount ;
       local_log(msg_id, msg, scope, log_destination, log_file_name, open_mode, PASSED);
     end if;
   end procedure log_passed ;
@@ -3583,7 +3626,8 @@ package body methods_pkg is
   -- Calls overloaded log procedure with default msg_id
   procedure log(
     msg             : string;
-    scope           : string            := C_TB_SCOPE_DEFAULT;
+--    scope           : string            := C_TB_SCOPE_DEFAULT;  -- O conflicts with OSVVM.  Use log(NO_ID, msg)
+    scope           : string;
     msg_id_panel    : t_msg_id_panel    := shared_msg_id_panel;
     log_destination : t_log_destination := shared_default_log_destination;
     log_file_name   : string            := C_LOG_FILE_NAME;
@@ -3598,7 +3642,7 @@ package body methods_pkg is
   end procedure;
 
   -- Logging for multi line text. Also empty the text_block, for consistency.
-  --O UVVM log_text_block function entirely rebuild.  Formerly did too many pointer to string to pointer to string manipulations.
+  --O Modified significantly to sort complexity, but keeps the same output.
   procedure log_text_block(
     msg_id              : t_msg_id;
     variable text_block : inout line;
@@ -3612,34 +3656,39 @@ package body methods_pkg is
     open_mode           : file_open_kind       := append_mode
   ) is
     variable buf : line ;
+    variable v_text_block_is_empty   : boolean;
   begin
+    if ((log_file_name'length = 0) and ((log_destination = CONSOLE_AND_LOG) or (log_destination = LOG_ONLY))) then
+      alert(TB_ERROR, "log_text_block called with log_destination " & to_upper(to_string(log_destination)) & ", but log file name was empty.");
     -- Only log if message ID is enabled
-    if (msg_id_panel(msg_id) = ENABLED) then
-      --O  If text_block empty (NULL), then it represents a single blank line
-      if text_block = NULL then
-        write(text_block, string'(""));
-      end if ;
+    elsif (msg_id_panel(msg_id) = ENABLED) then
+      --O  If text_block empty (NULL)
+      v_text_block_is_empty := (text_block = null);
+
       --O  Observation, log_text_block with formatting = UNFORMATTED is just like WriteLine()
       if formatting = UNFORMATTED then
-        -- Just print the text block
-        write_line_to_log_destination(text_block, log_destination, log_file_name, open_mode);
-      else
+        if not v_text_block_is_empty then
+          -- Only print when there is something to print
+          write_line_to_log_destination(text_block, log_destination, log_file_name, open_mode);
+        end if;
+      elsif not (v_text_block_is_empty and (log_if_block_empty = SKIP_LOG_IF_BLOCK_EMPTY)) then
         --O header, preamble
-        write(buf,
-          C_LOG_PREFIX &
-          LF & C_LOG_PREFIX &
-          LF & C_LOG_PREFIX & (1 to C_LOG_INFO_WIDTH => '*') ) ;
+        osvvm.TextUtilPkg.HeaderToBuf(buf, "  *", C_LOG_INFO_WIDTH) ;
         write_line_to_log_destination(buf, log_destination, log_file_name, open_mode);
         --O header, message
         local_log(msg_id, msg_header, scope, log_destination, log_file_name, open_mode);
         --O header to text block separator
-        write(buf, C_LOG_PREFIX & (1 to C_LOG_INFO_WIDTH => '-') ) ;
+        osvvm.TextUtilPkg.HeaderToBuf(buf, "-", C_LOG_INFO_WIDTH) ;
         write_line_to_log_destination(buf, log_destination, log_file_name, open_mode);
         --O text block
-        write_line_to_log_destination(text_block, log_destination, log_file_name, open_mode);
-        write(buf,
-        C_LOG_PREFIX & (1 to C_LOG_INFO_WIDTH => '*') &
-        LF & C_LOG_PREFIX ) ;
+        if not v_text_block_is_empty then
+          prefix_lines(text_block);
+          write_line_to_log_destination(text_block, log_destination, log_file_name, open_mode);
+        elsif log_if_block_empty = NOTIFY_IF_BLOCK_EMPTY then
+          write(buf, C_LOG_PREFIX & "Note: Text block was empty") ;
+          write_line_to_log_destination(buf, log_destination, log_file_name, open_mode);
+        end if ;
+        osvvm.TextUtilPkg.HeaderToBuf(buf, "* ", C_LOG_INFO_WIDTH) ;
         write_line_to_log_destination(buf, log_destination, log_file_name, open_mode);
       end if;
     end if;
@@ -3765,11 +3814,11 @@ package body methods_pkg is
         end if ;
       when LOG_ONLY =>
         if not osvvm.TranscriptPkg.IsTranscriptOpen then
-          osvvm.ReportPkg.TranscriptOpen ;
+          osvvm.TranscriptPkg.TranscriptOpen ;
         end if ;
       when CONSOLE_AND_LOG =>
         if not osvvm.TranscriptPkg.IsTranscriptOpen then
-          osvvm.ReportPkg.TranscriptOpen ;
+          osvvm.TranscriptPkg.TranscriptOpen ;
         end if ;
         osvvm.TranscriptPkg.SetTranscriptMirror ;
     end case ;
@@ -3811,22 +3860,58 @@ package body methods_pkg is
       osvvm.AlertLogPkg.SetManualCheck ;
       local_log(NO_ID, msg, scope, alt_id => MANUAL_CHECK);  -- msg_id not used here, hence NO_ID
     elsif alert_level /= NO_ALERT then
+
+-- Start Local_print
+      local_print(
+        Name             =>  osvvm.OsvvmSettingsPkg.ALERT_LOG_Alert_NAME,
+        Level            =>  to_upper(osvvm.AlertLogPkg.to_string(to_OsvvmAlert(alert_level))),
+        scope            =>  v_resolved_scope,
+        message          =>  msg
+      ) ;
+
+--!!       write(buf,
+--!!           C_LOG_PREFIX &
+--!!           osvvm.TextUtilPkg.format(NOW, C_LOG_TIME_BASE, C_LOG_TIME_DECIMALS, C_LOG_TIME_WIDTH) & "  " &
+--!!           osvvm.OsvvmSettingsPkg.ALERT_LOG_ALERT_NAME & "  " &
+--!!   --        justify(to_string(alert_level), C_LOG_SCOPE_JUSTIFY, LEFT) & "  ") ;  -- Print UVVM levels
+--!!           justify(to_string(to_OsvvmAlert(alert_level)), C_LOG_MSG_ID_JUSTIFY, LEFT) & "  ") ; -- Print OSVVM levels, which is what we count
+--!!           justify(scope, C_LOG_SCOPE_JUSTIFY, LEFT) & "  ") ;
+--!!
+--!!       v_first_premessage_width := buf'length;
+--!! -- End Local_print
+      -- Count the alerts
       if C_ENABLE_HIERARCHICAL_ALERTS and v_resolved_scope'length > 0 then
-        osvvm.AlertLogPkg.alert(osvvm.AlertLogPkg.NewID(v_resolved_scope), to_string(msg), to_OsvvmAlert(alert_level)) ;
+        -- osvvm.AlertLogPkg.alert(osvvm.AlertLogPkg.NewID(v_resolved_scope), to_string(msg), to_OsvvmAlert(alert_level)) ;
+        osvvm.AlertLogPkg.IncAlertCount(osvvm.AlertLogPkg.NewID(v_resolved_scope), to_OsvvmAlert(alert_level)) ;
       else
-        if v_resolved_scope'length > 0 then
-          osvvm.AlertLogPkg.alert(
-            (1 to C_LOG_MSG_ID_JUSTIFY - 10 => ' ') & "  " &   -- balances msg_id
-            justify(v_resolved_scope, C_LOG_SCOPE_JUSTIFY, LEFT)  & "  " &
-            to_string(msg), to_OsvvmAlert(alert_level)) ;
-        else
-          osvvm.AlertLogPkg.alert(
-            (1 to C_LOG_MSG_ID_JUSTIFY + C_LOG_SCOPE_JUSTIFY + 2 - 10 => ' ') & "  " &
-            to_string(msg), to_OsvvmAlert(alert_level)) ;
-        end if;
+--        if v_resolved_scope'length > 0 then
+--          osvvm.AlertLogPkg.alert(
+--            (1 to C_LOG_MSG_ID_JUSTIFY - 10 => ' ') & "  " &   -- balances msg_id
+--            justify(v_resolved_scope, C_LOG_SCOPE_JUSTIFY, LEFT)  & "  " &
+--            to_string(msg), to_OsvvmAlert(alert_level)) ;
+--        else
+--          osvvm.AlertLogPkg.alert(
+--            (1 to C_LOG_MSG_ID_JUSTIFY + C_LOG_SCOPE_JUSTIFY + 2 - 10 => ' ') & "  " &
+--            to_string(msg), to_OsvvmAlert(alert_level)) ;
+--        end if;
+        osvvm.AlertLogPkg.IncAlertCount(to_OsvvmAlert(alert_level)) ;
       end if ;
     end if;
   end procedure alert ;
+
+  --O  OSVVM uses this to print error messages and track error affirmations
+  procedure affirm_error(
+    constant alert_level : t_alert_level;
+    constant msg         : string;
+    constant scope       : string := C_TB_SCOPE_DEFAULT ;
+    constant msg_id      : t_msg_id
+  ) is
+  begin
+    if msg_id /= ID_NEVER then
+      osvvm.AlertLogPkg.IncAffirmCount ;
+    end if ;
+    alert(alert_level, msg, scope) ;
+  end affirm_error ;
 
   -- Dedicated alert-procedures all alert levels (less verbose - as 2 rather than 3 parameters...)
   procedure note(
@@ -4384,8 +4469,7 @@ package body methods_pkg is
     if value then
       log_passed(msg_id, caller_name & "(" & C_VALUE_TYPE & ", true) => OK. Value was true." & add_msg_delimiter(msg), scope, msg_id_panel);
     else
-      osvvm.AlertLogPkg.IncAffirmCount ;
-      alert(alert_level, caller_name & "(" & C_VALUE_TYPE & ", " & C_EXP_STR & ") => Failed. Value was " & C_VALUE_STR & ". Expected " & C_EXP_STR & "." & add_msg_delimiter(msg), scope);
+      affirm_error(alert_level, caller_name & "(" & C_VALUE_TYPE & ", " & C_EXP_STR & ") => Failed. Value was " & C_VALUE_STR & ". Expected " & C_EXP_STR & "." & add_msg_delimiter(msg), scope, msg_id);
     end if;
     return value;
   end function;
@@ -4411,8 +4495,7 @@ package body methods_pkg is
       log_passed(msg_id, caller_name & "(" & C_VALUE_TYPE & ", " & C_EXP_STR & ") => OK. Value was " & C_VALUE_STR & "." & add_msg_delimiter(msg), scope, msg_id_panel);
       return true;
     else
-      osvvm.AlertLogPkg.IncAffirmCount ;
-      alert(alert_level, caller_name & "(" & C_VALUE_TYPE & ", " & C_EXP_STR & ") => Failed. Value was " & C_VALUE_STR & ". Expected " & C_EXP_STR & "." & add_msg_delimiter(msg), scope);
+      affirm_error(alert_level, caller_name & "(" & C_VALUE_TYPE & ", " & C_EXP_STR & ") => Failed. Value was " & C_VALUE_STR & ". Expected " & C_EXP_STR & "." & add_msg_delimiter(msg), scope, msg_id);
       return false;
     end if;
   end function;
@@ -4469,8 +4552,7 @@ package body methods_pkg is
     end case;
 
     if v_failed = true then
-      osvvm.AlertLogPkg.IncAffirmCount ;
-      alert(alert_level, caller_name & "(" & C_VALUE_TYPE & ", " & C_EXP_STR & ") => Failed. Value was " & C_VALUE_STR & ". Expected " & C_EXP_STR & "." & add_msg_delimiter(msg), scope);
+      affirm_error(alert_level, caller_name & "(" & C_VALUE_TYPE & ", " & C_EXP_STR & ") => Failed. Value was " & C_VALUE_STR & ". Expected " & C_EXP_STR & "." & add_msg_delimiter(msg), scope, msg_id);
       return false;
     else
       return true;
@@ -4566,21 +4648,20 @@ package body methods_pkg is
     end if;
     -- trigger alert and log message
     if v_trigger_alert then
-      osvvm.AlertLogPkg.IncAffirmCount ;
       if C_VALUE_STR'length > C_EXP_STR'length then
         if radix = HEX_BIN_IF_INVALID or radix = DEC then
-          alert(alert_level, caller_name & "(" & value_type & ", " & C_EXP_STR & ") => Failed. Value was " & C_VALUE_STR & ". Expected " & C_EXP_STR & "." & add_msg_delimiter(msg), scope);
+          affirm_error(alert_level, caller_name & "(" & value_type & ", " & C_EXP_STR & ") => Failed. Value was " & C_VALUE_STR & ". Expected " & C_EXP_STR & "." & add_msg_delimiter(msg), scope, msg_id);
         else
-          alert(alert_level, caller_name & "(" & value_type & ", " & C_EXP_STR & ") => Failed. Value was " & C_VALUE_STR & ". Expected " & pad_short_string(C_EXP_STR, C_VALUE_STR) & "." & add_msg_delimiter(msg), scope);
+          affirm_error(alert_level, caller_name & "(" & value_type & ", " & C_EXP_STR & ") => Failed. Value was " & C_VALUE_STR & ". Expected " & pad_short_string(C_EXP_STR, C_VALUE_STR) & "." & add_msg_delimiter(msg), scope, msg_id);
         end if;
       elsif C_VALUE_STR'length < C_EXP_STR'length then
         if radix = HEX_BIN_IF_INVALID or radix = DEC then
-          alert(alert_level, caller_name & "(" & value_type & ", " & C_EXP_STR & ") => Failed. Value was " & C_VALUE_STR & ". Expected " & C_EXP_STR & "." & add_msg_delimiter(msg), scope);
+          affirm_error(alert_level, caller_name & "(" & value_type & ", " & C_EXP_STR & ") => Failed. Value was " & C_VALUE_STR & ". Expected " & C_EXP_STR & "." & add_msg_delimiter(msg), scope, msg_id);
         else
-          alert(alert_level, caller_name & "(" & value_type & ", " & C_EXP_STR & ") => Failed. Value was " & pad_short_string(C_VALUE_STR, C_EXP_STR) & ". Expected " & C_EXP_STR & "." & add_msg_delimiter(msg), scope);
+          affirm_error(alert_level, caller_name & "(" & value_type & ", " & C_EXP_STR & ") => Failed. Value was " & pad_short_string(C_VALUE_STR, C_EXP_STR) & ". Expected " & C_EXP_STR & "." & add_msg_delimiter(msg), scope, msg_id);
         end if;
       else
-        alert(alert_level, caller_name & "(" & value_type & ", " & C_EXP_STR & ") => Failed. Value was " & C_VALUE_STR & ". Expected " & C_EXP_STR & "." & add_msg_delimiter(msg), scope);
+        affirm_error(alert_level, caller_name & "(" & value_type & ", " & C_EXP_STR & ") => Failed. Value was " & C_VALUE_STR & ". Expected " & C_EXP_STR & "." & add_msg_delimiter(msg), scope, msg_id);
       end if;
     end if;
 
@@ -4707,8 +4788,7 @@ package body methods_pkg is
       log_passed(msg_id, caller_name & "(" & C_VALUE_TYPE & ", " & C_EXP_STR & ") => OK. Value was " & C_VALUE_STR & "." & add_msg_delimiter(msg), scope, msg_id_panel);
       return true;
     else
-      osvvm.AlertLogPkg.IncAffirmCount ;
-      alert(alert_level, caller_name & "(" & C_VALUE_TYPE & ", " & C_EXP_STR & ") => Failed. Value was " & C_VALUE_STR & ". Expected " & C_EXP_STR & "." & add_msg_delimiter(msg), scope);
+      affirm_error(alert_level, caller_name & "(" & C_VALUE_TYPE & ", " & C_EXP_STR & ") => Failed. Value was " & C_VALUE_STR & ". Expected " & C_EXP_STR & "." & add_msg_delimiter(msg), scope, msg_id);
       return false;
     end if;
   end function;
@@ -4734,8 +4814,7 @@ package body methods_pkg is
       log_passed(msg_id, caller_name & "(" & C_VALUE_TYPE & ", " & C_EXP_STR & ") => OK. Value was " & C_VALUE_STR & "." & add_msg_delimiter(msg), scope, msg_id_panel);
       return true;
     else
-      osvvm.AlertLogPkg.IncAffirmCount ;
-      alert(alert_level, caller_name & "(" & C_VALUE_TYPE & ", " & C_EXP_STR & ") => Failed. Value was " & C_VALUE_STR & ". Expected " & C_EXP_STR & "." & add_msg_delimiter(msg), scope);
+      affirm_error(alert_level, caller_name & "(" & C_VALUE_TYPE & ", " & C_EXP_STR & ") => Failed. Value was " & C_VALUE_STR & ". Expected " & C_EXP_STR & "." & add_msg_delimiter(msg), scope, msg_id);
       return false;
     end if;
   end function;
@@ -4767,8 +4846,7 @@ package body methods_pkg is
       log_passed(msg_id, caller_name & "(" & C_VALUE_TYPE & ", " & v_exp_line.all & ") => OK. Value was " & v_value_line.all & "." & add_msg_delimiter(msg), scope, msg_id_panel);
       v_return_val := true;
     else
-      osvvm.AlertLogPkg.IncAffirmCount ;
-      alert(alert_level, caller_name & "(" & C_VALUE_TYPE & ", " & v_exp_line.all & ") => Failed. Value was " & v_value_line.all & ". Expected " & v_exp_line.all & "." & add_msg_delimiter(msg), scope);
+      affirm_error(alert_level, caller_name & "(" & C_VALUE_TYPE & ", " & v_exp_line.all & ") => Failed. Value was " & v_value_line.all & ". Expected " & v_exp_line.all & "." & add_msg_delimiter(msg), scope, msg_id);
       v_return_val := false;
     end if;
     DEALLOCATE(v_value_line);
@@ -4795,8 +4873,7 @@ package body methods_pkg is
       log_passed(msg_id, caller_name & "(" & C_VALUE_TYPE & ", '" & exp & "') => OK. Value was '" & value & "'." & add_msg_delimiter(msg), scope, msg_id_panel);
       return true;
     else
-      osvvm.AlertLogPkg.IncAffirmCount ;
-      alert(alert_level, caller_name & "(" & C_VALUE_TYPE & ", '" & exp & "') => Failed. Value was '" & value & "'. Expected '" & exp & "'" & "." & add_msg_delimiter(msg), scope);
+      affirm_error(alert_level, caller_name & "(" & C_VALUE_TYPE & ", '" & exp & "') => Failed. Value was '" & value & "'. Expected '" & exp & "'" & "." & add_msg_delimiter(msg), scope, msg_id);
       return false;
     end if;
   end function;
@@ -6056,8 +6133,7 @@ package body methods_pkg is
       log_passed(msg_id, caller_name & "(" & value_type & ", " & C_MIN_VALUE_STR & ", " & C_MAX_VALUE_STR & ") => OK. Value was " & C_VALUE_STR & "." & add_msg_delimiter(msg), scope, msg_id_panel);
       return true;
     else
-      osvvm.AlertLogPkg.IncAffirmCount ;
-      alert(alert_level, caller_name & "(" & value_type & ", " & C_MIN_VALUE_STR & ", " & C_MAX_VALUE_STR & ") => Failed. Value was " & C_VALUE_STR & ". Expected between " & C_MIN_VALUE_STR & " and " & C_MAX_VALUE_STR & "." & add_msg_delimiter(msg), scope);
+      affirm_error(alert_level, caller_name & "(" & value_type & ", " & C_MIN_VALUE_STR & ", " & C_MAX_VALUE_STR & ") => Failed. Value was " & C_VALUE_STR & ". Expected between " & C_MIN_VALUE_STR & " and " & C_MAX_VALUE_STR & "." & add_msg_delimiter(msg), scope, msg_id);
       return false;
     end if;
   end function;
@@ -6093,8 +6169,7 @@ package body methods_pkg is
       log_passed(msg_id, caller_name & "(" & value_type & ", " & C_MIN_VALUE_STR & ", " & C_MAX_VALUE_STR & ") => OK. Value was " & C_VALUE_STR & "." & add_msg_delimiter(msg), scope, msg_id_panel);
       return true;
     else
-      osvvm.AlertLogPkg.IncAffirmCount ;
-      alert(alert_level, caller_name & "(" & value_type & ", " & C_MIN_VALUE_STR & ", " & C_MAX_VALUE_STR & ") => Failed. Value was " & C_VALUE_STR & ". Expected between " & C_MIN_VALUE_STR & " and " & C_MAX_VALUE_STR & "." & add_msg_delimiter(msg), scope);
+      affirm_error(alert_level, caller_name & "(" & value_type & ", " & C_MIN_VALUE_STR & ", " & C_MAX_VALUE_STR & ") => Failed. Value was " & C_VALUE_STR & ". Expected between " & C_MIN_VALUE_STR & " and " & C_MAX_VALUE_STR & "." & add_msg_delimiter(msg), scope, msg_id);
       return false;
     end if;
   end function;
@@ -6130,8 +6205,7 @@ package body methods_pkg is
       log_passed(msg_id, caller_name & "(" & value_type & ", " & C_MIN_VALUE_STR & ", " & C_MAX_VALUE_STR & ") => OK. Value was " & C_VALUE_STR & "." & add_msg_delimiter(msg), scope, msg_id_panel);
       return true;
     else
-      osvvm.AlertLogPkg.IncAffirmCount ;
-      alert(alert_level, caller_name & "(" & value_type & ", " & C_MIN_VALUE_STR & ", " & C_MAX_VALUE_STR & ") => Failed. Value was " & C_VALUE_STR & ". Expected between " & C_MIN_VALUE_STR & " and " & C_MAX_VALUE_STR & "." & add_msg_delimiter(msg), scope);
+      affirm_error(alert_level, caller_name & "(" & value_type & ", " & C_MIN_VALUE_STR & ", " & C_MAX_VALUE_STR & ") => Failed. Value was " & C_VALUE_STR & ". Expected between " & C_MIN_VALUE_STR & " and " & C_MAX_VALUE_STR & "." & add_msg_delimiter(msg), scope, msg_id);
       return false;
     end if;
   end function;
@@ -6172,8 +6246,7 @@ package body methods_pkg is
       log_passed(msg_id, caller_name & "(" & C_VALUE_TYPE & ", " & v_min_value_line.all & ", " & v_max_value_line.all & ") => OK. Value was " & v_value_line.all & "." & add_msg_delimiter(msg), scope, msg_id_panel);
       v_return_val := true;
     else
-      osvvm.AlertLogPkg.IncAffirmCount ;
-      alert(alert_level, caller_name & "(" & C_VALUE_TYPE & ", " & v_min_value_line.all & ", " & v_max_value_line.all & ") => Failed. Value was " & v_value_line.all & ". Expected between " & v_min_value_line.all & " and " & v_max_value_line.all & "." & add_msg_delimiter(msg), scope);
+      affirm_error(alert_level, caller_name & "(" & C_VALUE_TYPE & ", " & v_min_value_line.all & ", " & v_max_value_line.all & ") => Failed. Value was " & v_value_line.all & ". Expected between " & v_min_value_line.all & " and " & v_max_value_line.all & "." & add_msg_delimiter(msg), scope, msg_id);
       v_return_val := false;
     end if;
     DEALLOCATE(v_value_line);
@@ -6212,8 +6285,7 @@ package body methods_pkg is
       log_passed(msg_id, caller_name & "(" & C_VALUE_TYPE & ", " & C_MIN_VALUE_STR & ", " & C_MAX_VALUE_STR & ") => OK. Value was " & C_VALUE_STR & "." & add_msg_delimiter(msg), scope, msg_id_panel);
       return true;
     else
-      osvvm.AlertLogPkg.IncAffirmCount ;
-      alert(alert_level, caller_name & "(" & C_VALUE_TYPE & ", " & C_MIN_VALUE_STR & ", " & C_MAX_VALUE_STR & ") => Failed. Value was " & C_VALUE_STR & ". Expected between " & C_MIN_VALUE_STR & " and " & C_MAX_VALUE_STR & "." & add_msg_delimiter(msg), scope);
+      affirm_error(alert_level, caller_name & "(" & C_VALUE_TYPE & ", " & C_MIN_VALUE_STR & ", " & C_MAX_VALUE_STR & ") => Failed. Value was " & C_VALUE_STR & ". Expected between " & C_MIN_VALUE_STR & " and " & C_MAX_VALUE_STR & "." & add_msg_delimiter(msg), scope, msg_id);
       return false;
     end if;
   end function;
@@ -6502,8 +6574,7 @@ package body methods_pkg is
     if (C_LAST_CHANGE >= stable_req) then
       log_passed(msg_id, caller_name & "(" & value_type & ", " & C_STABLE_REQ_STRING & ") => OK. Value " & C_VALUE_STRING & " was stable for " & C_LAST_CHANGE_STRING & "." & add_msg_delimiter(msg), scope, msg_id_panel);
     else
-      osvvm.AlertLogPkg.IncAffirmCount ;
-      alert(alert_level, caller_name & "(" & value_type & ", " & C_STABLE_REQ_STRING & ") => Failed. Value switched from " & C_LAST_VALUE_STRING & " to " & C_VALUE_STRING & " " & C_LAST_CHANGE_STRING & " ago. Expected stable for " & C_STABLE_REQ_STRING & "." & add_msg_delimiter(msg), scope);
+      affirm_error(alert_level, caller_name & "(" & value_type & ", " & C_STABLE_REQ_STRING & ") => Failed. Value switched from " & C_LAST_VALUE_STRING & " to " & C_VALUE_STRING & " " & C_LAST_CHANGE_STRING & " ago. Expected stable for " & C_STABLE_REQ_STRING & "." & add_msg_delimiter(msg), scope, msg_id);
     end if;
   end procedure;
 
@@ -6532,8 +6603,7 @@ package body methods_pkg is
     if (C_LAST_CHANGE >= stable_req) then
       log_passed(msg_id, caller_name & "(" & value_type & ", " & C_STABLE_REQ_STRING & ") => OK. Value " & C_VALUE_STRING & " was stable for " & C_LAST_CHANGE_STRING & "." & add_msg_delimiter(msg), scope, msg_id_panel);
     else
-      osvvm.AlertLogPkg.IncAffirmCount ;
-      alert(alert_level, caller_name & "(" & value_type & ", " & C_STABLE_REQ_STRING & ") => Failed. Value switched from " & C_LAST_VALUE_STRING & " to " & C_VALUE_STRING & " " & C_LAST_CHANGE_STRING & " ago. Expected stable for " & C_STABLE_REQ_STRING & "." & add_msg_delimiter(msg), scope);
+      affirm_error(alert_level, caller_name & "(" & value_type & ", " & C_STABLE_REQ_STRING & ") => Failed. Value switched from " & C_LAST_VALUE_STRING & " to " & C_VALUE_STRING & " " & C_LAST_CHANGE_STRING & " ago. Expected stable for " & C_STABLE_REQ_STRING & "." & add_msg_delimiter(msg), scope, msg_id);
       success := false;
     end if;
   end procedure;
@@ -6577,8 +6647,7 @@ package body methods_pkg is
     if (C_LAST_CHANGE >= stable_req) then
       log_passed(msg_id, caller_name & "(" & value_type & ", " & C_STABLE_REQ_STRING & ") => OK. Value " & C_VALUE_STRING & " was stable for " & C_LAST_CHANGE_STRING & "." & add_msg_delimiter(msg), scope, msg_id_panel);
     else
-      osvvm.AlertLogPkg.IncAffirmCount ;
-      alert(alert_level, caller_name & "(" & value_type & ", " & C_STABLE_REQ_STRING & ") => Failed. Value switched from " & C_LAST_VALUE_STRING & " to " & C_VALUE_STRING & " " & C_LAST_CHANGE_STRING & " ago. Expected stable for " & C_STABLE_REQ_STRING & "." & add_msg_delimiter(msg), scope);
+      affirm_error(alert_level, caller_name & "(" & value_type & ", " & C_STABLE_REQ_STRING & ") => Failed. Value switched from " & C_LAST_VALUE_STRING & " to " & C_VALUE_STRING & " " & C_LAST_CHANGE_STRING & " ago. Expected stable for " & C_STABLE_REQ_STRING & "." & add_msg_delimiter(msg), scope, msg_id);
     end if;
   end procedure;
 
@@ -6605,8 +6674,7 @@ package body methods_pkg is
     if (C_LAST_CHANGE >= stable_req) then
       log_passed(msg_id, caller_name & "(" & value_type & ", " & C_STABLE_REQ_STRING & ") => OK. Value " & C_VALUE_STRING & " was stable for " & C_LAST_CHANGE_STRING & "." & add_msg_delimiter(msg), scope, msg_id_panel);
     else
-      osvvm.AlertLogPkg.IncAffirmCount ;
-      alert(alert_level, caller_name & "(" & value_type & ", " & C_STABLE_REQ_STRING & ") => Failed. Value switched from " & C_LAST_VALUE_STRING & " to " & C_VALUE_STRING & " " & C_LAST_CHANGE_STRING & " ago. Expected stable for " & C_STABLE_REQ_STRING & "." & add_msg_delimiter(msg), scope);
+      affirm_error(alert_level, caller_name & "(" & value_type & ", " & C_STABLE_REQ_STRING & ") => Failed. Value switched from " & C_LAST_VALUE_STRING & " to " & C_VALUE_STRING & " " & C_LAST_CHANGE_STRING & " ago. Expected stable for " & C_STABLE_REQ_STRING & "." & add_msg_delimiter(msg), scope, msg_id);
     end if;
   end procedure;
 
@@ -6633,8 +6701,7 @@ package body methods_pkg is
     if (C_LAST_CHANGE >= stable_req) then
       log_passed(msg_id, caller_name & "(" & value_type & ", " & C_STABLE_REQ_STRING & ") => OK. Value " & C_VALUE_STRING & " was stable for " & C_LAST_CHANGE_STRING & "." & add_msg_delimiter(msg), scope, msg_id_panel);
     else
-      osvvm.AlertLogPkg.IncAffirmCount ;
-      alert(alert_level, caller_name & "(" & value_type & ", " & C_STABLE_REQ_STRING & ") => Failed. Value switched from " & C_LAST_VALUE_STRING & " to " & C_VALUE_STRING & " " & C_LAST_CHANGE_STRING & " ago. Expected stable for " & C_STABLE_REQ_STRING & "." & add_msg_delimiter(msg), scope);
+      affirm_error(alert_level, caller_name & "(" & value_type & ", " & C_STABLE_REQ_STRING & ") => Failed. Value switched from " & C_LAST_VALUE_STRING & " to " & C_VALUE_STRING & " " & C_LAST_CHANGE_STRING & " ago. Expected stable for " & C_STABLE_REQ_STRING & "." & add_msg_delimiter(msg), scope, msg_id);
     end if;
   end procedure;
 
@@ -6661,8 +6728,7 @@ package body methods_pkg is
     if (C_LAST_CHANGE >= stable_req) then
       log_passed(msg_id, caller_name & "(" & value_type & ", " & C_STABLE_REQ_STRING & ") => OK. Value " & C_VALUE_STRING & " was stable for " & C_LAST_CHANGE_STRING & "." & add_msg_delimiter(msg), scope, msg_id_panel);
     else
-      osvvm.AlertLogPkg.IncAffirmCount ;
-      alert(alert_level, caller_name & "(" & value_type & ", " & C_STABLE_REQ_STRING & ") => Failed. Value switched from " & C_LAST_VALUE_STRING & " to " & C_VALUE_STRING & " " & C_LAST_CHANGE_STRING & " ago. Expected stable for " & C_STABLE_REQ_STRING & "." & add_msg_delimiter(msg), scope);
+      affirm_error(alert_level, caller_name & "(" & value_type & ", " & C_STABLE_REQ_STRING & ") => Failed. Value switched from " & C_LAST_VALUE_STRING & " to " & C_VALUE_STRING & " " & C_LAST_CHANGE_STRING & " ago. Expected stable for " & C_STABLE_REQ_STRING & "." & add_msg_delimiter(msg), scope, msg_id);
     end if;
   end procedure;
 
@@ -6689,8 +6755,7 @@ package body methods_pkg is
     if (C_LAST_CHANGE >= stable_req) then
       log_passed(msg_id, caller_name & "(" & value_type & ", " & C_STABLE_REQ_STRING & ") => OK. Value " & C_VALUE_STRING & " was stable for " & C_LAST_CHANGE_STRING & "." & add_msg_delimiter(msg), scope, msg_id_panel);
     else
-      osvvm.AlertLogPkg.IncAffirmCount ;
-      alert(alert_level, caller_name & "(" & value_type & ", " & C_STABLE_REQ_STRING & ") => Failed. Value switched from " & C_LAST_VALUE_STRING & " to " & C_VALUE_STRING & " " & C_LAST_CHANGE_STRING & " ago. Expected stable for " & C_STABLE_REQ_STRING & "." & add_msg_delimiter(msg), scope);
+      affirm_error(alert_level, caller_name & "(" & value_type & ", " & C_STABLE_REQ_STRING & ") => Failed. Value switched from " & C_LAST_VALUE_STRING & " to " & C_VALUE_STRING & " " & C_LAST_CHANGE_STRING & " ago. Expected stable for " & C_STABLE_REQ_STRING & "." & add_msg_delimiter(msg), scope, msg_id);
     end if;
   end procedure;
 
@@ -6952,14 +7017,12 @@ package body methods_pkg is
     protected_check_counters.decrement(CHECK_VALUE);
 
     if elapsed_time < min_time then
-      osvvm.AlertLogPkg.IncAffirmCount ;
-      alert(alert_level, name & " => Failed. Condition occurred too early, after " & to_string(elapsed_time, C_LOG_TIME_BASE) & "." & add_msg_delimiter(msg), scope);
+      affirm_error(alert_level, name & " => Failed. Condition occurred too early, after " & to_string(elapsed_time, C_LOG_TIME_BASE) & "." & add_msg_delimiter(msg), scope, msg_id);
       check_is_ok := false;
     elsif success then
       log_passed(msg_id, name & " => OK. Condition occurred after " & to_string(elapsed_time, C_LOG_TIME_BASE) & "." & add_msg_delimiter(msg), scope, msg_id_panel);
     else -- max_time reached with no success
-      osvvm.AlertLogPkg.IncAffirmCount ;
-      alert(alert_level, name & " => Failed. Timed out after " & to_string(max_time, C_LOG_TIME_BASE) & "." & add_msg_delimiter(msg), scope);
+      affirm_error(alert_level, name & " => Failed. Timed out after " & to_string(max_time, C_LOG_TIME_BASE) & "." & add_msg_delimiter(msg), scope, msg_id);
       check_is_ok := false;
     end if;
   end procedure;
@@ -8731,13 +8794,13 @@ package body methods_pkg is
 
     -- Check if requirement is already OK
     if (stable_req_from_now <= 0 ns) then
-      log(msg_id, caller_name & " => OK. Condition occurred immediately." & add_msg_delimiter(msg), scope, msg_id_panel);
+      log_passed(msg_id, caller_name & " => OK. Condition occurred immediately." & add_msg_delimiter(msg), scope, msg_id_panel);
       stable_req_met := true;
     end if;
 
     -- Check if it is impossible to achieve stable_req before timeout
     if (stable_req_from_now > timeout_from_await_stable_entry) then
-      alert(alert_level, caller_name & " => Failed immediately: Stable for stable_req = " & to_string(stable_req_from_now, ns) & " is not possible before timeout = " & to_string(timeout_from_await_stable_entry, ns) & "." & add_msg_delimiter(msg), scope);
+      affirm_error(alert_level, caller_name & " => Failed immediately: Stable for stable_req = " & to_string(stable_req_from_now, ns) & " is not possible before timeout = " & to_string(timeout_from_await_stable_entry, ns) & "." & add_msg_delimiter(msg), scope, msg_id);
       stable_req_met     := true;
       stable_req_success := false;
     end if;
@@ -8790,7 +8853,7 @@ package body methods_pkg is
 
     -- Check if target has been stable for stable_req
     if (time_since_last_event >= stable_req_from_now) then
-      log(msg_id, caller_name & " => OK. Condition occurred after " & to_string(v_elapsed_time, C_LOG_TIME_BASE) & "." & add_msg_delimiter(msg), scope, msg_id_panel);
+      log_passed(msg_id, caller_name & " => OK. Condition occurred after " & to_string(v_elapsed_time, C_LOG_TIME_BASE) & "." & add_msg_delimiter(msg), scope, msg_id_panel);
       stable_req_met     := true;
       stable_req_success := true;
     end if;
@@ -8805,7 +8868,7 @@ package body methods_pkg is
 
       -- Check if it is impossible to achieve stable_req before timeout
       if (stable_req_from_now > v_time_left) then
-        alert(alert_level, caller_name & " => Failed. After " & to_string(v_elapsed_time, C_LOG_TIME_BASE) & ", stable for stable_req = " & to_string(stable_req_from_now, ns) & " is not possible before timeout = " & to_string(timeout_from_await_stable_entry, ns) & "(time since last event = " & to_string(time_since_last_event, ns) & "." & add_msg_delimiter(msg), scope);
+        affirm_error(alert_level, caller_name & " => Failed. After " & to_string(v_elapsed_time, C_LOG_TIME_BASE) & ", stable for stable_req = " & to_string(stable_req_from_now, ns) & " is not possible before timeout = " & to_string(timeout_from_await_stable_entry, ns) & "(time since last event = " & to_string(time_since_last_event, ns) & "." & add_msg_delimiter(msg), scope, msg_id);
         stable_req_met     := true;
         stable_req_success := false;
       end if;
@@ -9425,14 +9488,14 @@ package body methods_pkg is
 
     if C_PRINT_LOG then
       if not v_check_ok then
-        alert(alert_level, C_NAME & " => Failed. The following UVVM scoreboard(s) still have pending data:\n" & v_line.all, scope);
+        affirm_error(alert_level, C_NAME & " => Failed. The following UVVM scoreboard(s) still have pending data:\n" & v_line.all, scope, ID_POS_ACK);
         DEALLOCATE(v_line);
         return false;
       else
         if protected_sb_activity_register.get_num_enabled_sb(void) = 0 then
-          log(ID_POS_ACK, C_NAME & " => OK. There are no UVVM scoreboards enabled.", scope, msg_id_panel);
+          log_passed(ID_POS_ACK, C_NAME & " => OK. There are no UVVM scoreboards enabled.", scope, msg_id_panel);
         else
-          log(ID_POS_ACK, C_NAME & " => OK. All UVVM scoreboards are empty.", scope, msg_id_panel);
+          log_passed(ID_POS_ACK, C_NAME & " => OK. All UVVM scoreboards are empty.", scope, msg_id_panel);
         end if;
 
         -- Print reports

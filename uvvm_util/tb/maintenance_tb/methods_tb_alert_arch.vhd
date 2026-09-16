@@ -55,59 +55,59 @@ begin
     ------------------------------------------------------------------------------------------------------------------------------
       log(ID_LOG_HDR, "Testing alert summary report", C_SCOPE);
 
-      log("Testing without any major or minor alerts");
+      log(NO_ID, "Testing without any major or minor alerts");
       report_alert_counters(INTERMEDIATE);
 
-      log("Testing NOTE");
+      log(NO_ID, "Testing NOTE");
       alert(NOTE, "This alert shall set mismatch in minor alerts report", C_SCOPE);
       report_alert_counters(INTERMEDIATE);
       increment_expected_alerts(NOTE);
 
-      log("Testing TB_NOTE");
+      log(NO_ID, "Testing TB_NOTE");
       alert(TB_NOTE, "This alert shall set mismatch in minor alerts report", C_SCOPE);
       report_alert_counters(INTERMEDIATE);
       increment_expected_alerts(TB_NOTE);
 
-      log("Testing WARNING");
+      log(NO_ID, "Testing WARNING");
       alert(WARNING, "This alert shall set mismatch in minor alerts report", C_SCOPE);
       report_alert_counters(INTERMEDIATE);
       increment_expected_alerts(WARNING);
 
-      log("Testing TB_WARNING");
+      log(NO_ID, "Testing TB_WARNING");
       alert(TB_WARNING, "This alert shall set mismatch in minor alerts report", C_SCOPE);
       report_alert_counters(INTERMEDIATE);
       increment_expected_alerts(TB_WARNING);
 
-      log("Testing MANUAL_CHECK");
+      log(NO_ID, "Testing MANUAL_CHECK");
       alert(MANUAL_CHECK, "MANUAL_CHECK is now a log and it sets a flag for reporting", C_SCOPE);
       report_alert_counters(INTERMEDIATE);
 --      increment_expected_alerts(MANUAL_CHECK);
 
-      log("Testing ERROR");
+      log(NO_ID, "Testing ERROR");
       set_alert_stop_limit(ERROR, 3);
       alert(ERROR, "This alert shall set mismatch in major alerts report", C_SCOPE);
       report_alert_counters(INTERMEDIATE);
       increment_expected_alerts(ERROR);
 
-      log("Testing TB_ERROR");
+      log(NO_ID, "Testing TB_ERROR");
       set_alert_stop_limit(TB_ERROR, 3);
       alert(TB_ERROR, "This alert shall set mismatch in major alerts report", C_SCOPE);
       report_alert_counters(INTERMEDIATE);
       increment_expected_alerts(TB_ERROR);
 
-      log("Testing FAILURE");
+      log(NO_ID, "Testing FAILURE");
       set_alert_stop_limit(FAILURE, 3);
       alert(FAILURE, "This alert shall set mismatch in major alerts report", C_SCOPE);
       report_alert_counters(INTERMEDIATE);
       increment_expected_alerts(FAILURE);
 
-      log("Testing TB_FAILURE");
+      log(NO_ID, "Testing TB_FAILURE");
       set_alert_stop_limit(TB_FAILURE, 3);
       alert(TB_FAILURE, "This alert shall set mismatch in major alerts report", C_SCOPE);
       report_alert_counters(INTERMEDIATE);
       increment_expected_alerts(TB_FAILURE);
 
-      log("Testing final summary, all OK");
+      log(NO_ID, "Testing final summary, all OK");
 
     ------------------------------------------------------------------------------------------------------------------------------
     elsif GC_TESTCASE = "ignored_alerts" then
@@ -115,23 +115,23 @@ begin
       log(ID_LOG_HDR, "Testing alert_level NO_ALERT and related functions", C_SCOPE);
 
       alert(NO_ALERT, "This alert shall not cause simulation stop, nor be visible in the transcript", C_SCOPE);
-      log("Testing set of NO_ALERT alert stop limit (should fail)");
+      log(NO_ID, "Testing set of NO_ALERT alert stop limit (should fail)");
       set_alert_stop_limit(NO_ALERT, 2);
       check_value(get_alert_stop_limit(NO_ALERT), 0, TB_ERROR, "Verifying that alert stop limit for NO_ALERT is 0 (never)", C_SCOPE);
-      log("Testing set of NO_ALERT alert attention (should fail)");
+      log(NO_ID, "Testing set of NO_ALERT alert attention (should fail)");
       set_alert_attention(NO_ALERT, REGARD);
       check_value(get_alert_attention(NO_ALERT) = IGNORE, TB_ERROR, "Verifying that alert attention for NO_ALERT is IGNORE", C_SCOPE);
-      log("Testing increment_expected_alerts for NO_ALERT (should fail)");
+      log(NO_ID, "Testing increment_expected_alerts for NO_ALERT (should fail)");
       increment_expected_alerts(NO_ALERT, 4);
       increment_expected_alerts(TB_WARNING, 3);
 
-      log("Testing increment_expected_alerts_and_stop_limit");
+      log(NO_ID, "Testing increment_expected_alerts_and_stop_limit");
       v_alert_stop_limit := get_alert_stop_limit(TB_FAILURE);
-      log("StopCount(TB_FAILURE):  " & to_string(v_alert_stop_limit) ) ;
+      log(NO_ID, "StopCount(TB_FAILURE):  " & to_string(v_alert_stop_limit) ) ;
       v_alert_count      := get_alert_counter(TB_FAILURE);
-      log("AlertCount(TB_FAILURE): " & to_string(v_alert_count)) ;
+      log(NO_ID, "AlertCount(TB_FAILURE): " & to_string(v_alert_count)) ;
       increment_expected_alerts_and_stop_limit(TB_FAILURE);
-      log("Increment Expected Alerts and Stop Limit.  StopCount(Tb_FAILURE): " & to_string(get_alert_stop_limit(TB_FAILURE))) ;
+      log(NO_ID, "Increment Expected Alerts and Stop Limit.  StopCount(Tb_FAILURE): " & to_string(get_alert_stop_limit(TB_FAILURE))) ;
       check_value(get_alert_stop_limit(TB_FAILURE) = (v_alert_stop_limit + 1), TB_ERROR, "Verifying that TB_WARNING alert stop limit was incremented", C_SCOPE);
       check_value(true = false, TB_FAILURE, "Cause TB_FAILURE trigger", C_SCOPE);
 
@@ -156,42 +156,42 @@ begin
 
       v_local_hierarchy_tree.print_hierarchical_log;
 
-      log("Enabling all alert levels in entire hierarchy. Minor alerts for all nodes triggered.");
+      log(NO_ID, "Enabling all alert levels in entire hierarchy. Minor alerts for all nodes triggered.");
       v_local_hierarchy_tree.enable_all_alert_levels("TB seq");
 
-      log("Testing NOTE with fourth_node");
+      log(NO_ID, "Testing NOTE with fourth_node");
       v_local_hierarchy_tree.alert("fourth_node", NOTE);
       v_local_hierarchy_tree.print_hierarchical_log;
       v_local_hierarchy_tree.increment_expected_alerts("fourth_node", NOTE);
-      log("Expecting no major or minor alerts");
+      log(NO_ID, "Expecting no major or minor alerts");
       v_local_hierarchy_tree.print_hierarchical_log;
 
-      log("Testing TB_NOTE with third_node");
+      log(NO_ID, "Testing TB_NOTE with third_node");
       v_local_hierarchy_tree.alert("third_node", TB_NOTE);
       v_local_hierarchy_tree.print_hierarchical_log;
       v_local_hierarchy_tree.increment_expected_alerts("third_node", TB_NOTE);
-      log("Expecting no major or minor alerts");
+      log(NO_ID, "Expecting no major or minor alerts");
       v_local_hierarchy_tree.print_hierarchical_log;
 
-      log("Testing WARNING with second_node");
+      log(NO_ID, "Testing WARNING with second_node");
       v_local_hierarchy_tree.alert("second_node", WARNING);
       v_local_hierarchy_tree.print_hierarchical_log;
       v_local_hierarchy_tree.increment_expected_alerts("second_node", WARNING);
-      log("Expecting no major or minor alerts");
+      log(NO_ID, "Expecting no major or minor alerts");
       v_local_hierarchy_tree.print_hierarchical_log;
 
-      log("Testing TB_WARNING with first_node");
+      log(NO_ID, "Testing TB_WARNING with first_node");
       v_local_hierarchy_tree.alert("first_node", TB_WARNING);
       v_local_hierarchy_tree.print_hierarchical_log;
       v_local_hierarchy_tree.increment_expected_alerts("first_node", TB_WARNING);
-      log("Expecting no major or minor alerts");
+      log(NO_ID, "Expecting no major or minor alerts");
       v_local_hierarchy_tree.print_hierarchical_log;
 
-      log("Testing MANUAL_CHECK with TB seq");
+      log(NO_ID, "Testing MANUAL_CHECK with TB seq");
       v_local_hierarchy_tree.alert("TB seq", MANUAL_CHECK);
       v_local_hierarchy_tree.print_hierarchical_log;
       v_local_hierarchy_tree.increment_expected_alerts("TB seq", MANUAL_CHECK);
-      log("Expecting no major or minor alerts");
+      log(NO_ID, "Expecting no major or minor alerts");
       v_local_hierarchy_tree.print_hierarchical_log;
 
     ------------------------------------------------------------------------------------------------------------------------------
@@ -266,7 +266,7 @@ begin
       --v_local_hierarchy_tree.print_hierarchical_log;
 
       --  Alert related
-      log("Verifying that expected alerts propagate correctly.");
+      log(NO_ID, "Verifying that expected alerts propagate correctly.");
       check_value(v_local_hierarchy_tree.get_expected_alerts("first_node", note) = 0, error, "Verifying expected alerts!");
       check_value(v_local_hierarchy_tree.get_expected_alerts("second_node", note) = 0, error, "Verifying expected alerts!");
       check_value(v_local_hierarchy_tree.get_expected_alerts("third_node", note) = 0, error, "Verifying expected alerts!");
@@ -291,7 +291,7 @@ begin
       v_local_hierarchy_tree.set_expected_alerts("TB seq", note, 0);
       v_local_hierarchy_tree.set_expected_alerts("second_node", note, 0);
 
-      log("Verifying that alerts propagate correctly for all alert levels");
+      log(NO_ID, "Verifying that alerts propagate correctly for all alert levels");
       for alert_level in note to t_alert_level'right loop
         v_local_hierarchy_tree.alert("fourth_node", alert_level, REGARD, "testing with alert_level " & to_upper(to_string(alert_level)));
         v_local_hierarchy_tree.alert("third_node", alert_level, REGARD, "testing with alert_level " & to_upper(to_string(alert_level)));
@@ -315,7 +315,7 @@ begin
 
       v_local_hierarchy_tree.print_hierarchical_log;
 
-      log("Verifying hierarchical stop limits");
+      log(NO_ID, "Verifying hierarchical stop limits");
 
       for alert_level in note to t_alert_level'right loop
         check_value(v_local_hierarchy_tree.get_top_level_stop_limit(alert_level), 0, error, "Verifying top level stop limit default implicitly!");
@@ -364,47 +364,47 @@ begin
       -- v_local_hierarchy_tree.alert("second_node", TB_WARNING);
       -- end loop;
 
-      log("Verifying alert level printing for several nodes");
+      log(NO_ID, "Verifying alert level printing for several nodes");
       alert(MANUAL_CHECK, "VERIFY THIS");
 
       -- Disable all alert levels for the top node.
       -- No alerts shall then be printed for any alert level
-      log("Disabling all alert levels in entire hierarchy. No alerts between this log message and the next.");
+      log(NO_ID, "Disabling all alert levels in entire hierarchy. No alerts between this log message and the next.");
       v_local_hierarchy_tree.disable_all_alert_levels("TB seq");
       v_local_hierarchy_tree.alert("fourth_node", TB_ERROR);
       v_local_hierarchy_tree.alert("third_node", TB_ERROR);
       v_local_hierarchy_tree.alert("second_node", TB_ERROR);
       v_local_hierarchy_tree.alert("first_node", TB_ERROR);
       v_local_hierarchy_tree.alert("TB seq", TB_ERROR);
-      log("Are there any alert messages between this message and the previous one? If so it is an ERROR.");
+      log(NO_ID, "Are there any alert messages between this message and the previous one? If so it is an ERROR.");
 
       -- Enable all alert levels for the top node.
       -- All other nodes shall then give alerts on all alert levels since it propagates downwards.
-      log("Enabling all alert levels in entire hierarchy. Some alerts between this log message and the next.");
+      log(NO_ID, "Enabling all alert levels in entire hierarchy. Some alerts between this log message and the next.");
       v_local_hierarchy_tree.enable_all_alert_levels("TB seq");
       v_local_hierarchy_tree.alert("fourth_node", TB_ERROR);
       v_local_hierarchy_tree.alert("third_node", TB_ERROR);
       v_local_hierarchy_tree.alert("second_node", TB_ERROR);
       v_local_hierarchy_tree.alert("first_node", TB_ERROR);
       v_local_hierarchy_tree.alert("TB seq", TB_ERROR);
-      log("Are there any alert messages between this message and the previous one? If so it is CORRECT.");
+      log(NO_ID, "Are there any alert messages between this message and the previous one? If so it is CORRECT.");
 
       -- Then disable specific alert level from third_node
       -- Verify that all alerts from nodes other than third_node and fourth_node are printed
-      log("Disabling TB_ERROR alert level for third_node and downwards (fourth_node). No alerts for these nodes at this alert level between this log message and the next. All others shall have alerts printed.");
+      log(NO_ID, "Disabling TB_ERROR alert level for third_node and downwards (fourth_node). No alerts for these nodes at this alert level between this log message and the next. All others shall have alerts printed.");
       v_local_hierarchy_tree.disable_alert_level("third_node", TB_ERROR);
       v_local_hierarchy_tree.alert("fourth_node", TB_ERROR);
       v_local_hierarchy_tree.alert("third_node", TB_ERROR);
-      log("Are there any alert messages between this message and the previous one? If so it is an ERROR.");
+      log(NO_ID, "Are there any alert messages between this message and the previous one? If so it is an ERROR.");
       v_local_hierarchy_tree.alert("second_node", TB_ERROR);
       v_local_hierarchy_tree.alert("first_node", TB_ERROR);
       v_local_hierarchy_tree.alert("TB seq", TB_ERROR);
-      log("Are there any alert messages between this message and the previous one? If so it is CORRECT.");
-      log("Enabling TB_ERROR for third_node and fourth_node again");
+      log(NO_ID, "Are there any alert messages between this message and the previous one? If so it is CORRECT.");
+      log(NO_ID, "Enabling TB_ERROR for third_node and fourth_node again");
       v_local_hierarchy_tree.enable_alert_level("third_node", TB_ERROR);
       v_local_hierarchy_tree.alert("fourth_node", TB_ERROR);
       v_local_hierarchy_tree.alert("third_node", TB_ERROR);
-      log("Are there any alert messages between this message and the previous one? If so it is CORRECT.");
+      log(NO_ID, "Are there any alert messages between this message and the previous one? If so it is CORRECT.");
 
       v_local_hierarchy_tree.clear;
 

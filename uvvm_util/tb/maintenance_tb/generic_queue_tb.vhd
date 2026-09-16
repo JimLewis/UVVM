@@ -44,6 +44,7 @@ context uvvm_util.uvvm_util_context;
 
 library osvvm ;
 use OSVVM.FileLinePathPkg.FILE_PATH ;
+context osvvm.OsvvmContext ;
 use std.env.all ;
 
 --hdlregression:tb
@@ -98,7 +99,7 @@ begin
       log(ID_LOG_HDR, "Setting up generic queue and verifying scope and size", C_SCOPE);
 
       queue_under_test.set_scope(C_QUEUE_SCOPE);
-      log("Queue instantiated with depth " & to_string(queue_under_test.get_queue_count_max(VOID)));
+      log(NO_ID, "Queue instantiated with depth " & to_string(queue_under_test.get_queue_count_max(VOID)));
       string_compare(queue_under_test.get_scope(VOID), C_QUEUE_SCOPE, "Checking queue scope");
 
       check_value(queue_under_test.is_empty(VOID), ERROR, "Checking if queue is initially empty", C_SCOPE);
@@ -119,7 +120,7 @@ begin
       queue_under_test.flush(VOID);
       check_value(queue_under_test.is_empty(VOID), ERROR, "Checking if queue is initially empty", C_SCOPE);
 
-      log("Filling up the queue with integers from 0 to " & to_string(queue_under_test.get_queue_count_max(VOID) - 1));
+      log(NO_ID, "Filling up the queue with integers from 0 to " & to_string(queue_under_test.get_queue_count_max(VOID) - 1));
       for i in 0 to queue_under_test.get_queue_count_max(VOID) - 1 loop
         log(ID_SEQUENCER_SUB, "Putting integer " & to_string(i), C_SCOPE);
         queue_under_test.add(i);
@@ -127,7 +128,7 @@ begin
       check_value(not queue_under_test.is_empty(VOID), ERROR, "Checking if queue is not empty after add", C_SCOPE);
       increment_expected_alerts(TB_WARNING, 1); -- Expect TB_WARNING at threshold
 
-      log("Checking that queue content is consistent with add values");
+      log(NO_ID, "Checking that queue content is consistent with add values");
       for i in 0 to queue_under_test.get_queue_count_max(VOID) - 1 loop
         v_fetch_value := queue_under_test.fetch(VOID);
         log(ID_SEQUENCER_SUB, "Got integer " & to_string(v_fetch_value), C_SCOPE);
@@ -146,14 +147,14 @@ begin
     begin
       log(ID_LOG_HDR, "Testing of flush command", C_SCOPE);
 
-      log("Filling up the queue with integers from 0 to " & to_string(queue_under_test.get_queue_count_max(VOID) - 1));
+      log(NO_ID, "Filling up the queue with integers from 0 to " & to_string(queue_under_test.get_queue_count_max(VOID) - 1));
       for i in 0 to queue_under_test.get_queue_count_max(VOID) - 1 loop
         log(ID_SEQUENCER_SUB, "Putting integer " & to_string(i), C_SCOPE);
         queue_under_test.add(i);
       end loop;
       increment_expected_alerts(TB_WARNING, 1); -- Expect TB_WARNING at threshold
 
-      log("Checking flush of queue");
+      log(NO_ID, "Checking flush of queue");
       check_value(not queue_under_test.is_empty(VOID), ERROR, "Checking if queue is not empty after add", C_SCOPE);
       queue_under_test.flush(void);
       check_value(queue_under_test.is_empty(VOID), ERROR, "Checking if queue is empty after flush", C_SCOPE);
@@ -183,7 +184,7 @@ begin
 
       check_value(v_num_entries <= queue_under_test.get_queue_count_max(VOID), ERROR, "Check if the queue is big enough for the planned test", C_SCOPE);
 
-      log("Filling up the queue with integers from 1 to " & to_string(v_num_entries));
+      log(NO_ID, "Filling up the queue with integers from 1 to " & to_string(v_num_entries));
 
       for i in 1 to v_num_entries loop
         log(ID_SEQUENCER_SUB, "add element = integer = " & to_string(i), C_SCOPE);
@@ -295,17 +296,17 @@ begin
 
       v_element_integer := 654321;
 
-      log("\nInsert at position 2 to an empty queue - expecting a TB_ERROR");
+      log(NO_ID, "\nInsert at position 2 to an empty queue - expecting a TB_ERROR");
       increment_expected_alerts(TB_ERROR, 1); -- supposed to result in a TB_ERROR.
       queue_under_test.insert(POSITION, 2, v_element_integer);
 
-      log("\nInsert at position 1 to an empty queue - expecting add() OK");
+      log(NO_ID, "\nInsert at position 1 to an empty queue - expecting add() OK");
       queue_under_test.insert(POSITION, 1, v_element_integer);
 
-      log("\nPrinting queue");
+      log(NO_ID, "\nPrinting queue");
       queue_under_test.print_queue(VOID);
 
-      log("\nVerify queue content");
+      log(NO_ID, "\nVerify queue content");
       check_value(queue_under_test.find_position(v_element_integer), 1, ERROR, "Check that element = " & to_string(v_element_integer) & " is at POSITION 1", C_SCOPE);
       check_value(queue_under_test.find_entry_num(v_element_integer), 1, ERROR, "Check that element = " & to_string(v_element_integer) & " has entry_num=1", C_SCOPE);
 
@@ -333,7 +334,7 @@ begin
 
       check_value(v_num_entries <= queue_under_test.get_queue_count_max(VOID), ERROR, "Check if the queue is big enough for the planned test", C_SCOPE);
 
-      log("Filling up the queue with integers from 0 to " & to_string(v_num_entries - 1));
+      log(NO_ID, "Filling up the queue with integers from 0 to " & to_string(v_num_entries - 1));
 
       for i in 0 to v_num_entries - 1 loop
         log(ID_SEQUENCER_SUB, "add element = integer = " & to_string(i), C_SCOPE);
@@ -346,7 +347,7 @@ begin
       -- delete specifying position_min and max . "delete positions in back of queue"
       v_position_min := random(1, v_num_entries);
       v_position_max := random(v_position_min, v_num_entries);
-      log("v_position_min = " & to_string(v_position_min) & "v_position_max = " & to_string(v_position_max));
+      log(NO_ID, "v_position_min = " & to_string(v_position_min) & "v_position_max = " & to_string(v_position_max));
 
       queue_under_test.delete(POSITION, v_position_min, v_position_max);
 
@@ -375,7 +376,7 @@ begin
 
       check_value(v_num_entries <= queue_under_test.get_queue_count_max(VOID), ERROR, "Check if the queue is big enough for the planned test", C_SCOPE);
 
-      log("Filling up the queue with integers from 0 to " & to_string(v_num_entries - 1));
+      log(NO_ID, "Filling up the queue with integers from 0 to " & to_string(v_num_entries - 1));
 
       for i in 0 to v_num_entries - 1 loop
         log(ID_SEQUENCER_SUB, "add element = integer = " & to_string(i), C_SCOPE);
@@ -448,7 +449,7 @@ begin
 
       check_value(v_num_entries <= queue_under_test.get_queue_count_max(VOID), ERROR, "Check if the queue is big enough for the planned test", C_SCOPE);
 
-      log("Filling up the queue with integers from 0 to " & to_string(v_num_entries - 1));
+      log(NO_ID, "Filling up the queue with integers from 0 to " & to_string(v_num_entries - 1));
 
       for i in 0 to v_num_entries - 1 loop
         -- log(ID_SEQUENCER_SUB, "add element = integer = " & to_string(i) , C_SCOPE);
@@ -461,7 +462,7 @@ begin
 
       for i in 0 to v_num_entries - 1 loop
         v_value       := i;
-        log("deleting element v_value=" & to_string(v_value));
+        log(NO_ID, "deleting element v_value=" & to_string(v_value));
         queue_under_test.delete(v_value);
         v_num_entries := v_num_entries - 1;
         queue_under_test.print_queue(void);
@@ -490,7 +491,7 @@ begin
 
       check_value(v_num_entries <= queue_under_test.get_queue_count_max(VOID), ERROR, "Check if the queue is big enough for the planned test", C_SCOPE);
 
-      log("Filling up the queue with integers from 0 to " & to_string(v_num_entries - 1));
+      log(NO_ID, "Filling up the queue with integers from 0 to " & to_string(v_num_entries - 1));
 
       for i in 0 to v_num_entries - 1 loop
         -- log(ID_SEQUENCER_SUB, "add element = integer = " & to_string(i) , C_SCOPE);
@@ -506,7 +507,7 @@ begin
       -- delete specifying ENTRY_NUM min and max . "delete positions in front of queue"
       v_entry_num_min := 1;
       v_entry_num_max := v_num_entries;
-      log("v_entry_num_min = " & to_string(v_entry_num_min) & "v_entry_num_max = " & to_string(v_entry_num_max));
+      log(NO_ID, "v_entry_num_min = " & to_string(v_entry_num_min) & "v_entry_num_max = " & to_string(v_entry_num_max));
 
       for entry_num in v_entry_num_min to v_entry_num_max loop
         v_value := entry_num - 1;
@@ -551,7 +552,7 @@ begin
 
       check_value(v_num_entries <= queue_under_test.get_queue_count_max(VOID), ERROR, "Check if the queue is big enough for the planned test", C_SCOPE);
 
-      log("Filling up the queue with integers from 0 to " & to_string(v_num_entries - 1));
+      log(NO_ID, "Filling up the queue with integers from 0 to " & to_string(v_num_entries - 1));
 
       for i in 0 to v_num_entries - 1 loop
         -- log(ID_SEQUENCER_SUB, "add element = integer = " & to_string(i) , C_SCOPE);
@@ -567,7 +568,7 @@ begin
       -- delete specifying ENTRY_NUM min and max . "delete positions in front of queue"
       v_entry_num_min := random(1, v_num_entries);
       v_entry_num_max := random(v_entry_num_min, v_num_entries);
-      log("v_entry_num_min = " & to_string(v_entry_num_min) & "v_entry_num_max = " & to_string(v_entry_num_max));
+      log(NO_ID, "v_entry_num_min = " & to_string(v_entry_num_min) & "v_entry_num_max = " & to_string(v_entry_num_max));
 
       for entry_num in v_entry_num_min to v_entry_num_max loop
         v_value := entry_num - 1;
@@ -612,7 +613,7 @@ begin
 
       check_value(v_num_entries <= queue_under_test.get_queue_count_max(VOID), ERROR, "Check if the queue is big enough for the planned test", C_SCOPE);
 
-      log("Filling up the queue with integers from 0 to " & to_string(v_num_entries - 1));
+      log(NO_ID, "Filling up the queue with integers from 0 to " & to_string(v_num_entries - 1));
 
       for i in 0 to v_num_entries - 1 loop
         log(ID_SEQUENCER_SUB, "add element = integer = " & to_string(i), C_SCOPE);
@@ -698,7 +699,7 @@ begin
 
       queue_under_test.set_queue_count_threshold(950);
       queue_under_test.set_queue_count_threshold_severity(TB_WARNING);
-      log("Filling up the queue with integers from 0 to " & to_string(queue_under_test.get_queue_count_max(VOID)));
+      log(NO_ID, "Filling up the queue with integers from 0 to " & to_string(queue_under_test.get_queue_count_max(VOID)));
       for i in 0 to queue_under_test.get_queue_count_max(VOID) - 1 loop
         log(ID_SEQUENCER_SUB, "Putting integer " & to_string(i), C_SCOPE);
         queue_under_test.add(i);
@@ -772,7 +773,7 @@ begin
       queue_under_test.add(2);
       check_value(queue_under_test.peek(POSITION, 1), 0, ERROR, "Checking the first element", C_SCOPE);
       check_value(queue_under_test.peek(POSITION, 2), 2, ERROR, "Checking the last element", C_SCOPE);
-      log("Flushing the queue");
+      log(NO_ID, "Flushing the queue");
       queue_under_test.flush(VOID);
     end procedure test_of_delete_last_element;
 
@@ -807,17 +808,17 @@ begin
       check_value(queue_under_test.is_empty(VOID), ERROR, "Verifying that queue is empty", C_SCOPE);
 
       -- Test the queue with the new size
-      log("Setting queue max count to 10");
+      log(NO_ID, "Setting queue max count to 10");
       queue_under_test.set_queue_count_max(10);
       check_value(queue_under_test.get_queue_count_max(VOID), 10, ERROR, "Checking if queue max count was set correctly", C_SCOPE);
-      log("Filling up the queue with integers from 0 to 9");
+      log(NO_ID, "Filling up the queue with integers from 0 to 9");
       for i in 0 to 9 loop
         log(ID_SEQUENCER_SUB, "Putting integer " & to_string(i), C_SCOPE);
         queue_under_test.add(i);
       end loop;
       check_value(not queue_under_test.is_empty(VOID), ERROR, "Checking if queue is not empty after add", C_SCOPE);
 
-      log("Checking that queue content is consistent with add values");
+      log(NO_ID, "Checking that queue content is consistent with add values");
       for i in 0 to 9 loop
         v_fetch_value := queue_under_test.fetch(VOID);
         log(ID_SEQUENCER_SUB, "Got integer " & to_string(v_fetch_value), C_SCOPE);
@@ -826,10 +827,10 @@ begin
       check_value(queue_under_test.is_empty(VOID), ERROR, "Checking if queue is empty after fetch", C_SCOPE);
 
       -- Increase the queue size and fill it up
-      log("Setting queue max count to 20");
+      log(NO_ID, "Setting queue max count to 20");
       queue_under_test.set_queue_count_max(20);
       check_value(queue_under_test.get_queue_count_max(VOID), 20, ERROR, "Checking if queue max count was set correctly", C_SCOPE);
-      log("Filling up the queue with integers from 0 to 19");
+      log(NO_ID, "Filling up the queue with integers from 0 to 19");
       for i in 0 to 19 loop
         log(ID_SEQUENCER_SUB, "Putting integer " & to_string(i), C_SCOPE);
         queue_under_test.add(i);
@@ -837,13 +838,13 @@ begin
       check_value(not queue_under_test.is_empty(VOID), ERROR, "Checking if queue is not empty after add", C_SCOPE);
 
       -- Set new, lower queue size and expect alert
-      log("Setting queue max count lower than current count");
+      log(NO_ID, "Setting queue max count lower than current count");
       increment_expected_alerts(TB_ERROR, 1);
       queue_under_test.set_queue_count_max(5);
       check_value(queue_under_test.get_queue_count_max(VOID), 5, ERROR, "Checking if queue max count was set correctly", C_SCOPE);
 
       -- Reset the queue
-      log("Flushing the queue and setting the max count back to 1000");
+      log(NO_ID, "Flushing the queue and setting the max count back to 1000");
       queue_under_test.flush(VOID);
       queue_under_test.set_queue_count_max(1000);
 
@@ -861,17 +862,17 @@ begin
       check_value(queue_under_test.is_empty(VOID), ERROR, "Verifying that queue is empty", C_SCOPE);
 
       -- Test the queue with the new size
-      log("Setting queue max count to 100");
+      log(NO_ID, "Setting queue max count to 100");
       queue_under_test.set_queue_count_max(100);
       check_value(queue_under_test.get_queue_count_max(VOID), 100, ERROR, "Checking if queue max count was set correctly", C_SCOPE);
 
-      log("Setting queue fill level alert to be triggered at 70%, with severity TB_WARNING");
+      log(NO_ID, "Setting queue fill level alert to be triggered at 70%, with severity TB_WARNING");
       queue_under_test.set_queue_count_threshold(70);
       queue_under_test.set_queue_count_threshold_severity(TB_WARNING);
       check_value(queue_under_test.get_queue_count_threshold_severity(VOID) = TB_WARNING, ERROR, "Checking that alert level was set correctly", C_SCOPE);
       check_value(queue_under_test.get_queue_count_threshold(VOID) = 70, ERROR, "Checking that fill level was set correctly", C_SCOPE);
 
-      log("Filling the queue up to 80% and expecting TB_WARNING");
+      log(NO_ID, "Filling the queue up to 80% and expecting TB_WARNING");
       for i in 0 to 79 loop
         log(ID_SEQUENCER_SUB, "Putting integer " & to_string(i), C_SCOPE);
         queue_under_test.add(i);
@@ -880,19 +881,19 @@ begin
       -- Flush queue
       queue_under_test.flush(VOID);
 
-      log("Setting queue fill level alert to be triggered at 85%, with severity TB_WARNING");
+      log(NO_ID, "Setting queue fill level alert to be triggered at 85%, with severity TB_WARNING");
       queue_under_test.set_queue_count_threshold(85);
       queue_under_test.set_queue_count_threshold_severity(TB_ERROR);
       check_value(queue_under_test.get_queue_count_threshold_severity(VOID) = TB_ERROR, ERROR, "Checking that alert level was set correctly", C_SCOPE);
       check_value(queue_under_test.get_queue_count_threshold(VOID) = 85, ERROR, "Checking that fill level was set correctly", C_SCOPE);
 
-      log("Filling the queue up to 80% and not expecting alert");
+      log(NO_ID, "Filling the queue up to 80% and not expecting alert");
       for i in 0 to 79 loop
         log(ID_SEQUENCER_SUB, "Putting integer " & to_string(i), C_SCOPE);
         queue_under_test.add(i);
       end loop;
 
-      log("Filling the queue up from 80% to 90% and expecting TB_ERROR");
+      log(NO_ID, "Filling the queue up from 80% to 90% and expecting TB_ERROR");
       for i in 0 to 9 loop
         log(ID_SEQUENCER_SUB, "Putting integer " & to_string(i), C_SCOPE);
         queue_under_test.add(i);
@@ -902,7 +903,7 @@ begin
       queue_under_test.flush(VOID);
 
       -- Reset the queue
-      log("Flushing and resetting the queue");
+      log(NO_ID, "Flushing and resetting the queue");
       queue_under_test.flush(VOID);
       queue_under_test.set_queue_count_max(1000);
       queue_under_test.set_queue_count_threshold_severity(TB_WARNING);

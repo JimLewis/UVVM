@@ -39,6 +39,7 @@ use uvvm_util.data_stack_pkg.all;
 
 library osvvm ;
 use OSVVM.FileLinePathPkg.FILE_PATH ;
+context osvvm.OsvvmContext ;
 use std.env.all ;
 
 --hdlregression:tb
@@ -140,8 +141,8 @@ begin
     ------------------------------------------------------------
     log(ID_LOG_HDR, "Test of peek_front and peek_back", C_SCOPE);
     ------------------------------------------------------------
-    log("Peeking empty back: " & to_string(queue_under_test.peek_back(C_BUFFER_INDEX_1, C_ENTRY_SIZE_1)));
-    log("Peeking empty front: " & to_string(queue_under_test.peek_front(C_BUFFER_INDEX_1, C_ENTRY_SIZE_1)));
+    log(NO_ID, "Peeking empty back: " & to_string(queue_under_test.peek_back(C_BUFFER_INDEX_1, C_ENTRY_SIZE_1)));
+    log(NO_ID, "Peeking empty front: " & to_string(queue_under_test.peek_front(C_BUFFER_INDEX_1, C_ENTRY_SIZE_1)));
     increment_expected_alerts(TB_WARNING, 2);
 
     check_value(queue_under_test.get_count(C_BUFFER_INDEX_1), 0, TB_ERROR, "Verifying that queue is empty.", C_SCOPE, ID_SEQUENCER);
@@ -169,7 +170,7 @@ begin
     end loop;
     check_value(queue_under_test.get_count(C_BUFFER_INDEX_1), 8 * C_ENTRY_SIZE_1, TB_ERROR, "Verifying that queue is filled properly", C_SCOPE, ID_SEQUENCER);
 
-    log("Testing pop_front()...");
+    log(NO_ID, "Testing pop_front()...");
     for i in 0 to 7 loop
       check_value(queue_under_test.pop_front(C_BUFFER_INDEX_1, C_ENTRY_SIZE_1) = std_logic_vector(to_unsigned(i, C_ENTRY_SIZE_1)), TB_ERROR, "pop_front should be " & to_string(std_logic_vector(to_unsigned(i, C_ENTRY_SIZE_1)), HEX) & ".", C_SCOPE, ID_SEQUENCER);
     end loop;
@@ -181,7 +182,7 @@ begin
     end loop;
     check_value(queue_under_test.get_count(C_BUFFER_INDEX_1), 8 * C_ENTRY_SIZE_1, TB_ERROR, "Verifying that queue is filled properly", C_SCOPE, ID_SEQUENCER);
 
-    log("Testing pop_back()...");
+    log(NO_ID, "Testing pop_back()...");
     for i in 7 downto 0 loop
       check_value(queue_under_test.pop_back(C_BUFFER_INDEX_1, C_ENTRY_SIZE_1) = std_logic_vector(to_unsigned(i, C_ENTRY_SIZE_1)), TB_ERROR, "pop_back should be " & to_string(std_logic_vector(to_unsigned(i, C_ENTRY_SIZE_1)), HEX) & ".", C_SCOPE, ID_SEQUENCER);
     end loop;

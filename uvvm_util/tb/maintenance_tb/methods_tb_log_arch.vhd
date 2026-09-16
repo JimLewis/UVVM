@@ -182,17 +182,17 @@ begin
       log(ID_BFM, "My multiline message " & LF & "qqqqq w wwwww ee eee r rr r r t" & LF & "11 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa " & "extra" & LF & "lkkl fdafd fdsf sdfsdfsd f sdfsd f ds fsd fsdfsd f sdf sdf sdf dfsdfdsfsdf ds f dsf ds fsd fsd fsd fdsf sdf sdfsdf dsfds f sdfsdfsdf sdf dsf  BSN\nBSN \b fsd fs" & LF & "fdfdf sdfsd fsdf sd fds fsd fsd fs df sdf sdf sdf sd fsd fsdfsd fsdfsd fsd fsd f sdf sdf sd f sdf sdf d f df sdf ds fsd f sdf dsf ", "My .........");
       alert(ERROR, "my_msg dasdas das dasdasdasd as das da sd asdas dasdasd  dasdasdsdasdas das d asd as das das das das dasdasdas das das d as das das dasd", "my_scope");
       log(ID_BFM, "Kort multiline" & LF & "ddasdadad" & LF & "daddfad ", "");
-      log("Check various versions of linefeed (pre, post, only)");
-      log("\n Pre, followed by blank");
-      log("\nPre, followed by char");
-      log("Post, preceeded by blank \n");
-      log("Post, preceeded by char\n");
-      log("Next is single linefeed only");
-      log("\n");
-      log("Linefeeds completed. Please check above");
-      log("");
-      log("1");
-      log("Above two lines: First empty string, then single char.");
+      log(NO_ID, "Check various versions of linefeed (pre, post, only)");
+      log(NO_ID, "\n Pre, followed by blank");
+      log(NO_ID, "\nPre, followed by char");
+      log(NO_ID, "Post, preceeded by blank \n");
+      log(NO_ID, "Post, preceeded by char\n");
+      log(NO_ID, "Next is single linefeed only");
+      log(NO_ID, "\n");
+      log(NO_ID, "Linefeeds completed. Please check above");
+      log(NO_ID, "");
+      log(NO_ID, "1");
+      log(NO_ID, "Above two lines: First empty string, then single char.");
 
 --NA      -- Verifying shared_uvvm_status
 --NA      check_value(found_unexpected_simulation_warnings_or_worse, 1, error, "Alert check shared_uvvm_status.found_unexpected_simulation_warnings_or_worse expected and actual mismatch");
@@ -220,24 +220,24 @@ begin
       enable_log_msg(ID_BFM);
       log(ID_BFM, "ID_BFM re-enabled. Should be written", "My scope");
 
-      log("Verifying disable_log_msg() with QUIET. Next line should be empty.");
+      log(NO_ID, "Verifying disable_log_msg() with QUIET. Next line should be empty.");
       disable_log_msg(ID_BFM, "THIS MESSAGE SHOULD NOT BE VISIBLE", QUIET);
       log(ID_BFM, "This shall be invisible");
       log(ID_SEQUENCER, "This shall be visible");
       enable_log_msg(ID_BFM, QUIET);
-      log("This log message shall be visible");
+      log(NO_ID, "This log message shall be visible");
 
-      log("Verifying that attempting to enable ID_NEVER triggers an alert.");
+      log(NO_ID, "Verifying that attempting to enable ID_NEVER triggers an alert.");
       increment_expected_alerts(TB_WARNING, 1);
       enable_log_msg(ID_NEVER, "This shall trigger a TB_WARNING.");
 
-      log("Testing ID_LOG_MSG_CTRL and ALL_MESSAGES");
+      log(NO_ID, "Testing ID_LOG_MSG_CTRL and ALL_MESSAGES");
       disable_log_msg(ALL_MESSAGES);
       log(ID_SEQUENCER, "THIS SHOULD NOT BE VISIBLE");
       enable_log_msg(ID_SEQUENCER);
       log(ID_SEQUENCER, "This should be visible (and enabling of ID_SEQUENCER should be visible)");
 
-      log("Testing ID_LOG_MSG_CTRL and ALL_MESSAGES with QUIET");
+      log(NO_ID, "Testing ID_LOG_MSG_CTRL and ALL_MESSAGES with QUIET");
       disable_log_msg(ALL_MESSAGES);
       log(ID_SEQUENCER, "THIS SHOULD NOT BE VISIBLE");
       enable_log_msg(ID_SEQUENCER, QUIET);
@@ -249,20 +249,20 @@ begin
       log(ID_LOG_HDR, "Verifying log with text block input", "");
       -- Setting up a preformated string
       write(v_line, "TEST OF MULTILINE LOG without formatting" & LF & "First line " & LF & "Second line " & LF & "Third line" & LF & "Fourth line" & LF & "END OF LOG");
-      log("Logging data without formatting");
+      log(NO_ID, "Logging data without formatting");
       log_text_block(ID_SEQUENCER, v_line, UNFORMATTED, "This should not print");
 
       write(v_line, "TEST OF MULTILINE LOG with formatting" & LF & "First line " & LF & "Second line " & LF & "Third line" & LF & "Fourth line" & LF & "END OF LOG");
-      log("Logging data with formatting");
+      log(NO_ID, "Logging data with formatting");
       log_text_block(ID_SEQUENCER, v_line, FORMATTED, "Logging data with Bitvis formatting");
 
-      log("Logging data with empty text block");
+      log(NO_ID, "Logging data with empty text block");
 --      increment_expected_alerts(ERROR, 3, "Expecting 3 alerts for the following 3 log_text_block calls");
       log_text_block(ID_SEQUENCER, v_line, FORMATTED, "This header should be printed", C_SCOPE, shared_msg_id_panel, WRITE_HDR_IF_BLOCK_EMPTY);
       log_text_block(ID_SEQUENCER, v_line, FORMATTED, "This header should be printed, with notification", C_SCOPE, shared_msg_id_panel, NOTIFY_IF_BLOCK_EMPTY);
       log_text_block(ID_SEQUENCER, v_line, FORMATTED, "THIS HEADER SHOULD NOT BE PRINTED", C_SCOPE, shared_msg_id_panel, SKIP_LOG_IF_BLOCK_EMPTY);
 
-      log("Logging with unformatted text to specified file");
+      log(NO_ID, "Logging with unformatted text to specified file");
       -- Logging to file with unformatted text
       -- Logging to a specified file (primary.txt)
       write(v_line, "This block should be logged to primary.txt only (unformatted)" & LF & "Second line" & LF & "Third line" & LF);
@@ -274,7 +274,7 @@ begin
       write(v_line, "This block should be logged to secondary.txt only (unformatted)" & LF & "Second line" & LF & "Third line" & LF);
       log_text_block(ID_SEQUENCER, v_line, UNFORMATTED, ".", C_SCOPE, shared_msg_id_panel, WRITE_HDR_IF_BLOCK_EMPTY, LOG_ONLY, "secondary.txt", write_mode);
 
-      log("Logging with formatted text");
+      log(NO_ID, "Logging with formatted text");
       -- Logging to file with formatted text
       -- Logging to a specified file (primary.txt)
       write(v_line, "This block should be logged to primary.txt only (formatted)" & LF & "Second line" & LF & "Third line" & LF);
@@ -284,12 +284,12 @@ begin
 --      increment_expected_alerts(ERROR, 1, "Expecting 1 alert for the following log_text_block call");
       log_text_block(ID_SEQUENCER, v_line, FORMATTED, "the content of this block is empty", C_SCOPE, shared_msg_id_panel, NOTIFY_IF_BLOCK_EMPTY, CONSOLE_AND_LOG, "primary.txt", append_mode);
 
-      log("Logging to secondary file");
+      log(NO_ID, "Logging to secondary file");
       -- Logging to another specified file (secondary.txt)
       write(v_line, "This block should be logged to secondary.txt only (formatted)" & LF & "Second line" & LF & "Third line" & LF);
       log_text_block(ID_SEQUENCER, v_line, FORMATTED, "header", C_SCOPE, shared_msg_id_panel, WRITE_HDR_IF_BLOCK_EMPTY, LOG_ONLY, "secondary.txt", append_mode);
 
-      log("Logging to console only");
+      log(NO_ID, "Logging to console only");
       -- Logging to another specified file (secondary.txt)
       write(v_line, "LOGGING" & LF & "TO" & LF & "CONSOLE" & LF & "ONLY");
       log_text_block(ID_SEQUENCER, v_line, FORMATTED, "header", C_SCOPE, shared_msg_id_panel, WRITE_HDR_IF_BLOCK_EMPTY, CONSOLE_ONLY);

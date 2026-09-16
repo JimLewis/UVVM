@@ -23,6 +23,8 @@ use std.textio.all;
 library uvvm_util;
 context uvvm_util.uvvm_util_context;
 
+library osvvm;
+
 use work.generic_sb_support_pkg.all;
 
 package generic_sb_pkg is
@@ -657,6 +659,22 @@ package body generic_sb_pkg is
       end if;
     end procedure;
 
+    --O  OSVVM uses this to print passed messages and track passed affirmations
+    procedure log_passed(
+      instance : natural;
+      msg_id   : t_msg_id;
+      msg      : string;
+      scope    : string
+    ) is
+    begin
+      if msg_id /= ID_NEVER then
+        osvvm.AlertLogPkg.IncAffirmPassedCount ;
+      end if ;
+      if priv_msg_id_panel_array(instance)(msg_id) = ENABLED then
+        log(msg_id, msg, scope, C_MSG_ID_PANEL_DEFAULT);
+      end if;
+    end procedure;
+
     --==================================================================================================
     -- PUBLIC METHODS
     --==================================================================================================
@@ -1092,43 +1110,43 @@ package body generic_sb_pkg is
         -- Check if overdue time
         if v_matched and (priv_config(instance_num).overdue_check_time_limit /= 0 ns) and (now - v_entry.entry_time > priv_config(instance_num).overdue_check_time_limit) then
           if ext_proc_call = "" then
-            alert(priv_config(instance_num).overdue_check_alert_level, C_PROC_NAME & "() => TIME LIMIT OVERDUE: time limit is " & to_string(priv_config(instance_num).overdue_check_time_limit) & ", time from entry is " & to_string(now - v_entry.entry_time) & "." & add_msg_delimiter(msg), priv_scope & "," & to_string(instance_num));
+            affirm_error(priv_config(instance_num).overdue_check_alert_level, C_PROC_NAME & "() => TIME LIMIT OVERDUE: time limit is " & to_string(priv_config(instance_num).overdue_check_time_limit) & ", time from entry is " & to_string(now - v_entry.entry_time) & "." & add_msg_delimiter(msg), priv_scope & "," & to_string(instance_num), ID_DATA); --OSVVM
           else
-            alert(priv_config(instance_num).overdue_check_alert_level, ext_proc_call & " => TIME LIMIT OVERDUE: time limit is " & to_string(priv_config(instance_num).overdue_check_time_limit) & ", time from entry is " & to_string(now - v_entry.entry_time) & "." & add_msg_delimiter(msg), priv_scope & "," & to_string(instance_num));
+            affirm_error(priv_config(instance_num).overdue_check_alert_level, ext_proc_call & " => TIME LIMIT OVERDUE: time limit is " & to_string(priv_config(instance_num).overdue_check_time_limit) & ", time from entry is " & to_string(now - v_entry.entry_time) & "." & add_msg_delimiter(msg), priv_scope & "," & to_string(instance_num), ID_DATA); --OSVVM
           end if;
           -- Update counter
           priv_overdue_check_cnt(instance_num) := priv_overdue_check_cnt(instance_num) + 1;
         end if;
 
-        -- Logging
+        -- Logging -- O changed log to log_passed
         if v_matched then
           if ext_proc_call = "" then
             if tag_usage = NO_TAG then
-              log(instance_num, ID_DATA, C_PROC_NAME & "() => MATCH, for value: " & to_string_element(v_entry.expected_element) & "." & add_msg_delimiter(msg), priv_scope & "," & to_string(instance_num));
+              log_passed(instance_num, ID_DATA, C_PROC_NAME & "() => MATCH, for value: " & to_string_element(v_entry.expected_element) & "." & add_msg_delimiter(msg), priv_scope & "," & to_string(instance_num));
             else
-              log(instance_num, ID_DATA, C_PROC_NAME & "() => MATCH, for value: " & to_string_element(v_entry.expected_element) & ". tag: '" & to_string(tag) & "'." & add_msg_delimiter(msg), priv_scope & "," & to_string(instance_num));
+              log_passed(instance_num, ID_DATA, C_PROC_NAME & "() => MATCH, for value: " & to_string_element(v_entry.expected_element) & ". tag: '" & to_string(tag) & "'." & add_msg_delimiter(msg), priv_scope & "," & to_string(instance_num));
             end if;
           -- Called from other SB method
           else
             if tag_usage = NO_TAG then
-              log(instance_num, ID_DATA, ext_proc_call & " => MATCH, for received: " & to_string_element(received_element) & "." & add_msg_delimiter(msg), priv_scope & "," & to_string(instance_num));
+              log_passed(instance_num, ID_DATA, ext_proc_call & " => MATCH, for received: " & to_string_element(received_element) & "." & add_msg_delimiter(msg), priv_scope & "," & to_string(instance_num));
             else
-              log(instance_num, ID_DATA, ext_proc_call & " => MATCH, for received: " & to_string_element(received_element) & ", tag: '" & to_string(tag) & "'." & add_msg_delimiter(msg), priv_scope & "," & to_string(instance_num));
+              log_passed(instance_num, ID_DATA, ext_proc_call & " => MATCH, for received: " & to_string_element(received_element) & ", tag: '" & to_string(tag) & "'." & add_msg_delimiter(msg), priv_scope & "," & to_string(instance_num));
             end if;
           end if;
         -- Initial garbage
         elsif not (priv_match_cnt(instance_num) = 0 and priv_config(instance_num).ignore_initial_garbage) then
           if ext_proc_call = "" then
             if tag_usage = NO_TAG then
-              alert(priv_config(instance_num).mismatch_alert_level, C_PROC_NAME & "() => MISMATCH, expected: " & to_string_element(v_entry.expected_element) & "; received: " & to_string_element(received_element) & "." & add_msg_delimiter(msg), priv_scope & "," & to_string(instance_num));
+              affirm_error(priv_config(instance_num).mismatch_alert_level, C_PROC_NAME & "() => MISMATCH, expected: " & to_string_element(v_entry.expected_element) & "; received: " & to_string_element(received_element) & "." & add_msg_delimiter(msg), priv_scope & "," & to_string(instance_num), ID_DATA);  --OSVVM
             else
-              alert(priv_config(instance_num).mismatch_alert_level, C_PROC_NAME & "() => MISMATCH, expected: " & to_string_element(v_entry.expected_element) & ", tag: '" & to_string(v_entry.tag) & "'; received: " & to_string_element(received_element) & ", tag: '" & to_string(tag) & "'." & add_msg_delimiter(msg), priv_scope & "," & to_string(instance_num));
+              affirm_error(priv_config(instance_num).mismatch_alert_level, C_PROC_NAME & "() => MISMATCH, expected: " & to_string_element(v_entry.expected_element) & ", tag: '" & to_string(v_entry.tag) & "'; received: " & to_string_element(received_element) & ", tag: '" & to_string(tag) & "'." & add_msg_delimiter(msg), priv_scope & "," & to_string(instance_num), ID_DATA);  --OSVVM
             end if;
           else
             if tag_usage = NO_TAG then
-              alert(priv_config(instance_num).mismatch_alert_level, ext_proc_call & " => MISMATCH, expected: " & to_string_element(v_entry.expected_element) & "; received: " & to_string_element(received_element) & "." & add_msg_delimiter(msg), priv_scope & "," & to_string(instance_num));
+              affirm_error(priv_config(instance_num).mismatch_alert_level, ext_proc_call & " => MISMATCH, expected: " & to_string_element(v_entry.expected_element) & "; received: " & to_string_element(received_element) & "." & add_msg_delimiter(msg), priv_scope & "," & to_string(instance_num), ID_DATA);  --OSVVM
             else
-              alert(priv_config(instance_num).mismatch_alert_level, ext_proc_call & " => MISMATCH, expected: " & to_string_element(v_entry.expected_element) & ", tag: " & to_string(v_entry.tag) & "; received: " & to_string_element(received_element) & ", tag: '" & to_string(tag) & "'." & add_msg_delimiter(msg), priv_scope & "," & to_string(instance));
+              affirm_error(priv_config(instance_num).mismatch_alert_level, ext_proc_call & " => MISMATCH, expected: " & to_string_element(v_entry.expected_element) & ", tag: " & to_string(v_entry.tag) & "; received: " & to_string_element(received_element) & ", tag: '" & to_string(tag) & "'." & add_msg_delimiter(msg), priv_scope & "," & to_string(instance), ID_DATA);  --OSVVM
             end if;
           end if;
         end if;

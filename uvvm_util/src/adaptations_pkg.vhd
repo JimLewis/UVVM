@@ -58,6 +58,7 @@ package adaptations_pkg is
   --PPPPPPPPIIIIII TTTTTTTT  SSSSSSSSSSSSSS MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 --O  constant C_LOG_PREFIX        : string := "UVVM: "; -- Note: ': ' is recommended as final characters
   constant C_LOG_PREFIX               : string   := osvvm.OsvvmSettingsPkg.OSVVM_PRINT_PREFIX ;  --O use OSVVM settings
+  constant C_LOG_SECONDARY_PREFIX     : string   := osvvm.OsvvmSettingsPkg.OSVVM_SECONDARY_PREFIX ;  --O use OSVVM settings
   constant C_LOG_PREFIX_WIDTH         : natural  := C_LOG_PREFIX'length;
   constant C_LOG_MSG_ID_WIDTH         : natural  := 24;      -- Maximum msg_id length
   constant C_LOG_MSG_ID_JUSTIFY       : integer  := minimum(18, C_LOG_MSG_ID_WIDTH) ;  --O added to shorten IDs (from 24)
@@ -70,9 +71,8 @@ package adaptations_pkg is
   constant C_LOG_SCOPE_JUSTIFY        : integer  := minimum(18, C_LOG_SCOPE_WIDTH) ;  --O added to shorten Scope
   constant C_LOG_LINE_WIDTH           : natural  := 175;     -- Maximum log line length
   constant C_LOG_INFO_WIDTH           : natural  := C_LOG_LINE_WIDTH - C_LOG_PREFIX_WIDTH;
+  constant C_LOG_WRAP_THRESHOLD       : natural  := natural(1.10 * real(C_LOG_LINE_WIDTH));     -- O  do not wrap single lines that are less than the threshold
   constant C_REAL_NUM_FRACTION_DIGITS : natural  := osvvm.OsvvmSettingsPkg.ALERT_LOG_DIGITS_FOR_REAL_FRACTION ; --O  is 4
-
-  constant C_ALERT_LOG_VERBATIM       : boolean := false; -- do not do handling of \r, \n, or Ignore LF (SINGLE_LINE)
 
   constant C_USE_BACKSLASH_N_AS_LF    : boolean := true; -- If true interprets '\n' as Line feed
   constant C_USE_BACKSLASH_R_AS_LF    : boolean := true; -- If true, inserts an empty line if '\r' is the first character of the string. All others '\r' will be printed as is.

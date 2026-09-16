@@ -33,6 +33,7 @@ context uvvm_util.uvvm_util_context;
 
 library osvvm ;
 use OSVVM.FileLinePathPkg.FILE_PATH ;
+context osvvm.OsvvmContext ;
 use std.env.all ;
 
 --hdlregression:tb

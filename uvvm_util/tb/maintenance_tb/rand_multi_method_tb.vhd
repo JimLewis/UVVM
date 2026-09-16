@@ -36,6 +36,7 @@ use work.rand_tb_pkg.all;
 
 library osvvm ;
 use OSVVM.FileLinePathPkg.FILE_PATH ;
+context osvvm.OsvvmContext ;
 use std.env.all ;
 
 --HDLRegression:TB
