@@ -201,7 +201,7 @@ package methods_pkg is
     constant alert_level : t_alert_level;
     constant msg         : string;
     constant scope       : string := C_TB_SCOPE_DEFAULT ;
-    constant msg_id      : t_msg_id
+    constant msg_id      : t_msg_id := NO_ID
   ) ;
 
   -- Dedicated alert-procedures all alert levels (less verbose - as 2 rather than 3 parameters...)
@@ -3904,7 +3904,7 @@ package body methods_pkg is
     constant alert_level : t_alert_level;
     constant msg         : string;
     constant scope       : string := C_TB_SCOPE_DEFAULT ;
-    constant msg_id      : t_msg_id
+    constant msg_id      : t_msg_id := NO_ID
   ) is
   begin
     if msg_id /= ID_NEVER then
