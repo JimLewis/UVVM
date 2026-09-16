@@ -83,9 +83,9 @@ begin
     ) is
     begin
       if (received = expected) then
-        log(msg & " is OK => received " & received);
+        log_passed(NO_ID, msg & " is OK => received " & received);
       else
-        alert(ERROR, msg & " failed. Expected " & expected & ", but received " & received & ". ", C_SCOPE);
+        affirm_error(ERROR, msg & " failed. Expected " & expected & ", but received " & received & ". ", C_SCOPE, NO_ID);
       end if;
     end procedure;
 
