@@ -3604,8 +3604,24 @@ package body methods_pkg is
     if (msg_id_panel(msg_id) = ENABLED) then
       local_log(msg_id, msg, scope, log_destination, log_file_name, open_mode);
     end if;      --!! Add prefix to all lines
-
   end procedure log ;
+
+  -- Calls overloaded log procedure with default msg_id
+  procedure log(
+    msg             : string;
+--    scope           : string            := C_TB_SCOPE_DEFAULT;  -- O conflicts with OSVVM.  Use log(NO_ID, msg)
+    scope           : string;
+    msg_id_panel    : t_msg_id_panel    := shared_msg_id_panel;
+    log_destination : t_log_destination := shared_default_log_destination;
+    log_file_name   : string            := C_LOG_FILE_NAME;
+    open_mode       : file_open_kind    := append_mode
+  ) is
+  begin
+    -- Only log if message ID is enabled
+    if (msg_id_panel(C_TB_MSG_ID_DEFAULT) = ENABLED) then
+      local_log(C_TB_MSG_ID_DEFAULT, msg, scope, log_destination, log_file_name, open_mode);
+    end if;
+  end procedure;
 
   --O  OSVVM uses this to print passed messages and track passed affirmations
   procedure log_passed(
@@ -3626,24 +3642,6 @@ package body methods_pkg is
       local_log(msg_id, msg, scope, log_destination, log_file_name, open_mode, PASSED);
     end if;
   end procedure log_passed ;
-
-  -- Calls overloaded log procedure with default msg_id
-  procedure log(
-    msg             : string;
---    scope           : string            := C_TB_SCOPE_DEFAULT;  -- O conflicts with OSVVM.  Use log(NO_ID, msg)
-    scope           : string;
-    msg_id_panel    : t_msg_id_panel    := shared_msg_id_panel;
-    log_destination : t_log_destination := shared_default_log_destination;
-    log_file_name   : string            := C_LOG_FILE_NAME;
-    open_mode       : file_open_kind    := append_mode
-  ) is
-  begin
-    -- Only log if message ID is enabled
-    if (msg_id_panel(C_TB_MSG_ID_DEFAULT) = ENABLED) then
-      --         *** Has Default ***
-      local_log(C_TB_MSG_ID_DEFAULT, msg, scope, log_destination, log_file_name, open_mode);
-    end if;
-  end procedure;
 
   -- Logging for multi line text. Also empty the text_block, for consistency.
   --O Modified significantly to sort complexity, but keeps the same output.
@@ -3851,6 +3849,7 @@ package body methods_pkg is
   end function;
 
   --O  Map UVVM alert to OSVVM alert hierarchy.
+  --O  Uses local_print (here) for consistency with log printing
   --O  Scope is used to formulate an AlertLogID
   --O    Using the scope in this way is inefficient as it is a string look up in a data structure
   --O    It is better to commit to switching to OSVVM AlertLogIDs which are an index into the
@@ -3876,31 +3875,11 @@ package body methods_pkg is
         message          =>  msg
       ) ;
 
---!!       write(buf,
---!!           C_LOG_PREFIX &
---!!           osvvm.TextUtilPkg.format(NOW, C_LOG_TIME_BASE, C_LOG_TIME_DECIMALS, C_LOG_TIME_WIDTH) & "  " &
---!!           osvvm.OsvvmSettingsPkg.ALERT_LOG_ALERT_NAME & "  " &
---!!   --        justify(to_string(alert_level), C_LOG_SCOPE_JUSTIFY, LEFT) & "  ") ;  -- Print UVVM levels
---!!           justify(to_string(to_OsvvmAlert(alert_level)), C_LOG_MSG_ID_JUSTIFY, LEFT) & "  ") ; -- Print OSVVM levels, which is what we count
---!!           justify(scope, C_LOG_SCOPE_JUSTIFY, LEFT) & "  ") ;
---!!
---!!       v_first_premessage_width := buf'length;
---!! -- End Local_print
       -- Count the alerts
       if C_ENABLE_HIERARCHICAL_ALERTS and v_resolved_scope'length > 0 then
         -- osvvm.AlertLogPkg.alert(osvvm.AlertLogPkg.NewID(v_resolved_scope), to_string(msg), to_OsvvmAlert(alert_level)) ;
         osvvm.AlertLogPkg.IncAlertCount(osvvm.AlertLogPkg.NewID(v_resolved_scope), to_OsvvmAlert(alert_level)) ;
       else
---        if v_resolved_scope'length > 0 then
---          osvvm.AlertLogPkg.alert(
---            (1 to C_LOG_MSG_ID_JUSTIFY - 10 => ' ') & "  " &   -- balances msg_id
---            justify(v_resolved_scope, C_LOG_SCOPE_JUSTIFY, LEFT)  & "  " &
---            to_string(msg), to_OsvvmAlert(alert_level)) ;
---        else
---          osvvm.AlertLogPkg.alert(
---            (1 to C_LOG_MSG_ID_JUSTIFY + C_LOG_SCOPE_JUSTIFY + 2 - 10 => ' ') & "  " &
---            to_string(msg), to_OsvvmAlert(alert_level)) ;
---        end if;
         osvvm.AlertLogPkg.IncAlertCount(to_OsvvmAlert(alert_level)) ;
       end if ;
     end if;
