@@ -6,7 +6,14 @@ library ieee;
   use std.textio.all;
 
 library uvvm_util;
-context uvvm_util.uvvm_util_context;
+-- context uvvm_util.uvvm_util_context;
+-- OSVVM.  Selecting packages individually s.t. to replace alert and log with affirm_error and log_passed
+use uvvm_util.types_pkg.all;
+use uvvm_util.adaptations_pkg.all;
+use uvvm_util.global_signals_and_shared_variables_pkg.all;
+use uvvm_util.string_methods_pkg.all;
+use work.asertion_methods_pkg.all;
+
 
 package uvvm_assertions_pkg is
   -- the " # region pragma is for editor purposes, and serves no purpose in the UVVM/VHDL context"
