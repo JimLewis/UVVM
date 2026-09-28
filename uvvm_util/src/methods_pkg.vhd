@@ -3401,12 +3401,16 @@ package body methods_pkg is
     constant file_name : string   := C_LOG_FILE_NAME
   ) is
   begin
-    if file_name = C_LOG_FILE_NAME or file_name = C_ALERT_FILE_NAME then
-      -- Open the OSVVM default transcript name which is set by SetTestName
-      osvvm.TranscriptPkg.TranscriptOpen ;
-    else
-      -- Open a transcript named file_name
-      osvvm.TranscriptPkg.TranscriptOpen(file_name) ;
+    shared_log_file_name_is_set := true;
+    -- Open transcript if it is not already open
+    if not osvvm.TranscriptPkg.IsTranscriptOpen then
+      if (file_name = C_LOG_FILE_NAME) or (file_name = C_ALERT_FILE_NAME) then
+        -- Open the OSVVM default transcript name which is set by SetTestName
+        osvvm.TranscriptPkg.TranscriptOpen ;
+      else
+        -- Open a transcript named file_name
+        osvvm.TranscriptPkg.TranscriptOpen(file_name) ;
+      end if ;
     end if ;
     if shared_default_log_destination /= LOG_ONLY then
       shared_default_log_destination := CONSOLE_AND_LOG ;
@@ -3663,7 +3667,8 @@ package body methods_pkg is
     -- Only log if message ID is enabled
     elsif (msg_id_panel(msg_id) = ENABLED) then
       --O  If text_block empty (NULL)
-      v_text_block_is_empty := (text_block = null);
+      --O  This does not work in Questa - neither does an if then else with it.
+      v_text_block_is_empty := (text_block = NULL);
 
       --O  Observation, log_text_block with formatting = UNFORMATTED is just like WriteLine()
       if formatting = UNFORMATTED then
@@ -3681,12 +3686,14 @@ package body methods_pkg is
         osvvm.TextUtilPkg.HeaderToBuf(buf, "-", C_LOG_INFO_WIDTH) ;
         write_line_to_log_destination(buf, log_destination, log_file_name, open_mode);
         --O text block
-        if not v_text_block_is_empty then
+        if v_text_block_is_empty then
+          if log_if_block_empty = NOTIFY_IF_BLOCK_EMPTY then
+            write(buf, C_LOG_PREFIX & "Note: Text block was empty") ;
+            write_line_to_log_destination(buf, log_destination, log_file_name, open_mode);
+          end if;
+        else
           prefix_lines(text_block);
           write_line_to_log_destination(text_block, log_destination, log_file_name, open_mode);
-        elsif log_if_block_empty = NOTIFY_IF_BLOCK_EMPTY then
-          write(buf, C_LOG_PREFIX & "Note: Text block was empty") ;
-          write_line_to_log_destination(buf, log_destination, log_file_name, open_mode);
         end if ;
         osvvm.TextUtilPkg.HeaderToBuf(buf, "* ", C_LOG_INFO_WIDTH) ;
         write_line_to_log_destination(buf, log_destination, log_file_name, open_mode);
