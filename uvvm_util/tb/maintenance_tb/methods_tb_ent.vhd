@@ -38,7 +38,7 @@ context uvvm_util.uvvm_util_context;
 
 library osvvm ;
 use OSVVM.FileLinePathPkg.FILE_PATH ;
-context osvvm.OsvvmContext ;
+-- context osvvm.OsvvmContext ;
 use std.env.all ;
 
 --HDLRegression:TB
@@ -47,7 +47,8 @@ entity methods_tb is
     GC_TESTCASE : string := "UVVM"
   );
 
-  constant RawTestFilePath : string  := FILE_PATH ;
-  constant TestFilePath    : string  := OSVVM.FileUtilPkg.RemoveEndingSeparator(OSVVM.FileUtilPkg.ChangeSeparator(RawTestFilePath)) ;
-  constant CheckResults    : boolean := RawTestFilePath'length > 0 ;
+  constant C_TESTCASE_FILE_PATH : string  := FILE_PATH ;
+  constant C_TOOL_VENDOR        : string  := TOOL_VENDOR ;
+  constant TestFilePath         : string  := OSVVM.FileUtilPkg.RemoveEndingSeparator(OSVVM.FileUtilPkg.ChangeSeparator(C_TESTCASE_FILE_PATH)) ;
+  constant CheckResults         : boolean := C_TESTCASE_FILE_PATH'length > 0 ;
 end entity;

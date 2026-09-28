@@ -569,7 +569,8 @@ begin
     osvvm.TranscriptPkg.TranscriptClose ;
 
     if CheckResults then
-      osvvm.AlertLogPkg.AffirmIfTranscriptsMatch(TestFilePath & "/ValidatedResults") ;
+      osvvm.AlertLogPkg.IncrementAlertStopCount(osvvm.AlertLogPkg.ERROR, 1) ;  -- do not hit stop limit due to this check
+      osvvm.AlertLogPkg.AffirmIfTranscriptsMatch(TestFilePath & "/ValidatedResults/" & C_TOOL_VENDOR) ;
     end if ;
 
     osvvm.ReportPkg.EndOfTestReports ;

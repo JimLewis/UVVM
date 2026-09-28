@@ -48,6 +48,7 @@ begin
     -- set_log_file_name(GC_TESTCASE & "_Log.txt");
     -- set_alert_file_name(GC_TESTCASE & "_Alert.txt");
     osvvm.AlertLogPkg.SetTestName(GC_TESTCASE) ;
+    wait for 0 ns ; wait for 0 ns ; wait for 0 ns ; wait for 0 ns ; -- do not log random ordered starting messages
     osvvm.ReportPkg.TranscriptOpen ;
     osvvm.TranscriptPkg.SetTranscriptMirror ;
 
@@ -57,6 +58,7 @@ begin
       wait for 8000 ns;
       log(ID_LOG_HDR, "Testing watchdog timer A (8100 ns) - terminate command", C_SCOPE);
       terminate_watchdog(watchdog_ctrl_terminate);
+      wait for 0 ns ; wait for 0 ns ;
 
       log(ID_LOG_HDR, "Testing watchdog timer B (8200 ns) - initial timeout", C_SCOPE);
       wait for 199 ns;
@@ -104,7 +106,8 @@ begin
 
     osvvm.TranscriptPkg.TranscriptClose ;
     if CheckResults then
-      osvvm.AlertLogPkg.AffirmIfTranscriptsMatch(TestFilePath & "/ValidatedResults") ;
+      osvvm.AlertLogPkg.IncrementAlertStopCount(osvvm.AlertLogPkg.ERROR, 1) ;  -- do not hit stop limit due to this check
+      osvvm.AlertLogPkg.AffirmIfTranscriptsMatch(TestFilePath & "/ValidatedResults/" & C_TOOL_VENDOR ) ;
     end if ;
     osvvm.ReportPkg.EndOfTestReports ;
 
