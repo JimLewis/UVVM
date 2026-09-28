@@ -45,9 +45,10 @@ entity rand_tb is
   generic(
     GC_TESTCASE : string
   );
-  constant RawTestFilePath : string  := FILE_PATH ;
-  constant TestFilePath    : string  := OSVVM.FileUtilPkg.RemoveEndingSeparator(OSVVM.FileUtilPkg.ChangeSeparator(RawTestFilePath)) ;
-  constant CheckResults    : boolean := RawTestFilePath'length > 0 ;
+  constant C_TESTCASE_FILE_PATH : string  := FILE_PATH ;
+  constant C_TOOL_VENDOR        : string  := TOOL_VENDOR ;
+  constant TestFilePath    : string  := OSVVM.FileUtilPkg.RemoveEndingSeparator(OSVVM.FileUtilPkg.ChangeSeparator(C_TESTCASE_FILE_PATH)) ;
+  constant CheckResults    : boolean := C_TESTCASE_FILE_PATH'length > 0 ;
 end entity;
 
 architecture func of rand_tb is
@@ -3196,7 +3197,8 @@ begin
 
     osvvm.TranscriptPkg.TranscriptClose ;
     if CheckResults then
-      osvvm.AlertLogPkg.AffirmIfTranscriptsMatch(TestFilePath & "/ValidatedResults") ;
+      osvvm.AlertLogPkg.IncrementAlertStopCount(osvvm.AlertLogPkg.ERROR, 1) ;  -- do not hit stop limit due to this check
+      osvvm.AlertLogPkg.AffirmIfTranscriptsMatch(TestFilePath & "/ValidatedResults/" & C_TOOL_VENDOR) ;
     end if ;
     osvvm.ReportPkg.EndOfTestReports ;
 

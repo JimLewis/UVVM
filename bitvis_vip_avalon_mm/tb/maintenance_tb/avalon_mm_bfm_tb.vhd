@@ -164,7 +164,7 @@ begin
 
     -- To avoid that log files from different test cases (run in separate
     -- simulations) overwrite each other.
-    set_log_file_name(GC_TESTCASE & "_Log.txt");
+    --O set_log_file_name(GC_TESTCASE & "_Log.txt");
     --O set_alert_file_name(GC_TESTCASE & "_Alert.txt");
 
     -- set up our avalon_mm config - could be different than default config in BFM

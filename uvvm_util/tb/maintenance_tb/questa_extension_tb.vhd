@@ -38,9 +38,9 @@ entity questa_extension_tb is
   generic (
     GC_EXTENSIONS_ENABLED : boolean := TRUE
   );
-  constant RawTestFilePath : string  := OSVVM.FileLinePathPkg.FILE_PATH ;
-  constant TestFilePath    : string  := OSVVM.FileUtilPkg.RemoveEndingSeparator(OSVVM.FileUtilPkg.ChangeSeparator(RawTestFilePath)) ;
-  constant CheckResults    : boolean := RawTestFilePath'length > 0 ;
+  constant C_TESTCASE_FILE_PATH : string  := OSVVM.FileLinePathPkg.FILE_PATH ;
+  constant TestFilePath    : string  := OSVVM.FileUtilPkg.RemoveEndingSeparator(OSVVM.FileUtilPkg.ChangeSeparator(C_TESTCASE_FILE_PATH)) ;
+  constant CheckResults    : boolean := C_TESTCASE_FILE_PATH'length > 0 ;
 end entity;
 
 architecture sim of questa_extension_tb is

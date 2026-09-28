@@ -59,6 +59,7 @@ end entity;
 architecture func of axistream_bfm_tb is
   -- Required by OSVVM
   constant C_TESTCASE_FILE_PATH : string  := FILE_PATH ;
+  constant C_TOOL_VENDOR        : string  := TOOL_VENDOR ;
   -- End of Required by OSVVM
 
   --------------------------------------------------------------------------------
@@ -147,8 +148,8 @@ begin
 
     -- To avoid that log files from different test cases (run in separate
     -- simulations) overwrite each other.
-    set_log_file_name(GC_TESTCASE & "_Log.txt");
-    set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+  --  set_log_file_name(GC_TESTCASE & "_Log.txt");
+  --  set_alert_file_name(GC_TESTCASE & "_Alert.txt");
 
     -- override default config with settings for this testbench
     axistream_bfm_config.max_wait_cycles          := 1000;
@@ -225,8 +226,8 @@ begin
 
     -- OSVVM Test Completion Steps
     TranscriptClose ;
-    if C_TESTCASE_FILE_PATH'length > 0 then
-      AffirmIfTranscriptsMatch(RemoveEndingSeparator(ChangeSeparator(C_TESTCASE_FILE_PATH)) & "/OsvvmResults") ;
+    if C_TESTCASE_FILE_PATH'length > 0 and C_TOOL_VENDOR'length > 0 then
+      AffirmIfTranscriptsMatch(RemoveEndingSeparator(ChangeSeparator(C_TESTCASE_FILE_PATH)) & "/OsvvmResults/" & C_TOOL_VENDOR) ;
     end if ;
     EndOfTestReports ;
     -- End of Test OSVVM Completion Steps

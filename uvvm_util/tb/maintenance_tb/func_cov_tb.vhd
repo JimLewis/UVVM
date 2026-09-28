@@ -43,9 +43,9 @@ entity func_cov_tb is
     GC_TESTCASE  : string;
     GC_FILE_PATH : string := ""
   );
-  constant RawTestFilePath : string  := FILE_PATH ;
-  constant TestFilePath    : string  := OSVVM.FileUtilPkg.RemoveEndingSeparator(OSVVM.FileUtilPkg.ChangeSeparator(RawTestFilePath)) ;
-  constant CheckResults    : boolean := RawTestFilePath'length > 0 ;
+  constant C_TESTCASE_FILE_PATH : string  := FILE_PATH ;
+  constant TestFilePath    : string  := OSVVM.FileUtilPkg.RemoveEndingSeparator(OSVVM.FileUtilPkg.ChangeSeparator(C_TESTCASE_FILE_PATH)) ;
+  constant CheckResults    : boolean := C_TESTCASE_FILE_PATH'length > 0 ;
 end entity;
 
 architecture func of func_cov_tb is

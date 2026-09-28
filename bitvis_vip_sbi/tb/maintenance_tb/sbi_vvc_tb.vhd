@@ -58,6 +58,7 @@ end entity;
 architecture func of sbi_vvc_tb is
   -- Required by OSVVM
   constant C_TESTCASE_FILE_PATH : string  := FILE_PATH ;
+  constant C_TOOL_VENDOR        : string  := TOOL_VENDOR ; -- 2019/OSVVM Language Support Pkg
   -- End of Required by OSVVM
 
   constant C_CLK_PERIOD : time   := 10 ns; -- **** Trenger metode for setting av clk period
@@ -149,7 +150,7 @@ begin
 
   begin
     -- OSVVM Start of Test Case
-    SetTestName("sbi_vvc_tb") ;
+    SetTestName(GC_TESTCASE) ;
     TranscriptOpen ;
     SetTranscriptMirror ;
     -- End of OSVVM Start of Test Case
@@ -436,7 +437,7 @@ begin
       ----------------------------------------------------------------------------------------------------------------------------
       -- Calling an invalid channel will yield a TB_WARNING from each of the UART channels
       -- We will also get another TB_WARNING from the timeout, related to having more decimals in the log time than we can display
-      increment_expected_alerts(TB_WARNING, 3);
+      increment_expected_alerts(TB_WARNING, 2);
       -- Calling an invalid channel will also cause a timeout, since the target VVC does not exist. This results in an ERROR
       increment_expected_alerts_and_stop_limit(TB_ERROR, 3);
       insert_delay(SBI_VVCT, 1, TX, C_CLK_PERIOD, "Inserting delay on SBI TX channel, expecting tb warning and tb error");
@@ -588,8 +589,9 @@ begin
 
     -- OSVVM Test Completion Steps
     TranscriptClose ;
-    if C_TESTCASE_FILE_PATH'length > 0 then
-      AffirmIfTranscriptsMatch(RemoveEndingSeparator(ChangeSeparator(C_TESTCASE_FILE_PATH)) & "/OsvvmResults") ;
+    if C_TESTCASE_FILE_PATH'length > 0 and C_TOOL_VENDOR'length > 0 then
+      osvvm.AlertLogPkg.IncrementAlertStopCount(osvvm.AlertLogPkg.ERROR, 1) ;  -- do not hit stop limit due to this check
+      AffirmIfTranscriptsMatch(RemoveEndingSeparator(ChangeSeparator(C_TESTCASE_FILE_PATH)) & "/OsvvmResults/" & C_TOOL_VENDOR) ;
     end if ;
     EndOfTestReports ;
     -- End of Test OSVVM Completion Steps

@@ -54,6 +54,7 @@ end entity;
 architecture func of rgmii_bfm_tb is
   -- Required by OSVVM
   constant C_TESTCASE_FILE_PATH : string  := FILE_PATH ;
+  constant C_TOOL_VENDOR        : string  := TOOL_VENDOR ;
   -- End of Required by OSVVM
 
   --------------------------------------------------------------------------------
@@ -117,7 +118,7 @@ begin
 
   begin
     -- OSVVM Start of Test Case
-    SetTestName("rgmii_bfm_tb") ;
+    SetTestName(GC_TESTCASE) ;
     TranscriptOpen ;
     SetTranscriptMirror ;
     -- End of OSVVM Start of Test Case
@@ -255,8 +256,8 @@ begin
 
     -- OSVVM Test Completion Steps
     TranscriptClose ;
-    if C_TESTCASE_FILE_PATH'length > 0 then
-      AffirmIfTranscriptsMatch(RemoveEndingSeparator(ChangeSeparator(C_TESTCASE_FILE_PATH)) & "/OsvvmResults") ;
+    if C_TESTCASE_FILE_PATH'length > 0 and C_TOOL_VENDOR'length > 0 then
+      AffirmIfTranscriptsMatch(RemoveEndingSeparator(ChangeSeparator(C_TESTCASE_FILE_PATH)) & "/OsvvmResults/" & C_TOOL_VENDOR) ;
     end if ;
     EndOfTestReports ;
     -- End of Test OSVVM Completion Steps
@@ -293,6 +294,7 @@ begin
     end procedure;
 
   begin
+    wait for 0 ns ;
     -- Override default config with settings for this testbench
     v_rgmii_bfm_config.clock_period  := C_CLK_PERIOD;
     v_rgmii_bfm_config.rx_clock_skew := C_CLK_PERIOD / 4;

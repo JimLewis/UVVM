@@ -56,6 +56,7 @@ end entity;
 architecture func of avalon_st_bfm_tb is
   -- Required by OSVVM
   constant C_TESTCASE_FILE_PATH : string  := FILE_PATH ;
+  constant C_TOOL_VENDOR        : string  := TOOL_VENDOR ; -- 2019/OSVVM Language Support Pkg
   -- End of Required by OSVVM
 
   --------------------------------------------------------------------------------
@@ -163,14 +164,14 @@ begin
 
   begin
     -- OSVVM Start of Test Case
-    SetTestName("avalon_st_bfm_tb") ;
+    SetTestName("bfm_" & GC_TESTCASE) ;
     TranscriptOpen ;
     SetTranscriptMirror ;
     -- End of OSVVM Start of Test Case
 
     -- To avoid that log files from different test cases (run in separate simulations) overwrite each other.
-    set_log_file_name(GC_TESTCASE & "_Log.txt");
-    -- set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+    --O set_log_file_name(GC_TESTCASE & "_Log.txt");
+    --O set_alert_file_name(GC_TESTCASE & "_Alert.txt");
 
     -- Override default config with settings for this testbench
     v_avl_st_bfm_config.symbol_width := C_SYMBOL_WIDTH;
@@ -398,8 +399,8 @@ begin
 
     -- OSVVM Test Completion Steps
     TranscriptClose ;
-    if C_TESTCASE_FILE_PATH'length > 0 then
-      AffirmIfTranscriptsMatch(RemoveEndingSeparator(ChangeSeparator(C_TESTCASE_FILE_PATH)) & "/OsvvmResults") ;
+    if C_TESTCASE_FILE_PATH'length > 0 and C_TOOL_VENDOR'length > 0 then
+      AffirmIfTranscriptsMatch(RemoveEndingSeparator(ChangeSeparator(C_TESTCASE_FILE_PATH)) & "/OsvvmResults/" & C_TOOL_VENDOR) ;
     end if ;
     EndOfTestReports ;
     -- End of Test OSVVM Completion Steps

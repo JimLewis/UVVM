@@ -211,6 +211,7 @@ begin
     -- OSVVM Test Completion Steps
     TranscriptClose ;
     if C_TESTCASE_FILE_PATH'length > 0 then
+      osvvm.AlertLogPkg.IncrementAlertStopCount(osvvm.AlertLogPkg.ERROR, 1) ;  -- do not hit stop limit due to this check
       AffirmIfTranscriptsMatch(RemoveEndingSeparator(ChangeSeparator(C_TESTCASE_FILE_PATH)) & "/OsvvmResults") ;
     end if ;
     EndOfTestReports ;

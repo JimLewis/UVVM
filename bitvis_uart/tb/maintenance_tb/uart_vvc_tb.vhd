@@ -65,6 +65,7 @@ end entity;
 architecture func of uart_vvc_tb is
   -- Required by OSVVM
   constant C_TESTCASE_FILE_PATH : string  := FILE_PATH ;
+  constant C_TOOL_VENDOR        : string  := TOOL_VENDOR ; -- 2019/OSVVM Language Support Pkg
   -- End of Required by OSVVM
 
   constant C_SCOPE : string := C_TB_SCOPE_DEFAULT;
@@ -95,14 +96,14 @@ begin
   p_main : process
   begin
     -- OSVVM Start of Test Case
-    SetTestName("uart_vvc_tb") ;
+    SetTestName(GC_TESTCASE) ;
     TranscriptOpen ;
     SetTranscriptMirror ;
     -- End of OSVVM Start of Test Case
 
     -- To avoid that log files from different test cases (run in separate
     -- simulations) overwrite each other.
-    set_log_file_name(GC_TESTCASE & "_Log.txt");
+    --O set_log_file_name(GC_TESTCASE & "_Log.txt");
     --O set_alert_file_name(GC_TESTCASE & "_Alert.txt");
 
     -- Wait for UVVM to finish initialization
@@ -299,8 +300,8 @@ begin
 
     -- OSVVM Test Completion Steps
     TranscriptClose ;
-    if C_TESTCASE_FILE_PATH'length > 0 then
-      AffirmIfTranscriptsMatch(RemoveEndingSeparator(ChangeSeparator(C_TESTCASE_FILE_PATH)) & "/OsvvmResults") ;
+    if C_TESTCASE_FILE_PATH'length > 0 and C_TOOL_VENDOR'length > 0 then
+      AffirmIfTranscriptsMatch(RemoveEndingSeparator(ChangeSeparator(C_TESTCASE_FILE_PATH)) & "/OsvvmResults/" & C_TOOL_VENDOR) ;
     end if ;
     EndOfTestReports ;
     -- End of Test OSVVM Completion Steps

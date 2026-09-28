@@ -42,9 +42,9 @@ entity association_list_tb is
   generic(
     GC_TESTCASE : string := "UVVM"
   );
-  constant RawTestFilePath : string  := FILE_PATH ;
-  constant TestFilePath    : string  := OSVVM.FileUtilPkg.RemoveEndingSeparator(OSVVM.FileUtilPkg.ChangeSeparator(RawTestFilePath)) ;
-  constant CheckResults    : boolean := RawTestFilePath'length > 0 ;
+  constant C_TESTCASE_FILE_PATH : string  := FILE_PATH ;
+  constant TestFilePath    : string  := OSVVM.FileUtilPkg.RemoveEndingSeparator(OSVVM.FileUtilPkg.ChangeSeparator(C_TESTCASE_FILE_PATH)) ;
+  constant CheckResults    : boolean := C_TESTCASE_FILE_PATH'length > 0 ;
 end entity;
 
 architecture func of association_list_tb is

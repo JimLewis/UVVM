@@ -50,9 +50,10 @@ use std.env.all ;
 
 --HDLRegression:TB
 entity cr_fc_demo_tb is
-  constant RawTestFilePath : string  := FILE_PATH ;
-  constant TestFilePath    : string  := OSVVM.FileUtilPkg.RemoveEndingSeparator(OSVVM.FileUtilPkg.ChangeSeparator(RawTestFilePath)) ;
-  constant CheckResults    : boolean := RawTestFilePath'length > 0 ;
+  constant C_TESTCASE_FILE_PATH : string  := FILE_PATH ;
+  constant C_TOOL_VENDOR        : string  := TOOL_VENDOR ;
+  constant TestFilePath    : string  := OSVVM.FileUtilPkg.RemoveEndingSeparator(OSVVM.FileUtilPkg.ChangeSeparator(C_TESTCASE_FILE_PATH)) ;
+  constant CheckResults    : boolean := C_TESTCASE_FILE_PATH'length > 0 ;
 end entity;
 
 architecture func of cr_fc_demo_tb is
@@ -341,7 +342,7 @@ begin
 
     osvvm.TranscriptPkg.TranscriptClose ;
     if CheckResults then
-      osvvm.AlertLogPkg.AffirmIfTranscriptsMatch(TestFilePath & "/maintenance_tb/ValidatedResults") ;
+      osvvm.AlertLogPkg.AffirmIfTranscriptsMatch(TestFilePath & "/maintenance_tb/ValidatedResults/" & C_TOOL_VENDOR) ;
     end if ;
     osvvm.ReportPkg.EndOfTestReports ;
 

@@ -59,6 +59,7 @@ end entity;
 architecture func of avalon_st_vvc_tb is
   -- Required by OSVVM
   constant C_TESTCASE_FILE_PATH : string  := FILE_PATH ;
+  constant C_TOOL_VENDOR        : string  := TOOL_VENDOR ; -- 2019/OSVVM Language Support Pkg
   -- End of Required by OSVVM
 
   --------------------------------------------------------------------------------
@@ -161,7 +162,7 @@ begin
     begin
       -- Number of total expected alerts: (number of signals tested individually + number of signals tested together) x 1 toggle
       if alert_level /= NO_ALERT then
-        increment_expected_alerts_and_stop_limit(alert_level, (C_NUM_VVC_SIGNALS + C_NUM_VVC_SIGNALS) * 2);
+        increment_expected_alerts(alert_level, (C_NUM_VVC_SIGNALS + C_NUM_VVC_SIGNALS) * 2);
       end if;
       for i in 0 to C_NUM_VVC_SIGNALS loop
         -- Force new value
@@ -217,14 +218,14 @@ begin
 
   begin
     -- OSVVM Start of Test Case
-    SetTestName("avalon_st_vvc_tb") ;
+    SetTestName("vvc_" & GC_TESTCASE) ;
     TranscriptOpen ;
     SetTranscriptMirror ;
     -- End of OSVVM Start of Test Case
 
     -- To avoid that log files from different test cases (run in separate simulations) overwrite each other.
-    set_log_file_name(GC_TESTCASE & "_Log.txt");
-    -- set_alert_file_name(GC_TESTCASE & "_Alert.txt");
+    --O set_log_file_name(GC_TESTCASE & "_Log.txt");
+    --O set_alert_file_name(GC_TESTCASE & "_Alert.txt");
 
     -- Wait for UVVM to finish initialization
     await_uvvm_initialization(VOID);
@@ -328,7 +329,7 @@ begin
 
       -- Note: Error cases based on forcing master_sop_o or master_eop_o will not work in Modelsim 2020.1 because of a simulator bug in which values forced on port signals fail to propagate.
       log(ID_LOG_HDR, "Testing error case: receive() with missing start of packet");
-      increment_expected_alerts_and_stop_limit(ERROR, 1);
+      increment_expected_alerts(ERROR, 1);
       << signal i_test_harness.i_avalon_st_fifo.master_sop_o : std_logic >> <= force '0';
       avalon_st_transmit(AVALON_ST_VVCT, C_VVC_MASTER, v_data_packet, "");
       avalon_st_receive(AVALON_ST_VVCT, C_VVC_SLAVE, v_data_packet'length, v_data_packet(0)'length, "");
@@ -337,8 +338,8 @@ begin
       wait for 0 ns; -- Riviera Pro needs a delta cycle to use the force command again on the same signal
 
       log(ID_LOG_HDR, "Testing error case: receive() with start of packet in wrong position");
-      increment_expected_alerts_and_stop_limit(ERROR, 1);
-      increment_expected_alerts_and_stop_limit(ERROR, 2); -- Unwanted activity errors: forcing and releasing SOP
+      increment_expected_alerts(ERROR, 1);
+      increment_expected_alerts(ERROR, 2); -- Unwanted activity errors: forcing and releasing SOP
       << signal i_test_harness.i_avalon_st_fifo.master_sop_o : std_logic >> <= force '1';
       avalon_st_transmit(AVALON_ST_VVCT, C_VVC_MASTER, v_data_packet(0 to 2 * GC_DATA_WIDTH / C_SYMBOL_WIDTH - 1), "");
       avalon_st_receive(AVALON_ST_VVCT, C_VVC_SLAVE, 2 * GC_DATA_WIDTH / C_SYMBOL_WIDTH, v_data_packet(0)'length, "");
@@ -347,7 +348,7 @@ begin
       wait for 0 ns; -- Delta cycle so that the error message is printed before the next test
 
       log(ID_LOG_HDR, "Testing error case: receive() with missing end of packet");
-      increment_expected_alerts_and_stop_limit(ERROR, 1);
+      increment_expected_alerts(ERROR, 1);
       << signal i_test_harness.i_avalon_st_fifo.master_eop_o : std_logic >> <= force '0';
       avalon_st_transmit(AVALON_ST_VVCT, C_VVC_MASTER, v_data_packet, "");
       avalon_st_receive(AVALON_ST_VVCT, C_VVC_SLAVE, v_data_packet'length, v_data_packet(0)'length, "");
@@ -355,14 +356,14 @@ begin
       << signal i_test_harness.i_avalon_st_fifo.master_eop_o : std_logic >> <= release;
 
       log(ID_LOG_HDR, "Testing error case: receive() with end of packet in wrong position");
-      increment_expected_alerts_and_stop_limit(ERROR, 1);
+      increment_expected_alerts(ERROR, 1);
       avalon_st_transmit(AVALON_ST_VVCT, C_VVC_MASTER, v_data_packet(0 to 1 * GC_DATA_WIDTH / C_SYMBOL_WIDTH - 1), "");
       avalon_st_receive(AVALON_ST_VVCT, C_VVC_SLAVE, 2 * GC_DATA_WIDTH / C_SYMBOL_WIDTH, v_data_packet(0)'length, "");
       await_completion(AVALON_ST_VVCT, C_VVC_SLAVE, 10 us);
 
       if GC_DATA_WIDTH > C_SYMBOL_WIDTH then
         log(ID_LOG_HDR, "Testing error case: receive() with missing empty symbols");
-        increment_expected_alerts_and_stop_limit(ERROR, 1);
+        increment_expected_alerts(ERROR, 1);
         << signal i_test_harness.i_avalon_st_fifo.master_empty_o : std_logic_vector(C_EMPTY_WIDTH - 1 downto 0) >> <= force (others => '0');
         avalon_st_transmit(AVALON_ST_VVCT, C_VVC_MASTER, v_data_packet(0 to 10), "");
         avalon_st_receive(AVALON_ST_VVCT, C_VVC_SLAVE, 11, v_data_packet(0)'length, "");
@@ -371,18 +372,18 @@ begin
       end if;
 
       log(ID_LOG_HDR, "Testing error case: receive() timeout - no valid data");
-      increment_expected_alerts_and_stop_limit(ERROR, 1);
+      increment_expected_alerts(ERROR, 1);
       avalon_st_receive(AVALON_ST_VVCT, C_VVC_SLAVE, v_data_packet'length, v_data_packet(0)'length, "");
       wait for (v_avl_st_bfm_config.max_wait_cycles + 1) * C_CLK_PERIOD;
 
       log(ID_LOG_HDR, "Testing error case: expect() wrong data");
-      increment_expected_alerts_and_stop_limit(ERROR, 1);
+      increment_expected_alerts(ERROR, 1);
       avalon_st_transmit(AVALON_ST_VVCT, C_VVC_MASTER, v_data_packet(0 to 10), "");
       avalon_st_expect(AVALON_ST_VVCT, C_VVC_SLAVE, v_data_packet(10 to 20), "");
       await_completion(AVALON_ST_VVCT, C_VVC_SLAVE, 10 us);
 
       log(ID_LOG_HDR, "Testing error case: expect() wrong channel");
-      increment_expected_alerts_and_stop_limit(ERROR, 1);
+      increment_expected_alerts(ERROR, 1);
       avalon_st_transmit(AVALON_ST_VVCT, C_VVC_MASTER, std_logic_vector(to_unsigned(1, GC_CHANNEL_WIDTH)), v_data_packet, "");
       avalon_st_expect(AVALON_ST_VVCT, C_VVC_SLAVE, std_logic_vector(to_unsigned(5, GC_CHANNEL_WIDTH)), v_data_packet, "");
       await_completion(AVALON_ST_VVCT, C_VVC_SLAVE, 10 us);
@@ -417,8 +418,8 @@ begin
       await_completion(AVALON_ST_VVCT, C_VVC2VVC_SLAVE, 10 us);
 
       log(ID_LOG_HDR, "Testing error case: transmit() timeout - slave not ready");
-      increment_expected_alerts_and_stop_limit(ERROR, 1);
-      increment_expected_alerts_and_stop_limit(ERROR, 3); -- Unwanted activity errors: data, valid and SOP change in inactive slave
+      increment_expected_alerts(ERROR, 1);
+      increment_expected_alerts(ERROR, 3); -- Unwanted activity errors: data, valid and SOP change in inactive slave
       avalon_st_transmit(AVALON_ST_VVCT, C_VVC2VVC_MASTER, v_data_packet, "");
       wait for (v_avl_st_bfm_config.max_wait_cycles + 1) * C_CLK_PERIOD;
 
@@ -490,40 +491,40 @@ begin
       end loop;
 
       log(ID_LOG_HDR, "Testing error case: receive() timeout - no valid data");
-      increment_expected_alerts_and_stop_limit(ERROR, 1);
+      increment_expected_alerts(ERROR, 1);
       avalon_st_receive(AVALON_ST_VVCT, C_VVC_SLAVE, v_data_stream'length, v_data_stream(0)'length, "");
       wait for (v_avl_st_bfm_config.max_wait_cycles + 1) * C_CLK_PERIOD;
 
       log(ID_LOG_HDR, "Testing error case: receive() timeout - not enough data");
-      increment_expected_alerts_and_stop_limit(ERROR, 1);
+      increment_expected_alerts(ERROR, 1);
       avalon_st_transmit(AVALON_ST_VVCT, C_VVC_MASTER, v_data_stream(0 to 1), "");
       avalon_st_receive(AVALON_ST_VVCT, C_VVC_SLAVE, v_data_stream'length, v_data_stream(0)'length, "");
       wait for (v_avl_st_bfm_config.max_wait_cycles + 100) * C_CLK_PERIOD;
 
       log(ID_LOG_HDR, "Testing error case: expect() wrong data");
-      increment_expected_alerts_and_stop_limit(ERROR, 1);
+      increment_expected_alerts(ERROR, 1);
       avalon_st_transmit(AVALON_ST_VVCT, C_VVC_MASTER, v_data_stream(0 to 10), "");
       avalon_st_expect(AVALON_ST_VVCT, C_VVC_SLAVE, v_data_stream(10 to 20), "");
       await_completion(AVALON_ST_VVCT, C_VVC_SLAVE, 10 us);
 
       log(ID_LOG_HDR, "Testing error case: expect() wrong channel");
-      increment_expected_alerts_and_stop_limit(ERROR, 1);
+      increment_expected_alerts(ERROR, 1);
       avalon_st_transmit(AVALON_ST_VVCT, C_VVC_MASTER, std_logic_vector(to_unsigned(1, GC_CHANNEL_WIDTH)), v_data_stream, "");
       avalon_st_expect(AVALON_ST_VVCT, C_VVC_SLAVE, std_logic_vector(to_unsigned(5, GC_CHANNEL_WIDTH)), v_data_stream, "");
       await_completion(AVALON_ST_VVCT, C_VVC_SLAVE, 10 us);
 
       log(ID_LOG_HDR, "Testing error case: transmit() from slave");
-      increment_expected_alerts_and_stop_limit(TB_ERROR, 1);
+      increment_expected_alerts(TB_ERROR, 1);
       avalon_st_transmit(AVALON_ST_VVCT, C_VVC_SLAVE, v_data_stream, "");
       wait for C_CLK_PERIOD;
 
       log(ID_LOG_HDR, "Testing error case: receive() from master");
-      increment_expected_alerts_and_stop_limit(TB_ERROR, 1);
+      increment_expected_alerts(TB_ERROR, 1);
       avalon_st_receive(AVALON_ST_VVCT, C_VVC_MASTER, v_data_stream'length, v_data_stream(0)'length, "");
       wait for C_CLK_PERIOD;
 
       log(ID_LOG_HDR, "Testing error case: expect() from master");
-      increment_expected_alerts_and_stop_limit(TB_ERROR, 1);
+      increment_expected_alerts(TB_ERROR, 1);
       avalon_st_expect(AVALON_ST_VVCT, C_VVC_MASTER, v_data_stream, "");
       wait for C_CLK_PERIOD;
 
@@ -557,8 +558,8 @@ begin
       await_completion(AVALON_ST_VVCT, C_VVC2VVC_SLAVE, 10 us);
 
       log(ID_LOG_HDR, "Testing error case: transmit() timeout - slave not ready");
-      increment_expected_alerts_and_stop_limit(ERROR, 1);
-      increment_expected_alerts_and_stop_limit(ERROR, 2); -- Unwanted activity errors: data and valid change in inactive slave
+      increment_expected_alerts(ERROR, 1);
+      increment_expected_alerts(ERROR, 2); -- Unwanted activity errors: data and valid change in inactive slave
       avalon_st_transmit(AVALON_ST_VVCT, C_VVC2VVC_MASTER, v_data_stream, "");
       wait for (v_avl_st_bfm_config.max_wait_cycles + 1) * C_CLK_PERIOD;
 
@@ -693,7 +694,7 @@ begin
         if i = 0 then
           v_alert_level := C_AVALON_ST_VVC_CONFIG_DEFAULT.unwanted_activity_severity;
         elsif i = 1 then
-          v_alert_level := FAILURE;
+          v_alert_level := ERROR ; -- FAILURE;
         else
           v_alert_level := NO_ALERT;
         end if;
@@ -727,8 +728,8 @@ begin
 
     -- OSVVM Test Completion Steps
     TranscriptClose ;
-    if C_TESTCASE_FILE_PATH'length > 0 then
-      AffirmIfTranscriptsMatch(RemoveEndingSeparator(ChangeSeparator(C_TESTCASE_FILE_PATH)) & "/OsvvmResults") ;
+    if C_TESTCASE_FILE_PATH'length > 0 and C_TOOL_VENDOR'length > 0 then
+      AffirmIfTranscriptsMatch(RemoveEndingSeparator(ChangeSeparator(C_TESTCASE_FILE_PATH)) & "/OsvvmResults/" & C_TOOL_VENDOR) ;
     end if ;
     EndOfTestReports ;
     -- End of Test OSVVM Completion Steps

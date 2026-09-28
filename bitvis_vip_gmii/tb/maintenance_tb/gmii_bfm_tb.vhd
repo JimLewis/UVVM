@@ -117,6 +117,7 @@ begin
   begin
     -- OSVVM Start of Test Case
     SetTestName("gmii_bfm_tb") ;
+    wait for 0 ns ; wait for 0 ns ;
     TranscriptOpen ;
     SetTranscriptMirror ;
     -- End of OSVVM Start of Test Case
@@ -204,6 +205,7 @@ begin
     -- OSVVM Test Completion Steps
     TranscriptClose ;
     if C_TESTCASE_FILE_PATH'length > 0 then
+      osvvm.AlertLogPkg.IncrementAlertStopCount(osvvm.AlertLogPkg.ERROR, 1) ;  -- do not hit stop limit due to this check
       AffirmIfTranscriptsMatch(RemoveEndingSeparator(ChangeSeparator(C_TESTCASE_FILE_PATH)) & "/OsvvmResults") ;
     end if ;
     EndOfTestReports ;

@@ -62,6 +62,7 @@ end entity uart_vvc_demo_tb;
 architecture func of uart_vvc_demo_tb is
   -- Required by OSVVM
   constant C_TESTCASE_FILE_PATH : string  := FILE_PATH ;
+  constant C_TOOL_VENDOR        : string  := TOOL_VENDOR ;
   -- End of Required by OSVVM
 
   constant C_SCOPE : string := C_TB_SCOPE_DEFAULT;
@@ -284,7 +285,7 @@ begin
     -- OSVVM Test Completion Steps
     TranscriptClose ;
     if C_TESTCASE_FILE_PATH'length > 0 then
-      AffirmIfTranscriptsMatch(RemoveEndingSeparator(ChangeSeparator(C_TESTCASE_FILE_PATH)) & "/maintenance_tb/OsvvmResults") ;
+      AffirmIfTranscriptsMatch(RemoveEndingSeparator(ChangeSeparator(C_TESTCASE_FILE_PATH)) & "/maintenance_tb/OsvvmResults/" & C_TOOL_VENDOR) ;
     end if ;
     EndOfTestReports ;
     -- End of Test OSVVM Completion Steps
