@@ -16,5 +16,7 @@ ChangeWorkingDirectory ../tb/maintenance_tb
 
 library  tb_bitvis_vip_rgmii
 analyze  rgmii_th.vhd
-RunTest  rgmii_bfm_tb.vhd
+analyze  rgmii_bfm_tb.vhd
+simulate  rgmii_bfm_tb [TestName test_rgmii_double_data_rate] [generic GC_TESTCASE test_rgmii_double_data_rate]
+simulate  rgmii_bfm_tb [TestName test_rgmii_single_data_rate] [generic GC_TESTCASE test_rgmii_single_data_rate]
 RunTest  rgmii_vvc_tb.vhd

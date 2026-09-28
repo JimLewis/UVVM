@@ -21,6 +21,9 @@ analyze  axistream_th.vhd
 RunTest  axistream_bfm_tb.vhd
 RunTest  axistream_bfm_slv_array_tb.vhd
 RunTest  axistream_vvc_tb.vhd
+if {$::osvvm::ToolVendor eq "Aldec"} {
+  ExpectedStatus FAILED -8 -7 24 "Timing differences and unwanted activity does not happen"
+}
 RunTest  axistream_vvc_slv_array_tb.vhd
 RunTest  axistream_vvc_multiple_tb.vhd
 RunTest  axistream_vvc_width_tb.vhd

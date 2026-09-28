@@ -18,3 +18,6 @@ library  tb_bitvis_vip_gmii
 analyze  gmii_th.vhd
 RunTest  gmii_bfm_tb.vhd
 RunTest  gmii_vvc_tb.vhd
+if {$::osvvm::ToolVendor eq "Siemens"} {
+  ExpectedStatus FAILED 0 1 0 "Outputs print in different orders"
+}

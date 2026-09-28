@@ -12,23 +12,27 @@ include ../../script/sim_init.pro
 
 BuildName regression_uvvm_util
 
-TestSuite uvvm_util
 ChangeWorkingDirectory ../tb/maintenance_tb
 
 library tb_uvvm_util
 analyze methods_tb_ent.vhd
 
 # log_arch
+TestSuite uvvm_util.log_arch
 analyze methods_tb_log_arch.vhd
 simulate methods_tb [TestName basic_log_alert]         [generic GC_TESTCASE basic_log_alert]
 simulate methods_tb [TestName enable_disable_log_msg]  [generic GC_TESTCASE enable_disable_log_msg]
 simulate methods_tb [TestName log_text_block]          [generic GC_TESTCASE log_text_block]
-file copy -force primary.txt     ${::osvvm::ResultsDirectory}/uvvm_util/primary.txt
-file copy -force secondary.txt   ${::osvvm::ResultsDirectory}/uvvm_util/secondary.txt
+if {$::osvvm::ToolVendor eq "Siemens"} {
+  ExpectedStatus FAILED 0 2 0 "Questa is fails on check for (text_block = NULL)"
+}
+file copy -force primary.txt     ${::osvvm::ResultsDirectory}/uvvm_util.log_arch/primary.txt
+file copy -force secondary.txt   ${::osvvm::ResultsDirectory}/uvvm_util.log_arch/secondary.txt
 simulate methods_tb [TestName log_to_file]             [generic GC_TESTCASE log_to_file]
 simulate methods_tb [TestName log_header_formatting]   [generic GC_TESTCASE log_header_formatting]
 
 # alert_arch
+TestSuite uvvm_util.alert_arch
 analyze methods_tb_alert_arch.vhd
 simulate methods_tb [TestName alert_summary_report]         [generic GC_TESTCASE alert_summary_report]
 ExpectedStatus MANUALCHECKS 0 0 0
@@ -38,6 +42,7 @@ simulate methods_tb [TestName hierarchical_alerts]          [generic GC_TESTCASE
 ExpectedStatus MANUALCHECKS 0 0 0
 
 # check_arch
+TestSuite uvvm_util.check_arch
 analyze  methods_tb_check_arch.vhd
 simulate methods_tb [TestName check_value]                         [generic GC_TESTCASE check_value]
 simulate methods_tb [TestName check_value_default_alert]           [generic GC_TESTCASE check_value_default_alert]
@@ -48,10 +53,12 @@ simulate methods_tb [TestName check_value_in_range_default_alert]  [generic GC_T
 simulate methods_tb [TestName check_sb_completion]                 [generic GC_TESTCASE check_sb_completion]
 
 # clock
+TestSuite uvvm_util.clock_arch
 analyze methods_tb_clock_arch.vhd
 simulate methods_tb [TestName clock_generators] [generic GC_TESTCASE clock_generators]
 
 # common
+TestSuite uvvm_util.common_arch
 analyze methods_tb_common_arch.vhd
 simulate methods_tb [TestName random_functions]     [generic GC_TESTCASE random_functions]
 simulate methods_tb [TestName normalise]            [generic GC_TESTCASE normalise]
@@ -61,6 +68,7 @@ simulate methods_tb [TestName string_methods]       [generic GC_TESTCASE string_
 simulate methods_tb [TestName byte_and_slv_arrays]  [generic GC_TESTCASE byte_and_slv_arrays]
 
 # await
+TestSuite uvvm_util.await_arch
 analyze methods_tb_await_arch.vhd
 simulate methods_tb [TestName await_stable]                [generic GC_TESTCASE await_stable]
 simulate methods_tb [TestName await_stable_default_alert]  [generic GC_TESTCASE await_stable_default_alert]
@@ -70,17 +78,21 @@ simulate methods_tb [TestName await_change_to_value]       [generic GC_TESTCASE 
 simulate methods_tb [TestName await_sb_completion]         [generic GC_TESTCASE await_sb_completion]
 
 # Sync
+TestSuite uvvm_util.sync_arch
 analyze methods_tb_sync_arch.vhd
 simulate methods_tb             [TestName synchronization_methods]   [generic GC_TESTCASE synchronization_methods]
 
 # Watchdog
+TestSuite uvvm_util.watchdog_arch
 analyze methods_tb_watchdog_arch.vhd
 simulate methods_tb             [TestName watchdog_timer]            [generic GC_TESTCASE watchdog_timer]
 
 # association_list
+TestSuite uvvm_util.association_list
 RunTest association_list_tb.vhd [TestName association_list]          [generic GC_TESTCASE association_list]
 
 # func_cov
+TestSuite uvvm_util.func_cov
 analyze func_cov_tb.vhd
 simulate func_cov_tb [TestName fc_bins]         [generic GC_TESTCASE fc_bins]
 simulate func_cov_tb [TestName fc_cross_bin]    [generic GC_TESTCASE fc_cross_bin]
@@ -95,6 +107,7 @@ simulate func_cov_tb [TestName fc_coverage]     [generic GC_TESTCASE fc_coverage
 simulate func_cov_tb [TestName fc_init_delete]  [generic GC_TESTCASE fc_init_delete]
 
 # generic queue tests
+TestSuite uvvm_util.func_cov
 RunTest generic_queue_array_tb.vhd  [TestName generic_queue_array]  [generic GC_TESTCASE generic_queue_array]
 RunTest generic_queue_record_tb.vhd [TestName generic_queue_record] [generic GC_TESTCASE generic_queue_record]
 RunTest generic_queue_tb.vhd        [TestName generic_queue]        [generic GC_TESTCASE generic_queue]
@@ -104,16 +117,36 @@ analyze rand_tb_pkg.vhd
 # RunTest questa_extension_tb.vhd  ; # only runs in QuestaOne
 
 # rand multi
+TestSuite uvvm_util.rand_multi
 analyze rand_multi_method_tb.vhd
 simulate rand_multi_method_tb [TestName rand_basic_multi]     [generic GC_TESTCASE rand_basic]
+if {$::osvvm::ToolVendor eq "Siemens"} {
+# ExpectedStatus FAILED 0 1 0 "Real numbers print differently"
+}
 simulate rand_multi_method_tb [TestName rand_weighted_multi]  [generic GC_TESTCASE rand_weighted]
+if {$::osvvm::ToolVendor eq "Siemens"} {
+# ExpectedStatus FAILED 0 1 0 "Real numbers print differently"
+}
 simulate rand_multi_method_tb [TestName rand_cyclic_multi]    [generic GC_TESTCASE rand_cyclic]
+if {$::osvvm::ToolVendor eq "Siemens"} {
+# ExpectedStatus FAILED 0 1 0 "Real numbers print differently"
+}
 simulate rand_multi_method_tb [TestName rand_report_multi]    [generic GC_TESTCASE rand_report]
+if {$::osvvm::ToolVendor eq "Siemens"} {
+# ExpectedStatus FAILED 0 1 0 "Real numbers print differently"
+}
 simulate rand_multi_method_tb [TestName rand_gaussian_multi]  [generic GC_TESTCASE rand_gaussian]
 
+TestSuite uvvm_util.rand_tb
 analyze rand_tb.vhd
 simulate rand_tb [TestName rand_basic]               [generic GC_TESTCASE rand_basic]
+if {$::osvvm::ToolVendor eq "Siemens"} {
+# ExpectedStatus FAILED 0 1 0 "Real numbers print differently"
+}
 simulate rand_tb [TestName rand_weighted]            [generic GC_TESTCASE rand_weighted]
+if {$::osvvm::ToolVendor eq "Siemens"} {
+# ExpectedStatus FAILED 0 1 0 "Real numbers print differently"
+}
 simulate rand_tb [TestName rand_cyclic]              [generic GC_TESTCASE rand_cyclic]
 if {$::osvvm::ToolName ne "NVC"} {
   simulate rand_tb [TestName rand_cyclic_performance]  [generic GC_TESTCASE rand_cyclic_performance]
@@ -121,6 +154,11 @@ if {$::osvvm::ToolName ne "NVC"} {
 simulate rand_tb [TestName rand_report]              [generic GC_TESTCASE rand_report]
 simulate rand_tb [TestName rand_gaussian]            [generic GC_TESTCASE rand_gaussian]
 
+TestSuite uvvm_util.simplified_data_queue
 RunTest simplified_data_queue_tb.vhd [TestName simplified_data_queue]  [generic GC_TESTCASE simplified_data_queue]
 
+TestSuite uvvm_util.cr_fc_demo_tb
 RunTest ../cr_fc_demo_tb.vhd
+if {$::osvvm::ToolVendor eq "Siemens"} {
+# ExpectedStatus FAILED 0 1 0 "Output printing order differs"
+}

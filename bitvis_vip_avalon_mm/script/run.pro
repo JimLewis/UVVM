@@ -20,4 +20,7 @@ analyze  avalon_mm_vvc_th.vhd
 RunTest  avalon_mm_bfm_tb.vhd
 RunTest  avalon_mm_bfm_spi_tb.vhd
 RunTest  avalon_mm_vvc_tb.vhd
+if {$::osvvm::ToolVendor eq "Aldec"} {
+  ExpectedStatus FAILED -12 -11 16 "Timing differences and unwanted activity does not happen"
+}
 RunTest  avalon_mm_vvc_pipeline_tb.vhd

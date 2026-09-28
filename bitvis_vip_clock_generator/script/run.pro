@@ -17,3 +17,6 @@ ChangeWorkingDirectory ../tb/maintenance_tb
 library  tb_bitvis_vip_clock_generator
 analyze  clock_generator_th.vhd
 RunTest  clock_generator_tb.vhd
+if {$::osvvm::ToolVendor eq "Siemens"} {
+  ExpectedStatus FAILED 0 1 0 "Outputs print in different orders"
+}

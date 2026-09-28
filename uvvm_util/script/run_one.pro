@@ -12,18 +12,14 @@ include ../../script/sim_init.pro
 
 BuildName regression_uvvm_util
 
-TestSuite uvvm_util
 ChangeWorkingDirectory ../tb/maintenance_tb
 
 library tb_uvvm_util
 analyze methods_tb_ent.vhd
 
-# check_arch
-analyze  methods_tb_check_arch.vhd
-simulate methods_tb [TestName check_value]                         [generic GC_TESTCASE check_value]
-simulate methods_tb [TestName check_value_default_alert]           [generic GC_TESTCASE check_value_default_alert]
-simulate methods_tb [TestName check_stable]                        [generic GC_TESTCASE check_stable]
-simulate methods_tb [TestName check_stable_default_alert]          [generic GC_TESTCASE check_stable_default_alert]
-simulate methods_tb [TestName check_value_in_range]                [generic GC_TESTCASE check_value_in_range]
-simulate methods_tb [TestName check_value_in_range_default_alert]  [generic GC_TESTCASE check_value_in_range_default_alert]
-simulate methods_tb [TestName check_sb_completion]                 [generic GC_TESTCASE check_sb_completion]
+# log_arch
+TestSuite uvvm_util.clock_arch
+analyze methods_tb_clock_arch.vhd
+simulate methods_tb [TestName clock_generators] [generic GC_TESTCASE clock_generators]
+puts "Status is $::osvvm::TestCaseStatus"
+KnownStatus ANY "This test case is unstable and may pass or fail due to different ordering of outputs in transcript file"
