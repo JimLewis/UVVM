@@ -1,3 +1,4 @@
 # library uvvm_assertions
+../src/assertion_methods_pkg.vhd
 ../src/uvvm_assertions_pkg.vhd
 
