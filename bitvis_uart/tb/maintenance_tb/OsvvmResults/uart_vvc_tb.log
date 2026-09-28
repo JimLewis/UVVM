@@ -1,33 +1,33 @@
-%%      0 ns    Log    ID_CONSTRUCTOR      SBI_VVC,1           VVC instantiated.
-%%      0 ns    Log    ID_CONSTRUCTOR_SUB  SBI_VVC,1           Command queue instantiated and will give a warning when reaching 1000 elements in queue.
-%%      0 ns    Log    ID_CONSTRUCTOR_SUB  SBI_VVC,1           Result queue instantiated and will give a warning when reaching 1000 elements in queue.
-%%      0 ns    Log    ID_CONSTRUCTOR      UART_VVC,1,RX       VVC instantiated for channel RX
-%%      0 ns    Log    ID_CONSTRUCTOR_SUB  UART_VVC,1,RX       Command queue instantiated and will give a warning when reaching 1000 elements in queue.
-%%      0 ns    Log    ID_CONSTRUCTOR_SUB  UART_VVC,1,RX       Result queue instantiated and will give a warning when reaching 1000 elements in queue.
-%%      0 ns    Log    ID_CONSTRUCTOR      UART_VVC,1,TX       VVC instantiated for channel TX
-%%      0 ns    Log    ID_CONSTRUCTOR_SUB  UART_VVC,1,TX       Command queue instantiated and will give a warning when reaching 1000 elements in queue.
-%%      0 ns    Log    ID_CONSTRUCTOR_SUB  UART_VVC,1,TX       Result queue instantiated and will give a warning when reaching 1000 elements in queue.
-%%      0 ns    Log    ID_CONSTRUCTOR      CLOCK_GENERATOR_VVC,1  VVC instantiated.
-%%      0 ns    Log    ID_CONSTRUCTOR_SUB  CLOCK_GENERATOR_VVC,1  Command queue instantiated and will give a warning when reaching 1000 elements in queue.
-%%      0 ns    Log    ID_CONSTRUCTOR_SUB  CLOCK_GENERATOR_VVC,1  Result queue instantiated and will give a warning when reaching 1000 elements in queue.
-%%      0 ns    Log    ID_CMD_INTERPRETER  SBI_VVC,1           Interpreter: Waiting for command
-%%      0 ns    Log    ID_CMD_INTERPRETER  UART_VVC,1,RX       Interpreter: Waiting for command
-%%      0 ns    Log    ID_CMD_INTERPRETER  UART_VVC,1,TX       Interpreter: Waiting for command
-%%      0 ns    Log    ID_CMD_INTERPRETER  CLOCK_GENERATOR_VVC,1  Interpreter: Waiting for command
-%%      0 ns    Log    ID_CTRL             SBI_VVC_SB,1        enable() => SB enabled. 'SBI VVC SB Enabled'
-%%      0 ns    Log    ID_CTRL             SBI_VVC_SB,1        config() => config applied to SB.
-%%      0 ns    Log    ID_CTRL             SBI_VVC_SB,1        enable_log_msg() => message id id_data enabled.
-%%      0 ns    Log    ID_CTRL             UART_VVC_SB,1       enable() => SB enabled. 'UART VVC SB Enabled'
-%%      0 ns    Log    ID_CTRL             UART_VVC_SB,1       enable_log_msg() => message id id_data enabled.
-%%      0 ns    Log    ID_CTRL             UART_VVC_SB,1       config() => config applied to SB.
-%%      0 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       start_clock(CLOCK_GENERATOR_VVC,1): 'Start clock generator'. [1]
-%%      0 ns    Log    ID_CMD_EXECUTOR_WA  SBI_VVC,1           Executor: Waiting for command
-%%      0 ns    Log    ID_CMD_EXECUTOR_WA  UART_VVC,1,RX       Executor: Waiting for command
-%%      0 ns    Log    ID_CMD_EXECUTOR_WA  UART_VVC,1,TX       Executor: Waiting for command
-%%      0 ns    Log    ID_CMD_EXECUTOR_WA  CLOCK_GENERATOR_VVC,1  Executor: Waiting for command
-%%      0 ns    Log    ID_CMD_INTERPRETER  CLOCK_GENERATOR_VVC,1  start_clock(CLOCK_GENERATOR_VVC,1). Command received  [1]
-%%      0 ns    Log    ID_CMD_EXECUTOR     CLOCK_GENERATOR_VVC,1  start_clock(CLOCK_GENERATOR_VVC,1) - Will be executed  [1]
-%%      0 ns    Log    ID_UVVM_CMD_ACK     TB seq.(uvvm)       ACK received.   [1]
+%%           0.0 ns  Log    ID_CONSTRUCTOR      SBI_VVC,1           VVC instantiated.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  SBI_VVC,1           Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  SBI_VVC,1           Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR      UART_VVC,1,RX       VVC instantiated for channel RX
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  UART_VVC,1,RX       Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  UART_VVC,1,RX       Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR      UART_VVC,1,TX       VVC instantiated for channel TX
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  UART_VVC,1,TX       Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  UART_VVC,1,TX       Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR      CLOCK_GENERATOR_VVC,1  VVC instantiated.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  CLOCK_GENERATOR_VVC,1  Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  CLOCK_GENERATOR_VVC,1  Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,1           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  UART_VVC,1,RX       Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  UART_VVC,1,TX       Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  CLOCK_GENERATOR_VVC,1  Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CTRL             SBI_VVC_SB,1        enable() => SB enabled. 'SBI VVC SB Enabled'
+%%           0.0 ns  Log    ID_CTRL             SBI_VVC_SB,1        config() => config applied to SB.
+%%           0.0 ns  Log    ID_CTRL             SBI_VVC_SB,1        enable_log_msg() => message id id_data enabled.
+%%           0.0 ns  Log    ID_CTRL             UART_VVC_SB,1       enable() => SB enabled. 'UART VVC SB Enabled'
+%%           0.0 ns  Log    ID_CTRL             UART_VVC_SB,1       enable_log_msg() => message id id_data enabled.
+%%           0.0 ns  Log    ID_CTRL             UART_VVC_SB,1       config() => config applied to SB.
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       start_clock(CLOCK_GENERATOR_VVC,1): 'Start clock generator'. [1]
+%%           0.0 ns  Log    ID_CMD_EXECUTOR_WA  SBI_VVC,1           Executor: Waiting for command
+%%           0.0 ns  Log    ID_CMD_EXECUTOR_WA  UART_VVC,1,RX       Executor: Waiting for command
+%%           0.0 ns  Log    ID_CMD_EXECUTOR_WA  UART_VVC,1,TX       Executor: Waiting for command
+%%           0.0 ns  Log    ID_CMD_EXECUTOR_WA  CLOCK_GENERATOR_VVC,1  Executor: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  CLOCK_GENERATOR_VVC,1  start_clock(CLOCK_GENERATOR_VVC,1). Command received  [1]
+%%           0.0 ns  Log    ID_CMD_EXECUTOR     CLOCK_GENERATOR_VVC,1  start_clock(CLOCK_GENERATOR_VVC,1) - Will be executed  [1]
+%%           0.0 ns  Log    ID_UVVM_CMD_ACK     TB seq.(uvvm)       ACK received.   [1]
 %%      
 %%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 %%      ***  REPORT OF GLOBAL CTRL ***
@@ -136,42 +136,42 @@
 %%                ID_FILE_PARSER               : ENABLED
 %%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 %%      
-%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ALL_MESSAGES).
-%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_LOG_HDR).
-%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_SEQUENCER).
-%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_UVVM_SEND_CMD).
-%%      0 ns    Log    ID_CMD_INTERPRETER  CLOCK_GENERATOR_VVC,1  Interpreter: Waiting for command
-%%      0 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(SBI_VVC,1, ALL_MESSAGES):. [2]
-%%      0 ns    Log    ID_CMD_INTERPRETER  SBI_VVC,1           disable_log_msg(SBI_VVC,1, ALL_MESSAGES). Command received  [2]
-%%      0 ns    Log    ID_LOG_MSG_CTRL     SBI_VVC,1           disable_log_msg(ALL_MESSAGES). ' [2]'
-%%      0 ns    Log    ID_CMD_EXECUTOR_WA  CLOCK_GENERATOR_VVC,1  Executor: Waiting for command
-%%      0 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       enable_log_msg(SBI_VVC,1, ID_BFM):. [3]
-%%      0 ns    Log    ID_LOG_MSG_CTRL     SBI_VVC,1           enable_log_msg(ID_BFM). ' [3]'
-%%      0 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       enable_log_msg(SBI_VVC,1, ID_FINISH_OR_STOP):. [4]
-%%      0 ns    Log    ID_LOG_MSG_CTRL     SBI_VVC,1           enable_log_msg(ID_FINISH_OR_STOP). ' [4]'
-%%      0 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(UART_VVC,1,RX, ALL_MESSAGES):. [5]
-%%      0 ns    Log    ID_CMD_INTERPRETER  UART_VVC,1,RX       disable_log_msg(UART_VVC,1,RX, ALL_MESSAGES). Command received  [5]
-%%      0 ns    Log    ID_LOG_MSG_CTRL     UART_VVC,1,RX       disable_log_msg(ALL_MESSAGES). ' [5]'
-%%      0 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       enable_log_msg(UART_VVC,1,RX, ID_BFM):. [6]
-%%      0 ns    Log    ID_LOG_MSG_CTRL     UART_VVC,1,RX       enable_log_msg(ID_BFM). ' [6]'
-%%      0 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(UART_VVC,1,TX, ALL_MESSAGES):. [7]
-%%      0 ns    Log    ID_CMD_INTERPRETER  UART_VVC,1,TX       disable_log_msg(UART_VVC,1,TX, ALL_MESSAGES). Command received  [7]
-%%      0 ns    Log    ID_LOG_MSG_CTRL     UART_VVC,1,TX       disable_log_msg(ALL_MESSAGES). ' [7]'
-%%      0 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       enable_log_msg(UART_VVC,1,TX, ID_BFM):. [8]
-%%      0 ns    Log    ID_LOG_MSG_CTRL     UART_VVC,1,TX       enable_log_msg(ID_BFM). ' [8]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ALL_MESSAGES).
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_LOG_HDR).
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_SEQUENCER).
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_UVVM_SEND_CMD).
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  CLOCK_GENERATOR_VVC,1  Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(SBI_VVC,1, ALL_MESSAGES):. [2]
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,1           disable_log_msg(SBI_VVC,1, ALL_MESSAGES). Command received  [2]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     SBI_VVC,1           disable_log_msg(ALL_MESSAGES). ' [2]'
+%%           0.0 ns  Log    ID_CMD_EXECUTOR_WA  CLOCK_GENERATOR_VVC,1  Executor: Waiting for command
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       enable_log_msg(SBI_VVC,1, ID_BFM):. [3]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     SBI_VVC,1           enable_log_msg(ID_BFM). ' [3]'
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       enable_log_msg(SBI_VVC,1, ID_FINISH_OR_STOP):. [4]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     SBI_VVC,1           enable_log_msg(ID_FINISH_OR_STOP). ' [4]'
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(UART_VVC,1,RX, ALL_MESSAGES):. [5]
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  UART_VVC,1,RX       disable_log_msg(UART_VVC,1,RX, ALL_MESSAGES). Command received  [5]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     UART_VVC,1,RX       disable_log_msg(ALL_MESSAGES). ' [5]'
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       enable_log_msg(UART_VVC,1,RX, ID_BFM):. [6]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     UART_VVC,1,RX       enable_log_msg(ID_BFM). ' [6]'
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(UART_VVC,1,TX, ALL_MESSAGES):. [7]
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  UART_VVC,1,TX       disable_log_msg(UART_VVC,1,TX, ALL_MESSAGES). Command received  [7]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     UART_VVC,1,TX       disable_log_msg(ALL_MESSAGES). ' [7]'
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       enable_log_msg(UART_VVC,1,TX, ID_BFM):. [8]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     UART_VVC,1,TX       enable_log_msg(ID_BFM). ' [8]'
 %% 
 %% 
-%%      0 ns    Log    ID_LOG_HDR          TB seq.             Configure UART VVC 1
+%%           0.0 ns  Log    ID_LOG_HDR          TB seq.             Configure UART VVC 1
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 %% 
 %% 
-%%      0 ns    Log    ID_LOG_HDR          TB seq.             Starting simulation of TB for UART using VVCs
+%%           0.0 ns  Log    ID_LOG_HDR          TB seq.             Starting simulation of TB for UART using VVCs
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 %% 
 %% ============================================================================================================================================================================
 %%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
-%%    101 ns    DONE   NOCHECKS   uart_vvc_tb  Passed: 0
+%%         101.0 ns  DONE   NOCHECKS  uart_vvc_tb  Passed: 0
 %%    Expected      Failures: 0  Errors: 0  Warnings: 0  Passed: 0
 %%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
 %%    Default       Failures: 0  Errors: 0  Warnings: 0  Passed: 0
@@ -180,5 +180,5 @@
 %% 
 %% 
 %% 
-%%    101 ns    Log    ID_LOG_HDR          TB seq.             SIMULATION COMPLETED
+%%         101.0 ns  Log    ID_LOG_HDR          TB seq.             SIMULATION COMPLETED
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

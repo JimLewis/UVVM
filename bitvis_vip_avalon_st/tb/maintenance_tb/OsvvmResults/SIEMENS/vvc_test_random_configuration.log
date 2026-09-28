@@ -1,0 +1,1276 @@
+%%           0.0 ns  Log    ID_CONSTRUCTOR      AVALON_ST_VVC,3     VVC instantiated.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  AVALON_ST_VVC,3     Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  AVALON_ST_VVC,3     Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR      AVALON_ST_VVC,2     VVC instantiated.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  AVALON_ST_VVC,2     Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  AVALON_ST_VVC,2     Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR      AVALON_ST_VVC,1     VVC instantiated.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  AVALON_ST_VVC,1     Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  AVALON_ST_VVC,1     Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR      AVALON_ST_VVC,0     VVC instantiated.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  AVALON_ST_VVC,0     Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  AVALON_ST_VVC,0     Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  AVALON_ST_VVC,3     Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  AVALON_ST_VVC,2     Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  AVALON_ST_VVC,1     Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  AVALON_ST_VVC,0     Interpreter: Waiting for command
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF GLOBAL CTRL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                                IGNORE    STOP_LIMIT
+%%                NOTE         :  REGARD         0
+%%                TB_NOTE      :  REGARD         0
+%%                WARNING      :  REGARD         0
+%%                TB_WARNING   :  REGARD         0
+%%                MANUAL_CHECK :  REGARD         0
+%%                ERROR        :  REGARD         0
+%%                TB_ERROR     :  REGARD         0
+%%                FAILURE      :  REGARD         1
+%%                TB_FAILURE   :  REGARD         1
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF MSG ID PANEL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                ID                             Status
+%%                ------------------------       ------
+%%                ID_UTIL_BURIED               : DISABLED
+%%                ID_BITVIS_DEBUG              : DISABLED
+%%                ID_UTIL_SETUP                : ENABLED
+%%                ID_LOG_MSG_CTRL              : ENABLED
+%%                ID_ALERT_CTRL                : ENABLED
+%%                ID_FINISH_OR_STOP            : ENABLED
+%%                ID_CLOCK_GEN                 : ENABLED
+%%                ID_GEN_PULSE                 : ENABLED
+%%                ID_BLOCKING                  : ENABLED
+%%                ID_WATCHDOG                  : ENABLED
+%%                ID_RAND_GEN                  : DISABLED
+%%                ID_RAND_CONF                 : DISABLED
+%%                ID_FUNC_COV_BINS             : DISABLED
+%%                ID_FUNC_COV_BINS_INFO        : DISABLED
+%%                ID_FUNC_COV_RAND             : DISABLED
+%%                ID_FUNC_COV_SAMPLE           : DISABLED
+%%                ID_FUNC_COV_CONFIG           : DISABLED
+%%                ID_POS_ACK                   : ENABLED
+%%                ID_UVVM_ASSERTION            : ENABLED
+%%                ID_LOG_HDR                   : ENABLED
+%%                ID_LOG_HDR_LARGE             : ENABLED
+%%                ID_LOG_HDR_XL                : ENABLED
+%%                ID_SEQUENCER                 : ENABLED
+%%                ID_SEQUENCER_SUB             : ENABLED
+%%                ID_BFM                       : ENABLED
+%%                ID_BFM_WAIT                  : ENABLED
+%%                ID_BFM_POLL                  : ENABLED
+%%                ID_BFM_POLL_SUMMARY          : ENABLED
+%%                ID_CHANNEL_BFM               : ENABLED
+%%                ID_TERMINATE_CMD             : ENABLED
+%%                ID_SEGMENT_INITIATE          : ENABLED
+%%                ID_SEGMENT_COMPLETE          : ENABLED
+%%                ID_SEGMENT_HDR               : ENABLED
+%%                ID_SEGMENT_DATA              : ENABLED
+%%                ID_PACKET_INITIATE           : ENABLED
+%%                ID_PACKET_PREAMBLE           : ENABLED
+%%                ID_PACKET_COMPLETE           : ENABLED
+%%                ID_PACKET_HDR                : ENABLED
+%%                ID_PACKET_DATA               : ENABLED
+%%                ID_PACKET_CHECKSUM           : ENABLED
+%%                ID_PACKET_GAP                : ENABLED
+%%                ID_PACKET_PAYLOAD            : ENABLED
+%%                ID_FRAME_INITIATE            : ENABLED
+%%                ID_FRAME_COMPLETE            : ENABLED
+%%                ID_FRAME_HDR                 : ENABLED
+%%                ID_FRAME_DATA                : ENABLED
+%%                ID_COVERAGE_MAKEBIN          : DISABLED
+%%                ID_COVERAGE_ADDBIN           : DISABLED
+%%                ID_COVERAGE_ICOVER           : DISABLED
+%%                ID_COVERAGE_CONFIG           : ENABLED
+%%                ID_COVERAGE_SUMMARY          : ENABLED
+%%                ID_COVERAGE_HOLES            : ENABLED
+%%                ID_UVVM_SEND_CMD             : ENABLED
+%%                ID_UVVM_CMD_ACK              : ENABLED
+%%                ID_UVVM_CMD_RESULT           : ENABLED
+%%                ID_CMD_INTERPRETER           : ENABLED
+%%                ID_CMD_INTERPRETER_WAIT      : ENABLED
+%%                ID_IMMEDIATE_CMD             : ENABLED
+%%                ID_IMMEDIATE_CMD_WAIT        : ENABLED
+%%                ID_CMD_EXECUTOR              : ENABLED
+%%                ID_CMD_EXECUTOR_WAIT         : ENABLED
+%%                ID_CHANNEL_EXECUTOR          : ENABLED
+%%                ID_CHANNEL_EXECUTOR_WAIT     : ENABLED
+%%                ID_NEW_HVVC_CMD_SEQ          : ENABLED
+%%                ID_INSERTED_DELAY            : ENABLED
+%%                ID_OLD_AWAIT_COMPLETION      : ENABLED
+%%                ID_AWAIT_COMPLETION          : ENABLED
+%%                ID_AWAIT_COMPLETION_LIST     : ENABLED
+%%                ID_AWAIT_COMPLETION_WAIT     : ENABLED
+%%                ID_AWAIT_COMPLETION_END      : ENABLED
+%%                ID_AWAIT_UVVM_COMPLETION     : ENABLED
+%%                ID_UVVM_DATA_QUEUE           : ENABLED
+%%                ID_CONSTRUCTOR               : ENABLED
+%%                ID_CONSTRUCTOR_SUB           : ENABLED
+%%                ID_VVC_ACTIVITY              : ENABLED
+%%                ID_MONITOR                   : ENABLED
+%%                ID_MONITOR_ERROR             : ENABLED
+%%                ID_DATA                      : ENABLED
+%%                ID_CTRL                      : ENABLED
+%%                ID_SPEC_COV_INIT             : ENABLED
+%%                ID_SPEC_COV_REQS             : ENABLED
+%%                ID_SPEC_COV                  : ENABLED
+%%                ID_FILE_OPEN_CLOSE           : ENABLED
+%%                ID_FILE_PARSER               : ENABLED
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_CMD_INTERPRETER_WAIT).
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_UVVM_CMD_ACK).
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(AVALON_ST_VVC,ALL_INSTANCES, ID_CMD_INTERPRETER):. [1]
+%%           0.0 ns  Log    ID_CMD_EXECUTOR_WA  AVALON_ST_VVC,3     Executor: Waiting for command
+%%           0.0 ns  Log    ID_CMD_EXECUTOR_WA  AVALON_ST_VVC,2     Executor: Waiting for command
+%%           0.0 ns  Log    ID_CMD_EXECUTOR_WA  AVALON_ST_VVC,1     Executor: Waiting for command
+%%           0.0 ns  Log    ID_CMD_EXECUTOR_WA  AVALON_ST_VVC,0     Executor: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  AVALON_ST_VVC,3     disable_log_msg(AVALON_ST_VVC,ALL_INSTANCES, ID_CMD_INTERPRETER). Command received  [1]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,3     disable_log_msg(ID_CMD_INTERPRETER). ' [1]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  AVALON_ST_VVC,2     disable_log_msg(AVALON_ST_VVC,ALL_INSTANCES, ID_CMD_INTERPRETER). Command received  [1]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,2     disable_log_msg(ID_CMD_INTERPRETER). ' [1]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  AVALON_ST_VVC,1     disable_log_msg(AVALON_ST_VVC,ALL_INSTANCES, ID_CMD_INTERPRETER). Command received  [1]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,1     disable_log_msg(ID_CMD_INTERPRETER). ' [1]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  AVALON_ST_VVC,0     disable_log_msg(AVALON_ST_VVC,ALL_INSTANCES, ID_CMD_INTERPRETER). Command received  [1]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,0     disable_log_msg(ID_CMD_INTERPRETER). ' [1]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  AVALON_ST_VVC,3     Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  AVALON_ST_VVC,2     Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  AVALON_ST_VVC,1     Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  AVALON_ST_VVC,0     Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(AVALON_ST_VVC,ALL_INSTANCES, ID_CMD_INTERPRETER_WAIT):. [2]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,3     disable_log_msg(ID_CMD_INTERPRETER_WAIT). ' [2]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,2     disable_log_msg(ID_CMD_INTERPRETER_WAIT). ' [2]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,1     disable_log_msg(ID_CMD_INTERPRETER_WAIT). ' [2]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,0     disable_log_msg(ID_CMD_INTERPRETER_WAIT). ' [2]'
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(AVALON_ST_VVC,ALL_INSTANCES, ID_CMD_EXECUTOR):. [3]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,3     disable_log_msg(ID_CMD_EXECUTOR). ' [3]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,2     disable_log_msg(ID_CMD_EXECUTOR). ' [3]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,1     disable_log_msg(ID_CMD_EXECUTOR). ' [3]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,0     disable_log_msg(ID_CMD_EXECUTOR). ' [3]'
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(AVALON_ST_VVC,ALL_INSTANCES, ID_CMD_EXECUTOR_WAIT):. [4]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,3     disable_log_msg(ID_CMD_EXECUTOR_WAIT). ' [4]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,2     disable_log_msg(ID_CMD_EXECUTOR_WAIT). ' [4]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,1     disable_log_msg(ID_CMD_EXECUTOR_WAIT). ' [4]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,0     disable_log_msg(ID_CMD_EXECUTOR_WAIT). ' [4]'
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(AVALON_ST_VVC,ALL_INSTANCES, ID_IMMEDIATE_CMD_WAIT):. [5]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,3     disable_log_msg(ID_IMMEDIATE_CMD_WAIT). ' [5]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,2     disable_log_msg(ID_IMMEDIATE_CMD_WAIT). ' [5]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,1     disable_log_msg(ID_IMMEDIATE_CMD_WAIT). ' [5]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,0     disable_log_msg(ID_IMMEDIATE_CMD_WAIT). ' [5]'
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(AVALON_ST_VVC,ALL_INSTANCES, ID_PACKET_DATA):. [6]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,3     disable_log_msg(ID_PACKET_DATA). ' [6]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,2     disable_log_msg(ID_PACKET_DATA). ' [6]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,1     disable_log_msg(ID_PACKET_DATA). ' [6]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,0     disable_log_msg(ID_PACKET_DATA). ' [6]'
+%% 
+%% 
+%% ============================================================================================================================================================================
+%%           0.0 ns  Log    ID_LOG_HDR_LARGE    TB seq.             Start Simulation of Avalon-ST
+%% ============================================================================================================================================================================
+%%           0.0 ns  Log    ID_CLOCK_GEN        TB seq.             Starting clock Avalon-ST CLK
+%%         100.0 ns  Log    ID_GEN_PULSE        TB seq.             Pulsed to 1 for 100000 ps. 'Pulsing reset for 10 clock periods'
+%% 
+%% 
+%%         200.0 ns  Log    ID_LOG_HDR          TB seq.             Testing random configurations of valid and ready low
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%         200.0 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [7]
+%%         200.0 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [8]
+%%         200.0 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [9]
+%%         200.0 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [9]
+%%         205.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [7]'
+%%         205.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [8]'
+%%         282.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [7]'
+%%         342.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [8]'
+%%         342.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [9]
+%%         342.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [10]
+%%         342.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [11]
+%%         342.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [12]
+%%         342.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [12]
+%%         345.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [10]'
+%%         345.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [11]'
+%%         422.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [10]'
+%%         422.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [11]'
+%%         422.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [12]
+%%         422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [13]
+%%         422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [14]
+%%         422.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [15]
+%%         422.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [15]
+%%         425.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [13]'
+%%         425.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [14]'
+%%         462.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [13]'
+%%         482.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [14]'
+%%         482.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [15]
+%%         482.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [16]
+%%         482.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [17]
+%%         482.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [18]
+%%         482.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [18]
+%%         485.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [16]'
+%%         485.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [17]'
+%%         542.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [16]'
+%%         542.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [17]'
+%%         542.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [18]
+%%         542.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [19]
+%%         542.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [20]
+%%         542.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [21]
+%%         542.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [21]
+%%         545.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [19]'
+%%         545.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [20]'
+%%         592.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [19]'
+%%         612.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [20]'
+%%         612.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [21]
+%%         612.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [22]
+%%         612.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [23]
+%%         612.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [24]
+%%         612.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [24]
+%%         615.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [22]'
+%%         615.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [23]'
+%%         672.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [22]'
+%%         672.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [23]'
+%%         672.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [24]
+%%         672.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [25]
+%%         672.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [26]
+%%         672.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [27]
+%%         672.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [27]
+%%         675.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [25]'
+%%         675.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [26]'
+%%         712.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [25]'
+%%         742.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [26]'
+%%         742.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [27]
+%%         742.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [28]
+%%         742.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [29]
+%%         742.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [30]
+%%         742.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [30]
+%%         745.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [28]'
+%%         745.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [29]'
+%%         822.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [28]'
+%%         822.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [29]'
+%%         822.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [30]
+%%         822.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [31]
+%%         822.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [32]
+%%         822.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [33]
+%%         822.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [33]
+%%         825.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [31]'
+%%         825.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [32]'
+%%         892.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [31]'
+%%         952.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [32]'
+%%         952.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [33]
+%%         952.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [34]
+%%         952.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [35]
+%%         952.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [36]
+%%         952.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [36]
+%%         955.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [34]'
+%%         955.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [35]'
+%%        1092.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [34]'
+%%        1092.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [35]'
+%%        1092.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [36]
+%%        1092.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [37]
+%%        1092.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [38]
+%%        1092.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [39]
+%%        1092.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [39]
+%%        1095.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [37]'
+%%        1095.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [38]'
+%%        1152.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [37]'
+%%        1212.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [38]'
+%%        1212.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [39]
+%%        1212.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [40]
+%%        1212.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [41]
+%%        1212.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [42]
+%%        1212.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [42]
+%%        1215.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [40]'
+%%        1215.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [41]'
+%%        1322.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [40]'
+%%        1322.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [41]'
+%%        1322.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [42]
+%%        1322.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [43]
+%%        1322.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [44]
+%%        1322.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [45]
+%%        1322.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [45]
+%%        1325.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [43]'
+%%        1325.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [44]'
+%%        1412.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [43]'
+%%        1462.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [44]'
+%%        1462.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [45]
+%%        1462.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [46]
+%%        1462.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [47]
+%%        1462.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [48]
+%%        1462.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [48]
+%%        1465.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [46]'
+%%        1465.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [47]'
+%%        1512.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [46]'
+%%        1512.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [47]'
+%%        1512.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [48]
+%%        1512.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [49]
+%%        1512.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [50]
+%%        1512.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [51]
+%%        1512.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [51]
+%%        1515.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [49]'
+%%        1515.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [50]'
+%%        1602.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [49]'
+%%        1632.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [50]'
+%%        1632.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [51]
+%%        1632.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [52]
+%%        1632.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [53]
+%%        1632.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [54]
+%%        1632.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [54]
+%%        1635.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [52]'
+%%        1635.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [53]'
+%%        1692.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [52]'
+%%        1692.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [53]'
+%%        1692.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [54]
+%%        1692.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [55]
+%%        1692.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [56]
+%%        1692.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [57]
+%%        1692.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [57]
+%%        1695.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [55]'
+%%        1695.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [56]'
+%%        1762.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [55]'
+%%        1782.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [56]'
+%%        1782.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [57]
+%%        1782.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [58]
+%%        1782.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [59]
+%%        1782.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [60]
+%%        1782.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [60]
+%%        1785.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [58]'
+%%        1785.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [59]'
+%%        1882.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [58]'
+%%        1882.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [59]'
+%%        1882.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [60]
+%%        1882.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [61]
+%%        1882.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [62]
+%%        1882.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [63]
+%%        1882.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [63]
+%%        1885.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [61]'
+%%        1885.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [62]'
+%%        1922.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [61]'
+%%        1952.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [62]'
+%%        1952.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [63]
+%%        1952.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [64]
+%%        1952.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [65]
+%%        1952.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [66]
+%%        1952.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [66]
+%%        1955.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [64]'
+%%        1955.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [65]'
+%%        2042.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [64]'
+%%        2042.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [65]'
+%%        2042.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [66]
+%%        2042.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [67]
+%%        2042.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [68]
+%%        2042.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [69]
+%%        2042.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [69]
+%%        2045.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [67]'
+%%        2045.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [68]'
+%%        2082.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [67]'
+%%        2102.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [68]'
+%%        2102.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [69]
+%%        2102.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [70]
+%%        2102.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [71]
+%%        2102.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [72]
+%%        2102.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [72]
+%%        2105.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [70]'
+%%        2105.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [71]'
+%%        2182.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [70]'
+%%        2182.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [71]'
+%%        2182.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [72]
+%%        2182.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [73]
+%%        2182.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [74]
+%%        2182.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [75]
+%%        2182.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [75]
+%%        2185.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [73]'
+%%        2185.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [74]'
+%%        2222.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [73]'
+%%        2292.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [74]'
+%%        2292.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [75]
+%%        2292.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [76]
+%%        2292.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [77]
+%%        2292.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [78]
+%%        2292.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [78]
+%%        2295.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [76]'
+%%        2295.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [77]'
+%%        2342.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [76]'
+%%        2342.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [77]'
+%%        2342.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [78]
+%%        2342.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [79]
+%%        2342.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [80]
+%%        2342.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [81]
+%%        2342.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [81]
+%%        2345.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [79]'
+%%        2345.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [80]'
+%%        2382.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [79]'
+%%        2402.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [80]'
+%%        2402.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [81]
+%%        2402.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [82]
+%%        2402.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [83]
+%%        2402.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [84]
+%%        2402.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [84]
+%%        2405.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [82]'
+%%        2405.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [83]'
+%%        2482.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [82]'
+%%        2482.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [83]'
+%%        2482.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [84]
+%%        2482.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [85]
+%%        2482.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [86]
+%%        2482.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [87]
+%%        2482.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [87]
+%%        2485.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [85]'
+%%        2485.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [86]'
+%%        2572.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [85]'
+%%        2642.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [86]'
+%%        2642.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [87]
+%%        2642.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [88]
+%%        2642.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [89]
+%%        2642.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [90]
+%%        2642.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [90]
+%%        2645.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [88]'
+%%        2645.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [89]'
+%%        2722.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [88]'
+%%        2722.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [89]'
+%%        2722.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [90]
+%%        2722.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [91]
+%%        2722.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [92]
+%%        2722.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [93]
+%%        2722.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [93]
+%%        2725.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [91]'
+%%        2725.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [92]'
+%%        2802.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [91]'
+%%        2822.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [92]'
+%%        2822.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [93]
+%%        2822.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [94]
+%%        2822.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [95]
+%%        2822.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [96]
+%%        2822.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [96]
+%%        2825.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [94]'
+%%        2825.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [95]'
+%%        2872.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [94]'
+%%        2872.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [95]'
+%%        2872.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [96]
+%%        2872.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [97]
+%%        2872.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [98]
+%%        2872.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [99]
+%%        2872.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [99]
+%%        2875.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [97]'
+%%        2875.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [98]'
+%%        2932.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [97]'
+%%        2962.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [98]'
+%%        2962.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [99]
+%%        2962.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [100]
+%%        2962.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [101]
+%%        2962.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [102]
+%%        2962.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [102]
+%%        2965.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [100]'
+%%        2965.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [101]'
+%%        3052.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [100]'
+%%        3052.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [101]'
+%%        3052.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [102]
+%%        3052.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [103]
+%%        3052.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [104]
+%%        3052.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [105]
+%%        3052.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [105]
+%%        3055.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [103]'
+%%        3055.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [104]'
+%%        3092.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [103]'
+%%        3152.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [104]'
+%%        3152.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [105]
+%%        3152.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [106]
+%%        3152.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [107]
+%%        3152.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [108]
+%%        3152.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [108]
+%%        3155.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [106]'
+%%        3155.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [107]'
+%%        3242.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [106]'
+%%        3242.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [107]'
+%%        3242.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [108]
+%%        3242.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [109]
+%%        3242.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [110]
+%%        3242.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [111]
+%%        3242.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [111]
+%%        3245.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [109]'
+%%        3245.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [110]'
+%%        3282.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [109]'
+%%        3302.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [110]'
+%%        3302.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [111]
+%%        3302.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [112]
+%%        3302.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [113]
+%%        3302.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [114]
+%%        3302.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [114]
+%%        3305.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [112]'
+%%        3305.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [113]'
+%%        3392.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [112]'
+%%        3392.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [113]'
+%%        3392.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [114]
+%%        3392.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [115]
+%%        3392.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [116]
+%%        3392.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [117]
+%%        3392.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [117]
+%%        3395.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [115]'
+%%        3395.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [116]'
+%%        3432.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [115]'
+%%        3462.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [116]'
+%%        3462.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [117]
+%%        3462.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [118]
+%%        3462.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [119]
+%%        3462.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [120]
+%%        3462.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [120]
+%%        3465.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [118]'
+%%        3465.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [119]'
+%%        3602.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [118]'
+%%        3602.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [119]'
+%%        3602.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [120]
+%%        3602.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [121]
+%%        3602.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [122]
+%%        3602.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [123]
+%%        3602.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [123]
+%%        3605.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [121]'
+%%        3605.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [122]'
+%%        3642.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [121]'
+%%        3672.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [122]'
+%%        3672.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [123]
+%%        3672.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [124]
+%%        3672.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [125]
+%%        3672.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [126]
+%%        3672.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [126]
+%%        3675.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [124]'
+%%        3675.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [125]'
+%%        3782.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [124]'
+%%        3782.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [125]'
+%%        3782.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [126]
+%%        3782.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [127]
+%%        3782.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [128]
+%%        3782.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [129]
+%%        3782.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [129]
+%%        3785.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [127]'
+%%        3785.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [128]'
+%%        3822.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [127]'
+%%        3842.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [128]'
+%%        3842.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [129]
+%%        3842.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [130]
+%%        3842.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [131]
+%%        3842.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [132]
+%%        3842.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [132]
+%%        3845.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [130]'
+%%        3845.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [131]'
+%%        3892.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [130]'
+%%        3892.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [131]'
+%%        3892.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [132]
+%%        3892.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [133]
+%%        3892.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [134]
+%%        3892.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [135]
+%%        3892.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [135]
+%%        3895.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [133]'
+%%        3895.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [134]'
+%%        3932.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [133]'
+%%        3952.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [134]'
+%%        3952.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [135]
+%%        3952.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [136]
+%%        3952.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [137]
+%%        3952.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [138]
+%%        3952.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [138]
+%%        3955.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [136]'
+%%        3955.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [137]'
+%%        4002.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [136]'
+%%        4002.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [137]'
+%%        4002.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [138]
+%%        4002.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [139]
+%%        4002.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [140]
+%%        4002.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [141]
+%%        4002.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [141]
+%%        4005.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [139]'
+%%        4005.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [140]'
+%%        4042.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [139]'
+%%        4062.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [140]'
+%%        4062.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [141]
+%%        4062.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [142]
+%%        4062.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [143]
+%%        4062.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [144]
+%%        4062.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [144]
+%%        4065.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [142]'
+%%        4065.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [143]'
+%%        4112.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [142]'
+%%        4112.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [143]'
+%%        4112.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [144]
+%%        4112.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [145]
+%%        4112.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [146]
+%%        4112.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [147]
+%%        4112.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [147]
+%%        4115.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [145]'
+%%        4115.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [146]'
+%%        4152.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [145]'
+%%        4172.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [146]'
+%%        4172.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [147]
+%%        4172.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [148]
+%%        4172.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [149]
+%%        4172.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [150]
+%%        4172.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [150]
+%%        4175.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [148]'
+%%        4175.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [149]'
+%%        4222.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [148]'
+%%        4222.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [149]'
+%%        4222.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [150]
+%%        4222.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [151]
+%%        4222.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [152]
+%%        4222.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [153]
+%%        4222.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [153]
+%%        4225.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [151]'
+%%        4225.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [152]'
+%%        4262.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [151]'
+%%        4282.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [152]'
+%%        4282.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [153]
+%%        4282.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [154]
+%%        4282.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [155]
+%%        4282.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [156]
+%%        4282.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [156]
+%%        4285.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [154]'
+%%        4285.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [155]'
+%%        4332.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [154]'
+%%        4332.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [155]'
+%%        4332.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [156]
+%%        4332.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [157]
+%%        4332.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [158]
+%%        4332.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [159]
+%%        4332.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [159]
+%%        4335.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [157]'
+%%        4335.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [158]'
+%%        4372.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [157]'
+%%        4392.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [158]'
+%%        4392.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [159]
+%%        4392.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [160]
+%%        4392.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [161]
+%%        4392.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [162]
+%%        4392.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [162]
+%%        4395.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [160]'
+%%        4395.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [161]'
+%%        4442.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [160]'
+%%        4442.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [161]'
+%%        4442.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [162]
+%%        4442.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [163]
+%%        4442.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [164]
+%%        4442.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [165]
+%%        4442.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [165]
+%%        4445.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [163]'
+%%        4445.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [164]'
+%%        4482.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [163]'
+%%        4502.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [164]'
+%%        4502.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [165]
+%%        4502.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [166]
+%%        4502.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [167]
+%%        4502.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [168]
+%%        4502.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [168]
+%%        4505.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [166]'
+%%        4505.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [167]'
+%%        4552.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [166]'
+%%        4552.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [167]'
+%%        4552.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [168]
+%%        4552.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [169]
+%%        4552.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [170]
+%%        4552.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [171]
+%%        4552.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [171]
+%%        4555.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [169]'
+%%        4555.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [170]'
+%%        4592.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [169]'
+%%        4612.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [170]'
+%%        4612.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [171]
+%%        4612.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [172]
+%%        4612.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [173]
+%%        4612.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [174]
+%%        4612.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [174]
+%%        4615.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [172]'
+%%        4615.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [173]'
+%%        4662.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [172]'
+%%        4662.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [173]'
+%%        4662.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [174]
+%%        4662.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [175]
+%%        4662.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [176]
+%%        4662.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [177]
+%%        4662.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [177]
+%%        4665.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [175]'
+%%        4665.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [176]'
+%%        4702.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [175]'
+%%        4722.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [176]'
+%%        4722.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [177]
+%%        4722.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [178]
+%%        4722.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [179]
+%%        4722.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [180]
+%%        4722.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [180]
+%%        4725.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [178]'
+%%        4725.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [179]'
+%%        4772.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [178]'
+%%        4772.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [179]'
+%%        4772.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [180]
+%%        4772.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [181]
+%%        4772.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [182]
+%%        4772.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [183]
+%%        4772.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [183]
+%%        4775.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [181]'
+%%        4775.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [182]'
+%%        4812.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [181]'
+%%        4832.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [182]'
+%%        4832.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [183]
+%%        4832.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [184]
+%%        4832.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [185]
+%%        4832.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [186]
+%%        4832.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [186]
+%%        4835.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [184]'
+%%        4835.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [185]'
+%%        4882.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [184]'
+%%        4882.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [185]'
+%%        4882.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [186]
+%%        4882.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [187]
+%%        4882.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [188]
+%%        4882.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [189]
+%%        4882.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [189]
+%%        4885.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [187]'
+%%        4885.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [188]'
+%%        5112.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [187]'
+%%        5192.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [188]'
+%%        5192.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [189]
+%%        5192.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [190]
+%%        5192.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [191]
+%%        5192.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [192]
+%%        5192.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [192]
+%%        5195.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [190]'
+%%        5195.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [191]'
+%%        5252.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [190]'
+%%        5252.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [191]'
+%%        5252.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [192]
+%%        5252.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [193]
+%%        5252.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [194]
+%%        5252.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [195]
+%%        5252.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [195]
+%%        5255.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [193]'
+%%        5255.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [194]'
+%%        5292.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [193]'
+%%        5312.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [194]'
+%%        5312.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [195]
+%%        5312.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [196]
+%%        5312.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [197]
+%%        5312.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [198]
+%%        5312.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [198]
+%%        5315.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [196]'
+%%        5315.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [197]'
+%%        5552.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [196]'
+%%        5552.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [197]'
+%%        5552.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [198]
+%%        5552.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [199]
+%%        5552.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [200]
+%%        5552.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [201]
+%%        5552.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [201]
+%%        5555.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [199]'
+%%        5555.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [200]'
+%%        5592.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [199]'
+%%        5612.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [200]'
+%%        5612.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [201]
+%%        5612.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [202]
+%%        5612.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [203]
+%%        5612.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [204]
+%%        5612.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [204]
+%%        5615.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [202]'
+%%        5615.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [203]'
+%%        5662.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [202]'
+%%        5662.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [203]'
+%%        5662.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [204]
+%%        5662.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [205]
+%%        5662.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [206]
+%%        5662.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [207]
+%%        5662.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [207]
+%%        5665.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [205]'
+%%        5665.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [206]'
+%%        5702.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [205]'
+%%        5722.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [206]'
+%%        5722.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [207]
+%%        5722.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [208]
+%%        5722.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [209]
+%%        5722.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [210]
+%%        5722.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [210]
+%%        5725.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [208]'
+%%        5725.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [209]'
+%%        5862.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [208]'
+%%        5862.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [209]'
+%%        5862.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [210]
+%%        5862.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [211]
+%%        5862.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [212]
+%%        5862.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [213]
+%%        5862.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [213]
+%%        5865.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [211]'
+%%        5865.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [212]'
+%%        5902.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [211]'
+%%        5922.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [212]'
+%%        5922.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [213]
+%%        5922.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [214]
+%%        5922.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [215]
+%%        5922.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [216]
+%%        5922.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [216]
+%%        5925.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [214]'
+%%        5925.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [215]'
+%%        5972.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [214]'
+%%        5972.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [215]'
+%%        5972.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [216]
+%%        5972.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [217]
+%%        5972.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [218]
+%%        5972.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [219]
+%%        5972.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [219]
+%%        5975.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [217]'
+%%        5975.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [218]'
+%%        6012.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [217]'
+%%        6032.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [218]'
+%%        6032.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [219]
+%%        6032.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [220]
+%%        6032.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [221]
+%%        6032.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [222]
+%%        6032.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [222]
+%%        6035.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [220]'
+%%        6035.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [221]'
+%%        6242.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [220]'
+%%        6242.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [221]'
+%%        6242.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [222]
+%%        6242.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [223]
+%%        6242.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [224]
+%%        6242.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [225]
+%%        6242.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [225]
+%%        6245.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [223]'
+%%        6245.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [224]'
+%%        6282.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [223]'
+%%        6302.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [224]'
+%%        6302.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [225]
+%%        6302.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [226]
+%%        6302.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [227]
+%%        6302.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [228]
+%%        6302.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [228]
+%%        6305.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [226]'
+%%        6305.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [227]'
+%%        6352.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [226]'
+%%        6352.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [227]'
+%%        6352.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [228]
+%%        6352.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [229]
+%%        6352.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [230]
+%%        6352.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [231]
+%%        6352.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [231]
+%%        6355.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [229]'
+%%        6355.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [230]'
+%%        6532.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [229]'
+%%        6552.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [230]'
+%%        6552.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [231]
+%%        6552.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [232]
+%%        6552.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [233]
+%%        6552.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [234]
+%%        6552.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [234]
+%%        6555.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [232]'
+%%        6555.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [233]'
+%%        6632.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [232]'
+%%        6632.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [233]'
+%%        6632.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [234]
+%%        6632.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [235]
+%%        6632.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [236]
+%%        6632.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [237]
+%%        6632.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [237]
+%%        6635.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [235]'
+%%        6635.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [236]'
+%%        6742.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [235]'
+%%        6932.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [236]'
+%%        6932.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [237]
+%%        6932.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [238]
+%%        6932.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [239]
+%%        6932.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [240]
+%%        6932.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [240]
+%%        6935.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [238]'
+%%        6935.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [239]'
+%%        6982.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [238]'
+%%        6982.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [239]'
+%%        6982.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [240]
+%%        6982.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [241]
+%%        6982.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [242]
+%%        6982.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [243]
+%%        6982.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [243]
+%%        6985.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [241]'
+%%        6985.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [242]'
+%%        7152.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [241]'
+%%        7172.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [242]'
+%%        7172.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [243]
+%%        7172.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [244]
+%%        7172.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [245]
+%%        7172.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [246]
+%%        7172.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [246]
+%%        7175.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [244]'
+%%        7175.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [245]'
+%%        7302.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [244]'
+%%        7302.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [245]'
+%%        7302.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [246]
+%%        7302.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [247]
+%%        7302.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [248]
+%%        7302.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [249]
+%%        7302.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [249]
+%%        7305.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [247]'
+%%        7305.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [248]'
+%%        7432.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [247]'
+%%        7492.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [248]'
+%%        7492.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [249]
+%%        7492.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [250]
+%%        7492.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [251]
+%%        7492.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [252]
+%%        7492.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [252]
+%%        7495.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [250]'
+%%        7495.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [251]'
+%%        7702.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [250]'
+%%        7702.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [251]'
+%%        7702.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [252]
+%%        7702.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [253]
+%%        7702.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [254]
+%%        7702.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [255]
+%%        7702.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [255]
+%%        7705.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [253]'
+%%        7705.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [254]'
+%%        7742.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [253]'
+%%        7862.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [254]'
+%%        7862.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [255]
+%%        7862.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [256]
+%%        7862.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [257]
+%%        7862.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [258]
+%%        7862.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [258]
+%%        7865.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [256]'
+%%        7865.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [257]'
+%%        7982.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [256]'
+%%        7982.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [257]'
+%%        7982.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [258]
+%%        7982.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [259]
+%%        7982.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [260]
+%%        7982.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [261]
+%%        7982.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [261]
+%%        7985.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [259]'
+%%        7985.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [260]'
+%%        8072.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [259]'
+%%        8182.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [260]'
+%%        8182.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [261]
+%%        8182.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [262]
+%%        8182.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [263]
+%%        8182.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [264]
+%%        8182.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [264]
+%%        8185.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [262]'
+%%        8185.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [263]'
+%%        8292.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [262]'
+%%        8292.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [263]'
+%%        8292.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [264]
+%%        8292.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [265]
+%%        8292.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [266]
+%%        8292.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [267]
+%%        8292.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [267]
+%%        8295.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [265]'
+%%        8295.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [266]'
+%%        8402.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [265]'
+%%        8422.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [266]'
+%%        8422.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [267]
+%%        8422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [268]
+%%        8422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [269]
+%%        8422.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [270]
+%%        8422.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [270]
+%%        8425.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [268]'
+%%        8425.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [269]'
+%%        8622.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [268]'
+%%        8622.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [269]'
+%%        8622.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [270]
+%%        8622.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [271]
+%%        8622.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [272]
+%%        8622.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [273]
+%%        8622.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [273]
+%%        8625.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [271]'
+%%        8625.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [272]'
+%%        8732.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [271]'
+%%        8772.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [272]'
+%%        8772.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [273]
+%%        8772.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [274]
+%%        8772.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [275]
+%%        8772.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [276]
+%%        8772.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [276]
+%%        8775.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [274]'
+%%        8775.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [275]'
+%%        8962.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [274]'
+%%        8962.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [275]'
+%%        8962.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [276]
+%%        8962.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [277]
+%%        8962.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [278]
+%%        8962.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [279]
+%%        8962.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [279]
+%%        8965.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [277]'
+%%        8965.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [278]'
+%%        9032.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [277]'
+%%        9082.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [278]'
+%%        9082.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [279]
+%%        9082.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [280]
+%%        9082.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [281]
+%%        9082.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [282]
+%%        9082.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [282]
+%%        9085.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [280]'
+%%        9085.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [281]'
+%%        9312.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [280]'
+%%        9312.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [281]'
+%%        9312.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [282]
+%%        9312.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [283]
+%%        9312.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [284]
+%%        9312.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [285]
+%%        9312.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [285]
+%%        9315.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [283]'
+%%        9315.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [284]'
+%%        9462.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [283]'
+%%        9522.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [284]'
+%%        9522.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [285]
+%%        9522.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [286]
+%%        9522.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [287]
+%%        9522.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [288]
+%%        9522.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [288]
+%%        9525.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [286]'
+%%        9525.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [287]'
+%%        9642.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [286]'
+%%        9642.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [287]'
+%%        9642.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [288]
+%%        9642.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [289]
+%%        9642.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [290]
+%%        9642.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [291]
+%%        9642.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [291]
+%%        9645.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [289]'
+%%        9645.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [290]'
+%%        9762.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [289]'
+%%        9802.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [290]'
+%%        9802.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [291]
+%%        9802.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [292]
+%%        9802.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [293]
+%%        9802.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [294]
+%%        9802.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [294]
+%%        9805.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [292]'
+%%        9805.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [293]'
+%%        9932.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [292]'
+%%        9932.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [293]'
+%%        9932.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [294]
+%%        9932.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [295]
+%%        9932.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [296]
+%%        9932.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [297]
+%%        9932.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [297]
+%%        9935.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [295]'
+%%        9935.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [296]'
+%%       10112.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [295]'
+%%       10142.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [296]'
+%%       10142.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [297]
+%%       10142.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [298]
+%%       10142.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [299]
+%%       10142.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [300]
+%%       10142.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [300]
+%%       10145.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [298]'
+%%       10145.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [299]'
+%%       10282.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [298]'
+%%       10282.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [299]'
+%%       10282.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [300]
+%%       10282.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [301]
+%%       10282.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [302]
+%%       10282.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [303]
+%%       10282.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [303]
+%%       10285.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [301]'
+%%       10285.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [302]'
+%%       10382.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [301]'
+%%       10422.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [302]'
+%%       10422.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [303]
+%%       10422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [304]
+%%       10422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [305]
+%%       10422.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [306]
+%%       10422.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [306]
+%%       10425.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [304]'
+%%       10425.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [305]'
+%%       10602.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [304]'
+%%       10602.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [305]'
+%%       10602.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [306]
+%%       10602.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [307]
+%%       10602.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [308]
+%%       10602.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [309]
+%%       10602.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [309]
+%%       10605.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [307]'
+%%       10605.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [308]'
+%%       10682.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [307]'
+%%       10702.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [308]'
+%%       10702.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [309]
+%%       10702.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [310]
+%%       10702.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [311]
+%%       10702.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [312]
+%%       10702.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [312]
+%%       10705.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [310]'
+%%       10705.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [311]'
+%%       10792.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [310]'
+%%       10792.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [311]'
+%%       10792.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [312]
+%%       10792.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [313]
+%%       10792.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [314]
+%%       10792.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [315]
+%%       10792.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [315]
+%%       10795.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [313]'
+%%       10795.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [314]'
+%%       10872.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [313]'
+%%       10892.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [314]'
+%%       10892.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [315]
+%%       10892.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [316]
+%%       10892.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [317]
+%%       10892.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [318]
+%%       10892.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [318]
+%%       10895.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [316]'
+%%       10895.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [317]'
+%%       10982.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [316]'
+%%       10982.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [317]'
+%%       10982.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [318]
+%%       10982.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [319]
+%%       10982.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [320]
+%%       10982.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [321]
+%%       10982.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [321]
+%%       10985.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [319]'
+%%       10985.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [320]'
+%%       11062.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [319]'
+%%       11082.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [320]'
+%%       11082.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [321]
+%%       11082.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [322]
+%%       11082.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [323]
+%%       11082.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [324]
+%%       11082.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [324]
+%%       11085.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [322]'
+%%       11085.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [323]'
+%%       11172.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [322]'
+%%       11172.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [323]'
+%%       11172.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [324]
+%%       11172.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [325]
+%%       11172.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [326]
+%%       11172.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [327]
+%%       11172.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [327]
+%%       11175.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [325]'
+%%       11175.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [326]'
+%%       11252.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [325]'
+%%       11272.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [326]'
+%%       11272.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [327]
+%%       11272.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [328]
+%%       11272.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [329]
+%%       11272.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [330]
+%%       11272.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [330]
+%%       11275.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [328]'
+%%       11275.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [329]'
+%%       11362.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [328]'
+%%       11362.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [329]'
+%%       11362.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [330]
+%%       11362.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [331]
+%%       11362.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [332]
+%%       11362.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [333]
+%%       11362.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [333]
+%%       11365.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [331]'
+%%       11365.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [332]'
+%%       11442.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [331]'
+%%       11462.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [332]'
+%%       11462.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [333]
+%%       11462.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [334]
+%%       11462.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [335]
+%%       11462.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [336]
+%%       11462.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [336]
+%%       11465.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [334]'
+%%       11465.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [335]'
+%%       11552.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [334]'
+%%       11552.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [335]'
+%%       11552.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [336]
+%%       11552.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [337]
+%%       11552.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [338]
+%%       11552.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [339]
+%%       11552.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [339]
+%%       11555.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [337]'
+%%       11555.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [338]'
+%%       11632.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [337]'
+%%       11652.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [338]'
+%%       11652.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [339]
+%%       11652.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [340]
+%%       11652.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [341]
+%%       11652.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [342]
+%%       11652.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [342]
+%%       11655.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [340]'
+%%       11655.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [341]'
+%%       11742.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [340]'
+%%       11742.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [341]'
+%%       11742.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [342]
+%%       11742.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [343]
+%%       11742.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [344]
+%%       11742.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [345]
+%%       11742.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [345]
+%%       11745.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [343]'
+%%       11745.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [344]'
+%%       11822.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [343]'
+%%       11842.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [344]'
+%%       11842.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [345]
+%%       11842.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [346]
+%%       11842.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [347]
+%%       11842.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [348]
+%%       11842.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [348]
+%%       11845.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [346]'
+%%       11845.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [347]'
+%%       11932.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [346]'
+%%       11932.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [347]'
+%%       11932.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [348]
+%%       11932.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [349]
+%%       11932.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [350]
+%%       11932.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [351]
+%%       11932.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [351]
+%%       11935.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [349]'
+%%       11935.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [350]'
+%%       12012.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [349]'
+%%       12032.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [350]'
+%%       12032.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [351]
+%%       12032.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [352]
+%%       12032.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [353]
+%%       12032.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [354]
+%%       12032.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [354]
+%%       12035.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [352]'
+%%       12035.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [353]'
+%%       12122.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [352]'
+%%       12122.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [353]'
+%%       12122.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [354]
+%%       12122.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [355]
+%%       12122.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [356]
+%%       12122.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [357]
+%%       12122.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [357]
+%%       12125.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [355]'
+%%       12125.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [356]'
+%%       12202.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [355]'
+%%       12222.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [356]'
+%%       12222.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [357]
+%%       12222.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [358]
+%%       12222.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [359]
+%%       12222.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [360]
+%%       12222.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [360]
+%%       12225.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [358]'
+%%       12225.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [359]'
+%%       12312.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [358]'
+%%       12312.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [359]'
+%%       12312.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [360]
+%%       12312.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:0): 'transmit 16 symbols'. [361]
+%%       12312.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:0): 'expect 16 symbols'. [362]
+%%       12312.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns):. [363]
+%%       12312.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns) - Pending completion. [363]
+%%       12315.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [361]'
+%%       12315.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [362]'
+%%       12392.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [361]'
+%%       12412.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [362]'
+%%       12412.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 1000000 ns)=> AVALON_ST_VVC,1 finished. [363]
+%%       12412.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:0): 'transmit 16 symbols'. [364]
+%%       12412.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:0): 'expect 16 symbols'. [365]
+%%       12412.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns):. [366]
+%%       12412.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns) - Pending completion. [366]
+%%       12415.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0)=> ' 'transmit 16 symbols'  [364]'
+%%       12415.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0) while executing avalon_st_receive=> ' 'expect 16 symbols'  [365]'
+%%       12502.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:0) DONE. ' 'transmit 16 symbols'  [364]'
+%%       12502.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:0)=> OK, received 16 symbols. ' 'expect 16 symbols'  [365]'
+%%       12502.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 1000000 ns)=> AVALON_ST_VVC,3 finished. [366]
+%%       12503.5 ns  Log    ID_AWAIT_UVVM_COMP  TB seq.             await_uvvm_completion() => OK. All VVCs are inactive. Condition occurred after 1 ns
+%%       12503.5 ns  Log    ID_AWAIT_UVVM_COMP  TB seq.             await_uvvm_completion()() => OK. There are no UVVM scoreboards enabled.
+%% 
+%% ============================================================================================================================================================================
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%       12503.5 ns  DONE   NOCHECKS  vvc_test_random_configuration  Passed: 0
+%%    Expected      Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%%       12503.5 ns  Log    ID_LOG_HDR          TB seq.             SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

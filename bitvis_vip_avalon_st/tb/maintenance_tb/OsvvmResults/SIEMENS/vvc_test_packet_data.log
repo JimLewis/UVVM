@@ -1,0 +1,946 @@
+%%           0.0 ns  Log    ID_CONSTRUCTOR      AVALON_ST_VVC,3     VVC instantiated.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  AVALON_ST_VVC,3     Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  AVALON_ST_VVC,3     Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR      AVALON_ST_VVC,2     VVC instantiated.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  AVALON_ST_VVC,2     Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  AVALON_ST_VVC,2     Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR      AVALON_ST_VVC,1     VVC instantiated.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  AVALON_ST_VVC,1     Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  AVALON_ST_VVC,1     Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR      AVALON_ST_VVC,0     VVC instantiated.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  AVALON_ST_VVC,0     Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  AVALON_ST_VVC,0     Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  AVALON_ST_VVC,3     Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  AVALON_ST_VVC,2     Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  AVALON_ST_VVC,1     Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  AVALON_ST_VVC,0     Interpreter: Waiting for command
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF GLOBAL CTRL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                                IGNORE    STOP_LIMIT
+%%                NOTE         :  REGARD         0
+%%                TB_NOTE      :  REGARD         0
+%%                WARNING      :  REGARD         0
+%%                TB_WARNING   :  REGARD         0
+%%                MANUAL_CHECK :  REGARD         0
+%%                ERROR        :  REGARD         0
+%%                TB_ERROR     :  REGARD         0
+%%                FAILURE      :  REGARD         1
+%%                TB_FAILURE   :  REGARD         1
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF MSG ID PANEL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                ID                             Status
+%%                ------------------------       ------
+%%                ID_UTIL_BURIED               : DISABLED
+%%                ID_BITVIS_DEBUG              : DISABLED
+%%                ID_UTIL_SETUP                : ENABLED
+%%                ID_LOG_MSG_CTRL              : ENABLED
+%%                ID_ALERT_CTRL                : ENABLED
+%%                ID_FINISH_OR_STOP            : ENABLED
+%%                ID_CLOCK_GEN                 : ENABLED
+%%                ID_GEN_PULSE                 : ENABLED
+%%                ID_BLOCKING                  : ENABLED
+%%                ID_WATCHDOG                  : ENABLED
+%%                ID_RAND_GEN                  : DISABLED
+%%                ID_RAND_CONF                 : DISABLED
+%%                ID_FUNC_COV_BINS             : DISABLED
+%%                ID_FUNC_COV_BINS_INFO        : DISABLED
+%%                ID_FUNC_COV_RAND             : DISABLED
+%%                ID_FUNC_COV_SAMPLE           : DISABLED
+%%                ID_FUNC_COV_CONFIG           : DISABLED
+%%                ID_POS_ACK                   : ENABLED
+%%                ID_UVVM_ASSERTION            : ENABLED
+%%                ID_LOG_HDR                   : ENABLED
+%%                ID_LOG_HDR_LARGE             : ENABLED
+%%                ID_LOG_HDR_XL                : ENABLED
+%%                ID_SEQUENCER                 : ENABLED
+%%                ID_SEQUENCER_SUB             : ENABLED
+%%                ID_BFM                       : ENABLED
+%%                ID_BFM_WAIT                  : ENABLED
+%%                ID_BFM_POLL                  : ENABLED
+%%                ID_BFM_POLL_SUMMARY          : ENABLED
+%%                ID_CHANNEL_BFM               : ENABLED
+%%                ID_TERMINATE_CMD             : ENABLED
+%%                ID_SEGMENT_INITIATE          : ENABLED
+%%                ID_SEGMENT_COMPLETE          : ENABLED
+%%                ID_SEGMENT_HDR               : ENABLED
+%%                ID_SEGMENT_DATA              : ENABLED
+%%                ID_PACKET_INITIATE           : ENABLED
+%%                ID_PACKET_PREAMBLE           : ENABLED
+%%                ID_PACKET_COMPLETE           : ENABLED
+%%                ID_PACKET_HDR                : ENABLED
+%%                ID_PACKET_DATA               : ENABLED
+%%                ID_PACKET_CHECKSUM           : ENABLED
+%%                ID_PACKET_GAP                : ENABLED
+%%                ID_PACKET_PAYLOAD            : ENABLED
+%%                ID_FRAME_INITIATE            : ENABLED
+%%                ID_FRAME_COMPLETE            : ENABLED
+%%                ID_FRAME_HDR                 : ENABLED
+%%                ID_FRAME_DATA                : ENABLED
+%%                ID_COVERAGE_MAKEBIN          : DISABLED
+%%                ID_COVERAGE_ADDBIN           : DISABLED
+%%                ID_COVERAGE_ICOVER           : DISABLED
+%%                ID_COVERAGE_CONFIG           : ENABLED
+%%                ID_COVERAGE_SUMMARY          : ENABLED
+%%                ID_COVERAGE_HOLES            : ENABLED
+%%                ID_UVVM_SEND_CMD             : ENABLED
+%%                ID_UVVM_CMD_ACK              : ENABLED
+%%                ID_UVVM_CMD_RESULT           : ENABLED
+%%                ID_CMD_INTERPRETER           : ENABLED
+%%                ID_CMD_INTERPRETER_WAIT      : ENABLED
+%%                ID_IMMEDIATE_CMD             : ENABLED
+%%                ID_IMMEDIATE_CMD_WAIT        : ENABLED
+%%                ID_CMD_EXECUTOR              : ENABLED
+%%                ID_CMD_EXECUTOR_WAIT         : ENABLED
+%%                ID_CHANNEL_EXECUTOR          : ENABLED
+%%                ID_CHANNEL_EXECUTOR_WAIT     : ENABLED
+%%                ID_NEW_HVVC_CMD_SEQ          : ENABLED
+%%                ID_INSERTED_DELAY            : ENABLED
+%%                ID_OLD_AWAIT_COMPLETION      : ENABLED
+%%                ID_AWAIT_COMPLETION          : ENABLED
+%%                ID_AWAIT_COMPLETION_LIST     : ENABLED
+%%                ID_AWAIT_COMPLETION_WAIT     : ENABLED
+%%                ID_AWAIT_COMPLETION_END      : ENABLED
+%%                ID_AWAIT_UVVM_COMPLETION     : ENABLED
+%%                ID_UVVM_DATA_QUEUE           : ENABLED
+%%                ID_CONSTRUCTOR               : ENABLED
+%%                ID_CONSTRUCTOR_SUB           : ENABLED
+%%                ID_VVC_ACTIVITY              : ENABLED
+%%                ID_MONITOR                   : ENABLED
+%%                ID_MONITOR_ERROR             : ENABLED
+%%                ID_DATA                      : ENABLED
+%%                ID_CTRL                      : ENABLED
+%%                ID_SPEC_COV_INIT             : ENABLED
+%%                ID_SPEC_COV_REQS             : ENABLED
+%%                ID_SPEC_COV                  : ENABLED
+%%                ID_FILE_OPEN_CLOSE           : ENABLED
+%%                ID_FILE_PARSER               : ENABLED
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_CMD_INTERPRETER_WAIT).
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_UVVM_CMD_ACK).
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(AVALON_ST_VVC,ALL_INSTANCES, ID_CMD_INTERPRETER):. [1]
+%%           0.0 ns  Log    ID_CMD_EXECUTOR_WA  AVALON_ST_VVC,3     Executor: Waiting for command
+%%           0.0 ns  Log    ID_CMD_EXECUTOR_WA  AVALON_ST_VVC,2     Executor: Waiting for command
+%%           0.0 ns  Log    ID_CMD_EXECUTOR_WA  AVALON_ST_VVC,1     Executor: Waiting for command
+%%           0.0 ns  Log    ID_CMD_EXECUTOR_WA  AVALON_ST_VVC,0     Executor: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  AVALON_ST_VVC,3     disable_log_msg(AVALON_ST_VVC,ALL_INSTANCES, ID_CMD_INTERPRETER). Command received  [1]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,3     disable_log_msg(ID_CMD_INTERPRETER). ' [1]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  AVALON_ST_VVC,2     disable_log_msg(AVALON_ST_VVC,ALL_INSTANCES, ID_CMD_INTERPRETER). Command received  [1]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,2     disable_log_msg(ID_CMD_INTERPRETER). ' [1]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  AVALON_ST_VVC,1     disable_log_msg(AVALON_ST_VVC,ALL_INSTANCES, ID_CMD_INTERPRETER). Command received  [1]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,1     disable_log_msg(ID_CMD_INTERPRETER). ' [1]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  AVALON_ST_VVC,0     disable_log_msg(AVALON_ST_VVC,ALL_INSTANCES, ID_CMD_INTERPRETER). Command received  [1]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,0     disable_log_msg(ID_CMD_INTERPRETER). ' [1]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  AVALON_ST_VVC,3     Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  AVALON_ST_VVC,2     Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  AVALON_ST_VVC,1     Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  AVALON_ST_VVC,0     Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(AVALON_ST_VVC,ALL_INSTANCES, ID_CMD_INTERPRETER_WAIT):. [2]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,3     disable_log_msg(ID_CMD_INTERPRETER_WAIT). ' [2]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,2     disable_log_msg(ID_CMD_INTERPRETER_WAIT). ' [2]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,1     disable_log_msg(ID_CMD_INTERPRETER_WAIT). ' [2]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,0     disable_log_msg(ID_CMD_INTERPRETER_WAIT). ' [2]'
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(AVALON_ST_VVC,ALL_INSTANCES, ID_CMD_EXECUTOR):. [3]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,3     disable_log_msg(ID_CMD_EXECUTOR). ' [3]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,2     disable_log_msg(ID_CMD_EXECUTOR). ' [3]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,1     disable_log_msg(ID_CMD_EXECUTOR). ' [3]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,0     disable_log_msg(ID_CMD_EXECUTOR). ' [3]'
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(AVALON_ST_VVC,ALL_INSTANCES, ID_CMD_EXECUTOR_WAIT):. [4]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,3     disable_log_msg(ID_CMD_EXECUTOR_WAIT). ' [4]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,2     disable_log_msg(ID_CMD_EXECUTOR_WAIT). ' [4]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,1     disable_log_msg(ID_CMD_EXECUTOR_WAIT). ' [4]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,0     disable_log_msg(ID_CMD_EXECUTOR_WAIT). ' [4]'
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(AVALON_ST_VVC,ALL_INSTANCES, ID_IMMEDIATE_CMD_WAIT):. [5]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,3     disable_log_msg(ID_IMMEDIATE_CMD_WAIT). ' [5]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,2     disable_log_msg(ID_IMMEDIATE_CMD_WAIT). ' [5]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,1     disable_log_msg(ID_IMMEDIATE_CMD_WAIT). ' [5]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,0     disable_log_msg(ID_IMMEDIATE_CMD_WAIT). ' [5]'
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(AVALON_ST_VVC,ALL_INSTANCES, ID_PACKET_DATA):. [6]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,3     disable_log_msg(ID_PACKET_DATA). ' [6]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,2     disable_log_msg(ID_PACKET_DATA). ' [6]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,1     disable_log_msg(ID_PACKET_DATA). ' [6]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     AVALON_ST_VVC,0     disable_log_msg(ID_PACKET_DATA). ' [6]'
+%% 
+%% 
+%% ============================================================================================================================================================================
+%%           0.0 ns  Log    ID_LOG_HDR_LARGE    TB seq.             Start Simulation of Avalon-ST
+%% ============================================================================================================================================================================
+%%           0.0 ns  Log    ID_CLOCK_GEN        TB seq.             Starting clock Avalon-ST CLK
+%%         100.0 ns  Log    ID_GEN_PULSE        TB seq.             Pulsed to 1 for 100000 ps. 'Pulsing reset for 10 clock periods'
+%% 
+%% 
+%% ============================================================================================================================================================================
+%%         200.0 ns  Log    ID_LOG_HDR_LARGE    TB seq.             Simulating packet-based data: VVC->DUT->VVC
+%% ============================================================================================================================================================================
+%% 
+%% 
+%%         200.0 ns  Log    ID_LOG_HDR          TB seq.             Testing symbol ordering: first symbol in high order bits
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%         200.0 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 9 words, ch:0):. [7]
+%%         200.0 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 9 words, ch:0):. [8]
+%%         200.0 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns):. [9]
+%%         200.0 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns) - Pending completion. [9]
+%%         205.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(9 words/36 sym, ch:0)=> '  [7]'
+%%         205.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(9 words/36 sym, ch:0) while executing avalon_st_receive=> '  [8]'
+%%         232.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(9 words/36 sym, ch:0) DONE. '  [7]'
+%%         252.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(9 words/36 sym, ch:0)=> OK, received 9 symbols. '  [8]'
+%%         252.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns)=> AVALON_ST_VVC,1 finished. [9]
+%% 
+%% 
+%%         252.5 ns  Log    ID_LOG_HDR          TB seq.             Testing symbol ordering: first symbol in low order bits
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%         252.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 9 words, ch:0):. [10]
+%%         252.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 9 words, ch:0):. [11]
+%%         252.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns):. [12]
+%%         252.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns) - Pending completion. [12]
+%%         255.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(9 words/36 sym, ch:0)=> '  [10]'
+%%         255.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(9 words/36 sym, ch:0) while executing avalon_st_receive=> '  [11]'
+%%         282.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(9 words/36 sym, ch:0) DONE. '  [10]'
+%%         302.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(9 words/36 sym, ch:0)=> OK, received 9 symbols. '  [11]'
+%%         302.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns)=> AVALON_ST_VVC,1 finished. [12]
+%% 
+%% 
+%%         302.5 ns  Log    ID_LOG_HDR          TB seq.             Testing that VVC procedures normalize data arrays
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%         302.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 7 words, ch:0):. [13]
+%%         302.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 7 words, ch:0):. [14]
+%%         302.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns):. [15]
+%%         302.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns) - Pending completion. [15]
+%%         305.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(7 words/28 sym, ch:0)=> '  [13]'
+%%         305.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(7 words/28 sym, ch:0) while executing avalon_st_receive=> '  [14]'
+%%         322.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(7 words/28 sym, ch:0) DONE. '  [13]'
+%%         342.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(7 words/28 sym, ch:0)=> OK, received 7 symbols. '  [14]'
+%%         342.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns)=> AVALON_ST_VVC,1 finished. [15]
+%% 
+%% 
+%%         342.5 ns  Log    ID_LOG_HDR          TB seq.             Testing explicit std_logic_vector values
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%         342.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 5 words, ch:0):. [16]
+%%         342.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 5 words, ch:0):. [17]
+%%         342.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns):. [18]
+%%         342.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns) - Pending completion. [18]
+%%         345.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(5 words/20 sym, ch:0)=> '  [16]'
+%%         345.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(5 words/20 sym, ch:0) while executing avalon_st_receive=> '  [17]'
+%%         362.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(5 words/20 sym, ch:0) DONE. '  [16]'
+%%         382.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(5 words/20 sym, ch:0)=> OK, received 5 symbols. '  [17]'
+%%         382.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns)=> AVALON_ST_VVC,1 finished. [18]
+%% 
+%% 
+%%         382.5 ns  Log    ID_LOG_HDR          TB seq.             Testing shortest packets possible
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%         382.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 1 words, ch:0):. [19]
+%%         382.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 1 words, ch:0):. [20]
+%%         382.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns):. [21]
+%%         382.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns) - Pending completion. [21]
+%%         385.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(1 words/4 sym, ch:0)=> '  [19]'
+%%         385.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(1 words/4 sym, ch:0) while executing avalon_st_receive=> '  [20]'
+%%         392.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(1 words/4 sym, ch:0) DONE. '  [19]'
+%%         412.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(1 words/4 sym, ch:0)=> OK, received 1 symbols. '  [20]'
+%%         412.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns)=> AVALON_ST_VVC,1 finished. [21]
+%%         412.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 1 words, ch:0):. [22]
+%%         412.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 1 words, ch:0):. [23]
+%%         412.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 1 words, ch:0):. [24]
+%%         412.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 1 words, ch:0):. [25]
+%%         412.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns):. [26]
+%%         412.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns) - Pending completion. [26]
+%%         415.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(1 words/4 sym, ch:0)=> '  [22]'
+%%         415.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(1 words/4 sym, ch:0) while executing avalon_st_receive=> '  [24]'
+%%         422.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(1 words/4 sym, ch:0) DONE. '  [22]'
+%%         425.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(1 words/4 sym, ch:0)=> '  [23]'
+%%         432.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(1 words/4 sym, ch:0) DONE. '  [23]'
+%%         442.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(1 words/4 sym, ch:0)=> OK, received 1 symbols. '  [24]'
+%%         445.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(1 words/4 sym, ch:0) while executing avalon_st_receive=> '  [25]'
+%%         452.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(1 words/4 sym, ch:0)=> OK, received 1 symbols. '  [25]'
+%%         452.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns)=> AVALON_ST_VVC,1 finished. [26]
+%%         452.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 1 words, ch:0):. [27]
+%%         452.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 1 words, ch:0):. [28]
+%%         452.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 1 words, ch:0):. [29]
+%%         452.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 1 words, ch:0):. [30]
+%%         452.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 1 words, ch:0):. [31]
+%%         452.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 1 words, ch:0):. [32]
+%%         452.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns):. [33]
+%%         452.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns) - Pending completion. [33]
+%%         455.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(1 words/4 sym, ch:0)=> '  [27]'
+%%         455.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(1 words/4 sym, ch:0) while executing avalon_st_receive=> '  [30]'
+%%         462.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(1 words/4 sym, ch:0) DONE. '  [27]'
+%%         465.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(1 words/4 sym, ch:0)=> '  [28]'
+%%         472.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(1 words/4 sym, ch:0) DONE. '  [28]'
+%%         475.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(1 words/4 sym, ch:0)=> '  [29]'
+%%         482.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(1 words/4 sym, ch:0)=> OK, received 1 symbols. '  [30]'
+%%         482.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(1 words/4 sym, ch:0) DONE. '  [29]'
+%%         485.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(1 words/4 sym, ch:0) while executing avalon_st_receive=> '  [31]'
+%%         492.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(1 words/4 sym, ch:0)=> OK, received 1 symbols. '  [31]'
+%%         495.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(1 words/4 sym, ch:0) while executing avalon_st_receive=> '  [32]'
+%%         502.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(1 words/4 sym, ch:0)=> OK, received 1 symbols. '  [32]'
+%%         502.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns)=> AVALON_ST_VVC,1 finished. [33]
+%%         502.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 1 words, ch:0):. [34]
+%%         502.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 1 words, ch:0):. [35]
+%%         502.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 1 words, ch:0):. [36]
+%%         502.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 1 words, ch:0):. [37]
+%%         502.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 1 words, ch:0):. [38]
+%%         502.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 1 words, ch:0):. [39]
+%%         502.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 1 words, ch:0):. [40]
+%%         502.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 1 words, ch:0):. [41]
+%%         502.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns):. [42]
+%%         502.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns) - Pending completion. [42]
+%%         505.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(1 words/4 sym, ch:0)=> '  [34]'
+%%         505.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(1 words/4 sym, ch:0) while executing avalon_st_receive=> '  [38]'
+%%         512.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(1 words/4 sym, ch:0) DONE. '  [34]'
+%%         515.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(1 words/4 sym, ch:0)=> '  [35]'
+%%         522.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(1 words/4 sym, ch:0) DONE. '  [35]'
+%%         525.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(1 words/4 sym, ch:0)=> '  [36]'
+%%         532.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(1 words/4 sym, ch:0)=> OK, received 1 symbols. '  [38]'
+%%         532.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(1 words/4 sym, ch:0) DONE. '  [36]'
+%%         535.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(1 words/4 sym, ch:0) while executing avalon_st_receive=> '  [39]'
+%%         535.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(1 words/4 sym, ch:0)=> '  [37]'
+%%         542.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(1 words/4 sym, ch:0)=> OK, received 1 symbols. '  [39]'
+%%         542.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(1 words/4 sym, ch:0) DONE. '  [37]'
+%%         545.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(1 words/4 sym, ch:0) while executing avalon_st_receive=> '  [40]'
+%%         552.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(1 words/4 sym, ch:0)=> OK, received 1 symbols. '  [40]'
+%%         555.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(1 words/4 sym, ch:0) while executing avalon_st_receive=> '  [41]'
+%%         562.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(1 words/4 sym, ch:0)=> OK, received 1 symbols. '  [41]'
+%%         562.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns)=> AVALON_ST_VVC,1 finished. [42]
+%% 
+%% 
+%%         562.5 ns  Log    ID_LOG_HDR          TB seq.             Testing different packet sizes and channels
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 1 words, ch:0):. [43]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 2 words, ch:1):. [44]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 3 words, ch:2):. [45]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 4 words, ch:3):. [46]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 5 words, ch:4):. [47]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 6 words, ch:5):. [48]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 7 words, ch:6):. [49]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 8 words, ch:7):. [50]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 9 words, ch:8):. [51]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 10 words, ch:9):. [52]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 11 words, ch:10):. [53]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 12 words, ch:11):. [54]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 13 words, ch:12):. [55]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 14 words, ch:13):. [56]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 15 words, ch:14):. [57]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 16 words, ch:15):. [58]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 17 words, ch:16):. [59]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 18 words, ch:17):. [60]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 19 words, ch:18):. [61]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 20 words, ch:19):. [62]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 21 words, ch:20):. [63]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 22 words, ch:21):. [64]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 23 words, ch:22):. [65]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 24 words, ch:23):. [66]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 25 words, ch:24):. [67]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 26 words, ch:25):. [68]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 27 words, ch:26):. [69]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 28 words, ch:27):. [70]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 29 words, ch:28):. [71]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 30 words, ch:29):. [72]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 31 words, ch:30):. [73]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 1 words, ch:0):. [74]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 2 words, ch:1):. [75]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 3 words, ch:2):. [76]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 4 words, ch:3):. [77]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 5 words, ch:4):. [78]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 6 words, ch:5):. [79]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 7 words, ch:6):. [80]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 8 words, ch:7):. [81]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 9 words, ch:8):. [82]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 10 words, ch:9):. [83]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 11 words, ch:10):. [84]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 12 words, ch:11):. [85]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 13 words, ch:12):. [86]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 14 words, ch:13):. [87]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 15 words, ch:14):. [88]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 16 words, ch:15):. [89]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 17 words, ch:16):. [90]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 18 words, ch:17):. [91]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 19 words, ch:18):. [92]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 20 words, ch:19):. [93]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 21 words, ch:20):. [94]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 22 words, ch:21):. [95]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 23 words, ch:22):. [96]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 24 words, ch:23):. [97]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 25 words, ch:24):. [98]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 26 words, ch:25):. [99]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 27 words, ch:26):. [100]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 28 words, ch:27):. [101]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 29 words, ch:28):. [102]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 30 words, ch:29):. [103]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 31 words, ch:30):. [104]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 100 words, ch:64):. [105]
+%%         562.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 100 words, ch:64):. [106]
+%%         562.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns):. [107]
+%%         562.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns) - Pending completion. [107]
+%%         565.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(1 words/4 sym, ch:0)=> '  [43]'
+%%         565.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(1 words/4 sym, ch:0) while executing avalon_st_receive=> '  [74]'
+%%         572.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(1 words/4 sym, ch:0) DONE. '  [43]'
+%%         575.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(2 words/8 sym, ch:1)=> '  [44]'
+%%         582.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(2 words/8 sym, ch:1) DONE. '  [44]'
+%%         585.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(3 words/12 sym, ch:2)=> '  [45]'
+%%         592.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(1 words/4 sym, ch:0)=> OK, received 1 symbols. '  [74]'
+%%         592.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(3 words/12 sym, ch:2) DONE. '  [45]'
+%%         595.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(2 words/8 sym, ch:1) while executing avalon_st_receive=> '  [75]'
+%%         595.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(4 words/16 sym, ch:3)=> '  [46]'
+%%         602.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(2 words/8 sym, ch:1)=> OK, received 2 symbols. '  [75]'
+%%         602.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(4 words/16 sym, ch:3) DONE. '  [46]'
+%%         605.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(3 words/12 sym, ch:2) while executing avalon_st_receive=> '  [76]'
+%%         605.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(5 words/20 sym, ch:4)=> '  [47]'
+%%         612.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(3 words/12 sym, ch:2)=> OK, received 3 symbols. '  [76]'
+%%         615.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(4 words/16 sym, ch:3) while executing avalon_st_receive=> '  [77]'
+%%         622.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(5 words/20 sym, ch:4) DONE. '  [47]'
+%%         622.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(4 words/16 sym, ch:3)=> OK, received 4 symbols. '  [77]'
+%%         625.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(6 words/24 sym, ch:5)=> '  [48]'
+%%         625.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(5 words/20 sym, ch:4) while executing avalon_st_receive=> '  [78]'
+%%         642.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(6 words/24 sym, ch:5) DONE. '  [48]'
+%%         642.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(5 words/20 sym, ch:4)=> OK, received 5 symbols. '  [78]'
+%%         645.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(7 words/28 sym, ch:6)=> '  [49]'
+%%         645.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(6 words/24 sym, ch:5) while executing avalon_st_receive=> '  [79]'
+%%         662.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(7 words/28 sym, ch:6) DONE. '  [49]'
+%%         662.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(6 words/24 sym, ch:5)=> OK, received 6 symbols. '  [79]'
+%%         665.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(8 words/32 sym, ch:7)=> '  [50]'
+%%         665.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(7 words/28 sym, ch:6) while executing avalon_st_receive=> '  [80]'
+%%         682.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(8 words/32 sym, ch:7) DONE. '  [50]'
+%%         682.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(7 words/28 sym, ch:6)=> OK, received 7 symbols. '  [80]'
+%%         685.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(9 words/36 sym, ch:8)=> '  [51]'
+%%         685.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(8 words/32 sym, ch:7) while executing avalon_st_receive=> '  [81]'
+%%         702.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(8 words/32 sym, ch:7)=> OK, received 8 symbols. '  [81]'
+%%         705.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(9 words/36 sym, ch:8) while executing avalon_st_receive=> '  [82]'
+%%         712.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(9 words/36 sym, ch:8) DONE. '  [51]'
+%%         715.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(10 words/40 sym, ch:9)=> '  [52]'
+%%         732.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(9 words/36 sym, ch:8)=> OK, received 9 symbols. '  [82]'
+%%         735.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(10 words/40 sym, ch:9) while executing avalon_st_receive=> '  [83]'
+%%         742.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(10 words/40 sym, ch:9) DONE. '  [52]'
+%%         745.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(11 words/44 sym, ch:10)=> '  [53]'
+%%         762.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(10 words/40 sym, ch:9)=> OK, received 10 symbols. '  [83]'
+%%         765.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(11 words/44 sym, ch:10) while executing avalon_st_receive=> '  [84]'
+%%         772.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(11 words/44 sym, ch:10) DONE. '  [53]'
+%%         775.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(12 words/48 sym, ch:11)=> '  [54]'
+%%         792.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(11 words/44 sym, ch:10)=> OK, received 11 symbols. '  [84]'
+%%         795.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(12 words/48 sym, ch:11) while executing avalon_st_receive=> '  [85]'
+%%         802.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(12 words/48 sym, ch:11) DONE. '  [54]'
+%%         805.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(13 words/52 sym, ch:12)=> '  [55]'
+%%         822.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(12 words/48 sym, ch:11)=> OK, received 12 symbols. '  [85]'
+%%         825.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(13 words/52 sym, ch:12) while executing avalon_st_receive=> '  [86]'
+%%         842.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(13 words/52 sym, ch:12) DONE. '  [55]'
+%%         845.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(14 words/56 sym, ch:13)=> '  [56]'
+%%         862.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(13 words/52 sym, ch:12)=> OK, received 13 symbols. '  [86]'
+%%         865.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(14 words/56 sym, ch:13) while executing avalon_st_receive=> '  [87]'
+%%         882.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(14 words/56 sym, ch:13) DONE. '  [56]'
+%%         885.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(15 words/60 sym, ch:14)=> '  [57]'
+%%         902.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(14 words/56 sym, ch:13)=> OK, received 14 symbols. '  [87]'
+%%         905.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(15 words/60 sym, ch:14) while executing avalon_st_receive=> '  [88]'
+%%         922.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(15 words/60 sym, ch:14) DONE. '  [57]'
+%%         925.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:15)=> '  [58]'
+%%         942.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(15 words/60 sym, ch:14)=> OK, received 15 symbols. '  [88]'
+%%         945.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:15) while executing avalon_st_receive=> '  [89]'
+%%         962.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(16 words/64 sym, ch:15) DONE. '  [58]'
+%%         965.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(17 words/68 sym, ch:16)=> '  [59]'
+%%         982.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(16 words/64 sym, ch:15)=> OK, received 16 symbols. '  [89]'
+%%         985.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(17 words/68 sym, ch:16) while executing avalon_st_receive=> '  [90]'
+%%        1012.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(17 words/68 sym, ch:16) DONE. '  [59]'
+%%        1015.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(18 words/72 sym, ch:17)=> '  [60]'
+%%        1032.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(17 words/68 sym, ch:16)=> OK, received 17 symbols. '  [90]'
+%%        1035.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(18 words/72 sym, ch:17) while executing avalon_st_receive=> '  [91]'
+%%        1062.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(18 words/72 sym, ch:17) DONE. '  [60]'
+%%        1065.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(19 words/76 sym, ch:18)=> '  [61]'
+%%        1082.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(18 words/72 sym, ch:17)=> OK, received 18 symbols. '  [91]'
+%%        1085.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(19 words/76 sym, ch:18) while executing avalon_st_receive=> '  [92]'
+%%        1112.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(19 words/76 sym, ch:18) DONE. '  [61]'
+%%        1115.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(20 words/80 sym, ch:19)=> '  [62]'
+%%        1132.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(19 words/76 sym, ch:18)=> OK, received 19 symbols. '  [92]'
+%%        1135.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(20 words/80 sym, ch:19) while executing avalon_st_receive=> '  [93]'
+%%        1162.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(20 words/80 sym, ch:19) DONE. '  [62]'
+%%        1165.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(21 words/84 sym, ch:20)=> '  [63]'
+%%        1182.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(20 words/80 sym, ch:19)=> OK, received 20 symbols. '  [93]'
+%%        1185.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(21 words/84 sym, ch:20) while executing avalon_st_receive=> '  [94]'
+%%        1222.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(21 words/84 sym, ch:20) DONE. '  [63]'
+%%        1225.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(22 words/88 sym, ch:21)=> '  [64]'
+%%        1242.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(21 words/84 sym, ch:20)=> OK, received 21 symbols. '  [94]'
+%%        1245.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(22 words/88 sym, ch:21) while executing avalon_st_receive=> '  [95]'
+%%        1282.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(22 words/88 sym, ch:21) DONE. '  [64]'
+%%        1285.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(23 words/92 sym, ch:22)=> '  [65]'
+%%        1302.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(22 words/88 sym, ch:21)=> OK, received 22 symbols. '  [95]'
+%%        1305.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(23 words/92 sym, ch:22) while executing avalon_st_receive=> '  [96]'
+%%        1342.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(23 words/92 sym, ch:22) DONE. '  [65]'
+%%        1345.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(24 words/96 sym, ch:23)=> '  [66]'
+%%        1362.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(23 words/92 sym, ch:22)=> OK, received 23 symbols. '  [96]'
+%%        1365.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(24 words/96 sym, ch:23) while executing avalon_st_receive=> '  [97]'
+%%        1402.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(24 words/96 sym, ch:23) DONE. '  [66]'
+%%        1405.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(25 words/100 sym, ch:24)=> '  [67]'
+%%        1422.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(24 words/96 sym, ch:23)=> OK, received 24 symbols. '  [97]'
+%%        1425.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(25 words/100 sym, ch:24) while executing avalon_st_receive=> '  [98]'
+%%        1472.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(25 words/100 sym, ch:24) DONE. '  [67]'
+%%        1475.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(26 words/104 sym, ch:25)=> '  [68]'
+%%        1492.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(25 words/100 sym, ch:24)=> OK, received 25 symbols. '  [98]'
+%%        1495.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(26 words/104 sym, ch:25) while executing avalon_st_receive=> '  [99]'
+%%        1542.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(26 words/104 sym, ch:25) DONE. '  [68]'
+%%        1545.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(27 words/108 sym, ch:26)=> '  [69]'
+%%        1562.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(26 words/104 sym, ch:25)=> OK, received 26 symbols. '  [99]'
+%%        1565.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(27 words/108 sym, ch:26) while executing avalon_st_receive=> '  [100]'
+%%        1612.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(27 words/108 sym, ch:26) DONE. '  [69]'
+%%        1615.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(28 words/112 sym, ch:27)=> '  [70]'
+%%        1632.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(27 words/108 sym, ch:26)=> OK, received 27 symbols. '  [100]'
+%%        1635.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(28 words/112 sym, ch:27) while executing avalon_st_receive=> '  [101]'
+%%        1682.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(28 words/112 sym, ch:27) DONE. '  [70]'
+%%        1685.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(29 words/116 sym, ch:28)=> '  [71]'
+%%        1702.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(28 words/112 sym, ch:27)=> OK, received 28 symbols. '  [101]'
+%%        1705.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(29 words/116 sym, ch:28) while executing avalon_st_receive=> '  [102]'
+%%        1762.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(29 words/116 sym, ch:28) DONE. '  [71]'
+%%        1765.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(30 words/120 sym, ch:29)=> '  [72]'
+%%        1782.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(29 words/116 sym, ch:28)=> OK, received 29 symbols. '  [102]'
+%%        1785.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(30 words/120 sym, ch:29) while executing avalon_st_receive=> '  [103]'
+%%        1842.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(30 words/120 sym, ch:29) DONE. '  [72]'
+%%        1845.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(31 words/124 sym, ch:30)=> '  [73]'
+%%        1862.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(30 words/120 sym, ch:29)=> OK, received 30 symbols. '  [103]'
+%%        1865.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(31 words/124 sym, ch:30) while executing avalon_st_receive=> '  [104]'
+%%        1922.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(31 words/124 sym, ch:30) DONE. '  [73]'
+%%        1925.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(100 words/400 sym, ch:64)=> '  [105]'
+%%        1942.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(31 words/124 sym, ch:30)=> OK, received 31 symbols. '  [104]'
+%%        1945.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(100 words/400 sym, ch:64) while executing avalon_st_receive=> '  [106]'
+%%        2172.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(100 words/400 sym, ch:64) DONE. '  [105]'
+%%        2192.5 ns  Log    ID_BFM              AVALON_ST_VVC,1     avalon_st_expect(100 words/400 sym, ch:64)=> OK, received 100 symbols. '  [106]'
+%%        2192.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns)=> AVALON_ST_VVC,1 finished. [107]
+%% 
+%% 
+%%        2192.5 ns  Log    ID_LOG_HDR          TB seq.             Testing receive and fetch
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%        2192.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 5 words, ch:10):. [108]
+%%        2192.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_receive(AVALON_ST_VVC,1):. [109]
+%%        2192.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 109, 10000 ns):. [110]
+%%        2192.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 109, 10000 ns) - Pending completion. [110]
+%%        2195.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(5 words/20 sym, ch:10)=> '  [108]'
+%%        2195.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_receive(5 words/20 sym)=> '  [109]'
+%%        2212.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(5 words/20 sym, ch:10) DONE. '  [108]'
+%%        2232.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,1     avalon_st_receive(5 words/20 sym) DONE. '  [109]'
+%%        2232.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 109, 10000 ns)=> AVALON_ST_VVC,1 finished. [110]
+%%        2232.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(AVALON_ST_VVC,1, 109):. [111]
+%%        2232.5 ns  Log    ID_IMMEDIATE_CMD    AVALON_ST_VVC,1     fetch_result(AVALON_ST_VVC,1, 109) Requested result is found.   [111]
+%%        2232.5 ns  Log    ID_UVVM_CMD_RESULT  TB seq.(uvvm)       fetch_result(AVALON_ST_VVC,1, 109): Legal=>true, Result=>1024 Symbols [111]
+%%        2232.5 ns  Log    PASSED              TB seq.             check_value(slv, x"0A") => OK. Value was x"0A". 'Checking fetch result: channel'
+%%        2232.5 ns  Log    PASSED              TB seq.             check_value(slv, x"47") => OK. Value was x"47". 'Checking fetch result: data_array'
+%%        2232.5 ns  Log    PASSED              TB seq.             check_value(slv, x"14") => OK. Value was x"14". 'Checking fetch result: data_array'
+%%        2232.5 ns  Log    PASSED              TB seq.             check_value(slv, x"3B") => OK. Value was x"3B". 'Checking fetch result: data_array'
+%%        2232.5 ns  Log    PASSED              TB seq.             check_value(slv, x"25") => OK. Value was x"25". 'Checking fetch result: data_array'
+%%        2232.5 ns  Log    PASSED              TB seq.             check_value(slv, x"93") => OK. Value was x"93". 'Checking fetch result: data_array'
+%% 
+%% 
+%%        2232.5 ns  Log    ID_LOG_HDR          TB seq.             Testing error case: receive() with missing start of packet
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%        2232.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 100 words, ch:0):. [112]
+%%        2232.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_receive(AVALON_ST_VVC,1):. [113]
+%%        2232.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns):. [114]
+%%        2232.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns) - Pending completion. [114]
+%%        2235.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(100 words/400 sym, ch:0)=> '  [112]'
+%%        2235.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_receive(100 words/400 sym)=> '  [113]'
+%%        2260.0 ns  Alert  ERROR               AVALON_ST_VVC,1     avalon_st_receive(100 words/400 sym)=> Failed. Start of packet not set at first valid transfer. '  [113]'
+%%        2482.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(100 words/400 sym, ch:0) DONE. '  [112]'
+%%        2502.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,1     avalon_st_receive(100 words/400 sym) DONE. '  [113]'
+%%        2502.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns)=> AVALON_ST_VVC,1 finished. [114]
+%% 
+%% 
+%%        2502.5 ns  Log    ID_LOG_HDR          TB seq.             Testing error case: receive() with start of packet in wrong position
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%        2502.5 ns  Alert  ERROR               AVALON_ST_VVC,1     Unwanted activity detected. start_of_packet changed from 0 to 1
+%%        2502.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 8 words, ch:0):. [115]
+%%        2502.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_receive(AVALON_ST_VVC,1):. [116]
+%%        2502.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns):. [117]
+%%        2502.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns) - Pending completion. [117]
+%%        2505.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(8 words/32 sym, ch:0)=> '  [115]'
+%%        2505.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_receive(8 words/32 sym)=> '  [116]'
+%%        2522.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(8 words/32 sym, ch:0) DONE. '  [115]'
+%%        2540.0 ns  Alert  ERROR               AVALON_ST_VVC,1     avalon_st_receive(8 words/32 sym)=> Failed. Start of packet set at symbol #4. '  [116]'
+%%        2542.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,1     avalon_st_receive(8 words/32 sym) DONE. '  [116]'
+%%        2542.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns)=> AVALON_ST_VVC,1 finished. [117]
+%%        2542.5 ns  Alert  ERROR               AVALON_ST_VVC,1     Unwanted activity detected. start_of_packet changed from 1 to 0
+%% 
+%% 
+%%        2542.5 ns  Log    ID_LOG_HDR          TB seq.             Testing error case: receive() with missing end of packet
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%        2542.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 100 words, ch:0):. [118]
+%%        2542.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_receive(AVALON_ST_VVC,1):. [119]
+%%        2542.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns):. [120]
+%%        2542.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns) - Pending completion. [120]
+%%        2545.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(100 words/400 sym, ch:0)=> '  [118]'
+%%        2545.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_receive(100 words/400 sym)=> '  [119]'
+%%        2792.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(100 words/400 sym, ch:0) DONE. '  [118]'
+%%        2810.0 ns  Alert  ERROR               AVALON_ST_VVC,1     avalon_st_receive(100 words/400 sym)=> Failed. End of packet not set at last valid transfer. '  [119]'
+%%        2812.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,1     avalon_st_receive(100 words/400 sym) DONE. '  [119]'
+%%        2812.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns)=> AVALON_ST_VVC,1 finished. [120]
+%% 
+%% 
+%%        2812.5 ns  Log    ID_LOG_HDR          TB seq.             Testing error case: receive() with end of packet in wrong position
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%        2812.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 4 words, ch:0):. [121]
+%%        2812.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_receive(AVALON_ST_VVC,1):. [122]
+%%        2812.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns):. [123]
+%%        2812.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns) - Pending completion. [123]
+%%        2815.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(4 words/16 sym, ch:0)=> '  [121]'
+%%        2815.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_receive(8 words/32 sym)=> '  [122]'
+%%        2822.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(4 words/16 sym, ch:0) DONE. '  [121]'
+%%        2840.0 ns  Alert  ERROR               AVALON_ST_VVC,1     avalon_st_receive(8 words/32 sym)=> Failed. End of packet set at symbol #0. '  [122]'
+%%        2842.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,1     avalon_st_receive(8 words/32 sym) DONE. '  [122]'
+%%        2842.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns)=> AVALON_ST_VVC,1 finished. [123]
+%% 
+%% 
+%%        2842.5 ns  Log    ID_LOG_HDR          TB seq.             Testing error case: receive() with missing empty symbols
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%        2842.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 11 words, ch:0):. [124]
+%%        2842.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_receive(AVALON_ST_VVC,1):. [125]
+%%        2842.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns):. [126]
+%%        2842.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns) - Pending completion. [126]
+%%        2845.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(11 words/44 sym, ch:0)=> '  [124]'
+%%        2845.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_receive(11 words/44 sym)=> '  [125]'
+%%        2872.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(11 words/44 sym, ch:0) DONE. '  [124]'
+%%        2890.0 ns  Alert  ERROR               AVALON_ST_VVC,1     avalon_st_receive(11 words/44 sym)=> Failed. Empty signal not set correctly for the last transfer. '  [125]'
+%%        2892.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,1     avalon_st_receive(11 words/44 sym) DONE. '  [125]'
+%%        2892.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns)=> AVALON_ST_VVC,1 finished. [126]
+%% 
+%% 
+%%        2892.5 ns  Log    ID_LOG_HDR          TB seq.             Testing error case: receive() timeout - no valid data
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%        2892.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_receive(AVALON_ST_VVC,1):. [127]
+%%        2895.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_receive(100 words/400 sym)=> '  [127]'
+%% 
+%% 
+%%       12902.5 ns  Log    ID_LOG_HDR          TB seq.             Testing error case: expect() wrong data
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%       12902.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 11 words, ch:0):. [128]
+%%       12902.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 11 words, ch:0):. [129]
+%%       12902.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns):. [130]
+%%       12902.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns) - Pending completion. [130]
+%%       12905.0 ns  Alert  ERROR               AVALON_ST_VVC,1     avalon_st_receive(100 words/400 sym)=> Failed. Timeout while waiting for valid data during 1000 clock cycles. '  [127]'
+%%       12905.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(11 words/44 sym, ch:0)=> '  [128]'
+%%       12915.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(11 words/44 sym, ch:0) while executing avalon_st_receive=> '  [129]'
+%%       12932.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(11 words/44 sym, ch:0) DONE. '  [128]'
+%%       12952.5 ns  Alert  ERROR               AVALON_ST_VVC,1     avalon_st_expect(11 words/44 sym, ch:0)=> Failed in 40 data bits. First mismatch in symbol# 1. Was x"47".
+%%:                                                                 Expected x"11".
+%%:                                                                 Was:
+%%:                                                                 (47, 14, 3B, 25, 93, 22, E3, 70, 99, 2B, 11)
+%%:                                                                 Expected:
+%%:                                                                 (11, 2C, 9C, 80, CB, 64, 4F, 21, 92, 60, 7B). '  [129]'
+%%       12952.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns)=> AVALON_ST_VVC,1 finished. [130]
+%% 
+%% 
+%%       12952.5 ns  Log    ID_LOG_HDR          TB seq.             Testing error case: expect() wrong channel
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%       12952.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,0, 100 words, ch:1):. [131]
+%%       12952.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,1, 100 words, ch:5):. [132]
+%%       12952.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns):. [133]
+%%       12952.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns) - Pending completion. [133]
+%%       12955.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,0     avalon_st_transmit(100 words/400 sym, ch:1)=> '  [131]'
+%%       12955.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,1     avalon_st_expect(100 words/400 sym, ch:5) while executing avalon_st_receive=> '  [132]'
+%%       13202.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,0     avalon_st_transmit(100 words/400 sym, ch:1) DONE. '  [131]'
+%%       13222.5 ns  Alert  ERROR               AVALON_ST_VVC,1     avalon_st_expect(100 words/400 sym, ch:5)=> Failed. Wrong channel. Was x"01". Expected x"05".   [132]
+%%       13222.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,1, 10000 ns)=> AVALON_ST_VVC,1 finished. [133]
+%% 
+%% 
+%% ============================================================================================================================================================================
+%%       13222.5 ns  Log    ID_LOG_HDR_LARGE    TB seq.             Simulating packet-based data: VVC->VVC
+%% ============================================================================================================================================================================
+%% 
+%% 
+%%       13222.5 ns  Log    ID_LOG_HDR          TB seq.             Testing shortest packets possible
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%       13222.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 1 words, ch:0):. [134]
+%%       13222.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 1 words, ch:0):. [135]
+%%       13222.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 10000 ns):. [136]
+%%       13222.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 10000 ns) - Pending completion. [136]
+%%       13225.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(1 words/4 sym, ch:0)=> '  [134]'
+%%       13225.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(1 words/4 sym, ch:0) while executing avalon_st_receive=> '  [135]'
+%%       13242.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(1 words/4 sym, ch:0) DONE. '  [134]'
+%%       13242.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(1 words/4 sym, ch:0)=> OK, received 1 symbols. '  [135]'
+%%       13242.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 10000 ns)=> AVALON_ST_VVC,3 finished. [136]
+%%       13242.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 1 words, ch:0):. [137]
+%%       13242.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 1 words, ch:0):. [138]
+%%       13242.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 1 words, ch:0):. [139]
+%%       13242.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 1 words, ch:0):. [140]
+%%       13242.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 10000 ns):. [141]
+%%       13242.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 10000 ns) - Pending completion. [141]
+%%       13245.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(1 words/4 sym, ch:0)=> '  [137]'
+%%       13245.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(1 words/4 sym, ch:0) while executing avalon_st_receive=> '  [139]'
+%%       13262.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(1 words/4 sym, ch:0) DONE. '  [137]'
+%%       13262.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(1 words/4 sym, ch:0)=> OK, received 1 symbols. '  [139]'
+%%       13265.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(1 words/4 sym, ch:0)=> '  [138]'
+%%       13265.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(1 words/4 sym, ch:0) while executing avalon_st_receive=> '  [140]'
+%%       13282.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(1 words/4 sym, ch:0) DONE. '  [138]'
+%%       13282.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(1 words/4 sym, ch:0)=> OK, received 1 symbols. '  [140]'
+%%       13282.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 10000 ns)=> AVALON_ST_VVC,3 finished. [141]
+%%       13282.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 1 words, ch:0):. [142]
+%%       13282.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 1 words, ch:0):. [143]
+%%       13282.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 1 words, ch:0):. [144]
+%%       13282.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 1 words, ch:0):. [145]
+%%       13282.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 1 words, ch:0):. [146]
+%%       13282.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 1 words, ch:0):. [147]
+%%       13282.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 10000 ns):. [148]
+%%       13282.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 10000 ns) - Pending completion. [148]
+%%       13285.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(1 words/4 sym, ch:0)=> '  [142]'
+%%       13285.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(1 words/4 sym, ch:0) while executing avalon_st_receive=> '  [145]'
+%%       13302.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(1 words/4 sym, ch:0) DONE. '  [142]'
+%%       13302.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(1 words/4 sym, ch:0)=> OK, received 1 symbols. '  [145]'
+%%       13305.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(1 words/4 sym, ch:0)=> '  [143]'
+%%       13305.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(1 words/4 sym, ch:0) while executing avalon_st_receive=> '  [146]'
+%%       13322.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(1 words/4 sym, ch:0) DONE. '  [143]'
+%%       13322.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(1 words/4 sym, ch:0)=> OK, received 1 symbols. '  [146]'
+%%       13325.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(1 words/4 sym, ch:0)=> '  [144]'
+%%       13325.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(1 words/4 sym, ch:0) while executing avalon_st_receive=> '  [147]'
+%%       13342.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(1 words/4 sym, ch:0) DONE. '  [144]'
+%%       13342.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(1 words/4 sym, ch:0)=> OK, received 1 symbols. '  [147]'
+%%       13342.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 10000 ns)=> AVALON_ST_VVC,3 finished. [148]
+%%       13342.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 1 words, ch:0):. [149]
+%%       13342.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 1 words, ch:0):. [150]
+%%       13342.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 1 words, ch:0):. [151]
+%%       13342.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 1 words, ch:0):. [152]
+%%       13342.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 1 words, ch:0):. [153]
+%%       13342.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 1 words, ch:0):. [154]
+%%       13342.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 1 words, ch:0):. [155]
+%%       13342.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 1 words, ch:0):. [156]
+%%       13342.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 10000 ns):. [157]
+%%       13342.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 10000 ns) - Pending completion. [157]
+%%       13345.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(1 words/4 sym, ch:0)=> '  [149]'
+%%       13345.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(1 words/4 sym, ch:0) while executing avalon_st_receive=> '  [153]'
+%%       13362.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(1 words/4 sym, ch:0) DONE. '  [149]'
+%%       13362.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(1 words/4 sym, ch:0)=> OK, received 1 symbols. '  [153]'
+%%       13365.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(1 words/4 sym, ch:0)=> '  [150]'
+%%       13365.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(1 words/4 sym, ch:0) while executing avalon_st_receive=> '  [154]'
+%%       13382.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(1 words/4 sym, ch:0) DONE. '  [150]'
+%%       13382.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(1 words/4 sym, ch:0)=> OK, received 1 symbols. '  [154]'
+%%       13385.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(1 words/4 sym, ch:0)=> '  [151]'
+%%       13385.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(1 words/4 sym, ch:0) while executing avalon_st_receive=> '  [155]'
+%%       13402.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(1 words/4 sym, ch:0) DONE. '  [151]'
+%%       13402.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(1 words/4 sym, ch:0)=> OK, received 1 symbols. '  [155]'
+%%       13405.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(1 words/4 sym, ch:0)=> '  [152]'
+%%       13405.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(1 words/4 sym, ch:0) while executing avalon_st_receive=> '  [156]'
+%%       13422.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(1 words/4 sym, ch:0) DONE. '  [152]'
+%%       13422.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(1 words/4 sym, ch:0)=> OK, received 1 symbols. '  [156]'
+%%       13422.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 10000 ns)=> AVALON_ST_VVC,3 finished. [157]
+%% 
+%% 
+%%       13422.5 ns  Log    ID_LOG_HDR          TB seq.             Testing different packet sizes and channels
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 1 words, ch:0):. [158]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 2 words, ch:1):. [159]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 3 words, ch:2):. [160]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 4 words, ch:3):. [161]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 5 words, ch:4):. [162]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 6 words, ch:5):. [163]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 7 words, ch:6):. [164]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 8 words, ch:7):. [165]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 9 words, ch:8):. [166]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 10 words, ch:9):. [167]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 11 words, ch:10):. [168]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 12 words, ch:11):. [169]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 13 words, ch:12):. [170]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 14 words, ch:13):. [171]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 15 words, ch:14):. [172]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 16 words, ch:15):. [173]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 17 words, ch:16):. [174]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 18 words, ch:17):. [175]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 19 words, ch:18):. [176]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 20 words, ch:19):. [177]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 21 words, ch:20):. [178]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 22 words, ch:21):. [179]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 23 words, ch:22):. [180]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 24 words, ch:23):. [181]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 25 words, ch:24):. [182]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 26 words, ch:25):. [183]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 27 words, ch:26):. [184]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 28 words, ch:27):. [185]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 29 words, ch:28):. [186]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 30 words, ch:29):. [187]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 31 words, ch:30):. [188]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 1 words, ch:0):. [189]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 2 words, ch:1):. [190]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 3 words, ch:2):. [191]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 4 words, ch:3):. [192]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 5 words, ch:4):. [193]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 6 words, ch:5):. [194]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 7 words, ch:6):. [195]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 8 words, ch:7):. [196]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 9 words, ch:8):. [197]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 10 words, ch:9):. [198]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 11 words, ch:10):. [199]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 12 words, ch:11):. [200]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 13 words, ch:12):. [201]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 14 words, ch:13):. [202]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 15 words, ch:14):. [203]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 16 words, ch:15):. [204]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 17 words, ch:16):. [205]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 18 words, ch:17):. [206]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 19 words, ch:18):. [207]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 20 words, ch:19):. [208]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 21 words, ch:20):. [209]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 22 words, ch:21):. [210]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 23 words, ch:22):. [211]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 24 words, ch:23):. [212]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 25 words, ch:24):. [213]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 26 words, ch:25):. [214]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 27 words, ch:26):. [215]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 28 words, ch:27):. [216]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 29 words, ch:28):. [217]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 30 words, ch:29):. [218]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 31 words, ch:30):. [219]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 100 words, ch:64):. [220]
+%%       13422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_expect(AVALON_ST_VVC,3, 100 words, ch:64):. [221]
+%%       13422.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 10000 ns):. [222]
+%%       13422.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 10000 ns) - Pending completion. [222]
+%%       13425.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(1 words/4 sym, ch:0)=> '  [158]'
+%%       13425.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(1 words/4 sym, ch:0) while executing avalon_st_receive=> '  [189]'
+%%       13442.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(1 words/4 sym, ch:0) DONE. '  [158]'
+%%       13442.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(1 words/4 sym, ch:0)=> OK, received 1 symbols. '  [189]'
+%%       13445.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(2 words/8 sym, ch:1)=> '  [159]'
+%%       13445.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(2 words/8 sym, ch:1) while executing avalon_st_receive=> '  [190]'
+%%       13462.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(2 words/8 sym, ch:1) DONE. '  [159]'
+%%       13462.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(2 words/8 sym, ch:1)=> OK, received 2 symbols. '  [190]'
+%%       13465.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(3 words/12 sym, ch:2)=> '  [160]'
+%%       13465.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(3 words/12 sym, ch:2) while executing avalon_st_receive=> '  [191]'
+%%       13482.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(3 words/12 sym, ch:2) DONE. '  [160]'
+%%       13482.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(3 words/12 sym, ch:2)=> OK, received 3 symbols. '  [191]'
+%%       13485.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(4 words/16 sym, ch:3)=> '  [161]'
+%%       13485.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(4 words/16 sym, ch:3) while executing avalon_st_receive=> '  [192]'
+%%       13502.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(4 words/16 sym, ch:3) DONE. '  [161]'
+%%       13502.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(4 words/16 sym, ch:3)=> OK, received 4 symbols. '  [192]'
+%%       13505.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(5 words/20 sym, ch:4)=> '  [162]'
+%%       13505.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(5 words/20 sym, ch:4) while executing avalon_st_receive=> '  [193]'
+%%       13532.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(5 words/20 sym, ch:4) DONE. '  [162]'
+%%       13532.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(5 words/20 sym, ch:4)=> OK, received 5 symbols. '  [193]'
+%%       13535.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(6 words/24 sym, ch:5)=> '  [163]'
+%%       13535.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(6 words/24 sym, ch:5) while executing avalon_st_receive=> '  [194]'
+%%       13562.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(6 words/24 sym, ch:5) DONE. '  [163]'
+%%       13562.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(6 words/24 sym, ch:5)=> OK, received 6 symbols. '  [194]'
+%%       13565.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(7 words/28 sym, ch:6)=> '  [164]'
+%%       13565.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(7 words/28 sym, ch:6) while executing avalon_st_receive=> '  [195]'
+%%       13592.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(7 words/28 sym, ch:6) DONE. '  [164]'
+%%       13592.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(7 words/28 sym, ch:6)=> OK, received 7 symbols. '  [195]'
+%%       13595.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(8 words/32 sym, ch:7)=> '  [165]'
+%%       13595.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(8 words/32 sym, ch:7) while executing avalon_st_receive=> '  [196]'
+%%       13622.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(8 words/32 sym, ch:7) DONE. '  [165]'
+%%       13622.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(8 words/32 sym, ch:7)=> OK, received 8 symbols. '  [196]'
+%%       13625.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(9 words/36 sym, ch:8)=> '  [166]'
+%%       13625.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(9 words/36 sym, ch:8) while executing avalon_st_receive=> '  [197]'
+%%       13662.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(9 words/36 sym, ch:8) DONE. '  [166]'
+%%       13662.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(9 words/36 sym, ch:8)=> OK, received 9 symbols. '  [197]'
+%%       13665.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(10 words/40 sym, ch:9)=> '  [167]'
+%%       13665.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(10 words/40 sym, ch:9) while executing avalon_st_receive=> '  [198]'
+%%       13702.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(10 words/40 sym, ch:9) DONE. '  [167]'
+%%       13702.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(10 words/40 sym, ch:9)=> OK, received 10 symbols. '  [198]'
+%%       13705.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(11 words/44 sym, ch:10)=> '  [168]'
+%%       13705.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(11 words/44 sym, ch:10) while executing avalon_st_receive=> '  [199]'
+%%       13742.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(11 words/44 sym, ch:10) DONE. '  [168]'
+%%       13742.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(11 words/44 sym, ch:10)=> OK, received 11 symbols. '  [199]'
+%%       13745.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(12 words/48 sym, ch:11)=> '  [169]'
+%%       13745.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(12 words/48 sym, ch:11) while executing avalon_st_receive=> '  [200]'
+%%       13782.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(12 words/48 sym, ch:11) DONE. '  [169]'
+%%       13782.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(12 words/48 sym, ch:11)=> OK, received 12 symbols. '  [200]'
+%%       13785.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(13 words/52 sym, ch:12)=> '  [170]'
+%%       13785.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(13 words/52 sym, ch:12) while executing avalon_st_receive=> '  [201]'
+%%       13832.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(13 words/52 sym, ch:12) DONE. '  [170]'
+%%       13832.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(13 words/52 sym, ch:12)=> OK, received 13 symbols. '  [201]'
+%%       13835.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(14 words/56 sym, ch:13)=> '  [171]'
+%%       13835.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(14 words/56 sym, ch:13) while executing avalon_st_receive=> '  [202]'
+%%       13882.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(14 words/56 sym, ch:13) DONE. '  [171]'
+%%       13882.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(14 words/56 sym, ch:13)=> OK, received 14 symbols. '  [202]'
+%%       13885.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(15 words/60 sym, ch:14)=> '  [172]'
+%%       13885.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(15 words/60 sym, ch:14) while executing avalon_st_receive=> '  [203]'
+%%       13932.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(15 words/60 sym, ch:14) DONE. '  [172]'
+%%       13932.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(15 words/60 sym, ch:14)=> OK, received 15 symbols. '  [203]'
+%%       13935.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:15)=> '  [173]'
+%%       13935.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:15) while executing avalon_st_receive=> '  [204]'
+%%       13982.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(16 words/64 sym, ch:15) DONE. '  [173]'
+%%       13982.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(16 words/64 sym, ch:15)=> OK, received 16 symbols. '  [204]'
+%%       13985.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(17 words/68 sym, ch:16)=> '  [174]'
+%%       13985.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(17 words/68 sym, ch:16) while executing avalon_st_receive=> '  [205]'
+%%       14042.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(17 words/68 sym, ch:16) DONE. '  [174]'
+%%       14042.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(17 words/68 sym, ch:16)=> OK, received 17 symbols. '  [205]'
+%%       14045.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(18 words/72 sym, ch:17)=> '  [175]'
+%%       14045.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(18 words/72 sym, ch:17) while executing avalon_st_receive=> '  [206]'
+%%       14102.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(18 words/72 sym, ch:17) DONE. '  [175]'
+%%       14102.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(18 words/72 sym, ch:17)=> OK, received 18 symbols. '  [206]'
+%%       14105.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(19 words/76 sym, ch:18)=> '  [176]'
+%%       14105.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(19 words/76 sym, ch:18) while executing avalon_st_receive=> '  [207]'
+%%       14162.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(19 words/76 sym, ch:18) DONE. '  [176]'
+%%       14162.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(19 words/76 sym, ch:18)=> OK, received 19 symbols. '  [207]'
+%%       14165.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(20 words/80 sym, ch:19)=> '  [177]'
+%%       14165.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(20 words/80 sym, ch:19) while executing avalon_st_receive=> '  [208]'
+%%       14222.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(20 words/80 sym, ch:19) DONE. '  [177]'
+%%       14222.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(20 words/80 sym, ch:19)=> OK, received 20 symbols. '  [208]'
+%%       14225.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(21 words/84 sym, ch:20)=> '  [178]'
+%%       14225.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(21 words/84 sym, ch:20) while executing avalon_st_receive=> '  [209]'
+%%       14292.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(21 words/84 sym, ch:20) DONE. '  [178]'
+%%       14292.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(21 words/84 sym, ch:20)=> OK, received 21 symbols. '  [209]'
+%%       14295.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(22 words/88 sym, ch:21)=> '  [179]'
+%%       14295.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(22 words/88 sym, ch:21) while executing avalon_st_receive=> '  [210]'
+%%       14362.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(22 words/88 sym, ch:21) DONE. '  [179]'
+%%       14362.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(22 words/88 sym, ch:21)=> OK, received 22 symbols. '  [210]'
+%%       14365.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(23 words/92 sym, ch:22)=> '  [180]'
+%%       14365.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(23 words/92 sym, ch:22) while executing avalon_st_receive=> '  [211]'
+%%       14432.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(23 words/92 sym, ch:22) DONE. '  [180]'
+%%       14432.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(23 words/92 sym, ch:22)=> OK, received 23 symbols. '  [211]'
+%%       14435.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(24 words/96 sym, ch:23)=> '  [181]'
+%%       14435.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(24 words/96 sym, ch:23) while executing avalon_st_receive=> '  [212]'
+%%       14502.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(24 words/96 sym, ch:23) DONE. '  [181]'
+%%       14502.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(24 words/96 sym, ch:23)=> OK, received 24 symbols. '  [212]'
+%%       14505.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(25 words/100 sym, ch:24)=> '  [182]'
+%%       14505.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(25 words/100 sym, ch:24) while executing avalon_st_receive=> '  [213]'
+%%       14582.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(25 words/100 sym, ch:24) DONE. '  [182]'
+%%       14582.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(25 words/100 sym, ch:24)=> OK, received 25 symbols. '  [213]'
+%%       14585.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(26 words/104 sym, ch:25)=> '  [183]'
+%%       14585.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(26 words/104 sym, ch:25) while executing avalon_st_receive=> '  [214]'
+%%       14662.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(26 words/104 sym, ch:25) DONE. '  [183]'
+%%       14662.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(26 words/104 sym, ch:25)=> OK, received 26 symbols. '  [214]'
+%%       14665.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(27 words/108 sym, ch:26)=> '  [184]'
+%%       14665.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(27 words/108 sym, ch:26) while executing avalon_st_receive=> '  [215]'
+%%       14742.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(27 words/108 sym, ch:26) DONE. '  [184]'
+%%       14742.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(27 words/108 sym, ch:26)=> OK, received 27 symbols. '  [215]'
+%%       14745.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(28 words/112 sym, ch:27)=> '  [185]'
+%%       14745.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(28 words/112 sym, ch:27) while executing avalon_st_receive=> '  [216]'
+%%       14822.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(28 words/112 sym, ch:27) DONE. '  [185]'
+%%       14822.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(28 words/112 sym, ch:27)=> OK, received 28 symbols. '  [216]'
+%%       14825.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(29 words/116 sym, ch:28)=> '  [186]'
+%%       14825.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(29 words/116 sym, ch:28) while executing avalon_st_receive=> '  [217]'
+%%       14912.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(29 words/116 sym, ch:28) DONE. '  [186]'
+%%       14912.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(29 words/116 sym, ch:28)=> OK, received 29 symbols. '  [217]'
+%%       14915.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(30 words/120 sym, ch:29)=> '  [187]'
+%%       14915.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(30 words/120 sym, ch:29) while executing avalon_st_receive=> '  [218]'
+%%       15002.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(30 words/120 sym, ch:29) DONE. '  [187]'
+%%       15002.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(30 words/120 sym, ch:29)=> OK, received 30 symbols. '  [218]'
+%%       15005.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(31 words/124 sym, ch:30)=> '  [188]'
+%%       15005.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(31 words/124 sym, ch:30) while executing avalon_st_receive=> '  [219]'
+%%       15092.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(31 words/124 sym, ch:30) DONE. '  [188]'
+%%       15092.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(31 words/124 sym, ch:30)=> OK, received 31 symbols. '  [219]'
+%%       15095.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(100 words/400 sym, ch:64)=> '  [220]'
+%%       15095.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,3     avalon_st_expect(100 words/400 sym, ch:64) while executing avalon_st_receive=> '  [221]'
+%%       15352.5 ns  Log    ID_PACKET_COMPLETE  AVALON_ST_VVC,2     avalon_st_transmit(100 words/400 sym, ch:64) DONE. '  [220]'
+%%       15352.5 ns  Log    ID_BFM              AVALON_ST_VVC,3     avalon_st_expect(100 words/400 sym, ch:64)=> OK, received 100 symbols. '  [221]'
+%%       15352.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(AVALON_ST_VVC,3, 10000 ns)=> AVALON_ST_VVC,3 finished. [222]
+%% 
+%% 
+%%       15352.5 ns  Log    ID_LOG_HDR          TB seq.             Testing error case: transmit() timeout - slave not ready
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%       15352.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       avalon_st_transmit(AVALON_ST_VVC,2, 100 words, ch:0):. [223]
+%%       15355.0 ns  Log    ID_PACKET_INITIATE  AVALON_ST_VVC,2     avalon_st_transmit(100 words/400 sym, ch:0)=> '  [223]'
+%%       15355.0 ns  Alert  ERROR               AVALON_ST_VVC,3     Unwanted activity detected. valid changed from 0 to 1
+%%       15355.0 ns  Alert  ERROR               AVALON_ST_VVC,3     Unwanted activity detected. data changed from x"00000000" to x"22175CCC"
+%%       15355.0 ns  Alert  ERROR               AVALON_ST_VVC,3     Unwanted activity detected. start_of_packet changed from 0 to 1
+%%       25352.5 ns  Alert  ERROR               AVALON_ST_VVC,2     avalon_st_transmit(100 words/400 sym, ch:0)=> Failed. Timeout while waiting for ready during 1000 clock cycles. '  [223]'
+%%       25363.5 ns  Log    ID_AWAIT_UVVM_COMP  TB seq.             await_uvvm_completion() => OK. All VVCs are inactive. Condition occurred after 1 ns
+%%       25363.5 ns  Log    ID_AWAIT_UVVM_COMP  TB seq.             await_uvvm_completion()() => OK. There are no UVVM scoreboards enabled.
+%% 
+%% ============================================================================================================================================================================
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%       25363.5 ns  DONE   PASSED  vvc_test_packet_data  Passed: 6  Affirmations Checked: 6
+%%    Expected      Failures: 0  Errors: -14  Warnings: 0  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 14  Warnings: 0  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%%       25363.5 ns  Log    ID_LOG_HDR          TB seq.             SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

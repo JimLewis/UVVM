@@ -1,331 +1,335 @@
-%%      0 ns    Log    ID_CONSTRUCTOR      APB_VVC,0           VVC instantiated.
-%%      0 ns    Log    ID_CONSTRUCTOR_SUB  APB_VVC,0           Command queue instantiated and will give a warning when reaching 1000 elements in queue.
-%%      0 ns    Log    ID_CONSTRUCTOR_SUB  APB_VVC,0           Result queue instantiated and will give a warning when reaching 1000 elements in queue.
-%%      0 ns    Log    ID_CMD_INTERPRETER  APB_VVC,0           Interpreter: Waiting for command
-%%      0 ns    Log    ID_CTRL             APB_VVC_SB,0        enable() => SB enabled. 'APB VVC SB Enabled'
-%%      0 ns    Log    ID_CTRL             APB_VVC_SB,0        config() => config applied to SB.
-%%      0 ns    Log    ID_CTRL             APB_VVC_SB,0        enable_log_msg() => message id id_data enabled.
-%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_UVVM_CMD_ACK).
-%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_AWAIT_COMPLETION_WAIT).
-%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_IMMEDIATE_CMD).
-%%      0 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(APB_VVC,0, ID_CMD_INTERPRETER):. [1]
-%%      0 ns    Log    ID_CMD_EXECUTOR_WA  APB_VVC,0           Executor: Waiting for command
-%%      0 ns    Log    ID_CMD_INTERPRETER  APB_VVC,0           disable_log_msg(APB_VVC,0, ID_CMD_INTERPRETER). Command received  [1]
-%%      0 ns    Log    ID_LOG_MSG_CTRL     APB_VVC,0           disable_log_msg(ID_CMD_INTERPRETER). ' [1]'
-%%      0 ns    Log    ID_CMD_INTERPRETER  APB_VVC,0           Interpreter: Waiting for command
-%%      0 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(APB_VVC,0, ID_CMD_INTERPRETER_WAIT):. [2]
-%%      0 ns    Log    ID_LOG_MSG_CTRL     APB_VVC,0           disable_log_msg(ID_CMD_INTERPRETER_WAIT). ' [2]'
-%%      0 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(APB_VVC,0, ID_CMD_EXECUTOR):. [3]
-%%      0 ns    Log    ID_LOG_MSG_CTRL     APB_VVC,0           disable_log_msg(ID_CMD_EXECUTOR). ' [3]'
-%%      0 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(APB_VVC,0, ID_CMD_EXECUTOR_WAIT):. [4]
-%%      0 ns    Log    ID_LOG_MSG_CTRL     APB_VVC,0           disable_log_msg(ID_CMD_EXECUTOR_WAIT). ' [4]'
+%%           0.0 ns  Log    ID_CONSTRUCTOR      APB_VVC,0           VVC instantiated.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  APB_VVC,0           Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  APB_VVC,0           Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  APB_VVC,0           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CTRL             APB_VVC_SB,0        enable() => SB enabled. 'APB VVC SB Enabled'
+%%           0.0 ns  Log    ID_CTRL             APB_VVC_SB,0        config() => config applied to SB.
+%%           0.0 ns  Log    ID_CTRL             APB_VVC_SB,0        enable_log_msg() => message id id_data enabled.
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_UVVM_CMD_ACK).
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_AWAIT_COMPLETION_WAIT).
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_IMMEDIATE_CMD).
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(APB_VVC,0, ID_CMD_INTERPRETER):. [1]
+%%           0.0 ns  Log    ID_CMD_EXECUTOR_WA  APB_VVC,0           Executor: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  APB_VVC,0           disable_log_msg(APB_VVC,0, ID_CMD_INTERPRETER). Command received  [1]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     APB_VVC,0           disable_log_msg(ID_CMD_INTERPRETER). ' [1]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  APB_VVC,0           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(APB_VVC,0, ID_CMD_INTERPRETER_WAIT):. [2]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     APB_VVC,0           disable_log_msg(ID_CMD_INTERPRETER_WAIT). ' [2]'
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(APB_VVC,0, ID_CMD_EXECUTOR):. [3]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     APB_VVC,0           disable_log_msg(ID_CMD_EXECUTOR). ' [3]'
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(APB_VVC,0, ID_CMD_EXECUTOR_WAIT):. [4]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     APB_VVC,0           disable_log_msg(ID_CMD_EXECUTOR_WAIT). ' [4]'
 %% 
 %% 
 %% ============================================================================================================================================================================
-%%      0 ns    Log    ID_LOG_HDR_LARGE    TB seq.             Start Simulation of APB VVC
+%%           0.0 ns  Log    ID_LOG_HDR_LARGE    TB seq.             Start Simulation of APB VVC
 %% ============================================================================================================================================================================
-%%    100 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to 0 for 100000 ps. 'Pulsing reset for 10 clock periods'
+%%         100.0 ns  Log    ID_GEN_PULSE        TB seq.             Pulsed to 0 for 100000 ps. 'Pulsing reset for 10 clock periods'
 %% 
 %% 
-%%    200 ns    Log    ID_LOG_HDR          TB seq.             Testing APB write/read/check without byte_enable or protection
+%%         200.0 ns  Log    ID_LOG_HDR          TB seq.             Testing APB write/read/check without byte_enable or protection
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-%%    200 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [5]
-%%    200 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back'. [6]
-%%    200 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 6, 10000 ns):. [7]
-%%  222.5 ns    Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"253B1447") completed.  ' 'Writing data'  [5]'
-%%  242.5 ns    Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"253B1447".  ' 'Reading data back'  [6]'
-%%  242.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 6, 10000 ns)=> APB_VVC,0 finished. [7]
-%%  242.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(APB_VVC,0, 6):. [8]
-%%  242.5 ns    Log    ID_IMMEDIATE_CMD    APB_VVC,0           fetch_result(APB_VVC,0, 6) Requested result is found.   [8]
-%%  242.5 ns    Log    ID_UVVM_CMD_RESULT  TB seq.(uvvm)       fetch_result(APB_VVC,0, 6): Legal=>true, Result=>00100101001110110001010001000111 [8]
-%%  242.5 ns    Log    PASSED              TB seq.             check_value(slv, x"253B1447") => OK. Value was x"253B1447". 'Checking read data'
-%%  242.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [9]
-%%  242.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [10]
-%%  242.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back'. [11]
-%%  242.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 11, 10000 ns):. [12]
-%%  262.5 ns    Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"253B1447")=> OK, read data = x"253B1447".  'Checking written data'
-%%  282.5 ns    Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"70E32293") completed.  ' 'Writing data'  [10]'
-%%  302.5 ns    Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"70E32293".  ' 'Reading data back'  [11]'
-%%  302.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 11, 10000 ns)=> APB_VVC,0 finished. [12]
-%%  302.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(APB_VVC,0, 11):. [13]
-%%  302.5 ns    Log    ID_IMMEDIATE_CMD    APB_VVC,0           fetch_result(APB_VVC,0, 11) Requested result is found.   [13]
-%%  302.5 ns    Log    ID_UVVM_CMD_RESULT  TB seq.(uvvm)       fetch_result(APB_VVC,0, 11): Legal=>true, Result=>01110000111000110010001010010011 [13]
-%%  302.5 ns    Log    PASSED              TB seq.             check_value(slv, x"70E32293") => OK. Value was x"70E32293". 'Checking read data'
-%%  302.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [14]
-%%  302.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [15]
-%%  302.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back'. [16]
-%%  302.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 16, 10000 ns):. [17]
-%%  322.5 ns    Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"70E32293")=> OK, read data = x"70E32293".  'Checking written data'
-%%  342.5 ns    Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"2C112B99") completed.  ' 'Writing data'  [15]'
-%%  362.5 ns    Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"2C112B99".  ' 'Reading data back'  [16]'
-%%  362.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 16, 10000 ns)=> APB_VVC,0 finished. [17]
-%%  362.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(APB_VVC,0, 16):. [18]
-%%  362.5 ns    Log    ID_IMMEDIATE_CMD    APB_VVC,0           fetch_result(APB_VVC,0, 16) Requested result is found.   [18]
-%%  362.5 ns    Log    ID_UVVM_CMD_RESULT  TB seq.(uvvm)       fetch_result(APB_VVC,0, 16): Legal=>true, Result=>00101100000100010010101110011001 [18]
-%%  362.5 ns    Log    PASSED              TB seq.             check_value(slv, x"2C112B99") => OK. Value was x"2C112B99". 'Checking read data'
-%%  362.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [19]
-%%  362.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [20]
-%%  362.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back'. [21]
-%%  362.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 21, 10000 ns):. [22]
-%%  382.5 ns    Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"2C112B99")=> OK, read data = x"2C112B99".  'Checking written data'
-%%  402.5 ns    Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"64CB809C") completed.  ' 'Writing data'  [20]'
-%%  422.5 ns    Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"64CB809C".  ' 'Reading data back'  [21]'
-%%  422.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 21, 10000 ns)=> APB_VVC,0 finished. [22]
-%%  422.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(APB_VVC,0, 21):. [23]
-%%  422.5 ns    Log    ID_IMMEDIATE_CMD    APB_VVC,0           fetch_result(APB_VVC,0, 21) Requested result is found.   [23]
-%%  422.5 ns    Log    ID_UVVM_CMD_RESULT  TB seq.(uvvm)       fetch_result(APB_VVC,0, 21): Legal=>true, Result=>01100100110010111000000010011100 [23]
-%%  422.5 ns    Log    PASSED              TB seq.             check_value(slv, x"64CB809C") => OK. Value was x"64CB809C". 'Checking read data'
-%%  422.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [24]
-%%  422.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [25]
-%%  422.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back'. [26]
-%%  422.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 26, 10000 ns):. [27]
-%%  442.5 ns    Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"64CB809C")=> OK, read data = x"64CB809C".  'Checking written data'
-%%  462.5 ns    Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"6092214F") completed.  ' 'Writing data'  [25]'
-%%  482.5 ns    Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"6092214F".  ' 'Reading data back'  [26]'
-%%  482.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 26, 10000 ns)=> APB_VVC,0 finished. [27]
-%%  482.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(APB_VVC,0, 26):. [28]
-%%  482.5 ns    Log    ID_IMMEDIATE_CMD    APB_VVC,0           fetch_result(APB_VVC,0, 26) Requested result is found.   [28]
-%%  482.5 ns    Log    ID_UVVM_CMD_RESULT  TB seq.(uvvm)       fetch_result(APB_VVC,0, 26): Legal=>true, Result=>01100000100100100010000101001111 [28]
-%%  482.5 ns    Log    PASSED              TB seq.             check_value(slv, x"6092214F") => OK. Value was x"6092214F". 'Checking read data'
-%%  482.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [29]
-%%  482.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [30]
-%%  482.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back'. [31]
-%%  482.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 31, 10000 ns):. [32]
-%%  502.5 ns    Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"6092214F")=> OK, read data = x"6092214F".  'Checking written data'
-%%  522.5 ns    Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"C58B607B") completed.  ' 'Writing data'  [30]'
-%%  542.5 ns    Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"C58B607B".  ' 'Reading data back'  [31]'
-%%  542.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 31, 10000 ns)=> APB_VVC,0 finished. [32]
-%%  542.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(APB_VVC,0, 31):. [33]
-%%  542.5 ns    Log    ID_IMMEDIATE_CMD    APB_VVC,0           fetch_result(APB_VVC,0, 31) Requested result is found.   [33]
-%%  542.5 ns    Log    ID_UVVM_CMD_RESULT  TB seq.(uvvm)       fetch_result(APB_VVC,0, 31): Legal=>true, Result=>11000101100010110110000001111011 [33]
-%%  542.5 ns    Log    PASSED              TB seq.             check_value(slv, x"C58B607B") => OK. Value was x"C58B607B". 'Checking read data'
-%%  542.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [34]
-%%  542.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [35]
-%%  542.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back'. [36]
-%%  542.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 36, 10000 ns):. [37]
-%%  562.5 ns    Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"C58B607B")=> OK, read data = x"C58B607B".  'Checking written data'
-%%  582.5 ns    Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"565D0688") completed.  ' 'Writing data'  [35]'
-%%  602.5 ns    Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"565D0688".  ' 'Reading data back'  [36]'
-%%  602.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 36, 10000 ns)=> APB_VVC,0 finished. [37]
-%%  602.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(APB_VVC,0, 36):. [38]
-%%  602.5 ns    Log    ID_IMMEDIATE_CMD    APB_VVC,0           fetch_result(APB_VVC,0, 36) Requested result is found.   [38]
-%%  602.5 ns    Log    ID_UVVM_CMD_RESULT  TB seq.(uvvm)       fetch_result(APB_VVC,0, 36): Legal=>true, Result=>01010110010111010000011010001000 [38]
-%%  602.5 ns    Log    PASSED              TB seq.             check_value(slv, x"565D0688") => OK. Value was x"565D0688". 'Checking read data'
-%%  602.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [39]
-%%  602.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [40]
-%%  602.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back'. [41]
-%%  602.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 41, 10000 ns):. [42]
-%%  622.5 ns    Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"565D0688")=> OK, read data = x"565D0688".  'Checking written data'
-%%  642.5 ns    Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"1F1C6B65") completed.  ' 'Writing data'  [40]'
-%%  662.5 ns    Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"1F1C6B65".  ' 'Reading data back'  [41]'
-%%  662.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 41, 10000 ns)=> APB_VVC,0 finished. [42]
-%%  662.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(APB_VVC,0, 41):. [43]
-%%  662.5 ns    Log    ID_IMMEDIATE_CMD    APB_VVC,0           fetch_result(APB_VVC,0, 41) Requested result is found.   [43]
-%%  662.5 ns    Log    ID_UVVM_CMD_RESULT  TB seq.(uvvm)       fetch_result(APB_VVC,0, 41): Legal=>true, Result=>00011111000111000110101101100101 [43]
-%%  662.5 ns    Log    PASSED              TB seq.             check_value(slv, x"1F1C6B65") => OK. Value was x"1F1C6B65". 'Checking read data'
-%%  662.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [44]
-%%  662.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [45]
-%%  662.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back'. [46]
-%%  662.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 46, 10000 ns):. [47]
-%%  682.5 ns    Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"1F1C6B65")=> OK, read data = x"1F1C6B65".  'Checking written data'
-%%  702.5 ns    Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"8BB6B112") completed.  ' 'Writing data'  [45]'
-%%  722.5 ns    Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"8BB6B112".  ' 'Reading data back'  [46]'
-%%  722.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 46, 10000 ns)=> APB_VVC,0 finished. [47]
-%%  722.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(APB_VVC,0, 46):. [48]
-%%  722.5 ns    Log    ID_IMMEDIATE_CMD    APB_VVC,0           fetch_result(APB_VVC,0, 46) Requested result is found.   [48]
-%%  722.5 ns    Log    ID_UVVM_CMD_RESULT  TB seq.(uvvm)       fetch_result(APB_VVC,0, 46): Legal=>true, Result=>10001011101101101011000100010010 [48]
-%%  722.5 ns    Log    PASSED              TB seq.             check_value(slv, x"8BB6B112") => OK. Value was x"8BB6B112". 'Checking read data'
-%%  722.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [49]
-%%  722.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [50]
-%%  722.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back'. [51]
-%%  722.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 51, 10000 ns):. [52]
-%%  742.5 ns    Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"8BB6B112")=> OK, read data = x"8BB6B112".  'Checking written data'
-%%  762.5 ns    Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"A2718EBB") completed.  ' 'Writing data'  [50]'
-%%  782.5 ns    Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"A2718EBB".  ' 'Reading data back'  [51]'
-%%  782.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 51, 10000 ns)=> APB_VVC,0 finished. [52]
-%%  782.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(APB_VVC,0, 51):. [53]
-%%  782.5 ns    Log    ID_IMMEDIATE_CMD    APB_VVC,0           fetch_result(APB_VVC,0, 51) Requested result is found.   [53]
-%%  782.5 ns    Log    ID_UVVM_CMD_RESULT  TB seq.(uvvm)       fetch_result(APB_VVC,0, 51): Legal=>true, Result=>10100010011100011000111010111011 [53]
-%%  782.5 ns    Log    PASSED              TB seq.             check_value(slv, x"A2718EBB") => OK. Value was x"A2718EBB". 'Checking read data'
-%%  782.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [54]
-%%  782.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns):. [55]
-%%  802.5 ns    Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"A2718EBB")=> OK, read data = x"A2718EBB".  'Checking written data'
-%%  802.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns)=> APB_VVC,0 finished. [55]
+%%         200.0 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [5]
+%%         200.0 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back'. [6]
+%%         200.0 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 6, 10000 ns):. [7]
+%%         222.5 ns  Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"253B1447") completed.  ' 'Writing data'  [5]'
+%%         242.5 ns  Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"253B1447".  ' 'Reading data back'  [6]'
+%%         242.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 6, 10000 ns)=> APB_VVC,0 finished. [7]
+%%         242.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(APB_VVC,0, 6):. [8]
+%%         242.5 ns  Log    ID_IMMEDIATE_CMD    APB_VVC,0           fetch_result(APB_VVC,0, 6) Requested result is found.   [8]
+%%         242.5 ns  Log    ID_UVVM_CMD_RESULT  TB seq.(uvvm)       fetch_result(APB_VVC,0, 6): Legal=>true, Result=>00100101001110110001010001000111 [8]
+%%         242.5 ns  Log    PASSED              TB seq.             check_value(slv, x"253B1447") => OK. Value was x"253B1447". 'Checking read data'
+%%         242.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [9]
+%%         242.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [10]
+%%         242.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back'. [11]
+%%         242.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 11, 10000 ns):. [12]
+%%         262.5 ns  Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"253B1447")=> OK, read data = x"253B1447".  'Checking written data'
+%%         282.5 ns  Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"70E32293") completed.  ' 'Writing data'  [10]'
+%%         302.5 ns  Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"70E32293".  ' 'Reading data back'  [11]'
+%%         302.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 11, 10000 ns)=> APB_VVC,0 finished. [12]
+%%         302.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(APB_VVC,0, 11):. [13]
+%%         302.5 ns  Log    ID_IMMEDIATE_CMD    APB_VVC,0           fetch_result(APB_VVC,0, 11) Requested result is found.   [13]
+%%         302.5 ns  Log    ID_UVVM_CMD_RESULT  TB seq.(uvvm)       fetch_result(APB_VVC,0, 11): Legal=>true, Result=>01110000111000110010001010010011 [13]
+%%         302.5 ns  Log    PASSED              TB seq.             check_value(slv, x"70E32293") => OK. Value was x"70E32293". 'Checking read data'
+%%         302.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [14]
+%%         302.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [15]
+%%         302.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back'. [16]
+%%         302.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 16, 10000 ns):. [17]
+%%         322.5 ns  Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"70E32293")=> OK, read data = x"70E32293".  'Checking written data'
+%%         342.5 ns  Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"2C112B99") completed.  ' 'Writing data'  [15]'
+%%         362.5 ns  Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"2C112B99".  ' 'Reading data back'  [16]'
+%%         362.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 16, 10000 ns)=> APB_VVC,0 finished. [17]
+%%         362.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(APB_VVC,0, 16):. [18]
+%%         362.5 ns  Log    ID_IMMEDIATE_CMD    APB_VVC,0           fetch_result(APB_VVC,0, 16) Requested result is found.   [18]
+%%         362.5 ns  Log    ID_UVVM_CMD_RESULT  TB seq.(uvvm)       fetch_result(APB_VVC,0, 16): Legal=>true, Result=>00101100000100010010101110011001 [18]
+%%         362.5 ns  Log    PASSED              TB seq.             check_value(slv, x"2C112B99") => OK. Value was x"2C112B99". 'Checking read data'
+%%         362.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [19]
+%%         362.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [20]
+%%         362.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back'. [21]
+%%         362.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 21, 10000 ns):. [22]
+%%         382.5 ns  Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"2C112B99")=> OK, read data = x"2C112B99".  'Checking written data'
+%%         402.5 ns  Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"64CB809C") completed.  ' 'Writing data'  [20]'
+%%         422.5 ns  Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"64CB809C".  ' 'Reading data back'  [21]'
+%%         422.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 21, 10000 ns)=> APB_VVC,0 finished. [22]
+%%         422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(APB_VVC,0, 21):. [23]
+%%         422.5 ns  Log    ID_IMMEDIATE_CMD    APB_VVC,0           fetch_result(APB_VVC,0, 21) Requested result is found.   [23]
+%%         422.5 ns  Log    ID_UVVM_CMD_RESULT  TB seq.(uvvm)       fetch_result(APB_VVC,0, 21): Legal=>true, Result=>01100100110010111000000010011100 [23]
+%%         422.5 ns  Log    PASSED              TB seq.             check_value(slv, x"64CB809C") => OK. Value was x"64CB809C". 'Checking read data'
+%%         422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [24]
+%%         422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [25]
+%%         422.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back'. [26]
+%%         422.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 26, 10000 ns):. [27]
+%%         442.5 ns  Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"64CB809C")=> OK, read data = x"64CB809C".  'Checking written data'
+%%         462.5 ns  Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"6092214F") completed.  ' 'Writing data'  [25]'
+%%         482.5 ns  Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"6092214F".  ' 'Reading data back'  [26]'
+%%         482.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 26, 10000 ns)=> APB_VVC,0 finished. [27]
+%%         482.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(APB_VVC,0, 26):. [28]
+%%         482.5 ns  Log    ID_IMMEDIATE_CMD    APB_VVC,0           fetch_result(APB_VVC,0, 26) Requested result is found.   [28]
+%%         482.5 ns  Log    ID_UVVM_CMD_RESULT  TB seq.(uvvm)       fetch_result(APB_VVC,0, 26): Legal=>true, Result=>01100000100100100010000101001111 [28]
+%%         482.5 ns  Log    PASSED              TB seq.             check_value(slv, x"6092214F") => OK. Value was x"6092214F". 'Checking read data'
+%%         482.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [29]
+%%         482.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [30]
+%%         482.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back'. [31]
+%%         482.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 31, 10000 ns):. [32]
+%%         502.5 ns  Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"6092214F")=> OK, read data = x"6092214F".  'Checking written data'
+%%         522.5 ns  Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"C58B607B") completed.  ' 'Writing data'  [30]'
+%%         542.5 ns  Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"C58B607B".  ' 'Reading data back'  [31]'
+%%         542.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 31, 10000 ns)=> APB_VVC,0 finished. [32]
+%%         542.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(APB_VVC,0, 31):. [33]
+%%         542.5 ns  Log    ID_IMMEDIATE_CMD    APB_VVC,0           fetch_result(APB_VVC,0, 31) Requested result is found.   [33]
+%%         542.5 ns  Log    ID_UVVM_CMD_RESULT  TB seq.(uvvm)       fetch_result(APB_VVC,0, 31): Legal=>true, Result=>11000101100010110110000001111011 [33]
+%%         542.5 ns  Log    PASSED              TB seq.             check_value(slv, x"C58B607B") => OK. Value was x"C58B607B". 'Checking read data'
+%%         542.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [34]
+%%         542.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [35]
+%%         542.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back'. [36]
+%%         542.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 36, 10000 ns):. [37]
+%%         562.5 ns  Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"C58B607B")=> OK, read data = x"C58B607B".  'Checking written data'
+%%         582.5 ns  Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"565D0688") completed.  ' 'Writing data'  [35]'
+%%         602.5 ns  Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"565D0688".  ' 'Reading data back'  [36]'
+%%         602.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 36, 10000 ns)=> APB_VVC,0 finished. [37]
+%%         602.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(APB_VVC,0, 36):. [38]
+%%         602.5 ns  Log    ID_IMMEDIATE_CMD    APB_VVC,0           fetch_result(APB_VVC,0, 36) Requested result is found.   [38]
+%%         602.5 ns  Log    ID_UVVM_CMD_RESULT  TB seq.(uvvm)       fetch_result(APB_VVC,0, 36): Legal=>true, Result=>01010110010111010000011010001000 [38]
+%%         602.5 ns  Log    PASSED              TB seq.             check_value(slv, x"565D0688") => OK. Value was x"565D0688". 'Checking read data'
+%%         602.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [39]
+%%         602.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [40]
+%%         602.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back'. [41]
+%%         602.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 41, 10000 ns):. [42]
+%%         622.5 ns  Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"565D0688")=> OK, read data = x"565D0688".  'Checking written data'
+%%         642.5 ns  Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"1F1C6B65") completed.  ' 'Writing data'  [40]'
+%%         662.5 ns  Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"1F1C6B65".  ' 'Reading data back'  [41]'
+%%         662.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 41, 10000 ns)=> APB_VVC,0 finished. [42]
+%%         662.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(APB_VVC,0, 41):. [43]
+%%         662.5 ns  Log    ID_IMMEDIATE_CMD    APB_VVC,0           fetch_result(APB_VVC,0, 41) Requested result is found.   [43]
+%%         662.5 ns  Log    ID_UVVM_CMD_RESULT  TB seq.(uvvm)       fetch_result(APB_VVC,0, 41): Legal=>true, Result=>00011111000111000110101101100101 [43]
+%%         662.5 ns  Log    PASSED              TB seq.             check_value(slv, x"1F1C6B65") => OK. Value was x"1F1C6B65". 'Checking read data'
+%%         662.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [44]
+%%         662.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [45]
+%%         662.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back'. [46]
+%%         662.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 46, 10000 ns):. [47]
+%%         682.5 ns  Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"1F1C6B65")=> OK, read data = x"1F1C6B65".  'Checking written data'
+%%         702.5 ns  Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"8BB6B112") completed.  ' 'Writing data'  [45]'
+%%         722.5 ns  Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"8BB6B112".  ' 'Reading data back'  [46]'
+%%         722.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 46, 10000 ns)=> APB_VVC,0 finished. [47]
+%%         722.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(APB_VVC,0, 46):. [48]
+%%         722.5 ns  Log    ID_IMMEDIATE_CMD    APB_VVC,0           fetch_result(APB_VVC,0, 46) Requested result is found.   [48]
+%%         722.5 ns  Log    ID_UVVM_CMD_RESULT  TB seq.(uvvm)       fetch_result(APB_VVC,0, 46): Legal=>true, Result=>10001011101101101011000100010010 [48]
+%%         722.5 ns  Log    PASSED              TB seq.             check_value(slv, x"8BB6B112") => OK. Value was x"8BB6B112". 'Checking read data'
+%%         722.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [49]
+%%         722.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [50]
+%%         722.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back'. [51]
+%%         722.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 51, 10000 ns):. [52]
+%%         742.5 ns  Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"8BB6B112")=> OK, read data = x"8BB6B112".  'Checking written data'
+%%         762.5 ns  Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"A2718EBB") completed.  ' 'Writing data'  [50]'
+%%         782.5 ns  Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"A2718EBB".  ' 'Reading data back'  [51]'
+%%         782.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 51, 10000 ns)=> APB_VVC,0 finished. [52]
+%%         782.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(APB_VVC,0, 51):. [53]
+%%         782.5 ns  Log    ID_IMMEDIATE_CMD    APB_VVC,0           fetch_result(APB_VVC,0, 51) Requested result is found.   [53]
+%%         782.5 ns  Log    ID_UVVM_CMD_RESULT  TB seq.(uvvm)       fetch_result(APB_VVC,0, 51): Legal=>true, Result=>10100010011100011000111010111011 [53]
+%%         782.5 ns  Log    PASSED              TB seq.             check_value(slv, x"A2718EBB") => OK. Value was x"A2718EBB". 'Checking read data'
+%%         782.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [54]
+%%         782.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns):. [55]
+%%         802.5 ns  Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"A2718EBB")=> OK, read data = x"A2718EBB".  'Checking written data'
+%%         802.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns)=> APB_VVC,0 finished. [55]
 %% 
 %% 
-%%  802.5 ns    Log    ID_LOG_HDR          TB seq.             Testing APB pstrobe
+%%         802.5 ns  Log    ID_LOG_HDR          TB seq.             Testing APB pstrobe
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-%%  802.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [56]
-%%  802.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back'. [57]
-%%  802.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 57, 10000 ns):. [58]
-%%  822.5 ns    Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"B7FF50EE") completed.  ' 'Writing data'  [56]'
-%%  842.5 ns    Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"A2718EBB".  ' 'Reading data back'  [57]'
-%%  842.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 57, 10000 ns)=> APB_VVC,0 finished. [58]
-%%  842.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(APB_VVC,0, 57):. [59]
-%%  842.5 ns    Log    ID_IMMEDIATE_CMD    APB_VVC,0           fetch_result(APB_VVC,0, 57) Requested result is found.   [59]
-%%  842.5 ns    Log    ID_UVVM_CMD_RESULT  TB seq.(uvvm)       fetch_result(APB_VVC,0, 57): Legal=>true, Result=>10100010011100011000111010111011 [59]
-%%  842.5 ns    Log    PASSED              TB seq.             check_value(slv, x"A2718EBB") => OK. Value was x"A2718EBB". 'Checking read data'
-%%  842.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [60]
-%%  842.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns):. [61]
-%%  862.5 ns    Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"A2718EBB")=> OK, read data = x"A2718EBB".  'Checking written data'
-%%  862.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns)=> APB_VVC,0 finished. [61]
+%%         802.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [56]
+%%         802.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back'. [57]
+%%         802.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 57, 10000 ns):. [58]
+%%         822.5 ns  Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"B7FF50EE") completed.  ' 'Writing data'  [56]'
+%%         842.5 ns  Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"A2718EBB".  ' 'Reading data back'  [57]'
+%%         842.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 57, 10000 ns)=> APB_VVC,0 finished. [58]
+%%         842.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(APB_VVC,0, 57):. [59]
+%%         842.5 ns  Log    ID_IMMEDIATE_CMD    APB_VVC,0           fetch_result(APB_VVC,0, 57) Requested result is found.   [59]
+%%         842.5 ns  Log    ID_UVVM_CMD_RESULT  TB seq.(uvvm)       fetch_result(APB_VVC,0, 57): Legal=>true, Result=>10100010011100011000111010111011 [59]
+%%         842.5 ns  Log    PASSED              TB seq.             check_value(slv, x"A2718EBB") => OK. Value was x"A2718EBB". 'Checking read data'
+%%         842.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [60]
+%%         842.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns):. [61]
+%%         862.5 ns  Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"A2718EBB")=> OK, read data = x"A2718EBB".  'Checking written data'
+%%         862.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns)=> APB_VVC,0 finished. [61]
 %% 
 %% 
-%%  862.5 ns    Log    ID_LOG_HDR          TB seq.             Testing APB protection levels
+%%         862.5 ns  Log    ID_LOG_HDR          TB seq.             Testing APB protection levels
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-%%  862.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data with protection: 001'. [62]
-%%  862.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [63]
-%%  862.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data with protection: 010'. [64]
-%%  862.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [65]
-%%  862.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data with protection: 100'. [66]
-%%  862.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [67]
-%%  862.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns):. [68]
-%%  882.5 ns    Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"10AC2F51") completed.  ' 'Writing data with protection: 001'  [62]'
-%%  902.5 ns    Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"10AC2F51")=> OK, read data = x"10AC2F51".  'Checking written data'
-%%    920 ns    Alert  ERROR               APB_VVC,0           apb_write(A:x"00000008", x"3AF79909")(sl, 0) => Failed. Value was 1. Expected 0. 'PSLVERR detected'
-%%  922.5 ns    Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"3AF79909") completed.  ' 'Writing data with protection: 010'  [64]'
-%%    940 ns    Alert  ERROR               APB_VVC,0           apb_check(A:x"00000008", x"3AF79909") while executing apb_read(sl, 0) => Failed. Value was 1. Expected 0. 'PSLVERR detected'
-%%  942.5 ns    Alert  ERROR               APB_VVC,0           apb_check(A:x"00000008", x"3AF79909")=> Failed. Was x"10AC2F51". Expected x"3AF79909".
- 'Checking written data'
-%%  962.5 ns    Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"3BC1ED00") completed.  ' 'Writing data with protection: 100'  [66]'
-%%  982.5 ns    Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"3BC1ED00")=> OK, read data = x"3BC1ED00".  'Checking written data'
-%%  982.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns)=> APB_VVC,0 finished. [68]
+%%         862.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data with protection: 001'. [62]
+%%         862.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [63]
+%%         862.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data with protection: 010'. [64]
+%%         862.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [65]
+%%         862.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data with protection: 100'. [66]
+%%         862.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [67]
+%%         862.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns):. [68]
+%%         882.5 ns  Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"10AC2F51") completed.  ' 'Writing data with protection: 001'  [62]'
+%%         902.5 ns  Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"10AC2F51")=> OK, read data = x"10AC2F51".  'Checking written data'
+%%         920.0 ns  Alert  ERROR               APB_VVC,0           apb_write(A:x"00000008", x"3AF79909")(sl, 0) => Failed. Value was 1. Expected 0. 'PSLVERR detected'
+%%         922.5 ns  Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"3AF79909") completed.  ' 'Writing data with protection: 010'  [64]'
+%%         940.0 ns  Alert  ERROR               APB_VVC,0           apb_check(A:x"00000008", x"3AF79909") while executing apb_read(sl, 0) => Failed. Value was 1. Expected 0. 'PSLVERR detected'
+%%         942.5 ns  Alert  ERROR               APB_VVC,0           apb_check(A:x"00000008", x"3AF79909")=> Failed. Was x"10AC2F51". Expected x"3AF79909".
+%%:                                                                  'Checking written data'
+%%         962.5 ns  Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"3BC1ED00") completed.  ' 'Writing data with protection: 100'  [66]'
+%%         982.5 ns  Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"3BC1ED00")=> OK, read data = x"3BC1ED00".  'Checking written data'
+%%         982.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns)=> APB_VVC,0 finished. [68]
 %% 
 %% 
-%%  982.5 ns    Log    ID_LOG_HDR          TB seq.             Testing APB check with don't care values
+%%         982.5 ns  Log    ID_LOG_HDR          TB seq.             Testing APB check with don't care values
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-%%  982.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [69]
-%%  982.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [70]
-%%  982.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns):. [71]
-%% 1002.5 ns    Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"E6DCD540") completed.  ' 'Writing data'  [69]'
-%% 1022.5 ns    Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"E6DCD54X")=> OK, read data = x"E6DCD540".  'Checking written data'
-%% 1022.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns)=> APB_VVC,0 finished. [71]
+%%         982.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [69]
+%%         982.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [70]
+%%         982.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns):. [71]
+%%        1002.5 ns  Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"E6DCD540") completed.  ' 'Writing data'  [69]'
+%%        1022.5 ns  Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"E6DCD54X")=> OK, read data = x"E6DCD540".  'Checking written data'
+%%        1022.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns)=> APB_VVC,0 finished. [71]
 %% 
 %% 
-%% 1022.5 ns    Log    ID_LOG_HDR          TB seq.             Testing APB poll until
+%%        1022.5 ns  Log    ID_LOG_HDR          TB seq.             Testing APB poll until
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-%% 1022.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_poll_until(APB_VVC,0, x"00000008", x"E6DCD54X"): 'Testing apb_poll_until'. [72]
-%% 1022.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns):. [73]
-%% 1042.5 ns    Log    ID_BFM_POLL         APB_VVC,0           apb_read(A:x"00000008")=> x"E6DCD540".  'As a part of apb_poll_until(A:x"00000008", x"E6DCD54X", 1, 1000000 ns).  ' 'Testing apb_poll_until'  [72]''
-%% 1042.5 ns    Log    ID_BFM              APB_VVC,0           apb_poll_until(A:x"00000008", x"E6DCD54X", 1, 1000000 ns)=> OK, read data = x"E6DCD540" after 1 occurrences and 20 ns.  ' 'Testing apb_poll_until'  [72]'
-%% 1042.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns)=> APB_VVC,0 finished. [73]
-%% 1042.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_poll_until(APB_VVC,0, x"00000008", x"E6DCD54X"): 'Testing apb_poll_until'. [74]
-%% 1042.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns):. [75]
-%% 1062.5 ns    Log    ID_BFM_POLL         APB_VVC,0           apb_read(A:x"00000008")=> x"E6DCD540".  'As a part of apb_poll_until(A:x"00000008", x"E6DCD54X", 1, 1000000 ns).  ' 'Testing apb_poll_until'  [74]''
-%% 1062.5 ns    Log    ID_BFM              APB_VVC,0           apb_poll_until(A:x"00000008", x"E6DCD54X", 1, 1000000 ns)=> OK, read data = x"E6DCD540" after 1 occurrences and 20 ns.  ' 'Testing apb_poll_until'  [74]'
-%% 1062.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns)=> APB_VVC,0 finished. [75]
+%%        1022.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_poll_until(APB_VVC,0, x"00000008", x"E6DCD54X"): 'Testing apb_poll_until'. [72]
+%%        1022.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns):. [73]
+%%        1042.5 ns  Log    ID_BFM_POLL         APB_VVC,0           apb_read(A:x"00000008")=> x"E6DCD540".  'As a part of apb_poll_until(A:x"00000008", x"E6DCD54X", 1, 1000000
+%%:                                                                 ns).  ' 'Testing apb_poll_until'  [72]''
+%%        1042.5 ns  Log    ID_BFM              APB_VVC,0           apb_poll_until(A:x"00000008", x"E6DCD54X", 1, 1000000 ns)=> OK, read data = x"E6DCD540" after 1 occurrences
+%%:                                                                 and 20 ns.  ' 'Testing apb_poll_until'  [72]'
+%%        1042.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns)=> APB_VVC,0 finished. [73]
+%%        1042.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_poll_until(APB_VVC,0, x"00000008", x"E6DCD54X"): 'Testing apb_poll_until'. [74]
+%%        1042.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns):. [75]
+%%        1062.5 ns  Log    ID_BFM_POLL         APB_VVC,0           apb_read(A:x"00000008")=> x"E6DCD540".  'As a part of apb_poll_until(A:x"00000008", x"E6DCD54X", 1, 1000000
+%%:                                                                 ns).  ' 'Testing apb_poll_until'  [74]''
+%%        1062.5 ns  Log    ID_BFM              APB_VVC,0           apb_poll_until(A:x"00000008", x"E6DCD54X", 1, 1000000 ns)=> OK, read data = x"E6DCD540" after 1 occurrences
+%%:                                                                 and 20 ns.  ' 'Testing apb_poll_until'  [74]'
+%%        1062.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns)=> APB_VVC,0 finished. [75]
 %% 
 %% 
-%% 1062.5 ns    Log    ID_LOG_HDR          TB seq.             Testing APB setup and hold times
+%%        1062.5 ns  Log    ID_LOG_HDR          TB seq.             Testing APB setup and hold times
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-%% 1062.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [76]
-%% 1062.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [77]
-%% 1062.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [78]
-%% 1062.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [79]
-%% 1062.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [80]
-%% 1062.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [81]
-%% 1062.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [82]
-%% 1062.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [83]
-%% 1062.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [84]
-%% 1062.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [85]
-%% 1062.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [86]
-%% 1062.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [87]
-%% 1062.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [88]
-%% 1062.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [89]
-%% 1062.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [90]
-%% 1062.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [91]
-%% 1062.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [92]
-%% 1062.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [93]
-%% 1062.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [94]
-%% 1062.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [95]
-%% 1062.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns):. [96]
-%% 1082.5 ns    Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"D8E31FA6") completed.  ' 'Writing data'  [76]'
-%% 1102.5 ns    Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"D8E31FA6")=> OK, read data = x"D8E31FA6".  'Checking written data'
-%% 1122.5 ns    Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"63EAC404") completed.  ' 'Writing data'  [78]'
-%% 1142.5 ns    Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"63EAC404")=> OK, read data = x"63EAC404".  'Checking written data'
-%% 1162.5 ns    Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"2502D02C") completed.  ' 'Writing data'  [80]'
-%% 1182.5 ns    Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"2502D02C")=> OK, read data = x"2502D02C".  'Checking written data'
-%% 1202.5 ns    Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"A329E192") completed.  ' 'Writing data'  [82]'
-%% 1222.5 ns    Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"A329E192")=> OK, read data = x"A329E192".  'Checking written data'
-%% 1242.5 ns    Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"01D44DE0") completed.  ' 'Writing data'  [84]'
-%% 1262.5 ns    Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"01D44DE0")=> OK, read data = x"1D44DE0".  'Checking written data'
-%% 1282.5 ns    Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"78C1D241") completed.  ' 'Writing data'  [86]'
-%% 1302.5 ns    Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"78C1D241")=> OK, read data = x"78C1D241".  'Checking written data'
-%% 1322.5 ns    Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"513F728A") completed.  ' 'Writing data'  [88]'
-%% 1342.5 ns    Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"513F728A")=> OK, read data = x"513F728A".  'Checking written data'
-%% 1362.5 ns    Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"C56563B5") completed.  ' 'Writing data'  [90]'
-%% 1382.5 ns    Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"C56563B5")=> OK, read data = x"C56563B5".  'Checking written data'
-%% 1402.5 ns    Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"35C59A4A") completed.  ' 'Writing data'  [92]'
-%% 1422.5 ns    Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"35C59A4A")=> OK, read data = x"35C59A4A".  'Checking written data'
-%% 1442.5 ns    Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"E26741BD") completed.  ' 'Writing data'  [94]'
-%% 1462.5 ns    Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"E26741BD")=> OK, read data = x"E26741BD".  'Checking written data'
-%% 1462.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns)=> APB_VVC,0 finished. [96]
+%%        1062.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [76]
+%%        1062.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [77]
+%%        1062.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [78]
+%%        1062.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [79]
+%%        1062.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [80]
+%%        1062.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [81]
+%%        1062.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [82]
+%%        1062.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [83]
+%%        1062.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [84]
+%%        1062.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [85]
+%%        1062.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [86]
+%%        1062.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [87]
+%%        1062.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [88]
+%%        1062.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [89]
+%%        1062.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [90]
+%%        1062.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [91]
+%%        1062.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [92]
+%%        1062.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [93]
+%%        1062.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [94]
+%%        1062.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [95]
+%%        1062.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns):. [96]
+%%        1082.5 ns  Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"D8E31FA6") completed.  ' 'Writing data'  [76]'
+%%        1102.5 ns  Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"D8E31FA6")=> OK, read data = x"D8E31FA6".  'Checking written data'
+%%        1122.5 ns  Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"63EAC404") completed.  ' 'Writing data'  [78]'
+%%        1142.5 ns  Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"63EAC404")=> OK, read data = x"63EAC404".  'Checking written data'
+%%        1162.5 ns  Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"2502D02C") completed.  ' 'Writing data'  [80]'
+%%        1182.5 ns  Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"2502D02C")=> OK, read data = x"2502D02C".  'Checking written data'
+%%        1202.5 ns  Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"A329E192") completed.  ' 'Writing data'  [82]'
+%%        1222.5 ns  Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"A329E192")=> OK, read data = x"A329E192".  'Checking written data'
+%%        1242.5 ns  Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"01D44DE0") completed.  ' 'Writing data'  [84]'
+%%        1262.5 ns  Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"01D44DE0")=> OK, read data = x"1D44DE0".  'Checking written data'
+%%        1282.5 ns  Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"78C1D241") completed.  ' 'Writing data'  [86]'
+%%        1302.5 ns  Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"78C1D241")=> OK, read data = x"78C1D241".  'Checking written data'
+%%        1322.5 ns  Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"513F728A") completed.  ' 'Writing data'  [88]'
+%%        1342.5 ns  Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"513F728A")=> OK, read data = x"513F728A".  'Checking written data'
+%%        1362.5 ns  Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"C56563B5") completed.  ' 'Writing data'  [90]'
+%%        1382.5 ns  Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"C56563B5")=> OK, read data = x"C56563B5".  'Checking written data'
+%%        1402.5 ns  Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"35C59A4A") completed.  ' 'Writing data'  [92]'
+%%        1422.5 ns  Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"35C59A4A")=> OK, read data = x"35C59A4A".  'Checking written data'
+%%        1442.5 ns  Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"E26741BD") completed.  ' 'Writing data'  [94]'
+%%        1462.5 ns  Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"E26741BD")=> OK, read data = x"E26741BD".  'Checking written data'
+%%        1462.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns)=> APB_VVC,0 finished. [96]
 %% 
 %% 
-%% 1462.5 ns    Log    ID_LOG_HDR          TB seq.             Testing APB scoreboard
+%%        1462.5 ns  Log    ID_LOG_HDR          TB seq.             Testing APB scoreboard
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-%% 1462.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [97]
-%% 1462.5 ns    Log    ID_DATA             APB_VVC_SB,0        add_expected() => value: 11001100010111000001011100100010.
-%% 1462.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back into SB'. [98]
-%% 1462.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [99]
-%% 1462.5 ns    Log    ID_DATA             APB_VVC_SB,0        add_expected() => value: 11000110001101101110000010111010.
-%% 1462.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back into SB'. [100]
-%% 1462.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [101]
-%% 1462.5 ns    Log    ID_DATA             APB_VVC_SB,0        add_expected() => value: 11100111010110010100100111011011.
-%% 1462.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back into SB'. [102]
-%% 1462.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [103]
-%% 1462.5 ns    Log    ID_DATA             APB_VVC_SB,0        add_expected() => value: 10000000010101101010111010000101.
-%% 1462.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back into SB'. [104]
-%% 1462.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [105]
-%% 1462.5 ns    Log    ID_DATA             APB_VVC_SB,0        add_expected() => value: 00011101100010001001011110101101.
-%% 1462.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back into SB'. [106]
-%% 1462.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [107]
-%% 1462.5 ns    Log    ID_DATA             APB_VVC_SB,0        add_expected() => value: 10010000001011101001000111110011.
-%% 1462.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back into SB'. [108]
-%% 1462.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [109]
-%% 1462.5 ns    Log    ID_DATA             APB_VVC_SB,0        add_expected() => value: 10101010101110111100001010010010.
-%% 1462.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back into SB'. [110]
-%% 1462.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [111]
-%% 1462.5 ns    Log    ID_DATA             APB_VVC_SB,0        add_expected() => value: 10011000000000101100100100010010.
-%% 1462.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back into SB'. [112]
-%% 1462.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [113]
-%% 1462.5 ns    Log    ID_DATA             APB_VVC_SB,0        add_expected() => value: 10100001100010001100001000001100.
-%% 1462.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back into SB'. [114]
-%% 1462.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [115]
-%% 1462.5 ns    Log    ID_DATA             APB_VVC_SB,0        add_expected() => value: 01011010010011111101001010100100.
-%% 1462.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back into SB'. [116]
-%% 1462.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns):. [117]
-%% 1482.5 ns    Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"CC5C1722") completed.  ' 'Writing data'  [97]'
-%% 1502.5 ns    Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"CC5C1722".  ' 'Reading data back into SB'  [98]'
-%% 1502.5 ns    Log    ID_DATA             APB_VVC_SB,0        check_received() => MATCH, for value: 11001100010111000001011100100010.
-%% 1522.5 ns    Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"C636E0BA") completed.  ' 'Writing data'  [99]'
-%% 1542.5 ns    Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"C636E0BA".  ' 'Reading data back into SB'  [100]'
-%% 1542.5 ns    Log    ID_DATA             APB_VVC_SB,0        check_received() => MATCH, for value: 11000110001101101110000010111010.
-%% 1562.5 ns    Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"E75949DB") completed.  ' 'Writing data'  [101]'
-%% 1582.5 ns    Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"E75949DB".  ' 'Reading data back into SB'  [102]'
-%% 1582.5 ns    Log    ID_DATA             APB_VVC_SB,0        check_received() => MATCH, for value: 11100111010110010100100111011011.
-%% 1602.5 ns    Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"8056AE85") completed.  ' 'Writing data'  [103]'
-%% 1622.5 ns    Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"8056AE85".  ' 'Reading data back into SB'  [104]'
-%% 1622.5 ns    Log    ID_DATA             APB_VVC_SB,0        check_received() => MATCH, for value: 10000000010101101010111010000101.
-%% 1642.5 ns    Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"1D8897AD") completed.  ' 'Writing data'  [105]'
-%% 1662.5 ns    Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"1D8897AD".  ' 'Reading data back into SB'  [106]'
-%% 1662.5 ns    Log    ID_DATA             APB_VVC_SB,0        check_received() => MATCH, for value: 00011101100010001001011110101101.
-%% 1682.5 ns    Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"902E91F3") completed.  ' 'Writing data'  [107]'
-%% 1702.5 ns    Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"902E91F3".  ' 'Reading data back into SB'  [108]'
-%% 1702.5 ns    Log    ID_DATA             APB_VVC_SB,0        check_received() => MATCH, for value: 10010000001011101001000111110011.
-%% 1722.5 ns    Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"AABBC292") completed.  ' 'Writing data'  [109]'
-%% 1742.5 ns    Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"AABBC292".  ' 'Reading data back into SB'  [110]'
-%% 1742.5 ns    Log    ID_DATA             APB_VVC_SB,0        check_received() => MATCH, for value: 10101010101110111100001010010010.
-%% 1762.5 ns    Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"9802C912") completed.  ' 'Writing data'  [111]'
-%% 1782.5 ns    Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"9802C912".  ' 'Reading data back into SB'  [112]'
-%% 1782.5 ns    Log    ID_DATA             APB_VVC_SB,0        check_received() => MATCH, for value: 10011000000000101100100100010010.
-%% 1802.5 ns    Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"A188C20C") completed.  ' 'Writing data'  [113]'
-%% 1822.5 ns    Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"A188C20C".  ' 'Reading data back into SB'  [114]'
-%% 1822.5 ns    Log    ID_DATA             APB_VVC_SB,0        check_received() => MATCH, for value: 10100001100010001100001000001100.
-%% 1842.5 ns    Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"5A4FD2A4") completed.  ' 'Writing data'  [115]'
-%% 1862.5 ns    Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"5A4FD2A4".  ' 'Reading data back into SB'  [116]'
-%% 1862.5 ns    Log    ID_DATA             APB_VVC_SB,0        check_received() => MATCH, for value: 01011010010011111101001010100100.
-%% 1862.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns)=> APB_VVC,0 finished. [117]
+%%        1462.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [97]
+%%        1462.5 ns  Log    ID_DATA             APB_VVC_SB,0        add_expected() => value: 11001100010111000001011100100010.
+%%        1462.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back into SB'. [98]
+%%        1462.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [99]
+%%        1462.5 ns  Log    ID_DATA             APB_VVC_SB,0        add_expected() => value: 11000110001101101110000010111010.
+%%        1462.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back into SB'. [100]
+%%        1462.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [101]
+%%        1462.5 ns  Log    ID_DATA             APB_VVC_SB,0        add_expected() => value: 11100111010110010100100111011011.
+%%        1462.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back into SB'. [102]
+%%        1462.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [103]
+%%        1462.5 ns  Log    ID_DATA             APB_VVC_SB,0        add_expected() => value: 10000000010101101010111010000101.
+%%        1462.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back into SB'. [104]
+%%        1462.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [105]
+%%        1462.5 ns  Log    ID_DATA             APB_VVC_SB,0        add_expected() => value: 00011101100010001001011110101101.
+%%        1462.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back into SB'. [106]
+%%        1462.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [107]
+%%        1462.5 ns  Log    ID_DATA             APB_VVC_SB,0        add_expected() => value: 10010000001011101001000111110011.
+%%        1462.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back into SB'. [108]
+%%        1462.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [109]
+%%        1462.5 ns  Log    ID_DATA             APB_VVC_SB,0        add_expected() => value: 10101010101110111100001010010010.
+%%        1462.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back into SB'. [110]
+%%        1462.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [111]
+%%        1462.5 ns  Log    ID_DATA             APB_VVC_SB,0        add_expected() => value: 10011000000000101100100100010010.
+%%        1462.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back into SB'. [112]
+%%        1462.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [113]
+%%        1462.5 ns  Log    ID_DATA             APB_VVC_SB,0        add_expected() => value: 10100001100010001100001000001100.
+%%        1462.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back into SB'. [114]
+%%        1462.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [115]
+%%        1462.5 ns  Log    ID_DATA             APB_VVC_SB,0        add_expected() => value: 01011010010011111101001010100100.
+%%        1462.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_read(APB_VVC,0, x"00000008"): 'Reading data back into SB'. [116]
+%%        1462.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns):. [117]
+%%        1482.5 ns  Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"CC5C1722") completed.  ' 'Writing data'  [97]'
+%%        1502.5 ns  Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"CC5C1722".  ' 'Reading data back into SB'  [98]'
+%%        1502.5 ns  Log    ID_DATA             APB_VVC_SB,0        check_received() => MATCH, for value: 11001100010111000001011100100010.
+%%        1522.5 ns  Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"C636E0BA") completed.  ' 'Writing data'  [99]'
+%%        1542.5 ns  Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"C636E0BA".  ' 'Reading data back into SB'  [100]'
+%%        1542.5 ns  Log    ID_DATA             APB_VVC_SB,0        check_received() => MATCH, for value: 11000110001101101110000010111010.
+%%        1562.5 ns  Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"E75949DB") completed.  ' 'Writing data'  [101]'
+%%        1582.5 ns  Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"E75949DB".  ' 'Reading data back into SB'  [102]'
+%%        1582.5 ns  Log    ID_DATA             APB_VVC_SB,0        check_received() => MATCH, for value: 11100111010110010100100111011011.
+%%        1602.5 ns  Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"8056AE85") completed.  ' 'Writing data'  [103]'
+%%        1622.5 ns  Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"8056AE85".  ' 'Reading data back into SB'  [104]'
+%%        1622.5 ns  Log    ID_DATA             APB_VVC_SB,0        check_received() => MATCH, for value: 10000000010101101010111010000101.
+%%        1642.5 ns  Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"1D8897AD") completed.  ' 'Writing data'  [105]'
+%%        1662.5 ns  Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"1D8897AD".  ' 'Reading data back into SB'  [106]'
+%%        1662.5 ns  Log    ID_DATA             APB_VVC_SB,0        check_received() => MATCH, for value: 00011101100010001001011110101101.
+%%        1682.5 ns  Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"902E91F3") completed.  ' 'Writing data'  [107]'
+%%        1702.5 ns  Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"902E91F3".  ' 'Reading data back into SB'  [108]'
+%%        1702.5 ns  Log    ID_DATA             APB_VVC_SB,0        check_received() => MATCH, for value: 10010000001011101001000111110011.
+%%        1722.5 ns  Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"AABBC292") completed.  ' 'Writing data'  [109]'
+%%        1742.5 ns  Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"AABBC292".  ' 'Reading data back into SB'  [110]'
+%%        1742.5 ns  Log    ID_DATA             APB_VVC_SB,0        check_received() => MATCH, for value: 10101010101110111100001010010010.
+%%        1762.5 ns  Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"9802C912") completed.  ' 'Writing data'  [111]'
+%%        1782.5 ns  Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"9802C912".  ' 'Reading data back into SB'  [112]'
+%%        1782.5 ns  Log    ID_DATA             APB_VVC_SB,0        check_received() => MATCH, for value: 10011000000000101100100100010010.
+%%        1802.5 ns  Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"A188C20C") completed.  ' 'Writing data'  [113]'
+%%        1822.5 ns  Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"A188C20C".  ' 'Reading data back into SB'  [114]'
+%%        1822.5 ns  Log    ID_DATA             APB_VVC_SB,0        check_received() => MATCH, for value: 10100001100010001100001000001100.
+%%        1842.5 ns  Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"5A4FD2A4") completed.  ' 'Writing data'  [115]'
+%%        1862.5 ns  Log    ID_BFM              APB_VVC,0           apb_read(A:x"00000008")=> x"5A4FD2A4".  ' 'Reading data back into SB'  [116]'
+%%        1862.5 ns  Log    ID_DATA             APB_VVC_SB,0        check_received() => MATCH, for value: 01011010010011111101001010100100.
+%%        1862.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns)=> APB_VVC,0 finished. [117]
 %%      
 %%      =======================================================================================================================================================================
 %%      1862.5 ns *** SCOREBOARD COUNTERS SUMMARY: APB_VVC_SB ***                                                                                                              
@@ -337,59 +341,59 @@
 %%      
 %% 
 %% 
-%% 1862.5 ns    Log    ID_LOG_HDR          TB seq.             Testing Unwanted Activity Detection in VVC
+%%        1862.5 ns  Log    ID_LOG_HDR          TB seq.             Testing Unwanted Activity Detection in VVC
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-%% 1862.5 ns    Log    ID_SEQUENCER        TB seq.             Setting unwanted_activity_severity to ERROR
-%% 1862.5 ns    Log    ID_SEQUENCER        TB seq.             Testing normal data transmission
-%% 1862.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [118]
-%% 1862.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [119]
-%% 1862.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns):. [120]
-%% 1882.5 ns    Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"D92E6FFD") completed.  ' 'Writing data'  [118]'
-%% 1902.5 ns    Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"D92E6FFD")=> OK, read data = x"D92E6FFD".  'Checking written data'
-%% 1902.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns)=> APB_VVC,0 finished. [120]
-%% 1902.5 ns    Log    ID_SEQUENCER        TB seq.             Wait 100 ns
-%% 2002.5 ns    Log    ID_SEQUENCER        TB seq.             Testing unexpected data transmission
-%% 2002.5 ns    Alert  ERROR               APB_VVC,0           Unwanted activity detected. prdata changed from x"D92E6FFD" to x"26D19002"
-%% 2002.5 ns    Alert  ERROR               APB_VVC,0           Unwanted activity detected. pslverr changed from 0 to 1
-%% 2012.5 ns    Alert  ERROR               APB_VVC,0           Unwanted activity detected. prdata changed from x"26D19002" to x"D92E6FFD"
-%% 2012.5 ns    Alert  ERROR               APB_VVC,0           Unwanted activity detected. pslverr changed from 1 to 0
-%% 2012.5 ns    Alert  ERROR               APB_VVC,0           Unwanted activity detected. prdata changed from x"D92E6FFD" to x"26D19002"
-%% 2017.5 ns    Alert  ERROR               APB_VVC,0           Unwanted activity detected. prdata changed from x"26D19002" to x"D92E6FFD"
-%% 2017.5 ns    Alert  ERROR               APB_VVC,0           Unwanted activity detected. pslverr changed from 0 to 1
-%% 2018.5 ns    Alert  ERROR               APB_VVC,0           Unwanted activity detected. pslverr changed from 1 to 0
-%% 2018.5 ns    Log    ID_SEQUENCER        TB seq.             Setting unwanted_activity_severity to FAILURE
-%% 2018.5 ns    Log    ID_SEQUENCER        TB seq.             Testing normal data transmission
-%% 2018.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [121]
-%% 2018.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [122]
-%% 2018.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns):. [123]
-%% 2042.5 ns    Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"03A74DC9") completed.  ' 'Writing data'  [121]'
-%% 2062.5 ns    Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"03A74DC9")=> OK, read data = x"3A74DC9".  'Checking written data'
-%% 2062.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns)=> APB_VVC,0 finished. [123]
-%% 2062.5 ns    Log    ID_SEQUENCER        TB seq.             Testing unexpected data transmission
-%% 2062.5 ns    Alert  FAILURE             APB_VVC,0           Unwanted activity detected. prdata changed from x"03A74DC9" to x"FC58B236"
-%% 2062.5 ns    Alert  FAILURE             APB_VVC,0           Unwanted activity detected. pslverr changed from 0 to 1
-%% 2072.5 ns    Alert  FAILURE             APB_VVC,0           Unwanted activity detected. prdata changed from x"FC58B236" to x"03A74DC9"
-%% 2072.5 ns    Alert  FAILURE             APB_VVC,0           Unwanted activity detected. pslverr changed from 1 to 0
-%% 2072.5 ns    Alert  FAILURE             APB_VVC,0           Unwanted activity detected. prdata changed from x"03A74DC9" to x"FC58B236"
-%% 2077.5 ns    Alert  FAILURE             APB_VVC,0           Unwanted activity detected. prdata changed from x"FC58B236" to x"03A74DC9"
-%% 2077.5 ns    Alert  FAILURE             APB_VVC,0           Unwanted activity detected. pslverr changed from 0 to 1
-%% 2078.5 ns    Alert  FAILURE             APB_VVC,0           Unwanted activity detected. pslverr changed from 1 to 0
-%% 2078.5 ns    Log    ID_SEQUENCER        TB seq.             Setting unwanted_activity_severity to NO_ALERT
-%% 2078.5 ns    Log    ID_SEQUENCER        TB seq.             Testing normal data transmission
-%% 2078.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [124]
-%% 2078.5 ns    Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [125]
-%% 2078.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns):. [126]
-%% 2102.5 ns    Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"403ED641") completed.  ' 'Writing data'  [124]'
-%% 2122.5 ns    Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"403ED641")=> OK, read data = x"403ED641".  'Checking written data'
-%% 2122.5 ns    Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns)=> APB_VVC,0 finished. [126]
-%% 2122.5 ns    Log    ID_SEQUENCER        TB seq.             Testing unexpected data transmission
-%% 2139.5 ns    Log    ID_AWAIT_UVVM_COMP  TB seq.(uvvm)       await_uvvm_completion() => OK. All VVCs are inactive. Condition occurred after 1 ns
-%% 2139.5 ns    Log    ID_AWAIT_UVVM_COMP  TB seq.(uvvm)       await_uvvm_completion()() => OK. All UVVM scoreboards are empty. Condition occurred after 0 ns
+%%        1862.5 ns  Log    ID_SEQUENCER        TB seq.             Setting unwanted_activity_severity to ERROR
+%%        1862.5 ns  Log    ID_SEQUENCER        TB seq.             Testing normal data transmission
+%%        1862.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [118]
+%%        1862.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [119]
+%%        1862.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns):. [120]
+%%        1882.5 ns  Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"D92E6FFD") completed.  ' 'Writing data'  [118]'
+%%        1902.5 ns  Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"D92E6FFD")=> OK, read data = x"D92E6FFD".  'Checking written data'
+%%        1902.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns)=> APB_VVC,0 finished. [120]
+%%        1902.5 ns  Log    ID_SEQUENCER        TB seq.             Wait 100 ns
+%%        2002.5 ns  Log    ID_SEQUENCER        TB seq.             Testing unexpected data transmission
+%%        2002.5 ns  Alert  ERROR               APB_VVC,0           Unwanted activity detected. prdata changed from x"D92E6FFD" to x"26D19002"
+%%        2002.5 ns  Alert  ERROR               APB_VVC,0           Unwanted activity detected. pslverr changed from 0 to 1
+%%        2012.5 ns  Alert  ERROR               APB_VVC,0           Unwanted activity detected. prdata changed from x"26D19002" to x"D92E6FFD"
+%%        2012.5 ns  Alert  ERROR               APB_VVC,0           Unwanted activity detected. pslverr changed from 1 to 0
+%%        2012.5 ns  Alert  ERROR               APB_VVC,0           Unwanted activity detected. prdata changed from x"D92E6FFD" to x"26D19002"
+%%        2017.5 ns  Alert  ERROR               APB_VVC,0           Unwanted activity detected. prdata changed from x"26D19002" to x"D92E6FFD"
+%%        2017.5 ns  Alert  ERROR               APB_VVC,0           Unwanted activity detected. pslverr changed from 0 to 1
+%%        2018.5 ns  Alert  ERROR               APB_VVC,0           Unwanted activity detected. pslverr changed from 1 to 0
+%%        2018.5 ns  Log    ID_SEQUENCER        TB seq.             Setting unwanted_activity_severity to FAILURE
+%%        2018.5 ns  Log    ID_SEQUENCER        TB seq.             Testing normal data transmission
+%%        2018.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [121]
+%%        2018.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [122]
+%%        2018.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns):. [123]
+%%        2042.5 ns  Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"03A74DC9") completed.  ' 'Writing data'  [121]'
+%%        2062.5 ns  Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"03A74DC9")=> OK, read data = x"3A74DC9".  'Checking written data'
+%%        2062.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns)=> APB_VVC,0 finished. [123]
+%%        2062.5 ns  Log    ID_SEQUENCER        TB seq.             Testing unexpected data transmission
+%%        2062.5 ns  Alert  FAILURE             APB_VVC,0           Unwanted activity detected. prdata changed from x"03A74DC9" to x"FC58B236"
+%%        2062.5 ns  Alert  FAILURE             APB_VVC,0           Unwanted activity detected. pslverr changed from 0 to 1
+%%        2072.5 ns  Alert  FAILURE             APB_VVC,0           Unwanted activity detected. prdata changed from x"FC58B236" to x"03A74DC9"
+%%        2072.5 ns  Alert  FAILURE             APB_VVC,0           Unwanted activity detected. pslverr changed from 1 to 0
+%%        2072.5 ns  Alert  FAILURE             APB_VVC,0           Unwanted activity detected. prdata changed from x"03A74DC9" to x"FC58B236"
+%%        2077.5 ns  Alert  FAILURE             APB_VVC,0           Unwanted activity detected. prdata changed from x"FC58B236" to x"03A74DC9"
+%%        2077.5 ns  Alert  FAILURE             APB_VVC,0           Unwanted activity detected. pslverr changed from 0 to 1
+%%        2078.5 ns  Alert  FAILURE             APB_VVC,0           Unwanted activity detected. pslverr changed from 1 to 0
+%%        2078.5 ns  Log    ID_SEQUENCER        TB seq.             Setting unwanted_activity_severity to NO_ALERT
+%%        2078.5 ns  Log    ID_SEQUENCER        TB seq.             Testing normal data transmission
+%%        2078.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_write(APB_VVC,0, x"00000008"): 'Writing data'. [124]
+%%        2078.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       apb_check(APB_VVC,0, x"00000008"): 'Checking written data'. [125]
+%%        2078.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns):. [126]
+%%        2102.5 ns  Log    ID_BFM              APB_VVC,0           apb_write(A:x"00000008", x"403ED641") completed.  ' 'Writing data'  [124]'
+%%        2122.5 ns  Log    ID_BFM              APB_VVC,0           apb_check(A:x"00000008", x"403ED641")=> OK, read data = x"403ED641".  'Checking written data'
+%%        2122.5 ns  Log    ID_AWAIT_COMPLETIO  TB seq.(uvvm)       await_completion(APB_VVC,0, 1000000 ns)=> APB_VVC,0 finished. [126]
+%%        2122.5 ns  Log    ID_SEQUENCER        TB seq.             Testing unexpected data transmission
+%%        2139.5 ns  Log    ID_AWAIT_UVVM_COMP  TB seq.(uvvm)       await_uvvm_completion() => OK. All VVCs are inactive. Condition occurred after 1 ns
+%%        2139.5 ns  Log    ID_AWAIT_UVVM_COMP  TB seq.(uvvm)       await_uvvm_completion()() => OK. All UVVM scoreboards are empty. Condition occurred after 0 ns
 %% 
 %% ============================================================================================================================================================================
 %%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
-%% 2139.5 ns    DONE   PASSED   apb_vvc_tb  Passed: 11  Affirmations Checked: 15
+%%        2139.5 ns  DONE   PASSED  apb_vvc_tb  Passed: 21  Affirmations Checked: 21
 %%    Expected      Failures: -8  Errors: -11  Warnings: 0  Passed: 0
 %%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
 %%    Default       Failures: 8  Errors: 11  Warnings: 0  Passed: 0
@@ -398,5 +402,5 @@
 %% 
 %% 
 %% 
-%% 2139.5 ns    Log    ID_LOG_HDR          TB seq.(uvvm)       SIMULATION COMPLETED
+%%        2139.5 ns  Log    ID_LOG_HDR          TB seq.(uvvm)       SIMULATION COMPLETED
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

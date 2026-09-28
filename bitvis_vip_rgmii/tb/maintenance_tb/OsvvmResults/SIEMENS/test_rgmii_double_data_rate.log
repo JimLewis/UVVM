@@ -1,0 +1,484 @@
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF GLOBAL CTRL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                                IGNORE    STOP_LIMIT
+%%                NOTE         :  REGARD         0
+%%                TB_NOTE      :  REGARD         0
+%%                WARNING      :  REGARD         0
+%%                TB_WARNING   :  REGARD         0
+%%                MANUAL_CHECK :  REGARD         0
+%%                ERROR        :  REGARD         0
+%%                TB_ERROR     :  REGARD         0
+%%                FAILURE      :  REGARD         1
+%%                TB_FAILURE   :  REGARD         1
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF MSG ID PANEL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                ID                             Status
+%%                ------------------------       ------
+%%                ID_UTIL_BURIED               : DISABLED
+%%                ID_BITVIS_DEBUG              : DISABLED
+%%                ID_UTIL_SETUP                : ENABLED
+%%                ID_LOG_MSG_CTRL              : ENABLED
+%%                ID_ALERT_CTRL                : ENABLED
+%%                ID_FINISH_OR_STOP            : ENABLED
+%%                ID_CLOCK_GEN                 : ENABLED
+%%                ID_GEN_PULSE                 : ENABLED
+%%                ID_BLOCKING                  : ENABLED
+%%                ID_WATCHDOG                  : ENABLED
+%%                ID_RAND_GEN                  : DISABLED
+%%                ID_RAND_CONF                 : DISABLED
+%%                ID_FUNC_COV_BINS             : DISABLED
+%%                ID_FUNC_COV_BINS_INFO        : DISABLED
+%%                ID_FUNC_COV_RAND             : DISABLED
+%%                ID_FUNC_COV_SAMPLE           : DISABLED
+%%                ID_FUNC_COV_CONFIG           : DISABLED
+%%                ID_POS_ACK                   : ENABLED
+%%                ID_UVVM_ASSERTION            : ENABLED
+%%                ID_LOG_HDR                   : ENABLED
+%%                ID_LOG_HDR_LARGE             : ENABLED
+%%                ID_LOG_HDR_XL                : ENABLED
+%%                ID_SEQUENCER                 : ENABLED
+%%                ID_SEQUENCER_SUB             : ENABLED
+%%                ID_BFM                       : ENABLED
+%%                ID_BFM_WAIT                  : ENABLED
+%%                ID_BFM_POLL                  : ENABLED
+%%                ID_BFM_POLL_SUMMARY          : ENABLED
+%%                ID_CHANNEL_BFM               : ENABLED
+%%                ID_TERMINATE_CMD             : ENABLED
+%%                ID_SEGMENT_INITIATE          : ENABLED
+%%                ID_SEGMENT_COMPLETE          : ENABLED
+%%                ID_SEGMENT_HDR               : ENABLED
+%%                ID_SEGMENT_DATA              : ENABLED
+%%                ID_PACKET_INITIATE           : ENABLED
+%%                ID_PACKET_PREAMBLE           : ENABLED
+%%                ID_PACKET_COMPLETE           : ENABLED
+%%                ID_PACKET_HDR                : ENABLED
+%%                ID_PACKET_DATA               : ENABLED
+%%                ID_PACKET_CHECKSUM           : ENABLED
+%%                ID_PACKET_GAP                : ENABLED
+%%                ID_PACKET_PAYLOAD            : ENABLED
+%%                ID_FRAME_INITIATE            : ENABLED
+%%                ID_FRAME_COMPLETE            : ENABLED
+%%                ID_FRAME_HDR                 : ENABLED
+%%                ID_FRAME_DATA                : ENABLED
+%%                ID_COVERAGE_MAKEBIN          : DISABLED
+%%                ID_COVERAGE_ADDBIN           : DISABLED
+%%                ID_COVERAGE_ICOVER           : DISABLED
+%%                ID_COVERAGE_CONFIG           : ENABLED
+%%                ID_COVERAGE_SUMMARY          : ENABLED
+%%                ID_COVERAGE_HOLES            : ENABLED
+%%                ID_UVVM_SEND_CMD             : ENABLED
+%%                ID_UVVM_CMD_ACK              : ENABLED
+%%                ID_UVVM_CMD_RESULT           : ENABLED
+%%                ID_CMD_INTERPRETER           : ENABLED
+%%                ID_CMD_INTERPRETER_WAIT      : ENABLED
+%%                ID_IMMEDIATE_CMD             : ENABLED
+%%                ID_IMMEDIATE_CMD_WAIT        : ENABLED
+%%                ID_CMD_EXECUTOR              : ENABLED
+%%                ID_CMD_EXECUTOR_WAIT         : ENABLED
+%%                ID_CHANNEL_EXECUTOR          : ENABLED
+%%                ID_CHANNEL_EXECUTOR_WAIT     : ENABLED
+%%                ID_NEW_HVVC_CMD_SEQ          : ENABLED
+%%                ID_INSERTED_DELAY            : ENABLED
+%%                ID_OLD_AWAIT_COMPLETION      : ENABLED
+%%                ID_AWAIT_COMPLETION          : ENABLED
+%%                ID_AWAIT_COMPLETION_LIST     : ENABLED
+%%                ID_AWAIT_COMPLETION_WAIT     : ENABLED
+%%                ID_AWAIT_COMPLETION_END      : ENABLED
+%%                ID_AWAIT_UVVM_COMPLETION     : ENABLED
+%%                ID_UVVM_DATA_QUEUE           : ENABLED
+%%                ID_CONSTRUCTOR               : ENABLED
+%%                ID_CONSTRUCTOR_SUB           : ENABLED
+%%                ID_VVC_ACTIVITY              : ENABLED
+%%                ID_MONITOR                   : ENABLED
+%%                ID_MONITOR_ERROR             : ENABLED
+%%                ID_DATA                      : ENABLED
+%%                ID_CTRL                      : ENABLED
+%%                ID_SPEC_COV_INIT             : ENABLED
+%%                ID_SPEC_COV_REQS             : ENABLED
+%%                ID_SPEC_COV                  : ENABLED
+%%                ID_FILE_OPEN_CLOSE           : ENABLED
+%%                ID_FILE_PARSER               : ENABLED
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ALL_MESSAGES).
+%% 
+%% 
+%% ============================================================================================================================================================================
+%%           0.0 ns  Log    ID_LOG_HDR_LARGE    TB seq.             Start Simulation of RGMII
+%% ============================================================================================================================================================================
+%%           0.0 ns  Log    ID_CLOCK_GEN        TB seq.             Starting clock RGMII CLK
+%%           0.0 ns  Log    ID_BLOCKING         Slave seq.          Waiting for barrier. 'Synchronizing RX'
+%%          80.0 ns  Log    ID_BLOCKING         Main seq.           Waiting for barrier. 'Synchronizing TX'
+%%          80.0 ns  Log    ID_BLOCKING         Slave seq.          Barrier received. 'Synchronizing RX'
+%%          80.0 ns  Log    ID_BFM              Slave seq.          rgmii_read(5 bytes)=>
+%%          80.0 ns  Log    ID_BLOCKING         Main seq.           Barrier received. 'Synchronizing TX'
+%% 
+%% 
+%%          80.0 ns  Log    ID_LOG_HDR          TB seq.             Testing that BFM procedures normalize data arrays
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%          80.0 ns  Log    ID_BFM              Main seq.           rgmii_write(5 bytes)=>
+%%         128.0 ns  Log    ID_BFM              Main seq.           rgmii_write(5 bytes) DONE.
+%%         128.0 ns  Log    ID_BFM              Main seq.           rgmii_write(7 bytes)=>
+%%         168.0 ns  Log    ID_BFM              Slave seq.          rgmii_read(5 bytes) DONE.
+%%         168.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(7 bytes) while executing rgmii_read=>
+%%         192.0 ns  Log    ID_BFM              Main seq.           rgmii_write(7 bytes) DONE.
+%%         192.0 ns  Log    ID_BLOCKING         Main seq.           Waiting for barrier. 'Synchronizing TX'
+%%         232.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(7 bytes)=> OK, received 7 bytes.
+%%         232.0 ns  Log    ID_BLOCKING         Slave seq.          Waiting for barrier. 'Synchronizing RX'
+%%         232.0 ns  Log    ID_BLOCKING         Main seq.           Barrier received. 'Synchronizing TX'
+%% 
+%% 
+%%         232.0 ns  Log    ID_LOG_HDR          TB seq.             Testing explicit std_logic_vector values
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%         232.0 ns  Log    ID_BFM              Main seq.           rgmii_write(5 bytes)=>
+%%         232.0 ns  Log    ID_BLOCKING         Slave seq.          Barrier received. 'Synchronizing RX'
+%%         232.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(5 bytes) while executing rgmii_read=>
+%%         280.0 ns  Log    ID_BFM              Main seq.           rgmii_write(5 bytes) DONE.
+%%         280.0 ns  Log    ID_BLOCKING         Main seq.           Waiting for barrier. 'Synchronizing TX'
+%%         320.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(5 bytes)=> OK, received 5 bytes.
+%%         320.0 ns  Log    ID_BLOCKING         Slave seq.          Waiting for barrier. 'Synchronizing RX'
+%%         320.0 ns  Log    ID_BLOCKING         Main seq.           Barrier received. 'Synchronizing TX'
+%% 
+%% 
+%%         320.0 ns  Log    ID_LOG_HDR          TB seq.             Testing data sizes
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%         320.0 ns  Log    ID_BFM              Main seq.           rgmii_write(1 bytes)=>
+%%         320.0 ns  Log    ID_BLOCKING         Slave seq.          Barrier received. 'Synchronizing RX'
+%%         320.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(1 bytes) while executing rgmii_read=>
+%%         336.0 ns  Log    ID_BFM              Main seq.           rgmii_write(1 bytes) DONE.
+%%         336.0 ns  Log    ID_BFM              Main seq.           rgmii_write(2 bytes)=>
+%%         360.0 ns  Log    ID_BFM              Main seq.           rgmii_write(2 bytes) DONE.
+%%         360.0 ns  Log    ID_BFM              Main seq.           rgmii_write(3 bytes)=>
+%%         376.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(1 bytes)=> OK, received 1 bytes.
+%%         376.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(2 bytes) while executing rgmii_read=>
+%%         392.0 ns  Log    ID_BFM              Main seq.           rgmii_write(3 bytes) DONE.
+%%         392.0 ns  Log    ID_BFM              Main seq.           rgmii_write(4 bytes)=>
+%%         400.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(2 bytes)=> OK, received 2 bytes.
+%%         400.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(3 bytes) while executing rgmii_read=>
+%%         432.0 ns  Log    ID_BFM              Main seq.           rgmii_write(4 bytes) DONE.
+%%         432.0 ns  Log    ID_BFM              Main seq.           rgmii_write(5 bytes)=>
+%%         432.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(3 bytes)=> OK, received 3 bytes.
+%%         432.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(4 bytes) while executing rgmii_read=>
+%%         472.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(4 bytes)=> OK, received 4 bytes.
+%%         472.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(5 bytes) while executing rgmii_read=>
+%%         480.0 ns  Log    ID_BFM              Main seq.           rgmii_write(5 bytes) DONE.
+%%         480.0 ns  Log    ID_BFM              Main seq.           rgmii_write(6 bytes)=>
+%%         520.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(5 bytes)=> OK, received 5 bytes.
+%%         520.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(6 bytes) while executing rgmii_read=>
+%%         536.0 ns  Log    ID_BFM              Main seq.           rgmii_write(6 bytes) DONE.
+%%         536.0 ns  Log    ID_BFM              Main seq.           rgmii_write(7 bytes)=>
+%%         576.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(6 bytes)=> OK, received 6 bytes.
+%%         576.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(7 bytes) while executing rgmii_read=>
+%%         600.0 ns  Log    ID_BFM              Main seq.           rgmii_write(7 bytes) DONE.
+%%         600.0 ns  Log    ID_BFM              Main seq.           rgmii_write(8 bytes)=>
+%%         640.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(7 bytes)=> OK, received 7 bytes.
+%%         640.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(8 bytes) while executing rgmii_read=>
+%%         672.0 ns  Log    ID_BFM              Main seq.           rgmii_write(8 bytes) DONE.
+%%         672.0 ns  Log    ID_BFM              Main seq.           rgmii_write(9 bytes)=>
+%%         712.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(8 bytes)=> OK, received 8 bytes.
+%%         712.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(9 bytes) while executing rgmii_read=>
+%%         752.0 ns  Log    ID_BFM              Main seq.           rgmii_write(9 bytes) DONE.
+%%         752.0 ns  Log    ID_BFM              Main seq.           rgmii_write(10 bytes)=>
+%%         792.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(9 bytes)=> OK, received 9 bytes.
+%%         792.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(10 bytes) while executing rgmii_read=>
+%%         840.0 ns  Log    ID_BFM              Main seq.           rgmii_write(10 bytes) DONE.
+%%         840.0 ns  Log    ID_BFM              Main seq.           rgmii_write(11 bytes)=>
+%%         880.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(10 bytes)=> OK, received 10 bytes.
+%%         880.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(11 bytes) while executing rgmii_read=>
+%%         936.0 ns  Log    ID_BFM              Main seq.           rgmii_write(11 bytes) DONE.
+%%         936.0 ns  Log    ID_BFM              Main seq.           rgmii_write(12 bytes)=>
+%%         976.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(11 bytes)=> OK, received 11 bytes.
+%%         976.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(12 bytes) while executing rgmii_read=>
+%%        1040.0 ns  Log    ID_BFM              Main seq.           rgmii_write(12 bytes) DONE.
+%%        1040.0 ns  Log    ID_BFM              Main seq.           rgmii_write(13 bytes)=>
+%%        1080.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(12 bytes)=> OK, received 12 bytes.
+%%        1080.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(13 bytes) while executing rgmii_read=>
+%%        1152.0 ns  Log    ID_BFM              Main seq.           rgmii_write(13 bytes) DONE.
+%%        1152.0 ns  Log    ID_BFM              Main seq.           rgmii_write(14 bytes)=>
+%%        1192.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(13 bytes)=> OK, received 13 bytes.
+%%        1192.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(14 bytes) while executing rgmii_read=>
+%%        1272.0 ns  Log    ID_BFM              Main seq.           rgmii_write(14 bytes) DONE.
+%%        1272.0 ns  Log    ID_BFM              Main seq.           rgmii_write(15 bytes)=>
+%%        1312.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(14 bytes)=> OK, received 14 bytes.
+%%        1312.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(15 bytes) while executing rgmii_read=>
+%%        1400.0 ns  Log    ID_BFM              Main seq.           rgmii_write(15 bytes) DONE.
+%%        1400.0 ns  Log    ID_BFM              Main seq.           rgmii_write(16 bytes)=>
+%%        1440.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(15 bytes)=> OK, received 15 bytes.
+%%        1440.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(16 bytes) while executing rgmii_read=>
+%%        1536.0 ns  Log    ID_BFM              Main seq.           rgmii_write(16 bytes) DONE.
+%%        1536.0 ns  Log    ID_BFM              Main seq.           rgmii_write(17 bytes)=>
+%%        1576.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(16 bytes)=> OK, received 16 bytes.
+%%        1576.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(17 bytes) while executing rgmii_read=>
+%%        1680.0 ns  Log    ID_BFM              Main seq.           rgmii_write(17 bytes) DONE.
+%%        1680.0 ns  Log    ID_BFM              Main seq.           rgmii_write(18 bytes)=>
+%%        1720.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(17 bytes)=> OK, received 17 bytes.
+%%        1720.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(18 bytes) while executing rgmii_read=>
+%%        1832.0 ns  Log    ID_BFM              Main seq.           rgmii_write(18 bytes) DONE.
+%%        1832.0 ns  Log    ID_BFM              Main seq.           rgmii_write(19 bytes)=>
+%%        1872.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(18 bytes)=> OK, received 18 bytes.
+%%        1872.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(19 bytes) while executing rgmii_read=>
+%%        1992.0 ns  Log    ID_BFM              Main seq.           rgmii_write(19 bytes) DONE.
+%%        1992.0 ns  Log    ID_BFM              Main seq.           rgmii_write(20 bytes)=>
+%%        2032.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(19 bytes)=> OK, received 19 bytes.
+%%        2032.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(20 bytes) while executing rgmii_read=>
+%%        2160.0 ns  Log    ID_BFM              Main seq.           rgmii_write(20 bytes) DONE.
+%%        2160.0 ns  Log    ID_BFM              Main seq.           rgmii_write(21 bytes)=>
+%%        2200.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(20 bytes)=> OK, received 20 bytes.
+%%        2200.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(21 bytes) while executing rgmii_read=>
+%%        2336.0 ns  Log    ID_BFM              Main seq.           rgmii_write(21 bytes) DONE.
+%%        2336.0 ns  Log    ID_BFM              Main seq.           rgmii_write(22 bytes)=>
+%%        2376.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(21 bytes)=> OK, received 21 bytes.
+%%        2376.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(22 bytes) while executing rgmii_read=>
+%%        2520.0 ns  Log    ID_BFM              Main seq.           rgmii_write(22 bytes) DONE.
+%%        2520.0 ns  Log    ID_BFM              Main seq.           rgmii_write(23 bytes)=>
+%%        2560.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(22 bytes)=> OK, received 22 bytes.
+%%        2560.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(23 bytes) while executing rgmii_read=>
+%%        2712.0 ns  Log    ID_BFM              Main seq.           rgmii_write(23 bytes) DONE.
+%%        2712.0 ns  Log    ID_BFM              Main seq.           rgmii_write(24 bytes)=>
+%%        2752.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(23 bytes)=> OK, received 23 bytes.
+%%        2752.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(24 bytes) while executing rgmii_read=>
+%%        2912.0 ns  Log    ID_BFM              Main seq.           rgmii_write(24 bytes) DONE.
+%%        2912.0 ns  Log    ID_BFM              Main seq.           rgmii_write(25 bytes)=>
+%%        2952.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(24 bytes)=> OK, received 24 bytes.
+%%        2952.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(25 bytes) while executing rgmii_read=>
+%%        3120.0 ns  Log    ID_BFM              Main seq.           rgmii_write(25 bytes) DONE.
+%%        3120.0 ns  Log    ID_BFM              Main seq.           rgmii_write(26 bytes)=>
+%%        3160.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(25 bytes)=> OK, received 25 bytes.
+%%        3160.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(26 bytes) while executing rgmii_read=>
+%%        3336.0 ns  Log    ID_BFM              Main seq.           rgmii_write(26 bytes) DONE.
+%%        3336.0 ns  Log    ID_BFM              Main seq.           rgmii_write(27 bytes)=>
+%%        3376.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(26 bytes)=> OK, received 26 bytes.
+%%        3376.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(27 bytes) while executing rgmii_read=>
+%%        3560.0 ns  Log    ID_BFM              Main seq.           rgmii_write(27 bytes) DONE.
+%%        3560.0 ns  Log    ID_BFM              Main seq.           rgmii_write(28 bytes)=>
+%%        3600.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(27 bytes)=> OK, received 27 bytes.
+%%        3600.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(28 bytes) while executing rgmii_read=>
+%%        3792.0 ns  Log    ID_BFM              Main seq.           rgmii_write(28 bytes) DONE.
+%%        3792.0 ns  Log    ID_BFM              Main seq.           rgmii_write(29 bytes)=>
+%%        3832.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(28 bytes)=> OK, received 28 bytes.
+%%        3832.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(29 bytes) while executing rgmii_read=>
+%%        4032.0 ns  Log    ID_BFM              Main seq.           rgmii_write(29 bytes) DONE.
+%%        4032.0 ns  Log    ID_BFM              Main seq.           rgmii_write(30 bytes)=>
+%%        4072.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(29 bytes)=> OK, received 29 bytes.
+%%        4072.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(30 bytes) while executing rgmii_read=>
+%%        4280.0 ns  Log    ID_BFM              Main seq.           rgmii_write(30 bytes) DONE.
+%%        4280.0 ns  Log    ID_BFM              Main seq.           rgmii_write(31 bytes)=>
+%%        4320.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(30 bytes)=> OK, received 30 bytes.
+%%        4320.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(31 bytes) while executing rgmii_read=>
+%%        4536.0 ns  Log    ID_BFM              Main seq.           rgmii_write(31 bytes) DONE.
+%%        4536.0 ns  Log    ID_BLOCKING         Main seq.           Waiting for barrier. 'Synchronizing TX'
+%%        4576.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(31 bytes)=> OK, received 31 bytes.
+%%        4576.0 ns  Log    ID_BLOCKING         Slave seq.          Waiting for barrier. 'Synchronizing RX'
+%%        4576.0 ns  Log    ID_BLOCKING         Main seq.           Barrier received. 'Synchronizing TX'
+%% 
+%% 
+%%        4576.0 ns  Log    ID_LOG_HDR          TB seq.             Testing multiple byte transfer in several transactions
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%        4576.0 ns  Log    ID_BFM              Main seq.           rgmii_write(1 bytes)=>
+%%        4576.0 ns  Log    ID_BLOCKING         Slave seq.          Barrier received. 'Synchronizing RX'
+%%        4576.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(1 bytes) while executing rgmii_read=>
+%%        4588.0 ns  Log    ID_BFM              Main seq.           rgmii_write(1 bytes) DONE.
+%%        4588.0 ns  Log    ID_BFM              Main seq.           rgmii_write(2 bytes)=>
+%%        4604.0 ns  Log    ID_BFM              Main seq.           rgmii_write(2 bytes) DONE.
+%%        4604.0 ns  Log    ID_BFM              Main seq.           rgmii_write(3 bytes)=>
+%%        4628.0 ns  Log    ID_BFM              Main seq.           rgmii_write(3 bytes) DONE.
+%%        4628.0 ns  Log    ID_BFM              Main seq.           rgmii_write(4 bytes)=>
+%%        4632.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(1 bytes)=> OK, received 1 bytes.
+%%        4632.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(2 bytes) while executing rgmii_read=>
+%%        4648.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(2 bytes)=> OK, received 2 bytes.
+%%        4648.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(3 bytes) while executing rgmii_read=>
+%%        4660.0 ns  Log    ID_BFM              Main seq.           rgmii_write(4 bytes) DONE.
+%%        4660.0 ns  Log    ID_BFM              Main seq.           rgmii_write(5 bytes)=>
+%%        4672.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(3 bytes)=> OK, received 3 bytes.
+%%        4672.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(4 bytes) while executing rgmii_read=>
+%%        4700.0 ns  Log    ID_BFM              Main seq.           rgmii_write(5 bytes) DONE.
+%%        4700.0 ns  Log    ID_BFM              Main seq.           rgmii_write(6 bytes)=>
+%%        4704.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(4 bytes)=> OK, received 4 bytes.
+%%        4704.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(5 bytes) while executing rgmii_read=>
+%%        4744.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(5 bytes)=> OK, received 5 bytes.
+%%        4744.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(6 bytes) while executing rgmii_read=>
+%%        4748.0 ns  Log    ID_BFM              Main seq.           rgmii_write(6 bytes) DONE.
+%%        4748.0 ns  Log    ID_BFM              Main seq.           rgmii_write(7 bytes)=>
+%%        4792.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(6 bytes)=> OK, received 6 bytes.
+%%        4792.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(7 bytes) while executing rgmii_read=>
+%%        4804.0 ns  Log    ID_BFM              Main seq.           rgmii_write(7 bytes) DONE.
+%%        4804.0 ns  Log    ID_BFM              Main seq.           rgmii_write(8 bytes)=>
+%%        4848.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(7 bytes)=> OK, received 7 bytes.
+%%        4848.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(8 bytes) while executing rgmii_read=>
+%%        4868.0 ns  Log    ID_BFM              Main seq.           rgmii_write(8 bytes) DONE.
+%%        4868.0 ns  Log    ID_BFM              Main seq.           rgmii_write(9 bytes)=>
+%%        4912.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(8 bytes)=> OK, received 8 bytes.
+%%        4912.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(9 bytes) while executing rgmii_read=>
+%%        4940.0 ns  Log    ID_BFM              Main seq.           rgmii_write(9 bytes) DONE.
+%%        4940.0 ns  Log    ID_BFM              Main seq.           rgmii_write(10 bytes)=>
+%%        4984.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(9 bytes)=> OK, received 9 bytes.
+%%        4984.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(10 bytes) while executing rgmii_read=>
+%%        5020.0 ns  Log    ID_BFM              Main seq.           rgmii_write(10 bytes) DONE.
+%%        5020.0 ns  Log    ID_BFM              Main seq.           rgmii_write(11 bytes)=>
+%%        5064.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(10 bytes)=> OK, received 10 bytes.
+%%        5064.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(11 bytes) while executing rgmii_read=>
+%%        5108.0 ns  Log    ID_BFM              Main seq.           rgmii_write(11 bytes) DONE.
+%%        5108.0 ns  Log    ID_BFM              Main seq.           rgmii_write(12 bytes)=>
+%%        5152.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(11 bytes)=> OK, received 11 bytes.
+%%        5152.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(12 bytes) while executing rgmii_read=>
+%%        5204.0 ns  Log    ID_BFM              Main seq.           rgmii_write(12 bytes) DONE.
+%%        5204.0 ns  Log    ID_BFM              Main seq.           rgmii_write(13 bytes)=>
+%%        5248.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(12 bytes)=> OK, received 12 bytes.
+%%        5248.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(13 bytes) while executing rgmii_read=>
+%%        5308.0 ns  Log    ID_BFM              Main seq.           rgmii_write(13 bytes) DONE.
+%%        5308.0 ns  Log    ID_BFM              Main seq.           rgmii_write(14 bytes)=>
+%%        5352.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(13 bytes)=> OK, received 13 bytes.
+%%        5352.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(14 bytes) while executing rgmii_read=>
+%%        5420.0 ns  Log    ID_BFM              Main seq.           rgmii_write(14 bytes) DONE.
+%%        5420.0 ns  Log    ID_BFM              Main seq.           rgmii_write(15 bytes)=>
+%%        5464.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(14 bytes)=> OK, received 14 bytes.
+%%        5464.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(15 bytes) while executing rgmii_read=>
+%%        5540.0 ns  Log    ID_BFM              Main seq.           rgmii_write(15 bytes) DONE.
+%%        5540.0 ns  Log    ID_BFM              Main seq.           rgmii_write(16 bytes)=>
+%%        5584.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(15 bytes)=> OK, received 15 bytes.
+%%        5584.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(16 bytes) while executing rgmii_read=>
+%%        5668.0 ns  Log    ID_BFM              Main seq.           rgmii_write(16 bytes) DONE.
+%%        5668.0 ns  Log    ID_BFM              Main seq.           rgmii_write(17 bytes)=>
+%%        5712.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(16 bytes)=> OK, received 16 bytes.
+%%        5712.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(17 bytes) while executing rgmii_read=>
+%%        5804.0 ns  Log    ID_BFM              Main seq.           rgmii_write(17 bytes) DONE.
+%%        5804.0 ns  Log    ID_BFM              Main seq.           rgmii_write(18 bytes)=>
+%%        5848.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(17 bytes)=> OK, received 17 bytes.
+%%        5848.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(18 bytes) while executing rgmii_read=>
+%%        5948.0 ns  Log    ID_BFM              Main seq.           rgmii_write(18 bytes) DONE.
+%%        5948.0 ns  Log    ID_BFM              Main seq.           rgmii_write(19 bytes)=>
+%%        5992.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(18 bytes)=> OK, received 18 bytes.
+%%        5992.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(19 bytes) while executing rgmii_read=>
+%%        6100.0 ns  Log    ID_BFM              Main seq.           rgmii_write(19 bytes) DONE.
+%%        6100.0 ns  Log    ID_BFM              Main seq.           rgmii_write(20 bytes)=>
+%%        6144.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(19 bytes)=> OK, received 19 bytes.
+%%        6144.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(20 bytes) while executing rgmii_read=>
+%%        6260.0 ns  Log    ID_BFM              Main seq.           rgmii_write(20 bytes) DONE.
+%%        6260.0 ns  Log    ID_BFM              Main seq.           rgmii_write(21 bytes)=>
+%%        6304.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(20 bytes)=> OK, received 20 bytes.
+%%        6304.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(21 bytes) while executing rgmii_read=>
+%%        6428.0 ns  Log    ID_BFM              Main seq.           rgmii_write(21 bytes) DONE.
+%%        6428.0 ns  Log    ID_BFM              Main seq.           rgmii_write(22 bytes)=>
+%%        6472.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(21 bytes)=> OK, received 21 bytes.
+%%        6472.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(22 bytes) while executing rgmii_read=>
+%%        6604.0 ns  Log    ID_BFM              Main seq.           rgmii_write(22 bytes) DONE.
+%%        6604.0 ns  Log    ID_BFM              Main seq.           rgmii_write(23 bytes)=>
+%%        6648.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(22 bytes)=> OK, received 22 bytes.
+%%        6648.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(23 bytes) while executing rgmii_read=>
+%%        6788.0 ns  Log    ID_BFM              Main seq.           rgmii_write(23 bytes) DONE.
+%%        6788.0 ns  Log    ID_BFM              Main seq.           rgmii_write(24 bytes)=>
+%%        6832.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(23 bytes)=> OK, received 23 bytes.
+%%        6832.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(24 bytes) while executing rgmii_read=>
+%%        6980.0 ns  Log    ID_BFM              Main seq.           rgmii_write(24 bytes) DONE.
+%%        6980.0 ns  Log    ID_BFM              Main seq.           rgmii_write(25 bytes)=>
+%%        7024.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(24 bytes)=> OK, received 24 bytes.
+%%        7024.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(25 bytes) while executing rgmii_read=>
+%%        7180.0 ns  Log    ID_BFM              Main seq.           rgmii_write(25 bytes) DONE.
+%%        7180.0 ns  Log    ID_BFM              Main seq.           rgmii_write(26 bytes)=>
+%%        7224.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(25 bytes)=> OK, received 25 bytes.
+%%        7224.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(26 bytes) while executing rgmii_read=>
+%%        7388.0 ns  Log    ID_BFM              Main seq.           rgmii_write(26 bytes) DONE.
+%%        7388.0 ns  Log    ID_BFM              Main seq.           rgmii_write(27 bytes)=>
+%%        7432.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(26 bytes)=> OK, received 26 bytes.
+%%        7432.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(27 bytes) while executing rgmii_read=>
+%%        7604.0 ns  Log    ID_BFM              Main seq.           rgmii_write(27 bytes) DONE.
+%%        7604.0 ns  Log    ID_BFM              Main seq.           rgmii_write(28 bytes)=>
+%%        7648.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(27 bytes)=> OK, received 27 bytes.
+%%        7648.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(28 bytes) while executing rgmii_read=>
+%%        7828.0 ns  Log    ID_BFM              Main seq.           rgmii_write(28 bytes) DONE.
+%%        7828.0 ns  Log    ID_BFM              Main seq.           rgmii_write(29 bytes)=>
+%%        7872.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(28 bytes)=> OK, received 28 bytes.
+%%        7872.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(29 bytes) while executing rgmii_read=>
+%%        8060.0 ns  Log    ID_BFM              Main seq.           rgmii_write(29 bytes) DONE.
+%%        8060.0 ns  Log    ID_BFM              Main seq.           rgmii_write(30 bytes)=>
+%%        8104.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(29 bytes)=> OK, received 29 bytes.
+%%        8104.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(30 bytes) while executing rgmii_read=>
+%%        8300.0 ns  Log    ID_BFM              Main seq.           rgmii_write(30 bytes) DONE.
+%%        8300.0 ns  Log    ID_BFM              Main seq.           rgmii_write(31 bytes)=>
+%%        8344.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(30 bytes)=> OK, received 30 bytes.
+%%        8344.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(31 bytes) while executing rgmii_read=>
+%%        8552.0 ns  Log    ID_BFM              Main seq.           rgmii_write(31 bytes) DONE.
+%%        8552.0 ns  Log    PASSED              Main seq.           check_stable(sl, 240 ns) => OK. Value 1 was stable for 3.968 us. 'Checking that TXEN was held high during
+%%:                                                                 the complete transfer'
+%%        8552.0 ns  Log    ID_BLOCKING         Main seq.           Waiting for barrier. 'Synchronizing TX'
+%%        8592.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(31 bytes)=> OK, received 31 bytes.
+%%        8592.0 ns  Log    ID_BLOCKING         Slave seq.          Waiting for barrier. 'Synchronizing RX'
+%%        8592.0 ns  Log    ID_BLOCKING         Main seq.           Barrier received. 'Synchronizing TX'
+%% 
+%% 
+%%        8592.0 ns  Log    ID_LOG_HDR          TB seq.             Testing error case: write() txc timeout
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%        8592.0 ns  Log    ID_BFM              Main seq.           rgmii_write(11 bytes)=>
+%%        8592.0 ns  Log    ID_BLOCKING         Slave seq.          Barrier received. 'Synchronizing RX'
+%%        8600.0 ns  Log    ID_CLOCK_GEN        TB seq.             Stopping clock RGMII CLK
+%%       16592.0 ns  Alert  ERROR               Main seq.           rgmii_write(11 bytes)=> Failed. Timeout while waiting for txc during 1000 clock cycles.
+%%       16592.0 ns  Log    ID_BLOCKING         Main seq.           Waiting for barrier. 'Synchronizing TX'
+%%       16592.0 ns  Log    ID_BLOCKING         Slave seq.          Waiting for barrier. 'Synchronizing RX'
+%%       16592.0 ns  Log    ID_BLOCKING         Main seq.           Barrier received. 'Synchronizing TX'
+%% 
+%% 
+%%       16592.0 ns  Log    ID_LOG_HDR          TB seq.             Testing error case: read() rxc timeout
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%       16592.0 ns  Log    ID_BLOCKING         Slave seq.          Barrier received. 'Synchronizing RX'
+%%       16592.0 ns  Log    ID_BFM              Slave seq.          rgmii_read(100 bytes)=>
+%%       24592.0 ns  Log    ID_BLOCKING         Main seq.           Waiting for barrier. 'Synchronizing TX'
+%%       24592.0 ns  Log    ID_CLOCK_GEN        TB seq.             Starting clock RGMII CLK
+%%       24592.0 ns  Alert  ERROR               Slave seq.          rgmii_read(100 bytes)=> Failed. Timeout while waiting for rxc or rx_ctl during 1000 clock cycles.
+%%       24592.0 ns  Log    ID_BLOCKING         Slave seq.          Waiting for barrier. 'Synchronizing RX'
+%%       24592.0 ns  Log    ID_BLOCKING         Main seq.           Barrier received. 'Synchronizing TX'
+%% 
+%% 
+%%       24592.0 ns  Log    ID_LOG_HDR          TB seq.             Testing error case: read() rx_ctl timeout
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%       24592.0 ns  Log    ID_BLOCKING         Slave seq.          Barrier received. 'Synchronizing RX'
+%%       24592.0 ns  Log    ID_BFM              Slave seq.          rgmii_read(100 bytes)=>
+%%       32592.0 ns  Log    ID_BLOCKING         Main seq.           Waiting for barrier. 'Synchronizing TX'
+%%       32600.0 ns  Alert  ERROR               Slave seq.          rgmii_read(100 bytes)=> Failed. Timeout while waiting for rxc or rx_ctl during 1000 clock cycles.
+%%       32600.0 ns  Log    ID_BLOCKING         Slave seq.          Waiting for barrier. 'Synchronizing RX'
+%%       32600.0 ns  Log    ID_BLOCKING         Main seq.           Barrier received. 'Synchronizing TX'
+%% 
+%% 
+%%       32600.0 ns  Log    ID_LOG_HDR          TB seq.             Testing error case: expect() wrong data
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%       32600.0 ns  Log    ID_BFM              Main seq.           rgmii_write(11 bytes)=>
+%%       32600.0 ns  Log    ID_BLOCKING         Slave seq.          Barrier received. 'Synchronizing RX'
+%%       32600.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(11 bytes) while executing rgmii_read=>
+%%       32696.0 ns  Log    ID_BFM              Main seq.           rgmii_write(11 bytes) DONE.
+%%       32696.0 ns  Log    ID_BLOCKING         Main seq.           Waiting for barrier. 'Synchronizing TX'
+%%       32736.0 ns  Alert  ERROR               Slave seq.          rgmii_expect(11 bytes)=> Failed in 40 data bits. First mismatch in byte# 1. Was x"47". Expected x"11".
+%%:                                                                 Was:
+%%:                                                                 (47, 14, 3B, 25, 93, 22, E3, 70, 99, 2B, 11)
+%%:                                                                 Expected:
+%%:                                                                 (11, 2C, 9C, 80, CB, 64, 4F, 21, 92, 60, 7B)
+%%       32736.0 ns  Log    ID_BLOCKING         Slave seq.          Waiting for barrier. 'Synchronizing RX'
+%%       32736.0 ns  Log    ID_BLOCKING         Main seq.           Barrier received. 'Synchronizing TX'
+%% 
+%% 
+%%       32736.0 ns  Log    ID_LOG_HDR          TB seq.             Testing error case: expect() wrong size of data_array
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%       32736.0 ns  Log    ID_BFM              Main seq.           rgmii_write(11 bytes)=>
+%%       32736.0 ns  Log    ID_BLOCKING         Slave seq.          Barrier received. 'Synchronizing RX'
+%%       32736.0 ns  Log    ID_BFM              Slave seq.          rgmii_expect(16 bytes) while executing rgmii_read=>
+%%       32832.0 ns  Log    ID_BFM              Main seq.           rgmii_write(11 bytes) DONE.
+%%       32880.0 ns  Alert  ERROR               Slave seq.          rgmii_expect(16 bytes)=> Failed. Mismatch in received data length. Was 11. Expected 16.
+%% 
+%% ============================================================================================================================================================================
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%       33832.0 ns  DONE   PASSED  test_rgmii_double_data_rate  Passed: 1  Affirmations Checked: 1
+%%    Expected      Failures: 0  Errors: -5  Warnings: 0  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 5  Warnings: 0  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%%       33832.0 ns  Log    ID_LOG_HDR          Main seq.           SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -1,0 +1,575 @@
+%%           0.0 ns  Log    ID_CONSTRUCTOR      I2C_VVC,0           VVC instantiated.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  I2C_VVC,0           Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  I2C_VVC,0           Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR      I2C_VVC,1           VVC instantiated.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  I2C_VVC,1           Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  I2C_VVC,1           Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR      WISHBONE_VVC,0      VVC instantiated.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  WISHBONE_VVC,0      Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  WISHBONE_VVC,0      Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR      I2C_VVC,2           VVC instantiated.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  I2C_VVC,2           Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  I2C_VVC,2           Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR      I2C_VVC,5           VVC instantiated.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  I2C_VVC,5           Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  I2C_VVC,5           Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR      I2C_VVC,4           VVC instantiated.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  I2C_VVC,4           Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  I2C_VVC,4           Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR      I2C_VVC,6           VVC instantiated.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  I2C_VVC,6           Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  I2C_VVC,6           Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR      I2C_VVC,3           VVC instantiated.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  I2C_VVC,3           Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  I2C_VVC,3           Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR      SBI_VVC,0           VVC instantiated.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  SBI_VVC,0           Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  SBI_VVC,0           Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,0           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,1           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  WISHBONE_VVC,0      Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,2           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,5           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,4           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,6           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,3           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,0           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CTRL             I2C_VVC_SB,0        enable() => SB enabled. 'I2C VVC SB Enabled'
+%%           0.0 ns  Log    ID_CTRL             I2C_VVC_SB,0        config() => config applied to SB.
+%%           0.0 ns  Log    ID_CTRL             I2C_VVC_SB,0        enable_log_msg() => message id id_data enabled.
+%%           0.0 ns  Log    ID_CTRL             I2C_VVC_SB,1        enable() => SB enabled. 'I2C VVC SB Enabled'
+%%           0.0 ns  Log    ID_CTRL             I2C_VVC_SB,1        config() => config applied to SB.
+%%           0.0 ns  Log    ID_CTRL             I2C_VVC_SB,1        enable_log_msg() => message id id_data enabled.
+%%           0.0 ns  Log    ID_CTRL             WISHBONE_VVC_SB,0   enable() => SB enabled. 'WISHBONE VVC SB Enabled'
+%%           0.0 ns  Log    ID_CTRL             WISHBONE_VVC_SB,0   config() => config applied to SB.
+%%           0.0 ns  Log    ID_CTRL             WISHBONE_VVC_SB,0   enable_log_msg() => message id id_data enabled.
+%%           0.0 ns  Log    ID_CTRL             I2C_VVC_SB,2        enable() => SB enabled. 'I2C VVC SB Enabled'
+%%           0.0 ns  Log    ID_CTRL             I2C_VVC_SB,2        config() => config applied to SB.
+%%           0.0 ns  Log    ID_CTRL             I2C_VVC_SB,2        enable_log_msg() => message id id_data enabled.
+%%           0.0 ns  Log    ID_CTRL             I2C_VVC_SB,5        enable() => SB enabled. 'I2C VVC SB Enabled'
+%%           0.0 ns  Log    ID_CTRL             I2C_VVC_SB,5        config() => config applied to SB.
+%%           0.0 ns  Log    ID_CTRL             I2C_VVC_SB,5        enable_log_msg() => message id id_data enabled.
+%%           0.0 ns  Log    ID_CTRL             I2C_VVC_SB,4        enable() => SB enabled. 'I2C VVC SB Enabled'
+%%           0.0 ns  Log    ID_CTRL             I2C_VVC_SB,4        config() => config applied to SB.
+%%           0.0 ns  Log    ID_CTRL             I2C_VVC_SB,4        enable_log_msg() => message id id_data enabled.
+%%           0.0 ns  Log    ID_CTRL             I2C_VVC_SB,6        enable() => SB enabled. 'I2C VVC SB Enabled'
+%%           0.0 ns  Log    ID_CTRL             I2C_VVC_SB,6        config() => config applied to SB.
+%%           0.0 ns  Log    ID_CTRL             I2C_VVC_SB,6        enable_log_msg() => message id id_data enabled.
+%%           0.0 ns  Log    ID_CTRL             I2C_VVC_SB,3        enable() => SB enabled. 'I2C VVC SB Enabled'
+%%           0.0 ns  Log    ID_CTRL             I2C_VVC_SB,3        config() => config applied to SB.
+%%           0.0 ns  Log    ID_CTRL             I2C_VVC_SB,3        enable_log_msg() => message id id_data enabled.
+%%           0.0 ns  Log    ID_CTRL             SBI_VVC_SB,0        enable() => SB enabled. 'SBI VVC SB Enabled'
+%%           0.0 ns  Log    ID_CTRL             SBI_VVC_SB,0        config() => config applied to SB.
+%%           0.0 ns  Log    ID_CTRL             SBI_VVC_SB,0        enable_log_msg() => message id id_data enabled.
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_AWAIT_COMPLETION).
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_AWAIT_COMPLETION_LIST).
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_AWAIT_COMPLETION_WAIT).
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_AWAIT_COMPLETION_END).
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_UVVM_CMD_ACK).
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_POS_ACK).
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_UVVM_CMD_RESULT).
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(VVC_BROADCAST, ID_CMD_EXECUTOR): [1]
+%%           0.0 ns  Log    ID_CMD_EXECUTOR_WA  I2C_VVC,0           Executor: Waiting for command
+%%           0.0 ns  Log    ID_CMD_EXECUTOR_WA  I2C_VVC,1           Executor: Waiting for command
+%%           0.0 ns  Log    ID_CMD_EXECUTOR_WA  WISHBONE_VVC,0      Executor: Waiting for command
+%%           0.0 ns  Log    ID_CMD_EXECUTOR_WA  I2C_VVC,2           Executor: Waiting for command
+%%           0.0 ns  Log    ID_CMD_EXECUTOR_WA  I2C_VVC,5           Executor: Waiting for command
+%%           0.0 ns  Log    ID_CMD_EXECUTOR_WA  I2C_VVC,4           Executor: Waiting for command
+%%           0.0 ns  Log    ID_CMD_EXECUTOR_WA  I2C_VVC,6           Executor: Waiting for command
+%%           0.0 ns  Log    ID_CMD_EXECUTOR_WA  I2C_VVC,3           Executor: Waiting for command
+%%           0.0 ns  Log    ID_CMD_EXECUTOR_WA  SBI_VVC,0           Executor: Waiting for command
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    I2C_VVC,0           disable_log_msg(VVC_BROADCAST, ID_CMD_EXECUTOR): [1]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    I2C_VVC,1           disable_log_msg(VVC_BROADCAST, ID_CMD_EXECUTOR): [1]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    WISHBONE_VVC,0      disable_log_msg(VVC_BROADCAST, ID_CMD_EXECUTOR): [1]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    I2C_VVC,2           disable_log_msg(VVC_BROADCAST, ID_CMD_EXECUTOR): [1]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    I2C_VVC,5           disable_log_msg(VVC_BROADCAST, ID_CMD_EXECUTOR): [1]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    I2C_VVC,4           disable_log_msg(VVC_BROADCAST, ID_CMD_EXECUTOR): [1]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    I2C_VVC,6           disable_log_msg(VVC_BROADCAST, ID_CMD_EXECUTOR): [1]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    I2C_VVC,3           disable_log_msg(VVC_BROADCAST, ID_CMD_EXECUTOR): [1]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    SBI_VVC,0           disable_log_msg(VVC_BROADCAST, ID_CMD_EXECUTOR): [1]
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,0           disable_log_msg(VVC_BROADCAST, ID_CMD_EXECUTOR). Command received  [1]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     I2C_VVC,0           disable_log_msg(ID_CMD_EXECUTOR). ' [1]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,1           disable_log_msg(VVC_BROADCAST, ID_CMD_EXECUTOR). Command received  [1]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     I2C_VVC,1           disable_log_msg(ID_CMD_EXECUTOR). ' [1]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  WISHBONE_VVC,0      disable_log_msg(VVC_BROADCAST, ID_CMD_EXECUTOR). Command received  [1]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     WISHBONE_VVC,0      disable_log_msg(ID_CMD_EXECUTOR). ' [1]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,2           disable_log_msg(VVC_BROADCAST, ID_CMD_EXECUTOR). Command received  [1]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     I2C_VVC,2           disable_log_msg(ID_CMD_EXECUTOR). ' [1]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,5           disable_log_msg(VVC_BROADCAST, ID_CMD_EXECUTOR). Command received  [1]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     I2C_VVC,5           disable_log_msg(ID_CMD_EXECUTOR). ' [1]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,4           disable_log_msg(VVC_BROADCAST, ID_CMD_EXECUTOR). Command received  [1]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     I2C_VVC,4           disable_log_msg(ID_CMD_EXECUTOR). ' [1]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,6           disable_log_msg(VVC_BROADCAST, ID_CMD_EXECUTOR). Command received  [1]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     I2C_VVC,6           disable_log_msg(ID_CMD_EXECUTOR). ' [1]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,3           disable_log_msg(VVC_BROADCAST, ID_CMD_EXECUTOR). Command received  [1]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     I2C_VVC,3           disable_log_msg(ID_CMD_EXECUTOR). ' [1]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,0           disable_log_msg(VVC_BROADCAST, ID_CMD_EXECUTOR). Command received  [1]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     SBI_VVC,0           disable_log_msg(ID_CMD_EXECUTOR). ' [1]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,0           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  WISHBONE_VVC,0      Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,0           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,1           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,2           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,5           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,4           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,6           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,3           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(VVC_BROADCAST, ID_CMD_EXECUTOR_WAIT): [2]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    SBI_VVC,0           disable_log_msg(VVC_BROADCAST, ID_CMD_EXECUTOR_WAIT): [2]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    WISHBONE_VVC,0      disable_log_msg(VVC_BROADCAST, ID_CMD_EXECUTOR_WAIT): [2]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    I2C_VVC,0           disable_log_msg(VVC_BROADCAST, ID_CMD_EXECUTOR_WAIT): [2]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    I2C_VVC,1           disable_log_msg(VVC_BROADCAST, ID_CMD_EXECUTOR_WAIT): [2]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    I2C_VVC,2           disable_log_msg(VVC_BROADCAST, ID_CMD_EXECUTOR_WAIT): [2]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    I2C_VVC,5           disable_log_msg(VVC_BROADCAST, ID_CMD_EXECUTOR_WAIT): [2]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    I2C_VVC,4           disable_log_msg(VVC_BROADCAST, ID_CMD_EXECUTOR_WAIT): [2]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    I2C_VVC,6           disable_log_msg(VVC_BROADCAST, ID_CMD_EXECUTOR_WAIT): [2]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    I2C_VVC,3           disable_log_msg(VVC_BROADCAST, ID_CMD_EXECUTOR_WAIT): [2]
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,0           disable_log_msg(VVC_BROADCAST, ID_CMD_EXECUTOR_WAIT). Command received  [2]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     SBI_VVC,0           disable_log_msg(ID_CMD_EXECUTOR_WAIT). ' [2]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  WISHBONE_VVC,0      disable_log_msg(VVC_BROADCAST, ID_CMD_EXECUTOR_WAIT). Command received  [2]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     WISHBONE_VVC,0      disable_log_msg(ID_CMD_EXECUTOR_WAIT). ' [2]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,0           disable_log_msg(VVC_BROADCAST, ID_CMD_EXECUTOR_WAIT). Command received  [2]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     I2C_VVC,0           disable_log_msg(ID_CMD_EXECUTOR_WAIT). ' [2]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,1           disable_log_msg(VVC_BROADCAST, ID_CMD_EXECUTOR_WAIT). Command received  [2]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     I2C_VVC,1           disable_log_msg(ID_CMD_EXECUTOR_WAIT). ' [2]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,2           disable_log_msg(VVC_BROADCAST, ID_CMD_EXECUTOR_WAIT). Command received  [2]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     I2C_VVC,2           disable_log_msg(ID_CMD_EXECUTOR_WAIT). ' [2]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,5           disable_log_msg(VVC_BROADCAST, ID_CMD_EXECUTOR_WAIT). Command received  [2]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     I2C_VVC,5           disable_log_msg(ID_CMD_EXECUTOR_WAIT). ' [2]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,4           disable_log_msg(VVC_BROADCAST, ID_CMD_EXECUTOR_WAIT). Command received  [2]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     I2C_VVC,4           disable_log_msg(ID_CMD_EXECUTOR_WAIT). ' [2]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,6           disable_log_msg(VVC_BROADCAST, ID_CMD_EXECUTOR_WAIT). Command received  [2]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     I2C_VVC,6           disable_log_msg(ID_CMD_EXECUTOR_WAIT). ' [2]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,3           disable_log_msg(VVC_BROADCAST, ID_CMD_EXECUTOR_WAIT). Command received  [2]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     I2C_VVC,3           disable_log_msg(ID_CMD_EXECUTOR_WAIT). ' [2]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  WISHBONE_VVC,0      Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,0           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,0           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,1           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,2           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,5           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,4           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,6           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,3           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(VVC_BROADCAST, ID_CMD_INTERPRETER): [3]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    WISHBONE_VVC,0      disable_log_msg(VVC_BROADCAST, ID_CMD_INTERPRETER): [3]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    SBI_VVC,0           disable_log_msg(VVC_BROADCAST, ID_CMD_INTERPRETER): [3]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    I2C_VVC,0           disable_log_msg(VVC_BROADCAST, ID_CMD_INTERPRETER): [3]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    I2C_VVC,1           disable_log_msg(VVC_BROADCAST, ID_CMD_INTERPRETER): [3]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    I2C_VVC,2           disable_log_msg(VVC_BROADCAST, ID_CMD_INTERPRETER): [3]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    I2C_VVC,5           disable_log_msg(VVC_BROADCAST, ID_CMD_INTERPRETER): [3]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    I2C_VVC,4           disable_log_msg(VVC_BROADCAST, ID_CMD_INTERPRETER): [3]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    I2C_VVC,6           disable_log_msg(VVC_BROADCAST, ID_CMD_INTERPRETER): [3]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    I2C_VVC,3           disable_log_msg(VVC_BROADCAST, ID_CMD_INTERPRETER): [3]
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  WISHBONE_VVC,0      disable_log_msg(VVC_BROADCAST, ID_CMD_INTERPRETER). Command received  [3]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     WISHBONE_VVC,0      disable_log_msg(ID_CMD_INTERPRETER). ' [3]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,0           disable_log_msg(VVC_BROADCAST, ID_CMD_INTERPRETER). Command received  [3]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     SBI_VVC,0           disable_log_msg(ID_CMD_INTERPRETER). ' [3]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,0           disable_log_msg(VVC_BROADCAST, ID_CMD_INTERPRETER). Command received  [3]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     I2C_VVC,0           disable_log_msg(ID_CMD_INTERPRETER). ' [3]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,1           disable_log_msg(VVC_BROADCAST, ID_CMD_INTERPRETER). Command received  [3]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     I2C_VVC,1           disable_log_msg(ID_CMD_INTERPRETER). ' [3]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,2           disable_log_msg(VVC_BROADCAST, ID_CMD_INTERPRETER). Command received  [3]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     I2C_VVC,2           disable_log_msg(ID_CMD_INTERPRETER). ' [3]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,5           disable_log_msg(VVC_BROADCAST, ID_CMD_INTERPRETER). Command received  [3]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     I2C_VVC,5           disable_log_msg(ID_CMD_INTERPRETER). ' [3]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,4           disable_log_msg(VVC_BROADCAST, ID_CMD_INTERPRETER). Command received  [3]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     I2C_VVC,4           disable_log_msg(ID_CMD_INTERPRETER). ' [3]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,6           disable_log_msg(VVC_BROADCAST, ID_CMD_INTERPRETER). Command received  [3]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     I2C_VVC,6           disable_log_msg(ID_CMD_INTERPRETER). ' [3]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,3           disable_log_msg(VVC_BROADCAST, ID_CMD_INTERPRETER). Command received  [3]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     I2C_VVC,3           disable_log_msg(ID_CMD_INTERPRETER). ' [3]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,0           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  WISHBONE_VVC,0      Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,0           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,1           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,2           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,5           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,4           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,6           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  I2C_VVC,3           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(VVC_BROADCAST, ID_CMD_INTERPRETER_WAIT): [4]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    SBI_VVC,0           disable_log_msg(VVC_BROADCAST, ID_CMD_INTERPRETER_WAIT): [4]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    WISHBONE_VVC,0      disable_log_msg(VVC_BROADCAST, ID_CMD_INTERPRETER_WAIT): [4]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    I2C_VVC,0           disable_log_msg(VVC_BROADCAST, ID_CMD_INTERPRETER_WAIT): [4]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    I2C_VVC,1           disable_log_msg(VVC_BROADCAST, ID_CMD_INTERPRETER_WAIT): [4]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    I2C_VVC,2           disable_log_msg(VVC_BROADCAST, ID_CMD_INTERPRETER_WAIT): [4]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    I2C_VVC,5           disable_log_msg(VVC_BROADCAST, ID_CMD_INTERPRETER_WAIT): [4]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    I2C_VVC,4           disable_log_msg(VVC_BROADCAST, ID_CMD_INTERPRETER_WAIT): [4]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    I2C_VVC,6           disable_log_msg(VVC_BROADCAST, ID_CMD_INTERPRETER_WAIT): [4]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    I2C_VVC,3           disable_log_msg(VVC_BROADCAST, ID_CMD_INTERPRETER_WAIT): [4]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     SBI_VVC,0           disable_log_msg(ID_CMD_INTERPRETER_WAIT). ' [4]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     WISHBONE_VVC,0      disable_log_msg(ID_CMD_INTERPRETER_WAIT). ' [4]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     I2C_VVC,0           disable_log_msg(ID_CMD_INTERPRETER_WAIT). ' [4]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     I2C_VVC,1           disable_log_msg(ID_CMD_INTERPRETER_WAIT). ' [4]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     I2C_VVC,2           disable_log_msg(ID_CMD_INTERPRETER_WAIT). ' [4]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     I2C_VVC,5           disable_log_msg(ID_CMD_INTERPRETER_WAIT). ' [4]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     I2C_VVC,4           disable_log_msg(ID_CMD_INTERPRETER_WAIT). ' [4]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     I2C_VVC,6           disable_log_msg(ID_CMD_INTERPRETER_WAIT). ' [4]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     I2C_VVC,3           disable_log_msg(ID_CMD_INTERPRETER_WAIT). ' [4]'
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       disable_log_msg(VVC_BROADCAST, ID_IMMEDIATE_CMD): [5]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    WISHBONE_VVC,0      disable_log_msg(VVC_BROADCAST, ID_IMMEDIATE_CMD): [5]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    SBI_VVC,0           disable_log_msg(VVC_BROADCAST, ID_IMMEDIATE_CMD): [5]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    I2C_VVC,0           disable_log_msg(VVC_BROADCAST, ID_IMMEDIATE_CMD): [5]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    I2C_VVC,1           disable_log_msg(VVC_BROADCAST, ID_IMMEDIATE_CMD): [5]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    I2C_VVC,2           disable_log_msg(VVC_BROADCAST, ID_IMMEDIATE_CMD): [5]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    I2C_VVC,5           disable_log_msg(VVC_BROADCAST, ID_IMMEDIATE_CMD): [5]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    I2C_VVC,4           disable_log_msg(VVC_BROADCAST, ID_IMMEDIATE_CMD): [5]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    I2C_VVC,6           disable_log_msg(VVC_BROADCAST, ID_IMMEDIATE_CMD): [5]
+%%           0.0 ns  Log    ID_UVVM_SEND_CMD    I2C_VVC,3           disable_log_msg(VVC_BROADCAST, ID_IMMEDIATE_CMD): [5]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     WISHBONE_VVC,0      disable_log_msg(ID_IMMEDIATE_CMD). ' [5]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     SBI_VVC,0           disable_log_msg(ID_IMMEDIATE_CMD). ' [5]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     I2C_VVC,0           disable_log_msg(ID_IMMEDIATE_CMD). ' [5]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     I2C_VVC,1           disable_log_msg(ID_IMMEDIATE_CMD). ' [5]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     I2C_VVC,2           disable_log_msg(ID_IMMEDIATE_CMD). ' [5]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     I2C_VVC,5           disable_log_msg(ID_IMMEDIATE_CMD). ' [5]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     I2C_VVC,4           disable_log_msg(ID_IMMEDIATE_CMD). ' [5]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     I2C_VVC,6           disable_log_msg(ID_IMMEDIATE_CMD). ' [5]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     I2C_VVC,3           disable_log_msg(ID_IMMEDIATE_CMD). ' [5]'
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF GLOBAL CTRL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                                IGNORE    STOP_LIMIT
+%%                NOTE         :  REGARD         0
+%%                TB_NOTE      :  REGARD         0
+%%                WARNING      :  REGARD         0
+%%                TB_WARNING   :  REGARD         0
+%%                MANUAL_CHECK :  REGARD         0
+%%                ERROR        :  REGARD         0
+%%                TB_ERROR     :  REGARD         0
+%%                FAILURE      :  REGARD         1
+%%                TB_FAILURE   :  REGARD         1
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF MSG ID PANEL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                ID                             Status
+%%                ------------------------       ------
+%%                ID_UTIL_BURIED               : DISABLED
+%%                ID_BITVIS_DEBUG              : DISABLED
+%%                ID_UTIL_SETUP                : ENABLED
+%%                ID_LOG_MSG_CTRL              : ENABLED
+%%                ID_ALERT_CTRL                : ENABLED
+%%                ID_FINISH_OR_STOP            : ENABLED
+%%                ID_CLOCK_GEN                 : ENABLED
+%%                ID_GEN_PULSE                 : ENABLED
+%%                ID_BLOCKING                  : ENABLED
+%%                ID_WATCHDOG                  : ENABLED
+%%                ID_RAND_GEN                  : DISABLED
+%%                ID_RAND_CONF                 : DISABLED
+%%                ID_FUNC_COV_BINS             : DISABLED
+%%                ID_FUNC_COV_BINS_INFO        : DISABLED
+%%                ID_FUNC_COV_RAND             : DISABLED
+%%                ID_FUNC_COV_SAMPLE           : DISABLED
+%%                ID_FUNC_COV_CONFIG           : DISABLED
+%%                ID_POS_ACK                   : DISABLED
+%%                ID_UVVM_ASSERTION            : ENABLED
+%%                ID_LOG_HDR                   : ENABLED
+%%                ID_LOG_HDR_LARGE             : ENABLED
+%%                ID_LOG_HDR_XL                : ENABLED
+%%                ID_SEQUENCER                 : ENABLED
+%%                ID_SEQUENCER_SUB             : ENABLED
+%%                ID_BFM                       : ENABLED
+%%                ID_BFM_WAIT                  : ENABLED
+%%                ID_BFM_POLL                  : ENABLED
+%%                ID_BFM_POLL_SUMMARY          : ENABLED
+%%                ID_CHANNEL_BFM               : ENABLED
+%%                ID_TERMINATE_CMD             : ENABLED
+%%                ID_SEGMENT_INITIATE          : ENABLED
+%%                ID_SEGMENT_COMPLETE          : ENABLED
+%%                ID_SEGMENT_HDR               : ENABLED
+%%                ID_SEGMENT_DATA              : ENABLED
+%%                ID_PACKET_INITIATE           : ENABLED
+%%                ID_PACKET_PREAMBLE           : ENABLED
+%%                ID_PACKET_COMPLETE           : ENABLED
+%%                ID_PACKET_HDR                : ENABLED
+%%                ID_PACKET_DATA               : ENABLED
+%%                ID_PACKET_CHECKSUM           : ENABLED
+%%                ID_PACKET_GAP                : ENABLED
+%%                ID_PACKET_PAYLOAD            : ENABLED
+%%                ID_FRAME_INITIATE            : ENABLED
+%%                ID_FRAME_COMPLETE            : ENABLED
+%%                ID_FRAME_HDR                 : ENABLED
+%%                ID_FRAME_DATA                : ENABLED
+%%                ID_COVERAGE_MAKEBIN          : DISABLED
+%%                ID_COVERAGE_ADDBIN           : DISABLED
+%%                ID_COVERAGE_ICOVER           : DISABLED
+%%                ID_COVERAGE_CONFIG           : ENABLED
+%%                ID_COVERAGE_SUMMARY          : ENABLED
+%%                ID_COVERAGE_HOLES            : ENABLED
+%%                ID_UVVM_SEND_CMD             : ENABLED
+%%                ID_UVVM_CMD_ACK              : DISABLED
+%%                ID_UVVM_CMD_RESULT           : DISABLED
+%%                ID_CMD_INTERPRETER           : ENABLED
+%%                ID_CMD_INTERPRETER_WAIT      : ENABLED
+%%                ID_IMMEDIATE_CMD             : ENABLED
+%%                ID_IMMEDIATE_CMD_WAIT        : ENABLED
+%%                ID_CMD_EXECUTOR              : ENABLED
+%%                ID_CMD_EXECUTOR_WAIT         : ENABLED
+%%                ID_CHANNEL_EXECUTOR          : ENABLED
+%%                ID_CHANNEL_EXECUTOR_WAIT     : ENABLED
+%%                ID_NEW_HVVC_CMD_SEQ          : ENABLED
+%%                ID_INSERTED_DELAY            : ENABLED
+%%                ID_OLD_AWAIT_COMPLETION      : ENABLED
+%%                ID_AWAIT_COMPLETION          : DISABLED
+%%                ID_AWAIT_COMPLETION_LIST     : DISABLED
+%%                ID_AWAIT_COMPLETION_WAIT     : DISABLED
+%%                ID_AWAIT_COMPLETION_END      : DISABLED
+%%                ID_AWAIT_UVVM_COMPLETION     : ENABLED
+%%                ID_UVVM_DATA_QUEUE           : ENABLED
+%%                ID_CONSTRUCTOR               : ENABLED
+%%                ID_CONSTRUCTOR_SUB           : ENABLED
+%%                ID_VVC_ACTIVITY              : ENABLED
+%%                ID_MONITOR                   : ENABLED
+%%                ID_MONITOR_ERROR             : ENABLED
+%%                ID_DATA                      : ENABLED
+%%                ID_CTRL                      : ENABLED
+%%                ID_SPEC_COV_INIT             : ENABLED
+%%                ID_SPEC_COV_REQS             : ENABLED
+%%                ID_SPEC_COV                  : ENABLED
+%%                ID_FILE_OPEN_CLOSE           : ENABLED
+%%                ID_FILE_PARSER               : ENABLED
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%% 
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.             Setting inter-bfm delay
+%%          12.5 ns  Log    ID_GEN_PULSE        TB seq.             Pulsed to 1 for 12500 ps. 'Trigger DUT reset'
+%%     1000012.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"0", x"13"): 'Set SCL prescaler LSB'. [6]
+%%     1000012.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"1", x"00"): 'Set SCL prescaler MSB'. [7]
+%%     1000012.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"2", x"80"): 'Enable DUT'. [8]
+%%     1000032.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"0", x"13") completed. ' 'Set SCL prescaler LSB'  [6]'
+%%     1000052.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"1", x"00") completed. ' 'Set SCL prescaler MSB'  [7]'
+%%     1000072.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"2", x"80") completed. ' 'Enable DUT'  [8]'
+%%     1000072.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"3", x"AB"): 'Setting address to be x55 and setting RW bit to Read ('1')'. [10]
+%%     1000072.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"4", x"90"): 'Setting STA and WR bit in command reg'. [11]
+%%     1000072.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       i2c_slave_transmit(I2C_VVC,2): 'Transmit data from I2C slave VVC'. [12]
+%%     1000092.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"3", x"AB") completed. ' 'Setting address to be x55 and setting RW bit to Read ('1')'  [10]'
+%%     1000112.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"4", x"90") completed. ' 'Setting STA and WR bit in command reg'  [11]'
+%%     1000112.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [14]
+%%     1000132.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"3". ' 'Read status reg'  [14]'
+%%     1000132.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 14): 'Fetching result from I2C master DUT status register.'. [16]
+%%     1001232.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [17]
+%%     1001252.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [17]'
+%%     1001252.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 17): 'Fetching result from I2C master DUT status register.'. [19]
+%%     1002352.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [20]
+%%     1002372.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [20]'
+%%     1002372.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 20): 'Fetching result from I2C master DUT status register.'. [22]
+%%     1003472.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [23]
+%%     1003492.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [23]'
+%%     1003492.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 23): 'Fetching result from I2C master DUT status register.'. [25]
+%%     1004592.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [26]
+%%     1004612.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [26]'
+%%     1004612.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 26): 'Fetching result from I2C master DUT status register.'. [28]
+%%     1005712.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [29]
+%%     1005732.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [29]'
+%%     1005732.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 29): 'Fetching result from I2C master DUT status register.'. [31]
+%%     1006832.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [32]
+%%     1006852.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [32]'
+%%     1006852.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 32): 'Fetching result from I2C master DUT status register.'. [34]
+%%     1007952.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [35]
+%%     1007972.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [35]'
+%%     1007972.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 35): 'Fetching result from I2C master DUT status register.'. [37]
+%%     1009072.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [38]
+%%     1009092.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [38]'
+%%     1009092.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 38): 'Fetching result from I2C master DUT status register.'. [40]
+%%     1010192.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [41]
+%%     1010212.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [41]'
+%%     1010212.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 41): 'Fetching result from I2C master DUT status register.'. [43]
+%%     1011312.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [44]
+%%     1011332.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"41". ' 'Read status reg'  [44]'
+%%     1011332.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 44): 'Fetching result from I2C master DUT status register.'. [46]
+%%     1011332.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"4", x"20"): 'Setting RD and ACK bit in command reg'. [47]
+%%     1011352.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"4", x"20") completed. ' 'Setting RD and ACK bit in command reg'  [47]'
+%%     1011352.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [49]
+%%     1011372.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [49]'
+%%     1011372.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 49): 'Fetching result from I2C master DUT status register.'. [51]
+%%     1012472.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [52]
+%%     1012492.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [52]'
+%%     1012492.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 52): 'Fetching result from I2C master DUT status register.'. [54]
+%%     1013592.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [55]
+%%     1013612.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [55]'
+%%     1013612.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 55): 'Fetching result from I2C master DUT status register.'. [57]
+%%     1014712.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [58]
+%%     1014732.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [58]'
+%%     1014732.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 58): 'Fetching result from I2C master DUT status register.'. [60]
+%%     1015832.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [61]
+%%     1015852.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [61]'
+%%     1015852.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 61): 'Fetching result from I2C master DUT status register.'. [63]
+%%     1016952.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [64]
+%%     1016972.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [64]'
+%%     1016972.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 64): 'Fetching result from I2C master DUT status register.'. [66]
+%%     1018072.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [67]
+%%     1018092.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [67]'
+%%     1018092.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 67): 'Fetching result from I2C master DUT status register.'. [69]
+%%     1019192.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [70]
+%%     1019212.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [70]'
+%%     1019212.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 70): 'Fetching result from I2C master DUT status register.'. [72]
+%%     1020312.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [73]
+%%     1020332.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [73]'
+%%     1020332.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 73): 'Fetching result from I2C master DUT status register.'. [75]
+%%     1021432.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [76]
+%%     1021452.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"41". ' 'Read status reg'  [76]'
+%%     1021452.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 76): 'Fetching result from I2C master DUT status register.'. [78]
+%%     1021452.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"3", x"47"): 'Checking data received from I2C VVC Slave'. [79]
+%%     1021452.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"4", x"20"): 'Setting RD and ACK bit in command reg'. [80]
+%%     1021472.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"3", x"47")=> OK, received data = x"47". ' 'Checking data received from I2C VVC Slave'  [79]'
+%%     1021492.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"4", x"20") completed. ' 'Setting RD and ACK bit in command reg'  [80]'
+%%     1021492.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [82]
+%%     1021512.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [82]'
+%%     1021512.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 82): 'Fetching result from I2C master DUT status register.'. [84]
+%%     1022612.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [85]
+%%     1022632.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [85]'
+%%     1022632.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 85): 'Fetching result from I2C master DUT status register.'. [87]
+%%     1023732.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [88]
+%%     1023752.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [88]'
+%%     1023752.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 88): 'Fetching result from I2C master DUT status register.'. [90]
+%%     1024852.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [91]
+%%     1024872.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [91]'
+%%     1024872.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 91): 'Fetching result from I2C master DUT status register.'. [93]
+%%     1025972.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [94]
+%%     1025992.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [94]'
+%%     1025992.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 94): 'Fetching result from I2C master DUT status register.'. [96]
+%%     1027092.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [97]
+%%     1027112.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [97]'
+%%     1027112.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 97): 'Fetching result from I2C master DUT status register.'. [99]
+%%     1028212.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [100]
+%%     1028232.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [100]'
+%%     1028232.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 100): 'Fetching result from I2C master DUT status register.'. [102]
+%%     1029332.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [103]
+%%     1029352.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [103]'
+%%     1029352.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 103): 'Fetching result from I2C master DUT status register.'. [105]
+%%     1030452.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [106]
+%%     1030472.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [106]'
+%%     1030472.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 106): 'Fetching result from I2C master DUT status register.'. [108]
+%%     1031572.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [109]
+%%     1031592.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"41". ' 'Read status reg'  [109]'
+%%     1031592.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 109): 'Fetching result from I2C master DUT status register.'. [111]
+%%     1031592.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"3", x"14"): 'Checking data received from I2C VVC Slave'. [112]
+%%     1031592.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"4", x"20"): 'Setting RD and ACK bit in command reg'. [113]
+%%     1031612.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"3", x"14")=> OK, received data = x"14". ' 'Checking data received from I2C VVC Slave'  [112]'
+%%     1031632.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"4", x"20") completed. ' 'Setting RD and ACK bit in command reg'  [113]'
+%%     1031632.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [115]
+%%     1031652.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [115]'
+%%     1031652.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 115): 'Fetching result from I2C master DUT status register.'. [117]
+%%     1032752.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [118]
+%%     1032772.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [118]'
+%%     1032772.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 118): 'Fetching result from I2C master DUT status register.'. [120]
+%%     1033872.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [121]
+%%     1033892.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [121]'
+%%     1033892.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 121): 'Fetching result from I2C master DUT status register.'. [123]
+%%     1034992.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [124]
+%%     1035012.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [124]'
+%%     1035012.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 124): 'Fetching result from I2C master DUT status register.'. [126]
+%%     1036112.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [127]
+%%     1036132.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [127]'
+%%     1036132.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 127): 'Fetching result from I2C master DUT status register.'. [129]
+%%     1037232.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [130]
+%%     1037252.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [130]'
+%%     1037252.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 130): 'Fetching result from I2C master DUT status register.'. [132]
+%%     1038352.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [133]
+%%     1038372.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [133]'
+%%     1038372.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 133): 'Fetching result from I2C master DUT status register.'. [135]
+%%     1039472.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [136]
+%%     1039492.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [136]'
+%%     1039492.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 136): 'Fetching result from I2C master DUT status register.'. [138]
+%%     1040592.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [139]
+%%     1040612.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [139]'
+%%     1040612.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 139): 'Fetching result from I2C master DUT status register.'. [141]
+%%     1041712.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [142]
+%%     1041732.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"41". ' 'Read status reg'  [142]'
+%%     1041732.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 142): 'Fetching result from I2C master DUT status register.'. [144]
+%%     1041732.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"3", x"3B"): 'Checking data received from I2C VVC Slave'. [145]
+%%     1041732.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"4", x"20"): 'Setting RD and ACK bit in command reg'. [146]
+%%     1041752.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"3", x"3B")=> OK, received data = x"3B". ' 'Checking data received from I2C VVC Slave'  [145]'
+%%     1041772.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"4", x"20") completed. ' 'Setting RD and ACK bit in command reg'  [146]'
+%%     1041772.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [148]
+%%     1041792.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [148]'
+%%     1041792.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 148): 'Fetching result from I2C master DUT status register.'. [150]
+%%     1042892.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [151]
+%%     1042912.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [151]'
+%%     1042912.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 151): 'Fetching result from I2C master DUT status register.'. [153]
+%%     1044012.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [154]
+%%     1044032.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [154]'
+%%     1044032.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 154): 'Fetching result from I2C master DUT status register.'. [156]
+%%     1045132.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [157]
+%%     1045152.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [157]'
+%%     1045152.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 157): 'Fetching result from I2C master DUT status register.'. [159]
+%%     1046252.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [160]
+%%     1046272.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [160]'
+%%     1046272.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 160): 'Fetching result from I2C master DUT status register.'. [162]
+%%     1047372.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [163]
+%%     1047392.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [163]'
+%%     1047392.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 163): 'Fetching result from I2C master DUT status register.'. [165]
+%%     1048492.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [166]
+%%     1048512.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [166]'
+%%     1048512.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 166): 'Fetching result from I2C master DUT status register.'. [168]
+%%     1049612.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [169]
+%%     1049632.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [169]'
+%%     1049632.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 169): 'Fetching result from I2C master DUT status register.'. [171]
+%%     1050732.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [172]
+%%     1050752.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [172]'
+%%     1050752.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 172): 'Fetching result from I2C master DUT status register.'. [174]
+%%     1051852.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [175]
+%%     1051872.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"41". ' 'Read status reg'  [175]'
+%%     1051872.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 175): 'Fetching result from I2C master DUT status register.'. [177]
+%%     1051872.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"3", x"25"): 'Checking data received from I2C VVC Slave'. [178]
+%%     1051872.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_write(WISHBONE_VVC,0, x"4", x"68"): 'Setting STO, RD and NACK bit in command reg'. [179]
+%%     1051892.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"3", x"25")=> OK, received data = x"25". ' 'Checking data received from I2C VVC Slave'  [178]'
+%%     1051912.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_write(A:x"4", x"68") completed. ' 'Setting STO, RD and NACK bit in command reg'  [179]'
+%%     1051912.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [181]
+%%     1051932.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [181]'
+%%     1051932.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 181): 'Fetching result from I2C master DUT status register.'. [183]
+%%     1053032.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [184]
+%%     1053052.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [184]'
+%%     1053052.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 184): 'Fetching result from I2C master DUT status register.'. [186]
+%%     1054152.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [187]
+%%     1054172.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [187]'
+%%     1054172.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 187): 'Fetching result from I2C master DUT status register.'. [189]
+%%     1055272.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [190]
+%%     1055292.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [190]'
+%%     1055292.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 190): 'Fetching result from I2C master DUT status register.'. [192]
+%%     1056392.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [193]
+%%     1056412.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [193]'
+%%     1056412.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 193): 'Fetching result from I2C master DUT status register.'. [195]
+%%     1057512.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [196]
+%%     1057532.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [196]'
+%%     1057532.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 196): 'Fetching result from I2C master DUT status register.'. [198]
+%%     1058632.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [199]
+%%     1058652.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [199]'
+%%     1058652.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 199): 'Fetching result from I2C master DUT status register.'. [201]
+%%     1059752.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [202]
+%%     1059772.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [202]'
+%%     1059772.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 202): 'Fetching result from I2C master DUT status register.'. [204]
+%%     1060872.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [205]
+%%     1060892.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"43". ' 'Read status reg'  [205]'
+%%     1060892.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 205): 'Fetching result from I2C master DUT status register.'. [207]
+%%     1061992.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [208]
+%%     1062012.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"C3". ' 'Read status reg'  [208]'
+%%     1062012.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 208): 'Fetching result from I2C master DUT status register.'. [210]
+%%     1062790.0 ns  Log    ID_BFM              I2C_VVC,2           i2c_slave_transmit((x"47", x"14", x"3B", x"25", x"93"))=> (x"47", x"14", x"3B", x"25", x"93"). ' 'Transmit
+%%:                                                                 data from I2C slave VVC'  [12]'
+%%     1063112.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_read(WISHBONE_VVC,0, x"4"): 'Read status reg'. [211]
+%%     1063132.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_read(A:x"4")=> x"81". ' 'Read status reg'  [211]'
+%%     1063132.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       fetch_result(WISHBONE_VVC,0, 211): 'Fetching result from I2C master DUT status register.'. [213]
+%%     1063132.5 ns  Log    ID_UVVM_SEND_CMD    TB seq.(uvvm)       wishbone_check(WISHBONE_VVC,0, x"3", x"93"): 'Checking data received from I2C VVC Slave'. [214]
+%%     1063152.5 ns  Log    ID_BFM              WISHBONE_VVC,0      wishbone_check(A:x"3", x"93")=> OK, received data = x"93". ' 'Checking data received from I2C VVC Slave'  [214]'
+%%     1063153.5 ns  Log    ID_AWAIT_UVVM_COMP  I2C_VVC_TB          await_uvvm_completion() => OK. All VVCs are inactive. Condition occurred after 1 ns
+%%     1063153.5 ns  Log    ID_AWAIT_UVVM_COMP  I2C_VVC_TB          await_uvvm_completion()() => OK. All UVVM scoreboards are empty. Condition occurred after 0 ns
+%% 
+%% ============================================================================================================================================================================
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%     1063153.5 ns  DONE   NOCHECKS  multi-byte_transmit_to_i2c_master_dut  Passed: 0
+%%    Expected      Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%%     1063153.5 ns  Log    ID_LOG_HDR          I2C_VVC_TB          SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

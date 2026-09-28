@@ -106,21 +106,21 @@
 %%                ID_FILE_PARSER               : ENABLED
 %%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 %%      
-%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ALL_MESSAGES).
-%%      0 ns    Log    NO_ID               TB seq.             Start Simulation of TB for AVALON_MM
-%%      0 ns    Log    ID_BFM              TB seq.             avalon_mm_reset(num_rst_cycles=5). 'Resetting Avalon MM Interface'
-%%      0 ns    Log    ID_CLOCK_GEN        TB seq.             Starting clock Avalon MM clock
-%%    560 ns    Log    NO_ID               TB seq.             Write to TXDATA register
-%%  582.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"1", x"55") completed.
-%%  602.5 ns    Log    ID_BFM              TB seq.             avalon_mm_write(A:x"1", x"AA") completed.
-%%   1410 ns    Log    NO_ID               TB seq.             Read back (and check) loopback of TXDATA
-%% 1522.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"55")=> OK, received data = x"55".
-%% 2432.5 ns    Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"AA")=> OK, received data = x"AA".
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ALL_MESSAGES).
+%%           0.0 ns  Log    ID_SEQUENCER        TB seq.             Start Simulation of TB for AVALON_MM
+%%           0.0 ns  Log    ID_BFM              TB seq.             avalon_mm_reset(num_rst_cycles=5). 'Resetting Avalon MM Interface'
+%%           0.0 ns  Log    ID_CLOCK_GEN        TB seq.             Starting clock Avalon MM clock
+%%         560.0 ns  Log    ID_SEQUENCER        TB seq.             Write to TXDATA register
+%%         582.5 ns  Log    ID_BFM              TB seq.             avalon_mm_write(A:x"1", x"55") completed.
+%%         602.5 ns  Log    ID_BFM              TB seq.             avalon_mm_write(A:x"1", x"AA") completed.
+%%        1410.0 ns  Log    ID_SEQUENCER        TB seq.             Read back (and check) loopback of TXDATA
+%%        1522.5 ns  Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"55")=> OK, received data = x"55".
+%%        2432.5 ns  Log    ID_BFM              TB seq.             avalon_mm_check_response(A:x"0", x"AA")=> OK, received data = x"AA".
 %% 
 %% ============================================================================================================================================================================
 %%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
-%% 3432.5 ns    DONE   NOCHECKS   avalon_mm_bfm_spi_tb  Passed: 0
+%%        3432.5 ns  DONE   NOCHECKS  avalon_mm_bfm_spi_tb  Passed: 0
 %%    Expected      Failures: 0  Errors: 0  Warnings: 0  Passed: 0
 %%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
 %%    Default       Failures: 0  Errors: 0  Warnings: 0  Passed: 0
@@ -129,5 +129,5 @@
 %% 
 %% 
 %% 
-%% 3432.5 ns    Log    ID_LOG_HDR          TB seq.             SIMULATION COMPLETED
+%%        3432.5 ns  Log    ID_LOG_HDR          TB seq.             SIMULATION COMPLETED
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

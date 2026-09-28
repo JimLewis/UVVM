@@ -1,0 +1,330 @@
+%%           0.0 ns  Log    ID_CONSTRUCTOR      SBI_VVC,2           VVC instantiated.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  SBI_VVC,2           Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  SBI_VVC,2           Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR      SBI_VVC,1           VVC instantiated.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  SBI_VVC,1           Command queue instantiated and will give a warning when reaching 500 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  SBI_VVC,1           Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_UVVM_DATA_QUEUE  UVVM_FIFO           Queue 1 initialized with buffer size 256.
+%%           0.0 ns  Log    ID_UVVM_DATA_QUEUE  UVVM_FIFO           Queue 2 initialized with buffer size 256.
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,2           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,1           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CTRL             SBI_VVC_SB,2        enable() => SB enabled. 'SBI VVC SB Enabled'
+%%           0.0 ns  Log    ID_CTRL             SBI_VVC_SB,2        config() => config applied to SB.
+%%           0.0 ns  Log    ID_CTRL             SBI_VVC_SB,2        enable_log_msg() => message id id_data enabled.
+%%           0.0 ns  Log    ID_CTRL             SBI_VVC_SB,1        enable() => SB enabled. 'SBI VVC SB Enabled'
+%%           0.0 ns  Log    ID_CTRL             SBI_VVC_SB,1        config() => config applied to SB.
+%%           0.0 ns  Log    ID_CTRL             SBI_VVC_SB,1        enable_log_msg() => message id id_data enabled.
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ALL_MESSAGES).
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_SEQUENCER).
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_LOG_HDR).
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_BFM).
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_BFM_POLL).
+%%           0.0 ns  Log    ID_CMD_EXECUTOR_WA  SBI_VVC,2           Executor: Waiting for command
+%%           0.0 ns  Log    ID_CMD_EXECUTOR_WA  SBI_VVC,1           Executor: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,2           disable_log_msg(VVC_BROADCAST, ALL_MESSAGES). Command received  [1]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     SBI_VVC,2           disable_log_msg(ALL_MESSAGES). ' [1]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,1           disable_log_msg(VVC_BROADCAST, ALL_MESSAGES). Command received  [1]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     SBI_VVC,1           disable_log_msg(ALL_MESSAGES). ' [1]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     SBI_VVC,2           enable_log_msg(ID_BFM). ' [2]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     SBI_VVC,1           enable_log_msg(ID_BFM). ' [2]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     SBI_VVC,2           enable_log_msg(ID_BFM_POLL). ' [3]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     SBI_VVC,1           enable_log_msg(ID_BFM_POLL). ' [3]'
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF GLOBAL CTRL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                                IGNORE    STOP_LIMIT
+%%                NOTE         :  REGARD         0
+%%                TB_NOTE      :  REGARD         0
+%%                WARNING      :  REGARD         0
+%%                TB_WARNING   :  REGARD         0
+%%                MANUAL_CHECK :  REGARD         0
+%%                ERROR        :  REGARD         0
+%%                TB_ERROR     :  REGARD         0
+%%                FAILURE      :  REGARD         1
+%%                TB_FAILURE   :  REGARD         1
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF MSG ID PANEL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                ID                             Status
+%%                ------------------------       ------
+%%                ID_UTIL_BURIED               : DISABLED
+%%                ID_BITVIS_DEBUG              : DISABLED
+%%                ID_UTIL_SETUP                : DISABLED
+%%                ID_LOG_MSG_CTRL              : ENABLED
+%%                ID_ALERT_CTRL                : DISABLED
+%%                ID_FINISH_OR_STOP            : DISABLED
+%%                ID_CLOCK_GEN                 : DISABLED
+%%                ID_GEN_PULSE                 : DISABLED
+%%                ID_BLOCKING                  : DISABLED
+%%                ID_WATCHDOG                  : DISABLED
+%%                ID_RAND_GEN                  : DISABLED
+%%                ID_RAND_CONF                 : DISABLED
+%%                ID_FUNC_COV_BINS             : DISABLED
+%%                ID_FUNC_COV_BINS_INFO        : DISABLED
+%%                ID_FUNC_COV_RAND             : DISABLED
+%%                ID_FUNC_COV_SAMPLE           : DISABLED
+%%                ID_FUNC_COV_CONFIG           : DISABLED
+%%                ID_POS_ACK                   : DISABLED
+%%                ID_UVVM_ASSERTION            : DISABLED
+%%                ID_LOG_HDR                   : ENABLED
+%%                ID_LOG_HDR_LARGE             : DISABLED
+%%                ID_LOG_HDR_XL                : DISABLED
+%%                ID_SEQUENCER                 : ENABLED
+%%                ID_SEQUENCER_SUB             : DISABLED
+%%                ID_BFM                       : ENABLED
+%%                ID_BFM_WAIT                  : DISABLED
+%%                ID_BFM_POLL                  : ENABLED
+%%                ID_BFM_POLL_SUMMARY          : DISABLED
+%%                ID_CHANNEL_BFM               : DISABLED
+%%                ID_TERMINATE_CMD             : DISABLED
+%%                ID_SEGMENT_INITIATE          : DISABLED
+%%                ID_SEGMENT_COMPLETE          : DISABLED
+%%                ID_SEGMENT_HDR               : DISABLED
+%%                ID_SEGMENT_DATA              : DISABLED
+%%                ID_PACKET_INITIATE           : DISABLED
+%%                ID_PACKET_PREAMBLE           : DISABLED
+%%                ID_PACKET_COMPLETE           : DISABLED
+%%                ID_PACKET_HDR                : DISABLED
+%%                ID_PACKET_DATA               : DISABLED
+%%                ID_PACKET_CHECKSUM           : DISABLED
+%%                ID_PACKET_GAP                : DISABLED
+%%                ID_PACKET_PAYLOAD            : DISABLED
+%%                ID_FRAME_INITIATE            : DISABLED
+%%                ID_FRAME_COMPLETE            : DISABLED
+%%                ID_FRAME_HDR                 : DISABLED
+%%                ID_FRAME_DATA                : DISABLED
+%%                ID_COVERAGE_MAKEBIN          : DISABLED
+%%                ID_COVERAGE_ADDBIN           : DISABLED
+%%                ID_COVERAGE_ICOVER           : DISABLED
+%%                ID_COVERAGE_CONFIG           : DISABLED
+%%                ID_COVERAGE_SUMMARY          : DISABLED
+%%                ID_COVERAGE_HOLES            : DISABLED
+%%                ID_UVVM_SEND_CMD             : DISABLED
+%%                ID_UVVM_CMD_ACK              : DISABLED
+%%                ID_UVVM_CMD_RESULT           : DISABLED
+%%                ID_CMD_INTERPRETER           : DISABLED
+%%                ID_CMD_INTERPRETER_WAIT      : DISABLED
+%%                ID_IMMEDIATE_CMD             : DISABLED
+%%                ID_IMMEDIATE_CMD_WAIT        : DISABLED
+%%                ID_CMD_EXECUTOR              : DISABLED
+%%                ID_CMD_EXECUTOR_WAIT         : DISABLED
+%%                ID_CHANNEL_EXECUTOR          : DISABLED
+%%                ID_CHANNEL_EXECUTOR_WAIT     : DISABLED
+%%                ID_NEW_HVVC_CMD_SEQ          : DISABLED
+%%                ID_INSERTED_DELAY            : DISABLED
+%%                ID_OLD_AWAIT_COMPLETION      : DISABLED
+%%                ID_AWAIT_COMPLETION          : DISABLED
+%%                ID_AWAIT_COMPLETION_LIST     : DISABLED
+%%                ID_AWAIT_COMPLETION_WAIT     : DISABLED
+%%                ID_AWAIT_COMPLETION_END      : DISABLED
+%%                ID_AWAIT_UVVM_COMPLETION     : DISABLED
+%%                ID_UVVM_DATA_QUEUE           : DISABLED
+%%                ID_CONSTRUCTOR               : DISABLED
+%%                ID_CONSTRUCTOR_SUB           : DISABLED
+%%                ID_VVC_ACTIVITY              : DISABLED
+%%                ID_MONITOR                   : DISABLED
+%%                ID_MONITOR_ERROR             : DISABLED
+%%                ID_DATA                      : DISABLED
+%%                ID_CTRL                      : DISABLED
+%%                ID_SPEC_COV_INIT             : DISABLED
+%%                ID_SPEC_COV_REQS             : DISABLED
+%%                ID_SPEC_COV                  : DISABLED
+%%                ID_FILE_OPEN_CLOSE           : DISABLED
+%%                ID_FILE_PARSER               : DISABLED
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%% 
+%% 
+%%          30.0 ns  Log    ID_LOG_HDR          TB seq.             Check that commands are distributed to the correct VVC channel
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%          30.0 ns  Log    ID_LOG_MSG_CTRL     SBI_VVC,2           enable_log_msg(ALL_MESSAGES). ' [4]'
+%%          30.0 ns  Log    ID_LOG_MSG_CTRL     SBI_VVC,1           enable_log_msg(ALL_MESSAGES). ' [4]'
+%%          30.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,2           Interpreter: Waiting for command
+%%          30.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,1           Interpreter: Waiting for command
+%%          30.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,2           sbi_write(SBI_VVC,ALL_INSTANCES, x"0", x"01"). Command received  [5]
+%%          30.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,1           sbi_write(SBI_VVC,ALL_INSTANCES, x"0", x"01"). Command received  [5]
+%%          30.0 ns  Log    ID_CMD_EXECUTOR     SBI_VVC,2           sbi_write(SBI_VVC,ALL_INSTANCES, x"0", x"01") - Will be executed  [5]
+%%          30.0 ns  Log    ID_CMD_EXECUTOR     SBI_VVC,1           sbi_write(SBI_VVC,ALL_INSTANCES, x"0", x"01") - Will be executed  [5]
+%%          30.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,2           Interpreter: Waiting for command
+%%          30.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,1           Interpreter: Waiting for command
+%%          30.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,2           sbi_write(SBI_VVC,ALL_INSTANCES, x"0", x"56"). Command received  [6]
+%%          30.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,1           sbi_write(SBI_VVC,ALL_INSTANCES, x"0", x"56"). Command received  [6]
+%%          30.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,2           Interpreter: Waiting for command
+%%          30.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,1           Interpreter: Waiting for command
+%%          30.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,2           sbi_write(SBI_VVC,ALL_INSTANCES, x"0", x"A3"). Command received  [7]
+%%          30.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,1           sbi_write(SBI_VVC,ALL_INSTANCES, x"0", x"A3"). Command received  [7]
+%%          30.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,2           Interpreter: Waiting for command
+%%          30.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,1           Interpreter: Waiting for command
+%%          30.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,2           sbi_write(SBI_VVC,ALL_INSTANCES, x"0", x"4D"). Command received  [8]
+%%          30.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,1           sbi_write(SBI_VVC,ALL_INSTANCES, x"0", x"4D"). Command received  [8]
+%%          30.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,2           Interpreter: Waiting for command
+%%          30.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,1           Interpreter: Waiting for command
+%%          30.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,2           sbi_write(SBI_VVC,ALL_INSTANCES, x"0", x"00"). Command received  [9]
+%%          30.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,1           sbi_write(SBI_VVC,ALL_INSTANCES, x"0", x"00"). Command received  [9]
+%%          30.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,2           Interpreter: Waiting for command
+%%          30.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,1           Interpreter: Waiting for command
+%%          30.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,2           sbi_write(SBI_VVC,ALL_INSTANCES, x"0", x"42"). Command received  [10]
+%%          30.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,1           sbi_write(SBI_VVC,ALL_INSTANCES, x"0", x"42"). Command received  [10]
+%%          30.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,2           Interpreter: Waiting for command
+%%          30.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,1           Interpreter: Waiting for command
+%%          42.5 ns  Log    ID_BFM              SBI_VVC,2           sbi_write(A:x"00", x"01") completed. ' 'Write PUT on both FIFOs'  [5]'
+%%          42.5 ns  Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"00", x"01") completed. ' 'Write PUT on both FIFOs'  [5]'
+%%          42.5 ns  Log    ID_CMD_EXECUTOR     SBI_VVC,2           sbi_write(SBI_VVC,ALL_INSTANCES, x"0", x"56") - Will be executed  [6]
+%%          42.5 ns  Log    ID_CMD_EXECUTOR     SBI_VVC,1           sbi_write(SBI_VVC,ALL_INSTANCES, x"0", x"56") - Will be executed  [6]
+%%          52.5 ns  Log    ID_BFM              SBI_VVC,2           sbi_write(A:x"00", x"56") completed. ' 'Write PUT on both FIFOs'  [6]'
+%%          52.5 ns  Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"00", x"56") completed. ' 'Write PUT on both FIFOs'  [6]'
+%%          52.5 ns  Log    ID_CMD_EXECUTOR     SBI_VVC,2           sbi_write(SBI_VVC,ALL_INSTANCES, x"0", x"A3") - Will be executed  [7]
+%%          52.5 ns  Log    ID_CMD_EXECUTOR     SBI_VVC,1           sbi_write(SBI_VVC,ALL_INSTANCES, x"0", x"A3") - Will be executed  [7]
+%%          62.5 ns  Log    ID_BFM              SBI_VVC,2           sbi_write(A:x"00", x"A3") completed. ' 'Write PUT on both FIFOs'  [7]'
+%%          62.5 ns  Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"00", x"A3") completed. ' 'Write PUT on both FIFOs'  [7]'
+%%          62.5 ns  Log    ID_CMD_EXECUTOR     SBI_VVC,2           sbi_write(SBI_VVC,ALL_INSTANCES, x"0", x"4D") - Will be executed  [8]
+%%          62.5 ns  Log    ID_CMD_EXECUTOR     SBI_VVC,1           sbi_write(SBI_VVC,ALL_INSTANCES, x"0", x"4D") - Will be executed  [8]
+%%          72.5 ns  Log    ID_BFM              SBI_VVC,2           sbi_write(A:x"00", x"4D") completed. ' 'Write PUT on both FIFOs'  [8]'
+%%          72.5 ns  Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"00", x"4D") completed. ' 'Write PUT on both FIFOs'  [8]'
+%%          72.5 ns  Log    ID_CMD_EXECUTOR     SBI_VVC,2           sbi_write(SBI_VVC,ALL_INSTANCES, x"0", x"00") - Will be executed  [9]
+%%          72.5 ns  Log    ID_CMD_EXECUTOR     SBI_VVC,1           sbi_write(SBI_VVC,ALL_INSTANCES, x"0", x"00") - Will be executed  [9]
+%%          82.5 ns  Log    ID_BFM              SBI_VVC,2           sbi_write(A:x"00", x"00") completed. ' 'Write PUT on both FIFOs'  [9]'
+%%          82.5 ns  Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"00", x"00") completed. ' 'Write PUT on both FIFOs'  [9]'
+%%          82.5 ns  Log    ID_CMD_EXECUTOR     SBI_VVC,2           sbi_write(SBI_VVC,ALL_INSTANCES, x"0", x"42") - Will be executed  [10]
+%%          82.5 ns  Log    ID_CMD_EXECUTOR     SBI_VVC,1           sbi_write(SBI_VVC,ALL_INSTANCES, x"0", x"42") - Will be executed  [10]
+%%          92.5 ns  Log    ID_BFM              SBI_VVC,2           sbi_write(A:x"00", x"42") completed. ' 'Write PUT on both FIFOs'  [10]'
+%%          92.5 ns  Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"00", x"42") completed. ' 'Write PUT on both FIFOs'  [10]'
+%%          92.5 ns  Log    ID_CMD_EXECUTOR_WA  SBI_VVC,2           Executor: Waiting for command
+%%          92.5 ns  Log    ID_CMD_EXECUTOR_WA  SBI_VVC,1           Executor: Waiting for command
+%%          92.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,1           sbi_poll_until(SBI_VVC,1, x"1", x"42"). Command received  [12]
+%%          92.5 ns  Log    ID_CMD_EXECUTOR     SBI_VVC,1           sbi_poll_until(SBI_VVC,1, x"1", x"42") - Will be executed  [12]
+%%          92.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,1           Interpreter: Waiting for command
+%%          92.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,2           sbi_poll_until(SBI_VVC,2, x"1", x"42"). Command received  [13]
+%%          92.5 ns  Log    ID_CMD_EXECUTOR     SBI_VVC,2           sbi_poll_until(SBI_VVC,2, x"1", x"42") - Will be executed  [13]
+%%          92.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,2           Interpreter: Waiting for command
+%%         102.5 ns  Log    ID_BFM_POLL         SBI_VVC,1           sbi_read(A:x"01")=> x"1". 'As a part of sbi_poll_until(A:x"01", x"42", 0, 100 ns). ' 'Test of POLL_UNTIL
+%%:                                                                 within 100 ns'  [12]''
+%%         102.5 ns  Log    ID_BFM_POLL         SBI_VVC,2           sbi_read(A:x"01")=> x"1". 'As a part of sbi_poll_until(A:x"01", x"42", 10, 0 ns). ' 'Test of POLL_UNTIL
+%%:                                                                 within 10 occurrences'  [13]''
+%%         112.5 ns  Log    ID_BFM_POLL         SBI_VVC,1           sbi_read(A:x"01")=> x"56". 'As a part of sbi_poll_until(A:x"01", x"42", 0, 100 ns). ' 'Test of POLL_UNTIL
+%%:                                                                 within 100 ns'  [12]''
+%%         112.5 ns  Log    ID_BFM_POLL         SBI_VVC,2           sbi_read(A:x"01")=> x"56". 'As a part of sbi_poll_until(A:x"01", x"42", 10, 0 ns). ' 'Test of POLL_UNTIL
+%%:                                                                 within 10 occurrences'  [13]''
+%%         122.5 ns  Log    ID_BFM_POLL         SBI_VVC,1           sbi_read(A:x"01")=> x"A3". 'As a part of sbi_poll_until(A:x"01", x"42", 0, 100 ns). ' 'Test of POLL_UNTIL
+%%:                                                                 within 100 ns'  [12]''
+%%         122.5 ns  Log    ID_BFM_POLL         SBI_VVC,2           sbi_read(A:x"01")=> x"A3". 'As a part of sbi_poll_until(A:x"01", x"42", 10, 0 ns). ' 'Test of POLL_UNTIL
+%%:                                                                 within 10 occurrences'  [13]''
+%%         132.5 ns  Log    ID_BFM_POLL         SBI_VVC,1           sbi_read(A:x"01")=> x"4D". 'As a part of sbi_poll_until(A:x"01", x"42", 0, 100 ns). ' 'Test of POLL_UNTIL
+%%:                                                                 within 100 ns'  [12]''
+%%         132.5 ns  Log    ID_BFM_POLL         SBI_VVC,2           sbi_read(A:x"01")=> x"4D". 'As a part of sbi_poll_until(A:x"01", x"42", 10, 0 ns). ' 'Test of POLL_UNTIL
+%%:                                                                 within 10 occurrences'  [13]''
+%%         142.5 ns  Log    ID_BFM_POLL         SBI_VVC,1           sbi_read(A:x"01")=> x"00". 'As a part of sbi_poll_until(A:x"01", x"42", 0, 100 ns). ' 'Test of POLL_UNTIL
+%%:                                                                 within 100 ns'  [12]''
+%%         142.5 ns  Log    ID_BFM_POLL         SBI_VVC,2           sbi_read(A:x"01")=> x"00". 'As a part of sbi_poll_until(A:x"01", x"42", 10, 0 ns). ' 'Test of POLL_UNTIL
+%%:                                                                 within 10 occurrences'  [13]''
+%%         152.5 ns  Log    ID_BFM_POLL         SBI_VVC,1           sbi_read(A:x"01")=> x"42". 'As a part of sbi_poll_until(A:x"01", x"42", 0, 100 ns). ' 'Test of POLL_UNTIL
+%%:                                                                 within 100 ns'  [12]''
+%%         152.5 ns  Log    ID_BFM              SBI_VVC,1           sbi_poll_until(A:x"01", x"42", 0, 100 ns)=> OK, read data = x"42" after 6 occurrences and 60 ns. ' 'Test of
+%%:                                                                 POLL_UNTIL within 100 ns'  [12]'
+%%         152.5 ns  Log    ID_BFM_POLL         SBI_VVC,2           sbi_read(A:x"01")=> x"42". 'As a part of sbi_poll_until(A:x"01", x"42", 10, 0 ns). ' 'Test of POLL_UNTIL
+%%:                                                                 within 10 occurrences'  [13]''
+%%         152.5 ns  Log    ID_BFM              SBI_VVC,2           sbi_poll_until(A:x"01", x"42", 10, 0 ns)=> OK, read data = x"42" after 6 occurrences and 60 ns. ' 'Test of
+%%:                                                                 POLL_UNTIL within 10 occurrences'  [13]'
+%% 
+%% 
+%%         152.5 ns  Log    ID_LOG_HDR          TB seq.             Checking broadcast of flush_command_queue
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%         152.5 ns  Log    ID_CMD_EXECUTOR_WA  SBI_VVC,1           Executor: Waiting for command
+%%         152.5 ns  Log    ID_CMD_EXECUTOR_WA  SBI_VVC,2           Executor: Waiting for command
+%%         152.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,1           sbi_write(SBI_VVC,ALL_INSTANCES, x"0", x"4D"). Command received  [15]
+%%         152.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,2           sbi_write(SBI_VVC,ALL_INSTANCES, x"0", x"4D"). Command received  [15]
+%%         152.5 ns  Log    ID_CMD_EXECUTOR     SBI_VVC,1           sbi_write(SBI_VVC,ALL_INSTANCES, x"0", x"4D") - Will be executed  [15]
+%%         152.5 ns  Log    ID_CMD_EXECUTOR     SBI_VVC,2           sbi_write(SBI_VVC,ALL_INSTANCES, x"0", x"4D") - Will be executed  [15]
+%%         152.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,1           Interpreter: Waiting for command
+%%         152.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,2           Interpreter: Waiting for command
+%%         152.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,1           sbi_write(SBI_VVC,ALL_INSTANCES, x"0", x"00"). Command received  [16]
+%%         152.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,2           sbi_write(SBI_VVC,ALL_INSTANCES, x"0", x"00"). Command received  [16]
+%%         152.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,1           Interpreter: Waiting for command
+%%         152.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,2           Interpreter: Waiting for command
+%%         152.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,1           sbi_write(SBI_VVC,ALL_INSTANCES, x"0", x"42"). Command received  [17]
+%%         152.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,2           sbi_write(SBI_VVC,ALL_INSTANCES, x"0", x"42"). Command received  [17]
+%%         152.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,1           Interpreter: Waiting for command
+%%         152.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,2           Interpreter: Waiting for command
+%%         152.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,1           flush_command_queue(VVC_BROADCAST). Command received  [18]
+%%         152.5 ns  Log    ID_IMMEDIATE_CMD    SBI_VVC,1           Flushing command queue [17]
+%%         152.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,2           flush_command_queue(VVC_BROADCAST). Command received  [18]
+%%         152.5 ns  Log    ID_IMMEDIATE_CMD    SBI_VVC,2           Flushing command queue [17]
+%%         152.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,1           Interpreter: Waiting for command
+%%         152.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,2           Interpreter: Waiting for command
+%%         162.5 ns  Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"00", x"4D") completed. ' 'Write PUT on both FIFOs'  [15]'
+%%         162.5 ns  Log    ID_BFM              SBI_VVC,2           sbi_write(A:x"00", x"4D") completed. ' 'Write PUT on both FIFOs'  [15]'
+%% 
+%% 
+%%         162.5 ns  Log    ID_LOG_HDR          TB seq.             Checking broadcast of insert_delay (time)
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%         162.5 ns  Log    ID_CMD_EXECUTOR_WA  SBI_VVC,1           Executor: Waiting for command
+%%         162.5 ns  Log    ID_CMD_EXECUTOR_WA  SBI_VVC,2           Executor: Waiting for command
+%%         162.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,1           sbi_write(SBI_VVC,ALL_INSTANCES, x"00", x"AB"). Command received  [20]
+%%         162.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,2           sbi_write(SBI_VVC,ALL_INSTANCES, x"00", x"AB"). Command received  [20]
+%%         162.5 ns  Log    ID_CMD_EXECUTOR     SBI_VVC,1           sbi_write(SBI_VVC,ALL_INSTANCES, x"00", x"AB") - Will be executed  [20]
+%%         162.5 ns  Log    ID_CMD_EXECUTOR     SBI_VVC,2           sbi_write(SBI_VVC,ALL_INSTANCES, x"00", x"AB") - Will be executed  [20]
+%%         162.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,1           Interpreter: Waiting for command
+%%         162.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,2           Interpreter: Waiting for command
+%%         162.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,1           insert_delay(VVC_BROADCAST, 10000 ps). Command received  [21]
+%%         162.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,2           insert_delay(VVC_BROADCAST, 10000 ps). Command received  [21]
+%%         162.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,1           Interpreter: Waiting for command
+%%         162.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,2           Interpreter: Waiting for command
+%%         162.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,1           insert_delay(VVC_BROADCAST, 10000 ps). Command received  [22]
+%%         162.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,2           insert_delay(VVC_BROADCAST, 10000 ps). Command received  [22]
+%%         162.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,1           Interpreter: Waiting for command
+%%         162.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,2           Interpreter: Waiting for command
+%%         162.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,1           insert_delay(VVC_BROADCAST, 10000 ps). Command received  [23]
+%%         162.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,2           insert_delay(VVC_BROADCAST, 10000 ps). Command received  [23]
+%%         162.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,1           Interpreter: Waiting for command
+%%         162.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,2           Interpreter: Waiting for command
+%%         162.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,1           insert_delay(VVC_BROADCAST, 10000 ps). Command received  [24]
+%%         162.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,2           insert_delay(VVC_BROADCAST, 10000 ps). Command received  [24]
+%%         162.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,1           Interpreter: Waiting for command
+%%         162.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,2           Interpreter: Waiting for command
+%%         162.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,1           sbi_write(SBI_VVC,ALL_INSTANCES, x"00", x"FF"). Command received  [25]
+%%         162.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,2           sbi_write(SBI_VVC,ALL_INSTANCES, x"00", x"FF"). Command received  [25]
+%%         162.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,1           Interpreter: Waiting for command
+%%         162.5 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,2           Interpreter: Waiting for command
+%%         172.5 ns  Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"00", x"AB") completed. ' 'First Write SBI1'  [20]'
+%%         172.5 ns  Log    ID_BFM              SBI_VVC,2           sbi_write(A:x"00", x"AB") completed. ' 'First Write SBI1'  [20]'
+%%         172.5 ns  Log    ID_CMD_EXECUTOR     SBI_VVC,1           insert_delay(VVC_BROADCAST, 10000 ps) - Will be executed  [21]
+%%         172.5 ns  Log    ID_CMD_EXECUTOR     SBI_VVC,2           insert_delay(VVC_BROADCAST, 10000 ps) - Will be executed  [21]
+%%         172.5 ns  Log    ID_INSERTED_DELAY   SBI_VVC,1           Running: insert_delay(VVC_BROADCAST, 10000 ps)  [21]
+%%         172.5 ns  Log    ID_INSERTED_DELAY   SBI_VVC,2           Running: insert_delay(VVC_BROADCAST, 10000 ps)  [21]
+%%         182.5 ns  Log    ID_CMD_EXECUTOR     SBI_VVC,1           insert_delay(VVC_BROADCAST, 10000 ps) - Will be executed  [22]
+%%         182.5 ns  Log    ID_CMD_EXECUTOR     SBI_VVC,2           insert_delay(VVC_BROADCAST, 10000 ps) - Will be executed  [22]
+%%         182.5 ns  Log    ID_INSERTED_DELAY   SBI_VVC,1           Running: insert_delay(VVC_BROADCAST, 10000 ps)  [22]
+%%         182.5 ns  Log    ID_INSERTED_DELAY   SBI_VVC,2           Running: insert_delay(VVC_BROADCAST, 10000 ps)  [22]
+%%         192.5 ns  Log    ID_CMD_EXECUTOR     SBI_VVC,1           insert_delay(VVC_BROADCAST, 10000 ps) - Will be executed  [23]
+%%         192.5 ns  Log    ID_CMD_EXECUTOR     SBI_VVC,2           insert_delay(VVC_BROADCAST, 10000 ps) - Will be executed  [23]
+%%         192.5 ns  Log    ID_INSERTED_DELAY   SBI_VVC,1           Running: insert_delay(VVC_BROADCAST, 10000 ps)  [23]
+%%         192.5 ns  Log    ID_INSERTED_DELAY   SBI_VVC,2           Running: insert_delay(VVC_BROADCAST, 10000 ps)  [23]
+%%         202.5 ns  Log    ID_CMD_EXECUTOR     SBI_VVC,1           insert_delay(VVC_BROADCAST, 10000 ps) - Will be executed  [24]
+%%         202.5 ns  Log    ID_CMD_EXECUTOR     SBI_VVC,2           insert_delay(VVC_BROADCAST, 10000 ps) - Will be executed  [24]
+%%         202.5 ns  Log    ID_INSERTED_DELAY   SBI_VVC,1           Running: insert_delay(VVC_BROADCAST, 10000 ps)  [24]
+%%         202.5 ns  Log    ID_INSERTED_DELAY   SBI_VVC,2           Running: insert_delay(VVC_BROADCAST, 10000 ps)  [24]
+%%         212.5 ns  Log    ID_CMD_EXECUTOR     SBI_VVC,1           sbi_write(SBI_VVC,ALL_INSTANCES, x"00", x"FF") - Will be executed  [25]
+%%         212.5 ns  Log    ID_CMD_EXECUTOR     SBI_VVC,2           sbi_write(SBI_VVC,ALL_INSTANCES, x"00", x"FF") - Will be executed  [25]
+%%         222.5 ns  Log    ID_BFM              SBI_VVC,1           sbi_write(A:x"00", x"FF") completed. ' 'Second Write SBI1'  [25]'
+%%         222.5 ns  Log    ID_BFM              SBI_VVC,2           sbi_write(A:x"00", x"FF") completed. ' 'Second Write SBI1'  [25]'
+%%         222.5 ns  Log    ID_CMD_EXECUTOR_WA  SBI_VVC,1           Executor: Waiting for command
+%%         222.5 ns  Log    ID_CMD_EXECUTOR_WA  SBI_VVC,2           Executor: Waiting for command
+%% 
+%% ============================================================================================================================================================================
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%         223.5 ns  DONE   PASSED  vvc_broadcast_test  Passed: 1  Affirmations Checked: 1
+%%    Expected      Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%%         223.5 ns  Log    ID_LOG_HDR          SBI_VVC_TB          SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

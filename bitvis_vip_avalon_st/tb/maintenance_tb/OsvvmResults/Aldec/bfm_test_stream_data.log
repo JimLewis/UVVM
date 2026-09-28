@@ -1,0 +1,326 @@
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF GLOBAL CTRL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                                IGNORE    STOP_LIMIT
+%%                NOTE         :  REGARD         0
+%%                TB_NOTE      :  REGARD         0
+%%                WARNING      :  REGARD         0
+%%                TB_WARNING   :  REGARD         0
+%%                MANUAL_CHECK :  REGARD         0
+%%                ERROR        :  REGARD         0
+%%                TB_ERROR     :  REGARD         0
+%%                FAILURE      :  REGARD         1
+%%                TB_FAILURE   :  REGARD         1
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF MSG ID PANEL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                ID                             Status
+%%                ------------------------       ------
+%%                ID_UTIL_BURIED               : DISABLED
+%%                ID_BITVIS_DEBUG              : DISABLED
+%%                ID_UTIL_SETUP                : ENABLED
+%%                ID_LOG_MSG_CTRL              : ENABLED
+%%                ID_ALERT_CTRL                : ENABLED
+%%                ID_FINISH_OR_STOP            : ENABLED
+%%                ID_CLOCK_GEN                 : ENABLED
+%%                ID_GEN_PULSE                 : ENABLED
+%%                ID_BLOCKING                  : ENABLED
+%%                ID_WATCHDOG                  : ENABLED
+%%                ID_RAND_GEN                  : DISABLED
+%%                ID_RAND_CONF                 : DISABLED
+%%                ID_FUNC_COV_BINS             : DISABLED
+%%                ID_FUNC_COV_BINS_INFO        : DISABLED
+%%                ID_FUNC_COV_RAND             : DISABLED
+%%                ID_FUNC_COV_SAMPLE           : DISABLED
+%%                ID_FUNC_COV_CONFIG           : DISABLED
+%%                ID_POS_ACK                   : ENABLED
+%%                ID_UVVM_ASSERTION            : ENABLED
+%%                ID_LOG_HDR                   : ENABLED
+%%                ID_LOG_HDR_LARGE             : ENABLED
+%%                ID_LOG_HDR_XL                : ENABLED
+%%                ID_SEQUENCER                 : ENABLED
+%%                ID_SEQUENCER_SUB             : ENABLED
+%%                ID_BFM                       : ENABLED
+%%                ID_BFM_WAIT                  : ENABLED
+%%                ID_BFM_POLL                  : ENABLED
+%%                ID_BFM_POLL_SUMMARY          : ENABLED
+%%                ID_CHANNEL_BFM               : ENABLED
+%%                ID_TERMINATE_CMD             : ENABLED
+%%                ID_SEGMENT_INITIATE          : ENABLED
+%%                ID_SEGMENT_COMPLETE          : ENABLED
+%%                ID_SEGMENT_HDR               : ENABLED
+%%                ID_SEGMENT_DATA              : ENABLED
+%%                ID_PACKET_INITIATE           : ENABLED
+%%                ID_PACKET_PREAMBLE           : ENABLED
+%%                ID_PACKET_COMPLETE           : ENABLED
+%%                ID_PACKET_HDR                : ENABLED
+%%                ID_PACKET_DATA               : ENABLED
+%%                ID_PACKET_CHECKSUM           : ENABLED
+%%                ID_PACKET_GAP                : ENABLED
+%%                ID_PACKET_PAYLOAD            : ENABLED
+%%                ID_FRAME_INITIATE            : ENABLED
+%%                ID_FRAME_COMPLETE            : ENABLED
+%%                ID_FRAME_HDR                 : ENABLED
+%%                ID_FRAME_DATA                : ENABLED
+%%                ID_COVERAGE_MAKEBIN          : DISABLED
+%%                ID_COVERAGE_ADDBIN           : DISABLED
+%%                ID_COVERAGE_ICOVER           : DISABLED
+%%                ID_COVERAGE_CONFIG           : ENABLED
+%%                ID_COVERAGE_SUMMARY          : ENABLED
+%%                ID_COVERAGE_HOLES            : ENABLED
+%%                ID_UVVM_SEND_CMD             : ENABLED
+%%                ID_UVVM_CMD_ACK              : ENABLED
+%%                ID_UVVM_CMD_RESULT           : ENABLED
+%%                ID_CMD_INTERPRETER           : ENABLED
+%%                ID_CMD_INTERPRETER_WAIT      : ENABLED
+%%                ID_IMMEDIATE_CMD             : ENABLED
+%%                ID_IMMEDIATE_CMD_WAIT        : ENABLED
+%%                ID_CMD_EXECUTOR              : ENABLED
+%%                ID_CMD_EXECUTOR_WAIT         : ENABLED
+%%                ID_CHANNEL_EXECUTOR          : ENABLED
+%%                ID_CHANNEL_EXECUTOR_WAIT     : ENABLED
+%%                ID_NEW_HVVC_CMD_SEQ          : ENABLED
+%%                ID_INSERTED_DELAY            : ENABLED
+%%                ID_OLD_AWAIT_COMPLETION      : ENABLED
+%%                ID_AWAIT_COMPLETION          : ENABLED
+%%                ID_AWAIT_COMPLETION_LIST     : ENABLED
+%%                ID_AWAIT_COMPLETION_WAIT     : ENABLED
+%%                ID_AWAIT_COMPLETION_END      : ENABLED
+%%                ID_AWAIT_UVVM_COMPLETION     : ENABLED
+%%                ID_UVVM_DATA_QUEUE           : ENABLED
+%%                ID_CONSTRUCTOR               : ENABLED
+%%                ID_CONSTRUCTOR_SUB           : ENABLED
+%%                ID_VVC_ACTIVITY              : ENABLED
+%%                ID_MONITOR                   : ENABLED
+%%                ID_MONITOR_ERROR             : ENABLED
+%%                ID_DATA                      : ENABLED
+%%                ID_CTRL                      : ENABLED
+%%                ID_SPEC_COV_INIT             : ENABLED
+%%                ID_SPEC_COV_REQS             : ENABLED
+%%                ID_SPEC_COV                  : ENABLED
+%%                ID_FILE_OPEN_CLOSE           : ENABLED
+%%                ID_FILE_PARSER               : ENABLED
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ALL_MESSAGES).
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_PACKET_DATA).
+%% 
+%% 
+%% ============================================================================================================================================================================
+%%           0.0 ns  Log    ID_LOG_HDR_LARGE    TB seq.             Start Simulation of Avalon-ST
+%% ============================================================================================================================================================================
+%%           0.0 ns  Log    ID_CLOCK_GEN        TB seq.             Starting clock Avalon-ST CLK
+%%         100.0 ns  Log    ID_GEN_PULSE        TB seq.             Pulsed to 1 for 100000 ps. 'Pulsing reset for 10 clock periods'
+%% 
+%% 
+%% ============================================================================================================================================================================
+%%         200.0 ns  Log    ID_LOG_HDR_LARGE    TB seq.             Simulating data stream (non-packet)
+%% ============================================================================================================================================================================
+%% 
+%% 
+%%         200.0 ns  Log    ID_LOG_HDR          TB seq.             Testing symbol ordering: first symbol in high order bits
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%         205.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_transmit(9 words/36 sym, ch:0)=>
+%%         292.5 ns  Log    ID_PACKET_COMPLETE  TB seq.             avalon_st_transmit(9 words/36 sym, ch:0) DONE.
+%%         295.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_expect(9 words/36 sym, ch:0) while executing avalon_st_receive=>
+%%         382.5 ns  Log    ID_BFM              TB seq.             avalon_st_expect(9 words/36 sym, ch:0)=> OK, received 9 symbols.
+%% 
+%% 
+%%         382.5 ns  Log    ID_LOG_HDR          TB seq.             Testing symbol ordering: first symbol in low order bits
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%         385.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_transmit(9 words/36 sym, ch:0)=>
+%%         472.5 ns  Log    ID_PACKET_COMPLETE  TB seq.             avalon_st_transmit(9 words/36 sym, ch:0) DONE.
+%%         475.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_expect(9 words/36 sym, ch:0) while executing avalon_st_receive=>
+%%         562.5 ns  Log    ID_BFM              TB seq.             avalon_st_expect(9 words/36 sym, ch:0)=> OK, received 9 symbols.
+%% 
+%% 
+%%         562.5 ns  Log    ID_LOG_HDR          TB seq.             Testing that BFM procedures normalize data arrays
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%         565.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_transmit(5 words/20 sym, ch:0)=>
+%%         612.5 ns  Log    ID_PACKET_COMPLETE  TB seq.             avalon_st_transmit(5 words/20 sym, ch:0) DONE.
+%%         615.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_receive(5 words/20 sym)=>
+%%         662.5 ns  Log    ID_PACKET_COMPLETE  TB seq.             avalon_st_receive(5 words/20 sym) DONE.
+%%         665.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_transmit(7 words/28 sym, ch:0)=>
+%%         732.5 ns  Log    ID_PACKET_COMPLETE  TB seq.             avalon_st_transmit(7 words/28 sym, ch:0) DONE.
+%%         735.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_expect(7 words/28 sym, ch:0) while executing avalon_st_receive=>
+%%         802.5 ns  Log    ID_BFM              TB seq.             avalon_st_expect(7 words/28 sym, ch:0)=> OK, received 7 symbols.
+%% 
+%% 
+%%         802.5 ns  Log    ID_LOG_HDR          TB seq.             Testing explicit std_logic_vector values
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%         805.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_transmit(5 words/20 sym, ch:0)=>
+%%         852.5 ns  Log    ID_PACKET_COMPLETE  TB seq.             avalon_st_transmit(5 words/20 sym, ch:0) DONE.
+%%         855.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_expect(5 words/20 sym, ch:0) while executing avalon_st_receive=>
+%%         902.5 ns  Log    ID_BFM              TB seq.             avalon_st_expect(5 words/20 sym, ch:0)=> OK, received 5 symbols.
+%% 
+%% 
+%%         902.5 ns  Log    ID_LOG_HDR          TB seq.             Testing shortest streams possible
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%         905.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_transmit(1 words/4 sym, ch:0)=>
+%%         912.5 ns  Log    ID_PACKET_COMPLETE  TB seq.             avalon_st_transmit(1 words/4 sym, ch:0) DONE.
+%%         915.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_expect(1 words/4 sym, ch:0) while executing avalon_st_receive=>
+%%         932.5 ns  Log    ID_BFM              TB seq.             avalon_st_expect(1 words/4 sym, ch:0)=> OK, received 1 symbols.
+%%         935.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_transmit(1 words/4 sym, ch:0)=>
+%%         942.5 ns  Log    ID_PACKET_COMPLETE  TB seq.             avalon_st_transmit(1 words/4 sym, ch:0) DONE.
+%%         945.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_transmit(1 words/4 sym, ch:0)=>
+%%         952.5 ns  Log    ID_PACKET_COMPLETE  TB seq.             avalon_st_transmit(1 words/4 sym, ch:0) DONE.
+%%         955.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_expect(1 words/4 sym, ch:0) while executing avalon_st_receive=>
+%%         962.5 ns  Log    ID_BFM              TB seq.             avalon_st_expect(1 words/4 sym, ch:0)=> OK, received 1 symbols.
+%%         965.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_expect(1 words/4 sym, ch:0) while executing avalon_st_receive=>
+%%         972.5 ns  Log    ID_BFM              TB seq.             avalon_st_expect(1 words/4 sym, ch:0)=> OK, received 1 symbols.
+%%         975.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_transmit(1 words/4 sym, ch:0)=>
+%%         982.5 ns  Log    ID_PACKET_COMPLETE  TB seq.             avalon_st_transmit(1 words/4 sym, ch:0) DONE.
+%%         985.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_transmit(1 words/4 sym, ch:0)=>
+%%         992.5 ns  Log    ID_PACKET_COMPLETE  TB seq.             avalon_st_transmit(1 words/4 sym, ch:0) DONE.
+%%         995.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_transmit(1 words/4 sym, ch:0)=>
+%%        1002.5 ns  Log    ID_PACKET_COMPLETE  TB seq.             avalon_st_transmit(1 words/4 sym, ch:0) DONE.
+%%        1005.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_expect(1 words/4 sym, ch:0) while executing avalon_st_receive=>
+%%        1012.5 ns  Log    ID_BFM              TB seq.             avalon_st_expect(1 words/4 sym, ch:0)=> OK, received 1 symbols.
+%%        1015.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_expect(1 words/4 sym, ch:0) while executing avalon_st_receive=>
+%%        1022.5 ns  Log    ID_BFM              TB seq.             avalon_st_expect(1 words/4 sym, ch:0)=> OK, received 1 symbols.
+%%        1025.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_expect(1 words/4 sym, ch:0) while executing avalon_st_receive=>
+%%        1032.5 ns  Log    ID_BFM              TB seq.             avalon_st_expect(1 words/4 sym, ch:0)=> OK, received 1 symbols.
+%%        1035.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_transmit(1 words/4 sym, ch:0)=>
+%%        1042.5 ns  Log    ID_PACKET_COMPLETE  TB seq.             avalon_st_transmit(1 words/4 sym, ch:0) DONE.
+%%        1045.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_transmit(1 words/4 sym, ch:0)=>
+%%        1052.5 ns  Log    ID_PACKET_COMPLETE  TB seq.             avalon_st_transmit(1 words/4 sym, ch:0) DONE.
+%%        1055.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_transmit(1 words/4 sym, ch:0)=>
+%%        1062.5 ns  Log    ID_PACKET_COMPLETE  TB seq.             avalon_st_transmit(1 words/4 sym, ch:0) DONE.
+%%        1065.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_transmit(1 words/4 sym, ch:0)=>
+%%        1072.5 ns  Log    ID_PACKET_COMPLETE  TB seq.             avalon_st_transmit(1 words/4 sym, ch:0) DONE.
+%%        1075.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_expect(1 words/4 sym, ch:0) while executing avalon_st_receive=>
+%%        1082.5 ns  Log    ID_BFM              TB seq.             avalon_st_expect(1 words/4 sym, ch:0)=> OK, received 1 symbols.
+%%        1085.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_expect(1 words/4 sym, ch:0) while executing avalon_st_receive=>
+%%        1092.5 ns  Log    ID_BFM              TB seq.             avalon_st_expect(1 words/4 sym, ch:0)=> OK, received 1 symbols.
+%%        1095.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_expect(1 words/4 sym, ch:0) while executing avalon_st_receive=>
+%%        1102.5 ns  Log    ID_BFM              TB seq.             avalon_st_expect(1 words/4 sym, ch:0)=> OK, received 1 symbols.
+%%        1105.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_expect(1 words/4 sym, ch:0) while executing avalon_st_receive=>
+%%        1112.5 ns  Log    ID_BFM              TB seq.             avalon_st_expect(1 words/4 sym, ch:0)=> OK, received 1 symbols.
+%% 
+%% 
+%%        1112.5 ns  Log    ID_LOG_HDR          TB seq.             Testing different stream sizes and channels
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%        1115.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_transmit(1 words/4 sym, ch:0)=>
+%%        1122.5 ns  Log    ID_PACKET_COMPLETE  TB seq.             avalon_st_transmit(1 words/4 sym, ch:0) DONE.
+%%        1125.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_transmit(2 words/8 sym, ch:1)=>
+%%        1142.5 ns  Log    ID_PACKET_COMPLETE  TB seq.             avalon_st_transmit(2 words/8 sym, ch:1) DONE.
+%%        1145.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_transmit(3 words/12 sym, ch:2)=>
+%%        1172.5 ns  Log    ID_PACKET_COMPLETE  TB seq.             avalon_st_transmit(3 words/12 sym, ch:2) DONE.
+%%        1175.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_transmit(4 words/16 sym, ch:3)=>
+%%        1212.5 ns  Log    ID_PACKET_COMPLETE  TB seq.             avalon_st_transmit(4 words/16 sym, ch:3) DONE.
+%%        1215.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_transmit(5 words/20 sym, ch:4)=>
+%%        1262.5 ns  Log    ID_PACKET_COMPLETE  TB seq.             avalon_st_transmit(5 words/20 sym, ch:4) DONE.
+%%        1265.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_transmit(6 words/24 sym, ch:5)=>
+%%        1322.5 ns  Log    ID_PACKET_COMPLETE  TB seq.             avalon_st_transmit(6 words/24 sym, ch:5) DONE.
+%%        1325.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_transmit(7 words/28 sym, ch:6)=>
+%%        1392.5 ns  Log    ID_PACKET_COMPLETE  TB seq.             avalon_st_transmit(7 words/28 sym, ch:6) DONE.
+%%        1395.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_transmit(8 words/32 sym, ch:7)=>
+%%        1472.5 ns  Log    ID_PACKET_COMPLETE  TB seq.             avalon_st_transmit(8 words/32 sym, ch:7) DONE.
+%%        1475.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_transmit(9 words/36 sym, ch:8)=>
+%%        1562.5 ns  Log    ID_PACKET_COMPLETE  TB seq.             avalon_st_transmit(9 words/36 sym, ch:8) DONE.
+%%        1565.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_transmit(10 words/40 sym, ch:9)=>
+%%        1662.5 ns  Log    ID_PACKET_COMPLETE  TB seq.             avalon_st_transmit(10 words/40 sym, ch:9) DONE.
+%%        1665.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_transmit(11 words/44 sym, ch:10)=>
+%%        1772.5 ns  Log    ID_PACKET_COMPLETE  TB seq.             avalon_st_transmit(11 words/44 sym, ch:10) DONE.
+%%        1775.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_transmit(12 words/48 sym, ch:11)=>
+%%        1892.5 ns  Log    ID_PACKET_COMPLETE  TB seq.             avalon_st_transmit(12 words/48 sym, ch:11) DONE.
+%%        1895.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_transmit(13 words/52 sym, ch:12)=>
+%%        2022.5 ns  Log    ID_PACKET_COMPLETE  TB seq.             avalon_st_transmit(13 words/52 sym, ch:12) DONE.
+%%        2025.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_transmit(14 words/56 sym, ch:13)=>
+%%        2162.5 ns  Log    ID_PACKET_COMPLETE  TB seq.             avalon_st_transmit(14 words/56 sym, ch:13) DONE.
+%%        2165.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_transmit(15 words/60 sym, ch:14)=>
+%%        2312.5 ns  Log    ID_PACKET_COMPLETE  TB seq.             avalon_st_transmit(15 words/60 sym, ch:14) DONE.
+%%        2315.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_transmit(16 words/64 sym, ch:15)=>
+%%        2472.5 ns  Log    ID_PACKET_COMPLETE  TB seq.             avalon_st_transmit(16 words/64 sym, ch:15) DONE.
+%%        2475.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_expect(1 words/4 sym, ch:0) while executing avalon_st_receive=>
+%%        2482.5 ns  Log    ID_BFM              TB seq.             avalon_st_expect(1 words/4 sym, ch:0)=> OK, received 1 symbols.
+%%        2485.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_expect(2 words/8 sym, ch:1) while executing avalon_st_receive=>
+%%        2502.5 ns  Log    ID_BFM              TB seq.             avalon_st_expect(2 words/8 sym, ch:1)=> OK, received 2 symbols.
+%%        2505.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_expect(3 words/12 sym, ch:2) while executing avalon_st_receive=>
+%%        2532.5 ns  Log    ID_BFM              TB seq.             avalon_st_expect(3 words/12 sym, ch:2)=> OK, received 3 symbols.
+%%        2535.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_expect(4 words/16 sym, ch:3) while executing avalon_st_receive=>
+%%        2572.5 ns  Log    ID_BFM              TB seq.             avalon_st_expect(4 words/16 sym, ch:3)=> OK, received 4 symbols.
+%%        2575.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_expect(5 words/20 sym, ch:4) while executing avalon_st_receive=>
+%%        2622.5 ns  Log    ID_BFM              TB seq.             avalon_st_expect(5 words/20 sym, ch:4)=> OK, received 5 symbols.
+%%        2625.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_expect(6 words/24 sym, ch:5) while executing avalon_st_receive=>
+%%        2682.5 ns  Log    ID_BFM              TB seq.             avalon_st_expect(6 words/24 sym, ch:5)=> OK, received 6 symbols.
+%%        2685.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_expect(7 words/28 sym, ch:6) while executing avalon_st_receive=>
+%%        2752.5 ns  Log    ID_BFM              TB seq.             avalon_st_expect(7 words/28 sym, ch:6)=> OK, received 7 symbols.
+%%        2755.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_expect(8 words/32 sym, ch:7) while executing avalon_st_receive=>
+%%        2832.5 ns  Log    ID_BFM              TB seq.             avalon_st_expect(8 words/32 sym, ch:7)=> OK, received 8 symbols.
+%%        2835.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_expect(9 words/36 sym, ch:8) while executing avalon_st_receive=>
+%%        2922.5 ns  Log    ID_BFM              TB seq.             avalon_st_expect(9 words/36 sym, ch:8)=> OK, received 9 symbols.
+%%        2925.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_expect(10 words/40 sym, ch:9) while executing avalon_st_receive=>
+%%        3022.5 ns  Log    ID_BFM              TB seq.             avalon_st_expect(10 words/40 sym, ch:9)=> OK, received 10 symbols.
+%%        3025.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_expect(11 words/44 sym, ch:10) while executing avalon_st_receive=>
+%%        3132.5 ns  Log    ID_BFM              TB seq.             avalon_st_expect(11 words/44 sym, ch:10)=> OK, received 11 symbols.
+%%        3135.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_expect(12 words/48 sym, ch:11) while executing avalon_st_receive=>
+%%        3252.5 ns  Log    ID_BFM              TB seq.             avalon_st_expect(12 words/48 sym, ch:11)=> OK, received 12 symbols.
+%%        3255.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_expect(13 words/52 sym, ch:12) while executing avalon_st_receive=>
+%%        3382.5 ns  Log    ID_BFM              TB seq.             avalon_st_expect(13 words/52 sym, ch:12)=> OK, received 13 symbols.
+%%        3385.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_expect(14 words/56 sym, ch:13) while executing avalon_st_receive=>
+%%        3522.5 ns  Log    ID_BFM              TB seq.             avalon_st_expect(14 words/56 sym, ch:13)=> OK, received 14 symbols.
+%%        3525.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_expect(15 words/60 sym, ch:14) while executing avalon_st_receive=>
+%%        3672.5 ns  Log    ID_BFM              TB seq.             avalon_st_expect(15 words/60 sym, ch:14)=> OK, received 15 symbols.
+%%        3675.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_expect(16 words/64 sym, ch:15) while executing avalon_st_receive=>
+%%        3832.5 ns  Log    ID_BFM              TB seq.             avalon_st_expect(16 words/64 sym, ch:15)=> OK, received 16 symbols.
+%%        3835.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_transmit(100 words/400 sym, ch:64)=>
+%%        4832.5 ns  Log    ID_PACKET_COMPLETE  TB seq.             avalon_st_transmit(100 words/400 sym, ch:64) DONE.
+%%        4835.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_expect(100 words/400 sym, ch:64) while executing avalon_st_receive=>
+%%        5832.5 ns  Log    ID_BFM              TB seq.             avalon_st_expect(100 words/400 sym, ch:64)=> OK, received 100 symbols.
+%% 
+%% 
+%%        5832.5 ns  Log    ID_LOG_HDR          TB seq.             Testing error case: receive() timeout - no valid data
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%        5835.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_receive(100 words/400 sym)=>
+%%       15845.0 ns  Alert  ERROR               TB seq.             avalon_st_receive(100 words/400 sym)=> Failed. Timeout while waiting for valid data during 1000 clock cycles.
+%% 
+%% 
+%%       15845.0 ns  Log    ID_LOG_HDR          TB seq.             Testing error case: receive() timeout - not enough data
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%       15855.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_transmit(2 words/8 sym, ch:0)=>
+%%       15872.5 ns  Log    ID_PACKET_COMPLETE  TB seq.             avalon_st_transmit(2 words/8 sym, ch:0) DONE.
+%%       15875.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_receive(100 words/400 sym)=>
+%%       25905.0 ns  Alert  ERROR               TB seq.             avalon_st_receive(100 words/400 sym)=> Failed. Timeout while waiting for valid data during 1000 clock cycles.
+%% 
+%% 
+%%       25905.0 ns  Log    ID_LOG_HDR          TB seq.             Testing error case: expect() wrong data
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%       25915.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_transmit(11 words/44 sym, ch:0)=>
+%%       26022.5 ns  Log    ID_PACKET_COMPLETE  TB seq.             avalon_st_transmit(11 words/44 sym, ch:0) DONE.
+%%       26025.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_expect(11 words/44 sym, ch:0) while executing avalon_st_receive=>
+%%       26132.5 ns  Alert  ERROR               TB seq.             avalon_st_expect(11 words/44 sym, ch:0)=> Failed in 162 data bits. First mismatch in symbol# 1. Was
+%%:                                                                 x"4EC2ECD7". Expected x"09C39921".
+%%:                                                                 Was:
+%%:                                                                 (4EC2ECD7, 3E6E5CD3, 9559B9CD, 11DFAFA3, 3541578C, E91A22EB, 246843FE, 49AEA21A, D78AFB3F, 78A504F8,
+%%:                                                                 09C39921)
+%%:                                                                 Expected:
+%%:                                                                 (09C39921, 3E7ED857, E005FB39, C6F4A3CB, 6B81F154, E5FFE89B, B8F67B25, A2C928EB, 9A8D5F3D, 5192A548,
+%%:                                                                 322E5072).
+%% 
+%% 
+%%       26132.5 ns  Log    ID_LOG_HDR          TB seq.             Testing error case: expect() wrong channel
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%       26135.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_transmit(100 words/400 sym, ch:1)=>
+%%       27132.5 ns  Log    ID_PACKET_COMPLETE  TB seq.             avalon_st_transmit(100 words/400 sym, ch:1) DONE.
+%%       27135.0 ns  Log    ID_PACKET_INITIATE  TB seq.             avalon_st_expect(100 words/400 sym, ch:5) while executing avalon_st_receive=>
+%%       28132.5 ns  Alert  ERROR               TB seq.             avalon_st_expect(100 words/400 sym, ch:5)=> Failed. Wrong channel. Was x"01". Expected x"05". 
+%% 
+%% ============================================================================================================================================================================
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%       29132.5 ns  DONE   NOCHECKS  bfm_test_stream_data  Passed: 0
+%%    Expected      Failures: 0  Errors: -4  Warnings: 0  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 4  Warnings: 0  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%%       29132.5 ns  Log    ID_LOG_HDR          TB seq.             SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

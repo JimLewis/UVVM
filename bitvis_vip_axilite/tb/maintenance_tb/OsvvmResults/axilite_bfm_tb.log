@@ -106,73 +106,73 @@
 %%                ID_FILE_PARSER               : ENABLED
 %%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 %%      
-%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ALL_MESSAGES).
-%%      0 ns    Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_POS_ACK).
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ALL_MESSAGES).
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ID_POS_ACK).
 %% 
 %% 
-%%      0 ns    Log    ID_LOG_HDR          TB seq.             Start Simulation of TB for AXILITE 1
+%%           0.0 ns  Log    ID_LOG_HDR          TB seq.             Start Simulation of TB for AXILITE 1
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-%%      0 ns    Log    ID_CLOCK_GEN        TB seq.             Starting clock Axilite CLK
-%%    100 ns    Log    ID_GEN_PULSE        TB seq.             Pulsed to 1 for 100000 ps. 'Pulsing reset for 10 clock periods'
-%%    100 ns    Log    NO_ID               TB seq.             Do some axilite writes
-%%  182.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"0000", x"5555") completed.
-%%  262.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"1000", x"BEFBEEF") completed.
-%%  342.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"2000", x"EFBEEF") completed.
-%%  422.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"3000", x"BEEF") completed.
-%%  502.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"6000", x"54321") completed.
-%%  562.5 ns    Log    ID_BFM              TB seq.             axilite_read(A:x"3000")=> x"XXXXXXXX".
-%%  622.5 ns    Log    ID_BFM              TB seq.             axilite_read(A:x"6000")=> x"54321".
-%%  622.5 ns    Log    NO_ID               TB seq.             Check the written data
-%%  682.5 ns    Log    ID_BFM              TB seq.             axilite_check(A:x"0006000", x"54321")=> OK, received data = x"54321".
-%%  762.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"0006000", x"ABBA1972") completed.
-%%  822.5 ns    Log    ID_BFM              TB seq.             axilite_check(A:x"0006000", x"ABBA1972")=> OK, received data = x"ABBA1972".
-%%  882.5 ns    Alert  WARNING             TB seq.             axilite_check(A:x"0006000", x"00000000")=> Failed. Was x"ABBA1972". Expected x"00000000".
-%%  882.5 ns    Log    NO_ID               TB seq.             Checking write with byte_enable
-%%  962.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"0006000", x"0") completed.
-%% 1042.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"0006000", x"ABBA1972") completed.
-%% 1102.5 ns    Log    ID_BFM              TB seq.             axilite_check(A:x"0006000", x"00001972")=> OK, received data = x"1972".
-%% 1182.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"0006000", x"0") completed.
-%% 1262.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"0006000", x"ABBA1972") completed.
-%% 1322.5 ns    Log    ID_BFM              TB seq.             axilite_check(A:x"0006000", x"ABBA0000")=> OK, received data = x"ABBA0000".
+%%           0.0 ns  Log    ID_CLOCK_GEN        TB seq.             Starting clock Axilite CLK
+%%         100.0 ns  Log    ID_GEN_PULSE        TB seq.             Pulsed to 1 for 100000 ps. 'Pulsing reset for 10 clock periods'
+%%         100.0 ns  Log    ID_SEQUENCER        TB seq.             Do some axilite writes
+%%         182.5 ns  Log    ID_BFM              TB seq.             axilite_write(A:x"0000", x"5555") completed.
+%%         262.5 ns  Log    ID_BFM              TB seq.             axilite_write(A:x"1000", x"BEFBEEF") completed.
+%%         342.5 ns  Log    ID_BFM              TB seq.             axilite_write(A:x"2000", x"EFBEEF") completed.
+%%         422.5 ns  Log    ID_BFM              TB seq.             axilite_write(A:x"3000", x"BEEF") completed.
+%%         502.5 ns  Log    ID_BFM              TB seq.             axilite_write(A:x"6000", x"54321") completed.
+%%         562.5 ns  Log    ID_BFM              TB seq.             axilite_read(A:x"3000")=> x"XXXXXXXX".
+%%         622.5 ns  Log    ID_BFM              TB seq.             axilite_read(A:x"6000")=> x"54321".
+%%         622.5 ns  Log    ID_SEQUENCER        TB seq.             Check the written data
+%%         682.5 ns  Log    ID_BFM              TB seq.             axilite_check(A:x"0006000", x"54321")=> OK, received data = x"54321".
+%%         762.5 ns  Log    ID_BFM              TB seq.             axilite_write(A:x"0006000", x"ABBA1972") completed.
+%%         822.5 ns  Log    ID_BFM              TB seq.             axilite_check(A:x"0006000", x"ABBA1972")=> OK, received data = x"ABBA1972".
+%%         882.5 ns  Alert  WARNING             TB seq.             axilite_check(A:x"0006000", x"00000000")=> Failed. Was x"ABBA1972". Expected x"00000000".
+%%         882.5 ns  Log    ID_SEQUENCER        TB seq.             Checking write with byte_enable
+%%         962.5 ns  Log    ID_BFM              TB seq.             axilite_write(A:x"0006000", x"0") completed.
+%%        1042.5 ns  Log    ID_BFM              TB seq.             axilite_write(A:x"0006000", x"ABBA1972") completed.
+%%        1102.5 ns  Log    ID_BFM              TB seq.             axilite_check(A:x"0006000", x"00001972")=> OK, received data = x"1972".
+%%        1182.5 ns  Log    ID_BFM              TB seq.             axilite_write(A:x"0006000", x"0") completed.
+%%        1262.5 ns  Log    ID_BFM              TB seq.             axilite_write(A:x"0006000", x"ABBA1972") completed.
+%%        1322.5 ns  Log    ID_BFM              TB seq.             axilite_check(A:x"0006000", x"ABBA0000")=> OK, received data = x"ABBA0000".
 %% 
 %% 
-%% 1322.5 ns    Log    ID_LOG_HDR          TB seq.             Start Simulation of TB for AXILITE 2
+%%        1322.5 ns  Log    ID_LOG_HDR          TB seq.             Start Simulation of TB for AXILITE 2
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-%% 1322.5 ns    Log    NO_ID               TB seq.             Do some axilite writes
-%% 1382.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"0000", x"5555") completed.
-%% 1442.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"0010", x"BEFBEEF") completed.
-%% 1502.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"0020", x"EFBEEF") completed.
-%% 1562.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"0030", x"BEEF") completed.
-%% 1622.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"0040", x"54321") completed.
-%% 1682.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"0060", x"54321") completed.
-%% 1732.5 ns    Log    ID_BFM              TB seq.             axilite_read(A:x"0030")=> x"BEEF".
-%% 1782.5 ns    Log    ID_BFM              TB seq.             axilite_read(A:x"0040")=> x"54321".
-%% 1832.5 ns    Log    ID_BFM              TB seq.             axilite_read(A:x"0060")=> x"54321".
-%% 1832.5 ns    Log    NO_ID               TB seq.             Check the written data
-%% 1882.5 ns    Log    ID_BFM              TB seq.             axilite_check(A:x"0000", x"5555")=> OK, received data = x"5555".
-%% 1932.5 ns    Log    ID_BFM              TB seq.             axilite_check(A:x"0010", x"BEFBEEF")=> OK, received data = x"BEFBEEF".
-%% 1982.5 ns    Log    ID_BFM              TB seq.             axilite_check(A:x"0020", x"EFBEEF")=> OK, received data = x"EFBEEF".
-%% 2032.5 ns    Log    ID_BFM              TB seq.             axilite_check(A:x"0030", x"BEEF")=> OK, received data = x"BEEF".
-%% 2082.5 ns    Log    ID_BFM              TB seq.             axilite_check(A:x"0040", x"54321")=> OK, received data = x"54321".
-%% 2142.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"0000040", x"ABBA1972") completed.
-%% 2192.5 ns    Log    ID_BFM              TB seq.             axilite_check(A:x"0000040", x"ABBA1972")=> OK, received data = x"ABBA1972".
-%% 2242.5 ns    Alert  WARNING             TB seq.             axilite_check(A:x"0000040", x"00000000")=> Failed. Was x"00000000ABBA1972". Expected x"0000000000000000".
-%% 2242.5 ns    Log    NO_ID               TB seq.             Checking write with byte_enable
-%% 2302.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"0000040", x"0") completed.
-%% 2362.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"0000040", x"AFAF1191") completed.
-%% 2412.5 ns    Log    ID_BFM              TB seq.             axilite_check(A:x"0000040", x"00001191")=> OK, received data = x"1191".
-%% 2472.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"0000040", x"0") completed.
-%% 2532.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"0000040", x"AFAF1191") completed.
-%% 2582.5 ns    Log    ID_BFM              TB seq.             axilite_check(A:x"0000040", x"AFAF0000")=> OK, received data = x"AFAF0000".
-%%   2640 ns    Alert  WARNING             TB seq.             axilite_write(A:x"0000040", x"0")(slv, b"10") => Failed. Value was b"00". Expected b"10". ': BRESP detected'
-%% 2642.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"0000040", x"0") completed.
-%%   2700 ns    Alert  WARNING             TB seq.             axilite_write(A:x"0000040", x"AFAF1191")(slv, b"11") => Failed. Value was b"00". Expected b"11". ': BRESP detected'
-%% 2702.5 ns    Log    ID_BFM              TB seq.             axilite_write(A:x"0000040", x"AFAF1191") completed.
+%%        1322.5 ns  Log    ID_SEQUENCER        TB seq.             Do some axilite writes
+%%        1382.5 ns  Log    ID_BFM              TB seq.             axilite_write(A:x"0000", x"5555") completed.
+%%        1442.5 ns  Log    ID_BFM              TB seq.             axilite_write(A:x"0010", x"BEFBEEF") completed.
+%%        1502.5 ns  Log    ID_BFM              TB seq.             axilite_write(A:x"0020", x"EFBEEF") completed.
+%%        1562.5 ns  Log    ID_BFM              TB seq.             axilite_write(A:x"0030", x"BEEF") completed.
+%%        1622.5 ns  Log    ID_BFM              TB seq.             axilite_write(A:x"0040", x"54321") completed.
+%%        1682.5 ns  Log    ID_BFM              TB seq.             axilite_write(A:x"0060", x"54321") completed.
+%%        1732.5 ns  Log    ID_BFM              TB seq.             axilite_read(A:x"0030")=> x"BEEF".
+%%        1782.5 ns  Log    ID_BFM              TB seq.             axilite_read(A:x"0040")=> x"54321".
+%%        1832.5 ns  Log    ID_BFM              TB seq.             axilite_read(A:x"0060")=> x"54321".
+%%        1832.5 ns  Log    ID_SEQUENCER        TB seq.             Check the written data
+%%        1882.5 ns  Log    ID_BFM              TB seq.             axilite_check(A:x"0000", x"5555")=> OK, received data = x"5555".
+%%        1932.5 ns  Log    ID_BFM              TB seq.             axilite_check(A:x"0010", x"BEFBEEF")=> OK, received data = x"BEFBEEF".
+%%        1982.5 ns  Log    ID_BFM              TB seq.             axilite_check(A:x"0020", x"EFBEEF")=> OK, received data = x"EFBEEF".
+%%        2032.5 ns  Log    ID_BFM              TB seq.             axilite_check(A:x"0030", x"BEEF")=> OK, received data = x"BEEF".
+%%        2082.5 ns  Log    ID_BFM              TB seq.             axilite_check(A:x"0040", x"54321")=> OK, received data = x"54321".
+%%        2142.5 ns  Log    ID_BFM              TB seq.             axilite_write(A:x"0000040", x"ABBA1972") completed.
+%%        2192.5 ns  Log    ID_BFM              TB seq.             axilite_check(A:x"0000040", x"ABBA1972")=> OK, received data = x"ABBA1972".
+%%        2242.5 ns  Alert  WARNING             TB seq.             axilite_check(A:x"0000040", x"00000000")=> Failed. Was x"00000000ABBA1972". Expected x"0000000000000000".
+%%        2242.5 ns  Log    ID_SEQUENCER        TB seq.             Checking write with byte_enable
+%%        2302.5 ns  Log    ID_BFM              TB seq.             axilite_write(A:x"0000040", x"0") completed.
+%%        2362.5 ns  Log    ID_BFM              TB seq.             axilite_write(A:x"0000040", x"AFAF1191") completed.
+%%        2412.5 ns  Log    ID_BFM              TB seq.             axilite_check(A:x"0000040", x"00001191")=> OK, received data = x"1191".
+%%        2472.5 ns  Log    ID_BFM              TB seq.             axilite_write(A:x"0000040", x"0") completed.
+%%        2532.5 ns  Log    ID_BFM              TB seq.             axilite_write(A:x"0000040", x"AFAF1191") completed.
+%%        2582.5 ns  Log    ID_BFM              TB seq.             axilite_check(A:x"0000040", x"AFAF0000")=> OK, received data = x"AFAF0000".
+%%        2640.0 ns  Alert  WARNING             TB seq.             axilite_write(A:x"0000040", x"0")(slv, b"10") => Failed. Value was b"00". Expected b"10". ': BRESP detected'
+%%        2642.5 ns  Log    ID_BFM              TB seq.             axilite_write(A:x"0000040", x"0") completed.
+%%        2700.0 ns  Alert  WARNING             TB seq.             axilite_write(A:x"0000040", x"AFAF1191")(slv, b"11") => Failed. Value was b"00". Expected b"11". ': BRESP detected'
+%%        2702.5 ns  Log    ID_BFM              TB seq.             axilite_write(A:x"0000040", x"AFAF1191") completed.
 %% 
 %% ============================================================================================================================================================================
 %%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
 %% ============================================================================================================================================================================
-%% 3702.5 ns    DONE   PASSED   axilite_bfm_tb  Passed: 0  Affirmations Checked: 6
+%%        3702.5 ns  DONE   PASSED  axilite_bfm_tb  Passed: 2  Affirmations Checked: 2
 %%    Expected      Failures: 0  Errors: 0  Warnings: -4  Passed: 0
 %%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
 %%    Default       Failures: 0  Errors: 0  Warnings: 4  Passed: 0
@@ -181,5 +181,5 @@
 %% 
 %% 
 %% 
-%% 3702.5 ns    Log    ID_LOG_HDR          TB seq.             SIMULATION COMPLETED
+%%        3702.5 ns  Log    ID_LOG_HDR          TB seq.             SIMULATION COMPLETED
 %% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------

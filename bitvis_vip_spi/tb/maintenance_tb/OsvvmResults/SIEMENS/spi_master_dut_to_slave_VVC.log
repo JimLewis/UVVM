@@ -1,0 +1,456 @@
+%%           0.0 ns  Log    ID_CONSTRUCTOR      SBI_VVC,0           VVC instantiated.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  SBI_VVC,0           Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  SBI_VVC,0           Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR      SPI_VVC,3           VVC instantiated.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  SPI_VVC,3           Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  SPI_VVC,3           Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR      SPI_VVC,2           VVC instantiated.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  SPI_VVC,2           Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  SPI_VVC,2           Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR      SPI_VVC,1           VVC instantiated.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  SPI_VVC,1           Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  SPI_VVC,1           Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR      SPI_VVC,0           VVC instantiated.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  SPI_VVC,0           Command queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CONSTRUCTOR_SUB  SPI_VVC,0           Result queue instantiated and will give a warning when reaching 1000 elements in queue.
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,0           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  SPI_VVC,3           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  SPI_VVC,2           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  SPI_VVC,1           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  SPI_VVC,0           Interpreter: Waiting for command
+%%           0.0 ns  Log    ID_CTRL             SBI_VVC_SB,0        enable() => SB enabled. 'SBI VVC SB Enabled'
+%%           0.0 ns  Log    ID_CTRL             SBI_VVC_SB,0        config() => config applied to SB.
+%%           0.0 ns  Log    ID_CTRL             SBI_VVC_SB,0        enable_log_msg() => message id id_data enabled.
+%%           0.0 ns  Log    ID_CTRL             SPI_VVC_SB,3        enable() => SB enabled. 'SPI VVC SB Enabled'
+%%           0.0 ns  Log    ID_CTRL             SPI_VVC_SB,3        config() => config applied to SB.
+%%           0.0 ns  Log    ID_CTRL             SPI_VVC_SB,3        enable_log_msg() => message id id_data enabled.
+%%           0.0 ns  Log    ID_CTRL             SPI_VVC_SB,2        enable() => SB enabled. 'SPI VVC SB Enabled'
+%%           0.0 ns  Log    ID_CTRL             SPI_VVC_SB,2        config() => config applied to SB.
+%%           0.0 ns  Log    ID_CTRL             SPI_VVC_SB,2        enable_log_msg() => message id id_data enabled.
+%%           0.0 ns  Log    ID_CTRL             SPI_VVC_SB,1        enable() => SB enabled. 'SPI VVC SB Enabled'
+%%           0.0 ns  Log    ID_CTRL             SPI_VVC_SB,1        config() => config applied to SB.
+%%           0.0 ns  Log    ID_CTRL             SPI_VVC_SB,1        enable_log_msg() => message id id_data enabled.
+%%           0.0 ns  Log    ID_CTRL             SPI_VVC_SB,0        enable() => SB enabled. 'SPI VVC SB Enabled'
+%%           0.0 ns  Log    ID_CTRL             SPI_VVC_SB,0        config() => config applied to SB.
+%%           0.0 ns  Log    ID_CTRL             SPI_VVC_SB,0        enable_log_msg() => message id id_data enabled.
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             disable_log_msg(ALL_MESSAGES).
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_LOG_HDR_LARGE).
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_LOG_HDR).
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     TB seq.             enable_log_msg(ID_SEQUENCER).
+%%           0.0 ns  Log    ID_CMD_EXECUTOR_WA  SBI_VVC,0           Executor: Waiting for command
+%%           0.0 ns  Log    ID_CMD_EXECUTOR_WA  SPI_VVC,3           Executor: Waiting for command
+%%           0.0 ns  Log    ID_CMD_EXECUTOR_WA  SPI_VVC,2           Executor: Waiting for command
+%%           0.0 ns  Log    ID_CMD_EXECUTOR_WA  SPI_VVC,1           Executor: Waiting for command
+%%           0.0 ns  Log    ID_CMD_EXECUTOR_WA  SPI_VVC,0           Executor: Waiting for command
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  SBI_VVC,0           disable_log_msg(VVC_BROADCAST, ALL_MESSAGES). Command received  [1]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     SBI_VVC,0           disable_log_msg(ALL_MESSAGES). ' [1]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  SPI_VVC,3           disable_log_msg(VVC_BROADCAST, ALL_MESSAGES). Command received  [1]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     SPI_VVC,3           disable_log_msg(ALL_MESSAGES). ' [1]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  SPI_VVC,2           disable_log_msg(VVC_BROADCAST, ALL_MESSAGES). Command received  [1]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     SPI_VVC,2           disable_log_msg(ALL_MESSAGES). ' [1]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  SPI_VVC,1           disable_log_msg(VVC_BROADCAST, ALL_MESSAGES). Command received  [1]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     SPI_VVC,1           disable_log_msg(ALL_MESSAGES). ' [1]'
+%%           0.0 ns  Log    ID_CMD_INTERPRETER  SPI_VVC,0           disable_log_msg(VVC_BROADCAST, ALL_MESSAGES). Command received  [1]
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     SPI_VVC,0           disable_log_msg(ALL_MESSAGES). ' [1]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     SPI_VVC,3           enable_log_msg(ID_BFM). ' [2]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     SPI_VVC,2           enable_log_msg(ID_BFM). ' [2]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     SPI_VVC,1           enable_log_msg(ID_BFM). ' [2]'
+%%           0.0 ns  Log    ID_LOG_MSG_CTRL     SPI_VVC,0           enable_log_msg(ID_BFM). ' [2]'
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF GLOBAL CTRL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                                IGNORE    STOP_LIMIT
+%%                NOTE         :  REGARD         0
+%%                TB_NOTE      :  REGARD         0
+%%                WARNING      :  REGARD         0
+%%                TB_WARNING   :  REGARD         0
+%%                MANUAL_CHECK :  REGARD         0
+%%                ERROR        :  REGARD         0
+%%                TB_ERROR     :  REGARD         0
+%%                FAILURE      :  REGARD         1
+%%                TB_FAILURE   :  REGARD         1
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%%      
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      ***  REPORT OF MSG ID PANEL ***
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%                ID                             Status
+%%                ------------------------       ------
+%%                ID_UTIL_BURIED               : DISABLED
+%%                ID_BITVIS_DEBUG              : DISABLED
+%%                ID_UTIL_SETUP                : DISABLED
+%%                ID_LOG_MSG_CTRL              : ENABLED
+%%                ID_ALERT_CTRL                : DISABLED
+%%                ID_FINISH_OR_STOP            : DISABLED
+%%                ID_CLOCK_GEN                 : DISABLED
+%%                ID_GEN_PULSE                 : DISABLED
+%%                ID_BLOCKING                  : DISABLED
+%%                ID_WATCHDOG                  : DISABLED
+%%                ID_RAND_GEN                  : DISABLED
+%%                ID_RAND_CONF                 : DISABLED
+%%                ID_FUNC_COV_BINS             : DISABLED
+%%                ID_FUNC_COV_BINS_INFO        : DISABLED
+%%                ID_FUNC_COV_RAND             : DISABLED
+%%                ID_FUNC_COV_SAMPLE           : DISABLED
+%%                ID_FUNC_COV_CONFIG           : DISABLED
+%%                ID_POS_ACK                   : DISABLED
+%%                ID_UVVM_ASSERTION            : DISABLED
+%%                ID_LOG_HDR                   : ENABLED
+%%                ID_LOG_HDR_LARGE             : ENABLED
+%%                ID_LOG_HDR_XL                : DISABLED
+%%                ID_SEQUENCER                 : ENABLED
+%%                ID_SEQUENCER_SUB             : DISABLED
+%%                ID_BFM                       : DISABLED
+%%                ID_BFM_WAIT                  : DISABLED
+%%                ID_BFM_POLL                  : DISABLED
+%%                ID_BFM_POLL_SUMMARY          : DISABLED
+%%                ID_CHANNEL_BFM               : DISABLED
+%%                ID_TERMINATE_CMD             : DISABLED
+%%                ID_SEGMENT_INITIATE          : DISABLED
+%%                ID_SEGMENT_COMPLETE          : DISABLED
+%%                ID_SEGMENT_HDR               : DISABLED
+%%                ID_SEGMENT_DATA              : DISABLED
+%%                ID_PACKET_INITIATE           : DISABLED
+%%                ID_PACKET_PREAMBLE           : DISABLED
+%%                ID_PACKET_COMPLETE           : DISABLED
+%%                ID_PACKET_HDR                : DISABLED
+%%                ID_PACKET_DATA               : DISABLED
+%%                ID_PACKET_CHECKSUM           : DISABLED
+%%                ID_PACKET_GAP                : DISABLED
+%%                ID_PACKET_PAYLOAD            : DISABLED
+%%                ID_FRAME_INITIATE            : DISABLED
+%%                ID_FRAME_COMPLETE            : DISABLED
+%%                ID_FRAME_HDR                 : DISABLED
+%%                ID_FRAME_DATA                : DISABLED
+%%                ID_COVERAGE_MAKEBIN          : DISABLED
+%%                ID_COVERAGE_ADDBIN           : DISABLED
+%%                ID_COVERAGE_ICOVER           : DISABLED
+%%                ID_COVERAGE_CONFIG           : DISABLED
+%%                ID_COVERAGE_SUMMARY          : DISABLED
+%%                ID_COVERAGE_HOLES            : DISABLED
+%%                ID_UVVM_SEND_CMD             : DISABLED
+%%                ID_UVVM_CMD_ACK              : DISABLED
+%%                ID_UVVM_CMD_RESULT           : DISABLED
+%%                ID_CMD_INTERPRETER           : DISABLED
+%%                ID_CMD_INTERPRETER_WAIT      : DISABLED
+%%                ID_IMMEDIATE_CMD             : DISABLED
+%%                ID_IMMEDIATE_CMD_WAIT        : DISABLED
+%%                ID_CMD_EXECUTOR              : DISABLED
+%%                ID_CMD_EXECUTOR_WAIT         : DISABLED
+%%                ID_CHANNEL_EXECUTOR          : DISABLED
+%%                ID_CHANNEL_EXECUTOR_WAIT     : DISABLED
+%%                ID_NEW_HVVC_CMD_SEQ          : DISABLED
+%%                ID_INSERTED_DELAY            : DISABLED
+%%                ID_OLD_AWAIT_COMPLETION      : DISABLED
+%%                ID_AWAIT_COMPLETION          : DISABLED
+%%                ID_AWAIT_COMPLETION_LIST     : DISABLED
+%%                ID_AWAIT_COMPLETION_WAIT     : DISABLED
+%%                ID_AWAIT_COMPLETION_END      : DISABLED
+%%                ID_AWAIT_UVVM_COMPLETION     : DISABLED
+%%                ID_UVVM_DATA_QUEUE           : DISABLED
+%%                ID_CONSTRUCTOR               : DISABLED
+%%                ID_CONSTRUCTOR_SUB           : DISABLED
+%%                ID_VVC_ACTIVITY              : DISABLED
+%%                ID_MONITOR                   : DISABLED
+%%                ID_MONITOR_ERROR             : DISABLED
+%%                ID_DATA                      : DISABLED
+%%                ID_CTRL                      : DISABLED
+%%                ID_SPEC_COV_INIT             : DISABLED
+%%                ID_SPEC_COV_REQS             : DISABLED
+%%                ID_SPEC_COV                  : DISABLED
+%%                ID_FILE_OPEN_CLOSE           : DISABLED
+%%                ID_FILE_PARSER               : DISABLED
+%%      -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%      
+%% 
+%% 
+%% ============================================================================================================================================================================
+%%     1000440.0 ns  Log    ID_LOG_HDR_LARGE    SPI_TB              Testing master DUT to slave VVC
+%% ============================================================================================================================================================================
+%%     1000440.0 ns  Log    ID_SEQUENCER        SPI_TB              Setting inter bfm delay for single-word transfer
+%% 
+%% 
+%%     1000440.0 ns  Log    ID_LOG_HDR          SPI_TB              Single-word transfer
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%     1007240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"C2AC556D")=> OK, read data = x"C2AC556D". ' 'Master to Slave check '  [4]'
+%%     1014240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"30BD51EF")=> OK, read data = x"30BD51EF". ' 'Master to Slave check '  [6]'
+%%     1021240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"7D1F8D15")=> OK, read data = x"7D1F8D15". ' 'Master to Slave check '  [8]'
+%%     1028240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"7014F494")=> OK, read data = x"7014F494". ' 'Master to Slave check '  [10]'
+%%     1035240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"395C1469")=> OK, read data = x"395C1469". ' 'Master to Slave check '  [12]'
+%%     1042240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"72F4DFFC")=> OK, read data = x"72F4DFFC". ' 'Master to Slave check '  [14]'
+%%     1049240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"070E3CEC")=> OK, read data = x"70E3CEC". ' 'Master to Slave check '  [16]'
+%%     1056240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"EDB01885")=> OK, read data = x"EDB01885". ' 'Master to Slave check '  [18]'
+%%     1063240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"BB4786EC")=> OK, read data = x"BB4786EC". ' 'Master to Slave check '  [20]'
+%%     1070240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"62964C17")=> OK, read data = x"62964C17". ' 'Master to Slave check '  [22]'
+%%     1077240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"EA727B79")=> OK, read data = x"EA727B79". ' 'Master to Slave check '  [24]'
+%%     1077240.0 ns  Log    ID_SEQUENCER        SPI_TB              Setting inter bfm delay for multi-word transfer
+%% 
+%% 
+%%     1077240.0 ns  Log    ID_LOG_HDR          SPI_TB              Multi-word transfer
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 
+%% 
+%%     1077240.0 ns  Log    ID_LOG_HDR          SPI_TB              Multi-word transfer with different number of words
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%     1084240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"568A5856")=> OK, read data = x"568A5856". ' 'Master to Slave check '  [27]'
+%%     1091240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"F6DAA0AB")=> OK, read data = x"F6DAA0AB". ' 'Master to Slave check '  [27]'
+%%     1098240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"50535CD1")=> OK, read data = x"50535CD1". ' 'Master to Slave check '  [27]'
+%%     1105240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"CD903061")=> OK, read data = x"CD903061". ' 'Master to Slave check '  [27]'
+%%     1112240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"6E3768BB")=> OK, read data = x"6E3768BB". ' 'Master to Slave check '  [27]'
+%%     1119240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"B87C4DB1")=> OK, read data = x"B87C4DB1". ' 'Master to Slave check '  [27]'
+%%     1126240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"C030B66D")=> OK, read data = x"C030B66D". ' 'Master to Slave check '  [27]'
+%%     1133240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"DBBD1172")=> OK, read data = x"DBBD1172". ' 'Master to Slave check '  [27]'
+%%     1140240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"76CE5964")=> OK, read data = x"76CE5964". ' 'Master to Slave check '  [36]'
+%%     1147240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"7B971B6D")=> OK, read data = x"7B971B6D". ' 'Master to Slave check '  [36]'
+%%     1154240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"E8C942D1")=> OK, read data = x"E8C942D1". ' 'Master to Slave check '  [36]'
+%%     1161240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"A76D694C")=> OK, read data = x"A76D694C". ' 'Master to Slave check '  [36]'
+%%     1168240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"06B6B6F0")=> OK, read data = x"6B6B6F0". ' 'Master to Slave check '  [36]'
+%%     1175240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"BE3D8EF0")=> OK, read data = x"BE3D8EF0". ' 'Master to Slave check '  [36]'
+%%     1182240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"60E2A18B")=> OK, read data = x"60E2A18B". ' 'Master to Slave check '  [36]'
+%%     1189240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"BB9D1376")=> OK, read data = x"BB9D1376". ' 'Master to Slave check '  [36]'
+%%     1196240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"4B038FCF")=> OK, read data = x"4B038FCF". ' 'Master to Slave check '  [45]'
+%%     1203240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"9D0D1E50")=> OK, read data = x"9D0D1E50". ' 'Master to Slave check '  [45]'
+%%     1210240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"C422EEEA")=> OK, read data = x"C422EEEA". ' 'Master to Slave check '  [45]'
+%%     1217240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"2988FED8")=> OK, read data = x"2988FED8". ' 'Master to Slave check '  [45]'
+%%     1224240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"1CD646E4")=> OK, read data = x"1CD646E4". ' 'Master to Slave check '  [45]'
+%%     1231240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"E6499929")=> OK, read data = x"E6499929". ' 'Master to Slave check '  [45]'
+%%     1238240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"4F48488A")=> OK, read data = x"4F48488A". ' 'Master to Slave check '  [45]'
+%%     1245240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"2DEC98D5")=> OK, read data = x"2DEC98D5". ' 'Master to Slave check '  [45]'
+%%     1252240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"B0ECEBF7")=> OK, read data = x"B0ECEBF7". ' 'Master to Slave check '  [54]'
+%%     1259240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"5903EC79")=> OK, read data = x"5903EC79". ' 'Master to Slave check '  [54]'
+%%     1266240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"BAFAAB95")=> OK, read data = x"BAFAAB95". ' 'Master to Slave check '  [54]'
+%%     1273240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"1E73F936")=> OK, read data = x"1E73F936". ' 'Master to Slave check '  [54]'
+%%     1280240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"665BE3C9")=> OK, read data = x"665BE3C9". ' 'Master to Slave check '  [54]'
+%%     1287240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"8DC0B03F")=> OK, read data = x"8DC0B03F". ' 'Master to Slave check '  [54]'
+%%     1294240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"DDB65C85")=> OK, read data = x"DDB65C85". ' 'Master to Slave check '  [54]'
+%%     1301240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"0B84CAD6")=> OK, read data = x"B84CAD6". ' 'Master to Slave check '  [54]'
+%%     1308240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"A0D3F0CA")=> OK, read data = x"A0D3F0CA". ' 'Master to Slave check '  [63]'
+%%     1315240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"F23E0954")=> OK, read data = x"F23E0954". ' 'Master to Slave check '  [63]'
+%%     1322240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"4747B357")=> OK, read data = x"4747B357". ' 'Master to Slave check '  [63]'
+%%     1329240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"21AF7A1F")=> OK, read data = x"21AF7A1F". ' 'Master to Slave check '  [63]'
+%%     1336240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"A59D2D05")=> OK, read data = x"A59D2D05". ' 'Master to Slave check '  [63]'
+%%     1343240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"9EF7E803")=> OK, read data = x"9EF7E803". ' 'Master to Slave check '  [63]'
+%%     1350240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"2CB37F3A")=> OK, read data = x"2CB37F3A". ' 'Master to Slave check '  [63]'
+%%     1357240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"C7465135")=> OK, read data = x"C7465135". ' 'Master to Slave check '  [63]'
+%%     1364240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"5F838ED4")=> OK, read data = x"5F838ED4". ' 'Master to Slave check '  [72]'
+%%     1371240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"5397CB8C")=> OK, read data = x"5397CB8C". ' 'Master to Slave check '  [72]'
+%%     1378240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"AA37EF85")=> OK, read data = x"AA37EF85". ' 'Master to Slave check '  [72]'
+%%     1385240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"1555FAAB")=> OK, read data = x"1555FAAB". ' 'Master to Slave check '  [72]'
+%%     1392240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"F0BBDA1B")=> OK, read data = x"F0BBDA1B". ' 'Master to Slave check '  [72]'
+%%     1399240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"8F2C2F09")=> OK, read data = x"8F2C2F09". ' 'Master to Slave check '  [72]'
+%%     1406240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"165FC475")=> OK, read data = x"165FC475". ' 'Master to Slave check '  [72]'
+%%     1413240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"B7B09CB0")=> OK, read data = x"B7B09CB0". ' 'Master to Slave check '  [72]'
+%%     1420240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"77A5478E")=> OK, read data = x"77A5478E". ' 'Master to Slave check '  [81]'
+%%     1427240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"A858276A")=> OK, read data = x"A858276A". ' 'Master to Slave check '  [81]'
+%%     1434240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"6EB81FDE")=> OK, read data = x"6EB81FDE". ' 'Master to Slave check '  [81]'
+%%     1441240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"869D9AED")=> OK, read data = x"869D9AED". ' 'Master to Slave check '  [81]'
+%%     1448240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"917B0242")=> OK, read data = x"917B0242". ' 'Master to Slave check '  [81]'
+%%     1455240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"DE6BE60E")=> OK, read data = x"DE6BE60E". ' 'Master to Slave check '  [81]'
+%%     1462240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"EAB124FD")=> OK, read data = x"EAB124FD". ' 'Master to Slave check '  [81]'
+%%     1469240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"77CA5828")=> OK, read data = x"77CA5828". ' 'Master to Slave check '  [81]'
+%%     1476240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"27BF09C7")=> OK, read data = x"27BF09C7". ' 'Master to Slave check '  [90]'
+%%     1483240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"55224483")=> OK, read data = x"55224483". ' 'Master to Slave check '  [90]'
+%%     1490240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"691CBC54")=> OK, read data = x"691CBC54". ' 'Master to Slave check '  [90]'
+%%     1497240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"E7B2A4DA")=> OK, read data = x"E7B2A4DA". ' 'Master to Slave check '  [90]'
+%%     1504240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"AAA4B649")=> OK, read data = x"AAA4B649". ' 'Master to Slave check '  [90]'
+%%     1511240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"AD89305D")=> OK, read data = x"AD89305D". ' 'Master to Slave check '  [90]'
+%%     1518240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"DD63ADFA")=> OK, read data = x"DD63ADFA". ' 'Master to Slave check '  [90]'
+%%     1525240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"BB836FF0")=> OK, read data = x"BB836FF0". ' 'Master to Slave check '  [90]'
+%%     1532240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"2C3D3B4E")=> OK, read data = x"2C3D3B4E". ' 'Master to Slave check '  [99]'
+%%     1539240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"2C857AAC")=> OK, read data = x"2C857AAC". ' 'Master to Slave check '  [99]'
+%%     1546240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"FFFBE4AD")=> OK, read data = x"FFFBE4AD". ' 'Master to Slave check '  [99]'
+%%     1553240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"20DB6DDF")=> OK, read data = x"20DB6DDF". ' 'Master to Slave check '  [99]'
+%%     1560240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"12745C76")=> OK, read data = x"12745C76". ' 'Master to Slave check '  [99]'
+%%     1567240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"42E7B80B")=> OK, read data = x"42E7B80B". ' 'Master to Slave check '  [99]'
+%%     1574240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"3D4200DC")=> OK, read data = x"3D4200DC". ' 'Master to Slave check '  [99]'
+%%     1581240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"FC3D6130")=> OK, read data = x"FC3D6130". ' 'Master to Slave check '  [99]'
+%%     1588240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"701C5FAD")=> OK, read data = x"701C5FAD". ' 'Master to Slave check '  [108]'
+%%     1595240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"9BF404E9")=> OK, read data = x"9BF404E9". ' 'Master to Slave check '  [108]'
+%%     1602240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"9F3DEEBC")=> OK, read data = x"9F3DEEBC". ' 'Master to Slave check '  [108]'
+%%     1609240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"1A9B446F")=> OK, read data = x"1A9B446F". ' 'Master to Slave check '  [108]'
+%%     1616240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"A41647CF")=> OK, read data = x"A41647CF". ' 'Master to Slave check '  [108]'
+%%     1623240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"D2DA6646")=> OK, read data = x"D2DA6646". ' 'Master to Slave check '  [108]'
+%%     1630240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"33CFD903")=> OK, read data = x"33CFD903". ' 'Master to Slave check '  [108]'
+%%     1637240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"F173A5F9")=> OK, read data = x"F173A5F9". ' 'Master to Slave check '  [108]'
+%%     1644240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"D002D43A")=> OK, read data = x"D002D43A". ' 'Master to Slave check '  [117]'
+%%     1651240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"15835E8E")=> OK, read data = x"15835E8E". ' 'Master to Slave check '  [117]'
+%%     1658240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"CB49B614")=> OK, read data = x"CB49B614". ' 'Master to Slave check '  [117]'
+%%     1665240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"D71BCE2B")=> OK, read data = x"D71BCE2B". ' 'Master to Slave check '  [117]'
+%%     1672240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"162DED19")=> OK, read data = x"162DED19". ' 'Master to Slave check '  [117]'
+%%     1679240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"3F3C2927")=> OK, read data = x"3F3C2927". ' 'Master to Slave check '  [117]'
+%%     1686240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"CB7B9A3B")=> OK, read data = x"CB7B9A3B". ' 'Master to Slave check '  [117]'
+%%     1693240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"D4679BCD")=> OK, read data = x"D4679BCD". ' 'Master to Slave check '  [117]'
+%%     1700240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"541465EC")=> OK, read data = x"541465EC". ' 'Master to Slave check '  [126]'
+%%     1707240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"935DDC1A")=> OK, read data = x"935DDC1A". ' 'Master to Slave check '  [126]'
+%%     1714240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"90A5C207")=> OK, read data = x"90A5C207". ' 'Master to Slave check '  [126]'
+%%     1721240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"E8B48E70")=> OK, read data = x"E8B48E70". ' 'Master to Slave check '  [130]'
+%%     1728240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"ED5904DD")=> OK, read data = x"ED5904DD". ' 'Master to Slave check '  [130]'
+%%     1735240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"B8384162")=> OK, read data = x"B8384162". ' 'Master to Slave check '  [130]'
+%%     1742240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"609709C8")=> OK, read data = x"609709C8". ' 'Master to Slave check '  [130]'
+%%     1749240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"FA3A3632")=> OK, read data = x"FA3A3632". ' 'Master to Slave check '  [130]'
+%%     1756240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"65AB76D1")=> OK, read data = x"65AB76D1". ' 'Master to Slave check '  [130]'
+%%     1763240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"4DF94BE2")=> OK, read data = x"4DF94BE2". ' 'Master to Slave check '  [130]'
+%%     1770240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"4AD59F49")=> OK, read data = x"4AD59F49". ' 'Master to Slave check '  [130]'
+%%     1777240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"C1B43E9C")=> OK, read data = x"C1B43E9C". ' 'Master to Slave check '  [139]'
+%%     1784240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"EDD8DC36")=> OK, read data = x"EDD8DC36". ' 'Master to Slave check '  [139]'
+%%     1791240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"6480C5D3")=> OK, read data = x"6480C5D3". ' 'Master to Slave check '  [139]'
+%%     1798240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"9FBF5488")=> OK, read data = x"9FBF5488". ' 'Master to Slave check '  [139]'
+%%     1805240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"603CC11A")=> OK, read data = x"603CC11A". ' 'Master to Slave check '  [139]'
+%%     1812240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"2808F57F")=> OK, read data = x"2808F57F". ' 'Master to Slave check '  [139]'
+%%     1819240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"9C92E82F")=> OK, read data = x"9C92E82F". ' 'Master to Slave check '  [146]'
+%%     1826240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"EFD49461")=> OK, read data = x"EFD49461". ' 'Master to Slave check '  [146]'
+%%     1833240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"E869B224")=> OK, read data = x"E869B224". ' 'Master to Slave check '  [146]'
+%%     1840240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"A4AC9D64")=> OK, read data = x"A4AC9D64". ' 'Master to Slave check '  [146]'
+%%     1847240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"B46B8D7B")=> OK, read data = x"B46B8D7B". ' 'Master to Slave check '  [146]'
+%%     1854240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"DCE12F87")=> OK, read data = x"DCE12F87". ' 'Master to Slave check '  [152]'
+%%     1861240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"344217CD")=> OK, read data = x"344217CD". ' 'Master to Slave check '  [152]'
+%%     1868240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"B90F9B81")=> OK, read data = x"B90F9B81". ' 'Master to Slave check '  [152]'
+%%     1875240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"098A19E7")=> OK, read data = x"98A19E7". ' 'Master to Slave check '  [152]'
+%%     1882240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"D9AB9C5B")=> OK, read data = x"D9AB9C5B". ' 'Master to Slave check '  [152]'
+%%     1889240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"D332F04F")=> OK, read data = x"D332F04F". ' 'Master to Slave check '  [158]'
+%%     1896240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"63A9530B")=> OK, read data = x"63A9530B". ' 'Master to Slave check '  [158]'
+%%     1903240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"3CEC73BD")=> OK, read data = x"3CEC73BD". ' 'Master to Slave check '  [161]'
+%%     1910240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"BF58ACD6")=> OK, read data = x"BF58ACD6". ' 'Master to Slave check '  [161]'
+%%     1917240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"10AC389F")=> OK, read data = x"10AC389F". ' 'Master to Slave check '  [161]'
+%%     1924240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"F366DF37")=> OK, read data = x"F366DF37". ' 'Master to Slave check '  [161]'
+%%     1931240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"63425612")=> OK, read data = x"63425612". ' 'Master to Slave check '  [161]'
+%%     1938240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"AF455548")=> OK, read data = x"AF455548". ' 'Master to Slave check '  [161]'
+%%     1945240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"A8E4FF97")=> OK, read data = x"A8E4FF97". ' 'Master to Slave check '  [168]'
+%%     1952240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"8BB297CB")=> OK, read data = x"8BB297CB". ' 'Master to Slave check '  [168]'
+%%     1959240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"D8CC48C8")=> OK, read data = x"D8CC48C8". ' 'Master to Slave check '  [168]'
+%%     1966240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"F3E0F289")=> OK, read data = x"F3E0F289". ' 'Master to Slave check '  [172]'
+%%     1973240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"AB4DA3B7")=> OK, read data = x"AB4DA3B7". ' 'Master to Slave check '  [172]'
+%%     1980240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"17336619")=> OK, read data = x"17336619". ' 'Master to Slave check '  [172]'
+%%     1987240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"5C09DF46")=> OK, read data = x"5C09DF46". ' 'Master to Slave check '  [172]'
+%%     1994240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"75F24B18")=> OK, read data = x"75F24B18". ' 'Master to Slave check '  [172]'
+%%     2001240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"0EB19000")=> OK, read data = x"EB19000". ' 'Master to Slave check '  [172]'
+%%     2008240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"7645307F")=> OK, read data = x"7645307F". ' 'Master to Slave check '  [179]'
+%%     2015240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"A2894790")=> OK, read data = x"A2894790". ' 'Master to Slave check '  [179]'
+%%     2022240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"DD2425A6")=> OK, read data = x"DD2425A6". ' 'Master to Slave check '  [179]'
+%%     2029240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"112F3C3D")=> OK, read data = x"112F3C3D". ' 'Master to Slave check '  [179]'
+%%     2036240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"9543174A")=> OK, read data = x"9543174A". ' 'Master to Slave check '  [179]'
+%%     2043240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"84B003CE")=> OK, read data = x"84B003CE". ' 'Master to Slave check '  [179]'
+%%     2050240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"D827D581")=> OK, read data = x"D827D581". ' 'Master to Slave check '  [179]'
+%%     2057240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"12087A2F")=> OK, read data = x"12087A2F". ' 'Master to Slave check '  [187]'
+%%     2064240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"138284CC")=> OK, read data = x"138284CC". ' 'Master to Slave check '  [187]'
+%%     2064240.0 ns  Log    ID_SEQUENCER        SPI_TB              Setting inter bfm delay for single-word transfer
+%% 
+%% 
+%%     2064240.0 ns  Log    ID_LOG_HDR          SPI_TB              Single-word transfer
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%     2071240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"55555555")=> OK, read data = x"55555555". ' 'Master to Slave check '  [193]'
+%%     2078240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"AAAAAAAA")=> OK, read data = x"AAAAAAAA". ' 'Master to Slave check '  [195]'
+%%     2085240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"FFFFFFFF")=> OK, read data = x"FFFFFFFF". ' 'Master to Slave check '  [197]'
+%%     2092240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"00000000")=> OK, read data = x"00000000". ' 'Master to Slave check '  [199]'
+%%     2092240.0 ns  Log    ID_SEQUENCER        SPI_TB              Setting inter bfm delay for multi-word transfer
+%% 
+%% 
+%%     2092240.0 ns  Log    ID_LOG_HDR          SPI_TB              Master DUT to slave VVC multi-word transfer
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 
+%% 
+%%     2092240.0 ns  Log    ID_LOG_HDR          SPI_TB              Master DUT to slave VVC multi-word transfer with different number of words
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%     2099240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"933A2292")=> OK, read data = x"933A2292". ' 'Master to Slave check '  [202]'
+%%     2106240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"F6CAFBDF")=> OK, read data = x"F6CAFBDF". ' 'Master to Slave check '  [202]'
+%%     2113240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"15CD1CBA")=> OK, read data = x"15CD1CBA". ' 'Master to Slave check '  [202]'
+%%     2120240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"E0DA1220")=> OK, read data = x"E0DA1220". ' 'Master to Slave check '  [202]'
+%%     2127240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"A3D930B1")=> OK, read data = x"A3D930B1". ' 'Master to Slave check '  [202]'
+%%     2134240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"3776BC6E")=> OK, read data = x"3776BC6E". ' 'Master to Slave check '  [202]'
+%%     2141240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"C4285EB5")=> OK, read data = x"C4285EB5". ' 'Master to Slave check '  [202]'
+%%     2148240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"38556353")=> OK, read data = x"38556353". ' 'Master to Slave check '  [202]'
+%%     2155240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"3268EA36")=> OK, read data = x"3268EA36". ' 'Master to Slave check '  [211]'
+%%     2162240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"3C539E21")=> OK, read data = x"3C539E21". ' 'Master to Slave check '  [211]'
+%%     2169240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"6D63EE74")=> OK, read data = x"6D63EE74". ' 'Master to Slave check '  [211]'
+%%     2176240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"36682434")=> OK, read data = x"36682434". ' 'Master to Slave check '  [211]'
+%%     2183240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"A6572F69")=> OK, read data = x"A6572F69". ' 'Master to Slave check '  [211]'
+%%     2190240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"F468DE73")=> OK, read data = x"F468DE73". ' 'Master to Slave check '  [211]'
+%%     2197240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"B50F9E78")=> OK, read data = x"B50F9E78". ' 'Master to Slave check '  [211]'
+%%     2204240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"F57A3E2F")=> OK, read data = x"F57A3E2F". ' 'Master to Slave check '  [211]'
+%%     2211240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"CBEA6A90")=> OK, read data = x"CBEA6A90". ' 'Master to Slave check '  [220]'
+%%     2218240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"68360CF9")=> OK, read data = x"68360CF9". ' 'Master to Slave check '  [220]'
+%%     2225240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"D43E1EDB")=> OK, read data = x"D43E1EDB". ' 'Master to Slave check '  [220]'
+%%     2232240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"FC538E08")=> OK, read data = x"FC538E08". ' 'Master to Slave check '  [220]'
+%%     2239240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"6ED497E4")=> OK, read data = x"6ED497E4". ' 'Master to Slave check '  [220]'
+%%     2246240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"21D1FEEF")=> OK, read data = x"21D1FEEF". ' 'Master to Slave check '  [220]'
+%%     2253240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"1B52EDD1")=> OK, read data = x"1B52EDD1". ' 'Master to Slave check '  [220]'
+%%     2260240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"2596316B")=> OK, read data = x"2596316B". ' 'Master to Slave check '  [220]'
+%%     2267240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"838F8D82")=> OK, read data = x"838F8D82". ' 'Master to Slave check '  [229]'
+%%     2274240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"42CF2BC9")=> OK, read data = x"42CF2BC9". ' 'Master to Slave check '  [229]'
+%%     2281240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"BE9005C3")=> OK, read data = x"BE9005C3". ' 'Master to Slave check '  [229]'
+%%     2288240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"5BEBE5CB")=> OK, read data = x"5BEBE5CB". ' 'Master to Slave check '  [229]'
+%%     2295240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"B1D5987C")=> OK, read data = x"B1D5987C". ' 'Master to Slave check '  [229]'
+%%     2302240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"74FD9D9F")=> OK, read data = x"74FD9D9F". ' 'Master to Slave check '  [229]'
+%%     2309240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"4BFA1EB0")=> OK, read data = x"4BFA1EB0". ' 'Master to Slave check '  [229]'
+%%     2316240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"B6BD06DF")=> OK, read data = x"B6BD06DF". ' 'Master to Slave check '  [229]'
+%%     2323240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"9675B608")=> OK, read data = x"9675B608". ' 'Master to Slave check '  [238]'
+%%     2330240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"AB3D5AAA")=> OK, read data = x"AB3D5AAA". ' 'Master to Slave check '  [238]'
+%%     2337240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"551127E3")=> OK, read data = x"551127E3". ' 'Master to Slave check '  [238]'
+%%     2344240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"41731A0E")=> OK, read data = x"41731A0E". ' 'Master to Slave check '  [238]'
+%%     2351240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"0DB770DE")=> OK, read data = x"DB770DE". ' 'Master to Slave check '  [238]'
+%%     2358240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"2300A5FB")=> OK, read data = x"2300A5FB". ' 'Master to Slave check '  [238]'
+%%     2365240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"F1537A59")=> OK, read data = x"F1537A59". ' 'Master to Slave check '  [238]'
+%%     2372240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"D658DDE0")=> OK, read data = x"D658DDE0". ' 'Master to Slave check '  [238]'
+%%     2379240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"2D7C4C2D")=> OK, read data = x"2D7C4C2D". ' 'Master to Slave check '  [247]'
+%%     2386240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"3658141F")=> OK, read data = x"3658141F". ' 'Master to Slave check '  [247]'
+%%     2393240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"3E0477D8")=> OK, read data = x"3E0477D8". ' 'Master to Slave check '  [247]'
+%%     2400240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"C9F2AD6B")=> OK, read data = x"C9F2AD6B". ' 'Master to Slave check '  [247]'
+%%     2407240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"C9F300EE")=> OK, read data = x"C9F300EE". ' 'Master to Slave check '  [247]'
+%%     2414240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"5CBD70BE")=> OK, read data = x"5CBD70BE". ' 'Master to Slave check '  [247]'
+%%     2421240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"8BDD217A")=> OK, read data = x"8BDD217A". ' 'Master to Slave check '  [247]'
+%%     2428240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"C10CFC86")=> OK, read data = x"C10CFC86". ' 'Master to Slave check '  [247]'
+%%     2435240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"21050EE4")=> OK, read data = x"21050EE4". ' 'Master to Slave check '  [256]'
+%%     2442240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"91A7074E")=> OK, read data = x"91A7074E". ' 'Master to Slave check '  [258]'
+%%     2449240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"82FD4A2B")=> OK, read data = x"82FD4A2B". ' 'Master to Slave check '  [258]'
+%%     2456240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"B47700A3")=> OK, read data = x"B47700A3". ' 'Master to Slave check '  [258]'
+%%     2463240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"EA49D884")=> OK, read data = x"EA49D884". ' 'Master to Slave check '  [258]'
+%%     2470240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"4216D287")=> OK, read data = x"4216D287". ' 'Master to Slave check '  [258]'
+%%     2477240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"5A0FF2B5")=> OK, read data = x"5A0FF2B5". ' 'Master to Slave check '  [258]'
+%%     2484240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"FEDA7A0C")=> OK, read data = x"FEDA7A0C". ' 'Master to Slave check '  [265]'
+%%     2491240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"2B0C3178")=> OK, read data = x"2B0C3178". ' 'Master to Slave check '  [267]'
+%%     2498240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"071CA39D")=> OK, read data = x"71CA39D". ' 'Master to Slave check '  [267]'
+%%     2505240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"07066422")=> OK, read data = x"7066422". ' 'Master to Slave check '  [270]'
+%%     2512240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"B79A1215")=> OK, read data = x"B79A1215". ' 'Master to Slave check '  [270]'
+%%     2519240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"ABA97EC6")=> OK, read data = x"ABA97EC6". ' 'Master to Slave check '  [270]'
+%%     2526240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"3904B5CF")=> OK, read data = x"3904B5CF". ' 'Master to Slave check '  [270]'
+%%     2533240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"DAA318E3")=> OK, read data = x"DAA318E3". ' 'Master to Slave check '  [275]'
+%%     2540240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"9E054D5B")=> OK, read data = x"9E054D5B". ' 'Master to Slave check '  [275]'
+%%     2547240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"985C3A22")=> OK, read data = x"985C3A22". ' 'Master to Slave check '  [275]'
+%%     2554240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"88E9680C")=> OK, read data = x"88E9680C". ' 'Master to Slave check '  [275]'
+%%     2561240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"858B04E5")=> OK, read data = x"858B04E5". ' 'Master to Slave check '  [275]'
+%%     2568240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"FC7B2901")=> OK, read data = x"FC7B2901". ' 'Master to Slave check '  [275]'
+%% 
+%% 
+%%     2568240.0 ns  Log    ID_LOG_HDR          SPI_TB              Slave start on next SS
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%%     2582240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"3533C54A")=> OK, read data = x"3533C54A". ' 'Master to Slave check '  [286]'
+%%     2596240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"5952EC24")=> OK, read data = x"5952EC24". ' 'Master to Slave check '  [290]'
+%%     2610240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"2312F4FC")=> OK, read data = x"2312F4FC". ' 'Master to Slave check '  [294]'
+%%     2624240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"4613BCF9")=> OK, read data = x"4613BCF9". ' 'Master to Slave check '  [298]'
+%%     2638240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"3B8F6420")=> OK, read data = x"3B8F6420". ' 'Master to Slave check '  [302]'
+%%     2652240.0 ns  Log    ID_BFM              SPI_VVC,2           spi_slave_check(x"80105A19")=> OK, read data = x"80105A19". ' 'Master to Slave check '  [306]'
+%% 
+%% 
+%%     2652240.0 ns  Log    ID_LOG_HDR          SPI_TB              Receive only, one word
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 
+%% 
+%%     2659240.0 ns  Log    ID_LOG_HDR          SPI_TB              Receive only, multi-word
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%% 
+%% ============================================================================================================================================================================
+%%  *** INTERMEDIATE SUMMARY OF ALL ALERTS ***
+%% ============================================================================================================================================================================
+%%     2904241.0 ns  DONE   PASSED  spi_master_dut_to_slave_VVC  Passed: 36  Affirmations Checked: 36
+%%    Expected      Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    VHDL Asserts  Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    Default       Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%%    OSVVM         Failures: 0  Errors: 0  Warnings: 0  Passed: 0
+%% ============================================================================================================================================================================
+%% 
+%% 
+%% 
+%%     2904241.0 ns  Log    ID_LOG_HDR          SPI_TB              SIMULATION COMPLETED
+%% ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
