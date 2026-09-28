@@ -1031,6 +1031,12 @@ package body string_methods_pkg is
     variable v_i                    : natural                        := 0; -- for indexing text_lines_str
   begin
     deallocate(text_lines);             -- empty the line prior to filling it up again
+    -- Work around Questa Issue
+    if C_TEXT_LINES_STR_WIDTH = 0 then
+      write(text_lines, prefix);
+      return ;
+    end if;
+
     l_line : loop
       -- 1. Write prefix
       write(text_lines, prefix);
